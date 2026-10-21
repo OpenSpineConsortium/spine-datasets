@@ -94,6 +94,25 @@ class MendeleyManifest(unittest.TestCase):
         self.assertEqual(promote.valid_manifest(built, record(), "demo_set"), [])
 
 
+class Fetch(unittest.TestCase):
+    def test_the_request_names_a_user_agent(self):
+        import io
+        import urllib.request
+        seen = []
+
+        def fake_urlopen(request, timeout):
+            seen.append(request)
+            return io.BytesIO(b"[]")
+
+        saved = urllib.request.urlopen
+        urllib.request.urlopen = fake_urlopen
+        try:
+            self.assertEqual(dataset_review.fetch_json("https://data.mendeley.com/x"), [])
+        finally:
+            urllib.request.urlopen = saved
+        self.assertEqual(seen[0].get_header("User-agent"), dataset_review.USER_AGENT)
+
+
 class Words(unittest.TestCase):
     def test_banned_words_are_found(self):
         word = "mod" + "el"
