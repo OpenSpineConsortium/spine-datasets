@@ -10,23 +10,36 @@
  "how_to_get": [
   "Register on the TalkBank site for the UNM corpus and accept its non-commercial terms."
  ],
- "grid_path": null,
- "counts": {},
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/external/fluoro_video/dysphagiabank_unm",
+ "counts": {
+  "files": 87,
+  "gigabytes": 19
+ },
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md Not drafted",
  "source_status": "a registration, not a letter; the count on the corpus page is to be checked when registering",
  "route": "account",
- "status": "todo",
- "result": "",
+ "status": "fetched",
+ "result": "Held: the UNM corpus is on Ceph at /rs/rs_grp_oschome/go2432/data/external/fluoro_video/dysphagiabank_unm, 87 files, 19 GB, listed by spine-program 01_carm_level_detection/MANIFEST_GRID.md (ls of 2026-10-08) and held in data_mining/data/datasets.json; downloaded under the owner's TalkBank account (address verified 2026-09-27). Nothing to obtain; the swallow clips are cut but never scored.",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "a registration, not a letter; the count on the corpus page is to be checked when registering"
+  },
+  {
+   "date": "2026-09-27",
+   "step": "fetched",
+   "note": "the owner's TalkBank account was verified 2026-09-27 and the corpus downloaded to the grid"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "note",
+   "note": "audit (#97): held on Ceph, 87 files, 19 GB (MANIFEST_GRID.md, ls 2026-10-08); the record said todo because SchwingNet's registry had it as reach get"
   }
  ],
  "obstacles": [
-  "the owner's hand: the registration on dysphagia.talkbank.org, in the owner's name; the count on the corpus page is checked when registering"
+  "non-commercial TalkBank terms; whole swallow studies, cervical only (C2 to about C4/5), no level names"
  ],
- "next": "the owner opens the account or the gate named in the record; a collaborator reads the terms and writes them into the record first"
+ "next": "none to obtain; a collaborator may screen the clips for spine visibility once a grid job is approved for scoring"
 }

@@ -22,7 +22,7 @@
  "source_status": "the owner's hand: ask the TotalSegmentator authors whether these subjects overlap the public v2/v3 release (planned in the data platform at bf1432f)",
  "route": "letter",
  "status": "requested",
- "result": "The overlap question went 2026-10-21 09:46 UTC by the owner to the corresponding author; waiting for the answer. The set itself is CC BY 4.0 and needs only a grid job; until the answer comes it is treated as overlapping v2 and v3 (no new people).",
+ "result": "The overlap question went 2026-10-21 09:40 UTC by the owner to the corresponding author; waiting for the answer. The set itself is CC BY 4.0 and needs only a grid job; until the answer comes it is treated as overlapping v2 and v3 (no new people).",
  "history": [
   {
    "date": "2026-10-21",
@@ -32,7 +32,7 @@
   {
    "date": "2026-10-21",
    "step": "asked",
-   "note": "The overlap question went 2026-10-21 09:46 UTC by the owner to the corresponding author; waiting for the answer. The set itself is CC BY 4.0 and needs only a grid job; until the answer comes it is treated as overlapping v2 and v3 (no new people)."
+   "note": "The overlap question went 2026-10-21 09:40 UTC by the owner to the corresponding author; waiting for the answer. The set itself is CC BY 4.0 and needs only a grid job; until the answer comes it is treated as overlapping v2 and v3 (no new people)."
   }
  ],
  "obstacles": [],

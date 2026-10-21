@@ -17,8 +17,8 @@
  "record": "spine-program 01_carm_level_detection/docs/data_requests/balgrist_data_request_2026-09-21.md",
  "source_status": "request drafted 2026-09-21, never sent; the authors' group is ROCS (Research in Orthopedic Computer Science, Balgrist, head Philipp Fuernstahl), whose group address is rocs@balgrist.ch; the paper is arXiv:2401.16027 (Medical Image Analysis 2024); the set is restricted for pending patents",
  "route": "letter",
- "status": "requested",
- "result": "Letter of 2026-09-21 sent 2026-10-20 by the owner to Philipp Fuernstahl and rocs@balgrist.ch (the message to Sascha Jecklin bounced); the resend through the ROCS contact form is pending; waiting for the answer.",
+ "status": "refused",
+ "result": "Refused 2026-10-21 05:52 UTC by Prof. Philipp Fuernstahl: the university licensed the dataset out to a startup, so it remains proprietary and cannot be shared. The ROCS form resend is dropped.",
  "history": [
   {
    "date": "2026-10-21",
@@ -29,8 +29,15 @@
    "date": "2026-09-21",
    "step": "asked",
    "note": "Letter of 2026-09-21 sent 2026-10-20 by the owner to Philipp Fuernstahl and rocs@balgrist.ch (the message to Sascha Jecklin bounced); the resend through the ROCS contact form is pending; waiting for the answer."
+  },
+  {
+   "date": "2026-10-21",
+   "step": "refused",
+   "note": "Fuernstahl replied 05:52 UTC: licensed out to a startup, proprietary, cannot be shared"
   }
  ],
- "obstacles": [],
- "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch"
+ "obstacles": [
+  "proprietary: licensed by the University of Zurich to a startup"
+ ],
+ "next": "none; closed as refused"
 }

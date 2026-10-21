@@ -19,7 +19,7 @@
  "source_status": "applied for on 2026-10-21: the non-commercial machine-learning licence agreement (v1.3) signed and submitted through Radiopaedia's SignNow form at 03:36 UTC, fee USD 250 paid (receipt 1967-5247), checklist NO/NO/NO, pending Radiopaedia's countersignature; the form cut the Project Aims and Radiopaedia Content answers off, so the full text goes to license@radiopaedia.org in a follow-up; any model that reads these cases is a Model under the agreement (release only under CC BY-NC-SA, no commercial use), which is the lawyer's question before training on them",
  "route": "agreement",
  "status": "requested",
- "result": "Licence application signed and submitted 2026-10-21 03:36 UTC by the owner, fee paid (receipt 1967-5247); pending Radiopaedia's countersignature; the full text of two cut-off fields goes to license@radiopaedia.org.",
+ "result": "Licence application signed and submitted 2026-10-21 03:36 UTC by the owner, fee USD 250 paid (receipt 1967-5247); the two cut-off fields were sent 04:00 UTC and acknowledged 04:33 UTC; pending Radiopaedia's review and countersignature.",
  "history": [
   {
    "date": "2026-10-21",
@@ -30,10 +30,15 @@
    "date": "2026-10-21",
    "step": "asked",
    "note": "Licence application signed and submitted 2026-10-21 03:36 UTC by the owner, fee paid (receipt 1967-5247); pending Radiopaedia's countersignature; the full text of two cut-off fields goes to license@radiopaedia.org."
+  },
+  {
+   "date": "2026-10-21",
+   "step": "note",
+   "note": "the full text of the two cut-off fields went to license@radiopaedia.org at 04:00 UTC; Radiopaedia's Image License Manager acknowledged at 04:33 UTC and will add it to the application and write once it is reviewed"
   }
  ],
  "obstacles": [
-  "the owner's hand: everything: the countersigned copy, the agreement ID, and the follow-up to license@radiopaedia.org; never fetched by script"
+  "the owner's hand: the countersigned copy and the agreement ID; never fetched by script; the Model clause is a lawyer's question before training"
  ],
  "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch"
 }

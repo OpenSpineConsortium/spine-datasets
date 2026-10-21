@@ -17,14 +17,19 @@
  "source_status": "download by browser (a proof-of-work gate stops scripts); screen for live fluoroscopy; AANS reserves TDM/AI-training rights in a footer",
  "route": "download",
  "status": "todo",
- "result": "",
+ "result": "Partly held: the MP4s of seven articles (six plus PMC13418632, 200 MB) are on Ceph under /rs/rs_grp_oschome/go2432/data/external/fluoro_video (spine-program data_mining, held); the rest of the library is unscreened.",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "download by browser (a proof-of-work gate stops scripts); screen for live fluoroscopy; AANS reserves TDM/AI-training rights in a footer"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "note",
+   "note": "audit (#97): seven articles' MP4s already held under external/fluoro_video; the rest unscreened"
   }
  ],
  "obstacles": [],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/neurosurgical_focus_video/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "next": "screen the remaining articles in a browser for live fluoroscopy and list the ones worth a download in this record; the seven held need nothing"
 }
