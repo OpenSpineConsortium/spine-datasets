@@ -17,17 +17,22 @@
  "record": "spine-program 10_data_platform_grid/code/data_platform/DATA_MANIFEST.md group B7; spine-program 10_data_platform_grid acquisition/ACQUISITION_PLAN.md section 7",
  "source_status": "an agreement stands in front of the data; none signed",
  "route": "agreement",
- "status": "todo",
- "result": "",
+ "status": "refused",
+ "result": "Dropped by the owner 2026-10-21: too large (25,494 CTs); not asked for.",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "an agreement stands in front of the data; none signed"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "note",
+   "note": "dropped by the owner on 2026-10-21: too large for the shared volume (25,494 CTs); never asked for, and taken up again only on his word"
   }
  ],
  "obstacles": [
-  "the owner's hand: the AIMI research use agreement click-through; the Azure URL that follows is a credential and goes in a mode-0600 file on the grid"
+  "dropped by the owner, 2026-10-21: too large for the shared volume"
  ],
- "next": "the owner reads and signs the agreement; a collaborator finds the current form and the contact and writes them into the record first"
+ "next": ""
 }

@@ -29,7 +29,7 @@ class ParseTasks(unittest.TestCase):
 
     def test_tasks_md(self):
         tasks = open_tasks.parse_tasks(TASKS.read_text())
-        self.assertEqual(len(tasks), 86)
+        self.assertEqual(len(tasks), 90)
         titles = [title for title, _ in tasks]
         self.assertEqual(len(set(titles)), len(titles), "a title opens one issue, so no two are equal")
         for title, body in tasks:

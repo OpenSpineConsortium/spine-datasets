@@ -17,18 +17,23 @@
  "measured": {},
  "record": "spine-program 10_data_platform_grid/code/data_platform/DATA_MANIFEST.md group B7; spine-program 10_data_platform_grid acquisition/ACQUISITION_PLAN.md section 7",
  "source_status": "an agreement stands in front of the data; none signed; the Zenodo record (v2, 2026) is labelled CC0 yet carries a data use agreement (no re-identification, no sharing), and names maxim.popov@nu.edu.kz as contact; the record counts 562 patients, 39.1 GB, 492 with reports",
- "route": "letter",
- "status": "todo",
- "result": "",
+ "route": "agreement",
+ "status": "needs-owner",
+ "result": "Not found in the owner's mail on 2026-10-21: the application the record's agreement asks for is his to send, unless he made it from another address, whose confirmation is then recorded here.",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "an agreement stands in front of the data; none signed; the Zenodo record (v2, 2026) is labelled CC0 yet carries a data use agreement (no re-identification, no sharing), and names maxim.popov@nu.edu.kz as contact; the record counts 562 patients, 39.1 GB, 492 with reports"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "note",
+   "note": "the owner recalls applying for this agreement; on 2026-10-21 no application, agreement or answer about MAGIC-CT was found in his Wayne State Outlook or his Gmail, so the application is recorded as not yet made; the Zenodo record (v2) still asks for an application with proof of a human-subjects course, sent to the contact it names, before its agreement holds"
   }
  ],
  "obstacles": [
-  "gated: a data use agreement (non-commercial)"
+  "the owner's hand: the application with proof of his human-subjects course, and the agreement's terms"
  ],
- "next": "send letters/magic_ct.md from your own mailbox with go2432@wayne.edu in copy, then record the date here"
+ "next": "the owner sends the application the Zenodo record asks for, or forwards its confirmation if he already did; then the 39.1 GB is fetched as a Slurm job and checked against the record's md5 sums"
 }

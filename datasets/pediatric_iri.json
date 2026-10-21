@@ -8,6 +8,7 @@
  "licence": "not recorded",
  "link": "https://ieee-dataport.org/documents/iri-vfi-dataset",
  "how_to_get": [
+  "The owner's letter of 2026-10-21 (letters/pediatric_iri.md) asks the corresponding authors of the IRI-VFI paper for the sequences and their terms; any data use agreement is the owner's to sign.",
   "Open https://ieee-dataport.org/documents/iri-vfi-dataset signed in to an IEEE account (free); read the licence line and whether the files are open access or need a DataPort subscription.",
   "Fetch to Ceph as a Slurm job; read the terms before any derived label."
  ],
@@ -19,18 +20,23 @@
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/FLUORO_DATASET_STRATEGY.md tier 2",
  "source_status": "a grain calibration target and an unlabelled pool; 150 to 200 frames would be annotated as a test set; the record is IRI-VFI on IEEE DataPort (doi:10.21227/v4kg-zp42, 1,357 sequences, 95,308 images, angiography, fluoroscopy and subtraction, Children's Hospital of Chongqing Medical University, ChiCTR2200058971); its licence line was not readable from the cloud session",
- "route": "account",
- "status": "todo",
- "result": "",
+ "route": "letter",
+ "status": "requested",
+ "result": "Letter sent 2026-10-21 19:54 UTC by the owner to the paper's two corresponding authors, since the files were not reachable through IEEE DataPort; waiting for the answer.",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "a grain calibration target and an unlabelled pool; 150 to 200 frames would be annotated as a test set; the record is IRI-VFI on IEEE DataPort (doi:10.21227/v4kg-zp42, 1,357 sequences, 95,308 images, angiography, fluoroscopy and subtraction, Children's Hospital of Chongqing Medical University, ChiCTR2200058971); its licence line was not readable from the cloud session"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "asked",
+   "note": "Letter sent 2026-10-21 19:54 UTC by the owner to the paper's two corresponding authors, since the files were not reachable through IEEE DataPort; waiting for the answer."
   }
  ],
  "obstacles": [
-  "the owner's hand: the IEEE DataPort account and the licence line, read on the page"
+  "the authors' answer and their terms; any data use agreement is the owner's hand"
  ],
- "next": "the owner opens the account or the gate named in the record; a collaborator reads the terms and writes them into the record first"
+ "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch"
 }

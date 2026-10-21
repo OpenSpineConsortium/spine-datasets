@@ -8,6 +8,7 @@
  "licence": "not recorded",
  "link": "https://ieee-dataport.org/documents/tvgh-spinexr",
  "how_to_get": [
+  "The owner's letter of 2026-10-21 (letters/tvgh_spinexr.md, the section The letter sent) asks the senior author for the radiographs and their vertebra labels and the terms; any data use agreement is the owner's to sign.",
   "Open https://doi.org/10.21227/x6bb-7r75 signed in to an IEEE account (free); read whether the files are open access, subscription or by request, and the licence.",
   "Request access with the study's purpose where the page asks for one; the owner accepts any terms."
  ],
@@ -16,18 +17,23 @@
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/handoff/DATASET_USAGE.md 2.2",
  "source_status": "403 at a login; access never requested; the record is on IEEE DataPort (doi:10.21227/x6bb-7r75) with T1-L5 per-vertebra level labels, masks and end-plates per its description, never seen",
- "route": "account",
- "status": "todo",
- "result": "",
+ "route": "letter",
+ "status": "requested",
+ "result": "Letter sent 2026-10-21 19:54 UTC by the owner to the senior author at National Taiwan University; the letter of 19:56 UTC to Taipei Veterans General Hospital about its ankylosing spondylitis films asks about this set too; waiting for the answer.",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "403 at a login; access never requested; the record is on IEEE DataPort (doi:10.21227/x6bb-7r75) with T1-L5 per-vertebra level labels, masks and end-plates per its description, never seen"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "asked",
+   "note": "Letter sent 2026-10-21 19:54 UTC by the owner to the senior author at National Taiwan University; the letter of 19:56 UTC to Taipei Veterans General Hospital about its ankylosing spondylitis films asks about this set too; waiting for the answer."
   }
  ],
  "obstacles": [
-  "the owner's hand: the IEEE DataPort account, any licence checkbox and a subscription fee if the record is one"
+  "the authors' answer and their terms; any data use agreement is the owner's hand"
  ],
- "next": "the owner opens the account or the gate named in the record; a collaborator reads the terms and writes them into the record first"
+ "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch"
 }

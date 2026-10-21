@@ -1,0 +1,33 @@
+{
+ "id": "bimcv_covid19",
+ "name": "BIMCV COVID-19+ chest films (IEEE DataPort)",
+ "group": "films",
+ "what": "chest radiographs, laterals among them, and CTs of COVID-19 patients from the hospitals of the Valencian region (BIMCV COVID-19+), about 389 GB in all",
+ "level_truth": "none; laterals show the thoracic spine",
+ "reach": "get",
+ "licence": "not recorded; read on the IEEE DataPort page after the login",
+ "link": "https://ieee-dataport.org/open-access/bimcv-covid-19-large-annotated-dataset-rx-and-ct-images-covid-19-patients",
+ "how_to_get": [
+  "Sign in to a free IEEE account on the page and read the licence line and the file list.",
+  "About 389 GB is over the promoter's 100 GB budget: the owner says how much of it the shared volume takes (the radiographs alone, or all of it) before any fetch, which runs as a Slurm job."
+ ],
+ "grid_path": null,
+ "counts": {},
+ "measured": {},
+ "record": "the sweep of 2026-10-21 (this repository's issue #107)",
+ "source_status": "found by the sweep of 2026-10-21; open access on IEEE DataPort (doi:10.21227/w3aw-rv39) behind a free IEEE login; tar.gz parts of about 389 GB in all, radiographs and CTs together",
+ "route": "account",
+ "status": "needs-owner",
+ "result": "",
+ "history": [
+  {
+   "date": "2026-10-21",
+   "step": "researched",
+   "note": "found by the sweep of 2026-10-21; open access on IEEE DataPort (doi:10.21227/w3aw-rv39) behind a free IEEE login; tar.gz parts of about 389 GB in all, radiographs and CTs together"
+  }
+ ],
+ "obstacles": [
+  "the owner's hand: the free IEEE account, and the space decision (about 389 GB)"
+ ],
+ "next": "the owner opens the IEEE account and says how much of the set to fetch"
+}

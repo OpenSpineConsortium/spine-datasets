@@ -1,0 +1,16 @@
+{
+ "id": "cadica",
+ "source": "https://data.mendeley.com/datasets/p9bpx9ctcv",
+ "licence": "CC BY 4.0 (Creative Commons Attribution 4.0 International, as Mendeley Data's public API gives it for version 5, 2026-10-21)",
+ "date": "2026-10-21",
+ "files": [
+  {
+   "path": "raw/CADICA.zip",
+   "url": "https://data.mendeley.com/public-files/datasets/p9bpx9ctcv/files/9088fc7c-629b-4a23-8553-5a4d3a5282e1/file_downloaded",
+   "bytes": 3076112179,
+   "sha256": "ac945f946d076ac426975b9096d030df0b5a00ff5ac2c284eb5747b43dbad97b",
+   "verified_against": "Mendeley Data's public API"
+  }
+ ],
+ "bytes_total": 3076112179
+}

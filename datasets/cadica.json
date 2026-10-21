@@ -1,0 +1,38 @@
+{
+ "id": "cadica",
+ "name": "CADICA invasive coronary angiography sequences (Mendeley p9bpx9ctcv)",
+ "group": "video",
+ "what": "invasive coronary angiography videos of 42 patients as PNG frames (512 x 512 pixels, 10 frames per second, 1 to 151 frames a video) from a Siemens Artis Zee at Hospital Universitario Virgen de la Victoria, Malaga, Spain, with lesion boxes and selected clinical features (Jimenez-Partinen et al., Expert Systems 2024)",
+ "level_truth": "none; the spine is not the subject",
+ "reach": "get",
+ "licence": "CC BY 4.0 (Creative Commons Attribution 4.0 International, as Mendeley Data's public API gives it for version 5, 2026-10-21)",
+ "link": "https://data.mendeley.com/datasets/p9bpx9ctcv",
+ "how_to_get": [
+  "Open https://data.mendeley.com/datasets/p9bpx9ctcv: version 5 (DOI 10.17632/p9bpx9ctcv.5) holds one zip, CADICA.zip, 3,076,112,179 bytes.",
+  "The promoter fetches it from manifests/cadica.json after merge and checks the sha256 the page's API gives; cite the dataset and its paper (Expert Systems 41(12), e13708)."
+ ],
+ "grid_path": null,
+ "counts": {
+  "patients": 42
+ },
+ "measured": {},
+ "record": "the sweep of 2026-10-21 (this repository's issue #107)",
+ "source_status": "found by the sweep of 2026-10-21; open on Mendeley Data under CC BY 4.0; real C-arm sequences from a Siemens Artis Zee with the dose stated (5 to 50 mGy a projection); version 5 holds one zip of 3,076,112,179 bytes with the sha256 Mendeley's public API gives",
+ "route": "download",
+ "status": "fetching",
+ "result": "",
+ "history": [
+  {
+   "date": "2026-10-21",
+   "step": "researched",
+   "note": "found by the sweep of 2026-10-21; open on Mendeley Data under CC BY 4.0; real C-arm sequences from a Siemens Artis Zee with the dose stated (5 to 50 mGy a projection); version 5 holds one zip of 3,076,112,179 bytes with the sha256 Mendeley's public API gives"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "fetching",
+   "note": "manifest ready; the promoter fetches after merge"
+  }
+ ],
+ "obstacles": [],
+ "next": "the promoter installs it after merge"
+}
