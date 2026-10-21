@@ -22,8 +22,8 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; PhysioNet credentialed access (CITI training and the data use agreement, as VinDr-SpineXR needed); the largest source of lateral chest films, hence of thoracic spine laterals, free of charge once credentialed",
  "route": "agreement",
- "status": "needs-owner",
- "result": "",
+ "status": "requested",
+ "result": "The owner signed the PhysioNet credentialed data use agreement on 2026-10-21 (MIMIC-CXR and MIMIC-CXR-JPG both signed); access waits for PhysioNet's review of his CITI training.",
  "history": [
   {
    "date": "2026-10-21",
@@ -34,10 +34,16 @@
    "date": "2026-10-09",
    "step": "note",
    "note": "the owner's PhysioNet credentialed access was approved 2026-10-09; only this dataset's agreement click remains"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "asked",
+   "note": "the owner signed the credentialed agreement; PhysioNet reviews his CITI training before the files open"
   }
  ],
  "obstacles": [
-  "the owner's hand: the PhysioNet data use agreement click for this dataset (the credential is held); the IRB office is asked whether HPR 2026-330 covers it before any image is read"
+  "PhysioNet's review of the owner's CITI training",
+  "the IRB office is asked whether HPR 2026-330 covers it before any image is read"
  ],
- "next": "the owner signs this dataset's PhysioNet agreement (credential held since 2026-10-09); then a grid job fetches it with the owner's ~/.netrc"
+ "next": "wait for PhysioNet to approve the CITI training; then the owner submits the grid fetch (SchwingNet grid/run-xray-chain.sh --credentialed --only mimic_cxr_jpg)"
 }
