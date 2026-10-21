@@ -11,7 +11,7 @@
   "Open https://data.mendeley.com/datasets/xkt857dsxk and read the licence line, the version and the file list.",
   "Fetch as a Slurm job on the owner's word, never on the login node: python3 data/reproduce/reacquire/reacquire.py http-get --url U --dest FILE, U being the public-files address the page gives, as the manifest's mendeley_5jdfdgp762 route does."
  ],
- "grid_path": null,
+ "grid_path": "/rs/rs_grp_oschome/shared/datasets/fraiwan_spine_xray/raw",
  "counts": {
   "subjects": 338,
   "classes": 3
@@ -20,8 +20,8 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; new people from a Middle-Eastern centre, with spondylolisthesis cases",
  "route": "download",
- "status": "fetching",
- "result": "",
+ "status": "fetched",
+ "result": "2026-10-21: on the grid at /rs/rs_grp_oschome/shared/datasets/fraiwan_spine_xray/raw, 6 files, 85596630 bytes, sha256-checked, promoter job 40696334",
  "history": [
   {
    "date": "2026-10-21",
@@ -47,8 +47,13 @@
    "date": "2026-10-21",
    "step": "fetching",
    "note": "manifest ready; the promoter fetches it after merge"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "fetched",
+   "note": "on the grid at /rs/rs_grp_oschome/shared/datasets/fraiwan_spine_xray/raw, 6 files, 85596630 bytes, sha256-checked, promoter job 40696334"
   }
  ],
  "obstacles": [],
- "next": "the promoter installs it after merge"
+ "next": ""
 }
