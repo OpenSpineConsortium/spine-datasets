@@ -1,76 +1,79 @@
-# spine-datasets
+# spine-datasets: obtaining, together, every dataset not yet on the grid
 
-This repository is a Claude project kept as files: the instructions, the goal, the shared memory and the board that Claude Code reads in every session, local or cloud, live here under version control. It came from a GitHub template that brings the folder structure, the checks and the workflows already set up, so a new project starts with the whole arrangement in place. Each Claude account makes a thin claude.ai Project that only links this repository, with its instructions, description and memory left blank, because every session loads the goal, the protocol and the memory from the files here; from then on the repository is the one place every account and every session agrees on.
+Source: the SchwingNet thread "SchwingNet video demo plan", 2026-10-21, and the SchwingNet files
+it was derived from: docs/research/data-access-requirements.md (the unheld sources and who may act
+on each), docs/research/xray-datasets-missing.md (the sweep of 2026-10-21),
+docs/research/xray-dataset-requests.md (the request texts), data/sources/*.json (the registry) and
+grid/README.md (the fetch chain). This repository is private and stays private.
 
-New here? Begin at [docs/start/README.md](docs/start/README.md). It says what the five repositories are and how they fit, has a table of the ways to use them (one person, many cloud sessions at once, a team of people, volunteers, a repository you already have, the benchmark, a change to the protocol itself) with one page of copyable steps each, lists which token goes where and who holds it, and gives a five-minute path from "Use this template" to a cloud session working on a claimed issue.
+## What this repository is for
 
-## Use this template
+Wayne State's grid holds 26 of the 111 imaging sources the spine registry lists. The other 85, and
+five intraoperative sets the literature names without a record, are spine and related imaging
+datasets that exist somewhere behind a download, a form, an account, a letter or an agreement. This
+repository is where the owner, Ashley and every other collaborator obtain them together: one task
+per dataset, claimed and worked by the Symphony protocol that the template brings (CLAUDE.md,
+docs/agents/PROTOCOL.md), with Claude sessions doing the drafting and the grid doing the fetching.
+Where a dataset cannot be obtained, the task records why, so nobody asks twice.
 
-About ten minutes, in this order.
+What is here:
 
-1. Press "Use this template" on the template's GitHub page, name the new repository and choose where it lives. A public repository can protect its default branch on GitHub Free; a private one needs a paid plan for that. docs/setup/tiers.md lays out what each GitHub and Claude plan actually unlocks here, with the three spending profiles; docs/setup/github.md has the settings themselves.
-2. Wait for the issue "Set up this project" to appear on the new repository. The first push runs .github/workflows/template-init.yml, which fills the names into every file except the workflows, creates the labels and opens that issue; it lists what is left to do by hand, and you close it when you are done. If the issue has not appeared after a few minutes, open the repository's Actions tab. When the run failed or Actions are off, do it by hand: clone, run `GITHUB_TOKEN=$(gh auth token) python3 tools/template_init.py --repo OWNER/NAME --default-branch main --create-labels --open-issue`, commit everything it changed and push.
-3. Two one-step moves, as docs/setup/github.md describes: import the shipped branch rules (Settings, Rules, Import a ruleset, docs/setup/ruleset-main.json), and run `/install-github-app` from Claude Code as the Claude account whose plan the repository's own Claude runs should draw on: its one OAuth flow installs the Claude GitHub App and writes the secret CLAUDE_CODE_OAUTH_TOKEN, on which @claude, the workers in Actions and the coordinator workflow run (docs/setup/claude-action.md); or install the app from its page and run `python3 scripts/tokens.py main`, the token wizard, which makes the token and stores it without showing it, and stores every account of yours for a benchmark in Actions the same way (docs/setup/claude-tokens.md). Every Claude Code thread that works here needs the app.
-4. Make one thin Project per Claude account, link this repository as its only resource, and leave its instructions, description and memory blank. Every Claude Code session, a thread of the Project or a cloud session opened on the repository alike, starts from a fresh clone and loads CLAUDE.md with what it imports (the goal, the protocol, the memory index), the rules, the skills and the board, so blank fields lose nothing, and a merged pull request changes what every account's sessions read at once. Only if people will also chat in the Project outside a code session, paste the pointer text from docs/setup/claude-project.md into the instructions, once: a chat has no clone, and the pointer never changes. Projects are in public beta on Pro and Max plans and are reaching accounts gradually; Team and Enterprise plans do not have them yet.
-5. Add the workers that run on their own, if you want any (docs/agents/WORKERS.md); your own sessions need nothing here, since they work under your GitHub login. Open an issue with the "Add a worker" form (https://github.com/OpenSpineConsortium/spine-datasets/issues/new?template=worker.yml): its workflow opens the pull request that adds the worker's file under .github/symphony/workers/ and answers on the issue with what to do next. A worker in Actions needs nothing more once that pull request merges: .github/workflows/workers.yml runs it on the secret of step 3, every six hours, when an issue is queued or given to it, and again while it has work, so nobody starts threads by hand. A routine is made in its account's Project, by pasting the short prompt the answer gives into the Project's own conversation and asking for the schedule (docs/agents/routines/worker.md). The coordinator needs no setting up: the board's own run releases idle claims and tells open work that overlaps, and .github/workflows/coordinator.yml, on the same secret, plans an issue labelled epic into tasks for the workers and runs the coordinator prompt (docs/agents/routines/coordinator.md) every week, which splits requests into issues and tidies the shared memory.
+- datasets/: one record per dataset not yet held, copied from SchwingNet's registry with three
+  fields added (route, status, result); datasets/README.md says what each field means.
+- letters/: the request texts already written, one file per dataset, each saying who it goes to,
+  by what route and whether it was sent; letters/TEMPLATE.md is the fill-in letter for any
+  dataset without one, with the rules every letter follows.
+- tasks/: tasks/TASKS.md lists the task for every dataset in priority order, and
+  tasks/open_tasks.py opens them as issues once the repository exists.
+- grid/: how a collaborator with a grid account fetches a plain-download set onto the shared
+  volume, and what nobody does.
+- CONTRIBUTING.md: what a collaborator may do alone, what is the owner's hand only, how a result
+  is recorded, how to ask for a new task, and the confidentiality rule.
 
-Then open an issue with the Task form (the repository's Issues tab, New issue, Task), which carries the label todo. A worker in Actions whose area it fits starts on it at once, since a queued issue wakes .github/workflows/workers.yml, and a routine takes it at its next run; to take it yourself, start a thread in the Project with "take the next issue from the board" (a thread clones the repository and reads the board; a plain chat in the Project knows only the pointer text of step 4).
+## How a collaborator joins, in five steps
 
-To open the project to volunteers who each work under their own Claude Pro or Max account, the owner runs `python3 scripts/crowd.py setup` in place of steps 3 to 5: it sets the organization, the repository, the teams and the ruleset up for crowd mode and opens one pull request with the crowd files, which `python3 scripts/crowd.py finish` merges once the owner has read it; each contributor runs `python3 scripts/crowd.py doctor` in their clone until it says ready. docs/setup/crowdsourcing.md is the step-by-step for the owner and for each contributor, and docs/history/crowdsourcing/research.md the evidence behind every step. It starts from what Anthropic's terms allow with contributors' accounts. In crowd mode the workflows that run on the owner's own subscription token, which anyone with write access could otherwise start, never start, the repository holds no Claude credential, and GitHub holds it to the rules itself: the required check fails while a Claude secret or variable reaches it, the ruleset takes that check only from GitHub Actions and asks the owner to review the instructions and the hooks, and .github/workflows/queue.yml keeps the queue to what maintainers queued.
+1. Accept the invitation to the repository (an email from GitHub; the owner invites by GitHub
+   login). Read CONTRIBUTING.md once.
+2. Open the board: the file STATE.md on the branch `board` (on GitHub, switch the branch to
+   `board` and open STATE.md), or the control panel the owner links in the invitation. It lists
+   every task, who holds it and what is free.
+3. Pick a task labelled todo that nobody holds: no `worker:<name>` label but yours, no branch
+   `claude/<issue>` on origin, not an epic, not labelled blocked. A task given to you by name
+   comes first.
+4. Claim it by the protocol: a Claude session runs the claim skill (.claude/skills/claim); a
+   person pushes a branch `claude/<issue number>` from the default branch whose first commit adds
+   docs/agents/claims/<issue number>.md (the template's shape), adds the labels claimed and
+   `worker:<your login>`, posts the plan as a comment, and opens a draft pull request that says
+   "Closes #<issue>". The first push of the branch is the claim; a second push of the same name is
+   refused, so two people never hold one task.
+5. Do the route the task names (a letter from your own mailbox, a form, a download as a grid
+   job), post the result on the task, update datasets/<id>.json, delete the claim file, mark the
+   pull request ready. The owner merges, and the merge closes the task.
 
-For the maintainer of the template itself: mark the repository as a template (Settings, General, "Template repository") before its first push, or the init workflow runs on the template and fills its own placeholders.
+## What a task's result looks like
 
-## Where a Project's metadata lives
+The result is one line in the task's comment and in the record's `result` field, in one of these
+shapes, with the date:
 
-| In the Project | In this repository | How a session gets it |
-| --- | --- | --- |
-| Instructions | `CLAUDE.md` and `.claude/rules/` | read by Claude Code at the start of every session; the Project's instructions stay blank, or hold the pointer text for chats outside code sessions |
-| Goal and settings | `docs/project.md` | imported by CLAUDE.md into every session; the Project's description stays blank |
-| Shared memory | `docs/memory/` | the index imported by CLAUDE.md, a fact's file read when its line says it matters; the Project's own memory stays blank |
-| The board | the branch `board`, file `STATE.md`; `docs/agents/STATE.md` on main describes it | fetched and printed by the session hook, since no import reaches another branch |
-| Claims | the branch `claude/<issue>` and `docs/agents/claims/` | read in the clone |
-| Research | `docs/research/` | read in the clone when its README's line says it matters; the rule .claude/rules/research.md, loaded with the instructions, sends what a session finds out there |
-| History | `docs/history/` (later) | |
-| Skills | `.claude/skills/` | read by Claude Code |
-| Checks | `scripts/check.sh` | |
+- on the grid at /rs/rs_grp_oschome/shared/datasets/<id>/raw, job id <N>, <bytes> bytes, checksums
+  verified (the FETCH.json beside the download says the rest);
+- requested on <date> by <who>, to <whom>, waiting;
+- granted on <date>, fetch pending (and what the fetch needs: a link, a token file, a space
+  decision);
+- refused on <date>, with the reason the source gave;
+- needs the owner: a signature, a fee, an attestation, a licence checkbox or an account in the
+  owner's name (the task is labelled with a comment "needs the owner" and handed back).
 
-Nothing is copied from the repository into the Project's own fields, and nothing needs to be. Linking a repository to a Project is a pointer: it tells threads what to clone, and claude.ai reads nothing from the clone into the Project's instructions, description or memory. Claude Code, on the other hand, assembles every session's context from the clone, identically for a thread of a Project and for a cloud session opened on the repository, so the repository already enforces what a copy in the Project's fields would only approximate: one text for every account, changed by one merged pull request, with no per-account credential anywhere. A copy in the fields would go stale between syncs and differ quietly from one account to the next. The Project's own memory is at most a private cache of the account that made the Project; what every account should know goes to docs/memory/ by pull request.
+A result that is "waiting" keeps the task open: the branch stays, the pull request stays a draft
+with the comment "finished; ready to mark" so the protocol does not release the claim, and the
+answer, when it comes, is the next result.
 
-## Where this repository fits
+## The rules in one breath
 
-OpenSpineConsortium/symphony-template, the template, is one of five repositories that share the claim protocol, and a repository made from it carries the same copy of the protocol's code. [ECOSYSTEM.md](https://github.com/OpenSpineConsortium/symphony-protocol/blob/main/ECOSYSTEM.md) in symphony-protocol maps them: what each repository is, which of the library's modules each one copies and what it uses them for, how the modules import each other, and how a change travels from a pull request there to a pull request here. It is generated from that repository's ecosystem.json, the one list of who takes what, and its check fails when the map falls behind.
+Nothing public; no credential in any file; no personal data of students; images stay on the grid;
+every letter under the rules in letters/TEMPLATE.md; anything binding is the owner's hand; and no
+text ever says what is built, only what is measured (CONTRIBUTING.md).
 
-## Where the protocol's code lives
+## The template underneath
 
-The claim protocol's code is a library of its own, OpenSpineConsortium/symphony-protocol, vendored here under tools/sdlc_protocol. tools/VENDORED records what the copy is: the version and the commit on its first line, then the sha256 of every copied file. tools/board.py, check_protocol.py, team.py, workers.py and guard_push.py are shims over it, so the workflows, the hook and every copy already made keep calling the same paths.
-
-A change to the protocol is made in symphony-protocol, never in tools/sdlc_protocol. Once the owner has approved and published a release there that carries it, that repository's sync workflow vendors that release into this one and opens the pull request from the branch `symphony-protocol/sync`, or updates the one already open, with a body that lists the library's commits and the files that moved; this repository's own check decides, and where the repository allows auto-merge, the pull request lands once the check is green (docs/setup/owner-checklist.md, section 6). scripts/check.sh runs `python3 tools/sdlc_protocol/vendoring.py verify tools`, so a pull request that edits the copy by hand and leaves tools/VENDORED alone fails the required check, offline. One that also rewrites the file's line in VENDORED, which sits in the same tree, fails it too: CI clones symphony-protocol and names the clone in SDLC_PROTOCOL, and tests/test_vendored.py then compares every file of the copy with the library's at the commit VENDORED names, failing when the clone has no such commit. To vendor by hand, from a clone of symphony-protocol beside this one: `python3 <symphony-protocol>/scripts/vendor.py <this repository>`, then land the change by pull request.
-
-A repository made from this template takes the copy with it but is not on the sync's list, so its own .github/workflows/protocol.yml brings each new release in by itself. Weekly, and by hand from the workflow's page, it vendors symphony-protocol's newest release tag when it is newer than the copy, with the library's own scripts/vendor.py, on the branch `symphony-protocol/sync`. It opens the pull request, which the check decides and auto-merge lands where the repository allows it. Where the repository does not let GitHub Actions open pull requests, it opens an issue whose link opens the pull request instead; scripts/setup-repo.sh and the front door's Setup App turn that setting on where the organization allows it (docs/setup/github.md, section 8). tools/protocol_update.py holds what it decides and says. In the template itself it does nothing, since the sync brings the releases here. By hand, the same is `python3 <symphony-protocol>/scripts/vendor.py <the copy> --consumer OpenSpineConsortium/symphony-template`, which copies what the template takes.
-
-Three more repositories go with this one: OpenSpineConsortium/coordbench, the benchmark that compares ways of coordinating agents; OpenSpineConsortium/symphony-marketplace, the Claude Code plugin that brings the skills and the hooks to a repository not made from this template; and symphony-app, the private GitHub App whose token lets template-init's first commit start the Checks and the Board, and in whose name the sync opens its pull requests. docs/project.md says what each is for and who owns it.
-
-cswap is the optional multi-account switcher (claude-swap-cloud on PyPI); its `checkpoint write` rewrites the same block at the end of CLAUDE.md as the checkpoint skill does, and nothing in this repository needs it.
-
-## Field metrics
-
-.github/workflows/metrics.yml writes, once a day, how the claim protocol ran here over the last 30 days to METRICS.json on the branch `metrics`: counts of claims, pull requests opened, merged and closed unmerged, reviews, changes requested, check runs passed and failed, conflicts, released claims and contributors, three waits and two rates, the same pull requests counted again by work setting (alone, one Claude Code session's several pull requests, one person's several sessions, several people, both of the last two, not known, the repository's own Claude workflows, other apps) and in pairs at work at the same time, how many people and sessions were at work and the most at once, and never a name, a session link, a title or any text. OpenSpineConsortium's collector reads that file, and the communication-error counts a maintainer's judge may add beside it, only where the repository installed the Symphony App, and keeps them under a salted hash of the repository, so the protocol can be measured in real projects as coordbench measures it on CooperBench's tasks. Sharing is on by default; the word off in .github/symphony-metrics, or the repository variable SDLC_METRICS set to off, turns it off. docs/setup/metrics.md says what each number is, how it lines up with the benchmark's, and how a maintainer runs the judge on their own Claude account.
-
-## A job on the lab's cluster
-
-.github/workflows/grid.yml runs one command on a compute node of Wayne State's grid, through the GitHub runner that Beethoven's hpcworker serves there as a chain of Slurm jobs, and brings the output back as the job's log and an artifact. The connection points from the grid out, nothing of the grid's goes to GitHub, a job there holds only its own one-job credential, the repository must be private, and the Claude workflows stay on GitHub's machines. docs/setup/grid.md has how it works and the owner's steps; docs/research/wsu-grid-and-github-actions.md what was measured and weighed.
-
-## What comes next
-
-This is the first layer: the repository as the shared plane, with the board, the claim protocol and the memory as plain files. Nothing below exists yet, and nothing in this layer refers to it.
-
-- Layer 2 adds a materialize step that turns a session's checkpoint or a routine's export branch into docs/memory/ and docs/history/ by pull request; CLAUDE.md stays the loader and is never generated.
-- Layer 3 adds Linear as the queue (the labels map to Linear states). claude-code-action already runs here on a subscription token (docs/setup/claude-action.md), and the repository stays without an API key.
-- Layer 4 adds cswap teleport --checkpoint between accounts.
-
-## What this never does
-
-- Nothing here scripts claude.ai, and nothing writes into a Project's instructions, description or memory. Anthropic's consumer terms forbid automated access except through an API key or where Anthropic explicitly permits it; routines and cloud threads are Anthropic's own features, used as offered, and Claude Code reads the repository natively. The Project links the repository, and people press the buttons.
-- No credential and no token is kept in the repository. The workflows run on GitHub's own token, and template-init on the Symphony App's token where the App is set up; the optional secrets are one account's subscription token, on which @claude, the workers in Actions and the coordinator workflow run (docs/setup/claude-action.md), the trigger pair of a coordinator routine, for a repository that runs one (docs/agents/routines/coordinator.md), and the App's private key (docs/setup/owner-checklist.md), kept in the repository's settings and never in a file (docs/setup/github.md), and only while the owner is the repository's one writer, since every writer's workflows can read a repository secret; docs/start/team.md, step 1, takes them out before anyone else gets Write.
-- No API key anywhere.
-- Nothing of a project's content leaves it: the metrics workflow reads with GitHub's own token and writes aggregates alone, to the project's own branch `metrics`, and the judge's conversations go only to the maintainer's own claude (docs/setup/metrics.md).
+The repository was made from OpenSpineConsortium/symphony-template, which brings the claim protocol, the board, the checks and the workflows. docs/start/README.md says how the template works and docs/setup/ how it is set up; the "Set up this project" issue lists what is left to do.
