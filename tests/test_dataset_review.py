@@ -125,15 +125,10 @@ class Diff(unittest.TestCase):
         text = value if isinstance(value, str) else json.dumps(value, indent=1) + "\n"
         (self.root / path).write_text(text, encoding="ascii")
 
-    def review(self):
+    def review(self, pull=None):
         self.git("add", "-A")
         self.git("commit", "-qm", "change")
-        saved = os.environ.pop("GITHUB_EVENT_PATH", None)
-        try:
-            return dataset_review.check_tree(self.root, dataset_review.review_diff("main", root=self.root))
-        finally:
-            if saved is not None:
-                os.environ["GITHUB_EVENT_PATH"] = saved
+        return dataset_review.check_tree(self.root, dataset_review.review_diff("main", root=self.root, pull=pull))
 
     def levels(self, report):
         return [level for level, _ in report.lines]
@@ -163,6 +158,28 @@ class Diff(unittest.TestCase):
         report = self.review()
         self.assertIn("FLAG", self.levels(report))
         self.assertFalse(report.failed())
+
+    def test_a_publishers_file_name_is_not_the_projects_words(self):
+        rec = record()
+        self.write("datasets/demo_set.json", rec)
+        man = manifest()
+        man["files"][0]["path"] = "raw/" + "tra" + "in.zip"
+        man["files"][0]["url"] = "https://data.mendeley.com/public-files/" + "tra" + "in.zip"
+        self.write("manifests/demo_set.json", man)
+        report = self.review()
+        self.assertFalse(report.failed(), report.text())
+
+    def test_the_promoters_code_changes_only_by_the_owners_pull_request(self):
+        (self.root / "tools").mkdir()
+        self.write("tools/promote.py", "# changed\n")
+        pull = {"user": {"login": "a-collaborator"}, "head": {"ref": "claude/5"}, "title": "t", "body": ""}
+        self.assertTrue(self.review(pull).failed())
+
+    def test_the_promoters_branch_changes_only_its_record(self):
+        self.write("letters/other.md", "a note\n")
+        pull = {"user": {"login": dataset_review.OWNERS[0]}, "head": {"ref": "promote/demo_set"},
+                "title": "t", "body": ""}
+        self.assertTrue(self.review(pull).failed())
 
     def test_fetched_needs_the_shared_path_and_a_manifest(self):
         self.write("datasets/demo_set.json", record(status="fetched", grid_path="/home/someone/raw"))

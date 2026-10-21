@@ -52,9 +52,11 @@ promoter fetches after merge"), and set `next` to "the promoter installs it afte
 
 ## The rules the check holds a manifest to
 
-The record exists and its licence allows the fetch (an open licence such as CC BY or CC0, or a
-`granted` step in its history; never "to confirm"); the source and licence are copied exactly;
-every path is raw/<name> with no ".."; every link is https on the source's own site with no
-token, key or signature in it; every size is positive and they add up; every checksum has its
+The record exists and its licence allows the fetch (an open licence such as CC BY or CC0 with no
+non-commercial or no-derivatives term, or a `granted` step in its history; never "to confirm"); the source and licence are copied exactly;
+every path is raw/<name> with no ".."; every link is https on the source's own host (or one the
+source is known to serve files from, such as ndownloader.figshare.com) with no token, key or
+signature in it; every size is positive and they add up; every checksum has its
 shape. A set over the space budget in grid/promote.json waits until the owner names it there.
-The promoter acts only on a manifest whose last change an owner merged.
+The promoter acts only on a manifest whose last change an owner merged, never one from its own
+promote/ branches, and leaves a terabyte free on the shared volume.

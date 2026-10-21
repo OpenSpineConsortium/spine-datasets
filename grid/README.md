@@ -36,9 +36,10 @@ and every file's bytes and sha256 as measured after the copy).
    review").
 3. The owner, or a session on the owner's standing word, merges it.
 4. Within about ten minutes the promoter's pass finds the manifest, confirms that an owner merged
-   its last change, downloads every file from its link inside the Slurm job, checks the bytes and
+   its last change (and not on the promoter's own promote/ branch), downloads every file from its link inside the Slurm job, checks the bytes and
    the checksum of what landed, renames the checked tree into place, makes it read-only, and opens
-   the record's update to `fetched` as a pull request from promote/<id> with auto-merge on.
+   the record's update to `fetched` as a pull request from promote/<id> with auto-merge on for
+   that exact commit, so a push by anyone else to that branch is never merged by it.
 
 X-ray sets are promoted before CT. A set over the space budget in grid/promote.json waits until
 the owner names it there. A download that fails or does not check stays in
@@ -49,14 +50,19 @@ is left alone and reported in the promoter's log.
 
 The chain is a Slurm job on reqp/requeue, eight hours of wall time, that first queues its own
 successor (afterany), so it comes back after a preemption or a wall time with nobody at the
-keyboard. Each pass takes the promoter's code from the default branch only where an owner merged
-its last change, then promotes. It needs gh signed in as the owner and curl, both already there
-for hpcworker. Its folder is /rs/rs_grp_oschome/go2432/spine-datasets-promoter (code/ and
-logs/). Started once, in a grid shell:
+keyboard; successors are singleton jobs of one name and a lock keeps two passes apart. Each pass
+takes the promoter's code, and reads the space budget, from the default branch only where the
+last change came from a pull request the owner opened and merged with no commit in it tied to
+anyone else's account; anything else keeps the copy on the grid, or the default budget of 100 GB.
+It acts on a manifest only where the owner merged it, never from its own promote/ branches, and
+leaves a terabyte free on the volume. It needs gh signed in as the owner and curl, both already
+there for hpcworker. Its folder is /rs/rs_grp_oschome/go2432/spine-datasets-promoter (code/,
+logs/ and the lock). Started once, in a grid shell, with COMMIT a commit of the default branch
+the owner has read, whose copy of the code the chain starts from:
 
 ```
-gh api -H "Accept: application/vnd.github.raw" repos/OpenSpineConsortium/spine-datasets/contents/grid/promote.sh > ~/promote.sh
-bash ~/promote.sh start
+gh api -H "Accept: application/vnd.github.raw" "repos/OpenSpineConsortium/spine-datasets/contents/grid/promote.sh?ref=COMMIT" > ~/promote.sh
+bash ~/promote.sh start COMMIT
 ```
 
 `bash ~/promote.sh status` shows the chain and its latest log lines; `bash ~/promote.sh stop`

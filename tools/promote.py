@@ -11,23 +11,28 @@ This script then runs as the owner's own grid account, inside a Slurm job that g
 keeps queued, and for each manifest on the default branch that is not yet promoted:
 
 1. checks where it came from: the last commit that touched it must belong to a pull request into
-   the default branch merged by one of the owners named on the command line, so a manifest a
-   collaborator merged alone, or pushed past review, is never acted on;
+   the default branch merged by one of the owners named on the command line, and not from the
+   promoter's own promote/ branches, so a manifest a collaborator merged alone, or pushed past
+   review, is never acted on;
 2. checks it again by the same rules the review used (valid_manifest, below);
-3. downloads every file from its link into shared/<id>/.incoming-<job>, resuming what an earlier
-   job left, and checks the bytes and the sha256 of what landed, never of what was promised;
+3. leaves a terabyte free on the volume, downloads every file from its link (https only, never
+   more than its stated size) into shared/<id>/.incoming-<job>, resuming what an earlier job
+   left, and checks the bytes and the checksum of what landed, never of what was promised;
 4. moves the checked tree to shared/<id>/raw in one rename, makes every file 0444 and every
    folder 0555, and writes PROMOTED.json beside it;
 5. opens the record's update (status fetched, grid_path, a history entry) as a pull request from
-   the branch promote/<id>, with auto-merge on, so the required check reviews that change too.
+   the branch promote/<id>, with auto-merge on for that exact commit only, so the required check
+   reviews that change too and a push by anyone else is never merged by it.
 
 X-ray groups go before CT, the owner's order of 2026-10-21. Nothing under the shared tree is ever
 deleted or overwritten: a raw/ already there is adopted only when every file matches, and a
 failure leaves .incoming-<job> for the next job to resume and says so in the job's log.
 
-The same provenance rule decides whether the promoter's own code may change: `self-update` copies
-this file and grid/promote.sh from the default branch into the promoter's folder only when the
-last commit to each was merged by an owner.
+A stricter rule decides whether what runs as the owner may change: `self-update` copies this file
+and grid/promote.sh from the default branch into the promoter's folder, and the space budget in
+grid/promote.json is read, only where the last change to each came from a pull request an owner
+opened and merged with no commit in it tied to anyone else's account; anything else keeps the copy on the grid, or the default
+budget.
 
 It runs on the grid's own python3, which on its EL7 nodes may be as old as 3.6, so it uses nothing
 newer, and needs gh signed in as the owner and curl, both already there for hpcworker.
@@ -66,6 +71,18 @@ OPEN_LICENCE = re.compile(
 )
 RESTRICTED_LICENCE = re.compile(r"\b(NC|ND|non-?commercial|no ?deriv)", re.IGNORECASE)
 TRUSTED_CODE = ("tools/promote.py", "grid/promote.sh")
+BUDGET = "grid/promote.json"
+# A source whose files are served from another host of its own; any other file must be on the
+# source's own host exactly, so a shared suffix (s3.amazonaws.com, github.io) is never enough.
+DOWNLOAD_HOSTS = {
+    "figshare.com": ("ndownloader.figshare.com",),
+    "data.mendeley.com": ("data.mendeley.com",),
+    "zenodo.org": ("zenodo.org",),
+}
+# Space the promoter leaves free on the shared volume, as the owner's own fetch chain does.
+RESERVE_BYTES = 10 ** 12
+# A web or API commit is committed by GitHub's own web-flow on the person's behalf.
+GITHUB_COMMITTER = "web-flow"
 
 
 # The rules a manifest is held to, shared with tools/dataset_review.py so the review and the
@@ -77,10 +94,11 @@ def host_of(url):
 
 
 def same_site(host, source_host):
-    """The file's host is the source's own, or shares its last two labels (ndownloader.figshare.com)."""
+    """The file's host is the source's own, or one the source is known to serve its files from."""
     if not host or not source_host:
         return False
-    return host == source_host or host.split(".")[-2:] == source_host.split(".")[-2:]
+    bare = source_host[4:] if source_host.startswith("www.") else source_host
+    return host in (source_host, bare) or host in DOWNLOAD_HOSTS.get(bare, ())
 
 
 def licence_problems(record):
@@ -88,12 +106,13 @@ def licence_problems(record):
     licence = record.get("licence") or ""
     if re.search(r"to confirm", licence, re.IGNORECASE):
         return ["the licence still reads 'to confirm': read the page and write its licence line"]
-    if OPEN_LICENCE.search(licence):
+    if OPEN_LICENCE.search(licence) and not RESTRICTED_LICENCE.search(licence):
         return []
     steps = [entry.get("step") for entry in record.get("history", [])]
     if record.get("status") in ("fetching", "fetched") and "granted" in steps:
         return []
-    return ["the licence '%s' is not an open licence and the history records no grant" % licence]
+    return ["the licence '%s' is not an open licence without restrictions and the history records no grant"
+            % licence]
 
 
 def valid_manifest(manifest, record, ident):
@@ -164,12 +183,14 @@ def group_rank(record):
 # GitHub, through the owner's own gh sign-in on the grid.
 
 def gh(args, data=None):
-    """gh's answer as text; raises RuntimeError with gh's own words when it fails."""
-    process = subprocess.Popen(
-        ["gh"] + list(args), stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-        universal_newlines=True,
-    )
-    out, err = process.communicate(data)
+    """gh's answer as text; raises RuntimeError with gh's own words when it fails.
+
+    Bytes in and out, decoded as UTF-8 here, since Python 3.6 under the grid's C locale would
+    otherwise decode GitHub's answers as ASCII and fail on the first accented name."""
+    process = subprocess.Popen(["gh"] + list(args), stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE)
+    out, err = process.communicate(data.encode("utf-8") if data is not None else None)
+    out, err = out.decode("utf-8", "replace"), err.decode("utf-8", "replace")
     if process.returncode != 0:
         raise RuntimeError("gh %s: %s" % (" ".join(args[:2]), err.strip() or out.strip()))
     return out
@@ -182,27 +203,53 @@ def gh_json(args, data=None):
 def file_at(repo, path, ref):
     """A file's text and blob sha at a ref, or (None, None) where it does not exist."""
     try:
-        answer = gh_json(["api", "repos/%s/contents/%s?ref=%s" % (repo, path, ref)])
+        meta = gh_json(["api", "repos/%s/contents/%s?ref=%s" % (repo, path, ref)])
     except RuntimeError as error:
         if "404" in str(error) or "Not Found" in str(error):
             return None, None
         raise
-    return base64.b64decode(answer["content"]).decode("utf-8"), answer["sha"]
+    # the raw form, since the contents API leaves content empty for a file over 1 MB
+    text = gh(["api", "-H", "Accept: application/vnd.github.raw", "repos/%s/contents/%s?ref=%s" % (repo, path, ref)])
+    return text, meta["sha"]
 
 
-def merged_by_owner(repo, path, owners):
-    """The commit and pull request that last changed path on the default branch, when an owner merged it."""
+def merged_by_owner(repo, path, owners, strict=False):
+    """The commit and pull request that last changed path on the default branch, when an owner merged it.
+
+    Never a pull request from a promote/ branch, the promoter's own, which only ever updates a
+    record: anyone who may write can push to such a branch before its auto-merge lands. With
+    strict, for what runs as the owner (the promoter's code and its space budget), an owner must
+    also have opened the pull request, and no commit in it may be tied to anyone else's account."""
     commits = gh_json(["api", "repos/%s/commits?sha=%s&path=%s&per_page=1" % (repo, DEFAULT_BRANCH, path)])
     if not commits:
         return None
     sha = commits[0]["sha"]
     for pull in gh_json(["api", "repos/%s/commits/%s/pulls" % (repo, sha)]) or []:
-        if pull.get("merged_at") and pull.get("base", {}).get("ref") == DEFAULT_BRANCH:
-            detail = gh_json(["api", "repos/%s/pulls/%d" % (repo, pull["number"])])
-            login = (detail.get("merged_by") or {}).get("login", "")
-            if login in owners:
-                return {"commit": sha, "pull": pull["number"], "merged_by": login}
+        if not pull.get("merged_at") or pull.get("base", {}).get("ref") != DEFAULT_BRANCH:
+            continue
+        detail = gh_json(["api", "repos/%s/pulls/%d" % (repo, pull["number"])])
+        login = (detail.get("merged_by") or {}).get("login", "")
+        if login not in owners or detail.get("head", {}).get("ref", "").startswith("promote/"):
+            continue
+        if strict and not written_by_owners(repo, detail, owners):
+            continue
+        return {"commit": sha, "pull": pull["number"], "merged_by": login}
     return None
+
+
+def written_by_owners(repo, detail, owners):
+    if (detail.get("user") or {}).get("login") not in owners:
+        return False
+    commits = gh_json(["api", "repos/%s/pulls/%d/commits?per_page=100" % (repo, detail["number"])]) or []
+    # A commit GitHub ties to an account must be an owner's; one it ties to none, as a session's
+    # commits made under its own name are, is the owner's pull request's.
+    allowed = set(owners) | {GITHUB_COMMITTER}
+    for commit in commits:
+        for role in ("author", "committer"):
+            login = (commit.get(role) or {}).get("login")
+            if login and login not in allowed:
+                return False
+    return len(commits) < 100
 
 
 def manifest_ids(repo):
@@ -227,28 +274,36 @@ def file_matches(path, entry):
             and os.path.getsize(path) == entry["bytes"] and digest_of(path, name) == entry[name])
 
 
-def download(url, dest):
-    """curl, resuming what an earlier job left; returns curl's exit code."""
+def download(url, dest, size):
+    """curl, resuming what an earlier job left; https only, redirects included, no globbing, and
+    never more than the manifest's size; returns curl's exit code."""
     parent = os.path.dirname(dest)
     if not os.path.isdir(parent):
         os.makedirs(parent)
-    command = ["curl", "-fsSL", "--retry", "5", "--retry-delay", "10", "-C", "-", "-o", dest, url]
+    command = ["curl", "-fsSL", "-g", "--proto", "=https", "--proto-redir", "=https", "--max-filesize", str(size),
+               "--retry", "5", "--retry-delay", "10", "-C", "-", "-o", dest, url]
     return subprocess.call(command)
 
 
 def fetch_into(incoming, manifest, log):
-    """Every file downloaded and checked under incoming; returns the files that did not check."""
+    """Every file downloaded and checked under incoming; returns the files that did not check.
+
+    A file that is whole but wrong, or that a server would not resume, is removed so the next try
+    starts it afresh; a partial one after a broken transfer is kept for curl to resume."""
     bad = []
     for entry in manifest["files"]:
         dest = os.path.join(incoming, entry["path"])
         if file_matches(dest, entry):
             continue
-        if os.path.exists(dest) and os.path.getsize(dest) > entry["bytes"]:
-            os.rename(dest, dest + ".oversize-%d" % int(time.time()))
-        code = download(entry["url"], dest)
-        if not file_matches(dest, entry):
-            log("%s: %s did not check (curl exit %s)" % (manifest["id"], entry["path"], code))
-            bad.append(entry["path"])
+        if os.path.exists(dest) and os.path.getsize(dest) >= entry["bytes"]:
+            os.remove(dest)
+        code = download(entry["url"], dest, entry["bytes"])
+        if file_matches(dest, entry):
+            continue
+        log("%s: %s did not check (curl exit %s)" % (manifest["id"], entry["path"], code))
+        bad.append(entry["path"])
+        if os.path.exists(dest) and (code in (0, 33, 63) or os.path.getsize(dest) >= entry["bytes"]):
+            os.remove(dest)
     return bad
 
 
@@ -284,8 +339,13 @@ def write_promoted(home, manifest, origin, job):
     return note
 
 
-def install(shared, manifest, origin, job, log):
-    """Fetch, check and install one manifest; returns 'promoted', 'waiting' or 'conflict'."""
+def free_bytes(folder):
+    stats = os.statvfs(folder)
+    return stats.f_bavail * stats.f_frsize
+
+
+def install(shared, manifest, origin, job, log, reserve=RESERVE_BYTES):
+    """Fetch, check and install one manifest; returns 'promoted', 'waiting', 'no-space' or 'conflict'."""
     home = os.path.join(shared, manifest["id"])
     raw = os.path.join(home, "raw")
     for folder in (shared, home):
@@ -297,10 +357,14 @@ def install(shared, manifest, origin, job, log):
             log("%s: raw/ is already there and does not match the manifest; nothing changed" % manifest["id"])
             return "conflict"
     else:
+        if free_bytes(home) < manifest["bytes_total"] + reserve:
+            log("%s: %d bytes would leave less than %d free on the shared volume; waiting"
+                % (manifest["id"], manifest["bytes_total"], reserve))
+            return "no-space"
         incoming = os.path.join(home, ".incoming-%s" % job)
-        leftover = [name for name in os.listdir(home) if name.startswith(".incoming-")]
+        leftover = [os.path.join(home, name) for name in os.listdir(home) if name.startswith(".incoming-")]
         if leftover and not os.path.exists(incoming):
-            os.rename(os.path.join(home, sorted(leftover)[-1]), incoming)
+            os.rename(max(leftover, key=os.path.getmtime), incoming)
         if fetch_into(incoming, manifest, log):
             return "waiting"
         os.rename(os.path.join(incoming, "raw"), raw)
@@ -347,15 +411,19 @@ def open_record_update(repo, manifest, shared, job, origin):
     try:
         gh(["api", "-X", "POST", "repos/%s/git/refs" % repo, "-f", "ref=refs/heads/" + branch, "-f", "sha=" + head])
     except RuntimeError as error:
-        if "already exists" in str(error):
-            return None
-        raise
+        if "already exists" not in str(error):
+            raise
+        owner = repo.split("/")[0]
+        if not gh_json(["api", "repos/%s/pulls?state=open&head=%s:%s" % (repo, owner, branch)]):
+            raise RuntimeError("%s exists with no open pull request; the owner looks at it" % branch)
+        return None
     body = updated_record(json.loads(text), manifest, shared, job)
-    gh(["api", "-X", "PUT", "repos/%s/contents/datasets/%s.json" % (repo, ident), "--input", "-"], json.dumps({
-        "message": "Record %s as on the grid (promoter job %s)" % (ident, job),
-        "content": base64.b64encode(body.encode("ascii")).decode("ascii"),
-        "sha": blob, "branch": branch,
-    }))
+    written = gh_json(["api", "-X", "PUT", "repos/%s/contents/datasets/%s.json" % (repo, ident), "--input", "-"],
+                      json.dumps({
+                          "message": "Record %s as on the grid (promoter job %s)" % (ident, job),
+                          "content": base64.b64encode(body.encode("ascii")).decode("ascii"),
+                          "sha": blob, "branch": branch,
+                      }))
     task = task_number(repo, ident)
     lines = [
         "The promoter checked every file of manifests/%s.json (from #%d, merged by %s) and installed it read-only."
@@ -370,17 +438,29 @@ def open_record_update(repo, manifest, shared, job, origin):
         "body": "\n".join(lines),
     }))
     try:
-        gh(["pr", "merge", str(pull["number"]), "--repo", repo, "--auto", "--squash"])
+        enable_auto_merge(pull["node_id"], written["commit"]["sha"])
     except RuntimeError as error:
         print("auto-merge not set on #%d: %s" % (pull["number"], error))
     return pull["number"]
 
 
+def enable_auto_merge(pull_id, head_sha):
+    """Auto-merge for the exact commit the promoter wrote, so a push by anyone else is never merged by it."""
+    query = ("mutation($id: ID!, $oid: GitObjectID!) { enablePullRequestAutoMerge(input: "
+             "{pullRequestId: $id, expectedHeadOid: $oid, mergeMethod: SQUASH}) { clientMutationId } }")
+    gh(["api", "graphql", "-f", "query=" + query, "-f", "id=" + pull_id, "-f", "oid=" + head_sha])
+
+
 # The commands.
 
-def load_budget(repo):
-    text, _ = file_at(repo, "grid/promote.json", DEFAULT_BRANCH)
-    settings = json.loads(text) if text else {}
+def load_budget(repo, owners, log):
+    """The space budget, as an owner wrote it; the default where anyone else last changed it."""
+    origin = merged_by_owner(repo, BUDGET, owners, strict=True)
+    if origin is None:
+        if file_at(repo, BUDGET, DEFAULT_BRANCH)[0] is not None:
+            log("%s was last changed outside an owner's own pull request; using the default budget" % BUDGET)
+        return MAX_BYTES, set()
+    settings = json.loads(file_at(repo, BUDGET, origin["commit"])[0])
     return settings.get("max_bytes", MAX_BYTES), set(settings.get("approved_over_budget", []))
 
 
@@ -388,27 +468,42 @@ def candidates(repo, shared, owners, log):
     """The manifests to act on now, X-ray first, each with its record and its origin."""
     found = []
     for ident in manifest_ids(repo):
-        if os.path.exists(os.path.join(shared, ident, "PROMOTED.json")):
+        if not ID_SHAPE.match(ident) or os.path.exists(os.path.join(shared, ident, "PROMOTED.json")):
             continue
-        origin = merged_by_owner(repo, "manifests/%s.json" % ident, owners)
-        if origin is None:
-            log("%s: the manifest's last change was not merged by an owner; skipped" % ident)
+        try:
+            item = candidate(repo, ident, owners, log)
+        except (RuntimeError, ValueError, KeyError) as error:
+            log("%s: skipped this pass: %s" % (ident, error))
             continue
-        text, _ = file_at(repo, "manifests/%s.json" % ident, origin["commit"])
-        record_text, _ = file_at(repo, "datasets/%s.json" % ident, origin["commit"])
-        manifest = json.loads(text)
-        record = json.loads(record_text) if record_text else None
-        problems = valid_manifest(manifest, record, ident)
-        if problems:
-            log("%s: %s" % (ident, "; ".join(problems)))
-            continue
-        found.append((group_rank(record), ident, manifest, record, origin))
+        if item:
+            found.append(item)
     return [item[2:] for item in sorted(found, key=lambda item: item[:2])]
 
 
-def once(args, log=print):
+def candidate(repo, ident, owners, log):
+    origin = merged_by_owner(repo, "manifests/%s.json" % ident, owners)
+    if origin is None:
+        log("%s: the manifest's last change was not merged by an owner; skipped" % ident)
+        return None
+    text, _ = file_at(repo, "manifests/%s.json" % ident, origin["commit"])
+    record_text, _ = file_at(repo, "datasets/%s.json" % ident, origin["commit"])
+    manifest = json.loads(text)
+    record = json.loads(record_text) if record_text else None
+    problems = valid_manifest(manifest, record, ident)
+    if problems:
+        log("%s: %s" % (ident, "; ".join(problems)))
+        return None
+    return (group_rank(record), ident, manifest, record, origin)
+
+
+def ascii_log(line):
+    print(line.encode("ascii", "backslashreplace").decode("ascii"))
+    sys.stdout.flush()
+
+
+def once(args, log=ascii_log):
     owners = set(args.owners.split(","))
-    max_bytes, approved = load_budget(args.repo)
+    max_bytes, approved = load_budget(args.repo, owners, log)
     results = {}
     finish_record_updates(args, log)
     for manifest, record, origin in candidates(args.repo, args.shared, owners, log):
@@ -418,7 +513,7 @@ def once(args, log=print):
                 % (ident, manifest["bytes_total"], max_bytes))
             results[ident] = "over-budget"
             continue
-        outcome = install(args.shared, manifest, origin, args.job, log)
+        outcome = install(args.shared, manifest, origin, args.job, log, args.reserve)
         results[ident] = outcome
         log("%s: %s" % (ident, outcome))
         if outcome == "promoted":
@@ -444,21 +539,25 @@ def finish_record_updates(args, log):
         note_path = os.path.join(args.shared, ident, "PROMOTED.json")
         if not ID_SHAPE.match(ident) or not os.path.isfile(note_path):
             continue
-        with open(note_path) as handle:
-            note = json.load(handle)
-        text, _ = file_at(args.repo, "manifests/%s.json" % ident, note["manifest_commit"])
+        try:
+            with open(note_path) as handle:
+                note = json.load(handle)
+            text, _ = file_at(args.repo, "manifests/%s.json" % ident, note["manifest_commit"])
+        except (RuntimeError, ValueError, KeyError) as error:
+            log("%s: the record update waits: %s" % (ident, error))
+            continue
         if text is None:
             continue
         origin = {"commit": note["manifest_commit"], "pull": note["pull_request"], "merged_by": note["merged_by"]}
         report_record_update(args, json.loads(text), origin, log)
 
 
-def self_update(args, log=print):
-    """Copy the promoter's own files from the default branch, only when an owner merged each."""
+def self_update(args, log=ascii_log):
+    """Copy the promoter's own files from the default branch, only from an owner's own pull request."""
     owners = set(args.owners.split(","))
     fresh = {}
     for path in TRUSTED_CODE:
-        origin = merged_by_owner(args.repo, path, owners)
+        origin = merged_by_owner(args.repo, path, owners, strict=True)
         if origin is None:
             log("self-update: %s was last changed outside an owner's merge; keeping the copy here" % path)
             return False
@@ -480,6 +579,7 @@ def main(argv=None):
     run.add_argument("--shared", required=True)
     run.add_argument("--owners", required=True)
     run.add_argument("--job", default=os.environ.get("SLURM_JOB_ID", "local"))
+    run.add_argument("--reserve", type=int, default=RESERVE_BYTES, help="bytes left free on the shared volume")
     update = sub.add_parser("self-update", help="take the promoter's code from an owner's merge")
     update.add_argument("--repo", required=True)
     update.add_argument("--owners", required=True)

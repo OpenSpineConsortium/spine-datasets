@@ -15,20 +15,24 @@ site and no token or signature in it, a positive size, a sha256, and sizes that 
 request (.github/workflows/ci.yml):
 
 - FAIL, the check goes red:
-  - an added line in a record, a manifest or a letter, or the pull request's title or body, with a
-    word the confidentiality rule bans (CONTRIBUTING.md, "The confidentiality rule, first");
+  - an added line in a record, a manifest or a letter (a file's path or link aside, which are the
+    publisher's names), or the pull request's title or body, with a word the confidentiality rule
+    bans (CONTRIBUTING.md, "The confidentiality rule, first");
   - a record whose history lost or changed an earlier entry (history only grows);
   - a token, key or signed link in the title or body (check_docs.py holds the files to the same);
   - a data file added to the repository (an image, an archive, a volume, a table of rows), outside
     docs/ and tests/, where it is flagged instead, since a figure or a fixture may belong there;
-  - a record moved to fetched without a manifest, or with a grid_path outside the shared tree.
+  - a record moved to fetched without a manifest, or with a grid_path outside the shared tree;
+  - a change to the promoter's own code or budget (tools/promote.py, grid/promote.sh,
+    grid/promote.json), which runs as the owner on the grid, in a pull request someone other than
+    the owner opened;
+  - a change on the promoter's own branch promote/<id> to anything but that one record.
 - FLAG, written in the report for whoever merges, the check stays green:
   - a line that reads as something binding done in the owner's name (signed, agreed, paid,
     attested, accepted terms), which only the owner may do;
   - a licence or link changed other than by replacing "to confirm on the page";
-  - a non-commercial or no-derivatives licence;
-  - a change to the promoter's own code or budget (tools/promote.py, grid/promote.sh,
-    grid/promote.json), which runs as the owner on the grid.
+  - a non-commercial or no-derivatives licence, which also needs a grant in the history to be
+    fetched at all.
 - NOTE: a CT manifest while X-ray sets still wait to be fetched; the promoter takes X-ray first.
 
 The report goes to the job's log and, on GitHub, to the job's summary page.
@@ -59,6 +63,11 @@ ROOT = Path(__file__).resolve().parent.parent
 SHARED = "/rs/rs_grp_oschome/shared/datasets"
 XRAY_GROUPS = ("fluoro", "video", "projections", "films")
 TRUSTED_PATHS = ("tools/promote.py", "grid/promote.sh", "grid/promote.json")
+# Who may change what runs as the owner on the grid; the promoter holds the same rule on its side.
+OWNERS = ("Gregory-Schwing-MD-PhD",)
+# Lines of a record or manifest that name a place rather than describe anything: a file name such
+# as train.zip is the publisher's, not the project's words.
+NAMING_FIELD = re.compile(r'^\s*"(path|url|link|sha256|md5|source)"\s*:')
 
 # The confidentiality rule's words, built from pieces so this file's own text does not read as
 # breaking it wherever it is quoted.
@@ -131,7 +140,7 @@ def check_tree(root=ROOT, report=None):
             report.add("FAIL", "manifests/%s.json: %s" % (ident, problem))
     for path in sorted((root / "datasets").glob("*.json")):
         record = read_json(path)
-        if record.get("status") != "fetched" or not record.get("grid_path", "").startswith(SHARED):
+        if record.get("status") != "fetched" or not (record.get("grid_path") or "").startswith(SHARED):
             continue
         if not (folder / path.name).exists():
             report.add("FAIL", "datasets/%s says fetched into the shared tree but has no manifest" % path.name)
@@ -145,9 +154,11 @@ def git(*args, root=ROOT):
 
 
 def changed_files(base, root=ROOT):
-    """(status, path) of every file the change adds, modifies or deletes since it left base."""
-    out = git("diff", "--name-status", "--no-renames", base + "...HEAD", root=root)
-    return [tuple(line.split("\t", 1)) for line in out.splitlines() if line]
+    """(status, path) of every file the change adds, modifies or deletes since it left base.
+
+    NUL-separated, since git quotes a name with non-ASCII bytes in its plain output."""
+    fields = git("diff", "--name-status", "--no-renames", "-z", base + "...HEAD", root=root).split("\0")
+    return [(fields[i], fields[i + 1]) for i in range(0, len(fields) - 1, 2) if fields[i]]
 
 
 def added_lines(base, path, root=ROOT):
@@ -210,12 +221,18 @@ def xray_waiting(root=ROOT):
     return waiting
 
 
-def review_pull_request_text(report):
+def pull_request():
+    """The pull request the check runs for, from GitHub's event file, or None outside one."""
     event_path = os.environ.get("GITHUB_EVENT_PATH")
     if not event_path or not os.path.exists(event_path):
-        return
+        return None
     with open(event_path, encoding="utf-8") as handle:
-        pull = json.load(handle).get("pull_request") or {}
+        return json.load(handle).get("pull_request")
+
+
+def review_pull_request_text(pull, report):
+    if not pull:
+        return
     for where, text in (("the title", pull.get("title") or ""), ("the description", pull.get("body") or "")):
         review_text("the pull request's " + where[4:], text, report)
         for name, pattern in SECRET_PATTERNS:
@@ -223,9 +240,34 @@ def review_pull_request_text(report):
                 report.add("FAIL", "the pull request's %s holds what looks like a %s" % (where[4:], name))
 
 
-def review_diff(base, root=ROOT, report=None):
+def review_trusted(path, pull, report):
+    """A change to what runs as the owner fails unless an owner opened the pull request."""
+    author = ((pull or {}).get("user") or {}).get("login")
+    if pull is None:
+        report.add("FLAG", "%s runs as the owner on the grid; the owner reads this change before merging" % path)
+    elif author not in OWNERS:
+        report.add("FAIL", "%s runs as the owner on the grid; only the owner's own pull request changes it" % path)
+    else:
+        report.add("NOTE", "%s runs as the owner on the grid; the promoter takes it only from the owner's own "
+                   "pull request with no commit tied to anyone else" % path)
+
+
+def review_promote_branch(changes, pull, report):
+    """The promoter's own branch promote/<id> changes that one record and nothing else."""
+    head = (((pull or {}).get("head") or {}).get("ref")) or ""
+    if not head.startswith("promote/"):
+        return
+    allowed = "datasets/%s.json" % head[len("promote/"):]
+    for status, path in changes:
+        if path != allowed:
+            report.add("FAIL", "%s on %s: the promoter's branch changes only %s" % (path, head, allowed))
+
+
+def review_diff(base, root=ROOT, report=None, pull=None):
     report = report or Report()
-    for status, path in changed_files(base, root=root):
+    changes = changed_files(base, root=root)
+    review_promote_branch(changes, pull, report)
+    for status, path in changes:
         if status == "D":
             continue
         if path.lower().endswith(DATA_SUFFIXES):
@@ -233,10 +275,11 @@ def review_diff(base, root=ROOT, report=None):
             report.add(level, "%s is a data file; data stay on the grid and the record says where" % path)
             continue
         if path in TRUSTED_PATHS:
-            report.add("FLAG", "%s runs as the owner on the grid; the owner reads this change before merging" % path)
+            review_trusted(path, pull, report)
         if SCANNED.match(path):
             for line in added_lines(base, path, root=root):
-                review_text(path, line, report)
+                if not (path.endswith(".json") and NAMING_FIELD.match(line)):
+                    review_text(path, line, report)
         if path.startswith("datasets/") and path.endswith(".json") and path != "datasets/README.md":
             review_record(path, base, report, root=root)
         if path.startswith("manifests/") and path.endswith(".json") and status == "A":
@@ -244,7 +287,7 @@ def review_diff(base, root=ROOT, report=None):
             if record_path.exists() and read_json(record_path).get("group") == "ct" and xray_waiting(root):
                 report.add("NOTE", "%s is a CT set while %d X-ray sets wait; the promoter takes X-ray first"
                            % (path, len(xray_waiting(root))))
-    review_pull_request_text(report)
+    review_pull_request_text(pull, report)
     return report
 
 
@@ -321,7 +364,10 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if args.command == "manifest":
         return write_manifest(args)
-    report = check_tree() if args.command == "check" else check_tree(report=review_diff(args.base))
+    if args.command == "check":
+        report = check_tree()
+    else:
+        report = check_tree(report=review_diff(args.base, pull=pull_request()))
     report.publish()
     return 1 if report.failed() else 0
 

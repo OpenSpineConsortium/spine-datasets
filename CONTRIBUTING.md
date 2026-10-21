@@ -79,10 +79,12 @@ it from there.
 Every pull request runs tools/dataset_review.py as part of the required check. It fails on a
 word the confidentiality rule bans in an added line of a record, a manifest or a letter, or in the
 pull request's title or description; on a record whose history lost an entry; on a data file
-added to the repository; on a token in the title or description; and on a manifest that breaks
-manifests/README.md's rules. It flags, for whoever merges, a line that reads as something binding
-done in the owner's name, a licence or link changed other than by replacing "to confirm", a
-non-commercial or no-derivatives licence, and any change to the promoter's own code. Its report is
+added to the repository; on a token in the title or description; on a manifest that breaks
+manifests/README.md's rules; and on a change to the promoter's own code or space budget (tools/promote.py,
+grid/promote.sh, grid/promote.json) in a pull request the owner did not open, since that code runs
+as the owner on the grid. It flags, for whoever merges, a line that reads as something binding
+done in the owner's name, a licence or link changed other than by replacing "to confirm", and a
+non-commercial or no-derivatives licence, which needs a grant before it is fetched. Its report is
 on the check's summary page.
 
 ## How to record a result on the task

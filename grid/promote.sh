@@ -3,11 +3,13 @@
 # /rs/rs_grp_oschome/shared/datasets (tools/promote.py says what each pass does, grid/README.md
 # how a collaborator's pull request reaches it). Each job queues its successor first, so the chain
 # comes back after a wall time or a preemption with nobody at the keyboard, then takes the
-# promoter's code from the default branch where an owner merged it, and runs one pass every ten
-# minutes until its wall time is near. Nothing runs on the login node but gh, squeue, sbatch and
+# promoter's code from the default branch where it came from the owner's own pull request, and runs
+# one pass every ten minutes until its wall time is near. Successors are singleton jobs of one name,
+# so however many get queued they run one at a time, and a lock keeps two passes apart. Nothing runs on the login node but gh, squeue, sbatch and
 # scancel; every download and every python3 runs inside the job. Started once by the owner:
 #
-#   bash promote.sh start     queue the chain, unless one is already queued or running
+#   bash promote.sh start [REF]   queue the chain, unless one is already queued or running; the
+#                                 first copy of the code is taken at REF, the commit the owner names
 #   bash promote.sh status    what the chain is doing and its latest log lines
 #   bash promote.sh stop      cancel the chain
 #
@@ -18,6 +20,7 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=4G
 #SBATCH --requeue
+#SBATCH --dependency=singleton
 set -euo pipefail
 
 NAME=spine-datasets-promoter
@@ -26,7 +29,9 @@ OWNERS=${PROMOTER_OWNERS:-Gregory-Schwing-MD-PhD}
 SHARED=${PROMOTER_SHARED:-/rs/rs_grp_oschome/shared/datasets}
 HOME_DIR=${PROMOTER_HOME:-/rs/rs_grp_oschome/$USER/spine-datasets-promoter}
 INTERVAL=${PROMOTER_INTERVAL:-600}
-# stop starting passes this long before the wall time, so a pass is never cut off mid-rename
+# the job's own clock, so a busy scheduler never ends the loop early: eight hours of wall time, and
+# no pass started in the last half hour of it, so a pass is never cut off mid-rename
+WALL=28800
 MARGIN=${PROMOTER_MARGIN:-1800}
 
 python_bin() {
@@ -38,39 +43,47 @@ python_bin() {
 }
 
 queued() {
-  squeue -h -u "$USER" -n "$NAME" -o %i
+  squeue -h -u "$USER" -n "$NAME" -o %i "$@"
 }
 
 fetch_code() {
-  # the first copy, before any self-update: the default branch's promoter, read through gh
+  # the first copy, before any self-update, at the commit the owner named: later copies come only
+  # through self-update's provenance rule
+  local ref=$1 path
   mkdir -p "$HOME_DIR/code" "$HOME_DIR/logs"
-  if [ ! -f "$HOME_DIR/code/promote.py" ]; then
-    gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/tools/promote.py" > "$HOME_DIR/code/promote.py.tmp"
-    mv "$HOME_DIR/code/promote.py.tmp" "$HOME_DIR/code/promote.py"
-  fi
-  if [ ! -f "$HOME_DIR/code/promote.sh" ]; then
-    gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/grid/promote.sh" > "$HOME_DIR/code/promote.sh.tmp"
-    mv "$HOME_DIR/code/promote.sh.tmp" "$HOME_DIR/code/promote.sh"
-  fi
+  for path in tools/promote.py grid/promote.sh; do
+    if [ ! -f "$HOME_DIR/code/${path##*/}" ]; then
+      gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$path?ref=$ref" > "$HOME_DIR/code/${path##*/}.tmp"
+      mv "$HOME_DIR/code/${path##*/}.tmp" "$HOME_DIR/code/${path##*/}"
+    fi
+  done
 }
 
 one_pass() {
   local py
   py=$(python_bin)
-  "$py" "$HOME_DIR/code/promote.py" self-update --repo "$REPO" --owners "$OWNERS" --into "$HOME_DIR/code" || true
-  "$py" "$HOME_DIR/code/promote.py" once --repo "$REPO" --shared "$SHARED" --owners "$OWNERS" \
-    --job "${SLURM_JOB_ID:-local}" || echo "pass failed with exit $?; the next pass tries again"
+  (
+    flock -n 9 || { echo "another pass holds the lock; skipped"; exit 0; }
+    "$py" "$HOME_DIR/code/promote.py" self-update --repo "$REPO" --owners "$OWNERS" --into "$HOME_DIR/code" || true
+    "$py" "$HOME_DIR/code/promote.py" once --repo "$REPO" --shared "$SHARED" --owners "$OWNERS" \
+      --job "${SLURM_JOB_ID:-local}" || echo "pass failed with exit $?; the next pass tries again"
+  ) 9>"$HOME_DIR/promoter.lock"
 }
 
-seconds_left() {
-  local end
-  end=$(squeue -h -j "$SLURM_JOB_ID" -o %e)
-  echo $(( $(date -d "$end" +%s) - $(date +%s) ))
+queue_successor() {
+  # one successor waiting is enough; where squeue cannot answer, queue one anyway, since singleton
+  # runs the extras one after another and each of them looks again before queueing its own
+  local waiting
+  if waiting=$(queued -t PENDING); then
+    [ -z "$waiting" ] || return 0
+  fi
+  sbatch -D "$HOME_DIR" --output="$HOME_DIR/logs/%x-%j.out" "$HOME_DIR/code/promote.sh" run
 }
 
 case "${1:-run}" in
   start)
-    fetch_code
+    [ -n "${2:-}" ] || { echo "usage: promote.sh start COMMIT (the commit the owner names)"; exit 2; }
+    fetch_code "$2"
     if [ -n "$(queued)" ]; then echo "already queued: $(queued | tr '\n' ' ')"; exit 0; fi
     sbatch -D "$HOME_DIR" --output="$HOME_DIR/logs/%x-%j.out" "$HOME_DIR/code/promote.sh" run
     ;;
@@ -86,18 +99,16 @@ case "${1:-run}" in
     ;;
   run)
     [ -n "${SLURM_JOB_ID:-}" ] || { echo "run is for inside a job; use start"; exit 2; }
-    # the successor first, unless one waits already: afterany brings the chain back however this job ends
-    if [ "$(queued | grep -cv "^$SLURM_JOB_ID$" || true)" = 0 ]; then
-      sbatch -D "$HOME_DIR" --output="$HOME_DIR/logs/%x-%j.out" --dependency="afterany:$SLURM_JOB_ID" \
-        "$HOME_DIR/code/promote.sh" run
-    fi
+    # the successor first: singleton holds it until this job ends, however it ends
+    queue_successor || echo "could not queue a successor; the chain ends with this job"
+    started=$(date +%s)
     echo "$(date -u +%FT%TZ) promoter job $SLURM_JOB_ID on $(hostname -s), shared tree $SHARED"
-    while [ "$(seconds_left)" -gt "$MARGIN" ]; do
+    while [ $(( $(date +%s) - started )) -lt $(( WALL - MARGIN )) ]; do
       one_pass
       sleep "$INTERVAL"
     done
     ;;
   *)
-    echo "usage: promote.sh start|status|stop"; exit 2
+    echo "usage: promote.sh start COMMIT|status|stop"; exit 2
     ;;
 esac

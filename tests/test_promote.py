@@ -26,9 +26,11 @@ def entry_for(name, payload):
 class FakeGitHub:
     """Answers the promoter's gh calls from dictionaries."""
 
-    def __init__(self, files, merged_by):
+    def __init__(self, files, merged_by, head="claude/9", committer=OWNER):
         self.files = files            # path -> text, on every ref
         self.merged_by = merged_by    # path -> login that merged its last change
+        self.head = head              # the merged pull request's branch
+        self.committer = committer    # the login GitHub ties its commits to
         self.calls = []
 
     def gh_json(self, args, data=None):
@@ -36,6 +38,8 @@ class FakeGitHub:
         self.calls.append(args)
         if url.startswith("repos/%s/contents/manifests?" % REPO):
             return [{"type": "file", "name": p.split("/")[1]} for p in self.files if p.startswith("manifests/")]
+        if "/pulls/7/commits" in url:
+            return [{"author": {"login": self.committer}, "committer": {"login": "web-flow"}}]
         if "/commits?" in url:
             path = url.split("path=")[1].split("&")[0]
             return [{"sha": "c-" + path}] if path in self.merged_by else []
@@ -44,7 +48,9 @@ class FakeGitHub:
         if "/pulls/7" in url:
             last = [c for c in self.calls if "/commits/c-" in c[-1]][-1][-1]
             path = last.split("/commits/c-")[1].split("/pulls")[0]
-            return {"merged_by": {"login": self.merged_by[path]}}
+            login = self.merged_by[path]
+            return {"number": 7, "merged_by": {"login": login}, "user": {"login": login},
+                    "head": {"ref": self.head}}
         raise AssertionError("unexpected call %s" % (args,))
 
     def file_at(self, repo, path, ref):
@@ -69,7 +75,7 @@ class PromoterTest(unittest.TestCase):
             os.chmod(folder, 0o755)
         self.tmp.cleanup()
 
-    def fake_download(self, url, dest):
+    def fake_download(self, url, dest, size):
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         shutil.copyfile(os.path.join(self.source, url.rsplit("/", 1)[1]), dest)
         return 0
@@ -86,10 +92,10 @@ class PromoterTest(unittest.TestCase):
                "bytes_total": sum(e["bytes"] for e in entries)}
         return {"manifests/%s.json" % ident: json.dumps(man), "datasets/%s.json" % ident: json.dumps(rec)}
 
-    def run_once(self, files, merged_by):
-        fake = FakeGitHub(files, merged_by)
+    def run_once(self, files, merged_by, **fake_settings):
+        fake = FakeGitHub(files, merged_by, **fake_settings)
         promote.gh_json, promote.file_at = fake.gh_json, fake.file_at
-        args = argparse.Namespace(repo=REPO, shared=self.shared, owners=OWNER, job="123")
+        args = argparse.Namespace(repo=REPO, shared=self.shared, owners=OWNER, job="123", reserve=0)
         logs = []
         return promote.once(args, log=logs.append), logs
 
@@ -137,8 +143,75 @@ class PromoterTest(unittest.TestCase):
     def test_over_budget_waits_for_the_owner(self):
         files = self.dataset("demo_set", "films", {"a.zip": b"alpha"})
         files["grid/promote.json"] = json.dumps({"max_bytes": 1, "approved_over_budget": []})
-        results, _ = self.run_once(files, {"manifests/demo_set.json": OWNER})
+        results, _ = self.run_once(files, {"manifests/demo_set.json": OWNER, "grid/promote.json": OWNER})
         self.assertEqual(results, {"demo_set": "over-budget"})
+
+    def test_a_budget_someone_else_raised_is_ignored(self):
+        files = self.dataset("demo_set", "films", {"a.zip": b"alpha"})
+        files["grid/promote.json"] = json.dumps({"max_bytes": 10 ** 20, "approved_over_budget": ["demo_set"]})
+        fake = FakeGitHub(files, {"grid/promote.json": OWNER}, committer="a-collaborator")
+        promote.gh_json, promote.file_at = fake.gh_json, fake.file_at
+        logs = []
+        self.assertEqual(promote.load_budget(REPO, {OWNER}, logs.append), (promote.MAX_BYTES, set()))
+        self.assertTrue(logs)
+
+    def test_a_manifest_from_the_promoters_own_branch_is_skipped(self):
+        files = self.dataset("demo_set", "films", {"a.zip": b"alpha"})
+        results, _ = self.run_once(files, {"manifests/demo_set.json": OWNER}, head="promote/other_set")
+        self.assertEqual(results, {})
+
+    def test_no_room_on_the_volume_waits(self):
+        files = self.dataset("demo_set", "films", {"a.zip": b"alpha"})
+        fake = FakeGitHub(files, {"manifests/demo_set.json": OWNER})
+        promote.gh_json, promote.file_at = fake.gh_json, fake.file_at
+        args = argparse.Namespace(repo=REPO, shared=self.shared, owners=OWNER, job="1", reserve=10 ** 30)
+        self.assertEqual(promote.once(args, log=lambda line: None), {"demo_set": "no-space"})
+
+    def test_a_wrong_whole_file_is_fetched_afresh(self):
+        files = self.dataset("demo_set", "films", {"a.zip": b"alpha"})
+        incoming = os.path.join(self.shared, "demo_set", ".incoming-old", "raw")
+        os.makedirs(incoming)
+        with open(os.path.join(incoming, "a.zip"), "wb") as handle:
+            handle.write(b"WRONG")
+        results, _ = self.run_once(files, {"manifests/demo_set.json": OWNER})
+        self.assertEqual(results, {"demo_set": "promoted"})
+        self.assertEqual(os.listdir(os.path.join(self.shared, "demo_set", "raw")), ["a.zip"])
+
+
+class SelfUpdate(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.saved = (promote.gh_json, promote.file_at)
+
+    def tearDown(self):
+        promote.gh_json, promote.file_at = self.saved
+        self.tmp.cleanup()
+
+    def update(self, committer):
+        files = {path: "new " + path for path in promote.TRUSTED_CODE}
+        fake = FakeGitHub(files, {path: OWNER for path in files}, committer=committer)
+        promote.gh_json, promote.file_at = fake.gh_json, fake.file_at
+        args = argparse.Namespace(repo=REPO, owners=OWNER, into=self.tmp.name)
+        return promote.self_update(args, log=lambda line: None)
+
+    def test_the_owners_own_pull_request_updates_the_code(self):
+        self.assertTrue(self.update(OWNER))
+        self.assertEqual(Path(self.tmp.name, "promote.py").read_text(), "new tools/promote.py")
+
+    def test_a_commit_by_anyone_else_keeps_the_old_code(self):
+        self.assertFalse(self.update("a-collaborator"))
+        self.assertEqual(os.listdir(self.tmp.name), [])
+
+
+class Hosts(unittest.TestCase):
+    def test_a_shared_suffix_is_not_the_same_site(self):
+        self.assertFalse(promote.same_site("attacker.s3.amazonaws.com", "data.s3.amazonaws.com"))
+        self.assertTrue(promote.same_site("ndownloader.figshare.com", "figshare.com"))
+        self.assertTrue(promote.same_site("zenodo.org", "zenodo.org"))
+
+    def test_a_restricted_licence_needs_a_grant(self):
+        rec = {"licence": "CC BY-NC 4.0", "status": "fetching", "history": []}
+        self.assertTrue(promote.licence_problems(rec))
 
 
 class RecordUpdate(unittest.TestCase):
