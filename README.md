@@ -39,7 +39,10 @@ Claude Code, Beethoven for the grid, the prompts to paste and what stays the own
    login). Read CONTRIBUTING.md once.
 2. Open the board: the file STATE.md on the branch `board` (on GitHub, switch the branch to
    `board` and open STATE.md), or the control panel the owner links in the invitation. It lists
-   every task, who holds it and what is free.
+   every task, who holds it and what is free. The dataset pipeline board, PIPELINE.md on the
+   branch `pipeline` (the interactive page is pipeline.html on the docs site), shows where every
+   dataset stands, from downloadable or to ask through asked, granted and fetching to on the
+   grid, with each one's steps, obstacles and next step; X-ray sets come before CT.
 3. Pick a task labelled todo that nobody holds: no `worker:<name>` label but yours, no branch
    `claude/<issue>` on origin, not an epic, not labelled blocked. A task given to you by name
    comes first.

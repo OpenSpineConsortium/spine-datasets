@@ -124,10 +124,20 @@ STATE.md as /board), Tasks (the issues as columns), Pull requests, Runs, Workers
 Repositories. The sign-in is kept in your browser only. The board itself needs no panel:
 https://github.com/OpenSpineConsortium/spine-datasets/blob/board/STATE.md is the file.
 
+The dataset pipeline board is the other page to keep open: where every dataset stands, from
+"downloadable now" and "to ask" through "asked, waiting", "granted" and "fetching" to "on the
+grid", with the steps taken, the obstacles and the next step on each card.
+https://github.com/OpenSpineConsortium/spine-datasets/blob/pipeline/PIPELINE.md is the page
+GitHub renders, and https://openspineconsortium.github.io/spine-datasets/pipeline.html the
+interactive one with filters and search (members only). Both are drawn from the records, so a
+card moves when the record's status and history change (CONTRIBUTING.md, "How to record a
+result"); X-ray sets come before CT in every column.
+
 ## 7. Picking a task
 
 The tasks are the issues titled "Obtain <dataset>", one per record in datasets/, numbered by
-priority group in tasks/TASKS.md; group 1 is the most useful first. The board's Queue lists every
+priority group in tasks/TASKS.md; group 1 is the most useful first, and an X-ray set comes
+before a CT set whatever its group (the owner, 2026-10-21). The board's Queue lists every
 task nobody holds; a task labelled `worker:<your login>` is given to you and comes first. Take
 one whose route you can do:
 
