@@ -5,30 +5,36 @@
 # comes back after a wall time or a preemption with nobody at the keyboard, then takes the
 # promoter's code from the default branch where it came from the owner's own pull request, and runs
 # one pass every ten minutes until its wall time is near. Successors are singleton jobs of one name,
-# so however many get queued they run one at a time, and a lock keeps two passes apart. Nothing runs on the login node but gh, squeue, sbatch and
-# scancel; every download and every python3 runs inside the job. Started once by the owner:
+# so however many get queued they run one at a time, and a lock keeps two passes apart. Every job is
+# queued by hpcworker's `job submit`, class batch, which takes the partition, QoS, account and requeue
+# from the site's profile and keeps each job's id and log in its ledger for the project spine-datasets;
+# this script says only its own time, CPUs, memory and the singleton rule. Nothing runs on the login
+# node but gh, squeue, scancel and hpcworker; every download and every python3 runs inside the job.
+# Started, read and stopped by the grid gate's words promoter-start, promoter-status and promoter-stop
+# (hpcworker's tools/grid_gate.sh), so nobody types these by hand:
 #
 #   bash promote.sh start [REF]   queue the chain, unless one is already queued or running; the
 #                                 first copy of the code is taken at REF, the commit the owner names
 #   bash promote.sh status    what the chain is doing and its latest log lines
 #   bash promote.sh stop      cancel the chain
 #
-#SBATCH --job-name=spine-datasets-promoter
-#SBATCH --partition=reqp
-#SBATCH --qos=requeue
 #SBATCH --time=08:00:00
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=4G
-#SBATCH --requeue
 #SBATCH --dependency=singleton
 set -euo pipefail
 
-NAME=spine-datasets-promoter
+PROJECT=spine-datasets
+JOB=promoter
+NAME=$PROJECT-$JOB   # the job name hpcworker gives it, which singleton and squeue go by
 REPO=${PROMOTER_REPO:-OpenSpineConsortium/spine-datasets}
 OWNERS=${PROMOTER_OWNERS:-Gregory-Schwing-MD-PhD}
 SHARED=${PROMOTER_SHARED:-/rs/rs_grp_oschome/shared/datasets}
 HOME_DIR=${PROMOTER_HOME:-/rs/rs_grp_oschome/$USER/spine-datasets-promoter}
 INTERVAL=${PROMOTER_INTERVAL:-600}
+# the gate names its own clone's hpcworker; a job, and a copy started any other way, find the clone
+# in the home folder, where hpcworker's setup puts it (the clone keeps it 0644, so it runs through bash)
+HPCW=${HPCWORKER:-$HOME/hpcworker/framework/bin/hpcworker}
 # the job's own clock, so a busy scheduler never ends the loop early: eight hours of wall time, and
 # no pass started in the last half hour of it, so a pass is never cut off mid-rename
 WALL=28800
@@ -70,6 +76,23 @@ one_pass() {
   ) 9>"$HOME_DIR/promoter.lock"
 }
 
+hpcw() {
+  [ -f "$HPCW" ] || { echo "no hpcworker at $HPCW" >&2; return 2; }
+  bash "$HPCW" "$@"
+}
+
+submit() {
+  # from inside a job, the job's own SLURM_ names would ride into the new job's request; only
+  # SLURM_CONF, which says where the scheduler is, goes along
+  (
+    for v in $(compgen -e); do
+      case "$v" in SLURM_CONF) ;; SLURM_*) unset "$v";; esac
+    done
+    hpcw job submit --project "$PROJECT" --name "$JOB" --class batch --dir "$HOME_DIR" \
+      -- "$HOME_DIR/code/promote.sh" run
+  )
+}
+
 queue_successor() {
   # one successor waiting is enough; where squeue cannot answer, queue one anyway, since singleton
   # runs the extras one after another and each of them looks again before queueing its own
@@ -77,7 +100,7 @@ queue_successor() {
   if waiting=$(queued -t PENDING); then
     [ -z "$waiting" ] || return 0
   fi
-  sbatch -D "$HOME_DIR" --output="$HOME_DIR/logs/%x-%j.out" "$HOME_DIR/code/promote.sh" run
+  submit
 }
 
 case "${1:-run}" in
@@ -85,12 +108,19 @@ case "${1:-run}" in
     [ -n "${2:-}" ] || { echo "usage: promote.sh start COMMIT (the commit the owner names)"; exit 2; }
     fetch_code "$2"
     if [ -n "$(queued)" ]; then echo "already queued: $(queued | tr '\n' ' ')"; exit 0; fi
-    sbatch -D "$HOME_DIR" --output="$HOME_DIR/logs/%x-%j.out" "$HOME_DIR/code/promote.sh" run
+    submit
     ;;
   status)
     squeue -u "$USER" -n "$NAME"
-    latest=$(ls -t "$HOME_DIR"/logs/*.out 2>/dev/null | head -1 || true)
-    if [ -n "$latest" ]; then echo "== $latest"; tail -20 "$latest"; fi
+    hpcw job status --project "$PROJECT" --last 5 || true
+    running=$(queued -t RUNNING | head -1 || true)
+    if [ -n "$running" ]; then
+      echo "== job $running"; hpcw job log --project "$PROJECT" "$running" --lines 20 || true
+    else
+      # jobs queued before hpcworker kept the chain wrote their logs here
+      latest=$(ls -t "$HOME_DIR"/logs/*.out 2>/dev/null | head -1 || true)
+      if [ -n "$latest" ]; then echo "== $latest"; tail -20 "$latest"; fi
+    fi
     ;;
   stop)
     ids=$(queued)
