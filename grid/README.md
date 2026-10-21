@@ -57,16 +57,14 @@ anyone else's account; anything else keeps the copy on the grid, or the default 
 It acts on a manifest only where the owner merged it, never from its own promote/ branches, and
 leaves a terabyte free on the volume. It needs gh signed in as the owner and curl, both already
 there for hpcworker. Its folder is /rs/rs_grp_oschome/go2432/spine-datasets-promoter (code/,
-logs/ and the lock). Started once, in a grid shell, with COMMIT a commit of the default branch
-the owner has read, whose copy of the code the chain starts from:
-
-```
-gh api -H "Accept: application/vnd.github.raw" "repos/OpenSpineConsortium/spine-datasets/contents/grid/promote.sh?ref=COMMIT" > ~/promote.sh
-bash ~/promote.sh start COMMIT
-```
-
-`bash ~/promote.sh status` shows the chain and its latest log lines; `bash ~/promote.sh stop`
-cancels it.
+logs/ and the lock); its jobs are queued by hpcworker's `job submit` under the project
+spine-datasets, class batch, so the site's profile gives their partition, QoS and requeue and
+hpcworker's ledger keeps each job's id and log. Nobody starts it in a grid shell: the grid gate's
+fixed words, sent through symphony-template's grid-accounts.yml (action job), run it on the owner's
+account. promoter-start fetches grid/promote.sh at the head of main and queues the chain unless one
+is queued already, promoter-status answers with the chain's jobs and its latest log lines, and
+promoter-stop cancels it; each answer lands on symphony-template's branch grid as
+logs/job-promoter-<word>.json.
 
 ## What nobody does
 
