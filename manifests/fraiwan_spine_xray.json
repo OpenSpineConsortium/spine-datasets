@@ -1,0 +1,51 @@
+{
+ "id": "fraiwan_spine_xray",
+ "source": "https://data.mendeley.com/datasets/xkt857dsxk",
+ "licence": "CC BY 4.0 (Creative Commons Attribution 4.0 International, as the Mendeley page's licence line reads for version 1, 2026-10-21)",
+ "date": "2026-10-21",
+ "files": [
+  {
+   "path": "raw/224.zip",
+   "url": "https://data.mendeley.com/public-files/datasets/xkt857dsxk/files/2631bd96-56cd-4b0a-af02-2a66f9cc3437/file_downloaded",
+   "bytes": 2459443,
+   "sha256": "62971c838ca431a0b4f6805dc11fcaa33391437635f9baea7912b6f0f2b74680",
+   "verified_against": "Mendeley Data's public API"
+  },
+  {
+   "path": "raw/227.zip",
+   "url": "https://data.mendeley.com/public-files/datasets/xkt857dsxk/files/93c2373d-9b14-40e8-9507-cf5d921f53c4/file_downloaded",
+   "bytes": 2593631,
+   "sha256": "103b8fe407ca0fe10aad6a03ae9e41bf9503d4236ec87f4f78480e40a8f84404",
+   "verified_against": "Mendeley Data's public API"
+  },
+  {
+   "path": "raw/256.zip",
+   "url": "https://data.mendeley.com/public-files/datasets/xkt857dsxk/files/db74b225-f1c1-463d-83db-0e3d2860a5db/file_downloaded",
+   "bytes": 3024657,
+   "sha256": "6eba81b04940b58ed8d9b8f537c8b0cc389e490e8e46a0d7711b33a68ad847bb",
+   "verified_against": "Mendeley Data's public API"
+  },
+  {
+   "path": "raw/299.zip",
+   "url": "https://data.mendeley.com/public-files/datasets/xkt857dsxk/files/361ad27b-e86d-441b-a760-e32537d413a6/file_downloaded",
+   "bytes": 3950443,
+   "sha256": "53545ca2cccabe4a44a43468d6e864aca8559164dcb2734f79cb86c4f4a370b3",
+   "verified_against": "Mendeley Data's public API"
+  },
+  {
+   "path": "raw/331.zip",
+   "url": "https://data.mendeley.com/public-files/datasets/xkt857dsxk/files/a472c421-6ebd-4080-96cc-3a28e273e08e/file_downloaded",
+   "bytes": 4639512,
+   "sha256": "0d8115026afc82a19f137c3b2fcb1d2e34f8bdc24076801b20aeef12b3de7bc0",
+   "verified_against": "Mendeley Data's public API"
+  },
+  {
+   "path": "raw/ImagesOriginalSize.zip",
+   "url": "https://data.mendeley.com/public-files/datasets/xkt857dsxk/files/22606bca-6b93-4e2b-a4be-9d16d6747ea1/file_downloaded",
+   "bytes": 68928944,
+   "sha256": "8f1dabc8ceab731fd89cd492807468d075836affd3ecdf8c4158a1973f0f15c1",
+   "verified_against": "Mendeley Data's public API"
+  }
+ ],
+ "bytes_total": 85596630
+}

@@ -20,7 +20,7 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; new people from a Middle-Eastern centre, with spondylolisthesis cases",
  "route": "download",
- "status": "todo",
+ "status": "fetching",
  "result": "",
  "history": [
   {
@@ -42,10 +42,13 @@
    "date": "2026-10-21",
    "step": "note",
    "note": "Slurm job 40689730 stopped at its first step: mkdir /rs/rs_grp_oschome/shared/datasets was refused (Permission denied); nothing was fetched or written"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "fetching",
+   "note": "manifest ready; the promoter fetches it after merge"
   }
  ],
- "obstacles": [
-  "/rs/rs_grp_oschome/shared is go2432's (group oschome, other r-x, no entry for collaborators in its access list), so a collaborator's job cannot make shared/datasets/<id>/raw there"
- ],
- "next": "the owner makes /rs/rs_grp_oschome/shared/datasets writable for the holder, then the same job is submitted again"
+ "obstacles": [],
+ "next": "the promoter installs it after merge"
 }
