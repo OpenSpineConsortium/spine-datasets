@@ -18,7 +18,7 @@
  "source_status": "a letter sent 2026-10-21; no record in SchwingNet's registry yet",
  "route": "letter",
  "status": "requested",
- "result": "Letter sent 2026-10-21 12:30 UTC by the owner to the senior authors; waiting for the answer.",
+ "result": "Letter sent 2026-10-21 12:25 UTC by the owner to the senior authors; waiting for the answer.",
  "history": [
   {
    "date": "2026-10-21",
@@ -28,7 +28,7 @@
   {
    "date": "2026-10-21",
    "step": "asked",
-   "note": "Letter sent 2026-10-21 12:30 UTC by the owner to the senior authors; waiting for the answer."
+   "note": "Letter sent 2026-10-21 12:25 UTC by the owner to the senior authors; waiting for the answer."
   }
  ],
  "obstacles": [],

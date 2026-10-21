@@ -19,7 +19,7 @@
  "source_status": "request 9 drafted (contact form, no e-mail), never sent",
  "route": "form",
  "status": "requested",
- "result": "Request 9 (a contact form) pasted 2026-10-20 by the owner; waiting for the answer.",
+ "result": "Request 9 submitted 2026-10-21 01:25 UTC through the contact form at theprocedureguide.com/contact; waiting for the answer.",
  "history": [
   {
    "date": "2026-10-21",
@@ -27,9 +27,9 @@
    "note": "request 9 drafted (contact form, no e-mail), never sent"
   },
   {
-   "date": "2026-10-20",
+   "date": "2026-10-21",
    "step": "asked",
-   "note": "Request 9 (a contact form) pasted 2026-10-20 by the owner; waiting for the answer."
+   "note": "Request 9 submitted 2026-10-21 01:25 UTC through the contact form at theprocedureguide.com/contact; waiting for the answer."
   }
  ],
  "obstacles": [],

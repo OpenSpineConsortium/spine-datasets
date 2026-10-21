@@ -17,7 +17,7 @@
  "source_status": "request drafted 2026-09-19, never sent; the paper's data statement says no datasets, so success is unlikely",
  "route": "letter",
  "status": "requested",
- "result": "Letter sent 2026-10-21 09:46 UTC by the owner; waiting for the answer (the paper's data statement makes success unlikely).",
+ "result": "Request 6 sent 2026-10-20 22:59 UTC and a second letter 2026-10-21 09:40 UTC (with the PUMCH authors copied) by the owner; waiting for the answer (the paper's data statement makes success unlikely).",
  "history": [
   {
    "date": "2026-10-21",
@@ -25,9 +25,14 @@
    "note": "request drafted 2026-09-19, never sent; the paper's data statement says no datasets, so success is unlikely"
   },
   {
+   "date": "2026-10-20",
+   "step": "asked",
+   "note": "request 6 sent 2026-10-20 22:59 UTC by the owner to liuw2@sustech.edu.cn"
+  },
+  {
    "date": "2026-10-21",
    "step": "asked",
-   "note": "Letter sent 2026-10-21 09:46 UTC by the owner; waiting for the answer (the paper's data statement makes success unlikely)."
+   "note": "Letter sent 2026-10-21 09:40 UTC by the owner; waiting for the answer (the paper's data statement makes success unlikely)."
   }
  ],
  "obstacles": [],
