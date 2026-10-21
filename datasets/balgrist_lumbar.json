@@ -1,22 +1,36 @@
 {
-  "id": "balgrist_lumbar",
-  "name": "Balgrist ex-vivo lumbar CT plus C-arm (Jecklin)",
-  "group": "fluoro",
-  "what": "cadaver lumbar CT with real C-arm frames",
-  "level_truth": "yes, from the CT",
-  "reach": "get",
-  "licence": "not recorded",
-  "link": "https://rocs.balgrist.ch/en/contact",
-  "how_to_get": [
-    "Send spine-program 01_carm_level_detection/docs/data_requests/balgrist_data_request_2026-09-21.md to the ROCS group address or to the corresponding authors (Jecklin, Fuernstahl) once their addresses are confirmed on the article's first page.",
-    "Expect a data transfer agreement through Balgrist and Wayne State, since the set is restricted for pending patents."
-  ],
-  "grid_path": null,
-  "counts": {},
-  "measured": {},
-  "record": "spine-program 01_carm_level_detection/docs/data_requests/balgrist_data_request_2026-09-21.md",
-  "source_status": "request drafted 2026-09-21, never sent; the authors' group is ROCS (Research in Orthopedic Computer Science, Balgrist, head Philipp Fuernstahl), whose group address is rocs@balgrist.ch; the paper is arXiv:2401.16027 (Medical Image Analysis 2024); the set is restricted for pending patents",
-  "route": "letter",
-  "status": "requested",
-  "result": "Letter of 2026-09-21 sent 2026-10-20 by the owner to Philipp Fuernstahl and rocs@balgrist.ch (the message to Sascha Jecklin bounced); the resend through the ROCS contact form is pending; waiting for the answer."
+ "id": "balgrist_lumbar",
+ "name": "Balgrist ex-vivo lumbar CT plus C-arm (Jecklin)",
+ "group": "fluoro",
+ "what": "cadaver lumbar CT with real C-arm frames",
+ "level_truth": "yes, from the CT",
+ "reach": "get",
+ "licence": "not recorded",
+ "link": "https://rocs.balgrist.ch/en/contact",
+ "how_to_get": [
+  "Send spine-program 01_carm_level_detection/docs/data_requests/balgrist_data_request_2026-09-21.md to the ROCS group address or to the corresponding authors (Jecklin, Fuernstahl) once their addresses are confirmed on the article's first page.",
+  "Expect a data transfer agreement through Balgrist and Wayne State, since the set is restricted for pending patents."
+ ],
+ "grid_path": null,
+ "counts": {},
+ "measured": {},
+ "record": "spine-program 01_carm_level_detection/docs/data_requests/balgrist_data_request_2026-09-21.md",
+ "source_status": "request drafted 2026-09-21, never sent; the authors' group is ROCS (Research in Orthopedic Computer Science, Balgrist, head Philipp Fuernstahl), whose group address is rocs@balgrist.ch; the paper is arXiv:2401.16027 (Medical Image Analysis 2024); the set is restricted for pending patents",
+ "route": "letter",
+ "status": "requested",
+ "result": "Letter of 2026-09-21 sent 2026-10-20 by the owner to Philipp Fuernstahl and rocs@balgrist.ch (the message to Sascha Jecklin bounced); the resend through the ROCS contact form is pending; waiting for the answer.",
+ "history": [
+  {
+   "date": "2026-10-21",
+   "step": "researched",
+   "note": "request drafted 2026-09-21, never sent; the authors' group is ROCS (Research in Orthopedic Computer Science, Balgrist, head Philipp Fuernstahl), whose group address is rocs@balgrist.ch; the paper is arXiv:2401.16027 (Medical Image Analysis 2024); the set is restricted for pending patents"
+  },
+  {
+   "date": "2026-09-21",
+   "step": "asked",
+   "note": "Letter of 2026-09-21 sent 2026-10-20 by the owner to Philipp Fuernstahl and rocs@balgrist.ch (the message to Sascha Jecklin bounced); the resend through the ROCS contact form is pending; waiting for the answer."
+  }
+ ],
+ "obstacles": [],
+ "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch"
 }

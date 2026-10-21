@@ -35,6 +35,7 @@ jobs:
     permissions:
       contents: read
       pages: read
+      issues: read
     outputs:
       pages: ${{ steps.pages.outputs.source }}
     steps:
@@ -70,6 +71,17 @@ jobs:
         env:
           SHA: ${{ github.sha }}
         run: python3 tools/living_docs.py site "$RUNNER_TEMP/site" --tests "$RUNNER_TEMP/tests.json" --repo "$GITHUB_REPOSITORY" --sha "$SHA"
+
+      # The pipeline board (tools/pipeline.py) is served beside the site at
+      # /pipeline.html, drawn from the records and the tasks as the Pipeline
+      # board workflow draws it onto the branch pipeline.
+      - name: Read the tasks for the pipeline board
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --paginate "repos/$GITHUB_REPOSITORY/issues?state=all&per_page=100" --slurp | python3 -c 'import json,sys; print(json.dumps([i for page in json.load(sys.stdin) for i in page]))' > "$RUNNER_TEMP/issues.json"
+
+      - name: Render the pipeline board into the site
+        run: python3 tools/pipeline.py render --out "$RUNNER_TEMP/board" --issues "$RUNNER_TEMP/issues.json" --repo "$GITHUB_REPOSITORY" && cp "$RUNNER_TEMP/board/pipeline.html" "$RUNNER_TEMP/site/pipeline.html"
 
       - uses: actions/upload-pages-artifact@v5
         with:

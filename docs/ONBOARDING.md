@@ -30,7 +30,7 @@ Ask for the grid account first, since it takes the longest; everything else is m
 | Claude Pro or Max | you | https://claude.ai/upgrade, your own account; Claude Code is not in the free plan; Max if you will run several threads at once | Pro about US$20 a month, paid by you |
 | A Wayne State grid account | Wayne State C&IT | https://tech.wayne.edu/kb/high-performance-computing, naming Gregory Schwing as sponsor (the owner has submitted the request for the first collaborators); about two business days; questions to hpc@wayne.edu | free |
 | The grid's sign-in code (Google Authenticator) | you, once | install Google Authenticator on your phone; connect GlobalProtect (https://protect.wayne.edu) once; open https://ondemand.grid.wayne.edu, Interactive Apps, 2FA Setup, scan the code. Beethoven walks you through it too | free |
-| Beethoven invitation and the lab volume's access list | the owner | send the owner the Google address your Chrome is signed in to; the owner adds it to Beethoven's testers group (the invitation to its private Chrome Web Store page arrives by email) and adds your AccessID to /rs/rs_grp_oschome's access list, without which every lab path answers Permission denied | free |
+| The lab volume's access list | the owner | send the owner your AccessID once the grid account exists; the owner adds it to /rs/rs_grp_oschome's access list, without which every lab path answers Permission denied. Beethoven itself needs no invitation: it is public on the Chrome Web Store (section 4) | free |
 
 Two authenticator apps end up on your phone: Google Authenticator holds the grid's code, Microsoft
 Authenticator approves every other Wayne State sign-in, GlobalProtect included.
@@ -77,17 +77,17 @@ appears on the board the first time you claim. No file needs to be added for you
 
 Beethoven is a Chrome extension that starts a Claude Code worker in your own grid account, as a
 Slurm job, and opens it in claude.ai. It is how your Claude reaches the data and submits fetch
-jobs; nothing ever runs on the login node. The full guides, Install and Use, come with the
-invitation; the owner's reference copies are in spine-program under
-11_students_grid_access/docs/beethoven/guides/.
+jobs; nothing ever runs on the login node. It is public on the Chrome Web Store:
+https://chromewebstore.google.com/detail/beethoven/heoopgbkbkfckhhpbkkcgigohfekjicn. The full
+guides, Install and Use, are linked from its listing; the owner's reference copies are in
+spine-program under 11_students_grid_access/docs/beethoven/guides/.
 
 1. Wait for the grid account (section 1) and for the owner's word that your AccessID is on the
    lab volume's access list.
 2. Set up the grid's sign-in code if you have none (section 1, row 4). Beethoven's panel offers
    the same steps.
-3. Open the Beethoven invitation in Chrome, signed in to the Google account it was sent to, and
-   press Add to Chrome, then Add extension. Pin it with the puzzle icon. If the page shows no
-   item, Chrome is signed in to another Google account.
+3. Open https://chromewebstore.google.com/detail/beethoven/heoopgbkbkfckhhpbkkcgigohfekjicn in
+   Chrome and press Add to Chrome, then Add extension. Pin it with the puzzle icon.
 4. On the welcome page read the terms, tick the box and press Agree and continue. When the panel
    says One small download, once, install the helper for your system (it lets Beethoven reach
    the grid without GlobalProtect; no administrator needed; your computer warns once because it
@@ -123,11 +123,24 @@ STATE.md as /board), Tasks (the issues as columns), Pull requests, Runs, Workers
 (reads the repository and answers, offering the panel's actions as buttons), Share and
 Repositories. The sign-in is kept in your browser only. The board itself needs no panel:
 https://github.com/OpenSpineConsortium/spine-datasets/blob/board/STATE.md is the file.
+Symphony's own Chrome extension, public on the Chrome Web Store at
+https://chromewebstore.google.com/detail/symphony/hfljomhibljegapnfiglenfolnmpopoi, adds a
+"Ready for Symphony" link to the board on a repository's GitHub page; add it beside Beethoven.
+
+The dataset pipeline board is the other page to keep open: where every dataset stands, from
+"downloadable now" and "to ask" through "asked, waiting", "granted" and "fetching" to "on the
+grid", with the steps taken, the obstacles and the next step on each card.
+https://github.com/OpenSpineConsortium/spine-datasets/blob/pipeline/PIPELINE.md is the page
+GitHub renders, and https://openspineconsortium.github.io/spine-datasets/pipeline.html the
+interactive one with filters and search (members only). Both are drawn from the records, so a
+card moves when the record's status and history change (CONTRIBUTING.md, "How to record a
+result"); X-ray sets come before CT in every column.
 
 ## 7. Picking a task
 
 The tasks are the issues titled "Obtain <dataset>", one per record in datasets/, numbered by
-priority group in tasks/TASKS.md; group 1 is the most useful first. The board's Queue lists every
+priority group in tasks/TASKS.md; group 1 is the most useful first, and an X-ray set comes
+before a CT set whatever its group (the owner, 2026-10-21). The board's Queue lists every
 task nobody holds; a task labelled `worker:<your login>` is given to you and comes first. Take
 one whose route you can do:
 

@@ -75,7 +75,9 @@ it from there.
 One comment on the issue and the same line in datasets/<id>.json's `result` field, dated, in one
 of the shapes README.md lists (on the grid at <path> with the job id; requested, waiting;
 granted, fetch pending; refused, with the reason; needs the owner). Set `status` to the matching
-word (fetched, requested, granted, refused, needs-owner) and keep the record's licence and link
+word (fetched, requested, granted, refused, needs-owner), add one entry to the record's `history`
+(the date, the step, one line) and rewrite its `obstacles` and `next`, so the pipeline board
+(PIPELINE.md on the branch `pipeline`) shows the move, and keep the record's licence and link
 exactly as they are. A fetch also leaves FETCH.json beside the download (grid/README.md). The
 pull request carries the record change and nothing of the data: no image, no listing of patient
 identifiers, no token, no address of a private person beyond what a public page prints.
