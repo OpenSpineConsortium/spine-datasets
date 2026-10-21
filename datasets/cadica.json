@@ -11,7 +11,7 @@
   "Open https://data.mendeley.com/datasets/p9bpx9ctcv: version 5 (DOI 10.17632/p9bpx9ctcv.5) holds one zip, CADICA.zip, 3,076,112,179 bytes.",
   "The promoter fetches it from manifests/cadica.json after merge and checks the sha256 the page's API gives; cite the dataset and its paper (Expert Systems 41(12), e13708)."
  ],
- "grid_path": null,
+ "grid_path": "/rs/rs_grp_oschome/shared/datasets/cadica/raw",
  "counts": {
   "patients": 42
  },
@@ -19,8 +19,8 @@
  "record": "the sweep of 2026-10-21 (this repository's issue #107)",
  "source_status": "found by the sweep of 2026-10-21; open on Mendeley Data under CC BY 4.0; real C-arm sequences from a Siemens Artis Zee with the dose stated (5 to 50 mGy a projection); version 5 holds one zip of 3,076,112,179 bytes with the sha256 Mendeley's public API gives",
  "route": "download",
- "status": "fetching",
- "result": "",
+ "status": "fetched",
+ "result": "2026-10-21: on the grid at /rs/rs_grp_oschome/shared/datasets/cadica/raw, 1 files, 3076112179 bytes, sha256-checked, promoter job 40696334",
  "history": [
   {
    "date": "2026-10-21",
@@ -31,8 +31,13 @@
    "date": "2026-10-21",
    "step": "fetching",
    "note": "manifest ready; the promoter fetches after merge"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "fetched",
+   "note": "on the grid at /rs/rs_grp_oschome/shared/datasets/cadica/raw, 1 files, 3076112179 bytes, sha256-checked, promoter job 40696334"
   }
  ],
  "obstacles": [],
- "next": "the promoter installs it after merge"
+ "next": ""
 }
