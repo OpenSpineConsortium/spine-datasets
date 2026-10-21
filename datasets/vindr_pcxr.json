@@ -5,7 +5,7 @@
  "what": "9,125 pediatric frontal chest radiographs from the VinDr hospitals with radiologist boxes; the only sizeable public pediatric spine-bearing radiograph source found",
  "level_truth": "none; the pediatric frontal thoracic spine",
  "reach": "gated",
- "licence": "PhysioNet credentialed health data licence; to confirm on the page",
+ "licence": "PhysioNet Restricted Health Data License 1.5.0 (no CITI review needed)",
  "link": "https://physionet.org/content/vindr-pcxr/1.0.0/",
  "how_to_get": [
   "The owner's PhysioNet credentialing (CITI training on file) and the data use agreement on the record page, signed by the owner, the route VinDr-SpineXR took.",
@@ -20,8 +20,8 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; PhysioNet credentialed access, the route VinDr-SpineXR already took",
  "route": "agreement",
- "status": "needs-owner",
- "result": "",
+ "status": "granted",
+ "result": "Granted 2026-10-21: the owner's PhysioNet Restricted Health Data Use Agreement 1.5.0 is on file and the files are open to his account (34.1 GB uncompressed, 23.4 GB zip); the fetch is SchwingNet's grid/run-xray-chain.sh --credentialed --only vindr_pcxr, landing at /rs/rs_grp_oschome/go2432/data/vindr_pcxr/raw.",
  "history": [
   {
    "date": "2026-10-21",
@@ -32,10 +32,15 @@
    "date": "2026-10-09",
    "step": "note",
    "note": "the owner's PhysioNet credentialed access was approved 2026-10-09; only this dataset's agreement click remains"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "granted",
+   "note": "the owner's restricted data use agreement is on file; the Files section lists the image folders and the annotation CSVs"
   }
  ],
  "obstacles": [
-  "the owner's hand: the PhysioNet data use agreement click for this dataset; the IRB question as for MIMIC-CXR"
+  "the IRB question as for MIMIC-CXR"
  ],
- "next": "the owner signs this dataset's PhysioNet agreement (credential held since 2026-10-09); then a grid job fetches it with the owner's ~/.netrc"
+ "next": "the owner submits the grid fetch (SchwingNet grid/run-xray-chain.sh --credentialed --only vindr_pcxr, with his PhysioNet login in ~/.netrc); then sha256sum -c SHA256SUMS.txt on the copy"
 }
