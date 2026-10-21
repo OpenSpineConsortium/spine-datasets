@@ -20,8 +20,8 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; PhysioNet credentialed access, the route VinDr-SpineXR already took",
  "route": "agreement",
- "status": "granted",
- "result": "Granted 2026-10-21: the owner's PhysioNet Restricted Health Data Use Agreement 1.5.0 is on file and the files are open to his account (34.1 GB uncompressed, 23.4 GB zip); the fetch is SchwingNet's grid/run-xray-chain.sh --credentialed --only vindr_pcxr, landing at /rs/rs_grp_oschome/go2432/data/vindr_pcxr/raw.",
+ "status": "fetching",
+ "result": "Slurm chain submitted 2026-10-21 21:35 UTC by the SchwingNet thread through Beethoven's gate word (schwingnet fetch vindr_pcxr, SchwingNet 5ecce95) with the owner's PhysioNet credentials from ~/.netrc: fetch 40697734, then bank and ingest 40697735, then catalog 40697736 (each afterany); about 30 GB, about two hours, landing at /rs/rs_grp_oschome/go2432/data/vindr_pcxr/raw",
  "history": [
   {
    "date": "2026-10-21",
@@ -37,10 +37,13 @@
    "date": "2026-10-21",
    "step": "granted",
    "note": "the owner's restricted data use agreement is on file; the Files section lists the image folders and the annotation CSVs"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "fetching",
+   "note": "Slurm chain submitted 2026-10-21 21:35 UTC by the SchwingNet thread through Beethoven's gate word (schwingnet fetch vindr_pcxr, SchwingNet 5ecce95) with the owner's PhysioNet credentials from ~/.netrc: fetch 40697734, then bank and ingest 40697735, then catalog 40697736 (each afterany); about 30 GB, about two hours, landing at /rs/rs_grp_oschome/go2432/data/vindr_pcxr/raw"
   }
  ],
- "obstacles": [
-  "the IRB question as for MIMIC-CXR"
- ],
- "next": "the owner submits the grid fetch (SchwingNet grid/run-xray-chain.sh --credentialed --only vindr_pcxr, with his PhysioNet login in ~/.netrc); then sha256sum -c SHA256SUMS.txt on the copy"
+ "obstacles": [],
+ "next": "when the chain lands, check the files against the project's SHA256SUMS.txt and record fetched with the file count, the bytes and the grid path"
 }
