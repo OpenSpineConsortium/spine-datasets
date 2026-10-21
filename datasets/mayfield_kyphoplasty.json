@@ -1,24 +1,38 @@
 {
-  "id": "mayfield_kyphoplasty",
-  "name": "Mayfield Brain and Spine kyphoplasty alignment series",
-  "group": "video",
-  "what": "two native DICOM C-arm alignment series played in OsiriX on YouTube: AP 98 frames, lateral 65 frames; a birth date is burned in",
-  "level_truth": "thoracolumbar, unnamed",
-  "reach": "get",
-  "licence": "unknown",
-  "link": "https://www.youtube.com/watch?v=fkRFgkESCgQ",
-  "how_to_get": [
-    "Send request 6 of spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md (06_mayfield.eml) to the clinic's contact address asking for the two DICOM series, de-identified."
-  ],
-  "grid_path": null,
-  "counts": {
-    "series": 2,
-    "frames": 163
+ "id": "mayfield_kyphoplasty",
+ "name": "Mayfield Brain and Spine kyphoplasty alignment series",
+ "group": "video",
+ "what": "two native DICOM C-arm alignment series played in OsiriX on YouTube: AP 98 frames, lateral 65 frames; a birth date is burned in",
+ "level_truth": "thoracolumbar, unnamed",
+ "reach": "get",
+ "licence": "unknown",
+ "link": "https://www.youtube.com/watch?v=fkRFgkESCgQ",
+ "how_to_get": [
+  "Send request 6 of spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md (06_mayfield.eml) to the clinic's contact address asking for the two DICOM series, de-identified."
+ ],
+ "grid_path": null,
+ "counts": {
+  "series": 2,
+  "frames": 163
+ },
+ "measured": {},
+ "record": "spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md 6",
+ "source_status": "request 6 drafted, never sent",
+ "route": "letter",
+ "status": "requested",
+ "result": "Request 6 of the 2026-09-26 sheet sent 2026-10-20 by the owner; waiting for the answer.",
+ "history": [
+  {
+   "date": "2026-10-21",
+   "step": "researched",
+   "note": "request 6 drafted, never sent"
   },
-  "measured": {},
-  "record": "spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md 6",
-  "source_status": "request 6 drafted, never sent",
-  "route": "letter",
-  "status": "requested",
-  "result": "Request 6 of the 2026-09-26 sheet sent 2026-10-20 by the owner; waiting for the answer."
+  {
+   "date": "2026-09-26",
+   "step": "asked",
+   "note": "Request 6 of the 2026-09-26 sheet sent 2026-10-20 by the owner; waiting for the answer."
+  }
+ ],
+ "obstacles": [],
+ "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch"
 }

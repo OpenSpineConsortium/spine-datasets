@@ -1,0 +1,102 @@
+# The pipeline board (tools/pipeline.py): where every dataset stands between
+# the registry and the grid, drawn from the records under datasets/ and the
+# tasks. The run writes PIPELINE.md, which GitHub renders, and pipeline.html,
+# the interactive board, to the branch "pipeline", the way the metrics
+# workflow writes its branch: a commit built from the files alone
+# (hash-object, mktree, commit-tree), replaced with --force-with-lease naming
+# the commit it read, so the default branch carries no board commit and a
+# ruleset meant for it never stands in the way. The docs site serves the same
+# pipeline.html (docs.yml). It runs on a push to the default branch that
+# changes a record or the script, on every issue event, since a claim or a
+# label moves a card's holder, daily as a fallback, and by hand. The issues
+# are read with GITHUB_TOKEN alone through gh and handed to the script as a
+# file; a push made with GITHUB_TOKEN starts no workflow. A branch pipeline
+# that holds anything else is the project's own and is left alone.
+
+name: Pipeline board
+
+on:
+  push:
+    branches: [main]
+    paths: ["datasets/**", "tools/pipeline.py", ".github/workflows/pipeline.yml"]
+  issues:
+    types: [opened, edited, closed, reopened, labeled, unlabeled]
+  schedule:
+    - cron: "27 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: pipeline
+  cancel-in-progress: false
+
+jobs:
+  board:
+    if: github.event.repository.fork == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Read the tasks
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --paginate "repos/$GITHUB_REPOSITORY/issues?state=all&per_page=100" --slurp | python3 -c 'import json,sys; print(json.dumps([i for page in json.load(sys.stdin) for i in page]))' > "$RUNNER_TEMP/issues.json"
+
+      - name: Render the board
+        run: python3 tools/pipeline.py render --out "$RUNNER_TEMP/board" --issues "$RUNNER_TEMP/issues.json" --repo "$GITHUB_REPOSITORY"
+
+      - name: Write the board to the branch pipeline
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          board="$RUNNER_TEMP/board"
+          foreign_files() {
+            git ls-tree --name-only "$1" | grep -v -x -e PIPELINE.md -e pipeline.html
+          }
+          # The date line changes every day; the board is unchanged when the
+          # rest of PIPELINE.md is, so a quiet day pushes nothing.
+          same_as_branch() {
+            git show "$previous:PIPELINE.md" 2>/dev/null | grep -v '^Written by tools/pipeline.py on ' > "$RUNNER_TEMP/previous.md" \
+              && grep -v '^Written by tools/pipeline.py on ' "$board/PIPELINE.md" | cmp -s - "$RUNNER_TEMP/previous.md"
+          }
+          write_board() {
+            previous=""
+            git update-ref -d refs/remotes/origin/pipeline 2>/dev/null || true
+            if git fetch --quiet --no-tags origin +refs/heads/pipeline:refs/remotes/origin/pipeline 2>/dev/null; then
+              previous="$(git rev-parse refs/remotes/origin/pipeline)" || return 1
+            fi
+            if [ -n "$previous" ] && foreign="$(foreign_files "$previous")"; then
+              echo "the branch pipeline holds files this workflow did not write:"
+              echo "$foreign"
+              echo "It is the project's own branch and stays as it is; nothing was pushed."
+              return 2
+            fi
+            if [ -n "$previous" ] && same_as_branch; then
+              echo "board unchanged"
+              return 0
+            fi
+            md="$(git hash-object -w "$board/PIPELINE.md")" || return 1
+            page="$(git hash-object -w "$board/pipeline.html")" || return 1
+            tree="$(printf '100644 blob %s\tPIPELINE.md\n100644 blob %s\tpipeline.html\n' "$md" "$page" | git mktree)" || return 1
+            commit="$(git commit-tree "$tree" -m "Pipeline board as of $(date -u +%Y-%m-%d)")" || return 1
+            git push --quiet --force-with-lease="refs/heads/pipeline:$previous" origin "$commit:refs/heads/pipeline" || return 1
+            echo "board written as $commit"
+          }
+          status=0
+          write_board || status=$?
+          if [ "$status" -eq 0 ]; then
+            exit 0
+          elif [ "$status" -eq 2 ]; then
+            exit 1
+          fi
+          echo "the branch pipeline moved during this run; reading it again"
+          write_board

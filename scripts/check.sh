@@ -28,6 +28,10 @@ python3 tools/agents.py check
 # is made from (tools/living_docs.py); the lessons, whose commands a check
 # runs, live in symphony-protocol's lessons/ and are tested there.
 python3 tools/living_docs.py check
+# Every dataset record's pipeline fields (route, status, history, obstacles,
+# next) must hold together, since the pipeline board is drawn from them
+# (tools/pipeline.py, PIPELINE.md on the branch pipeline).
+python3 tools/pipeline.py check
 # The tests, every module of them here and by hand; CI runs them as parts
 # side by side, each in a job of its own, and sets CHECK_TESTS=none for the
 # part that runs this script, so the tests run once (tools/test_shard.py,

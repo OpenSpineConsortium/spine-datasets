@@ -18,5 +18,27 @@
   "source_status": "access granted on the owner's Hugging Face account on 2026-10-21 (the dataset page shows the gate accepted); not yet fetched: 21.3 TB, so the fetch waits for the owner's word on how much Ceph space it may take",
   "route": "agreement",
   "status": "granted",
-  "result": "Access granted on the owner's Hugging Face account 2026-10-21; the fetch (21.3 TB) waits for the owner's word on how much Ceph space it may take."
+  "result": "Access granted on the owner's Hugging Face account 2026-10-21; the full set (21.3 TB) is not fetched: it does not fit, and X-ray sets come before CT (the owner, 2026-10-21).",
+  "history": [
+    {
+      "date": "2026-10-21",
+      "step": "researched",
+      "note": "access granted on the owner's Hugging Face account on 2026-10-21 (the dataset page shows the gate accepted); not yet fetched: 21.3 TB, so the fetch waits for the owner's word on how much Ceph space it may take"
+    },
+    {
+      "date": "2026-10-21",
+      "step": "granted",
+      "note": "Access granted on the owner's Hugging Face account 2026-10-21; the fetch (21.3 TB) waits for the owner's word on how much Ceph space it may take."
+    },
+    {
+      "date": "2026-10-21",
+      "step": "note",
+      "note": "the full 21.3 TB download is off, since it cannot fit on the shared volume, and X-ray sets come before CT in every queue (the owner, 2026-10-21); a subset, if ever, is a later decision of the owner's"
+    }
+  ],
+  "obstacles": [
+    "21.3 TB does not fit on the shared volume: the full set is not fetched (the owner, 2026-10-21)",
+    "the token in ~/.hf/token.env on the owner's grid account, for any subset the owner later names"
+  ],
+  "next": "no fetch for now; a subset only on the owner's word, naming the series and the size"
 }

@@ -1,21 +1,32 @@
 {
-  "id": "dysphagiabank",
-  "name": "DysphagiaBank (TalkBank), UNM corpus",
-  "group": "video",
-  "what": "lateral swallow videofluoroscopy of about 7 to 53 adults, cervical only, non-commercial, by registration",
-  "level_truth": "none named",
-  "reach": "get",
-  "licence": "non-commercial, by registration",
-  "link": "https://dysphagia.talkbank.org/",
-  "how_to_get": [
-    "Register on the TalkBank site for the UNM corpus and accept its non-commercial terms."
-  ],
-  "grid_path": null,
-  "counts": {},
-  "measured": {},
-  "record": "spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md Not drafted",
-  "source_status": "a registration, not a letter; the count on the corpus page is to be checked when registering",
-  "route": "account",
-  "status": "todo",
-  "result": ""
+ "id": "dysphagiabank",
+ "name": "DysphagiaBank (TalkBank), UNM corpus",
+ "group": "video",
+ "what": "lateral swallow videofluoroscopy of about 7 to 53 adults, cervical only, non-commercial, by registration",
+ "level_truth": "none named",
+ "reach": "get",
+ "licence": "non-commercial, by registration",
+ "link": "https://dysphagia.talkbank.org/",
+ "how_to_get": [
+  "Register on the TalkBank site for the UNM corpus and accept its non-commercial terms."
+ ],
+ "grid_path": null,
+ "counts": {},
+ "measured": {},
+ "record": "spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md Not drafted",
+ "source_status": "a registration, not a letter; the count on the corpus page is to be checked when registering",
+ "route": "account",
+ "status": "todo",
+ "result": "",
+ "history": [
+  {
+   "date": "2026-10-21",
+   "step": "researched",
+   "note": "a registration, not a letter; the count on the corpus page is to be checked when registering"
+  }
+ ],
+ "obstacles": [
+  "the owner's hand: the registration on dysphagia.talkbank.org, in the owner's name; the count on the corpus page is checked when registering"
+ ],
+ "next": "the owner opens the account or the gate named in the record; a collaborator reads the terms and writes them into the record first"
 }

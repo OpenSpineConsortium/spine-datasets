@@ -1,22 +1,36 @@
 {
-  "id": "huashan_fudan",
-  "name": "Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024)",
-  "group": "fluoro",
-  "what": "140 living lumbar patients (January 2020 to December 2023) with preoperative CT and intraoperative AP and lateral films of L1 to L5; the device is unnamed; two co-authors are from Shanghai Maestro Surgical Robotics; no data statement",
-  "level_truth": "L1 to L5 on the intraoperative film, establishable from the same patient's preoperative CT",
-  "licence": "not recorded; a data use agreement is the route",
-  "link": null,
-  "how_to_get": [
-    "Write to the corresponding author (Jiang Jianyuan, Huashan Hospital, Department of Orthopaedics), address from the paper's correspondence line, to confirm; the letter is letters/huashan_fudan.md.",
-    "A yes brings a data use agreement, which the owner signs, then a transfer by link, fetched as a grid job on the owner's word."
-  ],
-  "reach": "get",
-  "grid_path": null,
-  "counts": {},
-  "measured": {},
-  "record": "SchwingNet docs/research/xray-dataset-requests.md section 15 (2026-10-21); no record under SchwingNet's data/sources/ existed for this set, so this one was written from that section",
-  "source_status": "a letter sent 2026-10-21; no record in SchwingNet's registry yet",
-  "route": "letter",
-  "status": "requested",
-  "result": "Letter sent 2026-10-21 09:46 UTC by the owner to the corresponding author; waiting for the answer."
+ "id": "huashan_fudan",
+ "name": "Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024)",
+ "group": "fluoro",
+ "what": "140 living lumbar patients (January 2020 to December 2023) with preoperative CT and intraoperative AP and lateral films of L1 to L5; the device is unnamed; two co-authors are from Shanghai Maestro Surgical Robotics; no data statement",
+ "level_truth": "L1 to L5 on the intraoperative film, establishable from the same patient's preoperative CT",
+ "licence": "not recorded; a data use agreement is the route",
+ "link": null,
+ "how_to_get": [
+  "Write to the corresponding author (Jiang Jianyuan, Huashan Hospital, Department of Orthopaedics), address from the paper's correspondence line, to confirm; the letter is letters/huashan_fudan.md.",
+  "A yes brings a data use agreement, which the owner signs, then a transfer by link, fetched as a grid job on the owner's word."
+ ],
+ "reach": "get",
+ "grid_path": null,
+ "counts": {},
+ "measured": {},
+ "record": "SchwingNet docs/research/xray-dataset-requests.md section 15 (2026-10-21); no record under SchwingNet's data/sources/ existed for this set, so this one was written from that section",
+ "source_status": "a letter sent 2026-10-21; no record in SchwingNet's registry yet",
+ "route": "letter",
+ "status": "requested",
+ "result": "Letter sent 2026-10-21 09:46 UTC by the owner to the corresponding author; waiting for the answer.",
+ "history": [
+  {
+   "date": "2026-10-21",
+   "step": "researched",
+   "note": "a letter sent 2026-10-21; no record in SchwingNet's registry yet"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "asked",
+   "note": "Letter sent 2026-10-21 09:46 UTC by the owner to the corresponding author; waiting for the answer."
+  }
+ ],
+ "obstacles": [],
+ "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch"
 }

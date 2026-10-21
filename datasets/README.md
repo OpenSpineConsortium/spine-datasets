@@ -28,6 +28,22 @@ The fields this repository adds:
 - `status`: where the task stands: `todo`, `requested`, `granted`, `fetched`, `refused` or
   `needs-owner`.
 - `result`: free text, the dated result line README.md describes; empty until there is one.
+- `history`: the steps taken so far, oldest first, each `{"date": "YYYY-MM-DD", "step": ...,
+  "note": ...}` with the step one of `researched`, `asked`, `granted`, `fetching`, `fetched`,
+  `refused`, `handed-back` or `note`, and the note one line saying what happened (the letter
+  sent and to whom, the form submitted, the job id, the reason). A status other than `todo`
+  needs at least one entry saying when.
+- `obstacles`: a list of one-line strings, what stands in the way right now (a DUA to sign, a
+  bounce, a licence line still to confirm, a token only the owner holds); empty when nothing.
+- `next`: one line, what whoever holds the task does next; empty when nothing is planned.
+
+The pipeline board (tools/pipeline.py; PIPELINE.md on the branch `pipeline`, and the interactive
+pipeline.html on the docs site) is drawn from these fields and nothing else: the status and the
+route put a record in its column, the history is the trail, the obstacles and the next step are
+the card. `bash scripts/check.sh` runs `python3 tools/pipeline.py check`, which refuses a record
+whose fields do not hold together. Inside every column the X-ray groups (fluoro, video,
+projections, films) come before ct, and the fetch order follows the same rule: X-ray sets before
+CT, the owner's order of 2026-10-21.
 
 A collaborator changes `status`, `result` and, after a fetch, `grid_path` and `measured`, and
 replaces a "to confirm on the page" with what the page says; `licence` and `link` change only when

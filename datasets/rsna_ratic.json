@@ -1,22 +1,38 @@
 {
-  "id": "rsna_ratic",
-  "name": "RSNA abdominal trauma CT (RATIC)",
-  "group": "ct",
-  "what": "3,147 patients, 4,711 series; a gated anomaly-harvest collection (group B7)",
-  "level_truth": "counted by the census pipeline once fetched",
-  "reach": "gated",
-  "licence": "a data use agreement (non-commercial)",
-  "link": "https://mira.rsna.org/dataset/5",
-  "how_to_get": [
-    "RSNA's terms accepted on the owner's account (2026-10-21); the link expires 2026-10-28, so the fetch runs before then.",
-    "Fetch on a compute node into /rs/rs_grp_oschome/go2432/data/rsna_ratic_abdominal_trauma/raw (manifest id rsna_ratic_abdominal_trauma); derived labels stay internal."
-  ],
-  "grid_path": null,
-  "counts": {},
-  "measured": {},
-  "record": "spine-program 10_data_platform_grid/code/data_platform/DATA_MANIFEST.md group B7; spine-program 10_data_platform_grid acquisition/ACQUISITION_PLAN.md section 7",
-  "source_status": "an RSNA download link (a presigned zip, valid until 2026-10-28 02:38 UTC) received by the owner on 2026-10-21 after accepting RSNA's terms; the fetch command was given to the owner (curl -C - into DEST on reqp --qos=requeue); job id not yet recorded",
-  "route": "agreement",
-  "status": "granted",
-  "result": "RSNA's terms accepted 2026-10-21; a presigned link valid until 2026-10-28 02:38 UTC is in the owner's ~/.rsna/ratic_link; job id not yet recorded."
+ "id": "rsna_ratic",
+ "name": "RSNA abdominal trauma CT (RATIC)",
+ "group": "ct",
+ "what": "3,147 patients, 4,711 series; a gated anomaly-harvest collection (group B7)",
+ "level_truth": "counted by the census pipeline once fetched",
+ "reach": "gated",
+ "licence": "a data use agreement (non-commercial)",
+ "link": "https://mira.rsna.org/dataset/5",
+ "how_to_get": [
+  "RSNA's terms accepted on the owner's account (2026-10-21); the link expires 2026-10-28, so the fetch runs before then.",
+  "Fetch on a compute node into /rs/rs_grp_oschome/go2432/data/rsna_ratic_abdominal_trauma/raw (manifest id rsna_ratic_abdominal_trauma); derived labels stay internal."
+ ],
+ "grid_path": null,
+ "counts": {},
+ "measured": {},
+ "record": "spine-program 10_data_platform_grid/code/data_platform/DATA_MANIFEST.md group B7; spine-program 10_data_platform_grid acquisition/ACQUISITION_PLAN.md section 7",
+ "source_status": "an RSNA download link (a presigned zip, valid until 2026-10-28 02:38 UTC) received by the owner on 2026-10-21 after accepting RSNA's terms; the fetch command was given to the owner (curl -C - into DEST on reqp --qos=requeue); job id not yet recorded",
+ "route": "agreement",
+ "status": "granted",
+ "result": "RSNA's terms accepted 2026-10-21; a presigned link valid until 2026-10-28 02:38 UTC is in the owner's ~/.rsna/ratic_link; job id not yet recorded.",
+ "history": [
+  {
+   "date": "2026-10-21",
+   "step": "researched",
+   "note": "an RSNA download link (a presigned zip, valid until 2026-10-28 02:38 UTC) received by the owner on 2026-10-21 after accepting RSNA's terms; the fetch command was given to the owner (curl -C - into DEST on reqp --qos=requeue); job id not yet recorded"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "granted",
+   "note": "RSNA's terms accepted 2026-10-21; a presigned link valid until 2026-10-28 02:38 UTC is in the owner's ~/.rsna/ratic_link; job id not yet recorded."
+  }
+ ],
+ "obstacles": [
+  "the owner's hand: the sbatch from the owner's grid account before the link expires; the job id goes in the record"
+ ],
+ "next": "the fetch: a grid job by grid/README.md, with what the result line says the fetch needs"
 }

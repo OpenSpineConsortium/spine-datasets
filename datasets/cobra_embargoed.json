@@ -1,23 +1,34 @@
 {
-  "id": "cobra_embargoed",
-  "name": "COBRA2026 embargoed cases",
-  "group": "projections",
-  "what": "the challenge's held-back cases",
-  "level_truth": "same",
-  "reach": "embargoed",
-  "licence": "CC BY-NC 4.0",
-  "link": "https://zenodo.org/records/21322350",
-  "how_to_get": [
-    "Wait for the embargo to lift on 2032-03-01; nothing to apply for."
-  ],
-  "grid_path": null,
-  "counts": {
-    "cases": 175
-  },
-  "measured": {},
-  "record": "spine-program 01_carm_level_detection/docs/handoff/DATASET_USAGE.md 2.3",
-  "source_status": "released on 2032-03-01",
-  "route": "download",
-  "status": "todo",
-  "result": "Embargoed until 2032-03-01; nothing to do before then."
+ "id": "cobra_embargoed",
+ "name": "COBRA2026 embargoed cases",
+ "group": "projections",
+ "what": "the challenge's held-back cases",
+ "level_truth": "same",
+ "reach": "embargoed",
+ "licence": "CC BY-NC 4.0",
+ "link": "https://zenodo.org/records/21322350",
+ "how_to_get": [
+  "Wait for the embargo to lift on 2032-03-01; nothing to apply for."
+ ],
+ "grid_path": null,
+ "counts": {
+  "cases": 175
+ },
+ "measured": {},
+ "record": "spine-program 01_carm_level_detection/docs/handoff/DATASET_USAGE.md 2.3",
+ "source_status": "released on 2032-03-01",
+ "route": "download",
+ "status": "todo",
+ "result": "Embargoed until 2032-03-01; nothing to do before then.",
+ "history": [
+  {
+   "date": "2026-10-21",
+   "step": "researched",
+   "note": "released on 2032-03-01"
+  }
+ ],
+ "obstacles": [
+  "embargoed; the record says until when"
+ ],
+ "next": "nothing until the embargo ends"
 }
