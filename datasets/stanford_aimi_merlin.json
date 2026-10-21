@@ -17,8 +17,8 @@
  "record": "spine-program 10_data_platform_grid/code/data_platform/DATA_MANIFEST.md group B7; spine-program 10_data_platform_grid acquisition/ACQUISITION_PLAN.md section 7",
  "source_status": "an agreement stands in front of the data; none signed",
  "route": "agreement",
- "status": "refused",
- "result": "Dropped by the owner 2026-10-21: too large (25,494 CTs); not asked for.",
+ "status": "needs-owner",
+ "result": "Pending more storage: held, not dropped, until the shared volume has room for it (25,494 CTs); the owner's word of 2026-10-21.",
  "history": [
   {
    "date": "2026-10-21",
@@ -29,10 +29,16 @@
    "date": "2026-10-21",
    "step": "note",
    "note": "dropped by the owner on 2026-10-21: too large for the shared volume (25,494 CTs); never asked for, and taken up again only on his word"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "note",
+   "note": "not dropped: the owner holds the set pending more storage (his correction of 2026-10-21 20:20 UTC); the word dropped in the note above is withdrawn"
   }
  ],
  "obstacles": [
-  "dropped by the owner, 2026-10-21: too large for the shared volume"
+  "pending more storage: the shared volume has no room for it yet (the owner, 2026-10-21)",
+  "the owner's hand: the AIMI research use agreement click-through; the Azure URL that follows is a credential and goes in a mode-0600 file on the grid"
  ],
- "next": ""
+ "next": "when there is more storage, the owner signs the AIMI agreement and says how much of the set the volume takes; then the fetch runs as a Slurm job"
 }
