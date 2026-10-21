@@ -1,6 +1,6 @@
 # tvgh_spinexr: the request text
 
-Not sent.
+Sent 2026-10-21 19:54 UTC by the owner from his Wayne State mailbox, by email to the senior author at National Taiwan University (iyhsieh@ntu.edu.tw), since the IEEE DataPort page could not be reached; the text sent is the last section, The letter sent. The access request box text below was never used. The letter to Taipei Veterans General Hospital of 19:56 UTC (letters/tvgh_as_spine_xray.md) asks about this set too.
 
 To: the depositor of TVGH-SpineXR on IEEE DataPort, through the record's access request box if the record is by request.
 Route: an IEEE account and the record's own box; the account, any checkbox and any subscription fee are the owner's hand only.
@@ -27,3 +27,32 @@ Binding, the owner's hand only: the IEEE account, any licence checkbox on the re
 subscription fee if the record is one (IEEE DataPort subscriptions are priced per year; the
 amount is read on the page). What to expect back: a download link, or the depositor's answer to
 the request, days to weeks.
+
+## The letter sent
+
+Subject:
+
+```text
+[XR/CT Imaging Research] Request for the TVGH-SpineXR dataset (doi:10.21227/x6bb-7r75)
+```
+
+Body:
+
+```text
+Dear Dr Hsieh,
+
+I study the application of computer science to improving spinal health, and my current work needs spine radiographs with per-vertebra level labels from a Taiwanese centre; the sets I hold with such labels come from Thailand, Vietnam, the United States and Europe. Your TVGH-SpineXR dataset from Taipei Veterans General Hospital (Lu, Tu, Hsieh, Feng and Hsieh, IEEE Transactions on Medical Imaging 2026; IEEE DataPort doi:10.21227/x6bb-7r75) is described as carrying T1 to L5 vertebra labels and masks, which are exactly the expert truth I need.
+
+My work measures how reliably automated image-analysis methods recognise which vertebra is which on radiographs, including the transitional variants behind wrong-level errors in spine care, across devices and populations, reported as per-image agreement with expert labels and confidence intervals, by level and by device.
+
+I was not able to reach the files through IEEE DataPort, so I am writing to ask whether the radiographs and their vertebra labels could be shared for non-commercial research, and what terms you require. If Dr Feng or another colleague is the right person for this request, I would be grateful if you could forward it. The images would be held on Wayne State University's research computing storage, read only by me, never redistributed, and deleted at the end of the project if you ask; the work is on de-identified imaging under Wayne State IRB determination HPR 2026-269. I will sign a data use agreement through Wayne State on your terms, cite your paper and dataset, and share our results on your images with you before publication.
+
+With thanks,
+
+Gregory J. Schwing, MD, PhD
+Department of General Surgery
+Wayne State University School of Medicine / Detroit Medical Center
+Detroit, Michigan, USA
+go2432@wayne.edu
++1 504-994-0403
+```

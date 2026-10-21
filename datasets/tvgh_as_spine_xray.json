@@ -1,0 +1,38 @@
+{
+ "id": "tvgh_as_spine_xray",
+ "name": "TVGH ankylosing spondylitis cervical and lumbar spine films",
+ "group": "films",
+ "what": "paired cervical and lumbar spine radiograph series in DICOM from Taipei Veterans General Hospital, in patients with ankylosing spondylitis; counts not shown to a visitor",
+ "level_truth": "not recorded",
+ "reach": "gated",
+ "licence": "not recorded",
+ "link": "https://data.dmc.nycu.edu.tw/dataset/d08-x-ray",
+ "how_to_get": [
+  "The owner's letter of 2026-10-21 (letters/tvgh_as_spine_xray.md) asks the hospital's contacts named on the portal for the radiographs and their terms.",
+  "Any data use agreement the hospital asks for is the owner's to sign; the fetch then runs as a Slurm job."
+ ],
+ "grid_path": null,
+ "counts": {},
+ "measured": {},
+ "record": "the sweep of 2026-10-21 (this repository's issue #107)",
+ "source_status": "found by the sweep of 2026-10-21 on the Taiwan medical data portal (data.dmc.nycu.edu.tw, data set d08); the portal lists the set and shows no files to a visitor",
+ "route": "letter",
+ "status": "requested",
+ "result": "Letter sent 2026-10-21 19:56 UTC by the owner to the contacts the portal names at Taipei Veterans General Hospital; it also asks about TVGH-SpineXR; waiting for the answer.",
+ "history": [
+  {
+   "date": "2026-10-21",
+   "step": "researched",
+   "note": "found by the sweep of 2026-10-21 on the Taiwan medical data portal (data.dmc.nycu.edu.tw, data set d08); the portal lists the set and shows no files to a visitor"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "asked",
+   "note": "Letter sent 2026-10-21 19:56 UTC by the owner to the contacts the portal names at Taipei Veterans General Hospital; it also asks about TVGH-SpineXR; waiting for the answer."
+  }
+ ],
+ "obstacles": [
+  "the hospital's answer and its terms; any data use agreement is the owner's hand"
+ ],
+ "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch"
+}

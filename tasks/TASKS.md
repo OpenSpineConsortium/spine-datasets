@@ -1035,3 +1035,51 @@ The owner's hand: nothing until 2032
 Record: datasets/cobra_embargoed.json (reach embargoed, licence: CC BY-NC 4.0)
 Files likely touched: datasets/cobra_embargoed.json, letters/cobra_embargoed.md
 Priority: group 6, waits on time; position 86 of 86
+
+## Obtain TVGH ankylosing spondylitis cervical and lumbar spine films (Taiwan medical data portal, data set d08)
+
+What it is: paired cervical and lumbar spine radiograph series in DICOM from Taipei Veterans General Hospital, in patients with ankylosing spondylitis, listed on the Taiwan medical data portal at data.dmc.nycu.edu.tw (data set d08); the portal shows no files to a visitor
+Link: https://data.dmc.nycu.edu.tw/dataset/d08-x-ray
+Why it matters: fused and bridged spines, the hardest films for telling one vertebra from the next, from a Taiwanese centre none of the held sets covers
+Route in: letter; status now: requested (sent 2026-10-21)
+Letter or form: letters/tvgh_as_spine_xray.md, sent to the portal's contacts at Taipei Veterans General Hospital
+The owner's hand: any data use agreement the hospital asks for
+Record: datasets/tvgh_as_spine_xray.json (reach gated, licence: not recorded)
+Files likely touched: datasets/tvgh_as_spine_xray.json, letters/tvgh_as_spine_xray.md
+Priority: group 4, a request already sent and waiting for its answer; found by the sweep of 2026-10-21
+
+## Obtain CADICA invasive coronary angiography sequences (Mendeley p9bpx9ctcv)
+
+What it is: invasive coronary angiography videos of 42 patients as PNG frames (512 x 512, 10 frames per second, 1 to 151 frames a video) from a Siemens Artis Zee at Hospital Universitario Virgen de la Victoria, Malaga, with lesion boxes and clinical features; one zip of 3,076,112,179 bytes (version 5)
+Link: https://data.mendeley.com/datasets/p9bpx9ctcv
+Why it matters: real C-arm fluoroscopy sequences from a modern Siemens system with their exposure range stated: a device and dose arm outside the spine
+Route in: download; status now: fetching (manifest ready; the promoter fetches after merge)
+Letter or form: nothing to send; the licence is CC BY 4.0 on the Mendeley page
+The owner's hand: nothing
+Record: datasets/cadica.json (reach get, licence: CC BY 4.0)
+Files likely touched: datasets/cadica.json, manifests/cadica.json
+Priority: group 3, a plain download as a grid job; found by the sweep of 2026-10-21, fluoroscopy, so first
+
+## Obtain BRAX Brazilian chest films (PhysioNet)
+
+What it is: 40,967 chest radiographs from 24,959 studies at Hospital Israelita Albert Einstein, Sao Paulo, frontal and lateral views, labelled with 14 radiological findings; PhysioNet credentialed access
+Link: https://physionet.org/content/brax/
+Why it matters: lateral chest films show the thoracic spine end on, from a South American population none of the held sets covers
+Route in: agreement; status now: needs-owner
+Letter or form: the PhysioNet project page's data use agreement
+The owner's hand: the PhysioNet data use agreement on the project page; access may then wait on PhysioNet's review of his CITI course record, as MIMIC-CXR does
+Record: datasets/brax.json (reach gated, licence: PhysioNet Credentialed Health Data License)
+Files likely touched: datasets/brax.json
+Priority: group 2, a form, a gate or an account; found by the sweep of 2026-10-21
+
+## Obtain BIMCV COVID-19+ chest films (IEEE DataPort)
+
+What it is: chest radiographs, laterals among them, and CTs of COVID-19 patients from the Valencian region's hospitals (BIMCV), open access on IEEE DataPort (doi:10.21227/w3aw-rv39) as tar.gz parts of about 389 GB in all
+Link: https://ieee-dataport.org/open-access/bimcv-covid-19-large-annotated-dataset-rx-and-ct-images-covid-19-patients
+Why it matters: lateral chest films from a Spanish population; a large pool of thoracic spine views
+Route in: account; status now: needs-owner
+Letter or form: the IEEE DataPort page, signed in to a free IEEE account
+The owner's hand: the free IEEE account, and the space decision: about 389 GB is over the promoter's 100 GB budget
+Record: datasets/bimcv_covid19.json (reach get, licence: not recorded; read on the page after the login)
+Files likely touched: datasets/bimcv_covid19.json
+Priority: group 2, a form, a gate or an account; found by the sweep of 2026-10-21
