@@ -1,7 +1,7 @@
 {
  "default_branch": "main",
  "format": 1,
- "generated_at": "2026-10-21T13:16:39Z",
+ "generated_at": "2026-10-21T13:30:58Z",
  "pulls": [
   {
    "auto_merge_enabled": null,
@@ -92,47 +92,94 @@
    "runs_cancelled": 0,
    "stale_seconds": 0,
    "started": "2026-10-21T13:03:44Z"
+  },
+  {
+   "auto_merge_enabled": "2026-10-21T13:23:32Z",
+   "base": "main",
+   "board_conflicts": 0,
+   "board_main_moved": 0,
+   "branch": "claude/95",
+   "catch_ups": 1,
+   "catch_ups_after_green": 0,
+   "catch_ups_by_button": 0,
+   "caused_by": [
+    [
+     "f9f26127cf316f966b5aed3d23bf2180b3f2aaef",
+     [
+      94
+     ]
+    ]
+   ],
+   "check_runs": 3,
+   "check_runs_redone": 0,
+   "check_seconds": 202,
+   "check_seconds_redone": 0,
+   "claim": true,
+   "closed": "2026-10-21T13:30:37Z",
+   "commits": 6,
+   "first_green": "2026-10-21T13:30:35Z",
+   "force_pushes": 0,
+   "landings_after_green": 0,
+   "landings_during_life": 1,
+   "merged": "2026-10-21T13:30:37Z",
+   "number": 96,
+   "opened": "2026-10-21T13:10:53Z",
+   "ready": "2026-10-21T13:23:31Z",
+   "reruns": 1,
+   "runs_cancelled": 2,
+   "stale_seconds": 0,
+   "started": "2026-10-21T13:10:37Z"
   }
  ],
  "repository": "OpenSpineConsortium/spine-datasets",
  "summary": {
-  "auto_merge_used": 2,
+  "auto_merge_used": 3,
   "board_conflicts": 0,
   "board_main_moved": 0,
   "by_day": {
    "2026-10-21": {
-    "catch_ups": 0,
-    "check_runs": 6,
+    "catch_ups": 1,
+    "check_runs": 9,
     "check_runs_redone": 0,
-    "merged": 3,
-    "share_with_catch_up": 0.0,
+    "merged": 4,
+    "share_with_catch_up": 0.25,
     "stale_after_green": 0,
     "stale_hours": 0.0,
-    "with_catch_up": 0
+    "with_catch_up": 1
    }
   },
   "by_parallel_work": {
    "0": {
     "catch_ups": 0,
-    "check_runs": 6,
-    "check_runs_redone": 0,
-    "merged": 3,
-    "share_with_catch_up": 0.0,
-    "stale_after_green": 0,
-    "stale_hours": 0.0,
-    "with_catch_up": 0
-   }
-  },
-  "by_protocol": {
-   "claim": {
-    "catch_ups": 0,
-    "check_runs": 5,
+    "check_runs": 3,
     "check_runs_redone": 0,
     "merged": 2,
     "share_with_catch_up": 0.0,
     "stale_after_green": 0,
     "stale_hours": 0.0,
     "with_catch_up": 0
+   },
+   "1-2": {
+    "catch_ups": 1,
+    "check_runs": 6,
+    "check_runs_redone": 0,
+    "merged": 2,
+    "share_with_catch_up": 0.5,
+    "stale_after_green": 0,
+    "stale_hours": 0.0,
+    "with_catch_up": 1
+   }
+  },
+  "by_protocol": {
+   "claim": {
+    "catch_ups": 1,
+    "check_runs": 8,
+    "check_runs_redone": 0,
+    "merged": 3,
+    "share_with_catch_up": 0.333,
+    "stale_after_green": 0,
+    "stale_hours": 0.0,
+    "with_catch_up": 1
    },
    "no_claim": {
     "catch_ups": 0,
@@ -145,43 +192,55 @@
     "with_catch_up": 0
    }
   },
-  "catch_ups": 0,
+  "catch_ups": 1,
   "catch_ups_by_button": 0,
-  "catch_ups_max": 0,
-  "check_hours": 0.12,
+  "catch_ups_max": 1,
+  "check_hours": 0.17,
   "check_hours_redone": 0.0,
-  "check_runs": 6,
+  "check_runs": 9,
   "check_runs_redone": 0,
   "closed_unmerged": 0,
   "closed_unmerged_branch_landed_later": 0,
   "default_branch_checks": {
    "2026-10-21": {
-    "success": 2
+    "success": 3
    }
   },
   "force_pushes": 0,
   "landings_after_green_total": 0,
-  "landings_during_life_mean": 0.0,
-  "landings_during_life_median": 0,
+  "landings_during_life_mean": 0.25,
+  "landings_during_life_median": 0.0,
   "live": {
    "pulls_seen": 3,
    "pulls_seen_behind": 0,
    "pulls_seen_dirty": 0,
    "since": "2026-10-21T12:40:18Z",
-   "snapshots": 3
+   "snapshots": 4
   },
-  "merged": 3,
-  "reruns": 0,
+  "merged": 4,
+  "reruns": 1,
   "share_runs_redone": 0.0,
   "share_stale_after_green": 0.0,
-  "share_with_catch_up": 0.0,
+  "share_with_catch_up": 0.25,
   "stale_after_green": 0,
   "stale_hours_total": 0.0,
   "stale_minutes_median": null,
-  "top_causes": [],
-  "top_pairs": [],
+  "top_causes": [
+   {
+    "branch": "claude/93",
+    "catch_ups_caused": 1,
+    "number": 94
+   }
+  ],
+  "top_pairs": [
+   {
+    "landed": 94,
+    "made_stale": 96,
+    "times": 1
+   }
+  ],
   "with_board_conflict": 0,
-  "with_catch_up": 0
+  "with_catch_up": 1
  },
  "unread": 0,
  "workflow": "ci.yml"
