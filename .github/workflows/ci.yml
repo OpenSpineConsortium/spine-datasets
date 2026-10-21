@@ -18,7 +18,10 @@ name: Checks
 # the same reason: that repository's sync workflow pushes symphony-protocol/sync
 # with the GitHub App's token, which, unlike a workflow's own GITHUB_TOKEN,
 # starts this workflow, and then opens or updates the branch's pull request,
-# which runs the check again on the same commit. It leaves out crowd/setup
+# which runs the check again on the same commit. It leaves out the promoter's
+# record branches, promote/<id>, for that reason too: the promoter pushes one
+# and opens its pull request at once, the push's run was cancelled, and GitHub
+# read that cancelled "check" as the verdict on the commit (#115). It leaves out crowd/setup
 # too, and only that branch, so a repository outside crowd mode loses no
 # run it had: scripts/crowd.py setup pushes crowd/setup with the owner's
 # token through the API and opens its pull request, whose run is the one
@@ -88,7 +91,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review, converted_to_draft, edited]
   push:
-    branches-ignore: ["claude/**", "symphony-protocol/**", "crowd/setup", "metrics"]
+    branches-ignore: ["claude/**", "symphony-protocol/**", "promote/**", "crowd/setup", "metrics"]
   workflow_dispatch:
 
 permissions:
