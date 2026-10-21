@@ -25,7 +25,8 @@ The fields this repository adds:
 
 - `route`: how the set comes in: `letter`, `form`, `account`, `agreement`, `download` or
   `owner-only`.
-- `status`: where the task stands: `todo`, `requested`, `granted`, `fetched`, `refused` or
+- `status`: where the task stands: `todo`, `requested`, `granted`, `fetching` (a manifest is in,
+  manifests/README.md, and the promoter fetches it after merge), `fetched`, `refused` or
   `needs-owner`.
 - `result`: free text, the dated result line README.md describes; empty until there is one.
 - `history`: the steps taken so far, oldest first, each `{"date": "YYYY-MM-DD", "step": ...,
@@ -48,6 +49,7 @@ CT, the owner's order of 2026-10-21.
 A collaborator changes `status`, `result` and, after a fetch, `grid_path` and `measured`, and
 replaces a "to confirm on the page" with what the page says; `licence` and `link` change only when
 the page shows the record wrong, and the pull request says so. The path convention for a fetch is
-/rs/rs_grp_oschome/shared/datasets/<id>/raw (grid/README.md); the registry's own paths under
+/rs/rs_grp_oschome/shared/datasets/<id>/raw, written only by the promoter after a manifest's pull
+request merges (grid/README.md, manifests/README.md); the registry's own paths under
 /rs/rs_grp_oschome/go2432/data/<id>/raw in `how_to_get` are the owner's landing and are not
 writable by a collaborator.

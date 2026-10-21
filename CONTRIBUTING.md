@@ -52,8 +52,12 @@ Wayne State University ..." in place of "I am at ...", and "read only by the stu
   once the task is yours. The letter asks for the terms; it accepts none.
 - Fill a web form that asks nothing binding: a name, an institution, an email, a purpose. The
   purpose text is the dataset's letter file or the template's paragraphs.
-- Run a plain download as a Slurm job on your own grid account, onto the shared volume, by
-  grid/README.md, once the licence or the grant allows it and the task says so.
+- Bring a plain download onto the grid, once the licence or the grant allows it and the task
+  says so, by a pull request with a manifest (manifests/README.md): the file list with every
+  file's link, size and checksum. The required check reviews it, the owner merges it, and the
+  promoter, running as the owner's grid account, fetches it into the read-only shared tree and
+  opens the record's update. Nobody but the promoter writes /rs/rs_grp_oschome/shared/datasets,
+  so no collaborator needs, or asks for, write access there.
 - Read a page the owner could not reach and write what it says into the record (the licence line,
   the count, the form's real fields), replacing "to confirm on the page".
 - Post the result on the task and in the record, and finish the pull request.
@@ -70,6 +74,19 @@ record it in the result field, and hand the task back: take off your `worker:` l
 branch and the draft pull request with the comment "finished; ready to mark", and the owner takes
 it from there.
 
+## The automated review
+
+Every pull request runs tools/dataset_review.py as part of the required check. It fails on a
+word the confidentiality rule bans in an added line of a record, a manifest or a letter, or in the
+pull request's title or description; on a record whose history lost an entry; on a data file
+added to the repository; on a token in the title or description; on a manifest that breaks
+manifests/README.md's rules; and on a change to the promoter's own code or space budget (tools/promote.py,
+grid/promote.sh, grid/promote.json) in a pull request the owner did not open, since that code runs
+as the owner on the grid. It flags, for whoever merges, a line that reads as something binding
+done in the owner's name, a licence or link changed other than by replacing "to confirm", and a
+non-commercial or no-derivatives licence, which needs a grant before it is fetched. Its report is
+on the check's summary page.
+
 ## How to record a result on the task
 
 One comment on the issue and the same line in datasets/<id>.json's `result` field, dated, in one
@@ -78,7 +95,9 @@ granted, fetch pending; refused, with the reason; needs the owner). Set `status`
 word (fetched, requested, granted, refused, needs-owner), add one entry to the record's `history`
 (the date, the step, one line) and rewrite its `obstacles` and `next`, so the pipeline board
 (PIPELINE.md on the branch `pipeline`) shows the move, and keep the record's licence and link
-exactly as they are. A fetch also leaves FETCH.json beside the download (grid/README.md). The
+exactly as they are. A fetch through the promoter leaves PROMOTED.json beside raw/, and the
+promoter's own pull request records the result, so a manifest's pull request stops at
+`fetching`. The
 pull request carries the record change and nothing of the data: no image, no listing of patient
 identifiers, no token, no address of a private person beyond what a public page prints.
 
