@@ -32,6 +32,9 @@ What is here:
 
 ## How a collaborator joins, in five steps
 
+New here? docs/ONBOARDING.md is the longer version of these five steps: the accounts to get,
+Claude Code, Beethoven for the grid, the prompts to paste and what stays the owner's hand.
+
 1. Accept the invitation to the repository (an email from GitHub; the owner invites by GitHub
    login). Read CONTRIBUTING.md once.
 2. Open the board: the file STATE.md on the branch `board` (on GitHub, switch the branch to
