@@ -18,7 +18,7 @@
  "source_status": "a letter sent 2026-10-21; no record in SchwingNet's registry yet",
  "route": "letter",
  "status": "requested",
- "result": "Letter sent 2026-10-21 09:40 UTC by the owner to J. H. Siewerdsen (now MD Anderson). He replied 12:48 UTC: the data stay at Johns Hopkins, were not shared at publication, and he cannot speak to them now; he suggests Ali Uneri, now faculty at Hopkins.",
+ "result": "Letter sent 2026-10-21 09:40 UTC by the owner to J. H. Siewerdsen (now MD Anderson). He replied 12:48 UTC: the data stay at Johns Hopkins, were not shared at publication; he suggested Ali Uneri. The follow-up went to Ali Uneri (JHU BME) at 13:37 UTC from the owner's Outlook, Siewerdsen copied; waiting for the answer.",
  "history": [
   {
    "date": "2026-10-21",
@@ -34,10 +34,15 @@
    "date": "2026-10-21",
    "step": "note",
    "note": "Siewerdsen replied 12:48 UTC: the data are at Johns Hopkins, never made public; ask Ali Uneri (JHU faculty)"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "asked",
+   "note": "follow-up sent 13:37 UTC to Ali Uneri, JHU BME (address from a JHU BME page), Siewerdsen copied"
   }
  ],
  "obstacles": [
   "the data sit at Johns Hopkins with no sharing approved at publication"
  ],
- "next": "a short letter to Ali Uneri at Johns Hopkins, citing Siewerdsen's reply, from the owner's Outlook; the address is taken from a Hopkins page first"
+ "next": "wait for Ali Uneri's answer; any Johns Hopkins data use agreement is the owner's to sign"
 }
