@@ -8,7 +8,7 @@ The owner is Dr Gregory Schwing (GitHub Gregory-Schwing-MD-PhD, go2432@wayne.edu
 The idea in one paragraph: this repository lists every spine imaging dataset the registry names
 that is not yet on Wayne State's grid, one task per dataset. You take a task, your own Claude does
 the drafting and the record keeping, you send the letter or fill the form from your own mailbox,
-or fetch the download as a grid job, and the result goes on the task and on the pipeline board.
+or fetch the download as a grid job, and the result goes on the task.
 You bring your own accounts; nothing of yours is ever stored here, and nothing of the owner's is
 lent to you.
 
@@ -122,8 +122,7 @@ no token to paste), then choose OpenSpineConsortium/spine-datasets. The tabs: Bo
 STATE.md as /board), Tasks (the issues as columns), Pull requests, Runs, Workers, Ask Claude
 (reads the repository and answers, offering the panel's actions as buttons), Share and
 Repositories. The sign-in is kept in your browser only. The board itself needs no panel:
-https://github.com/OpenSpineConsortium/spine-datasets/blob/board/STATE.md is the file, and the
-pipeline board (section 7) is beside it.
+https://github.com/OpenSpineConsortium/spine-datasets/blob/board/STATE.md is the file.
 
 ## 7. Picking a task
 
