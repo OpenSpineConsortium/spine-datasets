@@ -20,7 +20,7 @@
  },
  "measured": {},
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
- "source_status": "found by the sweep of 2026-10-21; not fetched; PhysioNet credentialed access (CITI course record and the data use agreement, as VinDr-SpineXR needed); the largest source of lateral chest films, hence of thoracic spine laterals, free of charge once credentialed",
+ "source_status": "found by the sweep of 2026-10-21; not fetched; PhysioNet credentialed access (CITI training and the data use agreement, as VinDr-SpineXR needed); the largest source of lateral chest films, hence of thoracic spine laterals, free of charge once credentialed",
  "route": "agreement",
  "status": "requested",
  "result": "The owner's PhysioNet credentialed data use agreement is on file since 2026-10-21 (MIMIC-CXR and MIMIC-CXR-JPG both); access waits for PhysioNet's review of his CITI course record.",
@@ -28,7 +28,7 @@
   {
    "date": "2026-10-21",
    "step": "researched",
-   "note": "found by the sweep of 2026-10-21; not fetched; PhysioNet credentialed access (CITI course record and the data use agreement, as VinDr-SpineXR needed); the largest source of lateral chest films, hence of thoracic spine laterals, free of charge once credentialed"
+   "note": "found by the sweep of 2026-10-21; not fetched; PhysioNet credentialed access (CITI training and the data use agreement, as VinDr-SpineXR needed); the largest source of lateral chest films, hence of thoracic spine laterals, free of charge once credentialed"
   },
   {
    "date": "2026-10-09",
