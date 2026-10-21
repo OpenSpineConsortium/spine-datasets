@@ -45,6 +45,11 @@ python3 tools/dataset_review.py manifest <id> --mendeley <dataset id> --version 
 python3 tools/dataset_review.py manifest <id> --zenodo <record number>
 ```
 
+On a Mac with the python.org Python, the call fails certificate verification until Python is
+given the system's certificates: run it as `SSL_CERT_FILE=/etc/ssl/cert.pem python3 tools/...`, or
+run once the `Install Certificates.command` that python.org's installer puts in the Python folder
+under Applications.
+
 For any other source, write it by hand from what the page states. In the same pull request set
 the record's `status` to `fetching`, add a `fetching` entry to its `history` ("manifest ready; the
 promoter fetches after merge"), and set `next` to "the promoter installs it after merge". Leave

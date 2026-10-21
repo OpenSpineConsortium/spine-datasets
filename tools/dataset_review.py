@@ -297,9 +297,14 @@ MENDELEY_FILES = "https://data.mendeley.com/public-api/datasets/%s/files?folder_
 ZENODO_RECORD = "https://zenodo.org/api/records/%s"
 
 
+# Mendeley's public API answers 403 to Python's own User-Agent and 200 to a browser's.
+USER_AGENT = "Mozilla/5.0 (spine-datasets manifest)"
+
+
 def fetch_json(url):
     import urllib.request
-    with urllib.request.urlopen(url, timeout=60) as answer:
+    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(request, timeout=60) as answer:
         return json.load(answer)
 
 
