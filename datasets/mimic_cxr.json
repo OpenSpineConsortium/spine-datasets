@@ -20,15 +20,15 @@
  },
  "measured": {},
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
- "source_status": "found by the sweep of 2026-10-21; not fetched; PhysioNet credentialed access (CITI training and the data use agreement, as VinDr-SpineXR needed); the largest source of lateral chest films, hence of thoracic spine laterals, free of charge once credentialed",
+ "source_status": "found by the sweep of 2026-10-21; not fetched; PhysioNet credentialed access (CITI course record and the data use agreement, as VinDr-SpineXR needed); the largest source of lateral chest films, hence of thoracic spine laterals, free of charge once credentialed",
  "route": "agreement",
  "status": "requested",
- "result": "The owner signed the PhysioNet credentialed data use agreement on 2026-10-21 (MIMIC-CXR and MIMIC-CXR-JPG both signed); access waits for PhysioNet's review of his CITI training.",
+ "result": "The owner's PhysioNet credentialed data use agreement is on file since 2026-10-21 (MIMIC-CXR and MIMIC-CXR-JPG both); access waits for PhysioNet's review of his CITI course record.",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
-   "note": "found by the sweep of 2026-10-21; not fetched; PhysioNet credentialed access (CITI training and the data use agreement, as VinDr-SpineXR needed); the largest source of lateral chest films, hence of thoracic spine laterals, free of charge once credentialed"
+   "note": "found by the sweep of 2026-10-21; not fetched; PhysioNet credentialed access (CITI course record and the data use agreement, as VinDr-SpineXR needed); the largest source of lateral chest films, hence of thoracic spine laterals, free of charge once credentialed"
   },
   {
    "date": "2026-10-09",
@@ -38,12 +38,12 @@
   {
    "date": "2026-10-21",
    "step": "asked",
-   "note": "the owner signed the credentialed agreement; PhysioNet reviews his CITI training before the files open"
+   "note": "the owner's credentialed agreement is on file; PhysioNet reviews his CITI course record before the files open"
   }
  ],
  "obstacles": [
-  "PhysioNet's review of the owner's CITI training",
+  "PhysioNet's review of the owner's CITI course record",
   "the IRB office is asked whether HPR 2026-330 covers it before any image is read"
  ],
- "next": "wait for PhysioNet to approve the CITI training; then the owner submits the grid fetch (SchwingNet grid/run-xray-chain.sh --credentialed --only mimic_cxr_jpg)"
+ "next": "wait for PhysioNet to approve the CITI course record; then the owner submits the grid fetch (SchwingNet grid/run-xray-chain.sh --credentialed --only mimic_cxr_jpg)"
 }
