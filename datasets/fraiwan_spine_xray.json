@@ -5,7 +5,7 @@
  "what": "338 subjects' spine radiographs from King Abdullah University Hospital, Jordan, in three classes (scoliosis, spondylolisthesis, normal), original and resized (Fraiwan et al. 2022); views to confirm on the page",
  "level_truth": "none; a pseudo-label or test arm only",
  "reach": "get",
- "licence": "CC BY 4.0 (Mendeley's default; to confirm on the page)",
+ "licence": "CC BY 4.0 (Creative Commons Attribution 4.0 International, as the Mendeley page's licence line reads for version 1, 2026-10-21)",
  "link": "https://data.mendeley.com/datasets/xkt857dsxk",
  "how_to_get": [
   "Open https://data.mendeley.com/datasets/xkt857dsxk and read the licence line, the version and the file list.",
@@ -27,10 +27,13 @@
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; new people from a Middle-Eastern centre, with spondylolisthesis cases"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "note",
+   "note": "licence read on the Mendeley page: CC BY 4.0; version 1 (DOI 10.17632/xkt857dsxk.1) holds six zip files, the original-size images and five resized copies, 85,596,630 bytes, each with the sha256 the page's API gives"
   }
  ],
- "obstacles": [
-  "the licence on the page is still to confirm before any fetch"
- ],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/fraiwan_spine_xray/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "obstacles": [],
+ "next": "the holder submits the fetch job onto /rs/rs_grp_oschome/shared/datasets/fraiwan_spine_xray/raw (grid/README.md) from their Beethoven session"
 }
