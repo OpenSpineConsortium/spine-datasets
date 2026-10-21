@@ -1,0 +1,22 @@
+{
+  "id": "pumch_stitching",
+  "name": "PUMCH stitching series (Liu et al., Eur Spine J 2026)",
+  "group": "fluoro",
+  "what": "43 scoliosis patients, four to six overlapping prone AP exposures each on a Philips Zenition 70; the shift between shots estimated, not recorded; no labels stated; the paper says no datasets were generated or analysed",
+  "level_truth": "none stated; the series carries the count from one exposure to the next",
+  "licence": "not recorded; a data use agreement is the route",
+  "link": null,
+  "how_to_get": [
+    "Write to the corresponding author at Peking Union Medical College Hospital (Department of Orthopaedics), to confirm; one letter can carry this ask and SX-Stitch's; the letter is letters/pumch_stitching.md.",
+    "A yes brings a data use agreement, which the owner signs, then a transfer by link, fetched as a grid job on the owner's word."
+  ],
+  "reach": "get",
+  "grid_path": null,
+  "counts": {},
+  "measured": {},
+  "record": "SchwingNet docs/research/xray-dataset-requests.md section 15 (2026-10-21); no record under SchwingNet's data/sources/ existed for this set, so this one was written from that section",
+  "source_status": "a letter sent 2026-10-21; no record in SchwingNet's registry yet",
+  "route": "letter",
+  "status": "requested",
+  "result": "Letter sent 2026-10-21 09:46 UTC by the owner; waiting for the answer."
+}

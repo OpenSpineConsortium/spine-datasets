@@ -4,7 +4,7 @@ This file is the project's goal and the settings every account's thin Project sh
 
 ## Goal
 
-Not yet written. One paragraph: what this project makes, for whom, and what done looks like. The owner writes it, or asks a session to, when ticking the "Set up this project" issue's box for this file, and merges it by pull request.
+Obtain, together, every imaging dataset the spine registry lists that is not yet on Wayne State's grid: 85 sources and five intraoperative sets without a record, each behind a download, a form, an account, a letter or an agreement. The owner, Ashley and every other collaborator each take tasks by the claim protocol, send letters under letters/TEMPLATE.md from their own mailbox, submit forms, or fetch plain downloads as grid jobs, and post the result on the task, so that each dataset is on the grid at /rs/rs_grp_oschome/shared/datasets/<id>/raw with its checksums, or its task records why it cannot be had. Done is every task closed with a result; anything binding (a signature, a fee, an attestation, a licence checkbox, an account) stays the owner's hand, and no text here says what is built, only what is measured (CONTRIBUTING.md).
 
 ## Scope
 

@@ -1,0 +1,22 @@
+{
+  "id": "levelcheck_jhu",
+  "name": "LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group)",
+  "group": "fluoro",
+  "what": "178 patients with preoperative CT and 398 intraoperative radiographs (De Silva et al., Spine 2016), plus Ketcha et al. 2017's 24 thoracolumbar patients with 61 Carestream DRX-1 radiographs, and the 62-image reader set of Manbachi et al. 2018; neither paper has a data statement",
+  "level_truth": "the level of each vertebra on the radiograph, placed by registration to the labelled preoperative CT",
+  "licence": "not recorded; a data use agreement with the PI is the route",
+  "link": null,
+  "how_to_get": [
+    "Write to Jeffrey Siewerdsen (MD Anderson, Surgical Data Science, since 2022), copying the JHU co-authors still there (Ali Uneri, Wojciech Zbijewski, J. Webster Stayman), addresses from the institutional directories, to confirm; the letter is letters/levelcheck_jhu.md.",
+    "A yes brings a data use agreement with Johns Hopkins or MD Anderson, which the owner signs, then a transfer by link, fetched as a grid job on the owner's word."
+  ],
+  "reach": "get",
+  "grid_path": null,
+  "counts": {},
+  "measured": {},
+  "record": "SchwingNet docs/research/xray-dataset-requests.md section 15 (2026-10-21); no record under SchwingNet's data/sources/ existed for this set, so this one was written from that section",
+  "source_status": "a letter sent 2026-10-21; no record in SchwingNet's registry yet",
+  "route": "letter",
+  "status": "requested",
+  "result": "Letter sent 2026-10-21 09:46 UTC by the owner to the LevelCheck authors; waiting for the answer."
+}

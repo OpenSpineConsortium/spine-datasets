@@ -1,0 +1,22 @@
+{
+  "id": "vanderbilt_tha_fluoro",
+  "name": "Vanderbilt intraoperative THA fluoroscopy (Chan et al., J Arthroplasty 2025)",
+  "group": "fluoro",
+  "what": "146 living patients, 161 anterior-approach hips, 336 AP frames with eight bony landmarks including midline L5/S1 and both sacroiliac joints, plus 84 cup frames; AP only; the C-arm is not reported; no data statement, code only at github.com/vine-lab-vu/Label-Augmentation (doi:10.1016/j.arth.2025.01.032)",
+  "level_truth": "midline L5/S1 and both sacroiliac joints marked by an expert; no vertebra above named",
+  "licence": "not recorded; a data use agreement with Vanderbilt is the route",
+  "link": "https://doi.org/10.1016/j.arth.2025.01.032",
+  "how_to_get": [
+    "Write to the corresponding author named on the paper (Vanderbilt Orthopaedic Surgery and Computer Science); the letter is letters/vanderbilt_tha_fluoro.md.",
+    "A yes brings a data use agreement with Vanderbilt, which the owner signs, then a transfer by link, fetched as a grid job on the owner's word."
+  ],
+  "reach": "get",
+  "grid_path": null,
+  "counts": {},
+  "measured": {},
+  "record": "SchwingNet docs/research/xray-dataset-requests.md section 15 (2026-10-21); no record under SchwingNet's data/sources/ existed for this set, so this one was written from that section",
+  "source_status": "a letter sent 2026-10-21; no record in SchwingNet's registry yet",
+  "route": "letter",
+  "status": "requested",
+  "result": "Letter sent 2026-10-21 12:30 UTC by the owner to the senior authors; waiting for the answer."
+}
