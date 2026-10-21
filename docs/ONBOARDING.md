@@ -8,7 +8,8 @@ The owner is Dr Gregory Schwing (GitHub Gregory-Schwing-MD-PhD, go2432@wayne.edu
 The idea in one paragraph: this repository lists every spine imaging dataset the registry names
 that is not yet on Wayne State's grid, one task per dataset. You take a task, your own Claude does
 the drafting and the record keeping, you send the letter or fill the form from your own mailbox,
-or fetch the download as a grid job, and the result goes on the task.
+or, for a plain download, writes its manifest (manifests/README.md) so the owner's promoter fetches
+it onto the grid after merge, and the result goes on the task.
 You bring your own accounts; nothing of yours is ever stored here, and nothing of the owner's is
 lent to you.
 
@@ -167,7 +168,8 @@ What the session does: pushes the branch `claude/N` (the first push is the claim
 of the same name is refused, so two people never hold one task), labels the issue, posts the
 plan, opens a draft pull request that says "Closes #N", then does the work: drafts the letter
 from letters/<id>.md or letters/TEMPLATE.md for you to send, or writes the form text, or writes
-the grid job for you to submit from your Beethoven session. You do the part only a person can do,
+the download's manifest, which the owner's promoter fetches into the shared tree once the pull
+request merges (you never need write access there). You do the part only a person can do,
 tell the session what happened, and it records the result in datasets/<id>.json and on the task,
 in one of the shapes README.md lists, deletes the claim file and marks the pull request ready.
 The owner merges; the merge closes the task. A result that is "waiting" keeps the task open, as

@@ -3,7 +3,8 @@
 Source: the SchwingNet thread "SchwingNet video demo plan", 2026-10-21; derived from SchwingNet's
 grid/README.md (the X-ray data chain), grid/fetch-xray.json and tools/fetch_sources.py, which is
 the owner's chain and is not copied here, and from spine-program's grid rules (its CLAUDE.md, rule
-7). This page is the shape of a collaborator's own job; nothing here is a script to run.
+7), and the thread "Automated dataset PR review", 2026-10-21 (issue #100), which made a pull
+request with a manifest the one way a collaborator's set reaches the shared tree.
 
 ## What the owner's chain does, in one paragraph
 
@@ -12,81 +13,54 @@ per open set, with the route (zenodo, figshare, mendeley, http, kaggle, physione
 folder, the size and the checksum the page states; a Slurm stage that runs one helper per entry
 and writes FETCH.json beside each landing (what ran, the exit codes, every file's bytes and
 sha256); a stage that turns a copy into a bank; and a stage that rebuilds the catalog with its
-split check. It lands under the owner's own data root, which only the owner writes. A collaborator
-with a grid account does the first stage alone, by hand, for one set, onto the shared volume, in
-the same shape: a job, a checksum, a record.
+split check. It lands under the owner's own data root, which only the owner writes. A collaborator's
+set reaches the shared volume in the same shape, a checksum and a record, through a pull request
+and the promoter below.
 
-## Where it lands
+## Where it lands, and who writes it
 
-Every set a collaborator fetches lands at /rs/rs_grp_oschome/shared/datasets/<id>/raw, with <id>
-the record's id in datasets/. Nothing is unpacked, renamed or converted there; a zip stays a zip
-until the owner's chain reads it. Beside raw/ the job writes FETCH.json and the job's own log
-folder.
+Every set lands at /rs/rs_grp_oschome/shared/datasets/<id>/raw, with <id> the record's id in
+datasets/, and only one writer ever touches that tree: the promoter, which runs as the owner's own
+grid account (tools/promote.py, kept queued by grid/promote.sh, issue #100). A collaborator's grid
+account reads the tree and never writes it, so nobody needs, or asks for, an entry in its access
+list. Nothing is unpacked, renamed or converted there; a zip stays a zip until the owner's chain
+reads it. Every file is 0444 and every folder of raw/ 0555; beside raw/ the promoter writes
+PROMOTED.json (the manifest's commit, the pull request and who merged it, the promoter's job id,
+and every file's bytes and sha256 as measured after the copy).
 
-## The shape of the job
+## How a set gets there
 
-A CPU job on the reqp partition with --qos=requeue, a wall time, and --output under the job's own
-folder, submitted with -D so a relative --output resolves against that folder:
+1. The collaborator who holds the task writes manifests/<id>.json (manifests/README.md) from what
+   the source publishes, and sets the record to `fetching`, in the task's pull request.
+2. The required check reviews it (tools/dataset_review.py; CONTRIBUTING.md, "The automated
+   review").
+3. The owner, or a session on the owner's standing word, merges it.
+4. Within about ten minutes the promoter's pass finds the manifest, confirms that an owner merged
+   its last change, downloads every file from its link inside the Slurm job, checks the bytes and
+   the checksum of what landed, renames the checked tree into place, makes it read-only, and opens
+   the record's update to `fetched` as a pull request from promote/<id> with auto-merge on.
 
-```
-#!/bin/bash
-#SBATCH --job-name=fetch-<id>
-#SBATCH --partition=reqp
-#SBATCH --qos=requeue
-#SBATCH --time=2-00:00:00
-#SBATCH --cpus-per-task=2
-#SBATCH --mem=4G
-#SBATCH --output=logs/%x-%j.out
-set -euo pipefail
-ID=<id>
-DEST=/rs/rs_grp_oschome/shared/datasets/$ID/raw
-mkdir -p "$DEST" "$(dirname "$DEST")/logs"
-# a token, where the route needs one, is read from a file only you can read and never printed
-TOKEN_FILE=$HOME/.spine-datasets/<route>.env   # mode 0600; one line NAME=value
-if [ -f "$TOKEN_FILE" ]; then
-  [ "$(stat -c %a "$TOKEN_FILE")" = "600" ] || { echo "token file must be mode 0600"; exit 2; }
-  set -a; . "$TOKEN_FILE"; set +a
-fi
-cd "$DEST"
-<the download command, resumable: wget -c, curl -C -, zenodo_get, or the route's own client>
-<verify every file against the checksum the page states: sha256sum -c or md5sum -c>
-<write FETCH.json, below>
-```
+X-ray sets are promoted before CT. A set over the space budget in grid/promote.json waits until
+the owner names it there. A download that fails or does not check stays in
+shared/<id>/.incoming-<job> and the next pass resumes it; a raw/ already there that does not match
+is left alone and reported in the promoter's log.
 
-Submit it from inside the set's own folder, `cd /rs/rs_grp_oschome/shared/datasets/<id> &&
-sbatch -D "$PWD" fetch.sbatch`, and write the job id on the task at once. Estimate the wall time
-from the size (an hour per 20 GB is the owner's guess until a log says otherwise) and give the job
-more than that, since a requeued job starts over what it cannot resume.
+## The promoter, for the owner
 
-Tokens and links that are credentials (a Kaggle token, a Hugging Face token, a PhysioNet
-password, a presigned link) live in a mode-0600 file under your own $HOME and reach the job only
-by being read from that file inside it. Never on the command line, never in --export, never in the
-job script, never in a log, never in this repository. A download that needs the owner's own
-account (PhysioNet, AIMI, Hugging Face gates) is not a collaborator's job: the task says
-"needs the owner".
-
-## FETCH.json
-
-One file beside raw/, written by the job after the checksums pass, in this shape:
+The chain is a Slurm job on reqp/requeue, eight hours of wall time, that first queues its own
+successor (afterany), so it comes back after a preemption or a wall time with nobody at the
+keyboard. Each pass takes the promoter's code from the default branch only where an owner merged
+its last change, then promotes. It needs gh signed in as the owner and curl, both already there
+for hpcworker. Its folder is /rs/rs_grp_oschome/go2432/spine-datasets-promoter (code/ and
+logs/). Started once, in a grid shell:
 
 ```
-{
-  "id": "<id>",
-  "date": "<YYYY-MM-DD, UTC>",
-  "job_id": <the Slurm job id>,
-  "who": "<your GitHub login>",
-  "source": "<the link the record gives>",
-  "licence": "<the licence line as the page states it>",
-  "files": [
-    {"path": "raw/<file>", "bytes": <n>, "sha256": "<hex>", "md5": "<hex or null>", "verified_against": "<the page, the API or the record>"}
-  ],
-  "bytes_total": <n>,
-  "command": "<the download command, with no token in it>"
-}
+gh api -H "Accept: application/vnd.github.raw" repos/OpenSpineConsortium/spine-datasets/contents/grid/promote.sh > ~/promote.sh
+bash ~/promote.sh start
 ```
 
-The task's result line quotes the path, the job id and the byte total from it; the record's
-`grid_path` takes the path and `status` becomes `fetched`.
+`bash ~/promote.sh status` shows the chain and its latest log lines; `bash ~/promote.sh stop`
+cancels it.
 
 ## What nobody does
 

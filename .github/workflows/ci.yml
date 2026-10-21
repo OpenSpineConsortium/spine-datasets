@@ -56,6 +56,11 @@ name: Checks
 # every open pull request whenever the default branch moves and writes the
 # answer on each head as a check run of the same name, so the newest word
 # stands, and a ruleset may require that name once the switch says enforce.
+# On a pull request the job check also runs tools/dataset_review.py diff,
+# the automated review of what the pull request adds to the dataset records,
+# manifests and letters (the confidentiality rule, history that only grows,
+# no data file, no token), against the test merge's first parent, its base;
+# a merged manifest is what the promoter fetches as the owner on the grid.
 # The same job holds a crowd repository (docs/setup/crowdsourcing.md) to
 # its rules, so they are part of the required check: tools/crowd_check.py
 # guard fails while a Claude secret or variable reaches the repository and
@@ -150,6 +155,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          # the test merge and its first parent, the base, so the dataset review sees what the pull request adds
+          fetch-depth: 2
 
       - name: Hold a crowd repository to its rules
         env:
@@ -166,6 +174,10 @@ jobs:
       - name: Hold a claude/ pull request to the claim protocol
         if: github.event_name == 'pull_request'
         run: python3 tools/check_protocol.py
+
+      - name: Review what the pull request adds to the datasets
+        if: github.event_name == 'pull_request'
+        run: python3 tools/dataset_review.py diff --base HEAD^1
 
       - name: Every part of the check passed
         env:
