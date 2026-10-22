@@ -32,8 +32,16 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "owner's sitting prepared: SOF Online has the same gate as MrOS: an authorization email from an institutional address to sofdata@ucsf.edu with full name and every institutional affiliation, then the registration form (Email, Password, First Name, Middle Initial, Last Name, Institution, Position) and a box accepting the limited data set agreement; the authorization email is drafted in the owner's Outlook Drafts and says the MrOS request goes in parallel"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "the SOF coordinating centre answered the owner's email: SOF Online is closed to registrations while it is updated for new NIH requirements and will write when it reopens; the study images are being added to the NIA Aging Research Biobank (https://agingresearchbiobank.nia.nih.gov), which already holds them, so the images are requested from the Biobank, which gives the timeline, transfer, any fees and the terms of use"
   }
  ],
- "obstacles": [],
- "next": "the owner sends the drafted authorization email; once authorized he registers at https://sofonline.ucsf.edu/Account/Register and ticks the agreement; the images' route is recorded from the answer"
+ "obstacles": [
+  "SOF Online is closed to registrations until it is updated for new NIH requirements",
+  "the images are requested from the NIA Aging Research Biobank, a request in the owner's name whose terms and any fee are his to accept"
+ ],
+ "next": "the owner submits a request for the SOF lateral spine images through the NIA Aging Research Biobank (https://agingresearchbiobank.nia.nih.gov), which gives the timeline, transfer, fees and terms; SOF Online's reopening is a second route"
 }
