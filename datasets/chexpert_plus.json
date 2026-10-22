@@ -20,17 +20,22 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; the Stanford AIMI research use agreement, the same portal as INSPECT and Merlin (stanford_aimi_inspect, stanford_aimi_merlin), so the owner's AIMI account would cover it",
  "route": "form",
- "status": "todo",
+ "status": "needs-owner",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; the Stanford AIMI research use agreement, the same portal as INSPECT and Merlin (stanford_aimi_inspect, stanford_aimi_merlin), so the owner's AIMI account would cover it"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "owner's sitting prepared: the AIMI page's Download here link goes to Stanford's Redivis (stanford.redivis.com/datasets/5yyj-1a9f6ap0x), where access is applied for under the owner's Redivis sign-in; the release is DICOM, 223,462 image-report pairs; the agreement's fields are read on Redivis at the click, since the AIMI page leaves its terms section empty"
   }
  ],
  "obstacles": [
   "gated: Stanford AIMI research use agreement, non-commercial"
  ],
- "next": "fill the form named in letters/chexpert_plus.md with its paragraphs as the purpose, then record the date here"
+ "next": "the owner signs in to Redivis, applies for access on the CheXpert Plus dataset with the use line in letters/chexpert_plus.md, and says how much of the DICOM release the volume takes"
 }
