@@ -62,6 +62,6 @@ non-commercial or no-derivatives term, or a `granted` step in its history; never
 every path is raw/<name> with no ".."; every link is https on the source's own host (or one the
 source is known to serve files from, such as ndownloader.figshare.com) with no token, key or
 signature in it; every size is positive and they add up; every checksum has its
-shape. A set over the space budget in grid/promote.json waits until the owner names it there.
+shape. No set is held to a size of its own: it is promoted whenever the shared volume has room.
 The promoter acts only on a manifest whose last change an owner merged, never one from its own
 promote/ branches, and leaves a terabyte free on the shared volume.

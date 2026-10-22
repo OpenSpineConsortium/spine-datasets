@@ -41,8 +41,9 @@ and every file's bytes and sha256 as measured after the copy).
    the record's update to `fetched` as a pull request from promote/<id> with auto-merge on for
    that exact commit, so a push by anyone else to that branch is never merged by it.
 
-X-ray sets are promoted before CT. A set over the space budget in grid/promote.json waits until
-the owner names it there. A download that fails or does not check stays in
+X-ray sets are promoted before CT. No set is held to a size of its own: one is promoted whenever
+the shared volume has room for it and still keeps a terabyte free (the owner's rule of
+2026-10-22), and otherwise waits for room. A download that fails or does not check stays in
 shared/<id>/.incoming-<job> and the next pass resumes it; a raw/ already there that does not match
 is left alone and reported in the promoter's log.
 
@@ -51,9 +52,11 @@ is left alone and reported in the promoter's log.
 The chain is a Slurm job on reqp/requeue, eight hours of wall time, that first queues its own
 successor (afterany), so it comes back after a preemption or a wall time with nobody at the
 keyboard; successors are singleton jobs of one name and a lock keeps two passes apart. Each pass
-takes the promoter's code, and reads the space budget, from the default branch only where the
-last change came from a pull request the owner opened and merged with no commit in it tied to
-anyone else's account; anything else keeps the copy on the grid, or the default budget of 100 GB.
+takes the promoter's code from the default branch only where the last change came from a pull
+request the owner opened and merged with no commit in it tied to anyone else's account; anything
+else keeps the copy on the grid until the gate word promoter restart installs the default
+branch's copy (the owner's choice of 2026-10-22, since a session's commits are tied to its own
+account).
 It acts on a manifest only where the owner merged it, never from its own promote/ branches, and
 leaves a terabyte free on the volume. It needs gh signed in as the owner and curl, both already
 there for hpcworker. Its folder is /rs/rs_grp_oschome/go2432/spine-datasets-promoter (code/,

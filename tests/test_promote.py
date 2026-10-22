@@ -140,20 +140,12 @@ class PromoterTest(unittest.TestCase):
         results, _ = self.run_once(files, {"manifests/aaa_ct.json": OWNER, "manifests/zzz_films.json": OWNER})
         self.assertEqual(list(results), ["zzz_films", "aaa_ct"])
 
-    def test_over_budget_waits_for_the_owner(self):
+    def test_no_size_of_its_own_holds_a_set_back(self):
+        # the owner, 2026-10-22: any size the volume has room for; a stale budget file changes nothing
         files = self.dataset("demo_set", "films", {"a.zip": b"alpha"})
         files["grid/promote.json"] = json.dumps({"max_bytes": 1, "approved_over_budget": []})
         results, _ = self.run_once(files, {"manifests/demo_set.json": OWNER, "grid/promote.json": OWNER})
-        self.assertEqual(results, {"demo_set": "over-budget"})
-
-    def test_a_budget_someone_else_raised_is_ignored(self):
-        files = self.dataset("demo_set", "films", {"a.zip": b"alpha"})
-        files["grid/promote.json"] = json.dumps({"max_bytes": 10 ** 20, "approved_over_budget": ["demo_set"]})
-        fake = FakeGitHub(files, {"grid/promote.json": OWNER}, committer="a-collaborator")
-        promote.gh_json, promote.file_at = fake.gh_json, fake.file_at
-        logs = []
-        self.assertEqual(promote.load_budget(REPO, {OWNER}, logs.append), (promote.MAX_BYTES, set()))
-        self.assertTrue(logs)
+        self.assertEqual(results, {"demo_set": "promoted"})
 
     def test_a_manifest_from_the_promoters_own_branch_is_skipped(self):
         files = self.dataset("demo_set", "films", {"a.zip": b"alpha"})
