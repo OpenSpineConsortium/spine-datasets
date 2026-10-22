@@ -9,7 +9,7 @@
  "link": "https://ieee-dataport.org/open-access/bimcv-covid-19-large-annotated-dataset-rx-and-ct-images-covid-19-patients",
  "how_to_get": [
   "Sign in to a free IEEE account on the page and read the licence line and the file list.",
-  "About 389 GB is over the promoter's 100 GB budget: the owner says how much of it the shared volume takes (the radiographs alone, or all of it) before any fetch, which runs as a Slurm job."
+  "About 389 GB in all: the owner says whether to take the radiographs alone or all of it; the promoter takes any size the shared volume has room for (the owner's rule of 2026-10-22), as a Slurm job."
  ],
  "grid_path": null,
  "counts": {},

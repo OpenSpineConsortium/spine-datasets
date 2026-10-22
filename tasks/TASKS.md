@@ -1079,7 +1079,7 @@ Link: https://ieee-dataport.org/open-access/bimcv-covid-19-large-annotated-datas
 Why it matters: lateral chest films from a Spanish population; a large pool of thoracic spine views
 Route in: account; status now: needs-owner
 Letter or form: the IEEE DataPort page, signed in to a free IEEE account
-The owner's hand: the free IEEE account, and the space decision: about 389 GB is over the promoter's 100 GB budget
+The owner's hand: the free IEEE account, and the space decision: about 389 GB, the radiographs alone or all of it
 Record: datasets/bimcv_covid19.json (reach get, licence: not recorded; read on the page after the login)
 Files likely touched: datasets/bimcv_covid19.json
 Priority: group 2, a form, a gate or an account; found by the sweep of 2026-10-21
