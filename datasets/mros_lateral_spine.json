@@ -34,8 +34,16 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "owner's sitting prepared: MrOS Online registration is gated by an authorization email from an institutional address to mrosdata@ucsf.edu with full name and every institutional affiliation, foreign ones included; the form then asks Email, Password, First Name, Middle Initial, Last Name, Institution, Position and a box accepting the limited data set agreement (mrosonline.ucsf.edu/Account/UserAgreement, accepted by the recipient alone, no institutional signature, citation under the MrOS publication guidelines); the authorization email is drafted in the owner's Outlook Drafts; whether the spine film images are on the website or need the NIA Aging Research Biobank's Request for Materials (protocol, IRB letter, attestation, CV, then an agreement the institution's signing official signs) is asked in that email"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "the MrOS coordinating centre answered the owner's email: MrOS Online is closed to registrations while it is updated for new NIH requirements and will write when it reopens; the study images are being added to the NIA Aging Research Biobank (https://agingresearchbiobank.nia.nih.gov), which already holds them, so the images are requested from the Biobank, which gives the timeline, transfer, any fees and the terms of use"
   }
  ],
- "obstacles": [],
- "next": "the owner sends the drafted authorization email; once authorized he registers at https://mrosonline.ucsf.edu/Account/Register and ticks the agreement; the images' route is recorded from the answer"
+ "obstacles": [
+  "MrOS Online is closed to registrations until it is updated for new NIH requirements",
+  "the images are requested from the NIA Aging Research Biobank, a request in the owner's name whose terms and any fee are his to accept"
+ ],
+ "next": "the owner submits a request for the MrOS lateral spine images through the NIA Aging Research Biobank (https://agingresearchbiobank.nia.nih.gov), which gives the timeline, transfer, fees and terms; MrOS Online's reopening is a second route"
 }
