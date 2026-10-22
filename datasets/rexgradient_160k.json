@@ -21,17 +21,22 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; Hugging Face gated behind a non-commercial data access and use agreement signed on the page; 79 sites means 79 exposure recipes",
  "route": "form",
- "status": "todo",
+ "status": "needs-owner",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; Hugging Face gated behind a non-commercial data access and use agreement signed on the page; 79 sites means 79 exposure recipes"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "owner's sitting prepared: the Hugging Face gate asks only for a signed-in account and agreement to share contact information, under a non-commercial, non-clinical agreement that forbids downloading the whole repository (only the part the project needs), redistribution and re-identification, and asks citation and credit to Gradient Health; 273,004 images in 160,000 studies, downsampled to 25 percent, as split deid_png.part files"
   }
  ],
  "obstacles": [
   "gated: a non-commercial data access and use agreement on the Hugging Face page"
  ],
- "next": "fill the form named in letters/rexgradient_160k.md with its paragraphs as the purpose, then record the date here"
+ "next": "the owner signs in to Hugging Face, opens the dataset page and presses the agree button; the fetch then takes only the part the project needs, as the agreement asks"
 }
