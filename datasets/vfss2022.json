@@ -18,7 +18,7 @@
  "measured": {},
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; open per the listing, licence to confirm on the page; a small labelled cervical fluoroscopy set that the swallow requests (DysphagiaBank, Pittsburgh) do not yet deliver",
- "route": "letter",
+ "route": "download",
  "status": "todo",
  "result": "",
  "history": [
@@ -36,5 +36,5 @@
  "obstacles": [
   "the frames are not released: the authors' ethics approval does not yet allow a full release, and no page gives a licence or a download"
  ],
- "next": "a letter to the authors (letters/TEMPLATE.md) asking whether the 440 frames can be shared for research, and under what terms"
+ "next": "a letter to the authors from letters/TEMPLATE.md, written as letters/vfss2022.md with the corresponding author's address verified on the paper, asking whether the 440 frames can be shared for research and on what terms; the route moves to letter with it"
 }
