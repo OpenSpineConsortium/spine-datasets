@@ -18,7 +18,7 @@
  "measured": {},
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; open per the listing, licence to confirm on the page; a small labelled cervical fluoroscopy set that the swallow requests (DysphagiaBank, Pittsburgh) do not yet deliver",
- "route": "download",
+ "route": "letter",
  "status": "todo",
  "result": "",
  "history": [
@@ -26,10 +26,15 @@
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; open per the listing, licence to confirm on the page; a small labelled cervical fluoroscopy set that the swallow requests (DysphagiaBank, Pittsburgh) do not yet deliver"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "read on https://service.tib.eu/ldmservice/dataset/vfss2022-dataset: no licence line and no file or resource listed, only the homepage https://github.com/SimonZeng7108/Video-TransUNet and doi:10.57702/w1ye2nim; that repository's Data section says the team's data ethics approval only grants usage and showing on paper, not yet support full release, and gives no download; so there is nothing to fetch and no manifest"
   }
  ],
  "obstacles": [
-  "the licence on the page is still to confirm before any fetch"
+  "the frames are not released: the authors' ethics approval does not yet allow a full release, and no page gives a licence or a download"
  ],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/vfss2022/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "next": "a letter to the authors (letters/TEMPLATE.md) asking whether the 440 frames can be shared for research, and under what terms"
 }
