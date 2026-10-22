@@ -21,17 +21,22 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; a licence form on the page (research use, by request); European devices and film-era digitised plates, the richest set of non-standard chest projections",
  "route": "form",
- "status": "todo",
+ "status": "needs-owner",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; a licence form on the page (research use, by request); European devices and film-era digitised plates, the richest set of non-standard chest projections"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "owner's sitting prepared: the request is a Google form linked from the PadChest page's full-dataset link (1.02 TB) with four required questions, Email, Name, Affiliation and Objective (Academic Research or Other); the research use agreement on the page forbids sale, redistribution, sharing the link outside the organisation and re-identification, bars derivative works except as its clause 2 allows, asks indemnity, and has no signature block"
   }
  ],
  "obstacles": [
   "gated: research use by request; a licence form on the page"
  ],
- "next": "fill the form named in letters/padchest.md with its paragraphs as the purpose, then record the date here"
+ "next": "the owner reads the agreement and submits the form; the download link that comes back is fetched as a Slurm job"
 }
