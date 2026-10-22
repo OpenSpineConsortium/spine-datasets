@@ -30,10 +30,15 @@
    "date": "2026-10-21",
    "step": "note",
    "note": "the owner recalls applying for this agreement; on 2026-10-21 no application, agreement or answer about MAGIC-CT was found in his Wayne State Outlook or his Gmail, so the application is recorded as not yet made; the Zenodo record (v2) still asks for an application with proof of a human-subjects course, sent to the contact it names, before its agreement holds"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "owner's sitting prepared: the Zenodo record still shows 'Dataset Open' with direct file links (39.1 GB), while its data use agreement asks for an application with proof of a human-subjects and HIPAA course and binds the applicant to release the code behind any disseminated result; the application email to maxim.popov@nu.edu.kz is drafted in the owner's Outlook Drafts from letters/magic_ct.md, waiting for his CITI completion report attached and his Send"
   }
  ],
  "obstacles": [
   "the owner's hand: the application with proof of his human-subjects course, and the agreement's terms"
  ],
- "next": "the owner sends the application the Zenodo record asks for, or forwards its confirmation if he already did; then the 39.1 GB is fetched as a Slurm job and checked against the record's md5 sums"
+ "next": "the owner attaches his CITI completion report to the drafted email in Outlook Drafts and sends it, once he is content with the clause on releasing code; then the 39.1 GB is fetched as a Slurm job and checked against the record's md5 sums"
 }
