@@ -20,8 +20,8 @@
  "measured": {},
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "the owner's hand: confirm whether Science Data Bank needs a login and read CT-details.xlsx for slice thickness; no fetch route exists in tools/acquisition_fetch.py for Science Data Bank (planned in the data platform at bf1432f)",
- "route": "owner-only",
- "status": "needs-owner",
+ "route": "download",
+ "status": "todo",
  "result": "",
  "history": [
   {
@@ -33,10 +33,15 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "owner's sitting prepared: the Science Data Bank page renders in the browser only, so whether its download asks for a login could not be read from a session"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "the owner downloaded from Science Data Bank without signing in, so the set needs no login"
   }
  ],
  "obstacles": [
-  "the owner's hand: confirm whether Science Data Bank asks for a login and read CT-details.xlsx; no fetch route exists yet"
+  "no fetch route for Science Data Bank yet: the probe job 40697695 in SchwingNet's platform chain lists its files first"
  ],
- "next": "the owner opens https://www.scidb.cn/detail?dataSetId=c06e548588694eca8477006e806ed70d, presses download on CT-details.xlsx and says whether a login was asked"
+ "next": "the probe job 40697695, queued in SchwingNet's platform chain, lists the files; their links then go into a plain fetch of about 286 GB"
 }
