@@ -1,7 +1,7 @@
 {
  "default_branch": "main",
  "format": 1,
- "generated_at": "2026-10-22T10:14:33Z",
+ "generated_at": "2026-10-22T16:23:41Z",
  "pulls": [
   {
    "auto_merge_enabled": null,
@@ -778,6 +778,62 @@
    "auto_merge_enabled": null,
    "base": "main",
    "board_conflicts": 0,
+   "board_main_moved": 3,
+   "branch": "claude/89",
+   "catch_ups": 3,
+   "catch_ups_after_green": 0,
+   "catch_ups_by_button": 0,
+   "caused_by": [
+    [
+     "4a20093efa3a802e7be9b558a6bea5a49ed207e0",
+     [
+      140
+     ]
+    ],
+    [
+     "e6059bb54a1509403ac989bcbf735d242dcdd79a",
+     [
+      141,
+      142,
+      143,
+      144,
+      145,
+      146
+     ]
+    ],
+    [
+     "00c41281dad9ea603563c7ee75e12885ba6013a1",
+     [
+      161,
+      162,
+      163
+     ]
+    ]
+   ],
+   "check_runs": 0,
+   "check_runs_redone": 0,
+   "check_seconds": 0,
+   "check_seconds_redone": 0,
+   "claim": true,
+   "closed": "2026-10-22T16:21:26Z",
+   "commits": 6,
+   "first_green": null,
+   "force_pushes": 0,
+   "landings_after_green": 0,
+   "landings_during_life": 10,
+   "merged": "2026-10-22T16:21:26Z",
+   "number": 139,
+   "opened": "2026-10-22T09:40:07Z",
+   "ready": "2026-10-22T16:18:17Z",
+   "reruns": 0,
+   "runs_cancelled": 0,
+   "stale_seconds": 0,
+   "started": "2026-10-22T09:36:28Z"
+  },
+  {
+   "auto_merge_enabled": null,
+   "base": "main",
+   "board_conflicts": 0,
    "board_main_moved": 0,
    "branch": "claude/55",
    "catch_ups": 0,
@@ -1079,7 +1135,7 @@
  "summary": {
   "auto_merge_used": 3,
   "board_conflicts": 0,
-  "board_main_moved": 18,
+  "board_main_moved": 21,
   "by_day": {
    "2026-10-21": {
     "catch_ups": 3,
@@ -1092,14 +1148,14 @@
     "with_catch_up": 3
    },
    "2026-10-22": {
-    "catch_ups": 0,
+    "catch_ups": 3,
     "check_runs": 17,
     "check_runs_redone": 0,
-    "merged": 16,
-    "share_with_catch_up": 0.0,
+    "merged": 17,
+    "share_with_catch_up": 0.059,
     "stale_after_green": 0,
     "stale_hours": 0.0,
-    "with_catch_up": 0
+    "with_catch_up": 1
    }
   },
   "by_parallel_work": {
@@ -1144,26 +1200,26 @@
     "with_catch_up": 3
    },
    "6-10": {
-    "catch_ups": 0,
+    "catch_ups": 3,
     "check_runs": 10,
     "check_runs_redone": 0,
-    "merged": 10,
-    "share_with_catch_up": 0.0,
+    "merged": 11,
+    "share_with_catch_up": 0.091,
     "stale_after_green": 0,
     "stale_hours": 0.0,
-    "with_catch_up": 0
+    "with_catch_up": 1
    }
   },
   "by_protocol": {
    "claim": {
-    "catch_ups": 3,
+    "catch_ups": 6,
     "check_runs": 38,
     "check_runs_redone": 1,
-    "merged": 23,
-    "share_with_catch_up": 0.13,
+    "merged": 24,
+    "share_with_catch_up": 0.167,
     "stale_after_green": 0,
     "stale_hours": 0.0,
-    "with_catch_up": 3
+    "with_catch_up": 4
    },
    "no_claim": {
     "catch_ups": 0,
@@ -1176,9 +1232,9 @@
     "with_catch_up": 0
    }
   },
-  "catch_ups": 3,
+  "catch_ups": 6,
   "catch_ups_by_button": 0,
-  "catch_ups_max": 1,
+  "catch_ups_max": 3,
   "check_hours": 1.07,
   "check_hours_redone": 0.02,
   "check_runs": 49,
@@ -1190,25 +1246,25 @@
     "success": 17
    },
    "2026-10-22": {
-    "success": 8
+    "success": 9
    }
   },
   "force_pushes": 2,
   "landings_after_green_total": 48,
-  "landings_during_life_mean": 2.5,
-  "landings_during_life_median": 1.0,
+  "landings_during_life_mean": 2.71,
+  "landings_during_life_median": 1,
   "live": {
-   "pulls_seen": 33,
+   "pulls_seen": 36,
    "pulls_seen_behind": 0,
    "pulls_seen_dirty": 0,
    "since": "2026-10-21T12:40:18Z",
-   "snapshots": 27
+   "snapshots": 28
   },
-  "merged": 34,
+  "merged": 35,
   "reruns": 2,
   "share_runs_redone": 0.02,
   "share_stale_after_green": 0.0,
-  "share_with_catch_up": 0.088,
+  "share_with_catch_up": 0.114,
   "stale_after_green": 0,
   "stale_hours_total": 0.0,
   "stale_minutes_median": null,
@@ -1227,6 +1283,41 @@
     "branch": "claude/31",
     "catch_ups_caused": 1,
     "number": 99
+   },
+   {
+    "branch": "claude/55",
+    "catch_ups_caused": 1,
+    "number": 140
+   },
+   {
+    "branch": "claude/23",
+    "catch_ups_caused": 1,
+    "number": 141
+   },
+   {
+    "branch": "claude/24",
+    "catch_ups_caused": 1,
+    "number": 142
+   },
+   {
+    "branch": "claude/30",
+    "catch_ups_caused": 1,
+    "number": 143
+   },
+   {
+    "branch": "claude/32",
+    "catch_ups_caused": 1,
+    "number": 144
+   },
+   {
+    "branch": "claude/35",
+    "catch_ups_caused": 1,
+    "number": 145
+   },
+   {
+    "branch": "claude/59",
+    "catch_ups_caused": 1,
+    "number": 146
    }
   ],
   "top_pairs": [
@@ -1244,10 +1335,45 @@
     "landed": 99,
     "made_stale": 104,
     "times": 1
+   },
+   {
+    "landed": 140,
+    "made_stale": 139,
+    "times": 1
+   },
+   {
+    "landed": 141,
+    "made_stale": 139,
+    "times": 1
+   },
+   {
+    "landed": 142,
+    "made_stale": 139,
+    "times": 1
+   },
+   {
+    "landed": 143,
+    "made_stale": 139,
+    "times": 1
+   },
+   {
+    "landed": 144,
+    "made_stale": 139,
+    "times": 1
+   },
+   {
+    "landed": 145,
+    "made_stale": 139,
+    "times": 1
+   },
+   {
+    "landed": 146,
+    "made_stale": 139,
+    "times": 1
    }
   ],
   "with_board_conflict": 0,
-  "with_catch_up": 3
+  "with_catch_up": 4
  },
  "unread": 0,
  "workflow": "ci.yml"
