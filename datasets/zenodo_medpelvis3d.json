@@ -14,21 +14,26 @@
  "grid_path": null,
  "counts": {
   "subjects": 99,
-  "size_gb": 15.1
+  "size_gb": 31.35
  },
  "measured": {},
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "planned in the data platform at bf1432f; fetch job in the 2026-10-21 chain",
  "route": "download",
- "status": "todo",
+ "status": "fetching",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "planned in the data platform at bf1432f; fetch job in the 2026-10-21 chain"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "fetching",
+   "note": "manifest ready from Zenodo's file list (100 files, 31.35 GB, md5 each); the licence on the page reads CC BY 4.0; the promoter fetches after merge"
   }
  ],
  "obstacles": [],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/zenodo_medpelvis3d/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "next": "the promoter installs it after merge"
 }

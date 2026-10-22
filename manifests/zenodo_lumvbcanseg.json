@@ -1,0 +1,16 @@
+{
+ "id": "zenodo_lumvbcanseg",
+ "source": "https://zenodo.org/records/8181250",
+ "licence": "CC BY 4.0",
+ "date": "2026-10-22",
+ "files": [
+  {
+   "path": "raw/LumVBCanSeg.zip",
+   "url": "https://zenodo.org/api/records/8181250/files/LumVBCanSeg.zip/content",
+   "bytes": 10075438693,
+   "md5": "529041a9d9215898101c7d2c9d735965",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  }
+ ],
+ "bytes_total": 10075438693
+}
