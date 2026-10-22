@@ -19,17 +19,22 @@
  "record": "spine-program 99_archive/MANIFEST_CODE.md; 99_archive/LITERATURE_BY_PATH.md",
  "source_status": "the owner's future direction of 2026-10-20: expand the workflow into veterinary medicine; the zips sit in spine-program's archive, excluded from the record, and the set is open on IEEE DataPort; the Mendeley canine thoracic set (canine_thoracic_vhs) stands beside it since the sweep of 2026-10-21",
  "route": "account",
- "status": "todo",
+ "status": "needs-owner",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "the owner's future direction of 2026-10-20: expand the workflow into veterinary medicine; the zips sit in spine-program's archive, excluded from the record, and the set is open on IEEE DataPort; the Mendeley canine thoracic set (canine_thoracic_vhs) stands beside it since the sweep of 2026-10-21"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "owner's sitting prepared: IEEE DataPort lists seven zips (about 186 MB) open to any logged-in user with a free IEEE account, though its access box also names a DataPort subscription; no licence line on the page"
   }
  ],
  "obstacles": [
   "the owner's hand: the IEEE DataPort account; nothing to sign"
  ],
- "next": "the owner opens the account or the gate named in the record; a collaborator reads the terms and writes them into the record first"
+ "next": "the owner signs in to IEEE DataPort with a free IEEE account and says whether the download opens; the zips are then fetched"
 }
