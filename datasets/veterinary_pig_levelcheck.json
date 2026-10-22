@@ -31,10 +31,15 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "owner's sitting prepared: IEEE DataPort lists seven zips (about 186 MB) open to any logged-in user with a free IEEE account, though its access box also names a DataPort subscription; no licence line on the page"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "the owner confirmed the download opens free with a signed-in IEEE account and has the seven zips; no grid job can sign in to IEEE as him"
   }
  ],
  "obstacles": [
-  "the owner's hand: the IEEE DataPort account; nothing to sign"
+  "no grid job can sign in to IEEE DataPort as the owner"
  ],
- "next": "the owner signs in to IEEE DataPort with a free IEEE account and says whether the download opens; the zips are then fetched"
+ "next": "the owner uploads the seven zips through OnDemand Files to /rs/rs_grp_oschome/go2432/data/veterinary_pig_levelcheck/raw, and their sizes are checked against the page's"
 }
