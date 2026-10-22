@@ -5,7 +5,7 @@
  "what": "50,000 DeepDRR images with 2D fragment masks from 100 pelvic-fracture CTs at 500 random C-arm poses each; projections 0250-0499 add up to 10 simulated K-wires and screws; pelvis, sacrum and the lower lumbar spine are in field; Zenodo doi:10.5281/zenodo.10913195, mirrored at huggingface.co/datasets/MedOtter/PENGWIN_Task2",
  "level_truth": "none in 2D; from the Task 1 CTs by pose (the manifest's pengwin2026, already on the grid)",
  "reach": "get",
- "licence": "CC BY, to confirm on the page; the challenge page lists its terms",
+ "licence": "Creative Commons Attribution 4.0 International (the Zenodo record 10913195's licence line, read 2026-10-22)",
  "link": "https://pengwin.grand-challenge.org/",
  "how_to_get": [
   "Read the terms on https://pengwin.grand-challenge.org/ and the licence line on Zenodo doi:10.5281/zenodo.10913195.",
@@ -28,10 +28,13 @@
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; a 2D product of the challenge's CTs already on the grid; the only large public DRR set rendered with real C-arm poses and simulated hardware, so pelvic-ring and sacral appearance under instruments without any patient"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "read the Zenodo record doi:10.5281/zenodo.10913195: open access, CC BY 4.0, 35.0 GB in one zip archive beside a utility script and a requirements file; contact person Benjamin Killeen (Johns Hopkins, with Unberath, Armand and the Beijing Jishuitan team); the challenge page names no further terms and asks no registration for the download"
   }
  ],
- "obstacles": [
-  "the licence on the page is still to confirm before any fetch"
- ],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/pengwin_task2_xrays/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "obstacles": [],
+ "next": "a collaborator writes the manifest with python3 tools/dataset_review.py manifest pengwin_task2_xrays --zenodo 10913195 on a machine that reaches Zenodo, and opens the pull request at fetching; the promoter then fetches it after the X-ray sets ahead of it"
 }
