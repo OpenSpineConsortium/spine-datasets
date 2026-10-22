@@ -41,8 +41,13 @@
    "date": "2026-10-22",
    "step": "fetching",
    "note": "the seven zips came down on the grid with the owner's IEEE DataPort login on his word of 23:17 UTC, into the lab's data folder (/rs/rs_grp_oschome/go2432/data/veterinary_pig_levelcheck/raw); every size matches the page and every zip passes unzip -t; meta/ holds MD5SUMS.txt, the page text and SOURCE.txt (DOI 10.21227/gxpd-d998)"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "the seven zips and meta/ copied into /rs/rs_grp_oschome/shared/datasets/veterinary_pig_levelcheck/ by Slurm job 40731458 on asx1, every file passing md5sum -c against MD5SUMS.txt; the files came through a login, so no public-link manifest exists for the promoter to replay"
   }
  ],
  "obstacles": [],
- "next": "the zips are copied into /rs/rs_grp_oschome/shared/datasets/veterinary_pig_levelcheck/raw with their md5 checked, and the record turns fetched"
+ "next": "none for the fetch: the zips are in the shared tree; the status stays fetching because the review rule counts fetched only with a promoter manifest, which a set behind a login cannot have"
 }
