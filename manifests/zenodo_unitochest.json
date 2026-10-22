@@ -1,0 +1,23 @@
+{
+ "id": "zenodo_unitochest",
+ "source": "https://zenodo.org/records/5797912",
+ "licence": "CC BY 4.0",
+ "date": "2026-10-22",
+ "files": [
+  {
+   "path": "raw/UniToChest_logo.jpg",
+   "url": "https://zenodo.org/api/records/5797912/files/UniToChest_logo.jpg/content",
+   "bytes": 218547,
+   "md5": "26e4c2805c7038fc190a10bcb0346b83",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/unitochest.zip",
+   "url": "https://zenodo.org/api/records/5797912/files/unitochest.zip/content",
+   "bytes": 84067326821,
+   "md5": "af658685c9dda766d6024f40b615d80a",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  }
+ ],
+ "bytes_total": 84067545368
+}
