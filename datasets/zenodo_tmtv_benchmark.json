@@ -11,7 +11,7 @@
   "Read the record listing and choose the include pattern, then spinesurg-ct-nnunet's tools/acquisition_fetch.py zenodo --collection tmtv_benchmark --record 13255214 --include '<pattern>' (md5-verified) through slurm/acquisition_fetch.sh; the download works with --include '\\.zip$', but a zipped-DICOM convert route must be written first.",
   "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid zenodo_tmtv_benchmark; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"zenodo_tmtv_benchmark\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
  ],
- "grid_path": null,
+ "grid_path": "/rs/rs_grp_oschome/shared/datasets/zenodo_tmtv_benchmark/raw",
  "counts": {
   "subjects": 60,
   "size_gb": 6.85
@@ -20,8 +20,8 @@
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "planned in the data platform at bf1432f; fetch job in the 2026-10-21 chain once a zipped-DICOM convert route is written",
  "route": "download",
- "status": "fetching",
- "result": "",
+ "status": "fetched",
+ "result": "2026-10-22: on the grid at /rs/rs_grp_oschome/shared/datasets/zenodo_tmtv_benchmark/raw, 5 files, 6846084599 bytes, sha256-checked, promoter job 40702867",
  "history": [
   {
    "date": "2026-10-21",
@@ -32,8 +32,13 @@
    "date": "2026-10-22",
    "step": "fetching",
    "note": "manifest ready from Zenodo's file list (5 files, 6.85 GB, md5 each); the licence on the page reads CC BY 4.0; the promoter fetches after merge"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "fetched",
+   "note": "on the grid at /rs/rs_grp_oschome/shared/datasets/zenodo_tmtv_benchmark/raw, 5 files, 6846084599 bytes, sha256-checked, promoter job 40702867"
   }
  ],
  "obstacles": [],
- "next": "the promoter installs it after merge"
+ "next": ""
 }
