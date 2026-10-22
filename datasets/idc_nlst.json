@@ -21,17 +21,22 @@
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "planned in the data platform at bf1432f and refused as it stands by the stopping rule (2.3 TB for about 110 T13 people, its only yield, about 1.5 percent single-labeller calls that all need adjudication); no fetch job until the owner lifts that rule; the ranking's refusals: localizer 65,174, slice over 3.0 mm 21,188, under 60 slices 5,209, not a regularly spaced 3-D volume 3,652",
  "route": "owner-only",
- "status": "todo",
+ "status": "needs-owner",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "planned in the data platform at bf1432f and refused as it stands by the stopping rule (2.3 TB for about 110 T13 people, its only yield, about 1.5 percent single-labeller calls that all need adjudication); no fetch job until the owner lifts that rule; the ranking's refusals: localizer 65,174, slice over 3.0 mm 21,188, under 60 slices 5,209, not a regularly spaced 3-D volume 3,652"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "owner's sitting prepared: a decision, not a form: the full NLST is about 2.3 TB for about 110 people of its only yield, refused by the stopping rule unless the owner lifts it"
   }
  ],
  "obstacles": [
   "the owner's hand: lifting the stopping rule; no fetch job until then"
  ],
- "next": "the owner's step as the task says; nothing for a collaborator yet"
+ "next": "the owner says whether to lift the stopping rule for the full NLST; no fetch until he does"
 }
