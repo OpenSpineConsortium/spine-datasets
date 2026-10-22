@@ -29,10 +29,15 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "owner's sitting prepared: BIMCV's own page offers the set through a Google form (iteration 1+2+3, forms.gle/JNkqtmSKQzv3QQpN6) with no IEEE account: Name, Email address, Affiliation, Country, Objective (Academic Research or Other) and whether to hear of future versions; its research use agreement matches PadChest's (no sale, no redistribution, no derivative works beyond its clause 2, indemnity); the IEEE DataPort copy is one 389.27 GB tar.gz of CR, DX and CT together and needs a DataPort subscription beside the free login"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "the owner pointed to BIMCV's research use agreement for this set in his answers; the download link BIMCV sends after its form is not yet in hand"
   }
  ],
  "obstacles": [
-  "the owner's hand: the free IEEE account, and the space decision (about 389 GB)"
+  "the download link BIMCV sends after its form"
  ],
- "next": "the owner says yes or no to about 389 GB, and on yes submits the BIMCV form; the link that comes back is fetched as a Slurm job"
+ "next": "the owner passes on the link BIMCV sends after its form; the set is then fetched like PadChest's share"
 }
