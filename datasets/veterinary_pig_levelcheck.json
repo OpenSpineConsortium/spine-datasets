@@ -19,7 +19,7 @@
  "record": "spine-program 99_archive/MANIFEST_CODE.md; 99_archive/LITERATURE_BY_PATH.md",
  "source_status": "the owner's future direction of 2026-10-20: expand the workflow into veterinary medicine; the zips sit in spine-program's archive, excluded from the record, and the set is open on IEEE DataPort; the Mendeley canine thoracic set (canine_thoracic_vhs) stands beside it since the sweep of 2026-10-21",
  "route": "account",
- "status": "fetched",
+ "status": "fetching",
  "result": "on the grid at /rs/rs_grp_oschome/go2432/data/veterinary_pig_levelcheck/raw/: seven zips, 205,004,261 bytes (CTscan_Pig.zip 48,336,485 md5 36117ac1d0b7c9ca09a1751b71093740; CBCT_SoftTissue.zip 43,628,186 md5 9eef2a6abf96e6217880f2b5610da01f; CTscan_Applicator.zip 42,542,916 md5 dc9422c0a396662c3a3b3bac909e0594; PlanarImagesSofttissue.zip 12,319,446 md5 714741e8bd4604365dc2834902dddf8c; CBCT_NOSoftTissue.zip 45,775,701 md5 0586398b22e79494a1477855713f138b; PlanarImagesNoSoftTissue.zip 12,396,682 md5 42a1f423401a4b3bc80d5939d42bbd9b; MatricesSoftTissue.zip 4,845 md5 7b4540fc7a42a671522afd3e9e9b84b5)",
  "history": [
   {
@@ -39,10 +39,10 @@
   },
   {
    "date": "2026-10-22",
-   "step": "fetched",
-   "note": "the seven zips fetched on the grid with the owner's IEEE DataPort sign-in on his word of 23:17 UTC; every size matches the page and every zip passes unzip -t; meta/ holds MD5SUMS.txt, the page text and SOURCE.txt (DOI 10.21227/gxpd-d998)"
+   "step": "fetching",
+   "note": "the seven zips came down on the grid with the owner's IEEE DataPort login on his word of 23:17 UTC, into the lab's data folder (/rs/rs_grp_oschome/go2432/data/veterinary_pig_levelcheck/raw); every size matches the page and every zip passes unzip -t; meta/ holds MD5SUMS.txt, the page text and SOURCE.txt (DOI 10.21227/gxpd-d998)"
   }
  ],
  "obstacles": [],
- "next": "none: the set is on the grid; it waits for a bank recipe before it enters the catalog"
+ "next": "the zips are copied into /rs/rs_grp_oschome/shared/datasets/veterinary_pig_levelcheck/raw with their md5 checked, and the record turns fetched"
 }
