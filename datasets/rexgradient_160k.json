@@ -21,7 +21,7 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; Hugging Face gated behind a non-commercial data access and use agreement signed on the page; 79 sites means 79 exposure recipes",
  "route": "form",
- "status": "needs-owner",
+ "status": "granted",
  "result": "",
  "history": [
   {
@@ -33,10 +33,16 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "owner's sitting prepared: the Hugging Face gate asks only for a signed-in account and agreement to share contact information, under a non-commercial, non-clinical agreement that forbids downloading the whole repository (only the part the project needs), redistribution and re-identification, and asks citation and credit to Gradient Health; 273,004 images in 160,000 studies, downsampled to 25 percent, as split deid_png.part files"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "granted",
+   "note": "the owner accepted the data access and use agreement on Hugging Face"
   }
  ],
  "obstacles": [
-  "gated: a non-commercial data access and use agreement on the Hugging Face page"
+  "clause A.5 of the agreement forbids downloading the entire repository, and the images are one archive in ten parts of about 15.5 GB each, so they cannot be taken in part",
+  "the owner's Hugging Face token in ~/.hf/token.env on the grid, which CADS waits on too"
  ],
- "next": "the owner signs in to Hugging Face, opens the dataset page and presses the agree button; the fetch then takes only the part the project needs, as the agreement asks"
+ "next": "the owner chooses between asking the dataset's contact for leave to take all ten image parts, a draft of which waits in his Outlook Drafts, and taking the 0.66 GB of metadata alone first; the grid fetch then runs with his Hugging Face token"
 }
