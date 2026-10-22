@@ -6,7 +6,7 @@
  "level_truth": "none; laterals show the thoracic spine",
  "reach": "gated",
  "licence": "PhysioNet credentialed access (the licence line read on the project page)",
- "link": "https://physionet.org/content/brax/",
+ "link": "https://physionet.org/content/brax/1.1.0/",
  "how_to_get": [
   "The owner signs the project's data use agreement at https://physionet.org/content/brax/ (the Files section); PhysioNet may then hold access until it has reviewed his CITI course record, as it does for MIMIC-CXR.",
   "Then the files are fetched as a Slurm job with the owner's PhysioNet credentials read from ~/.netrc, never from a command line, and checked against the project's SHA256SUMS.txt."
@@ -27,10 +27,15 @@
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; PhysioNet credentialed access (Scientific Data 2022, PMC9364309); 24,959 studies and 40,967 images, frontal and lateral, from Hospital Israelita Albert Einstein, Sao Paulo"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "owner's sitting prepared: current version 1.1.0, credentialed access under the PhysioNet Credentialed Health Data Use Agreement 1.5.0, with the CITI Data or Specimens Only Research course required; the agreement is signed at https://physionet.org/sign-dua/brax/1.1.0/"
   }
  ],
  "obstacles": [
   "the owner's hand: the PhysioNet data use agreement; then PhysioNet's review of his CITI course record"
  ],
- "next": "the owner signs the agreement on the project page; then the grid fetch"
+ "next": "the owner signs the agreement at https://physionet.org/sign-dua/brax/1.1.0/; once PhysioNet has reviewed his CITI record the grid fetch runs"
 }
