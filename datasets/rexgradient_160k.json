@@ -21,7 +21,7 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; Hugging Face gated behind a non-commercial data access and use agreement signed on the page; 79 sites means 79 exposure recipes",
  "route": "form",
- "status": "granted",
+ "status": "fetching",
  "result": "",
  "history": [
   {
@@ -43,10 +43,13 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "the owner chose to take the whole repository, about 156 GB, knowing that clause A.5 of the agreement limits a download to the part the project needs; it is a gated source of SchwingNet's platform fetch, read with his Hugging Face token"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "fetching",
+   "note": "on the owner's choice to take the whole repository despite clause A.5, and with his Hugging Face token on the grid, SchwingNet's gate word fetch hf_rexgradient_160k submitted job 40712197 at SchwingNet 25159c0, about 156 GB"
   }
  ],
- "obstacles": [
-  "the owner's Hugging Face token in ~/.hf/token.env on the grid, which CADS waits on too"
- ],
- "next": "once the owner's Hugging Face token is in ~/.hf/token.env on the grid, SchwingNet's gate word fetch hf_rexgradient_160k lands the whole repository at /rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k/raw"
+ "obstacles": [],
+ "next": "the job 40712197 lands the whole repository at /rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k/raw; the record turns fetched once it ends with every LFS sha256 verified"
 }
