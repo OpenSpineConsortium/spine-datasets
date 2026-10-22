@@ -1,6 +1,6 @@
 # Stale branches in OpenSpineConsortium/spine-datasets
 
-Read 2026-10-22T10:08:13Z from GitHub's history: 34 merged pull requests, 1 closed without a merge.
+Read 2026-10-22T10:14:33Z from GitHub's history: 34 merged pull requests, 1 closed without a merge.
 
 | measure | value |
 |---|---|
