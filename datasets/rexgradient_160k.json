@@ -38,11 +38,15 @@
    "date": "2026-10-22",
    "step": "granted",
    "note": "the owner accepted the data access and use agreement on Hugging Face"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "the owner chose to take the whole repository, about 156 GB, knowing that clause A.5 of the agreement limits a download to the part the project needs; it is a gated source of SchwingNet's platform fetch, read with his Hugging Face token"
   }
  ],
  "obstacles": [
-  "clause A.5 of the agreement forbids downloading the entire repository, and the images are one archive in ten parts of about 15.5 GB each, so they cannot be taken in part",
   "the owner's Hugging Face token in ~/.hf/token.env on the grid, which CADS waits on too"
  ],
- "next": "the owner chooses between asking the dataset's contact for leave to take all ten image parts, a draft of which waits in his Outlook Drafts, and taking the 0.66 GB of metadata alone first; the grid fetch then runs with his Hugging Face token"
+ "next": "once the owner's Hugging Face token is in ~/.hf/token.env on the grid, SchwingNet's gate word fetch hf_rexgradient_160k lands the whole repository at /rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k/raw"
 }
