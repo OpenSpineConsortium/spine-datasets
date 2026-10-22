@@ -20,8 +20,8 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; PhysioNet credentialed access, the route VinDr-SpineXR already took",
  "route": "agreement",
- "status": "fetching",
- "result": "Slurm chain submitted 2026-10-21 21:35 UTC by the SchwingNet thread through Beethoven's gate word (schwingnet fetch vindr_pcxr, SchwingNet 5ecce95) with the owner's PhysioNet credentials from ~/.netrc: fetch 40697734, then bank and ingest 40697735, then catalog 40697736 (each afterany); about 30 GB, about two hours, landing at /rs/rs_grp_oschome/go2432/data/vindr_pcxr/raw",
+ "status": "granted",
+ "result": "No files yet. Fetch job 40697734 (2026-10-21 21:36 UTC) stopped after 8 seconds: PhysioNet answered 401 and then 403, which means it took the login in the grid's netrc and refused this project's files to that account. Fetch job 40702518 (2026-10-22 04:23 UTC, SchwingNet ff9c743) stopped before any request, because SchwingNet's netrc check could not parse the grid's netrc, the same file wget had just read.",
  "history": [
   {
    "date": "2026-10-21",
@@ -42,8 +42,16 @@
    "date": "2026-10-21",
    "step": "fetching",
    "note": "Slurm chain submitted 2026-10-21 21:35 UTC by the SchwingNet thread through Beethoven's gate word (schwingnet fetch vindr_pcxr, SchwingNet 5ecce95) with the owner's PhysioNet credentials from ~/.netrc: fetch 40697734, then bank and ingest 40697735, then catalog 40697736 (each afterany); about 30 GB, about two hours, landing at /rs/rs_grp_oschome/go2432/data/vindr_pcxr/raw"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "Fetch job 40697734 stopped after 8 seconds with no file: PhysioNet answered 401, then 403 to the login wget sent from the grid's netrc, so the login held and the account was refused this version's files. A second fetch through the same gate word, job 40702518 at 04:23 UTC on SchwingNet ff9c743, stopped before any request: the netrc check added in SchwingNet #83 says the file is not one it can read. The record goes back to granted until a fetch brings files."
   }
  ],
- "obstacles": [],
- "next": "when the chain lands, check the files against the project's SHA256SUMS.txt and record fetched with the file count, the bytes and the grid path"
+ "obstacles": [
+  "PhysioNet refused the files to the account the grid's netrc names (401 then 403, job 40697734): either that account's agreement for VinDr-PCXR 1.0.0 is not in effect yet, or the netrc names a different PhysioNet account from the one that holds it.",
+  "SchwingNet's tools/fetch_sources.py reads the netrc with Python's netrc module, which refuses the grid's file although wget reads it (job 40702518); until that reader matches wget, every PhysioNet fetch through the gate stops before its first request."
+ ],
+ "next": "Fix the netrc reader in SchwingNet so it reads what wget reads; the owner confirms on https://physionet.org/content/vindr-pcxr/1.0.0/ that the Files section lists the files when signed in as the account the grid's netrc names; then send the gate word schwingnet-fetch-vindr_pcxr again and check the copy with sha256sum -c SHA256SUMS.txt before recording fetched."
 }
