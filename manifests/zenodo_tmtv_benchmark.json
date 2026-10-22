@@ -1,0 +1,44 @@
+{
+ "id": "zenodo_tmtv_benchmark",
+ "source": "https://zenodo.org/records/13255214",
+ "licence": "CC BY 4.0",
+ "date": "2026-10-22",
+ "files": [
+  {
+   "path": "raw/B20.zip",
+   "url": "https://zenodo.org/api/records/13255214/files/B20.zip/content",
+   "bytes": 2001470297,
+   "md5": "d781c993c6faf9a4f2555cd149f72cdf",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/F20.zip",
+   "url": "https://zenodo.org/api/records/13255214/files/F20.zip/content",
+   "bytes": 2575080171,
+   "md5": "54698d46e8ad08755acc2b4278696672",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/H20.zip",
+   "url": "https://zenodo.org/api/records/13255214/files/H20.zip/content",
+   "bytes": 2269503364,
+   "md5": "9d8741fdc3cfa7c6d187859fa0ab82cd",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/Instructions and use of International TMTV Benchmark in Lymphoma.docx",
+   "url": "https://zenodo.org/api/records/13255214/files/Instructions%20and%20use%20of%20International%20TMTV%20Benchmark%20in%20Lymphoma.docx/content",
+   "bytes": 17048,
+   "md5": "5aa1bb0defaedd55b5ae530661a982a4",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/TMTV_BENCHMARK_PROJECT.xlsx",
+   "url": "https://zenodo.org/api/records/13255214/files/TMTV_BENCHMARK_PROJECT.xlsx/content",
+   "bytes": 13719,
+   "md5": "0d5010f8364d23c5d2d2bc2c8d67010f",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  }
+ ],
+ "bytes_total": 6846084599
+}
