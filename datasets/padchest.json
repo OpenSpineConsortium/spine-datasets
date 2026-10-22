@@ -21,7 +21,7 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; a licence form on the page (research use, by request); European devices and film-era digitised plates, the richest set of non-standard chest projections",
  "route": "form",
- "status": "granted",
+ "status": "fetching",
  "result": "",
  "history": [
   {
@@ -38,8 +38,13 @@
    "date": "2026-10-22",
    "step": "granted",
    "note": "the owner accepted the PadChest research use agreement and BIMCV sent the B2DROP share of the full set; the share's link is kept in SchwingNet's fetch list alone, since the agreement keeps it inside the organisation"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "fetching",
+   "note": "SchwingNet's gate word fetch padchest submitted fetch job 40711923, bank and ingest 40711925 and catalog 40711927 at SchwingNet 25159c0; about 52 hours for 1.02 TB"
   }
  ],
  "obstacles": [],
- "next": "SchwingNet's gate word fetch padchest lands the set, about 1.02 TB, at /rs/rs_grp_oschome/go2432/data/padchest/raw once SchwingNet's pull request that adds the share's route is merged"
+ "next": "the fetch job 40711923 lands the set; the gate word status shows its size on the volume, and the record turns fetched with its checksums once the bank job 40711925 has run"
 }
