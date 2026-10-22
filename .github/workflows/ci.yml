@@ -178,6 +178,10 @@ jobs:
         if: github.event_name == 'pull_request'
         run: python3 tools/check_protocol.py
 
+      - name: Hold a pull request marked ready to its review record
+        if: github.event_name == 'pull_request'
+        run: python3 tools/review_record.py
+
       - name: Review what the pull request adds to the datasets
         if: github.event_name == 'pull_request'
         run: python3 tools/dataset_review.py diff --base HEAD^1

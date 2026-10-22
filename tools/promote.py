@@ -29,10 +29,14 @@ deleted or overwritten: a raw/ already there is adopted only when every file mat
 failure leaves .incoming-<job> for the next job to resume and says so in the job's log.
 
 A stricter rule decides whether what runs as the owner may change: `self-update` copies this file
-and grid/promote.sh from the default branch into the promoter's folder, and the space budget in
-grid/promote.json is read, only where the last change to each came from a pull request an owner
-opened and merged with no commit in it tied to anyone else's account; anything else keeps the copy on the grid, or the default
-budget.
+and grid/promote.sh from the default branch into the promoter's folder only where the last change
+to each came from a pull request an owner opened and merged with no commit in it tied to anyone
+else's account; anything else keeps the copy on the grid, until the gate word promoter restart
+installs the default branch's copy.
+
+No set is held to a size of its own: a merged manifest is promoted whenever the shared volume has
+room for it beside the reserve, the owner's rule of 2026-10-22 ("if i have space on ceph it should
+permit any size"), which install checks against the volume's free space before it fetches.
 
 It runs on the grid's own python3, which on its EL7 nodes may be as old as 3.6, so it uses nothing
 newer, and needs gh signed in as the owner and curl, both already there for hpcworker.
@@ -54,8 +58,6 @@ import time
 DEFAULT_BRANCH = "main"
 # X-ray groups first, CT after them (the owner, 2026-10-21), as tools/pipeline.py orders them.
 GROUP_ORDER = ("fluoro", "video", "projections", "films", "ct", "future")
-# The space one merge may take without the owner naming the set in grid/promote.json.
-MAX_BYTES = 100 * 10 ** 9
 ID_SHAPE = re.compile(r"^[a-z0-9_]+$")
 SHA256_SHAPE = re.compile(r"^[0-9a-f]{64}$")
 MD5_SHAPE = re.compile(r"^[0-9a-f]{32}$")
@@ -71,7 +73,6 @@ OPEN_LICENCE = re.compile(
 )
 RESTRICTED_LICENCE = re.compile(r"\b(NC|ND|non-?commercial|no ?deriv)", re.IGNORECASE)
 TRUSTED_CODE = ("tools/promote.py", "grid/promote.sh")
-BUDGET = "grid/promote.json"
 # A source whose files are served from another host of its own; any other file must be on the
 # source's own host exactly, so a shared suffix (s3.amazonaws.com, github.io) is never enough.
 DOWNLOAD_HOSTS = {
@@ -218,7 +219,7 @@ def merged_by_owner(repo, path, owners, strict=False):
 
     Never a pull request from a promote/ branch, the promoter's own, which only ever updates a
     record: anyone who may write can push to such a branch before its auto-merge lands. With
-    strict, for what runs as the owner (the promoter's code and its space budget), an owner must
+    strict, for what runs as the owner (the promoter's code), an owner must
     also have opened the pull request, and no commit in it may be tied to anyone else's account."""
     commits = gh_json(["api", "repos/%s/commits?sha=%s&path=%s&per_page=1" % (repo, DEFAULT_BRANCH, path)])
     if not commits:
@@ -453,17 +454,6 @@ def enable_auto_merge(pull_id, head_sha):
 
 # The commands.
 
-def load_budget(repo, owners, log):
-    """The space budget, as an owner wrote it; the default where anyone else last changed it."""
-    origin = merged_by_owner(repo, BUDGET, owners, strict=True)
-    if origin is None:
-        if file_at(repo, BUDGET, DEFAULT_BRANCH)[0] is not None:
-            log("%s was last changed outside an owner's own pull request; using the default budget" % BUDGET)
-        return MAX_BYTES, set()
-    settings = json.loads(file_at(repo, BUDGET, origin["commit"])[0])
-    return settings.get("max_bytes", MAX_BYTES), set(settings.get("approved_over_budget", []))
-
-
 def candidates(repo, shared, owners, log):
     """The manifests to act on now, X-ray first, each with its record and its origin."""
     found = []
@@ -503,16 +493,10 @@ def ascii_log(line):
 
 def once(args, log=ascii_log):
     owners = set(args.owners.split(","))
-    max_bytes, approved = load_budget(args.repo, owners, log)
     results = {}
     finish_record_updates(args, log)
     for manifest, record, origin in candidates(args.repo, args.shared, owners, log):
         ident = manifest["id"]
-        if manifest["bytes_total"] > max_bytes and ident not in approved:
-            log("%s: %d bytes is over the budget of %d; the owner names it in grid/promote.json"
-                % (ident, manifest["bytes_total"], max_bytes))
-            results[ident] = "over-budget"
-            continue
         outcome = install(args.shared, manifest, origin, args.job, log, args.reserve)
         results[ident] = outcome
         log("%s: %s" % (ident, outcome))

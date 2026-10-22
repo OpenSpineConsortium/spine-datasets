@@ -23,8 +23,8 @@ request (.github/workflows/ci.yml):
   - a data file added to the repository (an image, an archive, a volume, a table of rows), outside
     docs/ and tests/, where it is flagged instead, since a figure or a fixture may belong there;
   - a record moved to fetched without a manifest, or with a grid_path outside the shared tree;
-  - a change to the promoter's own code or budget (tools/promote.py, grid/promote.sh,
-    grid/promote.json), which runs as the owner on the grid, in a pull request someone other than
+  - a change to the promoter's own code (tools/promote.py, grid/promote.sh, and grid/promote.json,
+    its old budget, should it come back), which runs as the owner on the grid, in a pull request someone other than
     the owner opened;
   - a change on the promoter's own branch promote/<id> to anything but that one record.
 - FLAG, written in the report for whoever merges, the check stays green:
