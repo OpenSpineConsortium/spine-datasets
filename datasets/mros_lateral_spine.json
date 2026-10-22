@@ -22,15 +22,20 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; a research data request through the MrOS coordinating centre (an online application with a proposal), not sent; the images are not on dbGaP, whose phs000373 covers genotypes (to confirm on the page); older osteoporotic spines with compression fractures, the anatomy the C-arm sees in kyphoplasty",
  "route": "form",
- "status": "todo",
+ "status": "needs-owner",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; a research data request through the MrOS coordinating centre (an online application with a proposal), not sent; the images are not on dbGaP, whose phs000373 covers genotypes (to confirm on the page); older osteoporotic spines with compression fractures, the anatomy the C-arm sees in kyphoplasty"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "owner's sitting prepared: MrOS Online registration is gated by an authorization email from an institutional address to mrosdata@ucsf.edu with full name and every institutional affiliation, foreign ones included; the form then asks Email, Password, First Name, Middle Initial, Last Name, Institution, Position and a box accepting the limited data set agreement (mrosonline.ucsf.edu/Account/UserAgreement, accepted by the recipient alone, no institutional signature, citation under the MrOS publication guidelines); the authorization email is drafted in the owner's Outlook Drafts; whether the spine film images are on the website or need the NIA Aging Research Biobank's Request for Materials (protocol, IRB letter, attestation, CV, then an agreement the institution's signing official signs) is asked in that email"
   }
  ],
  "obstacles": [],
- "next": "fill the form named in letters/mros_lateral_spine.md with its paragraphs as the purpose, then record the date here"
+ "next": "the owner sends the drafted authorization email; once authorized he registers at https://mrosonline.ucsf.edu/Account/Register and ticks the agreement; the images' route is recorded from the answer"
 }
