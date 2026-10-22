@@ -5,7 +5,7 @@
  "what": "7,470 chest radiographs of 3,955 studies with reports, frontal and lateral pairs (the Indiana University collection on Open-i)",
  "level_truth": "none; the thoracic spine in a lateral chest film",
  "reach": "get",
- "licence": "open, no agreement (the Open-i FAQ); to confirm on the page",
+ "licence": "CC BY-NC-ND 4.0 as two mirrors state (Hugging Face ykumards/open-i and Kaggle raddar/chest-xrays-indiana-university, read 2026-10-22); the Open-i FAQ itself was under maintenance, to confirm on the page",
  "link": "https://openi.nlm.nih.gov/faq",
  "how_to_get": [
   "Read the download route on https://openi.nlm.nih.gov/faq.",
@@ -20,17 +20,23 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; open, no agreement; small but frictionless lateral chest films for a thoracic-lateral probe before the gated sets arrive",
  "route": "download",
- "status": "todo",
+ "status": "needs-owner",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; open, no agreement; small but frictionless lateral chest films for a thoracic-lateral probe before the gated sets arrive"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "the Open-i FAQ answered only a maintenance notice on 2026-10-22; two mirrors give the collection's licence as CC BY-NC-ND 4.0 (the Kaggle mirror is 14,185,071,106 bytes, its images resized to 2048 on the shorter side, so the archives from NLM itself are the copy to fetch); the record's 'open, no agreement' was the FAQ's word on access, not on use"
   }
  ],
  "obstacles": [
-  "the licence on the page is still to confirm before any fetch"
+  "the owner's hand: the licence is non-commercial and no-derivatives as the mirrors state it; whether the project takes the set under it is the owner's decision",
+  "the Open-i FAQ was under maintenance on 2026-10-22, so the licence and the archive addresses are still to read on NLM's own page"
  ],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/open_i_chest/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "next": "a collaborator reads the licence and the archive addresses on the Open-i FAQ once it is back; the owner decides on the non-commercial, no-derivatives term; if the owner takes it, a granted step lets a manifest of NLM's own archives go in"
 }
