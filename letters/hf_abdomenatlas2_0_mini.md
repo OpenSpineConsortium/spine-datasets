@@ -1,6 +1,6 @@
 # hf_abdomenatlas2_0_mini: the request text
 
-Not sent; drafted 2026-10-22 for the owner's go.
+Sent 2026-10-22 16:14 UTC by the owner; waiting for the answer.
 
 To: Zongwei Zhou, Assistant Professor of Computer Science and Oncology, Johns Hopkins University, zzhou82@jh.edu (the address as the Malone Center's page, https://malonecenter.jhu.edu/people/zongwei-zhou, prints it on 2026-10-22).
 Route: email from the owner's Wayne State mailbox, with go2432@wayne.edu in copy, under the subject below.

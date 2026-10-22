@@ -20,9 +20,9 @@
  },
  "measured": {},
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
- "source_status": "the owner's hand: an id map against AbdomenAtlas 3.0 Mini first, since there is no card and no metadata (planned in the data platform at bf1432f)",
- "route": "owner-only",
- "status": "todo",
+ "source_status": "asked Johns Hopkins for the case list against AbdomenAtlas 3.0 Mini on 2026-10-22, since the release has no card and no metadata",
+ "route": "letter",
+ "status": "requested",
  "result": "",
  "history": [
   {
@@ -34,10 +34,15 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "letter drafted (letters/hf_abdomenatlas2_0_mini.md) to Zongwei Zhou at Johns Hopkins asking for the case list against 3.0 Mini; not sent, waiting for the owner's go"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "asked",
+   "note": "letter sent by the owner at 16:14 UTC to Zongwei Zhou (zzhou82@jh.edu), go2432@wayne.edu in copy, asking for the case list against 3.0 Mini"
   }
  ],
  "obstacles": [
-  "the owner's hand: the id map decision; then a grid job"
+  "waiting for the case list; then a grid job fetching only the cases not already held, on the owner's word"
  ],
- "next": "the owner sends the drafted letter for the case list; once it answers, a grid job fetches only the cases not already held, on the owner's word"
+ "next": "wait for Professor Zhou's answer; with the case list, a grid job fetches only the cases not already held, on the owner's word"
 }
