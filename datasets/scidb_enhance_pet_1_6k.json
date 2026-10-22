@@ -21,17 +21,22 @@
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "the owner's hand: confirm whether Science Data Bank needs a login and read CT-details.xlsx for slice thickness; no fetch route exists in tools/acquisition_fetch.py for Science Data Bank (planned in the data platform at bf1432f)",
  "route": "owner-only",
- "status": "todo",
+ "status": "needs-owner",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "the owner's hand: confirm whether Science Data Bank needs a login and read CT-details.xlsx for slice thickness; no fetch route exists in tools/acquisition_fetch.py for Science Data Bank (planned in the data platform at bf1432f)"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "owner's sitting prepared: the Science Data Bank page renders in the browser only, so whether its download asks for a login could not be read from a session"
   }
  ],
  "obstacles": [
   "the owner's hand: confirm whether Science Data Bank asks for a login and read CT-details.xlsx; no fetch route exists yet"
  ],
- "next": "the owner's step as the task says; nothing for a collaborator yet"
+ "next": "the owner opens https://www.scidb.cn/detail?dataSetId=c06e548588694eca8477006e806ed70d, presses download on CT-details.xlsx and says whether a login was asked"
 }
