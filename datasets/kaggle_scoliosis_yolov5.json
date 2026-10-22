@@ -5,7 +5,7 @@
  "what": "AP spine films with YOLO boxes on vertebrae and curve regions; count, source and whether the people are AASCE's to confirm on the page",
  "level_truth": "boxes per vertebra, level-adjacent if the vertebrae are ordered; worthless if the films are AASCE's",
  "reach": "get",
- "licence": "Kaggle; the licence on the page, to confirm",
+ "licence": "MIT in the Kaggle metadata field, while the description's own licence section says CC BY 4.0 (both read from Kaggle's dataset API on 2026-10-22); either is open",
  "link": "https://www.kaggle.com/datasets/salmankey/scoliosis-yolov5-annotated-spine-x-ray-dataset",
  "how_to_get": [
   "The owner's Kaggle account; read the licence and the stated source on the page.",
@@ -18,17 +18,23 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; its origin is unstated, so it may be a relabel of AASCE (aasce): every image is hash-checked (filename or pixel hash) against the AASCE copy on the grid before any use, and a match excludes it as new people",
  "route": "account",
- "status": "todo",
+ "status": "needs-owner",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; its origin is unstated, so it may be a relabel of AASCE (aasce): every image is hash-checked (filename or pixel hash) against the AASCE copy on the grid before any use, and a match excludes it as new people"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "read from Kaggle's dataset API: owner Muhammad Salman (salmankey), last updated 2025-11-07, 251,996,951 bytes; licence field MIT, description says CC BY 4.0; the images were boxed in Roboflow (the Roboflow link in the description is a placeholder) and the set carries augmented copies (rotation, brightness, flips, crops, noise); where the films came from is not stated anywhere, so the AASCE hash check stays; a Kaggle download needs a Kaggle login and its token"
   }
  ],
  "obstacles": [
-  "the owner's hand: the Kaggle account and the licence on the page; every image is hash-checked against the AASCE copy on the grid before any use"
+  "the owner's hand: a Kaggle download needs a Kaggle login and its token, which never enters this repository",
+  "the films' origin is unstated, so every image is hash-checked against the AASCE copy on the grid before any use; the augmented copies are dropped or kept apart as copies of one person"
  ],
- "next": "the owner opens the account or the gate named in the record; a collaborator reads the terms and writes them into the record first"
+ "next": "the owner fetches with the owner's Kaggle account as a grid job; then the AASCE hash check, whose match makes it a relabel of aasce"
 }
