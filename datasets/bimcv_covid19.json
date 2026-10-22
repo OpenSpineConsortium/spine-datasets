@@ -16,7 +16,7 @@
  "measured": {},
  "record": "the sweep of 2026-10-21 (this repository's issue #107)",
  "source_status": "found by the sweep of 2026-10-21; open access on IEEE DataPort (doi:10.21227/w3aw-rv39) behind a free IEEE login; tar.gz parts of about 389 GB in all, radiographs and CTs together",
- "route": "account",
+ "route": "form",
  "status": "needs-owner",
  "result": "",
  "history": [
@@ -24,10 +24,15 @@
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; open access on IEEE DataPort (doi:10.21227/w3aw-rv39) behind a free IEEE login; tar.gz parts of about 389 GB in all, radiographs and CTs together"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "owner's sitting prepared: BIMCV's own page offers the set through a Google form (iteration 1+2+3, forms.gle/JNkqtmSKQzv3QQpN6) with no IEEE account: Name, Email address, Affiliation, Country, Objective (Academic Research or Other) and whether to hear of future versions; its research use agreement matches PadChest's (no sale, no redistribution, no derivative works beyond its clause 2, indemnity); the IEEE DataPort copy is one 389.27 GB tar.gz of CR, DX and CT together and needs a DataPort subscription beside the free login"
   }
  ],
  "obstacles": [
   "the owner's hand: the free IEEE account, and the space decision (about 389 GB)"
  ],
- "next": "the owner opens the IEEE account and says how much of the set to fetch"
+ "next": "the owner says yes or no to about 389 GB, and on yes submits the BIMCV form; the link that comes back is fetched as a Slurm job"
 }
