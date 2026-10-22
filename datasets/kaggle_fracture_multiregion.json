@@ -5,7 +5,7 @@
  "what": "10,580 radiographs in fractured and non-fractured folders over lower limbs, upper limbs, lumbar spine, hips and knees; 481 MB",
  "level_truth": "none; a lumbar-spine folder and a hip folder from unknown devices",
  "reach": "get",
- "licence": "Kaggle; the licence and the images' origin to confirm on the page",
+ "licence": "ODC Public Domain Dedication and Licence (PDDL) in the Kaggle metadata field, while the description names ODC Attribution (ODC-By) 1.0 (both read from Kaggle's dataset API on 2026-10-22); the three source sets' own terms are not read yet",
  "link": "https://www.kaggle.com/datasets/bmadushanirodrigo/fracture-multi-region-x-ray-data",
  "how_to_get": [
   "The owner reads the licence and the stated origin on the page; where the origin is not redistributable the record's reach becomes excluded.",
@@ -27,10 +27,16 @@
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; warning: the licence and the images' origin are unstated in what was read (many Kaggle fracture sets are scraped from teaching sites), to confirm on the page; an exposure-diversity pool only, and not to be fetched until its origin is shown to be redistributable"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "read from Kaggle's dataset API: owner Madushani Rodrigo (bmadushanirodrigo), last updated 2024-04-23, 507,724,147 bytes, 10,580 images; the description says the images were merged from three other Kaggle uploads (Mohan Kumar's bone break upload, Abdelaziz Faramawy's bone_fracture, Harsha Arya's fracture dataset), so this is a copy of copies and its own open licence does not show the films may be passed on"
   }
  ],
  "obstacles": [
-  "the owner's hand: the Kaggle account; not fetched until the images' origin is shown redistributable"
+  "the three source uploads' own licences and the films' first origin are not read yet; not fetched until they show the films may be passed on",
+  "the owner's hand afterwards: a Kaggle download needs a Kaggle login and its token"
  ],
- "next": "the owner opens the account or the gate named in the record; a collaborator reads the terms and writes them into the record first"
+ "next": "a collaborator reads the three source uploads' Kaggle pages for their licence and where their films came from, and writes it here; only then the owner's Kaggle fetch"
 }

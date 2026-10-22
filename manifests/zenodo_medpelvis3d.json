@@ -1,0 +1,709 @@
+{
+ "id": "zenodo_medpelvis3d",
+ "source": "https://zenodo.org/records/21757686",
+ "licence": "CC BY 4.0",
+ "date": "2026-10-22",
+ "files": [
+  {
+   "path": "raw/600001.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600001.zip/content",
+   "bytes": 132876561,
+   "md5": "fab2715b8061cc970e9f051b503de3d2",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600002.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600002.zip/content",
+   "bytes": 161759067,
+   "md5": "9ad0167e6d5c4516f404ece7d833b12a",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600003.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600003.zip/content",
+   "bytes": 138164166,
+   "md5": "04c7202e12a9f8555dc6720886a1af37",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600004.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600004.zip/content",
+   "bytes": 175599585,
+   "md5": "3050a9a8d4b11abc04b3ea8242d5d613",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600005.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600005.zip/content",
+   "bytes": 158805134,
+   "md5": "f00181f0b76a990cc4b06e4cf820e2a1",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600006.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600006.zip/content",
+   "bytes": 154350003,
+   "md5": "71b2c70da40bfe58df53e6c6f029a249",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600007.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600007.zip/content",
+   "bytes": 141717379,
+   "md5": "15b00fc618dc156ccf678d32e78c9d2c",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600008.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600008.zip/content",
+   "bytes": 166316758,
+   "md5": "38df1ee708b6c2c56ff412eed8310d71",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600021.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600021.zip/content",
+   "bytes": 148769468,
+   "md5": "4c45e21811a4f1f781055220356112b5",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600024.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600024.zip/content",
+   "bytes": 139436832,
+   "md5": "a299854fd6a92aeddbd13811a8d9cd48",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600025.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600025.zip/content",
+   "bytes": 159806371,
+   "md5": "7ee39f9bf48af67d7615f4ffb52bcf8c",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600026.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600026.zip/content",
+   "bytes": 167298211,
+   "md5": "8fcd0d96861b8f03960e993c1d2fb690",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600027.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600027.zip/content",
+   "bytes": 139295899,
+   "md5": "da1921eab1ea06fdba3bdafbf9b7cda8",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600028.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600028.zip/content",
+   "bytes": 146765578,
+   "md5": "3ba9ec745e901cb6c0b2ec09e2ebb4a1",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600029.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600029.zip/content",
+   "bytes": 151269067,
+   "md5": "3ee7b4cde1070f34ea54827711b9b431",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600030.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600030.zip/content",
+   "bytes": 157070238,
+   "md5": "edb1fe2c91bfccc1fcece4ab62d8a891",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600031.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600031.zip/content",
+   "bytes": 164472476,
+   "md5": "2199c3c118104d3220f6c8b54932c24b",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600032.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600032.zip/content",
+   "bytes": 136984704,
+   "md5": "70474675d9ba333a2e6684f8fc81c4b7",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600033.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600033.zip/content",
+   "bytes": 137094268,
+   "md5": "bd258d319788baf40b6659fcca9fbe14",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600034.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600034.zip/content",
+   "bytes": 143600506,
+   "md5": "b4efae02c9d6bfeb3908ef17db594d92",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600036.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600036.zip/content",
+   "bytes": 152750732,
+   "md5": "82707814337f7691ae19bcf3daf0f91c",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600037.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600037.zip/content",
+   "bytes": 130883558,
+   "md5": "56589ebdc5955964a9fba82b51476aaf",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600038.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600038.zip/content",
+   "bytes": 167952885,
+   "md5": "31933a7af1cf8a7e45a63b9f33db0fcf",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600039.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600039.zip/content",
+   "bytes": 135258809,
+   "md5": "90988c49133147d2908b111d8a422a1d",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600040.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600040.zip/content",
+   "bytes": 135218579,
+   "md5": "35f4f64ca732d39b7f5d81097de07c24",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600041.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600041.zip/content",
+   "bytes": 146942066,
+   "md5": "050d5da7efc52760f86b2cc0d5d34a3b",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600042.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600042.zip/content",
+   "bytes": 144349839,
+   "md5": "c559f034f8fdc4c75abb6f8fc1415676",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600043.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600043.zip/content",
+   "bytes": 148558631,
+   "md5": "3a7b6196ca5bad0d666e1eb20ea847fb",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600044.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600044.zip/content",
+   "bytes": 153044264,
+   "md5": "f0afb8af2450471e06210d9897512668",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600045.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600045.zip/content",
+   "bytes": 164741515,
+   "md5": "93178c945192f82512825dfa0973f322",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600046.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600046.zip/content",
+   "bytes": 156456944,
+   "md5": "fb151b15c9bcd5489cf1d2346b8efd7c",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600047.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600047.zip/content",
+   "bytes": 160608026,
+   "md5": "3149283fa7b1b61c67b83fdc89eb5bb4",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600048.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600048.zip/content",
+   "bytes": 135245869,
+   "md5": "ce3041e44b13d91c220b02834acd6358",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600049.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600049.zip/content",
+   "bytes": 154375807,
+   "md5": "afba80441c418146bb707f52cf318316",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600050.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600050.zip/content",
+   "bytes": 171321985,
+   "md5": "ef2001c589cdb0084ed57ccc17cfe5b4",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600051.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600051.zip/content",
+   "bytes": 128178108,
+   "md5": "98591f28fb48766c088e3e1fcd768d09",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600052.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600052.zip/content",
+   "bytes": 161364354,
+   "md5": "de5d2159dabe017a747e4ea91921fcc7",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600053.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600053.zip/content",
+   "bytes": 126056848,
+   "md5": "34ff3d2c5239da0a6e17f4a7e664901b",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600054.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600054.zip/content",
+   "bytes": 139398617,
+   "md5": "8b383e620fd532db4ef78c389c9995de",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600056.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600056.zip/content",
+   "bytes": 166437875,
+   "md5": "a53b9119f88e11bac2bf23a81df2ea5e",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600058.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600058.zip/content",
+   "bytes": 138245240,
+   "md5": "a20f224f6fabcd8acfa3e12f615e9183",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600059.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600059.zip/content",
+   "bytes": 146106201,
+   "md5": "bb148989be31c32d2dd0118efb65461e",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600060.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600060.zip/content",
+   "bytes": 137566439,
+   "md5": "54825a1873bffc431637221d3a79ea57",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600061.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600061.zip/content",
+   "bytes": 121071989,
+   "md5": "6daf0939a94b7f7180fa4d28aa14b74b",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600062.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600062.zip/content",
+   "bytes": 149647161,
+   "md5": "6228010b87178b009e1d6cb829cb0b0f",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600065.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600065.zip/content",
+   "bytes": 143751996,
+   "md5": "35aedbf8af3d14006a2ad97a49bc2939",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600066.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600066.zip/content",
+   "bytes": 134595504,
+   "md5": "afca4dbdb889c12f3341b59e46fc5dc2",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600067.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600067.zip/content",
+   "bytes": 161919671,
+   "md5": "cc497e475da1018a06f8014cf473444c",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600068.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600068.zip/content",
+   "bytes": 148272196,
+   "md5": "0b7d1a2a936ec0b3ca65a9ff72763e96",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600069.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600069.zip/content",
+   "bytes": 147705412,
+   "md5": "974f08f7c9e9ef5ab1f81f06b027e206",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600070.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600070.zip/content",
+   "bytes": 137265945,
+   "md5": "311414c27b9aab1ff0fb8f76e5c83fa3",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600071.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600071.zip/content",
+   "bytes": 149881179,
+   "md5": "b4307091089b9024a5dad925842bb033",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600072.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600072.zip/content",
+   "bytes": 162036627,
+   "md5": "17184005a46f240a2da1129f1373cd32",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600073.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600073.zip/content",
+   "bytes": 300621437,
+   "md5": "23e950b13f7b4d3ffb48c1169490af2e",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600074.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600074.zip/content",
+   "bytes": 144923519,
+   "md5": "c52361c1265b13361558627af6e12b93",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600076.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600076.zip/content",
+   "bytes": 147615010,
+   "md5": "1137cd109902612bec139ddb1c4e0b05",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600077.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600077.zip/content",
+   "bytes": 164451062,
+   "md5": "4449cee797a5730ed882e5b73c06ed1b",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600079.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600079.zip/content",
+   "bytes": 155002455,
+   "md5": "a8648410b2be655ffd842afcc12ecc25",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600080.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600080.zip/content",
+   "bytes": 141794375,
+   "md5": "3ac698c4784e90df68d0ec47c3d28978",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600081.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600081.zip/content",
+   "bytes": 151635912,
+   "md5": "e19d149b36699b97eb964209639f1511",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600083.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600083.zip/content",
+   "bytes": 146277702,
+   "md5": "9694b47a2f15501641688eb84791c8bb",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600085.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600085.zip/content",
+   "bytes": 144446063,
+   "md5": "b7b99c440f5112aa1da873d5c97b3bc2",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600086.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600086.zip/content",
+   "bytes": 139587452,
+   "md5": "fe46421912a6359d3406da801f96cd43",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600087.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600087.zip/content",
+   "bytes": 294875921,
+   "md5": "b7be5afaf9ba63e2ee0977c3e30b67ae",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600088.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600088.zip/content",
+   "bytes": 129519626,
+   "md5": "0edf59d6440cead5c85c478ee6938f8b",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600089.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600089.zip/content",
+   "bytes": 441508077,
+   "md5": "0034bd54c0f7963e78da96a65aabde43",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600090.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600090.zip/content",
+   "bytes": 147135232,
+   "md5": "5d26c021941aa71b5ebb77ea5c09c627",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600091.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600091.zip/content",
+   "bytes": 280985332,
+   "md5": "0eb7eb08df8b16891059296d39cf03e2",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600092.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600092.zip/content",
+   "bytes": 135831115,
+   "md5": "0da24862c561ee1244a260cc75a0617d",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600093.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600093.zip/content",
+   "bytes": 147721247,
+   "md5": "a82302dd833b600e73ae808c8ec8a1a0",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600096.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600096.zip/content",
+   "bytes": 131088813,
+   "md5": "5b6867d2a5ed95b489b55d9899532213",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600097.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600097.zip/content",
+   "bytes": 151904422,
+   "md5": "176b45dddb6fd1516c5253484a19dffb",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600098.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600098.zip/content",
+   "bytes": 154609002,
+   "md5": "a417a097b09efbc31583e73562aaaa9a",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600099.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600099.zip/content",
+   "bytes": 138159396,
+   "md5": "0d699201ab4691682e1281346e4d70f4",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600100.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600100.zip/content",
+   "bytes": 130443111,
+   "md5": "053c15c9be2dda13034f03f4127fa92e",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600101.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600101.zip/content",
+   "bytes": 161358408,
+   "md5": "6aacf9f50a340d4db581421065d1693d",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600102.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600102.zip/content",
+   "bytes": 131833283,
+   "md5": "898aecd9f6607143569063905398e718",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600103.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600103.zip/content",
+   "bytes": 156025561,
+   "md5": "2cf7189674747a50fe6b322ad096e304",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/600104.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/600104.zip/content",
+   "bytes": 135008157,
+   "md5": "809df52e6d678b8a861affd8d889132f",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/annotations.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/annotations.zip/content",
+   "bytes": 202240,
+   "md5": "b11e00c992a3db4ba87a9e308076ba9d",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/cases_600105_600107.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/cases_600105_600107.zip/content",
+   "bytes": 304915305,
+   "md5": "bd75c8f3e1f9dae8bcb3578e7dc1abf0",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/cases_600108_600109.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/cases_600108_600109.zip/content",
+   "bytes": 320945704,
+   "md5": "06865d2306038caa54403aabf6fcfc24",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/cases_600110_600111.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/cases_600110_600111.zip/content",
+   "bytes": 280695683,
+   "md5": "a7d8c6c45e88f4c82441874706061e5e",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/cases_600112_600114.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/cases_600112_600114.zip/content",
+   "bytes": 298200138,
+   "md5": "aca431228a70503e5d4fa00ebc9ca943",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/cases_600115_600116.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/cases_600115_600116.zip/content",
+   "bytes": 286937938,
+   "md5": "3e77a083b83374d2341df709332ad3be",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/cases_600119_600120.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/cases_600119_600120.zip/content",
+   "bytes": 306588842,
+   "md5": "09427c082e90d00ac1cbb98c876125a7",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/cases_600121_600122.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/cases_600121_600122.zip/content",
+   "bytes": 290147915,
+   "md5": "3b8ceeea815289abb800ee82dd4baa0e",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/cases_600123_600124.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/cases_600123_600124.zip/content",
+   "bytes": 314922024,
+   "md5": "63ec2164f6aa2f6b7721b277e46969ae",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/cases_600125_600127.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/cases_600125_600127.zip/content",
+   "bytes": 300084707,
+   "md5": "587d159ef86e24da735573c8128e8209",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/cases_600128_600129.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/cases_600128_600129.zip/content",
+   "bytes": 290893522,
+   "md5": "81a90bb9ee99e43156c88dc3aa5985ad",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/ct_nifti_part1of4.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/ct_nifti_part1of4.zip/content",
+   "bytes": 3505979141,
+   "md5": "d2be2030b544169da8e1083d570decca",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/ct_nifti_part2of4.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/ct_nifti_part2of4.zip/content",
+   "bytes": 3451184405,
+   "md5": "7962bd5fd83cc1ce9527e824f429049d",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/ct_nifti_part3of4.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/ct_nifti_part3of4.zip/content",
+   "bytes": 4145573674,
+   "md5": "2712bfc8712df2f15392f388a309cdfd",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/ct_nifti_part4of4.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/ct_nifti_part4of4.zip/content",
+   "bytes": 3352440140,
+   "md5": "9912548b7af0db0f44137ddebe8633a3",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/landmark_anatomical_mapping.csv",
+   "url": "https://zenodo.org/api/records/21757686/files/landmark_anatomical_mapping.csv/content",
+   "bytes": 4498,
+   "md5": "7e34cc2f49a2c795d888e38ea3afbcd0",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/masks_nifti.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/masks_nifti.zip/content",
+   "bytes": 39596505,
+   "md5": "42020287a3d73f94c02b7480731cd5aa",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/patient_metadata.csv",
+   "url": "https://zenodo.org/api/records/21757686/files/patient_metadata.csv/content",
+   "bytes": 1940,
+   "md5": "1fd059122a837c5a935e3f57fb607546",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/point_clouds_50000.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/point_clouds_50000.zip/content",
+   "bytes": 54914405,
+   "md5": "4ccfee7dc7f311705629f2ec0e7297ba",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/samples.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/samples.zip/content",
+   "bytes": 756641171,
+   "md5": "8be3c0443f3d801acf2b0ff6a4420577",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  },
+  {
+   "path": "raw/stl_models.zip",
+   "url": "https://zenodo.org/api/records/21757686/files/stl_models.zip/content",
+   "bytes": 667416174,
+   "md5": "4ed6f28902fd6bddf640d5e19df1c421",
+   "verified_against": "Zenodo's API (the record's JSON export)"
+  }
+ ],
+ "bytes_total": 31351310903
+}
