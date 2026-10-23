@@ -61,7 +61,13 @@
   "ct_volumes": 149,
   "size_gb": 86.834
  },
- "measured": {},
+ "measured": {
+  "bytes": 103686719641,
+  "files": 334458,
+  "tree_sha256": "08e3b8cc127d3c59cf774e2e8fd36efcf91be3acc7cbae3d017b9acabdff7b10",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "SchwingNet data/sources/carmlspine.json and carmlspine_sweeps.json (one release), 2026-10-23",
  "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
  "route": "download",

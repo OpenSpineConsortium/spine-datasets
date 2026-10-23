@@ -1,0 +1,180 @@
+{
+ "bytes": 808617728644,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 8113218109,
+   "files": 7278
+  },
+  ".csv": {
+   "bytes": 52858,
+   "files": 3
+  },
+  ".h5": {
+   "bytes": 487775360,
+   "files": 464
+  },
+  ".json": {
+   "bytes": 8319037,
+   "files": 2700
+  },
+  ".log": {
+   "bytes": 896972,
+   "files": 525
+  },
+  ".md": {
+   "bytes": 365,
+   "files": 1
+  },
+  ".mha": {
+   "bytes": 759812902699,
+   "files": 6228
+  },
+  ".nii.gz": {
+   "bytes": 34320397674,
+   "files": 5768
+  },
+  ".npz": {
+   "bytes": 328801083,
+   "files": 166
+  },
+  ".png": {
+   "bytes": 2981997452,
+   "files": 1337
+  },
+  ".py": {
+   "bytes": 7836,
+   "files": 3
+  },
+  ".sh": {
+   "bytes": 1820,
+   "files": 3
+  },
+  ".tar.gz": {
+   "bytes": 95793,
+   "files": 1
+  },
+  ".txt": {
+   "bytes": 12156,
+   "files": 540
+  },
+  ".xml": {
+   "bytes": 331803105,
+   "files": 3786
+  },
+  ".yaml": {
+   "bytes": 3338494,
+   "files": 1851
+  },
+  ".zip": {
+   "bytes": 2228107831,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 30655,
+ "folders": [
+  {
+   "bytes": 639438100,
+   "files": 212,
+   "path": "COBRA2026_Train_overviews",
+   "tree_sha256": "19d8b1c8efa0d3eb8a44e824837d1b686cdfcf0bc7ed7c1f53989cdf3b2dff6f"
+  },
+  {
+   "bytes": 771026843620,
+   "files": 19593,
+   "path": "cases",
+   "tree_sha256": "ec1961fd8bc898d547cf64345c8feb585d5bd9e2adb37667a00e93c8506f88fd"
+  },
+  {
+   "bytes": 2934212,
+   "files": 17,
+   "path": "derived",
+   "tree_sha256": "752ce3acd5484a6eff2db68991b6539a839e0b255c13163170c9370878224be5"
+  },
+  {
+   "bytes": 20882992637,
+   "files": 3605,
+   "path": "lstv",
+   "tree_sha256": "8c97af2c5ccda18b77aa3f0760514cbd4e597037abaaf601d4f6279fd95e0c39"
+  },
+  {
+   "bytes": 740336,
+   "files": 692,
+   "path": "meta",
+   "tree_sha256": "8cf8a2c76d4726f78f4e3abc273b68131104494b59d3aa427f9ae808e2ce72e7"
+  },
+  {
+   "bytes": 321604430,
+   "files": 185,
+   "path": "pairs",
+   "tree_sha256": "3a639e7a34734365f76502f2f9375211e10dbe85ef909b5bb140fa8defcd018d"
+  },
+  {
+   "bytes": 9181674,
+   "files": 17,
+   "path": "pairs_smoke",
+   "tree_sha256": "9683e921a3c8129909e82c475cc8b747ed36c9edc313acb3f3817f1731485692"
+  },
+  {
+   "bytes": 3211079,
+   "files": 39,
+   "path": "regtest",
+   "tree_sha256": "b08bc5d11b1872d62d7970407032a42f7c18d8df749ec4c88344c53ac6d74b32"
+  },
+  {
+   "bytes": 8075746393,
+   "files": 5709,
+   "path": "seg",
+   "tree_sha256": "ebf19a2936fe60d05125ede12e5764628bdbef483d69af24d9ec7a323f2bbace"
+  },
+  {
+   "bytes": 5425548226,
+   "files": 556,
+   "path": "varian",
+   "tree_sha256": "8125b7a51a9c620cebf35be0000a624ba0bd275e3ad37be64ccafa391d355e54"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:26:48Z",
+ "id": "cobra2026",
+ "links": 288,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 30,
+   "folders": 10
+  },
+  {
+   "depth": 2,
+   "files": 910,
+   "folders": 1630
+  },
+  {
+   "depth": 3,
+   "files": 15918,
+   "folders": 750
+  },
+  {
+   "depth": 4,
+   "files": 3200,
+   "folders": 2283
+  },
+  {
+   "depth": 5,
+   "files": 0,
+   "folders": 2389
+  },
+  {
+   "depth": 6,
+   "files": 10094,
+   "folders": 119
+  },
+  {
+   "depth": 7,
+   "files": 503,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "0f355ea0798481fb91bf2942d40a61202aec6775652b8c503b7f88a027de3be6"
+}

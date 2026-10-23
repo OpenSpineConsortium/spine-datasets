@@ -1,0 +1,66 @@
+{
+ "bytes": 6640702200,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 2976,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 230,
+   "files": 1
+  },
+  ".mha": {
+   "bytes": 3347651375,
+   "files": 20
+  },
+  ".nii.gz": {
+   "bytes": 3293047619,
+   "files": 20
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 42,
+ "folders": [
+  {
+   "bytes": 3206,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "5f7bf12de9cbdb02668f8b15cdf63b6603091c5b9d40ada553db0c73f8390e4b"
+  },
+  {
+   "bytes": 3293047619,
+   "files": 20,
+   "path": "nifti",
+   "tree_sha256": "e71241fc8942b92d14dfffcad0a8d0340f46bef420cc43bff7e0f7c0d915b553"
+  },
+  {
+   "bytes": 3347651375,
+   "files": 20,
+   "path": "raw",
+   "tree_sha256": "07ec95ef24a687d7e1c27bff31a6fab38d0b9508c79dee1ddb33ecf752cc36f6"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:54:24Z",
+ "id": "csi2014",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 3
+  },
+  {
+   "depth": 2,
+   "files": 22,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 20,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "b457abead1221a8f345aac07cfb410a83c6e679f8115238e9c659429fd4c26df"
+}

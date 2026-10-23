@@ -1,0 +1,35 @@
+{
+ "bytes": 2592712452,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 2592712452,
+   "files": 4909
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 4909,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:21:38Z",
+ "id": "idc_cmb_brca",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 21
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 21
+  },
+  {
+   "depth": 3,
+   "files": 4909,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "cac25acdd71a50ffe121c0f7bb6c3ae1391b5ee69bc1e2cc5372c56f56388a4c"
+}

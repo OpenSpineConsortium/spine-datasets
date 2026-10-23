@@ -1,0 +1,80 @@
+{
+ "bytes": 26952714219,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 117345,
+   "files": 1
+  },
+  ".csv": {
+   "bytes": 39908,
+   "files": 1
+  },
+  ".dcm": {
+   "bytes": 26952556162,
+   "files": 51230
+  },
+  ".json": {
+   "bytes": 238,
+   "files": 1
+  },
+  ".yaml": {
+   "bytes": 566,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 51234,
+ "folders": [
+  {
+   "bytes": 117583,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "16a96a5a0381ced5db6eb4a9e4f44f705ed4d405720c3189f74cea9e761f5a67"
+  },
+  {
+   "bytes": 39908,
+   "files": 1,
+   "path": "meta",
+   "tree_sha256": "5a1f78bfad0bbe0d227f26969a19274d5ef99c457220ab0c99bf5cc5040620d3"
+  },
+  {
+   "bytes": 26952556162,
+   "files": 51230,
+   "path": "raw",
+   "tree_sha256": "9b6cca9543ee58e95fc961a43367066ce61993818d438c3cb760c276c88119b9"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:09:01Z",
+ "id": "idc_nsclc_radiomics",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 3
+  },
+  {
+   "depth": 2,
+   "files": 3,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 422
+  },
+  {
+   "depth": 4,
+   "files": 0,
+   "folders": 422
+  },
+  {
+   "depth": 5,
+   "files": 51230,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "28244684dd42106589f2f84baacfee2b795528da017acfcfd71624f1a2087966"
+}

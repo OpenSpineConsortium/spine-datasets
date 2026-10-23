@@ -21,7 +21,13 @@
   "isbi_2015_films": 400,
   "zip_bytes": 2098209792
  },
- "measured": {},
+ "measured": {
+  "bytes": 6338426763,
+  "files": 4005,
+  "tree_sha256": "7f11694052cb5e20928b645b6f1ac25f396af4d229c041fb578edcef31100a45",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; the 1,000-film set is an open figshare download (27986417, one zip of 2,098,209,792 bytes), entered in grid/fetch-xray.json as aariz on 2026-10-21 (issue #40); the 400-film ISBI 2015 set's link is still to confirm; pediatric anchors for the top of the cervical counter from seven devices",
  "route": "download",

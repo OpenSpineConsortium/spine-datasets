@@ -1,0 +1,91 @@
+{
+ "bytes": 76386234420,
+ "depth": 1,
+ "extensions": {
+  "(none)": {
+   "bytes": 183003,
+   "files": 1086
+  },
+  "(other)": {
+   "bytes": 2551,
+   "files": 2
+  },
+  ".dcm": {
+   "bytes": 42529908899,
+   "files": 101142
+  },
+  ".json": {
+   "bytes": 223,
+   "files": 1
+  },
+  ".md": {
+   "bytes": 2418,
+   "files": 1
+  },
+  ".npy": {
+   "bytes": 33855844484,
+   "files": 3770
+  },
+  ".xlsx": {
+   "bytes": 292055,
+   "files": 1
+  },
+  ".yaml": {
+   "bytes": 787,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 106004,
+ "folders": [
+  {
+   "bytes": 2654,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "e8d59f93a9e729f501fbf97efea7ab967ba3bec161070041dcea93b55a2f7f48"
+  },
+  {
+   "bytes": 76386230979,
+   "files": 106001,
+   "path": "raw",
+   "tree_sha256": "d240e953924681bf2846e047b1a85115aa6ac595dd7de3dc10c8d0eb3c20acb8"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:01:37Z",
+ "id": "lumos",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 2,
+   "folders": 1083
+  },
+  {
+   "depth": 4,
+   "files": 51655,
+   "folders": 1084
+  },
+  {
+   "depth": 5,
+   "files": 52459,
+   "folders": 2
+  },
+  {
+   "depth": 6,
+   "files": 1885,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "d9cfde8e26682cd12b9d228fafd89ce0215e8459fdf2ab08cd51db47026d48ef"
+}

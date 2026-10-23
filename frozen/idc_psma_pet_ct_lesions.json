@@ -1,0 +1,35 @@
+{
+ "bytes": 63139697062,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 63139697062,
+   "files": 119632
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 119632,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T13:53:46Z",
+ "id": "idc_psma_pet_ct_lesions",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 374
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 374
+  },
+  {
+   "depth": 3,
+   "files": 119632,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "a16d58492c8d1273462d123bb20f03579b03304ba7f0c7373bd96f89673aba0c"
+}

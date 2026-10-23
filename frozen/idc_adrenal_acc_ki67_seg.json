@@ -1,0 +1,35 @@
+{
+ "bytes": 3554260496,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 3554260496,
+   "files": 6729
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 6729,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:55:02Z",
+ "id": "idc_adrenal_acc_ki67_seg",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 29
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 29
+  },
+  {
+   "depth": 3,
+   "files": 6729,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "406833954ff63733364dc9e19ff304151ca6ce55ff1dffa4b3b9568a32018898"
+}

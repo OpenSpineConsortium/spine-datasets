@@ -1,0 +1,56 @@
+{
+ "bytes": 570557160234,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 9320,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 226,
+   "files": 1
+  },
+  ".nii.gz": {
+   "bytes": 570557150688,
+   "files": 9262
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 9264,
+ "folders": [
+  {
+   "bytes": 9546,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "6f634efb6f0d7dec50ce8139c5745331314a3f89ca29fc984bab644f109cc620"
+  },
+  {
+   "bytes": 570557150688,
+   "files": 9262,
+   "path": "raw",
+   "tree_sha256": "e2adcf9b7c4e584f19226db1e4961f46954252d9a598d4f8c6f31403deeb4984"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T13:44:23Z",
+ "id": "abdomenatlas3_mini",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 9262
+  },
+  {
+   "depth": 3,
+   "files": 9262,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "e1aab7e4d9f7b4f7190f4e2b48746460011da19e8a9c9c0630b56102c20a50cb"
+}

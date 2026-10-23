@@ -1,0 +1,35 @@
+{
+ "bytes": 18537943612,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 18537943612,
+   "files": 35229
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 35229,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:15:16Z",
+ "id": "idc_rider_lung_pet_ct",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 117
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 117
+  },
+  {
+   "depth": 3,
+   "files": 35229,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "a14cfdc5b446341be2eaa0ecc4409552ecbdf756f22fdcffe59b7f8e920bd85a"
+}

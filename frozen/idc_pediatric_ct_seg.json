@@ -1,0 +1,35 @@
+{
+ "bytes": 56902381622,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 56902381622,
+   "files": 108019
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 108019,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:58:19Z",
+ "id": "idc_pediatric_ct_seg",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 352
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 352
+  },
+  {
+   "depth": 3,
+   "files": 108019,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "5ec0fc404cd1f479aee7c04b9cf8192ddba04f92ea5ff895979e1c00a2f66f52"
+}

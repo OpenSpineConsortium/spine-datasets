@@ -50,7 +50,13 @@
   "xray_images": 116,
   "ct_volumes": 1
  },
- "measured": {},
+ "measured": {
+  "bytes": 1110686125,
+  "files": 485,
+  "tree_sha256": "e44c9e83f5f4e91944800f2a7ebc1e3e01cfa9660ef13edb92e02c9904b7f1f3",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "SchwingNet data/sources/geneva_hip.json, 2026-10-23",
  "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
  "route": "download",

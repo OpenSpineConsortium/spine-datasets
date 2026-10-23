@@ -1,0 +1,35 @@
+{
+ "bytes": 10052805748,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 10052805748,
+   "files": 18952
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 18952,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:17:37Z",
+ "id": "idc_cptac_pda",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 62
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 62
+  },
+  {
+   "depth": 3,
+   "files": 18952,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "e11eaebc826f213783e7b0f626c1013d79529d828fb0453f6f42f6e451382ccf"
+}

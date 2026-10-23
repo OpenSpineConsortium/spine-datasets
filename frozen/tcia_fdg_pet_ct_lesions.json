@@ -1,0 +1,75 @@
+{
+ "bytes": 393872197196,
+ "depth": 1,
+ "extensions": {
+  "(none)": {
+   "bytes": 2518200,
+   "files": 900
+  },
+  "(other)": {
+   "bytes": 224494,
+   "files": 1
+  },
+  ".dcm": {
+   "bytes": 269036091774,
+   "files": 509282
+  },
+  ".json": {
+   "bytes": 233,
+   "files": 1
+  },
+  ".nii.gz": {
+   "bytes": 124833362495,
+   "files": 900
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 511084,
+ "folders": [
+  {
+   "bytes": 224727,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "f26df5dc51ced334e899b702a0813233490b41ca117c9fd10849d470000fa269"
+  },
+  {
+   "bytes": 124833362495,
+   "files": 900,
+   "path": "nifti",
+   "tree_sha256": "f65e0c988e84207370387e8ddc2b656bfdd01b275d9d9f34a82922ab939ab0f6"
+  },
+  {
+   "bytes": 269038609974,
+   "files": 510182,
+   "path": "raw",
+   "tree_sha256": "efbf384f12056774dc4a60d8469fd13b4f92ee9177b29bcaf63b0b94b38a205d"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:14:52Z",
+ "id": "tcia_fdg_pet_ct_lesions",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 3
+  },
+  {
+   "depth": 2,
+   "files": 902,
+   "folders": 900
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 900
+  },
+  {
+   "depth": 4,
+   "files": 510182,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "04e64f2d7274d4a5f8c0386f174abc63b47195fb5cd0437e6519c7a47410d4ce"
+}

@@ -1,0 +1,35 @@
+{
+ "bytes": 2820716228,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 2820716228,
+   "files": 5341
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 5341,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:32:55Z",
+ "id": "idc_acrin_flt_breast",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 15
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 15
+  },
+  {
+   "depth": 3,
+   "files": 5341,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "c86ec7c34422e3cad53d039aedfd5750b367fb6dceac23a879abcb3077c2f7b2"
+}

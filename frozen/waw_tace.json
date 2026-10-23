@@ -1,0 +1,61 @@
+{
+ "bytes": 47150828519,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 700,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 219,
+   "files": 1
+  },
+  ".nii.gz": {
+   "bytes": 47150827600,
+   "files": 854
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 856,
+ "folders": [
+  {
+   "bytes": 919,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "f1d3fbac73975402ed18749d6b93da6136244366da50fb61eaf61d971d188e1d"
+  },
+  {
+   "bytes": 47150827600,
+   "files": 854,
+   "path": "raw",
+   "tree_sha256": "2b87becbe66d5191a0a076890bb25dc4b6e130ac52be24662876bbab93d29a5f"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:55:35Z",
+ "id": "waw_tace",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 233
+  },
+  {
+   "depth": 4,
+   "files": 854,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "679c7cd12bc0be667db54034ec58d266544470414bb7a420d74b49f697255ec3"
+}

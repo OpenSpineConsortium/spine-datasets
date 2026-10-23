@@ -43,7 +43,13 @@
   "ct_volumes": 5,
   "size_gb": 6.7
  },
- "measured": {},
+ "measured": {
+  "bytes": 6670978774,
+  "files": 1,
+  "tree_sha256": "7693d9e93be98e5b419c8513b75cd5bd0e8a61ef9455748b67216f785a82ae41",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "fetched by the owner's X-ray chain on 2026-10-21 and still zipped; the distal femur of five cadaveric specimens, so no level and no shard; a 2D/3D registration benchmark only",
  "route": "download",

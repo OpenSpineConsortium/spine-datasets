@@ -1,0 +1,83 @@
+{
+ "bytes": 55328666242,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 248,
+   "files": 1
+  },
+  ".csv": {
+   "bytes": 674930,
+   "files": 6
+  },
+  ".json": {
+   "bytes": 4684041,
+   "files": 4
+  },
+  ".pdf": {
+   "bytes": 2132579,
+   "files": 6
+  },
+  ".png": {
+   "bytes": 34555619882,
+   "files": 9630
+  },
+  ".zip": {
+   "bytes": 20765554562,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 9648,
+ "folders": [
+  {
+   "bytes": 248,
+   "files": 1,
+   "path": "fetch-state",
+   "tree_sha256": "15b8ef3f195ad6e15573681585e5d78b6f3bfb090521f44d6def6121dfbb6600"
+  },
+  {
+   "bytes": 55326137994,
+   "files": 9646,
+   "path": "raw",
+   "tree_sha256": "e4c3d0e7551ea8be59151bb92065a9d05190f368c6c89ae92662ffc6fe89a3c6"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:12:00Z",
+ "id": "kub_stonex",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 2
+  },
+  {
+   "depth": 3,
+   "files": 6,
+   "folders": 4
+  },
+  {
+   "depth": 4,
+   "files": 9,
+   "folders": 14
+  },
+  {
+   "depth": 5,
+   "files": 7060,
+   "folders": 1703
+  },
+  {
+   "depth": 6,
+   "files": 2570,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "ceb8ea9a3bbf91c9d40fc055a228a4af3c07902d5ae6d8662a081bb02a32891d"
+}

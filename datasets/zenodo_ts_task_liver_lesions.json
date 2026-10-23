@@ -30,7 +30,13 @@
   "subjects": 842,
   "size_gb": 38.87
  },
- "measured": {},
+ "measured": {
+  "bytes": 39039571028,
+  "files": 1688,
+  "tree_sha256": "505ec223026d674b65b85ed5507d3b6762377232f998317abeaa39ed6182d623",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "the owner's hand: ask the TotalSegmentator authors whether these subjects overlap the public v2/v3 release (planned in the data platform at bf1432f)",
  "route": "letter",

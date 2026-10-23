@@ -71,7 +71,13 @@
   "varian_cases": 225,
   "size_gb": 808.615
  },
- "measured": {},
+ "measured": {
+  "bytes": 808617728644,
+  "files": 30655,
+  "tree_sha256": "0f355ea0798481fb91bf2942d40a61202aec6775652b8c503b7f88a027de3be6",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "SchwingNet data/sources/cobra_total.json, cobra_elekta.json and cobra_varian.json (one release, counted once here), 2026-10-23",
  "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
  "route": "download",

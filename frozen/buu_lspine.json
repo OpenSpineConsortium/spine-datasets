@@ -1,0 +1,94 @@
+{
+ "bytes": 35225321802,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 3716475,
+   "files": 2
+  },
+  ".csv": {
+   "bytes": 2916801,
+   "files": 7206
+  },
+  ".jpg": {
+   "bytes": 9953267696,
+   "files": 7204
+  },
+  ".json": {
+   "bytes": 4963705,
+   "files": 3601
+  },
+  ".npy": {
+   "bytes": 11319785472,
+   "files": 3600
+  },
+  ".npz": {
+   "bytes": 9980714709,
+   "files": 8
+  },
+  ".png": {
+   "bytes": 3953494457,
+   "files": 12550
+  },
+  ".txt": {
+   "bytes": 2354556,
+   "files": 12550
+  },
+  ".xlsx": {
+   "bytes": 4107811,
+   "files": 1
+  },
+  ".yaml": {
+   "bytes": 120,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 46723,
+ "folders": [
+  {
+   "bytes": 25265029494,
+   "files": 32312,
+   "path": "derived",
+   "tree_sha256": "aa341a7660da53bdc4ac92e2eb223492f618a1fed6e2f2ea2fce3af2ddb67492"
+  },
+  {
+   "bytes": 9960292308,
+   "files": 14411,
+   "path": "raw",
+   "tree_sha256": "f1368daea0acdc559ecb799f82ea52f5f98ce577ece88f7d9b462ea71569514f"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:43:21Z",
+ "id": "buu_lspine",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 4
+  },
+  {
+   "depth": 3,
+   "files": 10,
+   "folders": 5
+  },
+  {
+   "depth": 4,
+   "files": 7203,
+   "folders": 6
+  },
+  {
+   "depth": 5,
+   "files": 39510,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "7bbe8e913ae3edd4878bb33ff84e995bc5c8a8f544bd9fce101bcdfb19ab240c"
+}

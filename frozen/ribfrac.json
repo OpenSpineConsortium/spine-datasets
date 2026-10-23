@@ -1,0 +1,83 @@
+{
+ "bytes": 156899015256,
+ "depth": 1,
+ "extensions": {
+  ".csv": {
+   "bytes": 76460,
+   "files": 3
+  },
+  ".json": {
+   "bytes": 37374,
+   "files": 1
+  },
+  ".log": {
+   "bytes": 885,
+   "files": 1
+  },
+  ".nii.gz": {
+   "bytes": 78239732767,
+   "files": 732
+  },
+  ".sh": {
+   "bytes": 1107,
+   "files": 1
+  },
+  ".zip": {
+   "bytes": 78659166663,
+   "files": 12
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 750,
+ "folders": [
+  {
+   "bytes": 78199839249,
+   "files": 660,
+   "path": "images",
+   "tree_sha256": "56175b4356fda8b3e268b0501d59d8a291151701a913f352de21562301176b3c"
+  },
+  {
+   "bytes": 78699138633,
+   "files": 89,
+   "path": "raw",
+   "tree_sha256": "403f8700439440c1397d30b6fc95e6afd5e902371dfc463ceab22d5bddd9e66f"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:28:40Z",
+ "id": "ribfrac",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 660,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 17,
+   "folders": 1
+  },
+  {
+   "depth": 4,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 5,
+   "files": 0,
+   "folders": 72
+  },
+  {
+   "depth": 6,
+   "files": 72,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "2c734244e8a6345e73057c85d2c55d7e1b7dba77add8a8b7b8356a2d315c443d"
+}

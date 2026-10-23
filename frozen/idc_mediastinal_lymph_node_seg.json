@@ -1,0 +1,35 @@
+{
+ "bytes": 25695564010,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 25695564010,
+   "files": 48770
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 48770,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:20:51Z",
+ "id": "idc_mediastinal_lymph_node_seg",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 316
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 316
+  },
+  {
+   "depth": 3,
+   "files": 48770,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "4b583259f3844abe810aa7863a7ea98bb046d9e32d4268ea2623bd1864d547e7"
+}

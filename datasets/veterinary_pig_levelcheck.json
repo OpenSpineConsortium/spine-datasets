@@ -42,7 +42,13 @@
   "zips": 7,
   "size_mb": 205
  },
- "measured": {},
+ "measured": {
+  "bytes": 205012607,
+  "files": 10,
+  "tree_sha256": "c8d263659b254e3563661e024df651807008e6d2bd7972ccf017ce0cef3cb510",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "spine-program 99_archive/MANIFEST_CODE.md; 99_archive/LITERATURE_BY_PATH.md",
  "source_status": "the owner's future direction of 2026-10-20: expand the workflow into veterinary medicine; the zips sit in spine-program's archive, excluded from the record, and the set is open on IEEE DataPort; the Mendeley canine thoracic set (canine_thoracic_vhs) stands beside it since the sweep of 2026-10-21",
  "route": "account",

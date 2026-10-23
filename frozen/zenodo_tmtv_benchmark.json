@@ -1,0 +1,45 @@
+{
+ "bytes": 6846084599,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 17048,
+   "files": 1
+  },
+  ".xlsx": {
+   "bytes": 13719,
+   "files": 1
+  },
+  ".zip": {
+   "bytes": 6846053832,
+   "files": 3
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 5,
+ "folders": [
+  {
+   "bytes": 6846084599,
+   "files": 5,
+   "path": "raw",
+   "tree_sha256": "705ac53f39f91f04da47192be76cee9ed9b823b5ace18f0e2d9fdac8637602fe"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:29:54Z",
+ "id": "zenodo_tmtv_benchmark",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 1
+  },
+  {
+   "depth": 2,
+   "files": 5,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "eac4abb36ad92c52f361a6cd6adae9e62e88010a882a7a33fd624790b0a990fb"
+}

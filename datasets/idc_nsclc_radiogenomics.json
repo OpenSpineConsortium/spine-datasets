@@ -40,7 +40,13 @@
   "subjects": 188,
   "size_gb": 28
  },
- "measured": {},
+ "measured": {
+  "bytes": 90920028002,
+  "files": 171830,
+  "tree_sha256": "17f90a65ccfdfc5b6e13a9a116b6c4d826360327cd635545534fca4aa871cde8",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "planned in the data platform at bf1432f; fetch job in the 2026-10-21 chain after idc_tier2.csv is regenerated; the ranking's refusals: slice over 3.0 mm 235, non-axial reformat 123, localizer 100, reformat or MIP series 37",
  "route": "download",

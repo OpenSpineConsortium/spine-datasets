@@ -1,0 +1,35 @@
+{
+ "bytes": 7112447934,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 7112447934,
+   "files": 13485
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 13485,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:29:07Z",
+ "id": "idc_cptac_stad",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 19
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 19
+  },
+  {
+   "depth": 3,
+   "files": 13485,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "c3eff4b90d3af0fa69a586d55d6341ef29a6be03fad94611f28b547670a74dfd"
+}

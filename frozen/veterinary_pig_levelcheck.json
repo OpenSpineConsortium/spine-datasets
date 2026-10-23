@@ -1,0 +1,47 @@
+{
+ "bytes": 205012607,
+ "depth": 1,
+ "extensions": {
+  ".txt": {
+   "bytes": 8346,
+   "files": 3
+  },
+  ".zip": {
+   "bytes": 205004261,
+   "files": 7
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 10,
+ "folders": [
+  {
+   "bytes": 8346,
+   "files": 3,
+   "path": "meta",
+   "tree_sha256": "60d206c6c74b555cb15c1c5248c491730e34b34ab15851d7b0763e988d0d5d13"
+  },
+  {
+   "bytes": 205004261,
+   "files": 7,
+   "path": "raw",
+   "tree_sha256": "0b3796ad238a0e727ce6fcfa55952424e76a9ae9e3a6bb96bfe29ffac23df6cc"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:55:42Z",
+ "id": "veterinary_pig_levelcheck",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 10,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "c8d263659b254e3563661e024df651807008e6d2bd7972ccf017ce0cef3cb510"
+}

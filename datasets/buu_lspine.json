@@ -18,7 +18,13 @@
   "lateral_films": 3603,
   "ap_films": 3600
  },
- "measured": {},
+ "measured": {
+  "bytes": 35225321802,
+  "files": 46723,
+  "tree_sha256": "7bbe8e913ae3edd4878bb33ff84e995bc5c8a8f544bd9fce101bcdfb19ab240c",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "SchwingNet data/sources/buu_lspine.json, 2026-10-23",
  "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
  "route": "form",

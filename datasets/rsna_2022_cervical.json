@@ -37,7 +37,13 @@
   "ct_volumes": 2019,
   "bytes": 203318086447
  },
- "measured": {},
+ "measured": {
+  "bytes": 203321991870,
+  "files": 4,
+  "tree_sha256": "62b7448a469f4ef392bcf060869359414c14de5e41077b6aa9e78fd0eadde2a8",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "SchwingNet data/sources/rsna_2022_cervical.json, 2026-10-23",
  "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
  "route": "account",
