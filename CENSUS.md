@@ -16,7 +16,7 @@ since the last run. The page with filters is census.html beside this file, serve
 | X-ray images on the grid | 160,879 (16 of 46 sets counted) |
 | X-ray videos and sweeps on the grid | 694 (2 of 46 sets counted) |
 | Frames inside those videos and sweeps | 376,220 (2 of 46 sets counted) |
-| CT volumes on the grid | 8,217 (16 of 46 sets counted) |
+| CT volumes on the grid | 8,221 (16 of 46 sets counted) |
 | Real spine X-ray and CT pairs on the grid | 5 sets, 1,651 subjects |
 
 | Stage | Datasets |
@@ -46,7 +46,7 @@ Real spine X-rays with the same subject's CT, held now: the annotation starts he
 | C-ArmLSpine (Zhang et al., Medical Image Analysis 2024) | lumbar | 299 AP and lateral spot frames, and two CBCT projection sweeps of 301 frames | an intraoperative CBCT of every case, from the same C-arm | 149 patients | not shipped for the spot frames; the sweeps carry their gantry angles | none shipped for the vertebral bodies | a mask for each vertebral body, L1 to S1, on each CBCT, read by a person and checked by a second reader | the case number: a case's spot frames and its CBCT share one case folder |  |
 | COBRA2026 public cases (Elekta and Varian) | lumbosacral spine and pelvis | 375,618 raw kV projections, a full CBCT sweep a case | the planning CT, deformably registered, and the CBCT reconstruction | 692 patients | stored: each case ships its projection geometry | none for the vertebrae | masks on each planning CT, L3 to S1 and the pelvis | the case id: a case's projections, CBCT and planning CT share it |  |
 | DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs | pelvis, hip and lower lumbar spine | 366 frames with registered poses (H5), and 2,659 vendor frames | 6 CTs with the H5 set, one per specimen, and 19 CT files in the vendor deposit | 6 cadaver specimens | shipped for the 366 H5 frames | 7 classes in 3D and per frame in 2D; the vertebrae are one class, with the upper sacrum | split the vertebrae class into named lumbar bodies | the specimen number |  |
-| Ljubljana 2D/3D registration gold standard (PIXIUM 4600) | lumbar, L1 to L5 | 18 frames | the cadaver's CT | 1 cadaver | stored: a gold-standard pose for each frame | none for the vertebral bodies | five body masks kept beside the set, never inside it and never shared, since the licence allows no derivatives | one specimen: every frame pairs with its one CT |  |
+| Ljubljana 2D/3D registration gold standard (PIXIUM 4600) | lumbar, L1 to L5 | 18 X-ray images | five CT volumes, one per vertebra L1 to L5, and five MR volumes the same way | 1 cadaver | stored: a gold-standard rigid transform for each vertebra's CT and MR volume, and each X-ray's sensor pose and source position in its header | none shipped; each vertebra comes as a volume of its own | five body masks kept beside the set, never inside it and never shared, since the licence allows no derivatives | one specimen: every X-ray pairs with the five vertebra volumes through their transforms |  |
 | LUMOS (Zhejiang University) | lumbar | 1,620 AP or lateral diagnostic radiographs | 280 non-contrast lumbar CTs | 803 patients, 280 of them with a CT | none given: each film is registered to its CT | to confirm on the record | masks on the 280 CTs, then each film registered to its CT | to confirm: whether a film and a CT of the same id are one patient | [#27](https://github.com/OpenSpineConsortium/spine-datasets/issues/27) |
 
 ### B. Open or granted, not yet on the grid (0)
@@ -115,10 +115,10 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | C-ArmLSpine (Zhang et al., Medical Image Analysis 2024) | Fluoroscopy | Held by the owner | open | 149 | 299 | 2 | 602 | 149 | 86.8 GB |  |
 | cm_spine: one Google Drive file described only as 'intraoperative' (empty download) | Fluoroscopy | To ask | unknown |  |  |  |  |  |  | [#8](https://github.com/OpenSpineConsortium/spine-datasets/issues/8) |
 | DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs | Fluoroscopy | Held by the owner | restricted | 6 | 2,659 |  |  | 19 | 116.3 GB |  |
-| Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021) | Fluoroscopy | Held by the owner | unknown | 1 | 116 |  |  | 1 |  |  |
+| Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021) | Fluoroscopy | Held by the owner | open | 1 | 116 |  |  | 1 |  |  |
 | Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024) | Fluoroscopy | Asked, waiting | restricted | 140 |  |  |  | 140 |  | [#61](https://github.com/OpenSpineConsortium/spine-datasets/issues/61) |
 | LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group) | Fluoroscopy | Asked, waiting | restricted | 202 | 459 |  |  | 202 |  | [#60](https://github.com/OpenSpineConsortium/spine-datasets/issues/60) |
-| Ljubljana 2D/3D registration gold standard (PIXIUM 4600) | Fluoroscopy | Held by the owner | restricted | 1 | 18 |  |  | 1 |  |  |
+| Ljubljana 2D/3D registration gold standard (PIXIUM 4600) | Fluoroscopy | Held by the owner | restricted | 1 | 18 |  |  | 5 |  |  |
 | LUMOS (Zhejiang University) | Fluoroscopy | Held by the owner | restricted | 803 | 1,620 |  |  | 280 | 46.4 GB | [#27](https://github.com/OpenSpineConsortium/spine-datasets/issues/27) |
 | NIT Warangal and NIMS Hyderabad intraoperative C-arm sets (2D-3D-sci-registration) | Fluoroscopy | Asked, waiting | restricted | 9 | 49 |  |  | 9 |  | [#64](https://github.com/OpenSpineConsortium/spine-datasets/issues/64) |
 | PUMCH stitching series (Liu et al., Eur Spine J 2026) | Fluoroscopy | Asked, waiting | restricted |  |  |  |  |  |  | [#63](https://github.com/OpenSpineConsortium/spine-datasets/issues/63) |
@@ -232,9 +232,7 @@ Tasks whose record is not written yet:
 - Balgrist ex-vivo lumbar CT plus C-arm (Jecklin): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - cm_spine: one Google Drive file described only as 'intraoperative' (empty download): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021): on the grid with no size: write the landing pass's bytes into measured
-- Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021): the licence is still to confirm on the source's page
 - Ljubljana 2D/3D registration gold standard (PIXIUM 4600): on the grid with no size: write the landing pass's bytes into measured
-- Ljubljana 2D/3D registration gold standard (PIXIUM 4600): the licence is still to confirm on the source's page
 - PUMCH stitching series (Liu et al., Eur Spine J 2026): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - SX-Stitch intraoperative C-arm series (Li 2024, PUMCH): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Vanderbilt intraoperative THA fluoroscopy (Chan et al., J Arthroplasty 2025): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
@@ -294,6 +292,8 @@ Tasks whose record is not written yet:
 
 ## Changes, newest first
 
+- 2026-10-23 Ljubljana 2D/3D registration gold standard (PIXIUM 4600): ct_volumes 1 to 5; licence ND (no derivatives), read-only, as SchwingNet's registry records it; to confirm on the source's page to CC BY-NC-ND, as the source's page gives it (read 2026-10-23); the user guide that comes with the set says the data are used only under an agreement form between the user and the Laboratory of Imaging Technologies, and never redistributed
+- 2026-10-23 Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021): licence not recorded; to confirm on the source's page to CC BY-SA 4.0, as the source's page gives it (read 2026-10-23), which also lists a 'Contract on the use of data' and shows none of its terms
 - 2026-10-23 the census rules changed; every row was derived afresh
 - 2026-10-23 TotalSegmentator task data 'pleural_pericard_effusion' (600 CT): grid_path none to /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_pleural_effusion; stage asked to held; status requested to held
 - 2026-10-23 TotalSegmentator task data 'liver_lesions' (842 CT): grid_path none to /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_liver_lesions; stage asked to held; status requested to held

@@ -52,7 +52,7 @@
    "of": 46
   },
   "on_grid_ct_volumes": {
-   "sum": 8217,
+   "sum": 8221,
    "counted": 16,
    "of": 46
   },
@@ -403,7 +403,7 @@
    }
   },
   "aws_stoic2021": {
-   "digest": "8fd26f3774c122d47e53fa89bf94626d55604124ecd6cd55c1684cd5fe5d85d0",
+   "digest": "d1dbdcf785416319886db78c5133254017ee1a1961e6ed67ab4a7d1a05815db7",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -416,7 +416,7 @@
     "stage": "held",
     "licence": "CC BY-NC 4.0",
     "licence_kind": "restricted",
-    "link": "s3://stoic2021-training",
+    "link": "https://registry.opendata.aws/stoic2021-training/",
     "what": "STOIC2021 training set, 2,000 chest CT as MHA on AWS Open Data (s3://stoic2021-training; LICENCE.txt read 2026-09-23), about 240 GB; also inside CADS (gated) and re-packed as AUC23 'Lung CT COVID-19'",
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/aws_stoic2021",
@@ -433,7 +433,7 @@
     "since": "2026-10-21",
     "last_step": {
      "date": "2026-10-23",
-     "step": "held"
+     "step": "note"
     },
     "paired": false,
     "tier": null,
@@ -967,7 +967,7 @@
    }
   },
   "cm_spine_drive_file": {
-   "digest": "e29f943ff95b6cf63109a97bd18bd34f0d70bf580e8817bd13e1212d96a02f7f",
+   "digest": "4e53c654e7d86655edf793c57f497fbb98c6f292ce0635c148743164d10ad462",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -980,7 +980,7 @@
     "stage": "to-ask",
     "licence": "not recorded",
     "licence_kind": "unknown",
-    "link": "",
+    "link": "https://drive.google.com/file/d/1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ/view",
     "what": "one Google Drive file, id 1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ, described only as 'intraoperative' by download_sources.py's get_cm_spine(); the download was empty and what the file is has never been established",
     "level_truth": "unknown",
     "grid_path": null,
@@ -996,8 +996,8 @@
     "next": "the owner's step as the task says; nothing for a collaborator yet",
     "since": "2026-10-21",
     "last_step": {
-     "date": "2026-10-21",
-     "step": "researched"
+     "date": "2026-10-23",
+     "step": "note"
     },
     "paired": false,
     "tier": null,
@@ -1625,7 +1625,7 @@
    }
   },
   "geneva_hip": {
-   "digest": "0094252b946395f7bfd4c03cd4b1c79bc269f60bc8e087aef47d7ff0a1ad6f9d",
+   "digest": "49c43f67e237152fb9e040baa6f4aa6ab524203a55398eb62a50123860089b4a",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1636,9 +1636,9 @@
     "route": "download",
     "status": "held",
     "stage": "held",
-    "licence": "not recorded; to confirm on the source's page",
-    "licence_kind": "unknown",
-    "link": "",
+    "licence": "CC BY-SA 4.0, as the source's page gives it (read 2026-10-23), which also lists a 'Contract on the use of data' and shows none of its terms",
+    "licence_kind": "open",
+    "link": "https://yareta.unige.ch/archives/ed4bb43a-eaaa-4e62-8763-bd5803f5cd47",
     "what": "116 fluoroscopy frames of one hip phantom on a Philips BV Pulsera C-arm, with the phantom's CT, a gold-standard rigid transform for each frame and the projection matrix",
     "level_truth": "none for the spine",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/geneva_hip_src",
@@ -1651,11 +1651,11 @@
     "ct_volumes": 1,
     "bytes": null,
     "unread_counts": [],
-    "next": "",
+    "next": "the owner decides whether the contract the page lists binds the copy on the grid",
     "since": "2026-10-23",
     "last_step": {
      "date": "2026-10-23",
-     "step": "held"
+     "step": "note"
     },
     "paired": true,
     "tier": "E",
@@ -2499,7 +2499,7 @@
    }
   },
   "levelcheck_jhu": {
-   "digest": "7b6880adaf6dfa6ddd3c214fbeb6b8a8d221a8cd5fe58b8bcb7749e6ff1a2f72",
+   "digest": "5286573cc0f0f7fc75262df7d0e4acb214cef011c33ad1ba3f54ef129170682d",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -2512,7 +2512,7 @@
     "stage": "asked",
     "licence": "not recorded; a data use agreement with the PI is the route",
     "licence_kind": "restricted",
-    "link": "",
+    "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5045321/",
     "what": "178 patients with preoperative CT and 398 intraoperative radiographs (De Silva et al., Spine 2016), plus Ketcha et al. 2017's 24 thoracolumbar patients with 61 Carestream DRX-1 radiographs, and the 62-image reader set of Manbachi et al. 2018; neither paper has a data statement",
     "level_truth": "the level of each vertebra on the radiograph, placed by registration to the labelled preoperative CT",
     "grid_path": null,
@@ -2528,8 +2528,8 @@
     "next": "wait for Ali Uneri's answer; any Johns Hopkins data use agreement is the owner's to sign",
     "since": "2026-10-21",
     "last_step": {
-     "date": "2026-10-21",
-     "step": "asked"
+     "date": "2026-10-23",
+     "step": "note"
     },
     "paired": true,
     "tier": "C",
@@ -2547,7 +2547,7 @@
    }
   },
   "ljubljana_2d3d_gs": {
-   "digest": "78b92d0c641bcd01923e85941e77f8932590ffcd9edf0546fe9a6870c1838d8f",
+   "digest": "90492050585a76fd818d43e16253ad8b571bdfce2af162bda80ac8409ed4eed1",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2558,11 +2558,11 @@
     "route": "download",
     "status": "held",
     "stage": "held",
-    "licence": "ND (no derivatives), read-only, as SchwingNet's registry records it; to confirm on the source's page",
+    "licence": "CC BY-NC-ND, as the source's page gives it (read 2026-10-23); the user guide that comes with the set says the data are used only under an agreement form between the user and the Laboratory of Imaging Technologies, and never redistributed",
     "licence_kind": "restricted",
-    "link": "",
-    "what": "18 X-ray frames of one cadaver lumbar spine, L1 to L5, on a PIXIUM 4600 flat panel, with the cadaver's CT and a gold-standard pose for each frame",
-    "level_truth": "L1 to L5, readable from the CT through each frame's pose",
+    "link": "https://lit.fe.uni-lj.si/en/raziskave/viri/2D-3D-GS",
+    "what": "18 X-ray images of one cadaver lumbar spine with fiducial markers, L1 to L5, each with its sensor pose and source position in its header; five CT and five MR volumes, one per vertebra, each with a gold-standard rigid transform to the X-rays; the flat panel is a PIXIUM 4600 as SchwingNet's registry records it, which neither the source's page nor its user guide names",
+    "level_truth": "L1 to L5: each vertebra is its own CT and MR volume, placed on every X-ray by its gold-standard transform and the X-ray's header geometry",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/ljubljana",
     "on_grid": true,
     "grid_bytes": null,
@@ -2570,27 +2570,27 @@
     "xray_images": 18,
     "videos": null,
     "run_frames": null,
-    "ct_volumes": 1,
+    "ct_volumes": 5,
     "bytes": null,
     "unread_counts": [],
-    "next": "",
+    "next": "the owner decides which terms govern the copy on the grid",
     "since": "2026-10-23",
     "last_step": {
      "date": "2026-10-23",
-     "step": "held"
+     "step": "note"
     },
     "paired": true,
     "tier": "A",
     "pairing": {
      "spine": true,
      "region": "lumbar, L1 to L5",
-     "xray": "18 frames",
-     "ct": "the cadaver's CT",
+     "xray": "18 X-ray images",
+     "ct": "five CT volumes, one per vertebra L1 to L5, and five MR volumes the same way",
      "subjects": "1 cadaver",
-     "pose": "stored: a gold-standard pose for each frame",
-     "masks": "none for the vertebral bodies",
+     "pose": "stored: a gold-standard rigid transform for each vertebra's CT and MR volume, and each X-ray's sensor pose and source position in its header",
+     "masks": "none shipped; each vertebra comes as a volume of its own",
      "annotate": "five body masks kept beside the set, never inside it and never shared, since the licence allows no derivatives",
-     "pair_key": "one specimen: every frame pairs with its one CT",
+     "pair_key": "one specimen: every X-ray pairs with the five vertebra volumes through their transforms",
      "priority": 4
     }
    }
@@ -3073,7 +3073,7 @@
    }
   },
   "nit_warangal_nims": {
-   "digest": "b818f16f5b50b6e65afca87cabf750e45578a52fe56a64b10d5cf918eb218f50",
+   "digest": "f4b8fa42306f8c663ef7b3281d068e164f3d8d6248a7163619f2755da7bd88c9",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -3086,7 +3086,7 @@
     "stage": "asked",
     "licence": "not recorded; the raw frames and CTs are available upon reasonable request",
     "licence_kind": "restricted",
-    "link": "",
+    "link": "https://github.com/RaghuGangoluNITW/2D-3D-sci-registration",
     "what": "nine living patients and 51 AP and lateral C-arm sets in the repository's README (at most 49 unique frames), a Ziehm C-arm, preoperative CT with level-named L1 to L5 centroids; the 60 centroid files and 54 overlay PNGs (the real frame at 8 bits beside a simulated projection) are public on the repository, the CT and raw X-rays available upon reasonable request",
     "level_truth": "L1 to L5 centroids named by level, from the preoperative CT",
     "grid_path": null,
@@ -3102,8 +3102,8 @@
     "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch",
     "since": "2026-10-21",
     "last_step": {
-     "date": "2026-10-21",
-     "step": "asked"
+     "date": "2026-10-23",
+     "step": "note"
     },
     "paired": true,
     "tier": "C",
@@ -3356,7 +3356,7 @@
    }
   },
   "pumch_stitching": {
-   "digest": "da434fdffeac35b14ea9aebe956f9a3dc4bb131872e64bdbecc54fe2cd7a6858",
+   "digest": "72d6677ec9ed8a1bee079c7bb2772e2fbaeae0b0b29cc7826b406c3d767a0a1e",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -3369,7 +3369,7 @@
     "stage": "asked",
     "licence": "not recorded; a data use agreement is the route",
     "licence_kind": "restricted",
-    "link": "",
+    "link": "https://doi.org/10.1007/s00586-026-09872-7",
     "what": "43 scoliosis patients, four to six overlapping prone AP exposures each on a Philips Zenition 70; the shift between shots estimated, not recorded; no labels stated; the paper says no datasets were generated or analysed",
     "level_truth": "none stated; the series carries the count from one exposure to the next",
     "grid_path": null,
@@ -3385,8 +3385,8 @@
     "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch",
     "since": "2026-10-21",
     "last_step": {
-     "date": "2026-10-21",
-     "step": "asked"
+     "date": "2026-10-23",
+     "step": "note"
     },
     "paired": false,
     "tier": null,
@@ -5165,6 +5165,32 @@
     "rules": [
      "f25ddb8563173305",
      "c9fa1ffb8f8aea99"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "geneva_hip",
+   "kind": "changed",
+   "changes": {
+    "licence": [
+     "not recorded; to confirm on the source's page",
+     "CC BY-SA 4.0, as the source's page gives it (read 2026-10-23), which also lists a 'Contract on the use of data' and shows none of its terms"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "ljubljana_2d3d_gs",
+   "kind": "changed",
+   "changes": {
+    "licence": [
+     "ND (no derivatives), read-only, as SchwingNet's registry records it; to confirm on the source's page",
+     "CC BY-NC-ND, as the source's page gives it (read 2026-10-23); the user guide that comes with the set says the data are used only under an agreement form between the user and the Laboratory of Imaging Technologies, and never redistributed"
+    ],
+    "ct_volumes": [
+     1,
+     5
     ]
    }
   }
