@@ -16,10 +16,10 @@
  "counts": {},
  "measured": {},
  "record": "spine-program 10_data_platform_grid/code/data_platform/DATA_MANIFEST.md group B7; spine-program 10_data_platform_grid acquisition/ACQUISITION_PLAN.md section 7",
- "source_status": "access granted on the owner's Hugging Face account on 2026-10-21; not yet fetched",
+ "source_status": "access granted on the owner's Hugging Face account on 2026-10-21; grid job 40710713 queued 2026-10-22, waiting on the X-ray fetch 40704982",
  "route": "agreement",
- "status": "granted",
- "result": "Access granted on the owner's Hugging Face account 2026-10-21; not yet fetched.",
+ "status": "fetching",
+ "result": "Access granted on the owner's Hugging Face account 2026-10-21; Slurm job 40710713 queued on 2026-10-22, waiting on the live X-ray fetch 40704982 (the owner's X-ray-first order of 2026-10-21); not yet fetched.",
  "history": [
   {
    "date": "2026-10-21",
@@ -30,10 +30,15 @@
    "date": "2026-10-21",
    "step": "granted",
    "note": "Access granted on the owner's Hugging Face account 2026-10-21; not yet fetched."
+  },
+  {
+   "date": "2026-10-22",
+   "step": "fetching",
+   "note": "Slurm job 40710713 queued by the gate word fetch hf_cads_unique (symphony-template grid-accounts.yml, 2026-10-22 17:12 UTC): 123.3 GB with the Hugging Face token in ~/.hf/token.env, landing in /rs/rs_grp_oschome/go2432/data/hf_cads_unique/raw, afterany the live X-ray fetch 40704982 (VinDr-PCXR), which held 327 MB after 9 h 25 min at 2026-10-23 01:04 UTC; still pending then"
   }
  ],
  "obstacles": [
-  "the owner's hand: the word for the job; the token in ~/.hf/token.env on the owner's grid account"
+  "the wait on the X-ray fetch 40704982, which the owner's order of 2026-10-21 puts before every CT fetch"
  ],
- "next": "the fetch: a grid job by grid/README.md, with what the result line says the fetch needs"
+ "next": "the job's end: its size and checksums go in the record, then the manifest"
 }
