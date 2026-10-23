@@ -1,7 +1,7 @@
 {
  "default_branch": "main",
  "format": 1,
- "generated_at": "2026-10-23T17:28:44Z",
+ "generated_at": "2026-10-23T18:13:21Z",
  "pulls": [
   {
    "auto_merge_enabled": null,
@@ -2200,6 +2200,36 @@
    "runs_cancelled": 1,
    "stale_seconds": 0,
    "started": "2026-10-23T17:10:41Z"
+  },
+  {
+   "auto_merge_enabled": null,
+   "base": "main",
+   "board_conflicts": 0,
+   "board_main_moved": 0,
+   "branch": "claude/project-thread-tn9lgv",
+   "catch_ups": 0,
+   "catch_ups_after_green": 0,
+   "catch_ups_by_button": 0,
+   "caused_by": [],
+   "check_runs": 3,
+   "check_runs_redone": 0,
+   "check_seconds": 206,
+   "check_seconds_redone": 0,
+   "claim": false,
+   "closed": "2026-10-23T18:09:45Z",
+   "commits": 3,
+   "first_green": "2026-10-23T18:05:52Z",
+   "force_pushes": 0,
+   "landings_after_green": 0,
+   "landings_during_life": 0,
+   "merged": "2026-10-23T18:09:45Z",
+   "number": 224,
+   "opened": "2026-10-23T17:50:18Z",
+   "ready": "2026-10-23T18:04:38Z",
+   "reruns": 0,
+   "runs_cancelled": 1,
+   "stale_seconds": 0,
+   "started": "2026-10-23T17:49:29Z"
   }
  ],
  "repository": "OpenSpineConsortium/spine-datasets",
@@ -2230,10 +2260,10 @@
    },
    "2026-10-23": {
     "catch_ups": 7,
-    "check_runs": 43,
+    "check_runs": 46,
     "check_runs_redone": 3,
-    "merged": 30,
-    "share_with_catch_up": 0.167,
+    "merged": 31,
+    "share_with_catch_up": 0.161,
     "stale_after_green": 1,
     "stale_hours": 23.88,
     "with_catch_up": 5
@@ -2242,9 +2272,9 @@
   "by_parallel_work": {
    "0": {
     "catch_ups": 0,
-    "check_runs": 1,
+    "check_runs": 4,
     "check_runs_redone": 0,
-    "merged": 1,
+    "merged": 2,
     "share_with_catch_up": 0.0,
     "stale_after_green": 0,
     "stale_hours": 0.0,
@@ -2304,10 +2334,10 @@
    },
    "no_claim": {
     "catch_ups": 3,
-    "check_runs": 35,
+    "check_runs": 38,
     "check_runs_redone": 1,
-    "merged": 31,
-    "share_with_catch_up": 0.097,
+    "merged": 32,
+    "share_with_catch_up": 0.094,
     "stale_after_green": 1,
     "stale_hours": 23.88,
     "with_catch_up": 3
@@ -2316,9 +2346,9 @@
   "catch_ups": 14,
   "catch_ups_by_button": 1,
   "catch_ups_max": 3,
-  "check_hours": 2.6,
+  "check_hours": 2.65,
   "check_hours_redone": 0.1,
-  "check_runs": 97,
+  "check_runs": 100,
   "check_runs_redone": 4,
   "closed_unmerged": 1,
   "closed_unmerged_branch_landed_later": 0,
@@ -2330,25 +2360,25 @@
     "success": 11
    },
    "2026-10-23": {
-    "success": 20
+    "success": 21
    }
   },
   "force_pushes": 3,
   "landings_after_green_total": 278,
-  "landings_during_life_mean": 5.73,
-  "landings_during_life_median": 1,
+  "landings_during_life_mean": 5.65,
+  "landings_during_life_median": 1.0,
   "live": {
    "pulls_seen": 41,
    "pulls_seen_behind": 0,
    "pulls_seen_dirty": 0,
    "since": "2026-10-21T12:40:18Z",
-   "snapshots": 49
+   "snapshots": 50
   },
-  "merged": 67,
+  "merged": 68,
   "reruns": 2,
-  "share_runs_redone": 0.041,
+  "share_runs_redone": 0.04,
   "share_stale_after_green": 0.015,
-  "share_with_catch_up": 0.149,
+  "share_with_catch_up": 0.147,
   "stale_after_green": 1,
   "stale_hours_total": 23.88,
   "stale_minutes_median": 1433.1,
