@@ -8036,7 +8036,7 @@
    }
   },
   "rsna_rspect": {
-   "digest": "90cbb7cf16246d983190bcdb1597ee3c76aeae4b7a1fc8b261b3782e649b03f8",
+   "digest": "445ae11c3157b5c4c038bab9faca3049f41ce715768abf036db634d6af92c425",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -8063,11 +8063,11 @@
     "ct_volumes": null,
     "bytes": null,
     "unread_counts": [],
-    "next": "the owner decides on the zip; the census counts the CT volumes",
+    "next": "the owner decides whether to unpack the zip (about 980 GB, one job); the census counts the CT volumes once they are on disk",
     "since": "2026-10-21",
     "last_step": {
      "date": "2026-10-23",
-     "step": "held"
+     "step": "note"
     },
     "paired": false,
     "tier": null,
