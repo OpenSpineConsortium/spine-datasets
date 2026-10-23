@@ -18,7 +18,7 @@
  "source_status": "the owner joined the competition on Kaggle on 2026-10-21; the fetch command was given (kagglehub competition_download on a compute node, the Kaggle token read from ~/.fluorocap/credentials.env, never on a command line); the token the owner pasted into the chat is to be revoked and minted again; job id not yet recorded",
  "route": "agreement",
  "status": "granted",
- "result": "The owner joined the competition on Kaggle 2026-10-21; a fresh Kaggle token is needed (the pasted one is revoked); job id not yet recorded.",
+ "result": "The owner joined the competition on Kaggle 2026-10-21; job 40703031 (2026-10-22) failed in six seconds, as Kaggle answers an account that has not accepted the competition's rules; the owner accepts them as gregoryschwingmdphd, then the word goes again.",
  "history": [
   {
    "date": "2026-10-21",
@@ -29,10 +29,16 @@
    "date": "2026-10-21",
    "step": "granted",
    "note": "The owner joined the competition on Kaggle 2026-10-21; a fresh Kaggle token is needed (the pasted one is revoked); job id not yet recorded."
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "the gate word fetch rsna_rspect_pe (2026-10-22 06:55 UTC) found the token file ~/.fluorocap/credentials.env and queued job 40703031, which failed after 6 s with exit 1, a 403 from Kaggle: the competition's rules are not accepted on the account the token belongs to, gregoryschwingmdphd; the owner was asked on 2026-10-23 to accept them there, after which the word is sent again"
   }
  ],
  "obstacles": [
-  "the owner's hand: a fresh Kaggle token in ~/.fluorocap/credentials.env and the sbatch; the job id goes in the record"
+  "the owner's hand: the competition's rules on the Kaggle account gregoryschwingmdphd",
+  "the wait on the X-ray fetch 40704982, which the owner's order of 2026-10-21 puts before every CT fetch"
  ],
- "next": "the fetch: a grid job by grid/README.md, with what the result line says the fetch needs"
+ "next": "the fetch word again once the rules are accepted: fetch rsna_rspect_pe through the gate; the job id goes in the record"
 }
