@@ -10,25 +10,25 @@ since the last run. The page with filters is census.html beside this file, serve
 | | |
 |---|---|
 | Datasets with a record | 109 |
-| On the grid (shared tree and the owner's root) | 28 |
-| Size on the grid | 1.4 TB (14 of 28 sets counted) |
-| Subjects on the grid | 6,521 (16 of 28 sets counted) |
-| X-ray images on the grid | 44,569 (13 of 28 sets counted) |
-| X-ray videos and sweeps on the grid | 694 (2 of 28 sets counted) |
-| Frames inside those videos and sweeps | 376,220 (2 of 28 sets counted) |
-| CT volumes on the grid | 7,837 (14 of 28 sets counted) |
-| Real spine X-ray and CT pairs on the grid | 4 sets, 848 subjects |
+| On the grid (shared tree and the owner's root) | 46 |
+| Size on the grid | 1.9 TB (28 of 46 sets counted) |
+| Subjects on the grid | 44,323 (31 of 46 sets counted) |
+| X-ray images on the grid | 160,879 (16 of 46 sets counted) |
+| X-ray videos and sweeps on the grid | 694 (2 of 46 sets counted) |
+| Frames inside those videos and sweeps | 376,220 (2 of 46 sets counted) |
+| CT volumes on the grid | 8,217 (16 of 46 sets counted) |
+| Real spine X-ray and CT pairs on the grid | 5 sets, 1,651 subjects |
 
 | Stage | Datasets |
 |---|---|
-| Downloadable now | 21 |
+| Downloadable now | 9 |
 | To ask | 9 |
-| Asked, waiting | 30 |
+| Asked, waiting | 27 |
 | Granted, fetch pending | 5 |
 | Fetching | 0 |
 | On the grid | 6 |
-| Held by the owner | 22 |
-| Needs the owner | 14 |
+| Held by the owner | 40 |
+| Needs the owner | 11 |
 | Refused | 1 |
 | Later | 1 |
 
@@ -37,7 +37,7 @@ since the last run. The page with filters is census.html beside this file, serve
 Every record with a pairing block: real X-ray frames, films or projections with the same subject's
 CT or CBCT. The tier follows the record's status by itself.
 
-### A. On the grid (4)
+### A. On the grid (5)
 
 Real spine X-rays with the same subject's CT, held now: the annotation starts here.
 
@@ -47,6 +47,7 @@ Real spine X-rays with the same subject's CT, held now: the annotation starts he
 | COBRA2026 public cases (Elekta and Varian) | lumbosacral spine and pelvis | 375,618 raw kV projections, a full CBCT sweep a case | the planning CT, deformably registered, and the CBCT reconstruction | 692 patients | stored: each case ships its projection geometry | none for the vertebrae | masks on each planning CT, L3 to S1 and the pelvis | the case id: a case's projections, CBCT and planning CT share it |  |
 | DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs | pelvis, hip and lower lumbar spine | 366 frames with registered poses (H5), and 2,659 vendor frames | 6 CTs with the H5 set, one per specimen, and 19 CT files in the vendor deposit | 6 cadaver specimens | shipped for the 366 H5 frames | 7 classes in 3D and per frame in 2D; the vertebrae are one class, with the upper sacrum | split the vertebrae class into named lumbar bodies | the specimen number |  |
 | Ljubljana 2D/3D registration gold standard (PIXIUM 4600) | lumbar, L1 to L5 | 18 frames | the cadaver's CT | 1 cadaver | stored: a gold-standard pose for each frame | none for the vertebral bodies | five body masks kept beside the set, never inside it and never shared, since the licence allows no derivatives | one specimen: every frame pairs with its one CT |  |
+| LUMOS (Zhejiang University) | lumbar | 1,620 AP or lateral diagnostic radiographs | 280 non-contrast lumbar CTs | 803 patients, 280 of them with a CT | none given: each film is registered to its CT | to confirm on the record | masks on the 280 CTs, then each film registered to its CT | to confirm: whether a film and a CT of the same id are one patient | [#27](https://github.com/OpenSpineConsortium/spine-datasets/issues/27) |
 
 ### B. Open or granted, not yet on the grid (0)
 
@@ -54,13 +55,12 @@ A download or a fetch away.
 
 None yet.
 
-### C. Behind a letter, an agreement or the owner's hand (4)
+### C. Behind a letter, an agreement or the owner's hand (3)
 
 Asked, or still to ask.
 
 | Set | Region | X-rays | CT | Subjects | Pose | Masks shipped | What annotation adds | Pair key | Task |
 |---|---|---|---|---|---|---|---|---|---|
-| LUMOS (Zhejiang University) | lumbar | 1,620 AP or lateral diagnostic radiographs | 280 non-contrast lumbar CTs | 803 patients, 280 of them with a CT | none given: each film is registered to its CT | to confirm on the record | masks on the 280 CTs, then each film registered to its CT | to confirm: whether a film and a CT of the same id are one patient | [#27](https://github.com/OpenSpineConsortium/spine-datasets/issues/27) |
 | Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024) | lumbar, L1 to L5 | intraoperative AP and lateral films | the preoperative CT of each patient | 140 patients | none stated | none stated | to read once the set is in hand | the patient | [#61](https://github.com/OpenSpineConsortium/spine-datasets/issues/61) |
 | LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group) | thoracic and lumbar spine | 398 intraoperative radiographs (De Silva 2016), and 61 more (Ketcha 2017) | the preoperative CT of each patient | 178 patients, and 24 more | not shipped; each level is placed by registration to the CT | levels labelled on the preoperative CT | to read once the set is in hand | the patient | [#60](https://github.com/OpenSpineConsortium/spine-datasets/issues/60) |
 | NIT Warangal and NIMS Hyderabad intraoperative C-arm sets (2D-3D-sci-registration) | lumbar, L1 to L5 | 51 AP and lateral C-arm sets on a Ziehm C-arm, at most 49 unique frames | the preoperative CT, with L1 to L5 centroids named by level | 9 patients | the public overlays set each real frame beside a simulated projection | level-named centroids; no masks | to read once the set is in hand | the patient | [#64](https://github.com/OpenSpineConsortium/spine-datasets/issues/64) |
@@ -119,7 +119,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024) | Fluoroscopy | Asked, waiting | restricted | 140 |  |  |  | 140 |  | [#61](https://github.com/OpenSpineConsortium/spine-datasets/issues/61) |
 | LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group) | Fluoroscopy | Asked, waiting | restricted | 202 | 459 |  |  | 202 |  | [#60](https://github.com/OpenSpineConsortium/spine-datasets/issues/60) |
 | Ljubljana 2D/3D registration gold standard (PIXIUM 4600) | Fluoroscopy | Held by the owner | restricted | 1 | 18 |  |  | 1 |  |  |
-| LUMOS (Zhejiang University) | Fluoroscopy | Needs the owner | restricted | 803 | 1,620 |  |  | 280 | 46.4 GB | [#27](https://github.com/OpenSpineConsortium/spine-datasets/issues/27) |
+| LUMOS (Zhejiang University) | Fluoroscopy | Held by the owner | restricted | 803 | 1,620 |  |  | 280 | 46.4 GB | [#27](https://github.com/OpenSpineConsortium/spine-datasets/issues/27) |
 | NIT Warangal and NIMS Hyderabad intraoperative C-arm sets (2D-3D-sci-registration) | Fluoroscopy | Asked, waiting | restricted | 9 | 49 |  |  | 9 |  | [#64](https://github.com/OpenSpineConsortium/spine-datasets/issues/64) |
 | PUMCH stitching series (Liu et al., Eur Spine J 2026) | Fluoroscopy | Asked, waiting | restricted |  |  |  |  |  |  | [#63](https://github.com/OpenSpineConsortium/spine-datasets/issues/63) |
 | SX-Stitch intraoperative C-arm series (Li 2024, PUMCH) | Fluoroscopy | Asked, waiting | unknown |  |  |  |  |  |  | [#62](https://github.com/OpenSpineConsortium/spine-datasets/issues/62) |
@@ -128,7 +128,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | Bournemouth cervical quantitative fluoroscopy (BORDaR 385) | Fluoroscopy video | Asked, waiting | restricted | 63 |  | 252 |  |  |  | [#70](https://github.com/OpenSpineConsortium/spine-datasets/issues/70) |
 | Bournemouth lumbar quantitative fluoroscopy (Breen 2021) | Fluoroscopy video | Asked, waiting | unknown | 127 |  |  |  |  |  | [#71](https://github.com/OpenSpineConsortium/spine-datasets/issues/71) |
 | CADICA invasive coronary angiography sequences (Mendeley p9bpx9ctcv) | Fluoroscopy video | On the grid | open | 42 |  |  |  |  | 3.1 GB | [#109](https://github.com/OpenSpineConsortium/spine-datasets/issues/109) |
-| CathAction (Jianu et al. 2024, AIRVLab) | Fluoroscopy video | Needs the owner | restricted |  |  |  |  |  |  | [#39](https://github.com/OpenSpineConsortium/spine-datasets/issues/39) |
+| CathAction (Jianu et al. 2024, AIRVLab) | Fluoroscopy video | Held by the owner | restricted |  |  |  |  |  |  | [#39](https://github.com/OpenSpineConsortium/spine-datasets/issues/39) |
 | Coronary angiography sets (CADICA, ARCADE, XCAD, AngioCAD) | Fluoroscopy video | Downloadable now | unknown |  |  |  |  |  |  | [#38](https://github.com/OpenSpineConsortium/spine-datasets/issues/38) |
 | DARADIA vertebroplasty video (Kolkata) | Fluoroscopy video | Asked, waiting | unknown |  |  |  |  |  |  | [#83](https://github.com/OpenSpineConsortium/spine-datasets/issues/83) |
 | DMX Imaging digital motion X-ray | Fluoroscopy video | Asked, waiting | unknown |  |  |  |  |  |  | [#77](https://github.com/OpenSpineConsortium/spine-datasets/issues/77) |
@@ -163,13 +163,13 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | IEEE DataPort lateral full-spine X-ray dataset (236 films) | Radiographs | Needs the owner | unknown | 236 | 236 |  |  |  | 1.3 GB |  |
 | Kaggle bone fracture multi-region X-ray data (bmadushanirodrigo) | Radiographs | To ask | open |  | 10,580 |  |  |  | 481.0 MB | [#24](https://github.com/OpenSpineConsortium/spine-datasets/issues/24) |
 | Kaggle scoliosis YOLOv5 annotated spine X-ray set (salmankey) | Radiographs | Needs the owner | open |  |  |  |  |  |  | [#23](https://github.com/OpenSpineConsortium/spine-datasets/issues/23) |
-| KUB-StoneX (Daffodil International University HIRL) | Radiographs | Downloadable now | open | 1,703 | 2,570 |  |  |  | 20.8 GB | [#26](https://github.com/OpenSpineConsortium/spine-datasets/issues/26) |
+| KUB-StoneX (Daffodil International University HIRL) | Radiographs | Held by the owner | open | 1,703 | 2,570 |  |  |  | 20.8 GB | [#26](https://github.com/OpenSpineConsortium/spine-datasets/issues/26) |
 | Mendeley DDH hip sets (jf3pv98m9g and 4gvcb6gmh2) | Radiographs | Downloadable now | open |  |  |  |  |  |  | [#33](https://github.com/OpenSpineConsortium/spine-datasets/issues/33) |
 | MIMIC-CXR and MIMIC-CXR-JPG (PhysioNet) | Radiographs | Asked, waiting | restricted | 65,379 | 377,110 |  |  |  |  | [#15](https://github.com/OpenSpineConsortium/spine-datasets/issues/15) |
 | MrOS lateral spine radiographs (Osteoporotic Fractures in Men) | Radiographs | To ask | restricted | 5,994 |  |  |  |  |  | [#9](https://github.com/OpenSpineConsortium/spine-datasets/issues/9) |
 | NHANES II spinal films with landmarks (Mo, Papiez, Chen et al., Zenodo) | Radiographs | Held by the owner | open | 364 | 543 |  |  |  |  |  |
 | NHANES II cervical and lumbar spine films (NCHS, 1976 to 1980) | Radiographs | Held by the owner | open |  | 16,531 |  |  |  |  |  |
-| NIH ChestX-ray14 and the RSNA pneumonia subset | Radiographs | Downloadable now | unknown | 30,805 | 112,120 |  |  |  |  | [#37](https://github.com/OpenSpineConsortium/spine-datasets/issues/37) |
+| NIH ChestX-ray14 and the RSNA pneumonia subset | Radiographs | Held by the owner | unknown | 30,805 | 112,120 |  |  |  |  | [#37](https://github.com/OpenSpineConsortium/spine-datasets/issues/37) |
 | Open-i Indiana chest collection | Radiographs | Needs the owner | restricted |  | 7,470 |  |  |  |  | [#35](https://github.com/OpenSpineConsortium/spine-datasets/issues/35) |
 | PadChest (BIMCV, Alicante) | Radiographs | To ask | restricted | 67,625 | 160,868 |  |  |  |  | [#12](https://github.com/OpenSpineConsortium/spine-datasets/issues/12) |
 | ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025) | Radiographs | To ask | restricted | 109,487 |  |  |  |  |  | [#11](https://github.com/OpenSpineConsortium/spine-datasets/issues/11) |
@@ -180,26 +180,26 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | VinDr-CXR (PhysioNet) | Radiographs | Asked, waiting | restricted |  | 18,000 |  |  |  |  | [#16](https://github.com/OpenSpineConsortium/spine-datasets/issues/16) |
 | VinDr-PCXR (PhysioNet) | Radiographs | Granted, fetch pending | restricted |  | 9,125 |  |  |  |  | [#17](https://github.com/OpenSpineConsortium/spine-datasets/issues/17) |
 | VinDr-SpineXR (Nguyen et al., MICCAI 2021) | Radiographs | Held by the owner | restricted |  | 10,466 |  |  |  |  |  |
-| STOIC2021 training (AWS Open Data) | CT | Downloadable now | restricted | 2,000 |  |  |  |  | 240.0 GB | [#44](https://github.com/OpenSpineConsortium/spine-datasets/issues/44) |
+| STOIC2021 training (AWS Open Data) | CT | Held by the owner | restricted | 2,000 |  |  |  |  | 240.0 GB | [#44](https://github.com/OpenSpineConsortium/spine-datasets/issues/44) |
 | CADS CT (unique cases) | CT | Granted, fetch pending | restricted |  |  |  |  |  |  | [#86](https://github.com/OpenSpineConsortium/spine-datasets/issues/86) |
 | CT-RATE chest CT | CT | Granted, fetch pending | restricted |  |  |  |  |  |  | [#85](https://github.com/OpenSpineConsortium/spine-datasets/issues/85) |
 | CTPelvic1K | CT | Held by the owner | restricted |  |  |  |  | 172 |  |  |
 | CTSpine1K | CT | Held by the owner | restricted |  |  |  |  | 1,005 |  |  |
 | CTSpinoPelvic1K v11 (the consortium's own release) | CT | Held by the owner | restricted |  |  |  |  | 802 |  |  |
 | AbdomenAtlas 2.0 Mini (10,135 CT) | CT | Asked, waiting | restricted |  |  |  |  | 10,135 | 620.4 GB | [#89](https://github.com/OpenSpineConsortium/spine-datasets/issues/89) |
-| IDC `cptac_lscc` (tier 2) | CT | Downloadable now | open | 32 |  |  |  |  | 8.3 GB | [#45](https://github.com/OpenSpineConsortium/spine-datasets/issues/45) |
-| IDC `cptac_luad` (tier 2) | CT | Downloadable now | open | 32 |  |  |  |  | 7.0 GB | [#46](https://github.com/OpenSpineConsortium/spine-datasets/issues/46) |
-| IDC `ldct_and_projection_data` (tier 2) | CT | Downloadable now | open | 99 |  |  |  |  | 16.5 GB | [#47](https://github.com/OpenSpineConsortium/spine-datasets/issues/47) |
+| IDC `cptac_lscc` (tier 2) | CT | Held by the owner | open | 32 |  |  |  |  | 8.3 GB | [#45](https://github.com/OpenSpineConsortium/spine-datasets/issues/45) |
+| IDC `cptac_luad` (tier 2) | CT | Held by the owner | open | 32 |  |  |  |  | 7.0 GB | [#46](https://github.com/OpenSpineConsortium/spine-datasets/issues/46) |
+| IDC `ldct_and_projection_data` (tier 2) | CT | Held by the owner | open | 99 |  |  |  |  | 16.5 GB | [#47](https://github.com/OpenSpineConsortium/spine-datasets/issues/47) |
 | IDC `lidc_idri` (tier 2) | CT | Downloadable now | open | 997 |  |  |  |  | 123.3 GB | [#48](https://github.com/OpenSpineConsortium/spine-datasets/issues/48) |
-| IDC `midrc_ricord_1b` (tier 2) | CT | Downloadable now | restricted | 91 |  |  |  |  | 7.0 GB | [#49](https://github.com/OpenSpineConsortium/spine-datasets/issues/49) |
+| IDC `midrc_ricord_1b` (tier 2) | CT | Held by the owner | restricted | 91 |  |  |  |  | 7.0 GB | [#49](https://github.com/OpenSpineConsortium/spine-datasets/issues/49) |
 | NLST, full (tier 2; 500-person pilot fetched) | CT | To ask | open | 24,713 |  |  |  |  | 2.3 TB | [#91](https://github.com/OpenSpineConsortium/spine-datasets/issues/91) |
-| IDC `nsclc_radiogenomics` (tier 2) | CT | Downloadable now | open | 188 |  |  |  |  | 28.0 GB | [#50](https://github.com/OpenSpineConsortium/spine-datasets/issues/50) |
-| IDC `nsclc_radiomics` (tier 2) | CT | Downloadable now | restricted | 415 |  |  |  |  | 25.8 GB | [#51](https://github.com/OpenSpineConsortium/spine-datasets/issues/51) |
+| IDC `nsclc_radiogenomics` (tier 2) | CT | Held by the owner | open | 188 |  |  |  |  | 28.0 GB | [#50](https://github.com/OpenSpineConsortium/spine-datasets/issues/50) |
+| IDC `nsclc_radiomics` (tier 2) | CT | Held by the owner | restricted | 415 |  |  |  |  | 25.8 GB | [#51](https://github.com/OpenSpineConsortium/spine-datasets/issues/51) |
 | IDC `prostate_anatomical_edge_cases` (tier 2) | CT | Downloadable now | open | 131 |  |  |  |  | 16.6 GB | [#52](https://github.com/OpenSpineConsortium/spine-datasets/issues/52) |
-| IDC `spinal_multiple_myeloma_seg` (tier 2) | CT | Downloadable now | open | 67 |  |  |  |  | 33.8 GB | [#53](https://github.com/OpenSpineConsortium/spine-datasets/issues/53) |
-| IDC `spine_mets_ct_seg` (tier 2) | CT | Downloadable now | open | 54 |  |  |  |  | 17.2 GB | [#54](https://github.com/OpenSpineConsortium/spine-datasets/issues/54) |
+| IDC `spinal_multiple_myeloma_seg` (tier 2) | CT | Held by the owner | open | 67 |  |  |  |  | 33.8 GB | [#53](https://github.com/OpenSpineConsortium/spine-datasets/issues/53) |
+| IDC `spine_mets_ct_seg` (tier 2) | CT | Held by the owner | open | 54 |  |  |  |  | 17.2 GB | [#54](https://github.com/OpenSpineConsortium/spine-datasets/issues/54) |
 | MAGIC-CT (Zenodo) | CT | Needs the owner | restricted |  |  |  |  |  |  | [#7](https://github.com/OpenSpineConsortium/spine-datasets/issues/7) |
-| PENGWIN 2024 Task 2 synthetic X-rays | CT | Downloadable now | open |  |  |  |  | 100 |  | [#30](https://github.com/OpenSpineConsortium/spine-datasets/issues/30) |
+| PENGWIN 2024 Task 2 synthetic X-rays | CT | Held by the owner | open |  |  |  |  | 100 |  | [#30](https://github.com/OpenSpineConsortium/spine-datasets/issues/30) |
 | RibFrac (MICCAI 2020) chest CT | CT | Held by the owner | restricted |  |  |  |  | 660 |  |  |
 | RSNA 2022 cervical spine fracture CT (Kaggle) | CT | Held by the owner | restricted |  |  |  |  | 2,019 | 203.3 GB |  |
 | RSNA abdominal trauma CT (RATIC) | CT | Granted, fetch pending | restricted |  |  |  |  |  |  | [#87](https://github.com/OpenSpineConsortium/spine-datasets/issues/87) |
@@ -209,13 +209,13 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | Stanford AIMI Merlin abdominal CT | CT | Needs the owner | restricted |  |  |  |  |  |  | [#18](https://github.com/OpenSpineConsortium/spine-datasets/issues/18) |
 | TotalSegmentator datasets v2.0.1 and v3.0.0 | CT | Held by the owner | open |  |  |  |  | 1,935 |  |  |
 | VerSe 2019 and 2020 | CT | Held by the owner | open | 355 |  |  |  | 374 |  |  |
-| VerSe 2D projections with soft labels (Zenodo 8115942) | CT | Needs the owner | unknown |  |  |  |  |  |  | [#29](https://github.com/OpenSpineConsortium/spine-datasets/issues/29) |
+| VerSe 2D projections with soft labels (Zenodo 8115942) | CT | Held by the owner | unknown |  |  |  |  |  |  | [#29](https://github.com/OpenSpineConsortium/spine-datasets/issues/29) |
 | LumVBCanSeg lumbar CT (185, ShengJing Hospital) | CT | On the grid | open | 185 |  |  |  |  | 10.1 GB | [#55](https://github.com/OpenSpineConsortium/spine-datasets/issues/55) |
 | MedPelvis3D pelvic CT (99, PLA General Hospital) | CT | On the grid | open | 99 |  |  |  |  | 31.4 GB | [#56](https://github.com/OpenSpineConsortium/spine-datasets/issues/56) |
 | International TMTV Benchmark, lymphoma FDG PET/CT (60) | CT | On the grid | open | 60 |  |  |  |  | 6.8 GB | [#57](https://github.com/OpenSpineConsortium/spine-datasets/issues/57) |
-| TotalSegmentator task data 'hip_implant' (71 CT) | CT | Asked, waiting | open | 71 |  |  |  |  | 9.0 GB | [#66](https://github.com/OpenSpineConsortium/spine-datasets/issues/66) |
-| TotalSegmentator task data 'liver_lesions' (842 CT) | CT | Asked, waiting | open | 842 |  |  |  |  | 38.9 GB | [#67](https://github.com/OpenSpineConsortium/spine-datasets/issues/67) |
-| TotalSegmentator task data 'pleural_pericard_effusion' (600 CT) | CT | Asked, waiting | open | 600 |  |  |  |  | 9.0 GB | [#68](https://github.com/OpenSpineConsortium/spine-datasets/issues/68) |
+| TotalSegmentator task data 'hip_implant' (71 CT) | CT | Held by the owner | open | 71 |  |  |  |  | 9.0 GB | [#66](https://github.com/OpenSpineConsortium/spine-datasets/issues/66) |
+| TotalSegmentator task data 'liver_lesions' (842 CT) | CT | Held by the owner | open | 842 |  |  |  |  | 38.9 GB | [#67](https://github.com/OpenSpineConsortium/spine-datasets/issues/67) |
+| TotalSegmentator task data 'pleural_pericard_effusion' (600 CT) | CT | Held by the owner | open | 600 |  |  |  |  | 9.0 GB | [#68](https://github.com/OpenSpineConsortium/spine-datasets/issues/68) |
 | UniToChest chest CT (623 patients; distributed as slices) | CT | On the grid | open | 623 |  |  |  |  | 84.1 GB | [#58](https://github.com/OpenSpineConsortium/spine-datasets/issues/58) |
 | VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich | CT | Needs the owner | restricted | 100 |  |  |  |  | 116.3 GB | [#59](https://github.com/OpenSpineConsortium/spine-datasets/issues/59) |
 | Veterinary: canine lateral thoracic radiographs for vertebral heart size (Mendeley ktx4cj55pn) | Veterinary and later | Downloadable now | open |  | 152 |  |  |  |  | [#32](https://github.com/OpenSpineConsortium/spine-datasets/issues/32) |
@@ -238,6 +238,7 @@ Tasks whose record is not written yet:
 - PUMCH stitching series (Liu et al., Eur Spine J 2026): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - SX-Stitch intraoperative C-arm series (Li 2024, PUMCH): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Vanderbilt intraoperative THA fluoroscopy (Chan et al., J Arthroplasty 2025): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
+- CathAction (Jianu et al. 2024, AIRVLab): on the grid with no size: write the landing pass's bytes into measured
 - CathAction (Jianu et al. 2024, AIRVLab): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Coronary angiography sets (CADICA, ARCADE, XCAD, AngioCAD): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - DARADIA vertebroplasty video (Kolkata): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
@@ -262,6 +263,7 @@ Tasks whose record is not written yet:
 - MrOS lateral spine radiographs (Osteoporotic Fractures in Men): the licence is still to confirm on the source's page
 - NHANES II spinal films with landmarks (Mo, Papiez, Chen et al., Zenodo): on the grid with no size: write the landing pass's bytes into measured
 - NHANES II cervical and lumbar spine films (NCHS, 1976 to 1980): on the grid with no size: write the landing pass's bytes into measured
+- NIH ChestX-ray14 and the RSNA pneumonia subset: on the grid with no size: write the landing pass's bytes into measured
 - Open-i Indiana chest collection: the licence is still to confirm on the source's page
 - SOF lateral spine radiographs (Study of Osteoporotic Fractures): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - SOF lateral spine radiographs (Study of Osteoporotic Fractures): the licence is still to confirm on the source's page
@@ -278,6 +280,7 @@ Tasks whose record is not written yet:
 - CTSpine1K: on the grid with no size: write the landing pass's bytes into measured
 - CTSpinoPelvic1K v11 (the consortium's own release): on the grid with no size: write the landing pass's bytes into measured
 - MAGIC-CT (Zenodo): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
+- PENGWIN 2024 Task 2 synthetic X-rays: on the grid with no size: write the landing pass's bytes into measured
 - RibFrac (MICCAI 2020) chest CT: on the grid with no size: write the landing pass's bytes into measured
 - RSNA abdominal trauma CT (RATIC): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - RSNA pulmonary embolism CT (RSPECT): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
@@ -286,8 +289,27 @@ Tasks whose record is not written yet:
 - Stanford AIMI Merlin abdominal CT: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - TotalSegmentator datasets v2.0.1 and v3.0.0: on the grid with no size: write the landing pass's bytes into measured
 - VerSe 2019 and 2020: on the grid with no size: write the landing pass's bytes into measured
+- VerSe 2D projections with soft labels (Zenodo 8115942): on the grid with no size: write the landing pass's bytes into measured
 - VerSe 2D projections with soft labels (Zenodo 8115942): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 
 ## Changes, newest first
 
+- 2026-10-23 TotalSegmentator task data 'pleural_pericard_effusion' (600 CT): grid_path none to /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_pleural_effusion; stage asked to held; status requested to held
+- 2026-10-23 TotalSegmentator task data 'liver_lesions' (842 CT): grid_path none to /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_liver_lesions; stage asked to held; status requested to held
+- 2026-10-23 TotalSegmentator task data 'hip_implant' (71 CT): grid_path none to /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_hip_implant; stage asked to held; status requested to held
+- 2026-10-23 VerSe 2D projections with soft labels (Zenodo 8115942): grid_path none to /rs/rs_grp_oschome/go2432/data/verse_2d_projections; stage needs-owner to held; status needs-owner to held
+- 2026-10-23 PENGWIN 2024 Task 2 synthetic X-rays: grid_path none to /rs/rs_grp_oschome/go2432/data/pengwin_task2_xrays; stage downloadable to held; status todo to held
+- 2026-10-23 IDC `spine_mets_ct_seg` (tier 2): grid_path none to /rs/rs_grp_oschome/go2432/data/idc_spine_mets_ct_seg; stage downloadable to held; status todo to held
+- 2026-10-23 IDC `spinal_multiple_myeloma_seg` (tier 2): grid_path none to /rs/rs_grp_oschome/go2432/data/idc_spinal_multiple_myeloma_seg; stage downloadable to held; status todo to held
+- 2026-10-23 IDC `nsclc_radiomics` (tier 2): grid_path none to /rs/rs_grp_oschome/go2432/data/idc_nsclc_radiomics; stage downloadable to held; status todo to held
+- 2026-10-23 IDC `nsclc_radiogenomics` (tier 2): grid_path none to /rs/rs_grp_oschome/go2432/data/idc_nsclc_radiogenomics; stage downloadable to held; status todo to held
+- 2026-10-23 IDC `midrc_ricord_1b` (tier 2): grid_path none to /rs/rs_grp_oschome/go2432/data/idc_midrc_ricord_1b; stage downloadable to held; status todo to held
+- 2026-10-23 IDC `ldct_and_projection_data` (tier 2): grid_path none to /rs/rs_grp_oschome/go2432/data/idc_ldct_and_projection_data; stage downloadable to held; status todo to held
+- 2026-10-23 IDC `cptac_luad` (tier 2): grid_path none to /rs/rs_grp_oschome/go2432/data/idc_cptac_luad; stage downloadable to held; status todo to held
+- 2026-10-23 IDC `cptac_lscc` (tier 2): grid_path none to /rs/rs_grp_oschome/go2432/data/idc_cptac_lscc; stage downloadable to held; status todo to held
+- 2026-10-23 STOIC2021 training (AWS Open Data): grid_path none to /rs/rs_grp_oschome/go2432/data/aws_stoic2021; stage downloadable to held; status todo to held
+- 2026-10-23 NIH ChestX-ray14 and the RSNA pneumonia subset: grid_path none to /rs/rs_grp_oschome/go2432/data/nih_chestxray14; stage downloadable to held; status todo to held
+- 2026-10-23 KUB-StoneX (Daffodil International University HIRL): grid_path none to /rs/rs_grp_oschome/go2432/data/kub_stonex; stage downloadable to held; status todo to held
+- 2026-10-23 CathAction (Jianu et al. 2024, AIRVLab): grid_path none to /rs/rs_grp_oschome/go2432/data/cathaction; stage needs-owner to held; status needs-owner to held
+- 2026-10-23 LUMOS (Zhejiang University): grid_path none to /rs/rs_grp_oschome/go2432/data/zenodo_lumos; stage needs-owner to held; status needs-owner to held; tier C to A
 - 2026-10-23 the census began with 109 records
