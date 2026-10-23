@@ -296,6 +296,12 @@ class Diff(unittest.TestCase):
         self.write("datasets/demo_set.json", record(status="held", grid_path="/home/someone/raw"))
         self.assertTrue(self.review().failed())
 
+    def test_a_copy_in_the_owners_home_is_not_held(self):
+        # The status word lists the data root and the shared tree, never the home, so a copy
+        # there waits as needs-owner until it is moved where whoever merges can see it.
+        self.write("datasets/demo_set.json", record(status="held", grid_path="/wsu/home/go/go24/go2432/raw"))
+        self.assertTrue(self.review().failed())
+
     def test_a_newly_held_record_is_flagged_for_a_listing(self):
         rec = record(status="held", grid_path="/rs/rs_grp_oschome/go2432/data/demo_set")
         rec["history"].append({"date": "2026-10-23", "step": "held", "note": "on the grid"})

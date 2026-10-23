@@ -106,8 +106,8 @@ One comment on the issue and the same line in datasets/<id>.json's `result` fiel
 of the shapes README.md lists (on the grid at <path> with the job id; requested, waiting; granted,
 fetch pending; refused, with the reason; needs the owner). Set `status` to the matching word
 (fetched, requested, granted, refused, needs-owner, or held for a set the owner's own chain put on
-the grid, with `grid_path` saying where under the owner's grid root or home or the shared tree,
-which the review flags for whoever merges to check against a status listing), add one entry to the
+the grid, with `grid_path` saying where under the owner's grid root or the shared tree, which
+the review flags for whoever merges to check against a status listing), add one entry to the
 record's `history` (the date, the step, one line) and rewrite its `obstacles` and `next`, so the
 pipeline board (PIPELINE.md on the branch `pipeline`) shows the move, and keep the record's
 licence and link exactly as they are. A fetch through the promoter leaves PROMOTED.json beside

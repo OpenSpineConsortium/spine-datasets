@@ -8,10 +8,10 @@
  "licence": "not recorded; downloaded under an IEEE DataPort subscription",
  "link": "https://ieee-dataport.org/documents/lateral-full-spine-x-ray-image-dataset",
  "how_to_get": [
-  "Held: in the owner's grid home at /wsu/home/go/go24/go2432/spine-detector/data/raw/lateral_236, where the data platform recorded the 236 films on 2026-09-13, downloaded under an IEEE DataPort subscription before 2026-09-16; nothing to fetch. The status word lists only the research storage, so the path is still to see in a listing of the home before any use.",
-  "To share it with collaborators, copy it into /rs/rs_grp_oschome/shared/datasets/ieee_dataport_lateral_236/ with its checksums as a Slurm job, as the pig set of #22 was copied, and note the job in the history."
+  "The data platform recorded the 236 films on 2026-09-13 in a project folder of the owner's grid home (/wsu/home/go/go24/go2432/), downloaded under an IEEE DataPort subscription before 2026-09-16; the status word lists only the research storage, so the copy is still to see in a listing, and nothing is to fetch.",
+  "On the owner's word, one Slurm job lists that copy and puts it, with its checksums, under /rs/rs_grp_oschome/go2432/data/ieee_dataport_lateral_236/ or the shared tree /rs/rs_grp_oschome/shared/datasets/ieee_dataport_lateral_236/, as the pig set of #22 was copied; the record then says held with that path."
  ],
- "grid_path": "/wsu/home/go/go24/go2432/spine-detector/data/raw/lateral_236",
+ "grid_path": null,
  "counts": {
   "subjects": 236,
   "xray_images": 236,
@@ -19,20 +19,21 @@
  },
  "measured": {},
  "record": "SchwingNet data/sources/ieee_dataport_lateral_236.json, 2026-10-23, which gives no grid path; the path from spinesurg-ct-nnunet data_platform/sources.json bf1432f",
- "source_status": "held in the owner's grid home, as the data platform's record gives it; SchwingNet's registry says held with no grid path",
+ "source_status": "a copy in a project folder of the owner's grid home, as the data platform's record gives it; SchwingNet's registry says held with no grid path",
  "route": "account",
- "status": "held",
- "result": "2026-10-23: held in the owner's grid home at /wsu/home/go/go24/go2432/spine-detector/data/raw/lateral_236 by the data platform's record; still to see in a listing",
+ "status": "needs-owner",
+ "result": "2026-10-23: needs the owner: his word for one grid job that lists the copy the data platform recorded in his grid home and puts it under the data root or the shared tree; until a listing shows it, the census does not count it on the grid",
  "history": [
   {
    "date": "2026-10-23",
-   "step": "held",
-   "note": "in the owner's grid home at /wsu/home/go/go24/go2432/spine-detector/data/raw/lateral_236 (236 JPG, 1.3 GB) as the data platform recorded it on 2026-09-13, downloaded under an IEEE DataPort subscription before 2026-09-16, before the shared tree and its promoter existed; neither the status word of 2026-10-23 nor the sample index of 2026-10-22 lists the home, so the path is still to see in a listing; the record written for the census (#178)"
+   "step": "note",
+   "note": "a copy of the 236 JPG (1.3 GB) in a project folder of the owner's grid home, as the data platform recorded it on 2026-09-13, downloaded under an IEEE DataPort subscription before 2026-09-16, before the shared tree and its promoter existed; neither the status word of 2026-10-23 nor the sample index of 2026-10-22 lists the home, so it is not counted held until a listing shows it under the data root or the shared tree; the record written for the census (#178)"
   }
  ],
  "obstacles": [
   "the licence line is still to confirm on the source's page",
-  "the path is the data platform's record of 2026-09-13, not yet seen in a listing of the owner's grid home"
+  "the copy is the data platform's record of 2026-09-13, in a project folder of the owner's grid home that no listing has shown yet",
+  "the grid job that lists and moves it waits for the owner's word"
  ],
- "next": "see the path in a listing of the owner's grid home; then, on the owner's word, copy the films into the shared tree with their checksums as a Slurm job"
+ "next": "the owner's word for one grid job that lists the copy and puts it, with its checksums, under the data root or the shared tree; then status held with that path"
 }

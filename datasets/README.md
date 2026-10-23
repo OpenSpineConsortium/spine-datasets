@@ -41,8 +41,8 @@ The fields this repository adds:
 - `status`: where the task stands: `todo`, `requested`, `granted`, `fetching` (a manifest is in,
   manifests/README.md, and the promoter fetches it after merge), `fetched` (the promoter's word
   alone: in the shared tree with its manifest), `held` (on the grid by the owner's own chain,
-  not the promoter, so no manifest covers it: under the owner's data root or home, or copied
-  into the shared tree by hand; `grid_path` says where), `refused` or `needs-owner`.
+  not the promoter, so no manifest covers it: under the owner's data root, or copied into the
+  shared tree by hand; `grid_path` says where), `refused` or `needs-owner`.
 - `result`: free text, the dated result line README.md describes; empty until there is one.
 - `history`: the steps taken so far, oldest first, each `{"date": "YYYY-MM-DD", "step": ...,
   "note": ...}` with the step one of `researched`, `asked`, `granted`, `fetching`, `fetched`,

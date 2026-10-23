@@ -23,8 +23,8 @@ request (.github/workflows/ci.yml):
   - a data file added to the repository (an image, an archive, a volume, a table of rows), outside
     docs/ and tests/, where it is flagged instead, since a figure or a fixture may belong there;
   - a record moved to fetched without a manifest, or with a grid_path outside the shared tree;
-  - a record moved to held with no grid_path, or with one outside the owner's grid root and home
-    and the shared tree, where the owner's own chain and the promoter put what they fetch;
+  - a record moved to held with no grid_path, or with one outside the owner's grid root and the
+    shared tree, where the owner's own chain and the promoter put what they fetch;
   - a change to the promoter's own code (tools/promote.py, grid/promote.sh, and grid/promote.json,
     its old budget, should it come back), which runs as the owner on the grid, in a pull request someone other than
     the owner opened;
@@ -69,10 +69,10 @@ from check_docs import SECRET_PATTERNS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SHARED = "/rs/rs_grp_oschome/shared/datasets"
-# Where a held set may be: the owner's own grid root, where the owner's chain fetches, the owner's
-# grid home, where sets fetched before that root existed still are, and the shared tree, where
-# the promoter installs.
-HELD_ROOTS = ("/rs/rs_grp_oschome/go2432/", "/wsu/home/go/go24/go2432/", SHARED + "/")
+# Where a held set may be: the owner's own grid root, where the owner's chain fetches, and the
+# shared tree, where the promoter installs; the status word lists both, so whoever merges can see
+# the path, and a copy elsewhere waits as needs-owner until it is moved under one of them.
+HELD_ROOTS = ("/rs/rs_grp_oschome/go2432/", SHARED + "/")
 GRID_PATH = re.compile(r"(?<![\w.])/[^\s;,()]+")
 XRAY_GROUPS = ("fluoro", "video", "projections", "films")
 TRUSTED_PATHS = ("tools/promote.py", "grid/promote.sh", "grid/promote.json")
