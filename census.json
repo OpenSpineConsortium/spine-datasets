@@ -5,11 +5,11 @@
  "totals": {
   "datasets": 166,
   "by_stage": {
-   "downloadable": 10,
+   "downloadable": 9,
    "to-ask": 9,
    "asked": 26,
    "granted": 5,
-   "fetching": 0,
+   "fetching": 1,
    "on-grid": 6,
    "held": 96,
    "needs-owner": 11,
@@ -8144,7 +8144,7 @@
    }
   },
   "scidb_mtddh": {
-   "digest": "0c10226c41095270ef212deda17d5dca93171aad6eeeeab6cbae5734a5fcedeb",
+   "digest": "baf55ff0f748b8c0b278addd673b7681d126b0562210fc9fe78bee8639539a4b",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -8153,8 +8153,8 @@
     "group": "films",
     "kind": "Radiographs",
     "route": "download",
-    "status": "todo",
-    "stage": "downloadable",
+    "status": "fetching",
+    "stage": "fetching",
     "licence": "CC BY 4.0 (DataCite's record of the DOI, read 2026-10-23)",
     "licence_kind": "open",
     "link": "https://www.scidb.cn/en/detail?dataSetId=c088644bd0b2406eb49830ad447c17fb",
@@ -8174,11 +8174,11 @@
      "files",
      "size_gb"
     ],
-    "next": "on the owner's word: manifests/scidb_mtddh.json from the three files above with status fetching, and the download.scidb.cn host rule in tools/promote.py in the same pull request; the owner sends promoter restart after the merge; the promoter installs the set",
+    "next": "the promoter installs it after merge",
     "since": "2026-10-23",
     "last_step": {
      "date": "2026-10-23",
-     "step": "researched"
+     "step": "fetching"
     },
     "paired": false,
     "tier": null,
@@ -11707,6 +11707,21 @@
     "grid_bytes": [
      205004261,
      205012607
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "scidb_mtddh",
+   "kind": "changed",
+   "changes": {
+    "status": [
+     "todo",
+     "fetching"
+    ],
+    "stage": [
+     "downloadable",
+     "fetching"
     ]
    }
   }

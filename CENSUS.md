@@ -22,11 +22,11 @@ since the last run. The page with filters is census.html beside this file, serve
 
 | Stage | Datasets |
 |---|---|
-| Downloadable now | 10 |
+| Downloadable now | 9 |
 | To ask | 9 |
 | Asked, waiting | 26 |
 | Granted, fetch pending | 5 |
-| Fetching | 0 |
+| Fetching | 1 |
 | On the grid | 6 |
 | Held by the owner | 96 |
 | Needs the owner | 11 |
@@ -177,7 +177,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | Open-i Indiana chest collection | Radiographs | Needs the owner | restricted |  | 7,470 |  |  |  |  | [#35](https://github.com/OpenSpineConsortium/spine-datasets/issues/35) |
 | PadChest (BIMCV, Alicante) | Radiographs | To ask | restricted | 67,625 | 160,868 |  |  |  |  | [#12](https://github.com/OpenSpineConsortium/spine-datasets/issues/12) |
 | ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025) | Radiographs | To ask | restricted | 109,487 |  |  |  |  |  | [#11](https://github.com/OpenSpineConsortium/spine-datasets/issues/11) |
-| MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025) | Radiographs | Downloadable now | open | 2,156 | 2,156 |  |  |  | 4.1 GB |  |
+| MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025) | Radiographs | Fetching | open | 2,156 | 2,156 |  |  |  | 4.1 GB |  |
 | SOF lateral spine radiographs (Study of Osteoporotic Fractures) | Radiographs | To ask | restricted |  |  |  |  |  |  | [#10](https://github.com/OpenSpineConsortium/spine-datasets/issues/10) |
 | TVGH ankylosing spondylitis cervical and lumbar spine films | Radiographs | Asked, waiting | unknown |  |  |  |  |  |  | [#108](https://github.com/OpenSpineConsortium/spine-datasets/issues/108) |
 | TVGH-SpineXR | Radiographs | Asked, waiting | unknown |  |  |  |  |  |  | [#14](https://github.com/OpenSpineConsortium/spine-datasets/issues/14) |
@@ -503,6 +503,7 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-23 MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025): stage downloadable to fetching; status todo to fetching
 - 2026-10-23 Veterinary: pig lower limb CT, CBCT and planar images (Goswami 2020, IEEE DataPort): grid_bytes 205.0 MB to 205.0 MB
 - 2026-10-23 VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich: grid_bytes none to 252.2 GB
 - 2026-10-23 TotalSegmentator task data 'pleural_pericard_effusion' (600 CT): grid_bytes none to 9.0 GB
