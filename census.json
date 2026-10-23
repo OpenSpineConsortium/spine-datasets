@@ -8,10 +8,10 @@
    "downloadable": 9,
    "to-ask": 10,
    "asked": 26,
-   "granted": 6,
+   "granted": 5,
    "fetching": 0,
    "on-grid": 6,
-   "held": 95,
+   "held": 96,
    "needs-owner": 11,
    "refused": 2,
    "later": 1
@@ -24,38 +24,38 @@
    "ct": 92,
    "future": 2
   },
-  "on_grid": 101,
+  "on_grid": 102,
   "on_grid_size": {
    "sum": 3863717943434,
    "counted": 83,
-   "of": 101,
+   "of": 102,
    "measured": 7
   },
   "on_grid_frozen": 0,
   "on_grid_subjects": {
    "sum": 62843,
    "counted": 86,
-   "of": 101
+   "of": 102
   },
   "on_grid_xray_images": {
    "sum": 160879,
    "counted": 16,
-   "of": 101
+   "of": 102
   },
   "on_grid_videos": {
    "sum": 694,
    "counted": 2,
-   "of": 101
+   "of": 102
   },
   "on_grid_run_frames": {
    "sum": 376220,
    "counted": 2,
-   "of": 101
+   "of": 102
   },
   "on_grid_ct_volumes": {
    "sum": 24959,
    "counted": 70,
-   "of": 101
+   "of": 102
   },
   "paired": {
    "A": 5,
@@ -71,31 +71,31 @@
   },
   "ct": {
    "sets": 105,
-   "on_grid": 88,
+   "on_grid": 89,
    "on_grid_ct_volumes": {
     "sum": 24959,
     "counted": 70,
-    "of": 88
+    "of": 89
    },
    "on_grid_subjects": {
     "sum": 25991,
     "counted": 80,
-    "of": 88
+    "of": 89
    },
    "on_grid_size": {
     "sum": 3818692470271,
     "counted": 78,
-    "of": 88,
+    "of": 89,
     "measured": 5
    },
    "by_stage": {
     "downloadable": 2,
     "to-ask": 2,
     "asked": 3,
-    "granted": 4,
+    "granted": 3,
     "fetching": 0,
     "on-grid": 4,
-    "held": 84,
+    "held": 85,
     "needs-owner": 3,
     "refused": 2,
     "later": 1
@@ -112,11 +112,11 @@
     },
     "chest": {
      "sets": 60,
-     "on_grid": 53,
+     "on_grid": 54,
      "ct_volumes": {
       "sum": 10567,
       "counted": 44,
-      "of": 53
+      "of": 54
      }
     },
     "abdomen": {
@@ -8036,7 +8036,7 @@
    }
   },
   "rsna_rspect": {
-   "digest": "cab82d4659b69d1c21bc968a1d4c47a4608ccdd988444ea683cea163cec226fc",
+   "digest": "90cbb7cf16246d983190bcdb1597ee3c76aeae4b7a1fc8b261b3782e649b03f8",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -8045,15 +8045,15 @@
     "group": "ct",
     "kind": "CT",
     "route": "agreement",
-    "status": "granted",
-    "stage": "granted",
+    "status": "held",
+    "stage": "held",
     "licence": "a data use agreement (non-commercial)",
     "licence_kind": "restricted",
     "link": "https://www.kaggle.com/competitions/rsna-str-pulmonary-embolism-detection",
     "what": "7,279 patients; a gated anomaly-harvest collection (group B7)",
     "level_truth": "counted by the census pipeline once fetched",
-    "grid_path": null,
-    "on_grid": false,
+    "grid_path": "/rs/rs_grp_oschome/go2432/data/rsna_rspect_pe/raw",
+    "on_grid": true,
     "grid_bytes": null,
     "tree_sha256": null,
     "subjects": null,
@@ -8063,11 +8063,11 @@
     "ct_volumes": null,
     "bytes": null,
     "unread_counts": [],
-    "next": "the fetch: a grid job by grid/README.md, with what the result line says the fetch needs",
+    "next": "the owner decides on the zip; the census counts the CT volumes",
     "since": "2026-10-21",
     "last_step": {
-     "date": "2026-10-21",
-     "step": "granted"
+     "date": "2026-10-23",
+     "step": "held"
     },
     "paired": false,
     "tier": null,
@@ -10663,6 +10663,25 @@
    "id": "scidb_mtddh",
    "kind": "added",
    "changes": {}
+  },
+  {
+   "date": "2026-10-23",
+   "id": "rsna_rspect",
+   "kind": "changed",
+   "changes": {
+    "status": [
+     "granted",
+     "held"
+    ],
+    "stage": [
+     "granted",
+     "held"
+    ],
+    "grid_path": [
+     null,
+     "/rs/rs_grp_oschome/go2432/data/rsna_rspect_pe/raw"
+    ]
+   }
   }
  ]
 }

@@ -10,14 +10,14 @@ since the last run. The page with filters is census.html beside this file, serve
 | | |
 |---|---|
 | Datasets with a record | 166 |
-| On the grid (shared tree and the owner's root) | 101 |
-| Size on the grid | 3.9 TB (83 of 101 sets counted) |
-| Frozen on the grid, every file hashed (tools/freeze.py) | 0 of 101 |
-| Subjects on the grid | 62,843 (86 of 101 sets counted) |
-| X-ray images on the grid | 160,879 (16 of 101 sets counted) |
-| X-ray videos and sweeps on the grid | 694 (2 of 101 sets counted) |
-| Frames inside those videos and sweeps | 376,220 (2 of 101 sets counted) |
-| CT volumes on the grid | 24,959 (70 of 101 sets counted) |
+| On the grid (shared tree and the owner's root) | 102 |
+| Size on the grid | 3.9 TB (83 of 102 sets counted) |
+| Frozen on the grid, every file hashed (tools/freeze.py) | 0 of 102 |
+| Subjects on the grid | 62,843 (86 of 102 sets counted) |
+| X-ray images on the grid | 160,879 (16 of 102 sets counted) |
+| X-ray videos and sweeps on the grid | 694 (2 of 102 sets counted) |
+| Frames inside those videos and sweeps | 376,220 (2 of 102 sets counted) |
+| CT volumes on the grid | 24,959 (70 of 102 sets counted) |
 | Real spine X-ray and CT pairs on the grid | 5 sets, 1,651 subjects |
 
 | Stage | Datasets |
@@ -25,10 +25,10 @@ since the last run. The page with filters is census.html beside this file, serve
 | Downloadable now | 9 |
 | To ask | 10 |
 | Asked, waiting | 26 |
-| Granted, fetch pending | 6 |
+| Granted, fetch pending | 5 |
 | Fetching | 0 |
 | On the grid | 6 |
-| Held by the owner | 95 |
+| Held by the owner | 96 |
 | Needs the owner | 11 |
 | Refused | 2 |
 | Later | 1 |
@@ -260,7 +260,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | RibFrac (MICCAI 2020) chest CT | CT | Held by the owner | restricted |  |  |  |  | 660 |  |  |
 | RSNA 2022 cervical spine fracture CT (Kaggle) | CT | Held by the owner | restricted |  |  |  |  | 2,019 | 203.3 GB |  |
 | RSNA abdominal trauma CT (RATIC) | CT | Granted, fetch pending | restricted |  |  |  |  |  |  | [#87](https://github.com/OpenSpineConsortium/spine-datasets/issues/87) |
-| RSNA pulmonary embolism CT (RSPECT) | CT | Granted, fetch pending | restricted |  |  |  |  |  |  | [#88](https://github.com/OpenSpineConsortium/spine-datasets/issues/88) |
+| RSNA pulmonary embolism CT (RSPECT) | CT | Held by the owner | restricted |  |  |  |  |  |  | [#88](https://github.com/OpenSpineConsortium/spine-datasets/issues/88) |
 | ENHANCE.PET 1.6k: whole-/total-body FDG-PET/CT, 1,683 studies (NIfTI) | CT | To ask | open |  |  |  |  |  | 286.3 GB | [#90](https://github.com/OpenSpineConsortium/spine-datasets/issues/90) |
 | Stanford AIMI INSPECT chest CT | CT | Needs the owner | restricted |  |  |  |  |  |  | [#19](https://github.com/OpenSpineConsortium/spine-datasets/issues/19) |
 | Stanford AIMI Merlin abdominal CT | CT | Needs the owner | restricted |  |  |  |  |  |  | [#18](https://github.com/OpenSpineConsortium/spine-datasets/issues/18) |
@@ -288,17 +288,17 @@ Tasks whose record is not written yet:
 
 ## CT, by region and masks
 
-Every record that holds CT: 105 sets, 88 of them on the grid. A set counts in
+Every record that holds CT: 105 sets, 89 of them on the grid. A set counts in
 each region its field of view covers; a sum counts a CT twice where two records hold it. The page
 with filters, and each set's masks in full, is census-ct.html beside this file.
 
 | | |
 |---|---|
 | Sets that hold CT | 105 |
-| On the grid | 88 |
-| CT volumes on the grid | 24,959 (70 of 88 sets counted) |
-| Subjects on the grid | 25,991 (80 of 88 sets counted) |
-| Size on the grid | 3.8 TB (78 of 88 sets counted) |
+| On the grid | 89 |
+| CT volumes on the grid | 24,959 (70 of 89 sets counted) |
+| Subjects on the grid | 25,991 (80 of 89 sets counted) |
+| Size on the grid | 3.8 TB (78 of 89 sets counted) |
 | On the grid with the source's vertebra masks by level | 4,208 CT volumes in 6 sets |
 | On the grid with masks made on the grid | 15,753 CT volumes in 62 sets, 20 of them counted |
 | Sets whose masks are surveyed | 105 of 105 |
@@ -306,7 +306,7 @@ with filters, and each set's masks in full, is census-ct.html beside this file.
 | Region | Sets | On the grid | CT volumes on the grid |
 |---|---|---|---|
 | head and neck | 4 | 4 | 3,387 |
-| chest | 60 | 53 | 10,567 (44 of 53 sets counted) |
+| chest | 60 | 54 | 10,567 (44 of 54 sets counted) |
 | abdomen | 60 | 55 | 18,230 (49 of 55 sets counted) |
 | pelvis | 55 | 50 | 9,317 (44 of 50 sets counted) |
 | spine | 28 | 23 | 8,683 (19 of 23 sets counted) |
@@ -396,6 +396,7 @@ with filters, and each set's masks in full, is census-ct.html beside this file.
 | International TMTV Benchmark, lymphoma FDG PET/CT (60) | On the grid |  | whole body | from the source: not recorded, on the grid | [#57](https://github.com/OpenSpineConsortium/spine-datasets/issues/57) |
 | LumVBCanSeg lumbar CT (185, ShengJing Hospital) | On the grid |  | spine | from the source: not recorded, on the grid | [#55](https://github.com/OpenSpineConsortium/spine-datasets/issues/55) |
 | MedPelvis3D pelvic CT (99, PLA General Hospital) | On the grid |  | pelvis | from the source: not recorded, on the grid | [#56](https://github.com/OpenSpineConsortium/spine-datasets/issues/56) |
+| RSNA pulmonary embolism CT (RSPECT) | Held by the owner |  | chest | from the source: not recorded | [#88](https://github.com/OpenSpineConsortium/spine-datasets/issues/88) |
 | STOIC2021 training (AWS Open Data) | Held by the owner |  | chest | from the source: not recorded | [#44](https://github.com/OpenSpineConsortium/spine-datasets/issues/44) |
 | TotalSegmentator task data 'hip_implant' (71 CT) | Held by the owner |  | pelvis | from the source: not recorded | [#66](https://github.com/OpenSpineConsortium/spine-datasets/issues/66) |
 | TotalSegmentator task data 'liver_lesions' (842 CT) | Held by the owner |  | abdomen | from the source: not recorded | [#67](https://github.com/OpenSpineConsortium/spine-datasets/issues/67) |
@@ -417,7 +418,6 @@ with filters, and each set's masks in full, is census-ct.html beside this file.
 | MAGIC-CT (Zenodo) | Needs the owner |  | chest, abdomen | from the source: not recorded | [#7](https://github.com/OpenSpineConsortium/spine-datasets/issues/7) |
 | NLST, full (tier 2; 500-person pilot fetched) | To ask |  | chest, other | from the source: no vertebrae; from the source: no vertebrae; from the source: vertebrae by level; from the source: no vertebrae | [#91](https://github.com/OpenSpineConsortium/spine-datasets/issues/91) |
 | RSNA abdominal trauma CT (RATIC) | Granted, fetch pending |  | chest, abdomen, pelvis | from the source: not recorded | [#87](https://github.com/OpenSpineConsortium/spine-datasets/issues/87) |
-| RSNA pulmonary embolism CT (RSPECT) | Granted, fetch pending |  | chest | from the source: not recorded | [#88](https://github.com/OpenSpineConsortium/spine-datasets/issues/88) |
 | Stanford AIMI INSPECT chest CT | Needs the owner |  | chest | from the source: not recorded | [#19](https://github.com/OpenSpineConsortium/spine-datasets/issues/19) |
 | Stanford AIMI Merlin abdominal CT | Needs the owner |  | abdomen, pelvis | from the source: not recorded | [#18](https://github.com/OpenSpineConsortium/spine-datasets/issues/18) |
 
@@ -434,6 +434,7 @@ What the CT records still lack:
 - DEEP-PSMA (PSMA + FDG PET/CT, mCRPC): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
 - PANORAMA public set (pancreas CE-CT): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
 - QUADRA_HC total-body FDG-PET/CT, healthy controls: on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- RSNA pulmonary embolism CT (RSPECT): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
 - FDG-PET-CT-Lesions (autoPET), TCIA through NBIA: on the grid, and what masks its source ships is not recorded yet; its entry says where to look
 - WAW-TACE (HCC multiphase CT, Warsaw): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
 - LumVBCanSeg lumbar CT (185, ShengJing Hospital): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
@@ -586,6 +587,8 @@ What the CT records still lack:
 - RibFrac (MICCAI 2020) chest CT: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - RSNA 2022 cervical spine fracture CT (Kaggle): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - RSNA abdominal trauma CT (RATIC): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
+- RSNA pulmonary embolism CT (RSPECT): on the grid with no size: write the landing pass's bytes into measured
+- RSNA pulmonary embolism CT (RSPECT): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - RSNA pulmonary embolism CT (RSPECT): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - ENHANCE.PET 1.6k: whole-/total-body FDG-PET/CT, 1,683 studies (NIfTI): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Stanford AIMI INSPECT chest CT: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
@@ -611,6 +614,7 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-23 RSNA pulmonary embolism CT (RSPECT): grid_path none to /rs/rs_grp_oschome/go2432/data/rsna_rspect_pe/raw; stage granted to held; status granted to held
 - 2026-10-23 MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025): record added
 - 2026-10-23 Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity): record added
 - 2026-10-23 Radiopaedia spine cases: stage asked to granted; status requested to granted
