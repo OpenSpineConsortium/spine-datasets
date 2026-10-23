@@ -34,6 +34,8 @@
    "note": "on the grid at /rs/rs_grp_oschome/go2432/data/aws_stoic2021, 265 GB in the status listing of 2026-10-23 02:05 UTC (symphony-template grid branch, 26f3bde), no fetch job in the listing's window; the record states about 240 GB and 2,000 subjects; the listing's sample report counts 2,000 images; fetched by the owner's chain, not the promoter, so no manifest covers it"
   }
  ],
- "obstacles": [],
- "next": "the landing pass (#204) checks the files and their sizes"
+ "obstacles": [
+  "the owner's hand: the licence (CC BY-NC 4.0) is non-commercial; whether the project may use the copy on the grid under that term is his decision"
+ ],
+ "next": "the owner decides on the non-commercial term; the landing pass (#204) checks the files and their sizes"
 }

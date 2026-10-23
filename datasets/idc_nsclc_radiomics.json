@@ -34,6 +34,8 @@
    "note": "on the grid at /rs/rs_grp_oschome/go2432/data/idc_nsclc_radiomics, 27 GB in the status listing of 2026-10-23 02:05 UTC (symphony-template grid branch, 26f3bde), job 40697702 COMPLETED; beside the record's 25.8 GB raw; fetched by the owner's chain, not the promoter, so no manifest covers it"
   }
  ],
- "obstacles": [],
- "next": "the landing pass (#204) checks the files and their sizes"
+ "obstacles": [
+  "the owner's hand: the licence (CC BY-NC 3.0) is non-commercial; whether the project may use the copy on the grid under that term is his decision"
+ ],
+ "next": "the owner decides on the non-commercial term; the landing pass (#204) checks the files and their sizes"
 }
