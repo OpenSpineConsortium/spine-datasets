@@ -1,0 +1,47 @@
+{
+ "id": "cams_knee",
+ "name": "CAMS-Knee (ETH Zurich and Charite Berlin, J Biomech 2017)",
+ "group": "video",
+ "pairing": {
+  "spine": false,
+  "region": "instrumented total knee replacements in living subjects",
+  "xray": "fluoroscopic image series from a moving fluoroscope that follows the knee, at 25 Hz, registered to the implant components",
+  "ct": "the implant components' CAD files, not a CT",
+  "subjects": "6 people with instrumented knee implants",
+  "pose": "the tibial and femoral 4 x 4 poses at every fluoroscope capture, shipped",
+  "masks": "none; the registered images carry the implant components",
+  "annotate": "nothing for the spine; fluoroscopy of metal implants in living subjects during daily activities",
+  "pair_key": "the trial's own registered poses"
+ },
+ "what": "6 people with instrumented total knee replacements (Charite Berlin), measured at ETH Zurich in June 2014 during level walking, stair and ramp descent, sitting down and standing up, squats and standing: the joint loads the implants measured, a moving fluoroscope following the knee (pulsed at 25 Hz, 1000 x 1000 pixels at 12 bits, a 30.5 cm field) whose images come registered to the implant components, whole-body markers, force plates, 16-channel EMG and camera video (Taylor et al., J Biomech 2017;65:32-39, doi:10.1016/j.jbiomech.2017.09.022); the same form offers Stan (Dreyer et al., J Biomech 2022;141:111171), a reference subject made from these data, whose files are loads and kinematics alone, with no images, so it has no record of its own",
+ "level_truth": "none; no spine",
+ "reach": "gated",
+ "licence": "the CAMS-Knee licence agreement, which the requesting institution signs: non-commercial, scientific use without any commercial benefit, at the registered institute only, not passed on to third parties (as the data request page reads, read 2026-10-23)",
+ "link": "https://cams-knee.orthoload.com/data/data-request/",
+ "how_to_get": [
+  "Read the data request page https://cams-knee.orthoload.com/data/data-request/ and the agreement https://cams-knee.orthoload.com/wp-content/uploads/sites/4/CamsKnee_DataLicenseAgreement.pdf; the form asks for a name, an organisation, an email, a status, a project title and a description, takes the agreement and a project description as PDFs, and offers the fluoroscopic images and the implant CAD files as datasets of their own.",
+  "The owner decides on the terms, the agreement needs Wayne State's signature, and the form goes from the owner's hand with a project description worded as CONTRIBUTING.md says; an approved request is answered with a personal, time-limited download link, which never goes into a record or a manifest, so the owner fetches it on the grid as a Slurm job, never on the login node.",
+  "A sample, a video and its description for one subject's gait and squat trials, is on https://cams-knee.orthoload.com/data/data-download/ with no agreement; what else it holds is to confirm on the page."
+ ],
+ "grid_path": null,
+ "counts": {
+  "subjects": 6
+ },
+ "measured": {},
+ "record": "the owner's list of fluoroscopy sets of 2026-10-23, checked against the Veriserum paper (arXiv:2509.05483), which names CAMS-Knee and Stan, and the CAMS-Knee pages read the same day",
+ "source_status": "found by checking the owner's list of fluoroscopy sets of 2026-10-23; not requested; behind a form and the CAMS-Knee licence agreement, which the requesting institution signs, for scientific use without commercial benefit",
+ "route": "agreement",
+ "status": "needs-owner",
+ "result": "",
+ "history": [
+  {
+   "date": "2026-10-23",
+   "step": "researched",
+   "note": "found by checking the owner's list of fluoroscopy sets of 2026-10-23; not requested; behind a form and the CAMS-Knee licence agreement, which the requesting institution signs, for scientific use without commercial benefit"
+  }
+ ],
+ "obstacles": [
+  "the owner's hand: the agreement allows scientific use without commercial benefit, at the registered institute only; whether the project takes the set under it is the owner's decision, and the agreement needs Wayne State's signature"
+ ],
+ "next": "the owner decides on the agreement's terms; if they are taken, the form goes in with the agreement and a project description"
+}
