@@ -7534,7 +7534,7 @@
    }
   },
   "pittsburgh_swallow": {
-   "digest": "d30fa4b62d495ce18ebff6354c1f0aca88acff3317688cccb034689d2dbf75f4",
+   "digest": "0ae4725352354518c974f00e6d435c55940908e71607d4ee65ba3efae06f3c57",
    "first_seen": "2026-09-26",
    "last_changed": "2026-10-23",
    "row": {
@@ -7549,7 +7549,7 @@
     "licence_kind": "restricted",
     "link": "https://doi.org/10.1016/j.media.2021.102218",
     "what": "about 1,500 lateral swallow clips at 30 fps captured by video card, 265 patients and 70 volunteers on two machines",
-    "level_truth": "thin: named corner landmarks on C2 and C4 only, no boxes, no other levels",
+    "level_truth": "thin: named corner points of C2, C3 and C4 (the antero-inferior corner of C2, the anterior-superior and anterior-inferior corners of C3 and C4), C3's on only the first three frames of each subject; no boxes, no other levels",
     "grid_path": null,
     "on_grid": false,
     "grid_bytes": null,
@@ -7564,8 +7564,8 @@
     "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch",
     "since": "2026-09-26",
     "last_step": {
-     "date": "2026-10-21",
-     "step": "researched"
+     "date": "2026-10-23",
+     "step": "note"
     },
     "paired": false,
     "tier": null,
