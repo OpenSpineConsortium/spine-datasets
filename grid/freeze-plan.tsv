@@ -82,6 +82,7 @@ pengwin_task2_xrays	/rs/rs_grp_oschome/go2432/data/pengwin_task2_xrays	-
 quadra_hc	/rs/rs_grp_oschome/go2432/data/quadra_hc	20180000000
 ribfrac	/rs/rs_grp_oschome/go2432/data/ribfrac	-
 rsna_2022_cervical	/rs/rs_grp_oschome/go2432/data/rsna_2022_cspine	203318086447
+rsna_rspect	/rs/rs_grp_oschome/go2432/data/rsna_rspect_pe/raw	-
 tcia_fdg_pet_ct_lesions	/rs/rs_grp_oschome/go2432/data/tcia_fdg_pet_ct_lesions	250600000000
 verse	/rs/rs_grp_oschome/go2432/data/versefusion/raw/VerSeFusion_data/raw	-
 verse_2d_projections	/rs/rs_grp_oschome/go2432/data/verse_2d_projections	-

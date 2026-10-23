@@ -13,7 +13,8 @@
 #                                     the read rate before the rest; with no ID, the set whose stated
 #                                     size is nearest 100 GB (amos22 on 2026-10-23)
 #   bash freeze.sh start [JOBS]       the sets of grid/freeze-plan.tsv not yet frozen, in JOBS (1 to 8,
-#                                     4 when not given, the count the owner approved on 2026-10-23)
+#                                     1 when not given, the count the owner approved on 2026-10-23 for
+#                                     the sets the first four jobs left, after four for the first round)
 #                                     jobs of about equal stated size
 #   bash freeze.sh submit LIST JOBS   the same for any list of tools/freeze.py plan's lines
 #   bash freeze.sh status             the jobs, the sets frozen so far and each job's last lines
@@ -32,7 +33,8 @@
 #
 #SBATCH --time=12:00:00
 #SBATCH --cpus-per-task=8
-#SBATCH --mem=8G
+# 32G since job 40745721 ran out of memory at 8G on ctpelvic1k and idc_ldct_and_projection_data
+#SBATCH --mem=32G
 set -euo pipefail
 
 PROJECT=spine-datasets
@@ -111,7 +113,7 @@ case "${1:-}" in
     submit "$HOME_DIR/shares/pilot.tsv" 1
     ;;
   start)
-    submit "$PLAN" "${2:-4}"
+    submit "$PLAN" "${2:-1}"
     ;;
   status)
     squeue -u "$USER" -n "$PROJECT-$JOB" || true
