@@ -23,7 +23,7 @@
   "Open https://zenodo.org/records/18173664 and read its licence line.",
   "Fetch the 46.4 GB archive to Ceph as a Slurm job (sbatch, never on the login node), verify the record's md5."
  ],
- "grid_path": null,
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/zenodo_lumos",
  "counts": {
   "patients": 803,
   "radiographs": 1620,
@@ -34,8 +34,8 @@
  "record": "spine-program 01_carm_level_detection/docs/research/research_datasets_fourth_pass_verified_2026-09-22.json; https://keyueshi.github.io/LUMOS",
  "source_status": "open on Zenodo; never fetched; still open on Zenodo at the sweep of 2026-10-21, never fetched; queued in the fetch chain of #38",
  "route": "download",
- "status": "needs-owner",
- "result": "",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/zenodo_lumos (77 GB)",
  "history": [
   {
    "date": "2026-10-21",
@@ -46,10 +46,15 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "licence read on the Zenodo page: Creative Commons Attribution Non Commercial 4.0 International; v1 (2025-10-27) lists 15 files with an md5 each, about 46.4 GB, and its README says lumos_x_741_670_dcm.zip should read lumos_x_741_770_dcm.zip; no manifest written, since the check takes no non-commercial licence"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "held",
+   "note": "on the grid at /rs/rs_grp_oschome/go2432/data/zenodo_lumos, 77 GB in the status listing of 2026-10-23 02:05 UTC (symphony-template grid branch, 26f3bde), no fetch job in the listing's window; more than the record's 46.4 GB; what makes up the difference is for the landing pass to read; fetched by the owner's chain, not the promoter, so no manifest covers it"
   }
  ],
  "obstacles": [
   "the owner's hand: the licence is non-commercial (CC BY-NC 4.0), which the manifest check refuses; whether the project may take the set under that term is his decision"
  ],
- "next": "the owner decides on the non-commercial term; if he takes it, a granted step in the history lets a manifest of the 15 files go in"
+ "next": "the owner decides on the non-commercial term; if he takes it, a granted step in the history lets a manifest of the 15 files go in; a copy on the grid grants no use: the licence decision above still waits on the owner"
 }

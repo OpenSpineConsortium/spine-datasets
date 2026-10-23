@@ -11,7 +11,7 @@
   "spinesurg-ct-nnunet's slurm/acquisition_fetch.sh s3 --collection stoic2021 --bucket s3://stoic2021-training/data/mha --include '\\.mha$', submitted from the harvest's acquisition folder; the check is FETCH_STATUS.json's unresolved_failures at 0, and the 2,000 MHA verified by size.",
   "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid aws_stoic2021; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"aws_stoic2021\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
  ],
- "grid_path": null,
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/aws_stoic2021",
  "counts": {
   "subjects": 2000,
   "size_gb": 240
@@ -20,15 +20,20 @@
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "planned in the data platform at bf1432f; fetch job in the 2026-10-21 chain",
  "route": "download",
- "status": "todo",
- "result": "",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/aws_stoic2021 (265 GB)",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "planned in the data platform at bf1432f; fetch job in the 2026-10-21 chain"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "held",
+   "note": "on the grid at /rs/rs_grp_oschome/go2432/data/aws_stoic2021, 265 GB in the status listing of 2026-10-23 02:05 UTC (symphony-template grid branch, 26f3bde), no fetch job in the listing's window; the record states about 240 GB and 2,000 subjects; the listing's sample report counts 2,000 images; fetched by the owner's chain, not the promoter, so no manifest covers it"
   }
  ],
  "obstacles": [],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/aws_stoic2021/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "next": "the landing pass (#204) checks the files and their sizes"
 }
