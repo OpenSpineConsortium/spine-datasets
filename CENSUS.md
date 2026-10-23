@@ -10,13 +10,13 @@ since the last run. The page with filters is census.html beside this file, serve
 | | |
 |---|---|
 | Datasets with a record | 109 |
-| On the grid (shared tree and the owner's root) | 46 |
-| Size on the grid | 1.9 TB (28 of 46 sets counted) |
-| Subjects on the grid | 44,323 (31 of 46 sets counted) |
-| X-ray images on the grid | 160,879 (16 of 46 sets counted) |
-| X-ray videos and sweeps on the grid | 694 (2 of 46 sets counted) |
-| Frames inside those videos and sweeps | 376,220 (2 of 46 sets counted) |
-| CT volumes on the grid | 8,221 (16 of 46 sets counted) |
+| On the grid (shared tree and the owner's root) | 47 |
+| Size on the grid | 2.0 TB (29 of 47 sets counted) |
+| Subjects on the grid | 44,423 (32 of 47 sets counted) |
+| X-ray images on the grid | 160,879 (16 of 47 sets counted) |
+| X-ray videos and sweeps on the grid | 694 (2 of 47 sets counted) |
+| Frames inside those videos and sweeps | 376,220 (2 of 47 sets counted) |
+| CT volumes on the grid | 8,221 (16 of 47 sets counted) |
 | Real spine X-ray and CT pairs on the grid | 5 sets, 1,651 subjects |
 
 | Stage | Datasets |
@@ -27,8 +27,8 @@ since the last run. The page with filters is census.html beside this file, serve
 | Granted, fetch pending | 5 |
 | Fetching | 0 |
 | On the grid | 6 |
-| Held by the owner | 40 |
-| Needs the owner | 11 |
+| Held by the owner | 41 |
+| Needs the owner | 10 |
 | Refused | 1 |
 | Later | 1 |
 
@@ -217,7 +217,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | TotalSegmentator task data 'liver_lesions' (842 CT) | CT | Held by the owner | open | 842 |  |  |  |  | 38.9 GB | [#67](https://github.com/OpenSpineConsortium/spine-datasets/issues/67) |
 | TotalSegmentator task data 'pleural_pericard_effusion' (600 CT) | CT | Held by the owner | open | 600 |  |  |  |  | 9.0 GB | [#68](https://github.com/OpenSpineConsortium/spine-datasets/issues/68) |
 | UniToChest chest CT (623 patients; distributed as slices) | CT | On the grid | open | 623 |  |  |  |  | 84.1 GB | [#58](https://github.com/OpenSpineConsortium/spine-datasets/issues/58) |
-| VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich | CT | Needs the owner | restricted | 100 |  |  |  |  | 116.3 GB | [#59](https://github.com/OpenSpineConsortium/spine-datasets/issues/59) |
+| VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich | CT | Held by the owner | restricted | 100 |  |  |  |  | 116.3 GB | [#59](https://github.com/OpenSpineConsortium/spine-datasets/issues/59) |
 | Veterinary: canine lateral thoracic radiographs for vertebral heart size (Mendeley ktx4cj55pn) | Veterinary and later | Downloadable now | open |  | 152 |  |  |  |  | [#32](https://github.com/OpenSpineConsortium/spine-datasets/issues/32) |
 | Veterinary: pig lower limb CT, CBCT and planar images (Goswami 2020, IEEE DataPort) | Veterinary and later | Held by the owner | open | 1 | 14 |  |  | 3 | 205.0 MB | [#22](https://github.com/OpenSpineConsortium/spine-datasets/issues/22) |
 
@@ -292,6 +292,7 @@ Tasks whose record is not written yet:
 
 ## Changes, newest first
 
+- 2026-10-23 VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich: grid_path none to /rs/rs_grp_oschome/go2432/data/zenodo_vsd_fullbody; stage needs-owner to held; status needs-owner to held
 - 2026-10-23 Ljubljana 2D/3D registration gold standard (PIXIUM 4600): ct_volumes 1 to 5; licence ND (no derivatives), read-only, as SchwingNet's registry records it; to confirm on the source's page to CC BY-NC-ND, as the source's page gives it (read 2026-10-23); the user guide that comes with the set says the data are used only under an agreement form between the user and the Laboratory of Imaging Technologies, and never redistributed
 - 2026-10-23 Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021): licence not recorded; to confirm on the source's page to CC BY-SA 4.0, as the source's page gives it (read 2026-10-23), which also lists a 'Contract on the use of data' and shows none of its terms
 - 2026-10-23 the census rules changed; every row was derived afresh

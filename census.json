@@ -11,8 +11,8 @@
    "granted": 5,
    "fetching": 0,
    "on-grid": 6,
-   "held": 40,
-   "needs-owner": 11,
+   "held": 41,
+   "needs-owner": 10,
    "refused": 1,
    "later": 1
   },
@@ -24,37 +24,37 @@
    "ct": 38,
    "future": 2
   },
-  "on_grid": 46,
+  "on_grid": 47,
   "on_grid_size": {
-   "sum": 1886187943434,
-   "counted": 28,
-   "of": 46,
+   "sum": 2002487943434,
+   "counted": 29,
+   "of": 47,
    "measured": 7
   },
   "on_grid_subjects": {
-   "sum": 44323,
-   "counted": 31,
-   "of": 46
+   "sum": 44423,
+   "counted": 32,
+   "of": 47
   },
   "on_grid_xray_images": {
    "sum": 160879,
    "counted": 16,
-   "of": 46
+   "of": 47
   },
   "on_grid_videos": {
    "sum": 694,
    "counted": 2,
-   "of": 46
+   "of": 47
   },
   "on_grid_run_frames": {
    "sum": 376220,
    "counted": 2,
-   "of": 46
+   "of": 47
   },
   "on_grid_ct_volumes": {
    "sum": 8221,
    "counted": 16,
-   "of": 46
+   "of": 47
   },
   "paired": {
    "A": 5,
@@ -2596,7 +2596,7 @@
    }
   },
   "lumos": {
-   "digest": "3e2e11aa39ed6c6c7177f2a96f49f78bd2270b2e04e80ee2550ee013d1393b37",
+   "digest": "3ca58e45b6be41bc786b2ee1c5bc0f9d359978162088089f48ae1ba7fb5d57b4",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -2622,11 +2622,11 @@
     "ct_volumes": 280,
     "bytes": 46400000000,
     "unread_counts": [],
-    "next": "the owner decides on the non-commercial term; if he takes it, a granted step in the history lets a manifest of the 15 files go in; a copy on the grid grants no use: the licence decision above still waits on the owner",
+    "next": "the landing pass (#204) checks the files and their sizes; #207 shows whether film n and CT n are the same patient",
     "since": "2026-10-21",
     "last_step": {
      "date": "2026-10-23",
-     "step": "held"
+     "step": "note"
     },
     "paired": true,
     "tier": "A",
@@ -4650,7 +4650,7 @@
    }
   },
   "zenodo_vsd_fullbody": {
-   "digest": "67f17a96decc28ac13fd0954e0e93d484ac4b91488d9a7de9a9c83a810f285dc",
+   "digest": "7d7c631285eb9f19308a48706c9926f753ab20038591ce653220c5d8958a81d8",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -4659,15 +4659,15 @@
     "group": "ct",
     "kind": "CT",
     "route": "download",
-    "status": "needs-owner",
-    "stage": "needs-owner",
+    "status": "held",
+    "stage": "held",
     "licence": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Switzerland (CC BY-NC-SA 3.0 CH), the Zenodo record 8270365's licence line, read 2026-10-22",
     "licence_kind": "restricted",
     "link": "https://zenodo.org/records/8270365",
     "what": "VSDFullBody post-mortem whole-body CT, 100 subjects, forensic institutes Bern and Zurich, Zenodo 8270365 published 2013-11-12, about 116 GB; the mirror notes duplicate CT datasets (100 new of 109 files)",
     "level_truth": "counted by the census pipeline once fetched",
-    "grid_path": null,
-    "on_grid": false,
+    "grid_path": "/rs/rs_grp_oschome/go2432/data/zenodo_vsd_fullbody",
+    "on_grid": true,
     "grid_bytes": null,
     "subjects": 100,
     "xray_images": null,
@@ -4676,11 +4676,11 @@
     "ct_volumes": null,
     "bytes": 116300000000,
     "unread_counts": [],
-    "next": "the owner decides on the non-commercial, share-alike term; if the owner takes it, a granted step lets the manifest go in (python3 tools/dataset_review.py manifest zenodo_vsd_fullbody --zenodo 8270365), leaving out the four placeholder archives; a CT set, so it waits behind the X-ray sets",
+    "next": "the owner decides on the non-commercial, share-alike term, since a copy on the grid grants no use; the landing pass (#204) checks the files and their sizes and leaves out the four placeholder archives",
     "since": "2026-10-21",
     "last_step": {
-     "date": "2026-10-22",
-     "step": "note"
+     "date": "2026-10-23",
+     "step": "held"
     },
     "paired": false,
     "tier": null,
@@ -5191,6 +5191,25 @@
     "ct_volumes": [
      1,
      5
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "zenodo_vsd_fullbody",
+   "kind": "changed",
+   "changes": {
+    "status": [
+     "needs-owner",
+     "held"
+    ],
+    "stage": [
+     "needs-owner",
+     "held"
+    ],
+    "grid_path": [
+     null,
+     "/rs/rs_grp_oschome/go2432/data/zenodo_vsd_fullbody"
     ]
    }
   }
