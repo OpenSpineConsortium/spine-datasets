@@ -35,7 +35,7 @@
  "source_status": "the owner's hand: ask the TotalSegmentator authors whether these subjects overlap the public v2/v3 release (planned in the data platform at bf1432f)",
  "route": "letter",
  "status": "held",
- "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_hip_implant (10 GB); The overlap question went 2026-10-21 09:40 UTC by the owner to the corresponding author; waiting for the answer. The set itself is CC BY 4.0 and needs only a grid job; until the answer comes it is treated as overlapping v2 and v3 (no new people).",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_hip_implant (10 GB); The overlap question went 2026-10-21 09:40 UTC by the owner to the corresponding author; waiting for the answer. The set itself is CC BY 4.0 and needs only a grid job; until the answer comes it is treated as overlapping v2 and v3 (no new people). Wasserthal replied 2026-10-22 07:32 UTC about v2 and v3 only (v2 is a complete subset of v3, the ids unchanged, v3 only added subjects) and said nothing about the task sets, so the conservative count stands; a one-line follow-up waits in the owner's drafts.",
  "history": [
   {
    "date": "2026-10-21",
@@ -51,10 +51,15 @@
    "date": "2026-10-23",
    "step": "held",
    "note": "on the grid at /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_hip_implant, 10 GB in the status listing of 2026-10-23 02:05 UTC (symphony-template grid branch, 26f3bde), no fetch job in the listing's window; beside the record's 9.03 GB; fetched by the owner's chain, not the promoter, so no manifest covers it"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "Wasserthal replied 07:32 UTC: v2 is a complete subset of v3, ids unchanged, v3 only added subjects; nothing on the task sets, so they stay counted as overlapping; a follow-up is drafted"
   }
  ],
  "obstacles": [
-  "the overlap question to the TotalSegmentator authors (2026-10-21) is still unanswered, so the set is treated as overlapping v2 and v3 until it is"
+  "the overlap question of 2026-10-21 was answered on 2026-10-22 for v2 and v3 only; the task sets stay counted as overlapping v2 and v3 until the follow-up is answered"
  ],
- "next": "record the authors' answer; the landing pass (#204) checks the files"
+ "next": "the owner sends the drafted follow-up; record the answer on the task sets here; the landing pass (#204) checks the files"
 }

@@ -1,0 +1,35 @@
+{
+ "id": "hsg_ais_registry",
+ "name": "Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity)",
+ "group": "films",
+ "what": "the Harms Study Group's prospective multicentre registries of pediatric spinal deformity, run with the Setting Scoliosis Straight Foundation: the adolescent idiopathic scoliosis registry, which the group calls the largest AIS database, with cerebral palsy, Scheuermann's kyphosis and Marfan syndrome registries beside it and a quality improvement registry; about twenty years of surgical cases from 37 member surgeons; whether the standing radiographs themselves are shared, or only the measurements taken from them, is not stated on the site and is the first question to ask",
+ "level_truth": "to confirm: standing coronal and lateral films of operated scoliosis patients, before and after surgery, with the instrumented levels known from the operative record, if the images are shared",
+ "licence": "not recorded; the Database User Program page lists a research tool at USD 5,000 a year (database user access and hosting) and custom research database building at USD 50,000 to 150,000; the terms of a data release are not on the site",
+ "link": "https://hsg.settingscoliosisstraight.org/database-user-program/",
+ "how_to_get": [
+  "The owner sends the drafted reply to Ali Uneri (Johns Hopkins) accepting his offer to introduce the owner to the Harms Study Group's administrative team; the group's own addresses are info@ssshsg.org and, on the Database User Program page's button, mpetcharaporn@ssshsg.org (619-810-1430, San Diego).",
+  "Once introduced, send letters/hsg_ais_registry.md: whether the de-identified radiographs can be shared with a research user, through the Database User Program or otherwise, under what agreement and at what cost; the agreement and any fee are the owner's hand.",
+  "A yes brings a data use agreement, then a transfer by the route the group gives, fetched as a grid job on the owner's word."
+ ],
+ "reach": "gated",
+ "grid_path": null,
+ "counts": {},
+ "measured": {},
+ "record": "Ali Uneri's reply of 2026-10-23 to the LevelCheck request (letters/levelcheck_jhu.md) and the Harms Study Group website read the same day (the home page and the Database User Program page); no SchwingNet record",
+ "source_status": "none: found 2026-10-23 through the LevelCheck answer; no record in SchwingNet's registry",
+ "route": "letter",
+ "status": "todo",
+ "result": "",
+ "history": [
+  {
+   "date": "2026-10-23",
+   "step": "researched",
+   "note": "named by Ali Uneri (Johns Hopkins) in his answer on LevelCheck, with an offer to introduce the owner to the group's administrative team; the site read the same day gives the registries, 37 members, the Database User Program's fees and the contact addresses, and says nothing about sharing images"
+  }
+ ],
+ "obstacles": [
+  "whether the registry shares the radiographs, or only measurements, is unknown",
+  "the Database User Program's fee (USD 5,000 a year) and any agreement are the owner's decision and hand"
+ ],
+ "next": "the owner sends the drafted reply accepting Uneri's introduction; then letters/hsg_ais_registry.md goes to the administrative team, and the answer is recorded here"
+}

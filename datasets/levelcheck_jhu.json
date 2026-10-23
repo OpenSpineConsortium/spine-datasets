@@ -45,8 +45,8 @@
  "record": "SchwingNet docs/research/xray-dataset-requests.md section 15 (2026-10-21); no record under SchwingNet's data/sources/ existed for this set, so this one was written from that section",
  "source_status": "a letter sent 2026-10-21; no record in SchwingNet's registry yet",
  "route": "letter",
- "status": "requested",
- "result": "Letter sent 2026-10-21 09:40 UTC by the owner to J. H. Siewerdsen (now MD Anderson). He replied 12:48 UTC: the data stay at Johns Hopkins, were not shared at publication; he suggested Ali Uneri. The follow-up went to Ali Uneri (JHU BME) at 13:37 UTC from the owner's Outlook, Siewerdsen copied; waiting for the answer.",
+ "status": "refused",
+ "result": "Letter sent 2026-10-21 09:40 UTC by the owner to J. H. Siewerdsen (now MD Anderson), who replied 12:48 UTC that the data stay at Johns Hopkins and pointed to Ali Uneri; the follow-up went to Uneri at 13:37 UTC. Uneri replied 2026-10-23 16:00 UTC, Siewerdsen copied: the LevelCheck study's IRB expired years ago and sharing would be hard even with a new approval; he suggested the Harms Study Group's multi-institutional dataset (https://hsg.settingscoliosisstraight.org/) and offered to connect the owner with its administrative team. Closed as refused; the lead is the record hsg_ais_registry, and the reply accepting the introduction waits in the owner's drafts.",
  "history": [
   {
    "date": "2026-10-21",
@@ -72,10 +72,15 @@
    "date": "2026-10-23",
    "step": "note",
    "note": "the link is De Silva et al.'s paper on PubMed Central (PMC5045321, Spine 2016), whose index entry read on 2026-10-23 gives 398 radiographs and 178 CT, as the record does; the record's counts add Ketcha et al. 2017's"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "refused",
+   "note": "Uneri replied 16:00 UTC: the study's IRB expired years ago and sharing would be hard even with approval; he suggested the Harms Study Group (hsg.settingscoliosisstraight.org) and offered an introduction to its administrative team"
   }
  ],
  "obstacles": [
-  "the data sit at Johns Hopkins with no sharing approved at publication"
+  "the LevelCheck IRB at Johns Hopkins expired years ago; no sharing without a new approval, which Uneri called difficult"
  ],
- "next": "wait for Ali Uneri's answer; any Johns Hopkins data use agreement is the owner's to sign"
+ "next": "none for this set; the owner sends the drafted reply to Uneri accepting the introduction, and the Harms Study Group lead is followed on hsg_ais_registry"
 }

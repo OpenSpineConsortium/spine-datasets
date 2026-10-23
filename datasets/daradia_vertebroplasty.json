@@ -14,10 +14,10 @@
  "counts": {},
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md 14",
- "source_status": "request 14 drafted, never sent",
+ "source_status": "request 14 drafted, never sent (stale by 2026-10-20, when the owner sent it; the history has the dates)",
  "route": "letter",
  "status": "requested",
- "result": "Request 14 of the 2026-09-26 sheet sent 2026-10-20 by the owner to info@daradia.com; waiting for the answer.",
+ "result": "Request 14 of the 2026-09-26 sheet sent 2026-10-20 by the owner to info@daradia.com. Daradia replied 2026-10-21 16:17 UTC: they will review the availability of the original fluoroscopy, the consent and the permissions with Dr Das and get back; the owner thanked them at 16:20 UTC. Waiting.",
  "history": [
   {
    "date": "2026-10-21",
@@ -28,8 +28,13 @@
    "date": "2026-09-26",
    "step": "asked",
    "note": "Request 14 of the 2026-09-26 sheet sent 2026-10-20 by the owner to info@daradia.com; waiting for the answer."
+  },
+  {
+   "date": "2026-10-21",
+   "step": "note",
+   "note": "Daradia replied 16:17 UTC: reviewing availability, consent and permissions with Dr Das; will get back; the owner thanked them"
   }
  ],
  "obstacles": [],
- "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch"
+ "next": "wait for Daradia's answer after Dr Das's review; if none by 2026-11-04, the owner sends one follow-up"
 }

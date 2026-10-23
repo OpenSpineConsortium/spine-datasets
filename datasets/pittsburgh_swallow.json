@@ -18,10 +18,10 @@
  },
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/FLUORO_VIDEO_SOURCES_2026-09-26.md; spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md 4",
- "source_status": "request 4 drafted, never sent; a Pitt data use agreement expected",
+ "source_status": "request 4 drafted, never sent; a Pitt data use agreement expected (stale by 2026-10-20, when the owner sent it; the history has the dates)",
  "route": "letter",
  "status": "requested",
- "result": "Request 4 of the 2026-09-26 sheet sent 2026-10-20 by the owner; waiting for the answer.",
+ "result": "Request 4 of the 2026-09-26 sheet sent 2026-10-20 by the owner to Ervin Sejdic and James Coyle. Sejdic replied 2026-10-21 18:57 UTC: he is no longer at Pittsburgh (now Toronto) and cannot share the recordings, and Pitt's IRB for the study never covered sharing them; he suggested James Coyle (jcoyle@pitt.edu, copied) may know. Waiting for Coyle.",
  "history": [
   {
    "date": "2026-10-21",
@@ -37,8 +37,15 @@
    "date": "2026-10-23",
    "step": "note",
    "note": "truth corrected from the paper's methods (PMC8560570): the points include C3's two corners, labelled on only the first three frames of each subject, which the old line left out"
+  },
+  {
+   "date": "2026-10-21",
+   "step": "note",
+   "note": "Sejdic replied 18:57 UTC: no longer at Pitt, cannot share; Pitt's IRB never covered sharing; 'maybe Jim knows' (James Coyle, copied)"
   }
  ],
- "obstacles": [],
- "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch"
+ "obstacles": [
+  "Pittsburgh's IRB for the swallow study never covered sharing the recordings (Sejdic, 2026-10-21); the corpus is Coyle's to answer for now"
+ ],
+ "next": "wait for James Coyle's answer; if none by 2026-10-28, the owner sends one short follow-up to him alone"
 }
