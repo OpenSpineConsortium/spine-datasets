@@ -2,13 +2,15 @@
  "id": "bournemouth_lumbar_qf",
  "name": "Bournemouth lumbar quantitative fluoroscopy (Breen 2021)",
  "group": "video",
- "what": "weight-bearing and recumbent L2 to S1 flexion and extension cine of 127 subjects at 15 fps, 60 degrees at 6 degrees a second; only per-frame angles are public on OSF",
+ "what": "weight-bearing and recumbent L2 to S1 flexion and extension cine of 127 subjects at 15 fps, 60 degrees at 6 degrees a second; only per-frame angles are public on OSF a27py, while the group's public OSF deposit z2jby holds 1.4 GB of lumbar sagittal fluoroscopy frames with vertebral boxes, as its sample frames show (224 by 224 pixels, five boxes), with no licence stated (how_to_get)",
  "level_truth": "lumbar, if corner templates exist as they do for the cervical set",
  "reach": "get",
- "licence": "not recorded (OSF holds derived tables only)",
+ "licence": "not recorded (OSF a27py holds derived tables only; the image deposit OSF z2jby states no licence)",
  "link": "https://osf.io/a27py/",
  "how_to_get": [
-  "Part of request 1 above: write to the corresponding author of doi:10.3389/fbioe.2021.745837 for the L2-S1 cine behind osf.io/a27py."
+  "Part of request 1 above: write to the corresponding author of doi:10.3389/fbioe.2021.745837 for the L2-S1 cine behind osf.io/a27py.",
+  "A public deposit of part of this material exists: the group's OSF project z2jby (doi:10.17605/OSF.IO/Z2JBY, made 2023-02-15 by Samaratunga with A. Breen, A. Breen and Budka under MRC grant MR/X005372/1), three files of 1.5 GB (2023-02-20), 383.6 MB (2023-02-21) and 459.1 MB (2023-03-13), downloadable with no account; its GitHub repository dsibournemouth/project-maid (GPL-3.0) says the 1.4 GB one is the image set its notebooks read and the other two are the repository's own saved parameters, which this registry does not need; the paper is Samaratunga, Budka, Breen and Breen, Procedia Computer Science 2025, vol. 270, pp. 2291-2300 (doi:10.1016/j.procs.2025.09.350). The page states no licence, so the promoter's rule (manifests/README.md) needs Bournemouth's grant first: the reply to Dr Branney's answer of 2026-10-22, drafted in the owner's Outlook on 2026-10-23, asks whether the deposit may be used and whether it is the whole L2-S1 cine or a subset.",
+  "Once the grant is recorded as a granted step in the history, write manifests/bournemouth_lumbar_qf.json from OSF's file API (name, bytes and sha256 per file; the image file alone) and set the record to fetching; the promoter installs it at /rs/rs_grp_oschome/shared/datasets/bournemouth_lumbar_qf/raw (grid/README.md)."
  ],
  "grid_path": null,
  "counts": {
@@ -16,10 +18,10 @@
  },
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/FLUORO_VIDEO_SOURCES_2026-09-26.md; spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md 1",
- "source_status": "the only confirmed lumbar cine; asked for in request 1; the letter (request 1) was forwarded to ckaching.cheung@polyu.edu.hk on 2026-10-21 03:57 UTC",
+ "source_status": "the only confirmed lumbar cine; asked for in request 1; the letter (request 1) was forwarded to ckaching.cheung@polyu.edu.hk on 2026-10-21 03:57 UTC; the group's public OSF deposit z2jby, 1.4 GB of lumbar fluoroscopy frames with no licence stated, found 2026-10-23",
  "route": "letter",
  "status": "requested",
- "result": "Asked for in request 1, sent 2026-10-20 by the owner and forwarded to ckaching.cheung@polyu.edu.hk on 2026-10-21 03:57 UTC; waiting for the answer. Jonny Branney (Bournemouth) replied 2026-10-22 10:56 UTC: happy to share, checking with the university's research department about the data-sharing arrangement, and will get back; waiting for that answer.",
+ "result": "Asked for in request 1, sent 2026-10-20 by the owner and forwarded to ckaching.cheung@polyu.edu.hk on 2026-10-21 03:57 UTC; waiting for the answer. Jonny Branney (Bournemouth) replied 2026-10-22 10:56 UTC: happy to share, checking with the university's research department about the data-sharing arrangement, and will get back; waiting for that answer. The group's public OSF deposit z2jby (1.4 GB of lumbar fluoroscopy frames, no licence stated) found 2026-10-23; the reply asking Branney and Breen whether it may be used waits in the owner's Drafts.",
  "history": [
   {
    "date": "2026-10-21",
@@ -35,8 +37,15 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "Branney replied 10:56 UTC: happy to share; checking with Bournemouth's research department about the data-sharing arrangement; will get back"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "researched",
+   "note": "the group's public OSF deposit z2jby found: three files (1.5 GB, 383.6 MB and 459.1 MB), no licence stated; the 1.4 GB image set of dsibournemouth/project-maid (Samaratunga et al., Procedia Computer Science 2025, vol. 270, pp. 2291-2300); the owner read the page the same day; a reply asking Branney and Breen whether the deposit may be used waits in the owner's Drafts"
   }
  ],
- "obstacles": [],
- "next": "wait for Branney's second answer with the arrangement; a Bournemouth data-sharing agreement would be the owner's to sign; then record granted here and go on to the fetch"
+ "obstacles": [
+  "the OSF deposit z2jby states no licence: the promoter fetches it only after Bournemouth's grant is recorded as a granted step (manifests/README.md)"
+ ],
+ "next": "the owner sends the reply draft asking Branney and Breen whether the OSF deposit may be used and whether it is the whole L2-S1 cine; their yes is recorded as a granted step; then the manifest from OSF's API and fetching; the data-sharing arrangement for the rest stays the owner's hand"
 }
