@@ -2,13 +2,13 @@
  "id": "hsg_ais_registry",
  "name": "Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity)",
  "group": "films",
- "what": "the Harms Study Group's prospective multicentre registries of pediatric spinal deformity, run with the Setting Scoliosis Straight Foundation: the adolescent idiopathic scoliosis registry, which the group calls the largest AIS database, with cerebral palsy, Scheuermann's kyphosis and Marfan syndrome registries beside it and a quality improvement registry; about twenty years of surgical cases from 37 member surgeons; whether the standing radiographs themselves are shared, or only the measurements taken from them, is not stated on the site and is the first question to ask",
+ "what": "the Harms Study Group's prospective multicentre registries of pediatric spinal deformity, run with the Setting Scoliosis Straight Foundation: the adolescent idiopathic scoliosis registry, which the group calls the largest AIS database, with cerebral palsy, Scheuermann's kyphosis and Marfan syndrome registries beside it and a quality improvement registry; about twenty years of surgical cases from 37 member surgeons; whether the standing radiographs themselves are shared, or only the measurements taken from them, is not stated on the site and is what the request asks",
  "level_truth": "to confirm: standing coronal and lateral films of operated scoliosis patients, before and after surgery, with the instrumented levels known from the operative record, if the images are shared",
  "licence": "not recorded; the Database User Program page lists a research tool at USD 5,000 a year (database user access and hosting) and custom research database building at USD 50,000 to 150,000; the terms of a data release are not on the site",
  "link": "https://hsg.settingscoliosisstraight.org/database-user-program/",
  "how_to_get": [
-  "The owner sends the drafted reply to Ali Uneri (Johns Hopkins) accepting his offer to introduce the owner to the Harms Study Group's administrative team; the group's own addresses are info@ssshsg.org and, on the Database User Program page's button, mpetcharaporn@ssshsg.org (619-810-1430, San Diego).",
-  "Once introduced, send letters/hsg_ais_registry.md: whether the de-identified radiographs can be shared with a research user, through the Database User Program or otherwise, under what agreement and at what cost; the agreement and any fee are the owner's hand.",
+  "The owner's reply to Ali Uneri (Johns Hopkins) accepted his offer of an introduction, and on 2026-10-23 he introduced the owner to Michelle Marks, Executive/Research Director of Setting Scoliosis Straight (mmarks@ssshsg.org, 619-810-1430, San Diego); the group's other addresses are info@ssshsg.org and, on the Database User Program page's button, mpetcharaporn@ssshsg.org.",
+  "letters/hsg_ais_registry.md went to her on 2026-10-23 as the owner's reply in the introduction thread: whether the de-identified radiographs can be shared with a research user, through the Database User Program or otherwise, under what agreement and at what cost; the agreement and any fee are the owner's hand.",
   "A yes brings a data use agreement, then a transfer by the route the group gives, fetched as a grid job on the owner's word."
  ],
  "reach": "gated",
@@ -18,8 +18,8 @@
  "record": "Ali Uneri's reply of 2026-10-23 to the LevelCheck request (letters/levelcheck_jhu.md) and the Harms Study Group website read the same day (the home page and the Database User Program page); no SchwingNet record",
  "source_status": "none: found 2026-10-23 through the LevelCheck answer; no record in SchwingNet's registry",
  "route": "letter",
- "status": "todo",
- "result": "The owner's reply accepting Uneri's introduction went 2026-10-23 16:56 UTC; waiting for the introduction.",
+ "status": "requested",
+ "result": "The request went 2026-10-23 20:24 UTC to Michelle Marks (Executive/Research Director, Setting Scoliosis Straight, mmarks@ssshsg.org), as the owner's reply-all in Ali Uneri's introduction thread with him in copy, after her welcome of 20:10 UTC asking for the study's details and imaging needs; waiting for her review. The Database User Program's fee and any agreement are the owner's to decide and sign.",
  "history": [
   {
    "date": "2026-10-23",
@@ -30,11 +30,21 @@
    "date": "2026-10-23",
    "step": "note",
    "note": "the owner sent the reply to Uneri at 16:56 UTC on 2026-10-23, thanking him, letting LevelCheck go and accepting the introduction to the Harms Study Group's administrative team, with the question whether the radiographs themselves can be shared with a research user; waiting for the introduction"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "Uneri introduced the owner to Michelle Marks, the group's Executive/Research Director, the same day, and her welcome at 20:10 UTC asked for details of the study and the imaging needs"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "asked",
+   "note": "letters/hsg_ais_registry.md sent 20:24 UTC as the owner's reply-all to Michelle Marks (mmarks@ssshsg.org), Uneri in copy, the greeting adapted to her: whether the de-identified standing films with their instrumented levels and measurements can be shared with a research user, and on what terms; nothing accepted, the fee and any agreement left to the owner"
   }
  ],
  "obstacles": [
   "whether the registry shares the radiographs, or only measurements, is unknown",
   "the Database User Program's fee (USD 5,000 a year) and any agreement are the owner's decision and hand"
  ],
- "next": "wait for Uneri's introduction to the Harms Study Group's administrative team (the owner's reply went 2026-10-23 16:56 UTC); then letters/hsg_ais_registry.md goes to the administrative team, and the answer is recorded here"
+ "next": "wait for Michelle Marks' review (the request went 2026-10-23 20:24 UTC); record her answer here as granted or refused, with the terms, which are the owner's to decide and sign; if nothing has come by 2026-11-06, the owner follows up in the same thread"
 }
