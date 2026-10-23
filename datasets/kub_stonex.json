@@ -12,7 +12,7 @@
   "Fetch it as a Slurm job on the owner's word, never on the login node, after df shows the room: bash grid/run-xray-chain.sh --only kub_stonex, whose stage 1 reads the API, runs http-get with the md5 and unpacks the zip (grid/README.md).",
   "The person rule of grid/banks/kub_stonex.json is written from the unpacked folder's file naming or its <class>_patient/ folders before the bank stage runs, since 1,703 patients hold 2,570 films."
  ],
- "grid_path": null,
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/kub_stonex",
  "counts": {
   "radiographs": 2570,
   "patients": 1703,
@@ -23,15 +23,20 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; an open figshare download (32049369, one zip of 20,765,554,562 bytes), entered in grid/fetch-xray.json as kub_stonex on 2026-10-21 (issue #40); the frontal counterpart of what the registry lacks in volume",
  "route": "download",
- "status": "todo",
- "result": "",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/kub_stonex (56 GB)",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; an open figshare download (32049369, one zip of 20,765,554,562 bytes), entered in grid/fetch-xray.json as kub_stonex on 2026-10-21 (issue #40); the frontal counterpart of what the registry lacks in volume"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "held",
+   "note": "on the grid at /rs/rs_grp_oschome/go2432/data/kub_stonex, 56 GB in the status listing of 2026-10-23 02:05 UTC (symphony-template grid branch, 26f3bde), no fetch job in the listing's window; more than the 20.8 GB zip the record states, since the folder holds it unpacked; the sample report counts 9,630 PNG files; fetched by the owner's chain, not the promoter, so no manifest covers it"
   }
  ],
  "obstacles": [],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/kub_stonex/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "next": "the landing pass (#204) checks the files and their sizes"
 }
