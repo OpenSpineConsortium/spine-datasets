@@ -7,6 +7,7 @@ import hashlib
 import json
 import os
 import stat
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -205,3 +206,52 @@ class RepositoryCopy(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class GridScript(unittest.TestCase):
+    """grid/freeze.sh queues jobs through hpcworker, here a stand-in that prints what it was asked."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.home = os.path.join(self.tmp.name, "home")
+        os.makedirs(os.path.join(self.home, "code"))
+        root = Path(__file__).resolve().parent.parent
+        for name in ("tools/freeze.py", "grid/freeze.sh"):
+            Path(self.home, "code", os.path.basename(name)).write_bytes((root / name).read_bytes())
+        plan = "".join("%s\t%s\t%s\n" % (ident, os.path.join(self.tmp.name, ident), size)
+                       for ident, size in (("big", 800 * 10 ** 9), ("near", 102 * 10 ** 9), ("small", 3 * 10 ** 9),
+                                           ("unknown", "-")))
+        Path(self.home, "code", "freeze-plan.tsv").write_text(plan)
+        for ident in ("big", "near", "small", "unknown"):
+            write(self.tmp.name, ident + "/f.dcm", ident.encode())
+        self.hpcw = os.path.join(self.tmp.name, "hpcw")
+        Path(self.hpcw).write_text('echo "HPCW $*"\n')
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def script(self, *args, job=None):
+        env = dict(os.environ, FREEZE_HOME=self.home, HPCWORKER=self.hpcw, USER="someone")
+        if job:
+            env["SLURM_JOB_ID"] = job
+        return subprocess.run(["bash", os.path.join(self.home, "code", "freeze.sh")] + list(args),
+                              env=env, capture_output=True, text=True, check=True).stdout
+
+    def shares(self, out):
+        return [line.split(" run ")[1] for line in out.splitlines() if line.startswith("HPCW ")]
+
+    def test_the_pilot_is_the_set_nearest_100_gb_and_start_takes_four_jobs(self):
+        pilot = self.shares(self.script("pilot"))
+        self.assertEqual([Path(p).read_text().split("\t")[0] for p in pilot], ["near"])
+        start = self.shares(self.script("start"))
+        self.assertEqual(len(start), 4)
+        self.assertNotIn(pilot[0], start)
+        self.assertEqual(Path(pilot[0]).read_text().split("\t")[0], "near")
+
+    def test_a_job_freezes_its_share_and_start_skips_what_is_frozen(self):
+        share = self.shares(self.script("pilot"))[0]
+        self.script("run", share, job="7")
+        measured = json.loads(Path(self.home, "measured", "near.json").read_text())
+        self.assertEqual(measured["files"], 1)
+        listed = " ".join(Path(p).read_text() for p in self.shares(self.script("start")))
+        self.assertNotIn("near\t", listed)

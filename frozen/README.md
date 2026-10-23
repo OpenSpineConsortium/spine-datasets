@@ -27,4 +27,6 @@ frozen.
 
 The promoter freezes each set it installs, from the hashes it has just checked, and its record
 update brings this file with it. The sets that landed before are frozen by grid/freeze.sh, only on
-the owner's word with the number of jobs; `python3 tools/freeze.py plan` lists them.
+the owner's word with the number of jobs (given on 2026-10-23: one pilot, then four), through the
+grid gate's words freeze pilot, freeze start and freeze status; grid/freeze-plan.tsv, written by
+`python3 tools/freeze.py plan`, is the fixed list they take.
