@@ -5,7 +5,7 @@
  "what": "chest radiographs, laterals among them, and CTs of COVID-19 patients from the hospitals of the Valencian region (BIMCV COVID-19+), about 389 GB in all",
  "level_truth": "none; laterals show the thoracic spine",
  "reach": "get",
- "licence": "not recorded; read on the IEEE DataPort page after the login",
+ "licence": "the BIMCV COVID-19+ research use agreement (no sale, no redistribution, no derivative works beyond its clause 2)",
  "link": "https://ieee-dataport.org/open-access/bimcv-covid-19-large-annotated-dataset-rx-and-ct-images-covid-19-patients",
  "how_to_get": [
   "Sign in to a free IEEE account on the page and read the licence line and the file list.",
@@ -16,8 +16,8 @@
  "measured": {},
  "record": "the sweep of 2026-10-21 (this repository's issue #107)",
  "source_status": "found by the sweep of 2026-10-21; open access on IEEE DataPort (doi:10.21227/w3aw-rv39) behind a free IEEE login; tar.gz parts of about 389 GB in all, radiographs and CTs together",
- "route": "form",
- "status": "needs-owner",
+ "route": "get",
+ "status": "fetching",
  "result": "",
  "history": [
   {
@@ -34,10 +34,13 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "the owner pointed to BIMCV's research use agreement for this set in his answers; the download link BIMCV sends after its form is not yet in hand"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "fetching",
+   "note": "the owner passed on BIMCV's B2DROP mirror share on 2026-10-22, kept only in SchwingNet's grid/fetch-xray.json; SchwingNet's gate word fetch bimcv_covid19 submitted fetch job 40732922, bank and ingest 40732924 and catalog 40732926 at SchwingNet b12fe33 (SchwingNet#139), 389 GB stated, about 20 hours of transfer"
   }
  ],
- "obstacles": [
-  "the download link BIMCV sends after its form"
- ],
- "next": "the owner passes on the link BIMCV sends after its form; the set is then fetched like PadChest's share"
+ "obstacles": [],
+ "next": "the fetch job 40732922 lands the set at /rs/rs_grp_oschome/go2432/data/bimcv_covid19/raw; the record turns fetched with its checksums once the bank job 40732924 has run"
 }
