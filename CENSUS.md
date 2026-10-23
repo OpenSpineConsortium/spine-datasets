@@ -1,6 +1,6 @@
 # Census: every dataset, counted from its record
 
-Written by tools/census.py on 2026-10-23 from the 109 records under datasets/ of
+Written by tools/census.py on 2026-10-23 from the 163 records under datasets/ of
 https://github.com/OpenSpineConsortium/spine-datasets; nobody edits it by hand. Each dataset is one record; the census reads
 the records alone, never a dataset's files, and folds in only the records that are new or changed
 since the last run. The page with filters is census.html beside this file, served by the docs site.
@@ -9,14 +9,14 @@ since the last run. The page with filters is census.html beside this file, serve
 
 | | |
 |---|---|
-| Datasets with a record | 109 |
-| On the grid (shared tree and the owner's root) | 47 |
-| Size on the grid | 2.0 TB (29 of 47 sets counted) |
-| Subjects on the grid | 44,423 (32 of 47 sets counted) |
-| X-ray images on the grid | 160,879 (16 of 47 sets counted) |
-| X-ray videos and sweeps on the grid | 694 (2 of 47 sets counted) |
-| Frames inside those videos and sweeps | 376,220 (2 of 47 sets counted) |
-| CT volumes on the grid | 8,221 (16 of 47 sets counted) |
+| Datasets with a record | 163 |
+| On the grid (shared tree and the owner's root) | 101 |
+| Size on the grid | 3.9 TB (83 of 101 sets counted) |
+| Subjects on the grid | 62,843 (86 of 101 sets counted) |
+| X-ray images on the grid | 160,879 (16 of 101 sets counted) |
+| X-ray videos and sweeps on the grid | 694 (2 of 101 sets counted) |
+| Frames inside those videos and sweeps | 376,220 (2 of 101 sets counted) |
+| CT volumes on the grid | 24,959 (70 of 101 sets counted) |
 | Real spine X-ray and CT pairs on the grid | 5 sets, 1,651 subjects |
 
 | Stage | Datasets |
@@ -27,7 +27,7 @@ since the last run. The page with filters is census.html beside this file, serve
 | Granted, fetch pending | 5 |
 | Fetching | 0 |
 | On the grid | 6 |
-| Held by the owner | 41 |
+| Held by the owner | 95 |
 | Needs the owner | 10 |
 | Refused | 1 |
 | Later | 1 |
@@ -180,26 +180,78 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | VinDr-CXR (PhysioNet) | Radiographs | Asked, waiting | restricted |  | 18,000 |  |  |  |  | [#16](https://github.com/OpenSpineConsortium/spine-datasets/issues/16) |
 | VinDr-PCXR (PhysioNet) | Radiographs | Granted, fetch pending | restricted |  | 9,125 |  |  |  |  | [#17](https://github.com/OpenSpineConsortium/spine-datasets/issues/17) |
 | VinDr-SpineXR (Nguyen et al., MICCAI 2021) | Radiographs | Held by the owner | restricted |  | 10,466 |  |  |  |  |  |
+| AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images) | CT | Held by the owner | restricted | 7,835 |  |  |  | 7,649 | 570.7 GB |  |
+| AMOS22 CT, unlabelled (ids 5000-6899) and labelled | CT | Held by the owner | open | 2,200 |  |  |  | 723 | 102.6 GB |  |
+| AortaSeg-60 | CT | Held by the owner | open | 60 |  |  |  | 55 | 15.9 GB |  |
 | STOIC2021 training (AWS Open Data) | CT | Held by the owner | restricted | 2,000 |  |  |  |  | 240.0 GB | [#44](https://github.com/OpenSpineConsortium/spine-datasets/issues/44) |
+| Barts CRL (colorectal-cancer staging CT) | CT | Held by the owner | open | 220 |  |  |  | 212 | 20.3 GB |  |
 | CADS CT (unique cases) | CT | Granted, fetch pending | restricted |  |  |  |  |  |  | [#86](https://github.com/OpenSpineConsortium/spine-datasets/issues/86) |
+| CSI 2014 spine CT | CT | Held by the owner | open | 20 |  |  |  | 20 | 3.6 GB |  |
 | CT-RATE chest CT | CT | Granted, fetch pending | restricted |  |  |  |  |  |  | [#85](https://github.com/OpenSpineConsortium/spine-datasets/issues/85) |
 | CTPelvic1K | CT | Held by the owner | restricted |  |  |  |  | 172 |  |  |
 | CTSpine1K | CT | Held by the owner | restricted |  |  |  |  | 1,005 |  |  |
 | CTSpinoPelvic1K v11 (the consortium's own release) | CT | Held by the owner | restricted |  |  |  |  | 802 |  |  |
+| CURVAS 2024 | CT | Held by the owner | open | 90 |  |  |  | 70 | 29.4 GB |  |
+| CURVAS-PDACVI (MICCAI 2025) | CT | Held by the owner | open | 109 |  |  |  | 101 | 15.4 GB |  |
+| DEEP-PSMA (PSMA + FDG PET/CT, mCRPC) | CT | Held by the owner | restricted | 100 |  |  |  | 53 | 24.1 GB |  |
 | AbdomenAtlas 2.0 Mini (10,135 CT) | CT | Asked, waiting | restricted |  |  |  |  | 10,135 | 620.4 GB | [#89](https://github.com/OpenSpineConsortium/spine-datasets/issues/89) |
+| IDC `acrin_flt_breast` | CT | Held by the owner | open | 15 |  |  |  | 15 | 2.8 GB |  |
+| IDC `acrin_nsclc_fdg_pet` | CT | Held by the owner | open | 131 |  |  |  | 131 | 15.4 GB |  |
+| IDC `adrenal_acc_ki67_seg` | CT | Held by the owner | open | 29 |  |  |  | 29 | 3.5 GB |  |
+| IDC `anti_pd_1_lung` | CT | Held by the owner | open | 34 |  |  |  | 34 | 4.2 GB |  |
+| IDC `cmb_brca` | CT | Held by the owner | open | 21 |  |  |  | 21 | 2.5 GB |  |
+| IDC `cmb_crc` | CT | Held by the owner | open | 30 |  |  |  | 30 | 5.3 GB |  |
+| IDC `cmb_lca` | CT | Held by the owner | open | 75 |  |  |  | 75 | 9.8 GB |  |
+| IDC `cmb_mel` | CT | Held by the owner | open | 23 |  |  |  | 23 | 2.1 GB |  |
+| IDC `cmb_mml` | CT | Held by the owner | open | 16 |  |  |  | 16 | 2.3 GB |  |
+| IDC `cmb_ov` | CT | Held by the owner | open | 7 |  |  |  | 7 | 1.0 GB |  |
+| IDC `colorectal_liver_metastases` (Colorectal-Liver-Metastases) | CT | Held by the owner | open | 80 |  |  |  | 80 | 6.2 GB |  |
+| IDC `covid_19_ar` | CT | Held by the owner | open | 23 |  |  |  | 23 | 5.5 GB |  |
+| IDC `covid_19_ny_sbu` (COVID-19-NY-SBU) | CT | Held by the owner | open | 443 |  |  |  | 443 | 63.1 GB |  |
+| IDC `cptac_ccrcc` | CT | Held by the owner | open | 48 |  |  |  | 48 | 7.7 GB |  |
+| IDC `cptac_cm` | CT | Held by the owner | open | 12 |  |  |  | 12 | 4.1 GB |  |
 | IDC `cptac_lscc` (tier 2) | CT | Held by the owner | open | 32 |  |  |  |  | 8.3 GB | [#45](https://github.com/OpenSpineConsortium/spine-datasets/issues/45) |
 | IDC `cptac_luad` (tier 2) | CT | Held by the owner | open | 32 |  |  |  |  | 7.0 GB | [#46](https://github.com/OpenSpineConsortium/spine-datasets/issues/46) |
+| IDC `cptac_pda` | CT | Held by the owner | open | 62 |  |  |  | 62 | 9.8 GB |  |
+| IDC `cptac_sar` | CT | Held by the owner | open | 14 |  |  |  | 14 | 3.0 GB |  |
+| IDC `cptac_stad` | CT | Held by the owner | open | 19 |  |  |  | 19 | 6.9 GB |  |
+| IDC `cptac_ucec` | CT | Held by the owner | open | 66 |  |  |  | 66 | 10.3 GB |  |
+| IDC `ct_vs_pet_ventilation_imaging` | CT | Held by the owner | open | 20 |  |  |  | 20 | 1.8 GB |  |
+| IDC `ctpred_sunitinib_pannet` | CT | Held by the owner | open | 34 |  |  |  | 34 | 6.0 GB |  |
+| IDC `eay131` (EAY131 (NCI-MATCH)) | CT | Held by the owner | open | 376 |  |  |  | 376 | 36.4 GB |  |
+| IDC `hcc_tace_seg` (HCC-TACE-Seg) | CT | Held by the owner | open | 101 |  |  |  | 101 | 5.0 GB |  |
 | IDC `ldct_and_projection_data` (tier 2) | CT | Held by the owner | open | 99 |  |  |  |  | 16.5 GB | [#47](https://github.com/OpenSpineConsortium/spine-datasets/issues/47) |
 | IDC `lidc_idri` (tier 2) | CT | Downloadable now | open | 997 |  |  |  |  | 123.3 GB | [#48](https://github.com/OpenSpineConsortium/spine-datasets/issues/48) |
+| IDC `lung_pet_ct_dx` (Lung-PET-CT-Dx) | CT | Held by the owner | open | 158 |  |  |  | 158 | 29.2 GB |  |
+| IDC `mediastinal_lymph_node_seg` | CT | Held by the owner | open | 316 |  |  |  | 316 | 25.1 GB |  |
+| IDC `midrc_ricord_1a` | CT | Held by the owner | restricted | 98 |  |  |  | 98 | 6.5 GB |  |
 | IDC `midrc_ricord_1b` (tier 2) | CT | Held by the owner | restricted | 91 |  |  |  |  | 7.0 GB | [#49](https://github.com/OpenSpineConsortium/spine-datasets/issues/49) |
 | NLST, full (tier 2; 500-person pilot fetched) | CT | To ask | open | 24,713 |  |  |  |  | 2.3 TB | [#91](https://github.com/OpenSpineConsortium/spine-datasets/issues/91) |
 | IDC `nsclc_radiogenomics` (tier 2) | CT | Held by the owner | open | 188 |  |  |  |  | 28.0 GB | [#50](https://github.com/OpenSpineConsortium/spine-datasets/issues/50) |
 | IDC `nsclc_radiomics` (tier 2) | CT | Held by the owner | restricted | 415 |  |  |  |  | 25.8 GB | [#51](https://github.com/OpenSpineConsortium/spine-datasets/issues/51) |
+| IDC `pancreatic_ct_cbct_seg` | CT | Held by the owner | open | 40 |  |  |  | 40 | 2.9 GB |  |
+| IDC `pediatric_ct_seg` (Pediatric-CT-SEG) | CT | Held by the owner | open | 352 |  |  |  | 352 | 55.6 GB |  |
+| IDC `pelvic_reference_data` | CT | Held by the owner | open | 58 |  |  |  | 58 | 4.4 GB |  |
 | IDC `prostate_anatomical_edge_cases` (tier 2) | CT | Downloadable now | open | 131 |  |  |  |  | 16.6 GB | [#52](https://github.com/OpenSpineConsortium/spine-datasets/issues/52) |
+| IDC `psma_pet_ct_lesions` (PSMA-PET-CT-Lesions (autoPET III)) | CT | Held by the owner | open | 374 |  |  |  | 374 | 61.7 GB |  |
+| IDC `rider_lung_pet_ct` | CT | Held by the owner | open | 117 |  |  |  | 117 | 18.1 GB |  |
 | IDC `spinal_multiple_myeloma_seg` (tier 2) | CT | Held by the owner | open | 67 |  |  |  |  | 33.8 GB | [#53](https://github.com/OpenSpineConsortium/spine-datasets/issues/53) |
 | IDC `spine_mets_ct_seg` (tier 2) | CT | Held by the owner | open | 54 |  |  |  |  | 17.2 GB | [#54](https://github.com/OpenSpineConsortium/spine-datasets/issues/54) |
+| IDC `tcga_blca` | CT | Held by the owner | open | 79 |  |  |  | 79 | 10.0 GB |  |
+| IDC `tcga_esca` | CT | Held by the owner | open | 16 |  |  |  | 16 | 2.4 GB |  |
+| IDC `tcga_kirc` | CT | Held by the owner | open | 129 |  |  |  | 129 | 9.7 GB |  |
+| IDC `tcga_lihc` | CT | Held by the owner | open | 42 |  |  |  | 42 | 4.9 GB |  |
+| IDC `tcga_ov` | CT | Held by the owner | open | 24 |  |  |  | 24 | 2.4 GB |  |
+| IDC `tcga_stad` | CT | Held by the owner | open | 45 |  |  |  | 45 | 6.3 GB |  |
+| IDC `tcga_ucec` | CT | Held by the owner | open | 38 |  |  |  | 38 | 4.1 GB |  |
+| IDC `varepop_apollo` | CT | Held by the owner | open | 35 |  |  |  | 35 | 5.4 GB |  |
+| Kidney abnormality segmentation in thorax-abdomen CT | CT | Held by the owner | open | 215 |  |  |  | 215 | 38.4 GB |  |
 | MAGIC-CT (Zenodo) | CT | Needs the owner | restricted |  |  |  |  |  |  | [#7](https://github.com/OpenSpineConsortium/spine-datasets/issues/7) |
+| NLST, the seeded 500-person pilot | CT | Held by the owner | open | 500 |  |  |  | 500 | 45.8 GB |  |
+| PANORAMA public set (pancreas CE-CT) | CT | Held by the owner | restricted | 1,950 |  |  |  | 2,024 | 194.2 GB |  |
+| PENGWIN 2026 peripelvic fracture CT (the public cases) | CT | Held by the owner | restricted | 340 |  |  |  | 340 | 19.6 GB |  |
 | PENGWIN 2024 Task 2 synthetic X-rays | CT | Held by the owner | open |  |  |  |  | 100 |  | [#30](https://github.com/OpenSpineConsortium/spine-datasets/issues/30) |
+| QUADRA_HC total-body FDG-PET/CT, healthy controls | CT | Held by the owner | open | 48 |  |  |  | 48 | 20.2 GB |  |
 | RibFrac (MICCAI 2020) chest CT | CT | Held by the owner | restricted |  |  |  |  | 660 |  |  |
 | RSNA 2022 cervical spine fracture CT (Kaggle) | CT | Held by the owner | restricted |  |  |  |  | 2,019 | 203.3 GB |  |
 | RSNA abdominal trauma CT (RATIC) | CT | Granted, fetch pending | restricted |  |  |  |  |  |  | [#87](https://github.com/OpenSpineConsortium/spine-datasets/issues/87) |
@@ -207,9 +259,11 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | ENHANCE.PET 1.6k: whole-/total-body FDG-PET/CT, 1,683 studies (NIfTI) | CT | To ask | open |  |  |  |  |  | 286.3 GB | [#90](https://github.com/OpenSpineConsortium/spine-datasets/issues/90) |
 | Stanford AIMI INSPECT chest CT | CT | Needs the owner | restricted |  |  |  |  |  |  | [#19](https://github.com/OpenSpineConsortium/spine-datasets/issues/19) |
 | Stanford AIMI Merlin abdominal CT | CT | Needs the owner | restricted |  |  |  |  |  |  | [#18](https://github.com/OpenSpineConsortium/spine-datasets/issues/18) |
+| FDG-PET-CT-Lesions (autoPET), TCIA through NBIA | CT | Held by the owner | open | 900 |  |  |  | 900 | 250.6 GB |  |
 | TotalSegmentator datasets v2.0.1 and v3.0.0 | CT | Held by the owner | open |  |  |  |  | 1,935 |  |  |
 | VerSe 2019 and 2020 | CT | Held by the owner | open | 355 |  |  |  | 374 |  |  |
 | VerSe 2D projections with soft labels (Zenodo 8115942) | CT | Held by the owner | unknown |  |  |  |  |  |  | [#29](https://github.com/OpenSpineConsortium/spine-datasets/issues/29) |
+| WAW-TACE (HCC multiphase CT, Warsaw) | CT | Held by the owner | open | 233 |  |  |  | 228 | 47.1 GB |  |
 | LumVBCanSeg lumbar CT (185, ShengJing Hospital) | CT | On the grid | open | 185 |  |  |  |  | 10.1 GB | [#55](https://github.com/OpenSpineConsortium/spine-datasets/issues/55) |
 | MedPelvis3D pelvic CT (99, PLA General Hospital) | CT | On the grid | open | 99 |  |  |  |  | 31.4 GB | [#56](https://github.com/OpenSpineConsortium/spine-datasets/issues/56) |
 | International TMTV Benchmark, lymphoma FDG PET/CT (60) | CT | On the grid | open | 60 |  |  |  |  | 6.8 GB | [#57](https://github.com/OpenSpineConsortium/spine-datasets/issues/57) |
@@ -292,6 +346,60 @@ Tasks whose record is not written yet:
 
 ## Changes, newest first
 
+- 2026-10-23 WAW-TACE (HCC multiphase CT, Warsaw): record added
+- 2026-10-23 FDG-PET-CT-Lesions (autoPET), TCIA through NBIA: record added
+- 2026-10-23 QUADRA_HC total-body FDG-PET/CT, healthy controls: record added
+- 2026-10-23 PENGWIN 2026 peripelvic fracture CT (the public cases): record added
+- 2026-10-23 PANORAMA public set (pancreas CE-CT): record added
+- 2026-10-23 NLST, the seeded 500-person pilot: record added
+- 2026-10-23 Kidney abnormality segmentation in thorax-abdomen CT: record added
+- 2026-10-23 IDC `varepop_apollo`: record added
+- 2026-10-23 IDC `tcga_ucec`: record added
+- 2026-10-23 IDC `tcga_stad`: record added
+- 2026-10-23 IDC `tcga_ov`: record added
+- 2026-10-23 IDC `tcga_lihc`: record added
+- 2026-10-23 IDC `tcga_kirc`: record added
+- 2026-10-23 IDC `tcga_esca`: record added
+- 2026-10-23 IDC `tcga_blca`: record added
+- 2026-10-23 IDC `rider_lung_pet_ct`: record added
+- 2026-10-23 IDC `psma_pet_ct_lesions` (PSMA-PET-CT-Lesions (autoPET III)): record added
+- 2026-10-23 IDC `pelvic_reference_data`: record added
+- 2026-10-23 IDC `pediatric_ct_seg` (Pediatric-CT-SEG): record added
+- 2026-10-23 IDC `pancreatic_ct_cbct_seg`: record added
+- 2026-10-23 IDC `midrc_ricord_1a`: record added
+- 2026-10-23 IDC `mediastinal_lymph_node_seg`: record added
+- 2026-10-23 IDC `lung_pet_ct_dx` (Lung-PET-CT-Dx): record added
+- 2026-10-23 IDC `hcc_tace_seg` (HCC-TACE-Seg): record added
+- 2026-10-23 IDC `eay131` (EAY131 (NCI-MATCH)): record added
+- 2026-10-23 IDC `ctpred_sunitinib_pannet`: record added
+- 2026-10-23 IDC `ct_vs_pet_ventilation_imaging`: record added
+- 2026-10-23 IDC `cptac_ucec`: record added
+- 2026-10-23 IDC `cptac_stad`: record added
+- 2026-10-23 IDC `cptac_sar`: record added
+- 2026-10-23 IDC `cptac_pda`: record added
+- 2026-10-23 IDC `cptac_cm`: record added
+- 2026-10-23 IDC `cptac_ccrcc`: record added
+- 2026-10-23 IDC `covid_19_ny_sbu` (COVID-19-NY-SBU): record added
+- 2026-10-23 IDC `covid_19_ar`: record added
+- 2026-10-23 IDC `colorectal_liver_metastases` (Colorectal-Liver-Metastases): record added
+- 2026-10-23 IDC `cmb_ov`: record added
+- 2026-10-23 IDC `cmb_mml`: record added
+- 2026-10-23 IDC `cmb_mel`: record added
+- 2026-10-23 IDC `cmb_lca`: record added
+- 2026-10-23 IDC `cmb_crc`: record added
+- 2026-10-23 IDC `cmb_brca`: record added
+- 2026-10-23 IDC `anti_pd_1_lung`: record added
+- 2026-10-23 IDC `adrenal_acc_ki67_seg`: record added
+- 2026-10-23 IDC `acrin_nsclc_fdg_pet`: record added
+- 2026-10-23 IDC `acrin_flt_breast`: record added
+- 2026-10-23 DEEP-PSMA (PSMA + FDG PET/CT, mCRPC): record added
+- 2026-10-23 CURVAS-PDACVI (MICCAI 2025): record added
+- 2026-10-23 CURVAS 2024: record added
+- 2026-10-23 CSI 2014 spine CT: record added
+- 2026-10-23 Barts CRL (colorectal-cancer staging CT): record added
+- 2026-10-23 AortaSeg-60: record added
+- 2026-10-23 AMOS22 CT, unlabelled (ids 5000-6899) and labelled: record added
+- 2026-10-23 AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images): record added
 - 2026-10-23 VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich: grid_path none to /rs/rs_grp_oschome/go2432/data/zenodo_vsd_fullbody; stage needs-owner to held; status needs-owner to held
 - 2026-10-23 Ljubljana 2D/3D registration gold standard (PIXIUM 4600): ct_volumes 1 to 5; licence ND (no derivatives), read-only, as SchwingNet's registry records it; to confirm on the source's page to CC BY-NC-ND, as the source's page gives it (read 2026-10-23); the user guide that comes with the set says the data are used only under an agreement form between the user and the Laboratory of Imaging Technologies, and never redistributed
 - 2026-10-23 Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021): licence not recorded; to confirm on the source's page to CC BY-SA 4.0, as the source's page gives it (read 2026-10-23), which also lists a 'Contract on the use of data' and shows none of its terms
