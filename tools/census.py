@@ -509,7 +509,8 @@ def ct_gaps(rows):
             found.append((row["id"], "its masks are not surveyed: write segmentations, even one entry that says none"))
         elif row["on_grid"] and any(entry.get("origin") == "release" and mask_kind(entry) == "unknown"
                                     for entry in row["segmentations"]):
-            found.append((row["id"], "on the grid, and what masks its source ships is still to confirm on its page"))
+            found.append((row["id"], "on the grid, and what masks its source ships is not recorded yet; its entry says"
+                                     " where to look"))
     return found
 
 

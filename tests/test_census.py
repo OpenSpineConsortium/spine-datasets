@@ -447,7 +447,7 @@ class CTTest(unittest.TestCase):
         found = census.ct_gaps(self.rows())
         self.assertIn(("bare_ct", "no regions: write the body regions its CT covers into regions"), found)
         self.assertTrue(any(ident == "bare_ct" and "not surveyed" in text for ident, text in found))
-        self.assertTrue(any(ident == "second_ct" and "still to confirm" in text for ident, text in found))
+        self.assertTrue(any(ident == "second_ct" and "not recorded yet" in text for ident, text in found))
         # A set asked for, whose source ships none, lacks nothing on this page.
         self.assertFalse(any(ident in ("asked_ct", "ct_set") for ident, _ in found))
 
