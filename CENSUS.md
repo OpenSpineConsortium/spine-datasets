@@ -11,8 +11,8 @@ since the last run. The page with filters is census.html beside this file, serve
 |---|---|
 | Datasets with a record | 166 |
 | On the grid (shared tree and the owner's root) | 102 |
-| Size on the grid | 3.9 TB (83 of 102 sets counted) |
-| Frozen on the grid, every file hashed (tools/freeze.py) | 0 of 102 |
+| Size on the grid | 5.8 TB (98 of 102 sets counted) |
+| Frozen on the grid, every file hashed (tools/freeze.py) | 96 of 102 |
 | Subjects on the grid | 62,843 (86 of 102 sets counted) |
 | X-ray images on the grid | 160,879 (16 of 102 sets counted) |
 | X-ray videos and sweeps on the grid | 694 (2 of 102 sets counted) |
@@ -114,14 +114,14 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | Dataset | Kind | Stage | Licence | Subjects | X-ray images | Videos and sweeps | Their frames | CT volumes | Size | Task |
 |---|---|---|---|---|---|---|---|---|---|---|
 | Balgrist ex-vivo lumbar CT plus C-arm (Jecklin) | Fluoroscopy | Refused | unknown |  |  |  |  |  |  | [#69](https://github.com/OpenSpineConsortium/spine-datasets/issues/69) |
-| C-ArmLSpine (Zhang et al., Medical Image Analysis 2024) | Fluoroscopy | Held by the owner | open | 149 | 299 | 2 | 602 | 149 | 86.8 GB |  |
+| C-ArmLSpine (Zhang et al., Medical Image Analysis 2024) | Fluoroscopy | Held by the owner | open | 149 | 299 | 2 | 602 | 149 | 103.7 GB |  |
 | CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images | Fluoroscopy | Asked, waiting | unknown |  | 208 |  |  |  |  | [#8](https://github.com/OpenSpineConsortium/spine-datasets/issues/8) |
 | DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs | Fluoroscopy | Held by the owner | restricted | 6 | 2,659 |  |  | 19 | 116.3 GB |  |
-| Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021) | Fluoroscopy | Held by the owner | open | 1 | 116 |  |  | 1 |  |  |
+| Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021) | Fluoroscopy | Held by the owner | open | 1 | 116 |  |  | 1 | 1.1 GB |  |
 | Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024) | Fluoroscopy | Asked, waiting | restricted | 140 |  |  |  | 140 |  | [#61](https://github.com/OpenSpineConsortium/spine-datasets/issues/61) |
 | LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group) | Fluoroscopy | Refused | restricted | 202 | 459 |  |  | 202 |  | [#60](https://github.com/OpenSpineConsortium/spine-datasets/issues/60) |
-| Ljubljana 2D/3D registration gold standard (PIXIUM 4600) | Fluoroscopy | Held by the owner | restricted | 1 | 18 |  |  | 5 |  |  |
-| LUMOS (Zhejiang University) | Fluoroscopy | Held by the owner | restricted | 803 | 1,620 |  |  | 280 | 46.4 GB | [#27](https://github.com/OpenSpineConsortium/spine-datasets/issues/27) |
+| Ljubljana 2D/3D registration gold standard (PIXIUM 4600) | Fluoroscopy | Held by the owner | restricted | 1 | 18 |  |  | 5 | 306.5 MB |  |
+| LUMOS (Zhejiang University) | Fluoroscopy | Held by the owner | restricted | 803 | 1,620 |  |  | 280 | 76.4 GB | [#27](https://github.com/OpenSpineConsortium/spine-datasets/issues/27) |
 | NIT Warangal and NIMS Hyderabad intraoperative C-arm sets (2D-3D-sci-registration) | Fluoroscopy | Asked, waiting | restricted | 9 | 49 |  |  | 9 |  | [#64](https://github.com/OpenSpineConsortium/spine-datasets/issues/64) |
 | PUMCH stitching series (Liu et al., Eur Spine J 2026) | Fluoroscopy | Asked, waiting | restricted |  |  |  |  |  |  | [#63](https://github.com/OpenSpineConsortium/spine-datasets/issues/63) |
 | SX-Stitch intraoperative C-arm series (Li 2024, PUMCH) | Fluoroscopy | Asked, waiting | unknown |  |  |  |  |  |  | [#62](https://github.com/OpenSpineConsortium/spine-datasets/issues/62) |
@@ -131,11 +131,11 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | Bournemouth lumbar quantitative fluoroscopy (Breen 2021) | Fluoroscopy video | Asked, waiting | unknown | 127 |  |  |  |  |  | [#71](https://github.com/OpenSpineConsortium/spine-datasets/issues/71) |
 | CADICA invasive coronary angiography sequences (Mendeley p9bpx9ctcv) | Fluoroscopy video | On the grid | open | 42 |  |  |  |  | 3.1 GB | [#109](https://github.com/OpenSpineConsortium/spine-datasets/issues/109) |
 | CAMS-Knee (ETH Zurich and Charite Berlin, J Biomech 2017) | Fluoroscopy video | Needs the owner | restricted | 6 |  |  |  |  |  |  |
-| CathAction (Jianu et al. 2024, AIRVLab) | Fluoroscopy video | Held by the owner | restricted |  |  |  |  |  |  | [#39](https://github.com/OpenSpineConsortium/spine-datasets/issues/39) |
+| CathAction (Jianu et al. 2024, AIRVLab) | Fluoroscopy video | Held by the owner | restricted |  |  |  |  |  | 56.2 GB | [#39](https://github.com/OpenSpineConsortium/spine-datasets/issues/39) |
 | Coronary angiography sets (CADICA, ARCADE, XCAD, AngioCAD) | Fluoroscopy video | Downloadable now | unknown |  |  |  |  |  |  | [#38](https://github.com/OpenSpineConsortium/spine-datasets/issues/38) |
 | DARADIA vertebroplasty video (Kolkata) | Fluoroscopy video | Asked, waiting | unknown |  |  |  |  |  |  | [#83](https://github.com/OpenSpineConsortium/spine-datasets/issues/83) |
 | DMX Imaging digital motion X-ray | Fluoroscopy video | Asked, waiting | unknown |  |  |  |  |  |  | [#77](https://github.com/OpenSpineConsortium/spine-datasets/issues/77) |
-| DysphagiaBank (TalkBank), UNM corpus | Fluoroscopy video | Held by the owner | restricted |  |  |  |  |  | 19.0 GB | [#20](https://github.com/OpenSpineConsortium/spine-datasets/issues/20) |
+| DysphagiaBank (TalkBank), UNM corpus | Fluoroscopy video | Held by the owner | restricted |  |  |  |  |  | 19.6 GB | [#20](https://github.com/OpenSpineConsortium/spine-datasets/issues/20) |
 | ThePainSource (Faubel) fluoroscopy clips | Fluoroscopy video | Asked, waiting | unknown |  |  |  |  |  |  | [#82](https://github.com/OpenSpineConsortium/spine-datasets/issues/82) |
 | Guide3D (ACCV 2024, AIRVLab) | Fluoroscopy video | Needs the owner | restricted |  |  |  |  |  |  | [#40](https://github.com/OpenSpineConsortium/spine-datasets/issues/40) |
 | Jefferson Neurosurgery DRG stimulation video (Hines 2020) | Fluoroscopy video | Asked, waiting | restricted |  |  | 1 |  |  |  | [#80](https://github.com/OpenSpineConsortium/spine-datasets/issues/80) |
@@ -154,26 +154,26 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | COBRA2026 public cases (Elekta and Varian) | CBCT projections | Held by the owner | restricted | 692 |  | 692 | 375,618 | 692 | 808.6 GB |  |
 | COBRA2026 embargoed cases | CBCT projections | Later | restricted | 175 |  |  |  |  |  | [#92](https://github.com/OpenSpineConsortium/spine-datasets/issues/92) |
 | IPCAI 2025 paired X-ray and CT set of the distal femur (Flepp 2025, Zenodo 15753063) | CBCT projections | Held by the owner | restricted | 5 | 50 |  |  | 5 | 6.7 GB | [#34](https://github.com/OpenSpineConsortium/spine-datasets/issues/34) |
-| Aariz cephalometric benchmark (Khalid, Fraz 2023) and the ISBI 2015 cephalograms | Radiographs | Held by the owner | open |  | 1,000 |  |  |  | 2.1 GB | [#25](https://github.com/OpenSpineConsortium/spine-datasets/issues/25) |
+| Aariz cephalometric benchmark (Khalid, Fraz 2023) and the ISBI 2015 cephalograms | Radiographs | Held by the owner | open |  | 1,000 |  |  |  | 6.3 GB | [#25](https://github.com/OpenSpineConsortium/spine-datasets/issues/25) |
 | AASCE 2019 / BoostNet AP whole-spine films | Radiographs | Held by the owner | restricted |  | 707 |  |  |  |  |  |
 | BIMCV COVID-19+ chest films (IEEE DataPort) | Radiographs | Needs the owner | unknown |  |  |  |  |  |  | [#111](https://github.com/OpenSpineConsortium/spine-datasets/issues/111) |
 | BRAX Brazilian chest films (PhysioNet) | Radiographs | Needs the owner | restricted |  | 40,967 |  |  |  |  | [#110](https://github.com/OpenSpineConsortium/spine-datasets/issues/110) |
-| BUU-LSPINE (Klinwichit et al., Applied Sciences 2023) | Radiographs | Held by the owner | restricted | 3,600 | 7,203 |  |  |  |  |  |
+| BUU-LSPINE (Klinwichit et al., Applied Sciences 2023) | Radiographs | Held by the owner | restricted | 3,600 | 7,203 |  |  |  | 35.2 GB |  |
 | CheXpert and CheXpert Plus (Stanford AIMI) | Radiographs | To ask | restricted | 65,240 | 224,316 |  |  |  |  | [#13](https://github.com/OpenSpineConsortium/spine-datasets/issues/13) |
-| CSXA, the Cervical Spine X-ray Atlas V3.0 (Ran et al., Scientific Data 2024) | Radiographs | Held by the owner | open |  | 4,963 |  |  |  |  |  |
+| CSXA, the Cervical Spine X-ray Atlas V3.0 (Ran et al., Scientific Data 2024) | Radiographs | Held by the owner | open |  | 4,963 |  |  |  | 3.7 GB |  |
 | FracAtlas (Abedeen 2023, Scientific Data) | Radiographs | Downloadable now | open |  | 4,083 |  |  |  |  | [#36](https://github.com/OpenSpineConsortium/spine-datasets/issues/36) |
 | Fraiwan spine X-ray set (Mendeley xkt857dsxk) | Radiographs | On the grid | open | 338 |  |  |  |  | 85.6 MB | [#31](https://github.com/OpenSpineConsortium/spine-datasets/issues/31) |
 | Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity) | Radiographs | To ask | unknown |  |  |  |  |  |  |  |
 | IEEE DataPort lateral full-spine X-ray dataset (236 films) | Radiographs | Needs the owner | unknown | 236 | 236 |  |  |  | 1.3 GB |  |
 | Kaggle bone fracture multi-region X-ray data (bmadushanirodrigo) | Radiographs | To ask | open |  | 10,580 |  |  |  | 481.0 MB | [#24](https://github.com/OpenSpineConsortium/spine-datasets/issues/24) |
 | Kaggle scoliosis YOLOv5 annotated spine X-ray set (salmankey) | Radiographs | Needs the owner | open |  |  |  |  |  |  | [#23](https://github.com/OpenSpineConsortium/spine-datasets/issues/23) |
-| KUB-StoneX (Daffodil International University HIRL) | Radiographs | Held by the owner | open | 1,703 | 2,570 |  |  |  | 20.8 GB | [#26](https://github.com/OpenSpineConsortium/spine-datasets/issues/26) |
+| KUB-StoneX (Daffodil International University HIRL) | Radiographs | Held by the owner | open | 1,703 | 2,570 |  |  |  | 55.3 GB | [#26](https://github.com/OpenSpineConsortium/spine-datasets/issues/26) |
 | Mendeley DDH hip sets (jf3pv98m9g and 4gvcb6gmh2) | Radiographs | Downloadable now | open |  |  |  |  |  |  | [#33](https://github.com/OpenSpineConsortium/spine-datasets/issues/33) |
 | MIMIC-CXR and MIMIC-CXR-JPG (PhysioNet) | Radiographs | Asked, waiting | restricted | 65,379 | 377,110 |  |  |  |  | [#15](https://github.com/OpenSpineConsortium/spine-datasets/issues/15) |
 | MrOS lateral spine radiographs (Osteoporotic Fractures in Men) | Radiographs | To ask | restricted | 5,994 |  |  |  |  |  | [#9](https://github.com/OpenSpineConsortium/spine-datasets/issues/9) |
-| NHANES II spinal films with landmarks (Mo, Papiez, Chen et al., Zenodo) | Radiographs | Held by the owner | open | 364 | 543 |  |  |  |  |  |
-| NHANES II cervical and lumbar spine films (NCHS, 1976 to 1980) | Radiographs | Held by the owner | open |  | 16,531 |  |  |  |  |  |
-| NIH ChestX-ray14 and the RSNA pneumonia subset | Radiographs | Held by the owner | unknown | 30,805 | 112,120 |  |  |  |  | [#37](https://github.com/OpenSpineConsortium/spine-datasets/issues/37) |
+| NHANES II spinal films with landmarks (Mo, Papiez, Chen et al., Zenodo) | Radiographs | Held by the owner | open | 364 | 543 |  |  |  | 3.3 GB |  |
+| NHANES II cervical and lumbar spine films (NCHS, 1976 to 1980) | Radiographs | Held by the owner | open |  | 16,531 |  |  |  | 138.4 GB |  |
+| NIH ChestX-ray14 and the RSNA pneumonia subset | Radiographs | Held by the owner | unknown | 30,805 | 112,120 |  |  |  | 45.1 GB | [#37](https://github.com/OpenSpineConsortium/spine-datasets/issues/37) |
 | Open-i Indiana chest collection | Radiographs | Needs the owner | restricted |  | 7,470 |  |  |  |  | [#35](https://github.com/OpenSpineConsortium/spine-datasets/issues/35) |
 | PadChest (BIMCV, Alicante) | Radiographs | To ask | restricted | 67,625 | 160,868 |  |  |  |  | [#12](https://github.com/OpenSpineConsortium/spine-datasets/issues/12) |
 | ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025) | Radiographs | To ask | restricted | 109,487 |  |  |  |  |  | [#11](https://github.com/OpenSpineConsortium/spine-datasets/issues/11) |
@@ -184,99 +184,99 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | VertXNet extra labels for NHANES II (Mo, Papiez, Chen 2023) | Radiographs | Downloadable now | unknown |  |  |  |  |  |  | [#28](https://github.com/OpenSpineConsortium/spine-datasets/issues/28) |
 | VinDr-CXR (PhysioNet) | Radiographs | Asked, waiting | restricted |  | 18,000 |  |  |  |  | [#16](https://github.com/OpenSpineConsortium/spine-datasets/issues/16) |
 | VinDr-PCXR (PhysioNet) | Radiographs | Granted, fetch pending | restricted |  | 9,125 |  |  |  |  | [#17](https://github.com/OpenSpineConsortium/spine-datasets/issues/17) |
-| VinDr-SpineXR (Nguyen et al., MICCAI 2021) | Radiographs | Held by the owner | restricted |  | 10,466 |  |  |  |  |  |
-| AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images) | CT | Held by the owner | restricted | 7,835 |  |  |  | 7,649 | 570.7 GB |  |
+| VinDr-SpineXR (Nguyen et al., MICCAI 2021) | Radiographs | Held by the owner | restricted |  | 10,466 |  |  |  | 114.7 GB |  |
+| AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images) | CT | Held by the owner | restricted | 7,835 |  |  |  | 7,649 | 570.6 GB |  |
 | AMOS22 CT, unlabelled (ids 5000-6899) and labelled | CT | Held by the owner | open | 2,200 |  |  |  | 723 | 102.6 GB |  |
 | AortaSeg-60 | CT | Held by the owner | open | 60 |  |  |  | 55 | 15.9 GB |  |
-| STOIC2021 training (AWS Open Data) | CT | Held by the owner | restricted | 2,000 |  |  |  |  | 240.0 GB | [#44](https://github.com/OpenSpineConsortium/spine-datasets/issues/44) |
+| STOIC2021 training (AWS Open Data) | CT | Held by the owner | restricted | 2,000 |  |  |  |  | 264.3 GB | [#44](https://github.com/OpenSpineConsortium/spine-datasets/issues/44) |
 | Barts CRL (colorectal-cancer staging CT) | CT | Held by the owner | open | 220 |  |  |  | 212 | 20.3 GB |  |
 | CADS CT (unique cases) | CT | Granted, fetch pending | restricted |  |  |  |  |  |  | [#86](https://github.com/OpenSpineConsortium/spine-datasets/issues/86) |
-| CSI 2014 spine CT | CT | Held by the owner | open | 20 |  |  |  | 20 | 3.6 GB |  |
+| CSI 2014 spine CT | CT | Held by the owner | open | 20 |  |  |  | 20 | 6.6 GB |  |
 | CT-RATE chest CT | CT | Granted, fetch pending | restricted |  |  |  |  |  |  | [#85](https://github.com/OpenSpineConsortium/spine-datasets/issues/85) |
 | CTPelvic1K | CT | Held by the owner | restricted |  |  |  |  | 172 |  |  |
-| CTSpine1K | CT | Held by the owner | restricted |  |  |  |  | 1,005 |  |  |
-| CTSpinoPelvic1K v11 (the consortium's own release) | CT | Held by the owner | restricted |  |  |  |  | 802 |  |  |
-| CURVAS 2024 | CT | Held by the owner | open | 90 |  |  |  | 70 | 29.4 GB |  |
-| CURVAS-PDACVI (MICCAI 2025) | CT | Held by the owner | open | 109 |  |  |  | 101 | 15.4 GB |  |
-| DEEP-PSMA (PSMA + FDG PET/CT, mCRPC) | CT | Held by the owner | restricted | 100 |  |  |  | 53 | 24.1 GB |  |
+| CTSpine1K | CT | Held by the owner | restricted |  |  |  |  | 1,005 | 162.4 GB |  |
+| CTSpinoPelvic1K v11 (the consortium's own release) | CT | Held by the owner | restricted |  |  |  |  | 802 | 202.7 GB |  |
+| CURVAS 2024 | CT | Held by the owner | open | 90 |  |  |  | 70 | 30.0 GB |  |
+| CURVAS-PDACVI (MICCAI 2025) | CT | Held by the owner | open | 109 |  |  |  | 101 | 16.9 GB |  |
+| DEEP-PSMA (PSMA + FDG PET/CT, mCRPC) | CT | Held by the owner | restricted | 100 |  |  |  | 53 | 24.3 GB |  |
 | AbdomenAtlas 2.0 Mini (10,135 CT) | CT | Asked, waiting | restricted |  |  |  |  | 10,135 | 620.4 GB | [#89](https://github.com/OpenSpineConsortium/spine-datasets/issues/89) |
 | IDC `acrin_flt_breast` | CT | Held by the owner | open | 15 |  |  |  | 15 | 2.8 GB |  |
-| IDC `acrin_nsclc_fdg_pet` | CT | Held by the owner | open | 131 |  |  |  | 131 | 15.4 GB |  |
-| IDC `adrenal_acc_ki67_seg` | CT | Held by the owner | open | 29 |  |  |  | 29 | 3.5 GB |  |
-| IDC `anti_pd_1_lung` | CT | Held by the owner | open | 34 |  |  |  | 34 | 4.2 GB |  |
-| IDC `cmb_brca` | CT | Held by the owner | open | 21 |  |  |  | 21 | 2.5 GB |  |
-| IDC `cmb_crc` | CT | Held by the owner | open | 30 |  |  |  | 30 | 5.3 GB |  |
-| IDC `cmb_lca` | CT | Held by the owner | open | 75 |  |  |  | 75 | 9.8 GB |  |
-| IDC `cmb_mel` | CT | Held by the owner | open | 23 |  |  |  | 23 | 2.1 GB |  |
+| IDC `acrin_nsclc_fdg_pet` | CT | Held by the owner | open | 131 |  |  |  | 131 | 15.8 GB |  |
+| IDC `adrenal_acc_ki67_seg` | CT | Held by the owner | open | 29 |  |  |  | 29 | 3.6 GB |  |
+| IDC `anti_pd_1_lung` | CT | Held by the owner | open | 34 |  |  |  | 34 | 4.3 GB |  |
+| IDC `cmb_brca` | CT | Held by the owner | open | 21 |  |  |  | 21 | 2.6 GB |  |
+| IDC `cmb_crc` | CT | Held by the owner | open | 30 |  |  |  | 30 | 5.4 GB |  |
+| IDC `cmb_lca` | CT | Held by the owner | open | 75 |  |  |  | 75 | 10.0 GB |  |
+| IDC `cmb_mel` | CT | Held by the owner | open | 23 |  |  |  | 23 | 2.2 GB |  |
 | IDC `cmb_mml` | CT | Held by the owner | open | 16 |  |  |  | 16 | 2.3 GB |  |
 | IDC `cmb_ov` | CT | Held by the owner | open | 7 |  |  |  | 7 | 1.0 GB |  |
-| IDC `colorectal_liver_metastases` (Colorectal-Liver-Metastases) | CT | Held by the owner | open | 80 |  |  |  | 80 | 6.2 GB |  |
-| IDC `covid_19_ar` | CT | Held by the owner | open | 23 |  |  |  | 23 | 5.5 GB |  |
-| IDC `covid_19_ny_sbu` (COVID-19-NY-SBU) | CT | Held by the owner | open | 443 |  |  |  | 443 | 63.1 GB |  |
-| IDC `cptac_ccrcc` | CT | Held by the owner | open | 48 |  |  |  | 48 | 7.7 GB |  |
-| IDC `cptac_cm` | CT | Held by the owner | open | 12 |  |  |  | 12 | 4.1 GB |  |
-| IDC `cptac_lscc` (tier 2) | CT | Held by the owner | open | 32 |  |  |  |  | 8.3 GB | [#45](https://github.com/OpenSpineConsortium/spine-datasets/issues/45) |
-| IDC `cptac_luad` (tier 2) | CT | Held by the owner | open | 32 |  |  |  |  | 7.0 GB | [#46](https://github.com/OpenSpineConsortium/spine-datasets/issues/46) |
-| IDC `cptac_pda` | CT | Held by the owner | open | 62 |  |  |  | 62 | 9.8 GB |  |
-| IDC `cptac_sar` | CT | Held by the owner | open | 14 |  |  |  | 14 | 3.0 GB |  |
-| IDC `cptac_stad` | CT | Held by the owner | open | 19 |  |  |  | 19 | 6.9 GB |  |
-| IDC `cptac_ucec` | CT | Held by the owner | open | 66 |  |  |  | 66 | 10.3 GB |  |
+| IDC `colorectal_liver_metastases` (Colorectal-Liver-Metastases) | CT | Held by the owner | open | 80 |  |  |  | 80 | 6.3 GB |  |
+| IDC `covid_19_ar` | CT | Held by the owner | open | 23 |  |  |  | 23 | 5.7 GB |  |
+| IDC `covid_19_ny_sbu` (COVID-19-NY-SBU) | CT | Held by the owner | open | 443 |  |  |  | 443 | 64.7 GB |  |
+| IDC `cptac_ccrcc` | CT | Held by the owner | open | 48 |  |  |  | 48 | 7.9 GB |  |
+| IDC `cptac_cm` | CT | Held by the owner | open | 12 |  |  |  | 12 | 4.2 GB |  |
+| IDC `cptac_lscc` (tier 2) | CT | Held by the owner | open | 32 |  |  |  |  | 29.5 GB | [#45](https://github.com/OpenSpineConsortium/spine-datasets/issues/45) |
+| IDC `cptac_luad` (tier 2) | CT | Held by the owner | open | 32 |  |  |  |  | 38.9 GB | [#46](https://github.com/OpenSpineConsortium/spine-datasets/issues/46) |
+| IDC `cptac_pda` | CT | Held by the owner | open | 62 |  |  |  | 62 | 10.1 GB |  |
+| IDC `cptac_sar` | CT | Held by the owner | open | 14 |  |  |  | 14 | 3.1 GB |  |
+| IDC `cptac_stad` | CT | Held by the owner | open | 19 |  |  |  | 19 | 7.1 GB |  |
+| IDC `cptac_ucec` | CT | Held by the owner | open | 66 |  |  |  | 66 | 10.5 GB |  |
 | IDC `ct_vs_pet_ventilation_imaging` | CT | Held by the owner | open | 20 |  |  |  | 20 | 1.8 GB |  |
-| IDC `ctpred_sunitinib_pannet` | CT | Held by the owner | open | 34 |  |  |  | 34 | 6.0 GB |  |
-| IDC `eay131` (EAY131 (NCI-MATCH)) | CT | Held by the owner | open | 376 |  |  |  | 376 | 36.4 GB |  |
-| IDC `hcc_tace_seg` (HCC-TACE-Seg) | CT | Held by the owner | open | 101 |  |  |  | 101 | 5.0 GB |  |
+| IDC `ctpred_sunitinib_pannet` | CT | Held by the owner | open | 34 |  |  |  | 34 | 6.2 GB |  |
+| IDC `eay131` (EAY131 (NCI-MATCH)) | CT | Held by the owner | open | 376 |  |  |  | 376 | 37.2 GB |  |
+| IDC `hcc_tace_seg` (HCC-TACE-Seg) | CT | Held by the owner | open | 101 |  |  |  | 101 | 5.1 GB |  |
 | IDC `ldct_and_projection_data` (tier 2) | CT | Held by the owner | open | 99 |  |  |  |  | 16.5 GB | [#47](https://github.com/OpenSpineConsortium/spine-datasets/issues/47) |
 | IDC `lidc_idri` (tier 2) | CT | Downloadable now | open | 997 |  |  |  |  | 123.3 GB | [#48](https://github.com/OpenSpineConsortium/spine-datasets/issues/48) |
-| IDC `lung_pet_ct_dx` (Lung-PET-CT-Dx) | CT | Held by the owner | open | 158 |  |  |  | 158 | 29.2 GB |  |
-| IDC `mediastinal_lymph_node_seg` | CT | Held by the owner | open | 316 |  |  |  | 316 | 25.1 GB |  |
-| IDC `midrc_ricord_1a` | CT | Held by the owner | restricted | 98 |  |  |  | 98 | 6.5 GB |  |
-| IDC `midrc_ricord_1b` (tier 2) | CT | Held by the owner | restricted | 91 |  |  |  |  | 7.0 GB | [#49](https://github.com/OpenSpineConsortium/spine-datasets/issues/49) |
+| IDC `lung_pet_ct_dx` (Lung-PET-CT-Dx) | CT | Held by the owner | open | 158 |  |  |  | 158 | 29.9 GB |  |
+| IDC `mediastinal_lymph_node_seg` | CT | Held by the owner | open | 316 |  |  |  | 316 | 25.7 GB |  |
+| IDC `midrc_ricord_1a` | CT | Held by the owner | restricted | 98 |  |  |  | 98 | 6.7 GB |  |
+| IDC `midrc_ricord_1b` (tier 2) | CT | Held by the owner | restricted | 91 |  |  |  |  | 8.7 GB | [#49](https://github.com/OpenSpineConsortium/spine-datasets/issues/49) |
 | NLST, full (tier 2; 500-person pilot fetched) | CT | To ask | open | 24,713 |  |  |  |  | 2.3 TB | [#91](https://github.com/OpenSpineConsortium/spine-datasets/issues/91) |
-| IDC `nsclc_radiogenomics` (tier 2) | CT | Held by the owner | open | 188 |  |  |  |  | 28.0 GB | [#50](https://github.com/OpenSpineConsortium/spine-datasets/issues/50) |
-| IDC `nsclc_radiomics` (tier 2) | CT | Held by the owner | restricted | 415 |  |  |  |  | 25.8 GB | [#51](https://github.com/OpenSpineConsortium/spine-datasets/issues/51) |
-| IDC `pancreatic_ct_cbct_seg` | CT | Held by the owner | open | 40 |  |  |  | 40 | 2.9 GB |  |
-| IDC `pediatric_ct_seg` (Pediatric-CT-SEG) | CT | Held by the owner | open | 352 |  |  |  | 352 | 55.6 GB |  |
-| IDC `pelvic_reference_data` | CT | Held by the owner | open | 58 |  |  |  | 58 | 4.4 GB |  |
+| IDC `nsclc_radiogenomics` (tier 2) | CT | Held by the owner | open | 188 |  |  |  |  | 90.9 GB | [#50](https://github.com/OpenSpineConsortium/spine-datasets/issues/50) |
+| IDC `nsclc_radiomics` (tier 2) | CT | Held by the owner | restricted | 415 |  |  |  |  | 27.0 GB | [#51](https://github.com/OpenSpineConsortium/spine-datasets/issues/51) |
+| IDC `pancreatic_ct_cbct_seg` | CT | Held by the owner | open | 40 |  |  |  | 40 | 3.0 GB |  |
+| IDC `pediatric_ct_seg` (Pediatric-CT-SEG) | CT | Held by the owner | open | 352 |  |  |  | 352 | 56.9 GB |  |
+| IDC `pelvic_reference_data` | CT | Held by the owner | open | 58 |  |  |  | 58 | 4.5 GB |  |
 | IDC `prostate_anatomical_edge_cases` (tier 2) | CT | Downloadable now | open | 131 |  |  |  |  | 16.6 GB | [#52](https://github.com/OpenSpineConsortium/spine-datasets/issues/52) |
-| IDC `psma_pet_ct_lesions` (PSMA-PET-CT-Lesions (autoPET III)) | CT | Held by the owner | open | 374 |  |  |  | 374 | 61.7 GB |  |
-| IDC `rider_lung_pet_ct` | CT | Held by the owner | open | 117 |  |  |  | 117 | 18.1 GB |  |
-| IDC `spinal_multiple_myeloma_seg` (tier 2) | CT | Held by the owner | open | 67 |  |  |  |  | 33.8 GB | [#53](https://github.com/OpenSpineConsortium/spine-datasets/issues/53) |
-| IDC `spine_mets_ct_seg` (tier 2) | CT | Held by the owner | open | 54 |  |  |  |  | 17.2 GB | [#54](https://github.com/OpenSpineConsortium/spine-datasets/issues/54) |
-| IDC `tcga_blca` | CT | Held by the owner | open | 79 |  |  |  | 79 | 10.0 GB |  |
-| IDC `tcga_esca` | CT | Held by the owner | open | 16 |  |  |  | 16 | 2.4 GB |  |
-| IDC `tcga_kirc` | CT | Held by the owner | open | 129 |  |  |  | 129 | 9.7 GB |  |
-| IDC `tcga_lihc` | CT | Held by the owner | open | 42 |  |  |  | 42 | 4.9 GB |  |
-| IDC `tcga_ov` | CT | Held by the owner | open | 24 |  |  |  | 24 | 2.4 GB |  |
-| IDC `tcga_stad` | CT | Held by the owner | open | 45 |  |  |  | 45 | 6.3 GB |  |
-| IDC `tcga_ucec` | CT | Held by the owner | open | 38 |  |  |  | 38 | 4.1 GB |  |
-| IDC `varepop_apollo` | CT | Held by the owner | open | 35 |  |  |  | 35 | 5.4 GB |  |
-| Kidney abnormality segmentation in thorax-abdomen CT | CT | Held by the owner | open | 215 |  |  |  | 215 | 38.4 GB |  |
+| IDC `psma_pet_ct_lesions` (PSMA-PET-CT-Lesions (autoPET III)) | CT | Held by the owner | open | 374 |  |  |  | 374 | 63.1 GB |  |
+| IDC `rider_lung_pet_ct` | CT | Held by the owner | open | 117 |  |  |  | 117 | 18.5 GB |  |
+| IDC `spinal_multiple_myeloma_seg` (tier 2) | CT | Held by the owner | open | 67 |  |  |  |  | 297.8 GB | [#53](https://github.com/OpenSpineConsortium/spine-datasets/issues/53) |
+| IDC `spine_mets_ct_seg` (tier 2) | CT | Held by the owner | open | 54 |  |  |  |  | 18.7 GB | [#54](https://github.com/OpenSpineConsortium/spine-datasets/issues/54) |
+| IDC `tcga_blca` | CT | Held by the owner | open | 79 |  |  |  | 79 | 10.3 GB |  |
+| IDC `tcga_esca` | CT | Held by the owner | open | 16 |  |  |  | 16 | 2.5 GB |  |
+| IDC `tcga_kirc` | CT | Held by the owner | open | 129 |  |  |  | 129 | 10.0 GB |  |
+| IDC `tcga_lihc` | CT | Held by the owner | open | 42 |  |  |  | 42 | 5.0 GB |  |
+| IDC `tcga_ov` | CT | Held by the owner | open | 24 |  |  |  | 24 | 2.5 GB |  |
+| IDC `tcga_stad` | CT | Held by the owner | open | 45 |  |  |  | 45 | 6.4 GB |  |
+| IDC `tcga_ucec` | CT | Held by the owner | open | 38 |  |  |  | 38 | 4.2 GB |  |
+| IDC `varepop_apollo` | CT | Held by the owner | open | 35 |  |  |  | 35 | 5.5 GB |  |
+| Kidney abnormality segmentation in thorax-abdomen CT | CT | Held by the owner | open | 215 |  |  |  | 215 | 75.9 GB |  |
 | MAGIC-CT (Zenodo) | CT | Needs the owner | restricted |  |  |  |  |  |  | [#7](https://github.com/OpenSpineConsortium/spine-datasets/issues/7) |
-| NLST, the seeded 500-person pilot | CT | Held by the owner | open | 500 |  |  |  | 500 | 45.8 GB |  |
-| PANORAMA public set (pancreas CE-CT) | CT | Held by the owner | restricted | 1,950 |  |  |  | 2,024 | 194.2 GB |  |
-| PENGWIN 2026 peripelvic fracture CT (the public cases) | CT | Held by the owner | restricted | 340 |  |  |  | 340 | 19.6 GB |  |
-| PENGWIN 2024 Task 2 synthetic X-rays | CT | Held by the owner | open |  |  |  |  | 100 |  | [#30](https://github.com/OpenSpineConsortium/spine-datasets/issues/30) |
-| QUADRA_HC total-body FDG-PET/CT, healthy controls | CT | Held by the owner | open | 48 |  |  |  | 48 | 20.2 GB |  |
-| RibFrac (MICCAI 2020) chest CT | CT | Held by the owner | restricted |  |  |  |  | 660 |  |  |
+| NLST, the seeded 500-person pilot | CT | Held by the owner | open | 500 |  |  |  | 500 | 73.5 GB |  |
+| PANORAMA public set (pancreas CE-CT) | CT | Held by the owner | restricted | 1,950 |  |  |  | 2,024 | 194.4 GB |  |
+| PENGWIN 2026 peripelvic fracture CT (the public cases) | CT | Held by the owner | restricted | 340 |  |  |  | 340 | 83.5 GB |  |
+| PENGWIN 2024 Task 2 synthetic X-rays | CT | Held by the owner | open |  |  |  |  | 100 | 35.0 GB | [#30](https://github.com/OpenSpineConsortium/spine-datasets/issues/30) |
+| QUADRA_HC total-body FDG-PET/CT, healthy controls | CT | Held by the owner | open | 48 |  |  |  | 48 | 20.4 GB |  |
+| RibFrac (MICCAI 2020) chest CT | CT | Held by the owner | restricted |  |  |  |  | 660 | 156.9 GB |  |
 | RSNA 2022 cervical spine fracture CT (Kaggle) | CT | Held by the owner | restricted |  |  |  |  | 2,019 | 203.3 GB |  |
 | RSNA abdominal trauma CT (RATIC) | CT | Granted, fetch pending | restricted |  |  |  |  |  |  | [#87](https://github.com/OpenSpineConsortium/spine-datasets/issues/87) |
 | RSNA pulmonary embolism CT (RSPECT) | CT | Held by the owner | restricted |  |  |  |  |  |  | [#88](https://github.com/OpenSpineConsortium/spine-datasets/issues/88) |
 | ENHANCE.PET 1.6k: whole-/total-body FDG-PET/CT, 1,683 studies (NIfTI) | CT | To ask | open |  |  |  |  |  | 286.3 GB | [#90](https://github.com/OpenSpineConsortium/spine-datasets/issues/90) |
 | Stanford AIMI INSPECT chest CT | CT | Needs the owner | restricted |  |  |  |  |  |  | [#19](https://github.com/OpenSpineConsortium/spine-datasets/issues/19) |
 | Stanford AIMI Merlin abdominal CT | CT | Needs the owner | restricted |  |  |  |  |  |  | [#18](https://github.com/OpenSpineConsortium/spine-datasets/issues/18) |
-| FDG-PET-CT-Lesions (autoPET), TCIA through NBIA | CT | Held by the owner | open | 900 |  |  |  | 900 | 250.6 GB |  |
+| FDG-PET-CT-Lesions (autoPET), TCIA through NBIA | CT | Held by the owner | open | 900 |  |  |  | 900 | 393.9 GB |  |
 | TotalSegmentator datasets v2.0.1 and v3.0.0 | CT | Held by the owner | open |  |  |  |  | 1,935 |  |  |
-| VerSe 2019 and 2020 | CT | Held by the owner | open | 355 |  |  |  | 374 |  |  |
-| VerSe 2D projections with soft labels (Zenodo 8115942) | CT | Held by the owner | unknown |  |  |  |  |  |  | [#29](https://github.com/OpenSpineConsortium/spine-datasets/issues/29) |
-| WAW-TACE (HCC multiphase CT, Warsaw) | CT | Held by the owner | open | 233 |  |  |  | 228 | 47.1 GB |  |
+| VerSe 2019 and 2020 | CT | Held by the owner | open | 355 |  |  |  | 374 | 52.2 GB |  |
+| VerSe 2D projections with soft labels (Zenodo 8115942) | CT | Held by the owner | unknown |  |  |  |  |  | 4.4 GB | [#29](https://github.com/OpenSpineConsortium/spine-datasets/issues/29) |
+| WAW-TACE (HCC multiphase CT, Warsaw) | CT | Held by the owner | open | 233 |  |  |  | 228 | 47.2 GB |  |
 | LumVBCanSeg lumbar CT (185, ShengJing Hospital) | CT | On the grid | open | 185 |  |  |  |  | 10.1 GB | [#55](https://github.com/OpenSpineConsortium/spine-datasets/issues/55) |
 | MedPelvis3D pelvic CT (99, PLA General Hospital) | CT | On the grid | open | 99 |  |  |  |  | 31.4 GB | [#56](https://github.com/OpenSpineConsortium/spine-datasets/issues/56) |
 | International TMTV Benchmark, lymphoma FDG PET/CT (60) | CT | On the grid | open | 60 |  |  |  |  | 6.8 GB | [#57](https://github.com/OpenSpineConsortium/spine-datasets/issues/57) |
-| TotalSegmentator task data 'hip_implant' (71 CT) | CT | Held by the owner | open | 71 |  |  |  |  | 9.0 GB | [#66](https://github.com/OpenSpineConsortium/spine-datasets/issues/66) |
-| TotalSegmentator task data 'liver_lesions' (842 CT) | CT | Held by the owner | open | 842 |  |  |  |  | 38.9 GB | [#67](https://github.com/OpenSpineConsortium/spine-datasets/issues/67) |
+| TotalSegmentator task data 'hip_implant' (71 CT) | CT | Held by the owner | open | 71 |  |  |  |  | 9.1 GB | [#66](https://github.com/OpenSpineConsortium/spine-datasets/issues/66) |
+| TotalSegmentator task data 'liver_lesions' (842 CT) | CT | Held by the owner | open | 842 |  |  |  |  | 39.0 GB | [#67](https://github.com/OpenSpineConsortium/spine-datasets/issues/67) |
 | TotalSegmentator task data 'pleural_pericard_effusion' (600 CT) | CT | Held by the owner | open | 600 |  |  |  |  | 9.0 GB | [#68](https://github.com/OpenSpineConsortium/spine-datasets/issues/68) |
 | UniToChest chest CT (623 patients; distributed as slices) | CT | On the grid | open | 623 |  |  |  |  | 84.1 GB | [#58](https://github.com/OpenSpineConsortium/spine-datasets/issues/58) |
-| VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich | CT | Held by the owner | restricted | 100 |  |  |  |  | 116.3 GB | [#59](https://github.com/OpenSpineConsortium/spine-datasets/issues/59) |
+| VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich | CT | Held by the owner | restricted | 100 |  |  |  |  | 252.2 GB | [#59](https://github.com/OpenSpineConsortium/spine-datasets/issues/59) |
 | Veterinary: canine lateral thoracic radiographs for vertebral heart size (Mendeley ktx4cj55pn) | Veterinary and later | Downloadable now | open |  | 152 |  |  |  |  | [#32](https://github.com/OpenSpineConsortium/spine-datasets/issues/32) |
 | Veterinary: pig lower limb CT, CBCT and planar images (Goswami 2020, IEEE DataPort) | Veterinary and later | Held by the owner | open | 1 | 14 |  |  | 3 | 205.0 MB | [#22](https://github.com/OpenSpineConsortium/spine-datasets/issues/22) |
 
@@ -298,7 +298,7 @@ with filters, and each set's masks in full, is census-ct.html beside this file.
 | On the grid | 89 |
 | CT volumes on the grid | 24,959 (70 of 89 sets counted) |
 | Subjects on the grid | 25,991 (80 of 89 sets counted) |
-| Size on the grid | 3.8 TB (78 of 89 sets counted) |
+| Size on the grid | 5.3 TB (86 of 89 sets counted) |
 | On the grid with the source's vertebra masks by level | 4,208 CT volumes in 6 sets |
 | On the grid with masks made on the grid | 15,753 CT volumes in 62 sets, 20 of them counted |
 | Sets whose masks are surveyed | 105 of 105 |
@@ -449,24 +449,14 @@ What the CT records still lack:
 ## What the records still lack
 
 - Balgrist ex-vivo lumbar CT plus C-arm (Jecklin): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
-- C-ArmLSpine (Zhang et al., Medical Image Analysis 2024): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021): on the grid with no size: write the landing pass's bytes into measured
-- Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- Ljubljana 2D/3D registration gold standard (PIXIUM 4600): on the grid with no size: write the landing pass's bytes into measured
-- Ljubljana 2D/3D registration gold standard (PIXIUM 4600): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- LUMOS (Zhejiang University): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - PUMCH stitching series (Liu et al., Eur Spine J 2026): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - SX-Stitch intraoperative C-arm series (Li 2024, PUMCH): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Vanderbilt intraoperative THA fluoroscopy (Chan et al., J Arthroplasty 2025): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
-- CADICA invasive coronary angiography sequences (Mendeley p9bpx9ctcv): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- CathAction (Jianu et al. 2024, AIRVLab): on the grid with no size: write the landing pass's bytes into measured
-- CathAction (Jianu et al. 2024, AIRVLab): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - CathAction (Jianu et al. 2024, AIRVLab): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Coronary angiography sets (CADICA, ARCADE, XCAD, AngioCAD): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - DARADIA vertebroplasty video (Kolkata): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - DMX Imaging digital motion X-ray: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
-- DysphagiaBank (TalkBank), UNM corpus: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - DysphagiaBank (TalkBank), UNM corpus: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - ThePainSource (Faubel) fluoroscopy clips: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Guide3D (ACCV 2024, AIRVLab): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
@@ -476,30 +466,15 @@ What the CT records still lack:
 - Radiopaedia spine cases: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Veriserum (ETH Zurich, MICCAI 2025): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - VFSS2022 videofluoroscopic swallow frames (TIB): the licence is still to confirm on the source's page
-- COBRA2026 public cases (Elekta and Varian): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IPCAI 2025 paired X-ray and CT set of the distal femur (Flepp 2025, Zenodo 15753063): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- Aariz cephalometric benchmark (Khalid, Fraz 2023) and the ISBI 2015 cephalograms: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - AASCE 2019 / BoostNet AP whole-spine films: on the grid with no size: write the landing pass's bytes into measured
 - AASCE 2019 / BoostNet AP whole-spine films: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - BIMCV COVID-19+ chest films (IEEE DataPort): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
-- BUU-LSPINE (Klinwichit et al., Applied Sciences 2023): on the grid with no size: write the landing pass's bytes into measured
-- BUU-LSPINE (Klinwichit et al., Applied Sciences 2023): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- CSXA, the Cervical Spine X-ray Atlas V3.0 (Ran et al., Scientific Data 2024): on the grid with no size: write the landing pass's bytes into measured
-- CSXA, the Cervical Spine X-ray Atlas V3.0 (Ran et al., Scientific Data 2024): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- Fraiwan spine X-ray set (Mendeley xkt857dsxk): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Kaggle scoliosis YOLOv5 annotated spine X-ray set (salmankey): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
-- KUB-StoneX (Daffodil International University HIRL): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - Mendeley DDH hip sets (jf3pv98m9g and 4gvcb6gmh2): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Mendeley DDH hip sets (jf3pv98m9g and 4gvcb6gmh2): the licence is still to confirm on the source's page
 - MIMIC-CXR and MIMIC-CXR-JPG (PhysioNet): the licence is still to confirm on the source's page
 - MrOS lateral spine radiographs (Osteoporotic Fractures in Men): the licence is still to confirm on the source's page
-- NHANES II spinal films with landmarks (Mo, Papiez, Chen et al., Zenodo): on the grid with no size: write the landing pass's bytes into measured
-- NHANES II spinal films with landmarks (Mo, Papiez, Chen et al., Zenodo): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- NHANES II cervical and lumbar spine films (NCHS, 1976 to 1980): on the grid with no size: write the landing pass's bytes into measured
-- NHANES II cervical and lumbar spine films (NCHS, 1976 to 1980): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- NIH ChestX-ray14 and the RSNA pneumonia subset: on the grid with no size: write the landing pass's bytes into measured
-- NIH ChestX-ray14 and the RSNA pneumonia subset: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - Open-i Indiana chest collection: the licence is still to confirm on the source's page
 - SOF lateral spine radiographs (Study of Osteoporotic Fractures): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - SOF lateral spine radiographs (Study of Osteoporotic Fractures): the licence is still to confirm on the source's page
@@ -508,84 +483,13 @@ What the CT records still lack:
 - VertXNet extra labels for NHANES II (Mo, Papiez, Chen 2023): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - VertXNet extra labels for NHANES II (Mo, Papiez, Chen 2023): the licence is still to confirm on the source's page
 - VinDr-CXR (PhysioNet): the licence is still to confirm on the source's page
-- VinDr-SpineXR (Nguyen et al., MICCAI 2021): on the grid with no size: write the landing pass's bytes into measured
-- VinDr-SpineXR (Nguyen et al., MICCAI 2021): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- AMOS22 CT, unlabelled (ids 5000-6899) and labelled: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- AortaSeg-60: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- STOIC2021 training (AWS Open Data): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- Barts CRL (colorectal-cancer staging CT): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - CADS CT (unique cases): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
-- CSI 2014 spine CT: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - CT-RATE chest CT: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - CTPelvic1K: on the grid with no size: write the landing pass's bytes into measured
 - CTPelvic1K: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - CTPelvic1K: the licence is still to confirm on the source's page
-- CTSpine1K: on the grid with no size: write the landing pass's bytes into measured
-- CTSpine1K: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- CTSpinoPelvic1K v11 (the consortium's own release): on the grid with no size: write the landing pass's bytes into measured
-- CTSpinoPelvic1K v11 (the consortium's own release): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- CURVAS 2024: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- CURVAS-PDACVI (MICCAI 2025): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- DEEP-PSMA (PSMA + FDG PET/CT, mCRPC): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `acrin_flt_breast`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `acrin_nsclc_fdg_pet`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `adrenal_acc_ki67_seg`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `anti_pd_1_lung`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `cmb_brca`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `cmb_crc`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `cmb_lca`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `cmb_mel`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `cmb_mml`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `cmb_ov`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `colorectal_liver_metastases` (Colorectal-Liver-Metastases): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `covid_19_ar`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `covid_19_ny_sbu` (COVID-19-NY-SBU): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `cptac_ccrcc`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `cptac_cm`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `cptac_lscc` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `cptac_luad` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `cptac_pda`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `cptac_sar`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `cptac_stad`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `cptac_ucec`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `ct_vs_pet_ventilation_imaging`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `ctpred_sunitinib_pannet`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `eay131` (EAY131 (NCI-MATCH)): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `hcc_tace_seg` (HCC-TACE-Seg): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - IDC `ldct_and_projection_data` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `lung_pet_ct_dx` (Lung-PET-CT-Dx): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `mediastinal_lymph_node_seg`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `midrc_ricord_1a`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `midrc_ricord_1b` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `nsclc_radiogenomics` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `nsclc_radiomics` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `pancreatic_ct_cbct_seg`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `pediatric_ct_seg` (Pediatric-CT-SEG): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `pelvic_reference_data`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `psma_pet_ct_lesions` (PSMA-PET-CT-Lesions (autoPET III)): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `rider_lung_pet_ct`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `spinal_multiple_myeloma_seg` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `spine_mets_ct_seg` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `tcga_blca`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `tcga_esca`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `tcga_kirc`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `tcga_lihc`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `tcga_ov`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `tcga_stad`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `tcga_ucec`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- IDC `varepop_apollo`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- Kidney abnormality segmentation in thorax-abdomen CT: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - MAGIC-CT (Zenodo): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
-- NLST, the seeded 500-person pilot: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- PANORAMA public set (pancreas CE-CT): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- PENGWIN 2026 peripelvic fracture CT (the public cases): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- PENGWIN 2024 Task 2 synthetic X-rays: on the grid with no size: write the landing pass's bytes into measured
-- PENGWIN 2024 Task 2 synthetic X-rays: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- QUADRA_HC total-body FDG-PET/CT, healthy controls: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- RibFrac (MICCAI 2020) chest CT: on the grid with no size: write the landing pass's bytes into measured
-- RibFrac (MICCAI 2020) chest CT: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- RSNA 2022 cervical spine fracture CT (Kaggle): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - RSNA abdominal trauma CT (RATIC): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - RSNA pulmonary embolism CT (RSPECT): on the grid with no size: write the landing pass's bytes into measured
 - RSNA pulmonary embolism CT (RSPECT): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
@@ -593,27 +497,102 @@ What the CT records still lack:
 - ENHANCE.PET 1.6k: whole-/total-body FDG-PET/CT, 1,683 studies (NIfTI): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Stanford AIMI INSPECT chest CT: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Stanford AIMI Merlin abdominal CT: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
-- FDG-PET-CT-Lesions (autoPET), TCIA through NBIA: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - TotalSegmentator datasets v2.0.1 and v3.0.0: on the grid with no size: write the landing pass's bytes into measured
 - TotalSegmentator datasets v2.0.1 and v3.0.0: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- VerSe 2019 and 2020: on the grid with no size: write the landing pass's bytes into measured
-- VerSe 2019 and 2020: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- VerSe 2D projections with soft labels (Zenodo 8115942): on the grid with no size: write the landing pass's bytes into measured
-- VerSe 2D projections with soft labels (Zenodo 8115942): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - VerSe 2D projections with soft labels (Zenodo 8115942): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
-- WAW-TACE (HCC multiphase CT, Warsaw): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- LumVBCanSeg lumbar CT (185, ShengJing Hospital): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- MedPelvis3D pelvic CT (99, PLA General Hospital): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- International TMTV Benchmark, lymphoma FDG PET/CT (60): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- TotalSegmentator task data 'hip_implant' (71 CT): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- TotalSegmentator task data 'liver_lesions' (842 CT): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- TotalSegmentator task data 'pleural_pericard_effusion' (600 CT): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- UniToChest chest CT (623 patients; distributed as slices): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- Veterinary: pig lower limb CT, CBCT and planar images (Goswami 2020, IEEE DataPort): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 
 ## Changes, newest first
 
+- 2026-10-23 Veterinary: pig lower limb CT, CBCT and planar images (Goswami 2020, IEEE DataPort): grid_bytes 205.0 MB to 205.0 MB
+- 2026-10-23 VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich: grid_bytes none to 252.2 GB
+- 2026-10-23 TotalSegmentator task data 'pleural_pericard_effusion' (600 CT): grid_bytes none to 9.0 GB
+- 2026-10-23 TotalSegmentator task data 'liver_lesions' (842 CT): grid_bytes none to 39.0 GB
+- 2026-10-23 TotalSegmentator task data 'hip_implant' (71 CT): grid_bytes none to 9.1 GB
+- 2026-10-23 WAW-TACE (HCC multiphase CT, Warsaw): grid_bytes none to 47.2 GB
+- 2026-10-23 VerSe 2D projections with soft labels (Zenodo 8115942): grid_bytes none to 4.4 GB
+- 2026-10-23 VerSe 2019 and 2020: grid_bytes none to 52.2 GB
+- 2026-10-23 FDG-PET-CT-Lesions (autoPET), TCIA through NBIA: grid_bytes none to 393.9 GB
+- 2026-10-23 RSNA 2022 cervical spine fracture CT (Kaggle): grid_bytes none to 203.3 GB
+- 2026-10-23 RibFrac (MICCAI 2020) chest CT: grid_bytes none to 156.9 GB
+- 2026-10-23 QUADRA_HC total-body FDG-PET/CT, healthy controls: grid_bytes none to 20.4 GB
+- 2026-10-23 PENGWIN 2024 Task 2 synthetic X-rays: grid_bytes none to 35.0 GB
+- 2026-10-23 PENGWIN 2026 peripelvic fracture CT (the public cases): grid_bytes none to 83.5 GB
+- 2026-10-23 PANORAMA public set (pancreas CE-CT): grid_bytes none to 194.4 GB
+- 2026-10-23 NLST, the seeded 500-person pilot: grid_bytes none to 73.5 GB
+- 2026-10-23 Kidney abnormality segmentation in thorax-abdomen CT: grid_bytes none to 75.9 GB
+- 2026-10-23 IDC `varepop_apollo`: grid_bytes none to 5.5 GB
+- 2026-10-23 IDC `tcga_ucec`: grid_bytes none to 4.2 GB
+- 2026-10-23 IDC `tcga_stad`: grid_bytes none to 6.4 GB
+- 2026-10-23 IDC `tcga_ov`: grid_bytes none to 2.5 GB
+- 2026-10-23 IDC `tcga_lihc`: grid_bytes none to 5.0 GB
+- 2026-10-23 IDC `tcga_kirc`: grid_bytes none to 10.0 GB
+- 2026-10-23 IDC `tcga_esca`: grid_bytes none to 2.5 GB
+- 2026-10-23 IDC `tcga_blca`: grid_bytes none to 10.3 GB
+- 2026-10-23 IDC `spine_mets_ct_seg` (tier 2): grid_bytes none to 18.7 GB
+- 2026-10-23 IDC `spinal_multiple_myeloma_seg` (tier 2): grid_bytes none to 297.8 GB
+- 2026-10-23 IDC `rider_lung_pet_ct`: grid_bytes none to 18.5 GB
+- 2026-10-23 IDC `psma_pet_ct_lesions` (PSMA-PET-CT-Lesions (autoPET III)): grid_bytes none to 63.1 GB
+- 2026-10-23 IDC `pelvic_reference_data`: grid_bytes none to 4.5 GB
+- 2026-10-23 IDC `pediatric_ct_seg` (Pediatric-CT-SEG): grid_bytes none to 56.9 GB
+- 2026-10-23 IDC `pancreatic_ct_cbct_seg`: grid_bytes none to 3.0 GB
+- 2026-10-23 IDC `nsclc_radiomics` (tier 2): grid_bytes none to 27.0 GB
+- 2026-10-23 IDC `nsclc_radiogenomics` (tier 2): grid_bytes none to 90.9 GB
+- 2026-10-23 IDC `midrc_ricord_1b` (tier 2): grid_bytes none to 8.7 GB
+- 2026-10-23 IDC `midrc_ricord_1a`: grid_bytes none to 6.7 GB
+- 2026-10-23 IDC `mediastinal_lymph_node_seg`: grid_bytes none to 25.7 GB
+- 2026-10-23 IDC `lung_pet_ct_dx` (Lung-PET-CT-Dx): grid_bytes none to 29.9 GB
+- 2026-10-23 IDC `hcc_tace_seg` (HCC-TACE-Seg): grid_bytes none to 5.1 GB
+- 2026-10-23 IDC `eay131` (EAY131 (NCI-MATCH)): grid_bytes none to 37.2 GB
+- 2026-10-23 IDC `ctpred_sunitinib_pannet`: grid_bytes none to 6.2 GB
+- 2026-10-23 IDC `ct_vs_pet_ventilation_imaging`: grid_bytes none to 1.8 GB
+- 2026-10-23 IDC `cptac_ucec`: grid_bytes none to 10.5 GB
+- 2026-10-23 IDC `cptac_stad`: grid_bytes none to 7.1 GB
+- 2026-10-23 IDC `cptac_sar`: grid_bytes none to 3.1 GB
+- 2026-10-23 IDC `cptac_pda`: grid_bytes none to 10.1 GB
+- 2026-10-23 IDC `cptac_luad` (tier 2): grid_bytes none to 38.9 GB
+- 2026-10-23 IDC `cptac_lscc` (tier 2): grid_bytes none to 29.5 GB
+- 2026-10-23 IDC `cptac_cm`: grid_bytes none to 4.2 GB
+- 2026-10-23 IDC `cptac_ccrcc`: grid_bytes none to 7.9 GB
+- 2026-10-23 IDC `covid_19_ny_sbu` (COVID-19-NY-SBU): grid_bytes none to 64.7 GB
+- 2026-10-23 IDC `covid_19_ar`: grid_bytes none to 5.7 GB
+- 2026-10-23 IDC `colorectal_liver_metastases` (Colorectal-Liver-Metastases): grid_bytes none to 6.3 GB
+- 2026-10-23 IDC `cmb_ov`: grid_bytes none to 1.0 GB
+- 2026-10-23 IDC `cmb_mml`: grid_bytes none to 2.3 GB
+- 2026-10-23 IDC `cmb_mel`: grid_bytes none to 2.2 GB
+- 2026-10-23 IDC `cmb_lca`: grid_bytes none to 10.0 GB
+- 2026-10-23 IDC `cmb_crc`: grid_bytes none to 5.4 GB
+- 2026-10-23 IDC `cmb_brca`: grid_bytes none to 2.6 GB
+- 2026-10-23 IDC `anti_pd_1_lung`: grid_bytes none to 4.3 GB
+- 2026-10-23 IDC `adrenal_acc_ki67_seg`: grid_bytes none to 3.6 GB
+- 2026-10-23 IDC `acrin_nsclc_fdg_pet`: grid_bytes none to 15.8 GB
+- 2026-10-23 IDC `acrin_flt_breast`: grid_bytes none to 2.8 GB
+- 2026-10-23 DEEP-PSMA (PSMA + FDG PET/CT, mCRPC): grid_bytes none to 24.3 GB
+- 2026-10-23 CURVAS-PDACVI (MICCAI 2025): grid_bytes none to 16.9 GB
+- 2026-10-23 CURVAS 2024: grid_bytes none to 30.0 GB
+- 2026-10-23 CTSpinoPelvic1K v11 (the consortium's own release): grid_bytes none to 202.7 GB
+- 2026-10-23 CTSpine1K: grid_bytes none to 162.4 GB
+- 2026-10-23 CSI 2014 spine CT: grid_bytes none to 6.6 GB
+- 2026-10-23 Barts CRL (colorectal-cancer staging CT): grid_bytes none to 20.3 GB
+- 2026-10-23 STOIC2021 training (AWS Open Data): grid_bytes none to 264.3 GB
+- 2026-10-23 AortaSeg-60: grid_bytes none to 15.9 GB
+- 2026-10-23 AMOS22 CT, unlabelled (ids 5000-6899) and labelled: grid_bytes none to 102.6 GB
+- 2026-10-23 AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images): grid_bytes none to 570.6 GB
+- 2026-10-23 VinDr-SpineXR (Nguyen et al., MICCAI 2021): grid_bytes none to 114.7 GB
+- 2026-10-23 NIH ChestX-ray14 and the RSNA pneumonia subset: grid_bytes none to 45.1 GB
+- 2026-10-23 NHANES II cervical and lumbar spine films (NCHS, 1976 to 1980): grid_bytes none to 138.4 GB
+- 2026-10-23 NHANES II spinal films with landmarks (Mo, Papiez, Chen et al., Zenodo): grid_bytes none to 3.3 GB
+- 2026-10-23 KUB-StoneX (Daffodil International University HIRL): grid_bytes none to 55.3 GB
+- 2026-10-23 CSXA, the Cervical Spine X-ray Atlas V3.0 (Ran et al., Scientific Data 2024): grid_bytes none to 3.7 GB
+- 2026-10-23 BUU-LSPINE (Klinwichit et al., Applied Sciences 2023): grid_bytes none to 35.2 GB
+- 2026-10-23 Aariz cephalometric benchmark (Khalid, Fraz 2023) and the ISBI 2015 cephalograms: grid_bytes none to 6.3 GB
+- 2026-10-23 IPCAI 2025 paired X-ray and CT set of the distal femur (Flepp 2025, Zenodo 15753063): grid_bytes none to 6.7 GB
+- 2026-10-23 COBRA2026 public cases (Elekta and Varian): grid_bytes none to 808.6 GB
+- 2026-10-23 DysphagiaBank (TalkBank), UNM corpus: grid_bytes none to 19.6 GB
+- 2026-10-23 CathAction (Jianu et al. 2024, AIRVLab): grid_bytes none to 56.2 GB
+- 2026-10-23 LUMOS (Zhejiang University): grid_bytes none to 76.4 GB
+- 2026-10-23 Ljubljana 2D/3D registration gold standard (PIXIUM 4600): grid_bytes none to 306.5 MB
+- 2026-10-23 Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021): grid_bytes none to 1.1 GB
+- 2026-10-23 C-ArmLSpine (Zhang et al., Medical Image Analysis 2024): grid_bytes none to 103.7 GB
 - 2026-10-23 MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025): bytes 4.0 GB to 4.1 GB; route owner-only to download; stage to-ask to downloadable; subjects none to 2156
 - 2026-10-23 Bournemouth lumbar quantitative fluoroscopy (Breen 2021): licence not recorded (OSF holds derived tables only) to not recorded (OSF a27py holds derived tables only; the image deposit OSF z2jby states no licence)
 - 2026-10-23 RSNA pulmonary embolism CT (RSPECT): grid_path none to /rs/rs_grp_oschome/go2432/data/rsna_rspect_pe/raw; stage granted to held; status granted to held

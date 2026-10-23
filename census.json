@@ -26,12 +26,12 @@
   },
   "on_grid": 102,
   "on_grid_size": {
-   "sum": 3863717943434,
-   "counted": 83,
+   "sum": 5795519520540,
+   "counted": 98,
    "of": 102,
-   "measured": 7
+   "measured": 96
   },
-  "on_grid_frozen": 0,
+  "on_grid_frozen": 96,
   "on_grid_subjects": {
    "sum": 62843,
    "counted": 86,
@@ -83,10 +83,10 @@
     "of": 89
    },
    "on_grid_size": {
-    "sum": 3818692470271,
-    "counted": 78,
+    "sum": 5314541073416,
+    "counted": 86,
     "of": 89,
-    "measured": 5
+    "measured": 84
    },
    "by_stage": {
     "downloadable": 2,
@@ -429,7 +429,7 @@
  ],
  "records": {
   "aariz_cephalograms": {
-   "digest": "fab2f0bee1fe9579c61309b87bc0feb44a52ac8e73d031fcf262ec29b8c8d738",
+   "digest": "89071c149c35d5dcd150b91be9d4ae2fea19ffd5c4314af890e7c2c746c02688",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -447,8 +447,8 @@
     "level_truth": "C2 to C4 by the CVM stage (named vertebra shapes); no other level",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/aariz",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 6338426763,
+    "tree_sha256": "7f11694052cb5e20928b645b6f1ac25f396af4d229c041fb578edcef31100a45",
     "subjects": null,
     "xray_images": 1000,
     "videos": null,
@@ -521,7 +521,7 @@
    }
   },
   "abdomenatlas3_mini": {
-   "digest": "df021394e36a41bbd32bb5e9992e8c5597321a4b3421df363972263743a35197",
+   "digest": "237bb3064b49a7c2c9e9d85a9f24904cbc034b43148209947c1d08905a410d31",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -539,8 +539,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/abdomenatlas3_mini",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 570557160234,
+    "tree_sha256": "e1aab7e4d9f7b4f7190f4e2b48746460011da19e8a9c9c0630b56102c20a50cb",
     "subjects": 7835,
     "xray_images": null,
     "videos": null,
@@ -582,7 +582,7 @@
    }
   },
   "amos22": {
-   "digest": "619a5e46af5da7f8e97844f13168c119026a0ef00fa65d079c7a1fd8b30971da",
+   "digest": "0fc3f032f24c2f16435e00f34e3eb9f483f5e0f0076c9051c16787c415c976a2",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -600,8 +600,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/amos22",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 102615496477,
+    "tree_sha256": "b7dbf111187ea13a87abacd6eaee64b409d5a44d47abf949b75115a92620e712",
     "subjects": 2200,
     "xray_images": null,
     "videos": null,
@@ -643,7 +643,7 @@
    }
   },
   "aortaseg60": {
-   "digest": "69749cae8ddee8abf292cb0cdfb71f0f88f8f921446a675a19c41c8ffee0e4d0",
+   "digest": "434296adc2b1137e0cab97f14c5ae9f577a5867110d0a215517dd164d4402fcc",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -661,8 +661,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/aortaseg60",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 15929004557,
+    "tree_sha256": "ecde438065ae57ec7b46a87b59223f4ca87889a578cba0f3f5c997c498655901",
     "subjects": 60,
     "xray_images": null,
     "videos": null,
@@ -706,7 +706,7 @@
    }
   },
   "aws_stoic2021": {
-   "digest": "7c207f08b107dbb666a3bd2391a241be509b31266cf3ff6dd5a3088d265dfbac",
+   "digest": "542f0da4a79fa50d7274bf6452b29b4063285183b535256fe0ae7a184384ec56",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -724,8 +724,8 @@
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/aws_stoic2021",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 264277371447,
+    "tree_sha256": "22649e1e235a824afe0d79499bf978142246baeb97900640b96664d759b050a3",
     "subjects": 2000,
     "xray_images": null,
     "videos": null,
@@ -822,7 +822,7 @@
    }
   },
   "barts_crl": {
-   "digest": "5e56e96b9eac56da18965d96644d647c0963259ed5cc810a1bdad69616ee385b",
+   "digest": "92f4e18ed210c80c5824dc6668db636ad31527593c146bb72e92b61b2e03d0e7",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -840,8 +840,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/barts_crl",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 20313374662,
+    "tree_sha256": "418e1e5d7955aae9952aa1dc120edb83f08b5fe99d71ae0d6e4fec43df411597",
     "subjects": 220,
     "xray_images": null,
     "videos": null,
@@ -1099,7 +1099,7 @@
    }
   },
   "buu_lspine": {
-   "digest": "9791591f7bf468a0e2ff65d98e33701a63acbec299c09130eefad1cf395247ce",
+   "digest": "9549cf50584c952eebeefe709da6cfa46a6706d7fc8d30ad4cc74a51818f156a",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1117,8 +1117,8 @@
     "level_truth": "lumbar, by the end-plate lines",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/buu_lspine_3600",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 35225321802,
+    "tree_sha256": "7bbe8e913ae3edd4878bb33ff84e995bc5c8a8f544bd9fce101bcdfb19ab240c",
     "subjects": 3600,
     "xray_images": 7203,
     "videos": null,
@@ -1144,7 +1144,7 @@
    }
   },
   "cadica": {
-   "digest": "8fdabe1d16c9334bc8cc4349baca894b078662f1d70b7e4dd38a335ca787e3a2",
+   "digest": "cbdab11845a7ef4669fdb11520c7cfa16b96aac0e002e1fa10afe1ee4b753cdd",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -1163,7 +1163,7 @@
     "grid_path": "/rs/rs_grp_oschome/shared/datasets/cadica/raw",
     "on_grid": true,
     "grid_bytes": 3076112179,
-    "tree_sha256": null,
+    "tree_sha256": "56dbf0dce15ebf0955dd832165e9f98fff31e88f2e86dc192bab9a0abab90b26",
     "subjects": 42,
     "xray_images": null,
     "videos": null,
@@ -1333,7 +1333,7 @@
    }
   },
   "carmlspine": {
-   "digest": "5a0c65e641af03ea56c6726467e938580a390e7412ce1ab2914bc89e5c4131f5",
+   "digest": "7a2bdc334d28e3c6161da5451c3ddfbf27afd3d56c1e0e32c825755d59dcae86",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1351,8 +1351,8 @@
     "level_truth": "lumbar levels, readable from each case's CBCT; three cases with an L6",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/carmlspine",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 103686719641,
+    "tree_sha256": "08e3b8cc127d3c59cf774e2e8fd36efcf91be3acc7cbae3d017b9acabdff7b10",
     "subjects": 149,
     "xray_images": 299,
     "videos": 2,
@@ -1413,7 +1413,7 @@
    }
   },
   "cathaction": {
-   "digest": "aea7010959da5629ea6b792966618fb1e65d5ac94247c0896986aa459ff849c5",
+   "digest": "354445f248fac77f73a6144e7a3962e048fee867164a4a27002019211a49d8a4",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -1431,8 +1431,8 @@
     "level_truth": "none; no spine, much of it animal",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/cathaction",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 56183481264,
+    "tree_sha256": "c09106c02b0aa2533dcd4979efd80f0be1f804b060f5000f735181c87720a3a4",
     "subjects": null,
     "xray_images": null,
     "videos": null,
@@ -1543,7 +1543,7 @@
    }
   },
   "cobra2026": {
-   "digest": "c45d79fdd77d0a47ddc250bac2ade42250c063fc1bc43b7122647d0196315edf",
+   "digest": "98b5d921072f31690a388c837fcc9e0a0898c38c17de7b1e48128694790e78b4",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1561,8 +1561,8 @@
     "level_truth": "levels readable from the planning CT; none shipped for the vertebrae",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/cobra2026",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 808617728644,
+    "tree_sha256": "0f355ea0798481fb91bf2942d40a61202aec6775652b8c503b7f88a027de3be6",
     "subjects": 692,
     "xray_images": null,
     "videos": 692,
@@ -1746,7 +1746,7 @@
    }
   },
   "csi2014": {
-   "digest": "66fd08f0b06a4ab445c177e5326541afd776e99f70b459a3919cb50611f4137b",
+   "digest": "219a68cb2fc434eb6d58f2929fc9ade63c1e522f4d6e4fb05451339144335d72",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1764,8 +1764,8 @@
     "level_truth": "the fetch took only the release's image files (those ending _image.mha); whether the release ships vertebra labels beside them is to confirm on its page; the data platform's own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/csi2014",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 6640702200,
+    "tree_sha256": "b457abead1221a8f345aac07cfb410a83c6e679f8115238e9c659429fd4c26df",
     "subjects": 20,
     "xray_images": null,
     "videos": null,
@@ -1807,7 +1807,7 @@
    }
   },
   "csxa": {
-   "digest": "f3572a8dbbbebfafafe95c075632b57c1a362c34bad8fa29a01558cba1d9cde8",
+   "digest": "e63c71c62c7854703449a5d1d43fe3fb42bd25f65135c70b1938a4fae7816186",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1825,8 +1825,8 @@
     "level_truth": "cervical, C1 to C7",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/csxa_cervical_xray_atlas",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 3691537837,
+    "tree_sha256": "9e5f1316d707844ba2b7a7ed524875ff8eff19887f2c60d2c4863e42ed12c831",
     "subjects": null,
     "xray_images": 4963,
     "videos": null,
@@ -1964,7 +1964,7 @@
    }
   },
   "ctspine1k": {
-   "digest": "8a0cb18566d12b12413c37d79b084b46a3098c7f1721841a8e3f37ff73727133",
+   "digest": "605b92748539b0d6f3d757723001ec21f80433c57719dfa57a1cafe50c29bf03",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1982,8 +1982,8 @@
     "level_truth": "vertebra masks by level",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/ctspine1k",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 162350473572,
+    "tree_sha256": "6094610409f953184bb95ba085f205c37437989540292964d59eafab088b913c",
     "subjects": null,
     "xray_images": null,
     "videos": null,
@@ -2020,7 +2020,7 @@
    }
   },
   "ctspinopelvic1k": {
-   "digest": "b29e58c1a2220aef26b08415f9e372ffd42490f244d3d28c0570602311e51f47",
+   "digest": "3425909ff76a14263881f4bf9af164a1e88066179dc148edd08eb4e762bccfcd",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2038,8 +2038,8 @@
     "level_truth": "vertebra, sacrum and pelvis labels by level; L6 cases flagged",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/ctspinopelvic1k",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 202680383788,
+    "tree_sha256": "ac2828b37738f05f1ca2fc8b8cfc89b9037b82898e4f351b766da3e407c05272",
     "subjects": null,
     "xray_images": null,
     "videos": null,
@@ -2092,7 +2092,7 @@
    }
   },
   "curvas": {
-   "digest": "e52ac7dacbee8ea1b683ac1b9bce931a5614f23cc690d7d9a4c09935d7c60907",
+   "digest": "5115e0430917f4851073c7f89b021c0d2ef8261bf65b4bab55514f39eb662acd",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2110,8 +2110,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/curvas",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 29993980558,
+    "tree_sha256": "fb420143831c0d6d7100035ced93ec217bab8dec2f8472bff06bc9bd455eb647",
     "subjects": 90,
     "xray_images": null,
     "videos": null,
@@ -2156,7 +2156,7 @@
    }
   },
   "curvas_pdacvi": {
-   "digest": "d11a695b7fed2548bd2e9a9eeb38f3809d033cdceb16157a1d77a3ed19d11c47",
+   "digest": "88a326ad3bb640b3c43d0f66e4eb87c23a4355f608ffa7372b6d36269283438d",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2174,8 +2174,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/curvas_pdacvi",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 16878618437,
+    "tree_sha256": "491a128114343dc07cf23bcb11826bdb441e7a11f52f2630a2d64ab6adcc6927",
     "subjects": 109,
     "xray_images": null,
     "videos": null,
@@ -2261,7 +2261,7 @@
    }
   },
   "deep_psma": {
-   "digest": "84b415052ce4027d18e04d1fc0a7175ddb3757cd6ba412d415a390e73e2bcac6",
+   "digest": "23c2f1e0b52a5a4688c38662d2b1e2ac7307e69cfe03cdf490f76934c4ba5667",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2279,8 +2279,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/deep_psma",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 24253086312,
+    "tree_sha256": "3961322c9d39c3260df9c1c96c6d0421ac1175a9f586390ab983bdd6a0a073b1",
     "subjects": 100,
     "xray_images": null,
     "videos": null,
@@ -2439,7 +2439,7 @@
    }
   },
   "dysphagiabank": {
-   "digest": "fe91184e6d9845fed53fe97e02ac9be9d8d9ceca56ff6266ef477a1845c9f16a",
+   "digest": "a081f0124ca2bd96120efeafc67e7877610ebf18e03a1704e23e6c766a3e3f4a",
    "first_seen": "2026-09-27",
    "last_changed": "2026-10-23",
    "row": {
@@ -2457,8 +2457,8 @@
     "level_truth": "none named",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/external/fluoro_video/dysphagiabank_unm",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 19557720024,
+    "tree_sha256": "96862da03af87c88f891891b7f0c2ff1c18b5a56f6353f5bf339e58383d4d374",
     "subjects": null,
     "xray_images": null,
     "videos": null,
@@ -2571,7 +2571,7 @@
    }
   },
   "fraiwan_spine_xray": {
-   "digest": "712be3c2335a8a6dfdb6fe8144820d0f91f1ef2a7601e540397c01cc162d36cd",
+   "digest": "e8a558eaec3e16b3b37e371d31ca143c610b5038fb607c6795d0c448851376d3",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -2590,7 +2590,7 @@
     "grid_path": "/rs/rs_grp_oschome/shared/datasets/fraiwan_spine_xray/raw",
     "on_grid": true,
     "grid_bytes": 85596630,
-    "tree_sha256": null,
+    "tree_sha256": "e276a19f3f8367edc19a4cf54a81eb4a3daf3aedc5324858bb63dac29c363d01",
     "subjects": 338,
     "xray_images": null,
     "videos": null,
@@ -2615,7 +2615,7 @@
    }
   },
   "geneva_hip": {
-   "digest": "276ccd859fe572f3fc6f64debfe160966292fcca81bf802be8cc5c19facdac12",
+   "digest": "83738a04f1e175d020cffdad5ce51483a2004b226b95cc0c4a050a20887df72d",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2633,8 +2633,8 @@
     "level_truth": "none for the spine",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/geneva_hip_src",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 1110686125,
+    "tree_sha256": "e44c9e83f5f4e91944800f2a7ebc1e3e01cfa9660ef13edb92e02c9904b7f1f3",
     "subjects": 1,
     "xray_images": 116,
     "videos": null,
@@ -2891,7 +2891,7 @@
    }
   },
   "idc_acrin_flt_breast": {
-   "digest": "acb1dfe57705a3309286fe76cb9b88bd3082bbb8c3bab139c4e801298034c072",
+   "digest": "a60a09ea39280ae056c64e067c586ddb415795bdaa0d2079aa46bca571ae5ae7",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2909,8 +2909,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/acrin_flt_breast",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 2820716228,
+    "tree_sha256": "c86ec7c34422e3cad53d039aedfd5750b367fb6dceac23a879abcb3077c2f7b2",
     "subjects": 15,
     "xray_images": null,
     "videos": null,
@@ -2952,7 +2952,7 @@
    }
   },
   "idc_acrin_nsclc_fdg_pet": {
-   "digest": "07a3df598d6f1de1f3b2c17127fc528a3fdd0b3c3e8736722e6b8ee4d74721e2",
+   "digest": "8d54898161db9219f042cf73facd50e57edae11da2e7aaf1b31dd93b78de9d79",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2970,8 +2970,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/acrin_nsclc_fdg_pet",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 15803448804,
+    "tree_sha256": "9a9be429a496837b199c13ded18e2e856999705d785e10b72044a6e424c28e8d",
     "subjects": 131,
     "xray_images": null,
     "videos": null,
@@ -3018,7 +3018,7 @@
    }
   },
   "idc_adrenal_acc_ki67_seg": {
-   "digest": "cd31187dcb91bc3795d86e075b37e514bd77f9338044dc4840a7eac3f67362de",
+   "digest": "205e9dbae083c6a785688c6d8b4ee6537d6feef24b935a430f99a932e674e490",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3036,8 +3036,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/adrenal_acc_ki67_seg",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 3554260496,
+    "tree_sha256": "406833954ff63733364dc9e19ff304151ca6ce55ff1dffa4b3b9568a32018898",
     "subjects": 29,
     "xray_images": null,
     "videos": null,
@@ -3081,7 +3081,7 @@
    }
   },
   "idc_anti_pd_1_lung": {
-   "digest": "ad0ebf007e16d7564cdd1003454c0dcb9b1058f7920dd421c12f49b58ce7b993",
+   "digest": "7adfc344939f2af8b2c43c17bff197287c0de74bfbc7ad89146d0f1fbc2c2669",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3099,8 +3099,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/anti_pd_1_lung",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 4255529904,
+    "tree_sha256": "f3797ba16a23a883703c543720ce51fe0249fe7a6f5278a018504d65c729571f",
     "subjects": 34,
     "xray_images": null,
     "videos": null,
@@ -3145,7 +3145,7 @@
    }
   },
   "idc_cmb_brca": {
-   "digest": "bd753e4e91d67f543670532f7467d279661ad2a26ce6365334bd3f8e9cef511a",
+   "digest": "f34ba2ebf8fd90326f926d21368d69f8faef7adf78e76e685212162abf951083",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3163,8 +3163,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/cmb_brca",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 2592712452,
+    "tree_sha256": "cac25acdd71a50ffe121c0f7bb6c3ae1391b5ee69bc1e2cc5372c56f56388a4c",
     "subjects": 21,
     "xray_images": null,
     "videos": null,
@@ -3209,7 +3209,7 @@
    }
   },
   "idc_cmb_crc": {
-   "digest": "fe6c17dcbf22b84f8d1e4d51fadeae98b54d6bc94da1ed95f8795af3c4217516",
+   "digest": "569b1a85b5de1e25e995231574e51d42518fedd135439d11e66f4cc35549670b",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3227,8 +3227,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/cmb_crc",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 5415090502,
+    "tree_sha256": "3bd63009ee08209836f29fe8dfa7968f82f491431e604f3ae8bdb575f740df9b",
     "subjects": 30,
     "xray_images": null,
     "videos": null,
@@ -3274,7 +3274,7 @@
    }
   },
   "idc_cmb_lca": {
-   "digest": "8764b62b33f108eb9c4a82f8cc50fa47ff53393330f16d10fdec9887ae918fde",
+   "digest": "68dda8b927c4a7781c696c0d4106c64de3cf8386f34846e534a63b834fcf0d7a",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3292,8 +3292,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/cmb_lca",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 10016371716,
+    "tree_sha256": "c1c507861ab7049739bc2626bd26d0fc40fd7e793d8873834bf2ae1bf70f9f9a",
     "subjects": 75,
     "xray_images": null,
     "videos": null,
@@ -3339,7 +3339,7 @@
    }
   },
   "idc_cmb_mel": {
-   "digest": "8d3f223fb4dec85dc018b7856f92a085d948fa34a05991605eca83938dbab4eb",
+   "digest": "313f7ebda9c1a7a6919c7ad9d526ad08c7d6cb7d559845f7f216736bab6b293f",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3357,8 +3357,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/cmb_mel",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 2182027164,
+    "tree_sha256": "47c05adfd0dbe2e8ffc46725feda5f4d29b1be9b87ccf333b30efa08697eaba8",
     "subjects": 23,
     "xray_images": null,
     "videos": null,
@@ -3404,7 +3404,7 @@
    }
   },
   "idc_cmb_mml": {
-   "digest": "b5657a138d5f176843f4e29f2d286e0f520cddf5a44f33ebf94aa1f769ddb563",
+   "digest": "a4be57d98942e5e0245486c747892b07a2b256a6079897faf6db77d058b2d587",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3422,8 +3422,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/cmb_mml",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 2325630444,
+    "tree_sha256": "93c6e2247be01df5a4e980c7daa8d0948967b339cd9e5c8f2c373f994222e723",
     "subjects": 16,
     "xray_images": null,
     "videos": null,
@@ -3470,7 +3470,7 @@
    }
   },
   "idc_cmb_ov": {
-   "digest": "cd86afef1e6960dd1bb23ddad2d6db0e0f3123bdb381013af0f435b4ee0d3509",
+   "digest": "4ffec0288a15d744acb5ce241551e1f6704a973f6fa3103e6154decff1125cb4",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3488,8 +3488,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/cmb_ov",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 1046667648,
+    "tree_sha256": "91e0c31549dd5fc430a7e8561b8a63bb884aa9c75b2054d730cb231f6dfebdb6",
     "subjects": 7,
     "xray_images": null,
     "videos": null,
@@ -3533,7 +3533,7 @@
    }
   },
   "idc_colorectal_liver_metastases": {
-   "digest": "7fd9de8f89f5b419aedb9a35baf0fd6ddfd18f31ff7e7c95bbe0556b27f85350",
+   "digest": "6adc0f1a78ac29f7d924aa368841c72839e218c861edcd1ea5afcc185818a0d0",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3551,8 +3551,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/colorectal_liver_metastases",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 6306640878,
+    "tree_sha256": "a1f90a677690ff60e4d7084d33caa7cfce1580115b48b2e67bcd2e059f92d3b8",
     "subjects": 80,
     "xray_images": null,
     "videos": null,
@@ -3602,7 +3602,7 @@
    }
   },
   "idc_covid_19_ar": {
-   "digest": "a27dd0e0912b5073d684500b9b290f124faf70491003237dfc4bedec563b3f39",
+   "digest": "aa6063d61a5b99e22b326a26ddcdd8f5000b38174a1d0db3da44732f787b9f98",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3620,8 +3620,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/covid_19_ar",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 5663331196,
+    "tree_sha256": "ec60949035fd801353846914c5e04deea03b995f2c96c767cb0b8b1e59b2ec4f",
     "subjects": 23,
     "xray_images": null,
     "videos": null,
@@ -3665,7 +3665,7 @@
    }
   },
   "idc_covid_19_ny_sbu": {
-   "digest": "57c2ab343502d1db719df518d472608de5c4faeec91db52836854db167c5706c",
+   "digest": "b8592f71355cf634e6d63d678cf6362ecbc665082e10aa42d257148f713ea25f",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3683,8 +3683,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/covid_19_ny_sbu",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 64665429890,
+    "tree_sha256": "230a557edd44f74570626193b676db86685aceee61a1eecae8eef2f8ead10748",
     "subjects": 443,
     "xray_images": null,
     "videos": null,
@@ -3729,7 +3729,7 @@
    }
   },
   "idc_cptac_ccrcc": {
-   "digest": "f17380a080c030cfdb53840b539069ffdb8c18b6599f534eeeefbf545e61c4d3",
+   "digest": "17fc8ba18e68a5d45a55632acd7e9cbc80881d802f5130dfcf6bf9a499e251ff",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3747,8 +3747,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/cptac_ccrcc",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 7899579642,
+    "tree_sha256": "41545d16a79921a3d3ee2f239023ce2e5c881f7ed719a0d7eeea22e5f4741528",
     "subjects": 48,
     "xray_images": null,
     "videos": null,
@@ -3801,7 +3801,7 @@
    }
   },
   "idc_cptac_cm": {
-   "digest": "1ee94e1744fad676359bfe47cc893ca72de4f150d563ced5965a371a89037a02",
+   "digest": "2c36d11bd5c15e7a9a8297defb506c417f570cbf8679705f37d553dc8b276f0a",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3819,8 +3819,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/cptac_cm",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 4231397264,
+    "tree_sha256": "a6eccebe9a8cf298097855140fada0e1509a904e25e7ad31046f9f63031ffbe0",
     "subjects": 12,
     "xray_images": null,
     "videos": null,
@@ -3866,7 +3866,7 @@
    }
   },
   "idc_cptac_lscc": {
-   "digest": "a78f4430a705ac1ae513711bd98431386ea8bf78d0aae2c25c5e1730e3799a68",
+   "digest": "31f0c25458fe3b183e034f292a650550be731e0f43b0dd2d349f7432c7141567",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -3884,8 +3884,8 @@
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc_cptac_lscc",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 29521912984,
+    "tree_sha256": "b8eab2c41accf8d6ebd9cf4a4eb11287321a9c5d0efae58ae673537db5b3c855",
     "subjects": 32,
     "xray_images": null,
     "videos": null,
@@ -3923,7 +3923,7 @@
    }
   },
   "idc_cptac_luad": {
-   "digest": "9fdb73f52eb1732e4f192959493834c9c51d9e752a8613ea7f9af3821c696a07",
+   "digest": "80517124e30d0dc70c4b08e3aef26de6b2c078dcc7637b181ebe95e5f5c70f3f",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -3941,8 +3941,8 @@
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc_cptac_luad",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 38946321618,
+    "tree_sha256": "fb55f7a2d381c07611442b0f88b6f6d5d83aa811bd4cc686100f3e36ec36826c",
     "subjects": 32,
     "xray_images": null,
     "videos": null,
@@ -3979,7 +3979,7 @@
    }
   },
   "idc_cptac_pda": {
-   "digest": "abbdbdb9d68965caa98f8fc4e7289c0308c22ae219e688eedd941bda7d0e5a6d",
+   "digest": "8762cb11b1e4e85762f7f20383efe43f7c7cf811fe3ac7e99e2f9d612c7c74b6",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3997,8 +3997,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/cptac_pda",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 10052805748,
+    "tree_sha256": "e11eaebc826f213783e7b0f626c1013d79529d828fb0453f6f42f6e451382ccf",
     "subjects": 62,
     "xray_images": null,
     "videos": null,
@@ -4043,7 +4043,7 @@
    }
   },
   "idc_cptac_sar": {
-   "digest": "076f988bd12093446b175f884d6882edaa405b1250cbaff5ec61da8d58bce2c9",
+   "digest": "1d82121dcc57ae0864dfc55889b70d43083d136f92581a56c078509ba9031cc2",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -4061,8 +4061,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/cptac_sar",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 3091957308,
+    "tree_sha256": "aade007b2cee39cedd7d53cd5baa69056a48c75c835a432c9e21fe4cf7f0772b",
     "subjects": 14,
     "xray_images": null,
     "videos": null,
@@ -4108,7 +4108,7 @@
    }
   },
   "idc_cptac_stad": {
-   "digest": "9d8d128f7738b41dfa1c73e994b6a6b261bb2c71e8761029261a3e3f6e2004d3",
+   "digest": "638d45f0eb897631899c2112e7dfebe03503d0821fb66399f9231b5f47a4e844",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -4126,8 +4126,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/cptac_stad",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 7112447934,
+    "tree_sha256": "c3eff4b90d3af0fa69a586d55d6341ef29a6be03fad94611f28b547670a74dfd",
     "subjects": 19,
     "xray_images": null,
     "videos": null,
@@ -4171,7 +4171,7 @@
    }
   },
   "idc_cptac_ucec": {
-   "digest": "b366f83dbff82490800ba1db5ccec1607869a254aca450dc1c03c8fbd5bcedee",
+   "digest": "dd1395360e470e92ed64c89639098b1a7d1c86fe9df2dd24c43e84dfb810e27a",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -4189,8 +4189,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/cptac_ucec",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 10535515130,
+    "tree_sha256": "035a7aa8caaa312094c1c3b3439b8c96a593e13c1429ac81a4cc2fc2aabf9998",
     "subjects": 66,
     "xray_images": null,
     "videos": null,
@@ -4235,7 +4235,7 @@
    }
   },
   "idc_ct_vs_pet_ventilation_imaging": {
-   "digest": "eba11df88990ed498a35f8b0bc41b09e38336f3396e0234ff8a419dfbb12ed97",
+   "digest": "4b576c89232ac7083f522cfb0071ca58610d98e0dc7a98f10519bf2a60f6e6d5",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -4253,8 +4253,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/ct_vs_pet_ventilation_imaging",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 1792570632,
+    "tree_sha256": "3f5385de3201566647c3d7e511b69337fe6a72e785ab9884208c3a9a5e6af496",
     "subjects": 20,
     "xray_images": null,
     "videos": null,
@@ -4297,7 +4297,7 @@
    }
   },
   "idc_ctpred_sunitinib_pannet": {
-   "digest": "1e9fbdfdc0ea141226a1c002979ea62d43e839664b3a30f71598eb85c20d9426",
+   "digest": "1d105a2d5d767e067b31c3ef5ce227ae85cecf5b1f360afc36499b3d02adc370",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -4315,8 +4315,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/ctpred_sunitinib_pannet",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 6163724386,
+    "tree_sha256": "5b969049ef84f4b7380c1225373a154f1384217f54fb5730592147f9a43ffaba",
     "subjects": 34,
     "xray_images": null,
     "videos": null,
@@ -4361,7 +4361,7 @@
    }
   },
   "idc_eay131": {
-   "digest": "23c100f7c436a532ab57a6289edcdbf6efdedeeed3a309db0a9f8af8b65e73d5",
+   "digest": "0c7592e746aa9e9e472c6e13ef9c463401808261f5d1af315bc05e90e5c09cef",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -4379,8 +4379,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/eay131",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 37225661636,
+    "tree_sha256": "edc52a31b81136c56b80e52219e3e9b1e959f7a51862741b701ca85fbb3ff5c8",
     "subjects": 376,
     "xray_images": null,
     "videos": null,
@@ -4435,7 +4435,7 @@
    }
   },
   "idc_hcc_tace_seg": {
-   "digest": "cc897d5058c2da5776fb3a0b3c5f228945255d93996bf365277485a1faa9b1e2",
+   "digest": "702f8ddb44d36c4ec26e5db073d7add04d9dfb3b6f010edf0a80f4b274975e85",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -4453,8 +4453,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/hcc_tace_seg",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 5119552398,
+    "tree_sha256": "18acae9f891202bbf4c4234e223054c28c08bc8ed2ff453f688ad11d3a9cb3d3",
     "subjects": 101,
     "xray_images": null,
     "videos": null,
@@ -4622,7 +4622,7 @@
    }
   },
   "idc_lung_pet_ct_dx": {
-   "digest": "c47f9cc7d2f6cce68490d7027f4575a2d2497e69cf5a5a9efe85d6188324fd0f",
+   "digest": "6db9efe00de0b3d1fb1cdd8bf316116c954aa21a0723f10e65df0ff0635e7222",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -4640,8 +4640,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/lung_pet_ct_dx",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 29895161732,
+    "tree_sha256": "4cc77cf9f2a6bf10f7369f8ddae25dd982cdd3922bfa3fa309dbf98231968cc4",
     "subjects": 158,
     "xray_images": null,
     "videos": null,
@@ -4686,7 +4686,7 @@
    }
   },
   "idc_mediastinal_lymph_node_seg": {
-   "digest": "d43db625d322e0264e879aa2317be94844af67be99c3a259dc2ede9aa619ce94",
+   "digest": "96cf0dc22313fe4127880b55b9e2e0aea11a33a597d19dc54067c3ee5511d2c3",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -4704,8 +4704,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/mediastinal_lymph_node_seg",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 25695564010,
+    "tree_sha256": "4b583259f3844abe810aa7863a7ea98bb046d9e32d4268ea2623bd1864d547e7",
     "subjects": 316,
     "xray_images": null,
     "videos": null,
@@ -4751,7 +4751,7 @@
    }
   },
   "idc_midrc_ricord_1a": {
-   "digest": "0711b1aa9a0d8b62c7c17be35305ccd212d1dd03fb37898194bc222296fd3337",
+   "digest": "be065595ef9f73957c1b837d62f9cd0d92885d06ac5c13e70f476cf47a6e7d1b",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -4769,8 +4769,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/midrc_ricord_1a",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 6690856480,
+    "tree_sha256": "bead426d0e6fafd516134daf4fa917abbd0a249ad029a8d77c9173317ccd640b",
     "subjects": 98,
     "xray_images": null,
     "videos": null,
@@ -4814,7 +4814,7 @@
    }
   },
   "idc_midrc_ricord_1b": {
-   "digest": "8b4325a4092a4165165cf74117bef0b9cbd9ed343e2e7f25c0b604b02da887c3",
+   "digest": "e10971b1eeee9e0c50f33af2f701fb740289337c18a98f64e92a3ac60add81c1",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -4832,8 +4832,8 @@
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc_midrc_ricord_1b",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 8668721317,
+    "tree_sha256": "b244c86422e55e7d98f8ca42fc507c2641ada1e4319a2249a5e08ca831c2afa6",
     "subjects": 91,
     "xray_images": null,
     "videos": null,
@@ -4950,7 +4950,7 @@
    }
   },
   "idc_nsclc_radiogenomics": {
-   "digest": "e4566cfcd841917d1f079003f1a2f4936e12c20ab7421d61af23cd730eb206a6",
+   "digest": "8328f3c006d8ebb7f7360d5b550f4f1db77fb8ad6ef8c924f67be73b88993b2c",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -4968,8 +4968,8 @@
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc_nsclc_radiogenomics",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 90920028002,
+    "tree_sha256": "17f90a65ccfdfc5b6e13a9a116b6c4d826360327cd635545534fca4aa871cde8",
     "subjects": 188,
     "xray_images": null,
     "videos": null,
@@ -5014,7 +5014,7 @@
    }
   },
   "idc_nsclc_radiomics": {
-   "digest": "4241ca31d660c7cd4311b5ead31755c3f5683ada789360c16feeef4280b0114f",
+   "digest": "a53a1499aa6fb25031a10f82a04e3728e9098febc000e65f4527f2ba65f563af",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -5032,8 +5032,8 @@
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc_nsclc_radiomics",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 26952714219,
+    "tree_sha256": "28244684dd42106589f2f84baacfee2b795528da017acfcfd71624f1a2087966",
     "subjects": 415,
     "xray_images": null,
     "videos": null,
@@ -5083,7 +5083,7 @@
    }
   },
   "idc_pancreatic_ct_cbct_seg": {
-   "digest": "3ba53425600f4a3fcccf52b7bfe14510639a05ff5bf52e7bdc4c36f6f5f86b3d",
+   "digest": "79806e6adb09c551247e9c28b69ccaff2d395e06b34eae22cf73e27346fcc557",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5101,8 +5101,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/pancreatic_ct_cbct_seg",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 2957497980,
+    "tree_sha256": "27eb8dd78f350ad2188c0606603e450bc125f116b8016eaa3ba64d85c552a1a7",
     "subjects": 40,
     "xray_images": null,
     "videos": null,
@@ -5145,7 +5145,7 @@
    }
   },
   "idc_pediatric_ct_seg": {
-   "digest": "7607a5e51ac7756ee4129ea7e37e1ee5003b26e890a5fb3641375146506be348",
+   "digest": "4909e281038615faee7509e81db591c71048fe2ca8e5fecac3fb1ecf5bd1760d",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5163,8 +5163,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/pediatric_ct_seg",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 56902381622,
+    "tree_sha256": "5ec0fc404cd1f479aee7c04b9cf8192ddba04f92ea5ff895979e1c00a2f66f52",
     "subjects": 352,
     "xray_images": null,
     "videos": null,
@@ -5208,7 +5208,7 @@
    }
   },
   "idc_pelvic_reference_data": {
-   "digest": "c6e2f912b20aadd31e5ee84402d2857c42d98fc389b84bf8f27e71e71f0b6deb",
+   "digest": "a9f329add767eb51ae8006747e19bde5d7785cf6272fce4cf2b659cb76bcf3a2",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5226,8 +5226,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/pelvic_reference_data",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 4499041132,
+    "tree_sha256": "24cd647196aa879fea48a7dc5edc10ffe3ecffa3b6f16cea5dd9bf92599a9032",
     "subjects": 58,
     "xray_images": null,
     "videos": null,
@@ -5324,7 +5324,7 @@
    }
   },
   "idc_psma_pet_ct_lesions": {
-   "digest": "b97be8f65fb07c2c68826b6f4026df62a93ce411b9cb2ff20646645a49b3e37b",
+   "digest": "7395a62ad24bad0c94bb5ba06c507923c2af68666b1568b5d171a62656634ed4",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5342,8 +5342,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/psma_pet_ct_lesions",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 63139697062,
+    "tree_sha256": "a16d58492c8d1273462d123bb20f03579b03304ba7f0c7373bd96f89673aba0c",
     "subjects": 374,
     "xray_images": null,
     "videos": null,
@@ -5385,7 +5385,7 @@
    }
   },
   "idc_rider_lung_pet_ct": {
-   "digest": "7da8d199964842e02bb78dcddc82b41ea6df5632623003aa12b4689dbe2607d4",
+   "digest": "4971c8a72996918c04423fad40bfc85810be04a180cd5a97aba6dcfa1aed3cce",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5403,8 +5403,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/rider_lung_pet_ct",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 18537943612,
+    "tree_sha256": "a14cfdc5b446341be2eaa0ecc4409552ecbdf756f22fdcffe59b7f8e920bd85a",
     "subjects": 117,
     "xray_images": null,
     "videos": null,
@@ -5449,7 +5449,7 @@
    }
   },
   "idc_spinal_multiple_myeloma_seg": {
-   "digest": "f6f6deed68d46dbf6283e9c34ebc464d0a41ac0a6db308b68955dc4674ddca6d",
+   "digest": "01e4cad3aba189142ee4837579d0b8a3d023d92fefdb38921fc7cabd2c2239db",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -5467,8 +5467,8 @@
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc_spinal_multiple_myeloma_seg",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 297769275017,
+    "tree_sha256": "5751cc1dd10b327f7a0d8a61c897e69ced156dc7dd1b17e7228b47a2cd39e787",
     "subjects": 67,
     "xray_images": null,
     "videos": null,
@@ -5502,7 +5502,7 @@
    }
   },
   "idc_spine_mets_ct_seg": {
-   "digest": "4078f9a789458074b0185d9d319c7174651ae8b8d661a3afbe11697f24097c28",
+   "digest": "6a9291a3bf6aad9394c03c8080b6e6153185df351b1a014e3d852eb3648ccbd6",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -5520,8 +5520,8 @@
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc_spine_mets_ct_seg",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 18724919264,
+    "tree_sha256": "9308b4f72ffc8b8970ca99569d7e702f1f30f03c6f5235e5befb7671d91345e7",
     "subjects": 54,
     "xray_images": null,
     "videos": null,
@@ -5557,7 +5557,7 @@
    }
   },
   "idc_tcga_blca": {
-   "digest": "edc0fa06fc3862c6c65e78c04e911b7b29b0fc3150a5b357bff5fcb61241c954",
+   "digest": "1dce0c29abc2a78d3b15b5490b68369bfe185a3312a84017c7dca3f488e28998",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5575,8 +5575,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/tcga_blca",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 10284999264,
+    "tree_sha256": "e6867096466a5976c7d88e53f49189cec397b0beb298614be2944ebe2cadab61",
     "subjects": 79,
     "xray_images": null,
     "videos": null,
@@ -5621,7 +5621,7 @@
    }
   },
   "idc_tcga_esca": {
-   "digest": "5a340c892b3e5d9a1737663b6ec921a8afe15958a2be6b9067e714a6c1ace86f",
+   "digest": "a315ef56ced6dcc31cf94640bb77826218e2a39027a22ddf003cc25b9e62009d",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5639,8 +5639,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/tcga_esca",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 2501238054,
+    "tree_sha256": "35a1f3161a5a807ed744bb10728ba7d0801b2be2e79c470ae574d8a105919e69",
     "subjects": 16,
     "xray_images": null,
     "videos": null,
@@ -5684,7 +5684,7 @@
    }
   },
   "idc_tcga_kirc": {
-   "digest": "2202fa4cfb2718445c375a726419e1a311b9dcf0dc0f8a4fdc3ffceb16a585cc",
+   "digest": "db06a16123c4bc5f36b5576ad1e8fd8c5f1b2739691cd19e1b935f2de09123ea",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5702,8 +5702,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/tcga_kirc",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 9966507748,
+    "tree_sha256": "adeafa52e24dd626cbc79fcdf5025b01a5624da9fe9d46b9945f826e43d13ba6",
     "subjects": 129,
     "xray_images": null,
     "videos": null,
@@ -5747,7 +5747,7 @@
    }
   },
   "idc_tcga_lihc": {
-   "digest": "8a1530e7b8c491be961d4f0be7547e358f64a18027bbf1929e1a6c11a1f24712",
+   "digest": "04ced9943fa08fa902e4b0b1dbbbe5f27a2dca11cf94c7d319bf5db1dcca3f81",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5765,8 +5765,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/tcga_lihc",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 4976751636,
+    "tree_sha256": "30e9c31bbb29dbd56fb07530e48c6e6fe222d4063efd322b2be8149f216b8340",
     "subjects": 42,
     "xray_images": null,
     "videos": null,
@@ -5810,7 +5810,7 @@
    }
   },
   "idc_tcga_ov": {
-   "digest": "20786218e649b887a3e2544d4b3a1ca515816df25016aa808a817d283f5400ff",
+   "digest": "97b3d6e0f71452f54727b34d1d716ac26d2f94df2ae36490f93d81895f5a359e",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5828,8 +5828,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/tcga_ov",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 2474408344,
+    "tree_sha256": "46be6b7dea9f2a9ee66487150b9a720ef34998e120098654032ce88137b44474",
     "subjects": 24,
     "xray_images": null,
     "videos": null,
@@ -5873,7 +5873,7 @@
    }
   },
   "idc_tcga_stad": {
-   "digest": "1ae0735faa79f2808bc8e5ba3d72fa44974a13ddfca214c545d9ef8fd808f254",
+   "digest": "8b5fcd0801d4d0bcde6675ee5ae52b335195c5a6e1515c28aadea603555d7449",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5891,8 +5891,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/tcga_stad",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 6437945576,
+    "tree_sha256": "d4e0833a73c7653733af5779b4dc5b6c62a0c41c0921879a08369752029c2ceb",
     "subjects": 45,
     "xray_images": null,
     "videos": null,
@@ -5934,7 +5934,7 @@
    }
   },
   "idc_tcga_ucec": {
-   "digest": "84ae8f274b03b270508786cff035cd663fb383bd10fc0cae6e25b6ea07882de1",
+   "digest": "212c1cd7f8ed8515ef7a946ac2d155dc93bd633608fde7c01c23faf372b898db",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5952,8 +5952,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/tcga_ucec",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 4171151216,
+    "tree_sha256": "e307d5e1785a4d00eb1af5645264bc83e723102991a28623f9a36246b48d2d0a",
     "subjects": 38,
     "xray_images": null,
     "videos": null,
@@ -5998,7 +5998,7 @@
    }
   },
   "idc_varepop_apollo": {
-   "digest": "f29e3a6ad5920feb0e5c51201ca7226a6702550a4499af36c5927b0e70eebef4",
+   "digest": "418d36653a11186c0d76cd4ad887e7dc2598596d6b04c85d4bd61ab9cce8fb39",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -6016,8 +6016,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/varepop_apollo",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 5483126018,
+    "tree_sha256": "e7ab43afcf675171676b1e97570555150b3045d7fdeeffe1c05dfbfbe3f270d2",
     "subjects": 35,
     "xray_images": null,
     "videos": null,
@@ -6104,7 +6104,7 @@
    }
   },
   "ipcai2025_xray_ct": {
-   "digest": "2724ce01898d5d850d8d539c91a5937cb3538049fff6927fbcf6b3a49d7bebb7",
+   "digest": "7bc9e3b1484b2cb807e3fffb3e1fc83ad29c557177e93cc8123e6b0d4855bf4e",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6122,8 +6122,8 @@
     "level_truth": "none; no spine; the stored poses make it a 2D/3D registration benchmark",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/ipcai2025_xray_ct/raw",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 6670978774,
+    "tree_sha256": "7693d9e93be98e5b419c8513b75cd5bd0e8a61ef9455748b67216f785a82ae41",
     "subjects": 5,
     "xray_images": 50,
     "videos": null,
@@ -6293,7 +6293,7 @@
    }
   },
   "kidney_thoraxabdomen": {
-   "digest": "25046a649b1378cb8620a220a587b8c748157f5496f462f0a3d0c3b7d19aa3ef",
+   "digest": "8311ac9cc0b66ee4e8cfc18179bee2ea207c62a7a756b880cca8947cd6f700e1",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -6311,8 +6311,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/kidney_thoraxabdomen",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 75937730899,
+    "tree_sha256": "1eecd6e5f89cc65619876cb0d59df24b3b5d1a2b58990203969c167115945fb8",
     "subjects": 215,
     "xray_images": null,
     "videos": null,
@@ -6397,7 +6397,7 @@
    }
   },
   "kub_stonex": {
-   "digest": "8b7dd204c427526c25a8c37518a7d38cd80bd46a975b68352540115e2deb1ed9",
+   "digest": "2614a60d29671b5d8ceebdeca0cb720c23169822c14c5dab41ee5fc28938e309",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6415,8 +6415,8 @@
     "level_truth": "none; frontal lumbar spine and pelvis",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/kub_stonex",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 55328666242,
+    "tree_sha256": "ceb8ea9a3bbf91c9d40fc055a228a4af3c07902d5ae6d8662a081bb02a32891d",
     "subjects": 1703,
     "xray_images": 2570,
     "videos": null,
@@ -6504,7 +6504,7 @@
    }
   },
   "ljubljana_2d3d_gs": {
-   "digest": "139396eac241f76639c60f5f7cacf79f24fae005bcb4df0d2c00aebc88da5fdd",
+   "digest": "aeb6edbd61c543e492f9255a80d36e5b27bddf43c62e1d4201b8bb6d4672cdbd",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -6522,8 +6522,8 @@
     "level_truth": "L1 to L5: each vertebra is its own CT and MR volume, placed on every X-ray by its gold-standard transform and the X-ray's header geometry",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/ljubljana",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 306504065,
+    "tree_sha256": "e8bd19d69c841e5b3448c39374998e157c8cb10382c8e86576bc51baaabe65c5",
     "subjects": 1,
     "xray_images": 18,
     "videos": null,
@@ -6568,7 +6568,7 @@
    }
   },
   "lumos": {
-   "digest": "8a463639269b6a07e3ee6bbcb7731b1222e0462ba6c24872c6ef1ca3f1c13fee",
+   "digest": "fee684fb648029b4d9c70b0385a488c23941e9488ff598657a3f59b78f7558a0",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6586,8 +6586,8 @@
     "level_truth": "levels readable from the paired CT after a 2D/3D registration",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/zenodo_lumos",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 76386234420,
+    "tree_sha256": "d9cfde8e26682cd12b9d228fafd89ce0215e8459fdf2ab08cd51db47026d48ef",
     "subjects": 803,
     "xray_images": 1620,
     "videos": null,
@@ -6988,7 +6988,7 @@
    }
   },
   "nhanes2_annotated": {
-   "digest": "d39fa0881315f024cd4f7ffda09860416fea37100cf416975019c3b3532ce518",
+   "digest": "123d4c0168681d9cf774d056eface5ce82db6cc0a9c8fa0a0c2f77f92c62d641",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -7006,8 +7006,8 @@
     "level_truth": "landmarks on the cervical and lumbar vertebrae",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/nhanes2_zenodo_landmarks",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 3284647651,
+    "tree_sha256": "8dc0751f7b7b525b99c169268d330d1559f4d25accd8ea6537b0879b041ffe16",
     "subjects": 364,
     "xray_images": 543,
     "videos": null,
@@ -7030,7 +7030,7 @@
    }
   },
   "nhanes2_unannotated": {
-   "digest": "afac36d60459d8047991bef877941f2f1695670508e13dd7ea90e21133b39f7c",
+   "digest": "4af71c2af622cb065b86df140963266d85131c0d3ae9749174f24c5e0507fe59",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -7048,8 +7048,8 @@
     "level_truth": "none in the release",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/nhanes2_cdc_films",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 138377968433,
+    "tree_sha256": "8baa19635164cf14d012c4e19b4400e0315846c7a5a3cf1a0d9efd29e538c46b",
     "subjects": null,
     "xray_images": 16531,
     "videos": null,
@@ -7072,7 +7072,7 @@
    }
   },
   "nih_chestxray14": {
-   "digest": "1d91703616f26e8a7befc6c3a771fc8ed8184385aadb50bf101de3575abc8740",
+   "digest": "b3e962612c6be2b5732254e08954a8d643a2df31ab0e3571681f78c94fff0f21",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -7090,8 +7090,8 @@
     "level_truth": "none; the frontal thoracic spine behind the mediastinum",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/nih_chestxray14",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 45079872841,
+    "tree_sha256": "89336b8afb203f80b7b49a1dc969c94a18ab38dbc174c429273d390c65757612",
     "subjects": 30805,
     "xray_images": 112120,
     "videos": null,
@@ -7179,7 +7179,7 @@
    }
   },
   "nlst_pilot": {
-   "digest": "cfdcb600292b5327c89caafd9bbf60927d37a80552ab7a22e15248da03758799",
+   "digest": "415308f108180fd5b4f284ed54f060fa77ce533dccf30591f267f4eaf7ffce6f",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -7197,8 +7197,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/nlst_pilot",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 73543991208,
+    "tree_sha256": "1707373e9b59527d30d686ee99c60836dd4ad1ea21219bdcf9e2bac0982b4301",
     "subjects": 500,
     "xray_images": null,
     "videos": null,
@@ -7353,7 +7353,7 @@
    }
   },
   "panorama": {
-   "digest": "aec5aa381675b8a9e765007f3977df29cca891b64d1dc68f372307b09a35e5a1",
+   "digest": "e73dad663712244aecb9be5c07e1603112410a4334f32bda0bbce450bb105537",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -7371,8 +7371,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/panorama",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 194439363448,
+    "tree_sha256": "a858cae8f54733c0a6f5c23fc43d34851625e17b370c1e21d594c66284e20471",
     "subjects": 1950,
     "xray_images": null,
     "videos": null,
@@ -7458,7 +7458,7 @@
    }
   },
   "pengwin2026": {
-   "digest": "d806a2c253fac430fab1dcc0b04b40ae2fc841a96be511b579e6bf95510d60ce",
+   "digest": "0e82f8b8f03113ec067a55b0ffc43a95f518518e11c996fe322355c5d83844d3",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -7476,8 +7476,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/pengwin2026",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 83498925109,
+    "tree_sha256": "6bd5d038709ef39513907f4039b20528974d8263854815b54784905d744d10d5",
     "subjects": 340,
     "xray_images": null,
     "videos": null,
@@ -7519,7 +7519,7 @@
    }
   },
   "pengwin_task2_xrays": {
-   "digest": "836925cc157a4e4c9fc0d61dc24cbb4eeae21e22100d1a63c6991422e1818f17",
+   "digest": "f49eb3578c13c125bc1e9423ccc9a1ee2f9fdd56e8e9422556e7be147a5986de",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -7537,8 +7537,8 @@
     "level_truth": "none in 2D; from the Task 1 CTs by pose (the manifest's pengwin2026, already on the grid)",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/pengwin_task2_xrays",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 34950751395,
+    "tree_sha256": "526ce347196e987a4d3218911c6ca7be70ec3b41bc0c74d62cb4a065208ccdd9",
     "subjects": null,
     "xray_images": null,
     "videos": null,
@@ -7702,7 +7702,7 @@
    }
   },
   "quadra_hc": {
-   "digest": "3c00ed7ae2e7f0235899d51c4634509512ca8b70a01bdebdc39698c0f1bfa9c1",
+   "digest": "06a09f20afb3983989b9d6e4b7c2999e66eddd10c66efe3bfc7ef173bed16fec",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -7720,8 +7720,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/quadra_hc",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 20413498578,
+    "tree_sha256": "5ad453f90eea840b7308aac2912cd1feb78b26425439601c53dee049875a0617",
     "subjects": 48,
     "xray_images": null,
     "videos": null,
@@ -7850,7 +7850,7 @@
    }
   },
   "ribfrac": {
-   "digest": "3f85908452092b0012b2275d8c249b8235280c37d180a2d91fcdb6956083828a",
+   "digest": "3b38f6af01311fead092838ea2757d273ca3f810fb9a7eefe358a51421d06725",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -7868,8 +7868,8 @@
     "level_truth": "none for the vertebrae; the thoracic spine is in view",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/ribfrac",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 156899015256,
+    "tree_sha256": "2c734244e8a6345e73057c85d2c55d7e1b7dba77add8a8b7b8356a2d315c443d",
     "subjects": null,
     "xray_images": null,
     "videos": null,
@@ -7920,7 +7920,7 @@
    }
   },
   "rsna_2022_cervical": {
-   "digest": "3408f26292b2696f270b09e77d1a60aaa2fdc4d2ef80ba432da6baa5b1ec9e0d",
+   "digest": "a71c40da331abe7ccc8c7774dbdea72bde7b61a9bd766af4257cc6fb6e040274",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -7938,8 +7938,8 @@
     "level_truth": "fracture labels by vertebra, C1 to C7",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/rsna_2022_cspine",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 203321991870,
+    "tree_sha256": "62b7448a469f4ef392bcf060869359414c14de5e41077b6aa9e78fd0eadde2a8",
     "subjects": null,
     "xray_images": null,
     "videos": null,
@@ -8424,7 +8424,7 @@
    }
   },
   "tcia_fdg_pet_ct_lesions": {
-   "digest": "ded6d2bee6fad724c2f4fc489f6baec0e3a5fa381f17d603bf2e604307326134",
+   "digest": "2cf41b1cb992078aeaa8b97e2018c5e41c18a70139956f2a2760990aee7136e4",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -8442,8 +8442,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/tcia_fdg_pet_ct_lesions",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 393872197196,
+    "tree_sha256": "04e64f2d7274d4a5f8c0386f174abc63b47195fb5cd0437e6519c7a47410d4ce",
     "subjects": 900,
     "xray_images": null,
     "videos": null,
@@ -8758,7 +8758,7 @@
    }
   },
   "verse": {
-   "digest": "cba9c586fbf6db5e06f038cbb63ccc5dd303a36d2b43ec2fe0033da1ad2aeef3",
+   "digest": "049c23f0e337b18b05be667e53ffa15187a5bfc018c877e5815c606116143868",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -8776,8 +8776,8 @@
     "level_truth": "vertebra masks and centroids by level",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/versefusion/raw/VerSeFusion_data/raw",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 52189925577,
+    "tree_sha256": "dd93f69ffe6616e0282946744ee30d9b46873a57a978cfb10da5ca0933e8771f",
     "subjects": 355,
     "xray_images": null,
     "videos": null,
@@ -8827,7 +8827,7 @@
    }
   },
   "verse_2d_projections": {
-   "digest": "1fd5ca7d669916fd78bc01e3e69dee458ff3de03da0f5b93414b4e8bd2e05bd9",
+   "digest": "f57d3900113396019abb3ec9670eede9ab500fce7819ce04e43752a450f9cb9b",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -8845,8 +8845,8 @@
     "level_truth": "vertebral identity from VerSe",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/verse_2d_projections",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 4417086105,
+    "tree_sha256": "527744b71331bcf06ecc833b5dfa7534c3c1c3781dfa37392728281dbf73f664",
     "subjects": null,
     "xray_images": null,
     "videos": null,
@@ -8924,7 +8924,7 @@
    }
   },
   "veterinary_pig_levelcheck": {
-   "digest": "28ba243872a40ecb6860bd87c355d664db04a4bd4bc4a8d75be02f4cbe26aaf5",
+   "digest": "5f4cf603f566d759e79e1d230a51bae8dcf3ce5f587ca14db25eb399d839f99b",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -8942,8 +8942,8 @@
     "level_truth": "none; no spine",
     "grid_path": "/rs/rs_grp_oschome/shared/datasets/veterinary_pig_levelcheck",
     "on_grid": true,
-    "grid_bytes": 205004261,
-    "tree_sha256": null,
+    "grid_bytes": 205012607,
+    "tree_sha256": "c8d263659b254e3563661e024df651807008e6d2bd7972ccf017ce0cef3cb510",
     "subjects": 1,
     "xray_images": 14,
     "videos": null,
@@ -9117,7 +9117,7 @@
    }
   },
   "vindr_spinexr": {
-   "digest": "4edc950f9d026a4324c9b8b5fce373e1e139478eeadc462f095b6e4ac0419c3f",
+   "digest": "1f617729508aa5328466079fb851fb56ae1bb51c29c239919580c777e72bf03c",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -9135,8 +9135,8 @@
     "level_truth": "lesion boxes; no levels",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/vindr_spinexr",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 114749095458,
+    "tree_sha256": "8750850e89cb150f4194936876a8ee0e7ead34a10d049f9b6ce2d6efd2e40554",
     "subjects": null,
     "xray_images": 10466,
     "videos": null,
@@ -9161,7 +9161,7 @@
    }
   },
   "waw_tace": {
-   "digest": "23a60bee3fd76515dd456eeb64bfe4edfdb0cde0fac00be9937700d15a9a4a3f",
+   "digest": "0d1ae85930472d4a656597a40b3616b3412f02f3c3724853d92f7180f074c4ea",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -9179,8 +9179,8 @@
     "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/waw_tace",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 47150828519,
+    "tree_sha256": "679c7cd12bc0be667db54034ec58d266544470414bb7a420d74b49f697255ec3",
     "subjects": 233,
     "xray_images": null,
     "videos": null,
@@ -9222,7 +9222,7 @@
    }
   },
   "zenodo_lumvbcanseg": {
-   "digest": "6201e5961ddfef7930acaa69be1ce1cef9df28f6e9e5fed8749ab88cabb46800",
+   "digest": "391c4c507afcd9e140d3b15d74b1941be5944b83464b893e7f6e7fd1f1896515",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -9241,7 +9241,7 @@
     "grid_path": "/rs/rs_grp_oschome/shared/datasets/zenodo_lumvbcanseg/raw",
     "on_grid": true,
     "grid_bytes": 10075438693,
-    "tree_sha256": null,
+    "tree_sha256": "5a3f87fe59862a968f3ad169418f021f80eae94b9707d275b2853372a4265279",
     "subjects": 185,
     "xray_images": null,
     "videos": null,
@@ -9275,7 +9275,7 @@
    }
   },
   "zenodo_medpelvis3d": {
-   "digest": "b21c88141cf3b307455582a9a705d5e91ca7d0dceb22b058840dd58d518dc350",
+   "digest": "11e4d7573b7e05d9d521ce70ab17d2ec835d77b9f709b707cfc622fa428b8281",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -9294,7 +9294,7 @@
     "grid_path": "/rs/rs_grp_oschome/shared/datasets/zenodo_medpelvis3d/raw",
     "on_grid": true,
     "grid_bytes": 31351310903,
-    "tree_sha256": null,
+    "tree_sha256": "461fdcecc1eaa5aabdc70761c240ac644dc809e133551af40e13c24a37a56414",
     "subjects": 99,
     "xray_images": null,
     "videos": null,
@@ -9328,7 +9328,7 @@
    }
   },
   "zenodo_tmtv_benchmark": {
-   "digest": "80508d1e47983b12619a600bd54de0b9a80ce2aa4e15e5a4ebca025131c9cec0",
+   "digest": "59db7150b26f993f71d84289566b100a408ae9c8118aec9eaa2cf3d525ddf59b",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -9347,7 +9347,7 @@
     "grid_path": "/rs/rs_grp_oschome/shared/datasets/zenodo_tmtv_benchmark/raw",
     "on_grid": true,
     "grid_bytes": 6846084599,
-    "tree_sha256": null,
+    "tree_sha256": "eac4abb36ad92c52f361a6cd6adae9e62e88010a882a7a33fd624790b0a990fb",
     "subjects": 60,
     "xray_images": null,
     "videos": null,
@@ -9381,7 +9381,7 @@
    }
   },
   "zenodo_ts_task_hip_implant": {
-   "digest": "51f15d963eac1c37391c756722de07634538d50d724d40563bb4514d2f903c94",
+   "digest": "1b1dda63b3501234938e9bbde25bf0370bed91fbb68a9a8b49f6d9bfe4550b7c",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -9399,8 +9399,8 @@
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/zenodo_ts_task_hip_implant",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 9129987506,
+    "tree_sha256": "dd52c72aa944eb798b43b43b6b31c5299c99f082302ede8534821790a70d91a1",
     "subjects": 71,
     "xray_images": null,
     "videos": null,
@@ -9434,7 +9434,7 @@
    }
   },
   "zenodo_ts_task_liver_lesions": {
-   "digest": "f29e05928dea56baae96e83af870a0df892c5c433ef9fd5ee327f83d3c07444d",
+   "digest": "cd2d8f407c9555d9474efc0f8da910726baa02bd0e87c7b424c43256e555f271",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -9452,8 +9452,8 @@
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/zenodo_ts_task_liver_lesions",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 39039571028,
+    "tree_sha256": "505ec223026d674b65b85ed5507d3b6762377232f998317abeaa39ed6182d623",
     "subjects": 842,
     "xray_images": null,
     "videos": null,
@@ -9487,7 +9487,7 @@
    }
   },
   "zenodo_ts_task_pleural_effusion": {
-   "digest": "e840652f616d06a14234db46c92c383300150734e4b0269176ba18d0dc546414",
+   "digest": "482db83078796b1c9e9fff1dd26df97d3599d6d61c3263a102b084421a84cced",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -9505,8 +9505,8 @@
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/zenodo_ts_task_pleural_effusion",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 9012772615,
+    "tree_sha256": "bf9f94fdc789abc4dbf327349af17827f83934cbc3d5331280881f56dd7c9a88",
     "subjects": 600,
     "xray_images": null,
     "videos": null,
@@ -9540,7 +9540,7 @@
    }
   },
   "zenodo_unitochest": {
-   "digest": "ba34d98e793e911f2dd16e6688647a9de1e6ee941ce78c33f3bfb6b85e806431",
+   "digest": "5483e986099ecb54c7794f1b441fa1a96e8d7a960a21735f142100b42c7c2091",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -9559,7 +9559,7 @@
     "grid_path": "/rs/rs_grp_oschome/shared/datasets/zenodo_unitochest/raw",
     "on_grid": true,
     "grid_bytes": 84067545368,
-    "tree_sha256": null,
+    "tree_sha256": "baa668122a84a749fc76ac521761169d44b309727c70502664ee83b12c58e2de",
     "subjects": 623,
     "xray_images": null,
     "videos": null,
@@ -9593,7 +9593,7 @@
    }
   },
   "zenodo_vsd_fullbody": {
-   "digest": "b4287b47de3b8973f2a74e4717603fa5ddaca21f8d596b3c589443045f881640",
+   "digest": "c6d63e30a135645fd4d8365dcfdaee9df96f31982cec0906430b488f24522b2c",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -9611,8 +9611,8 @@
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/zenodo_vsd_fullbody",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 252158307717,
+    "tree_sha256": "0199d0d274a308bcf5cf3eaaafd7f9904b1d7e6c1f5980f2ac892ed1bc5de797",
     "subjects": 100,
     "xray_images": null,
     "videos": null,
@@ -10717,6 +10717,996 @@
     "bytes": [
      4050000000,
      4053482052
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "carmlspine",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     103686719641
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "geneva_hip",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     1110686125
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "ljubljana_2d3d_gs",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     306504065
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "lumos",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     76386234420
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "cathaction",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     56183481264
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "dysphagiabank",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     19557720024
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "cobra2026",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     808617728644
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "ipcai2025_xray_ct",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     6670978774
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "aariz_cephalograms",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     6338426763
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "buu_lspine",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     35225321802
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "csxa",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     3691537837
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "kub_stonex",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     55328666242
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "nhanes2_annotated",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     3284647651
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "nhanes2_unannotated",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     138377968433
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "nih_chestxray14",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     45079872841
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "vindr_spinexr",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     114749095458
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "abdomenatlas3_mini",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     570557160234
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "amos22",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     102615496477
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "aortaseg60",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     15929004557
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "aws_stoic2021",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     264277371447
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "barts_crl",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     20313374662
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "csi2014",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     6640702200
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "ctspine1k",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     162350473572
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "ctspinopelvic1k",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     202680383788
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "curvas",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     29993980558
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "curvas_pdacvi",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     16878618437
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "deep_psma",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     24253086312
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_acrin_flt_breast",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     2820716228
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_acrin_nsclc_fdg_pet",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     15803448804
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_adrenal_acc_ki67_seg",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     3554260496
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_anti_pd_1_lung",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     4255529904
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_cmb_brca",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     2592712452
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_cmb_crc",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     5415090502
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_cmb_lca",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     10016371716
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_cmb_mel",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     2182027164
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_cmb_mml",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     2325630444
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_cmb_ov",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     1046667648
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_colorectal_liver_metastases",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     6306640878
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_covid_19_ar",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     5663331196
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_covid_19_ny_sbu",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     64665429890
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_cptac_ccrcc",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     7899579642
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_cptac_cm",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     4231397264
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_cptac_lscc",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     29521912984
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_cptac_luad",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     38946321618
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_cptac_pda",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     10052805748
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_cptac_sar",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     3091957308
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_cptac_stad",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     7112447934
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_cptac_ucec",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     10535515130
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_ct_vs_pet_ventilation_imaging",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     1792570632
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_ctpred_sunitinib_pannet",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     6163724386
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_eay131",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     37225661636
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_hcc_tace_seg",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     5119552398
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_lung_pet_ct_dx",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     29895161732
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_mediastinal_lymph_node_seg",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     25695564010
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_midrc_ricord_1a",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     6690856480
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_midrc_ricord_1b",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     8668721317
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_nsclc_radiogenomics",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     90920028002
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_nsclc_radiomics",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     26952714219
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_pancreatic_ct_cbct_seg",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     2957497980
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_pediatric_ct_seg",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     56902381622
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_pelvic_reference_data",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     4499041132
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_psma_pet_ct_lesions",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     63139697062
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_rider_lung_pet_ct",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     18537943612
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_spinal_multiple_myeloma_seg",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     297769275017
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_spine_mets_ct_seg",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     18724919264
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_tcga_blca",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     10284999264
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_tcga_esca",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     2501238054
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_tcga_kirc",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     9966507748
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_tcga_lihc",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     4976751636
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_tcga_ov",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     2474408344
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_tcga_stad",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     6437945576
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_tcga_ucec",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     4171151216
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "idc_varepop_apollo",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     5483126018
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "kidney_thoraxabdomen",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     75937730899
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "nlst_pilot",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     73543991208
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "panorama",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     194439363448
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "pengwin2026",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     83498925109
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "pengwin_task2_xrays",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     34950751395
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "quadra_hc",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     20413498578
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "ribfrac",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     156899015256
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "rsna_2022_cervical",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     203321991870
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "tcia_fdg_pet_ct_lesions",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     393872197196
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "verse",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     52189925577
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "verse_2d_projections",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     4417086105
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "waw_tace",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     47150828519
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "zenodo_ts_task_hip_implant",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     9129987506
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "zenodo_ts_task_liver_lesions",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     39039571028
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "zenodo_ts_task_pleural_effusion",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     9012772615
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "zenodo_vsd_fullbody",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     252158307717
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "veterinary_pig_levelcheck",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     205004261,
+     205012607
     ]
    }
   }
