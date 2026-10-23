@@ -3,10 +3,10 @@
  "repo": "OpenSpineConsortium/spine-datasets",
  "generated": "2026-10-23",
  "totals": {
-  "datasets": 165,
+  "datasets": 166,
   "by_stage": {
    "downloadable": 9,
-   "to-ask": 9,
+   "to-ask": 10,
    "asked": 26,
    "granted": 6,
    "fetching": 0,
@@ -20,7 +20,7 @@
    "fluoro": 13,
    "video": 25,
    "projections": 3,
-   "films": 30,
+   "films": 31,
    "ct": 92,
    "future": 2
   },
@@ -8143,6 +8143,48 @@
     ]
    }
   },
+  "scidb_mtddh": {
+   "digest": "2a3d9b92ae45bddca2e1671aef41303e25213064bc017bece90ba9c53faf4d7b",
+   "first_seen": "2026-10-23",
+   "last_changed": "2026-10-23",
+   "row": {
+    "id": "scidb_mtddh",
+    "name": "MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025)",
+    "group": "films",
+    "kind": "Radiographs",
+    "route": "owner-only",
+    "status": "todo",
+    "stage": "to-ask",
+    "licence": "CC BY 4.0 (DataCite's record of the DOI, read 2026-10-23)",
+    "licence_kind": "open",
+    "link": "https://doi.org/10.57760/sciencedb.24372",
+    "what": "2,156 pelvic radiographs of children from the Children's Hospital of Zhejiang University School of Medicine and Hebei Children's Hospital in two parts: 1,250 annotated with four regions for image quality and eight key points for developmental dysplasia of the hip, and 906 with the eight key points (Science Data Bank doi:10.57760/sciencedb.24372, V1, issued 2025-04-29, 4.05 GB in three files); the lumbosacral junction is in the field of a pelvic film, as in the Mendeley DDH hip sets",
+    "level_truth": "none; pediatric pelvis",
+    "grid_path": null,
+    "on_grid": false,
+    "grid_bytes": null,
+    "tree_sha256": null,
+    "subjects": null,
+    "xray_images": 2156,
+    "videos": null,
+    "run_frames": null,
+    "ct_volumes": null,
+    "bytes": 4050000000,
+    "unread_counts": [],
+    "next": "the owner's step as how_to_get says; then a grid job onto /rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw by grid/README.md from the holder's Beethoven session",
+    "since": "2026-10-23",
+    "last_step": {
+     "date": "2026-10-23",
+     "step": "researched"
+    },
+    "paired": false,
+    "tier": null,
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
+   }
+  },
   "seattle_science_foundation": {
    "digest": "391bf5be563971404ac6928cfbd01febc42647220fdec4fe7fd7643c9f086de5",
    "first_seen": "2026-09-26",
@@ -9739,6 +9781,7 @@
   "rsna_ratic": "2026-10-21",
   "rsna_rspect": "2026-10-21",
   "scidb_enhance_pet_1_6k": "2026-10-21",
+  "scidb_mtddh": "2026-10-23",
   "seattle_science_foundation": "2026-09-26",
   "sof_lateral_spine": "2026-10-21",
   "stanford_aimi_inspect": "2026-10-21",
@@ -10612,6 +10655,12 @@
   {
    "date": "2026-10-23",
    "id": "hsg_ais_registry",
+   "kind": "added",
+   "changes": {}
+  },
+  {
+   "date": "2026-10-23",
+   "id": "scidb_mtddh",
    "kind": "added",
    "changes": {}
   }

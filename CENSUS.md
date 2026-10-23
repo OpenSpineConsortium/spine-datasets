@@ -1,6 +1,6 @@
 # Census: every dataset, counted from its record
 
-Written by tools/census.py on 2026-10-23 from the 165 records under datasets/ of
+Written by tools/census.py on 2026-10-23 from the 166 records under datasets/ of
 https://github.com/OpenSpineConsortium/spine-datasets; nobody edits it by hand. Each dataset is one record; the census reads
 the records alone, never a dataset's files, and folds in only the records that are new or changed
 since the last run. The page with filters is census.html beside this file, served by the docs site.
@@ -9,7 +9,7 @@ since the last run. The page with filters is census.html beside this file, serve
 
 | | |
 |---|---|
-| Datasets with a record | 165 |
+| Datasets with a record | 166 |
 | On the grid (shared tree and the owner's root) | 101 |
 | Size on the grid | 3.9 TB (83 of 101 sets counted) |
 | Frozen on the grid, every file hashed (tools/freeze.py) | 0 of 101 |
@@ -23,7 +23,7 @@ since the last run. The page with filters is census.html beside this file, serve
 | Stage | Datasets |
 |---|---|
 | Downloadable now | 9 |
-| To ask | 9 |
+| To ask | 10 |
 | Asked, waiting | 26 |
 | Granted, fetch pending | 6 |
 | Fetching | 0 |
@@ -177,6 +177,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | Open-i Indiana chest collection | Radiographs | Needs the owner | restricted |  | 7,470 |  |  |  |  | [#35](https://github.com/OpenSpineConsortium/spine-datasets/issues/35) |
 | PadChest (BIMCV, Alicante) | Radiographs | To ask | restricted | 67,625 | 160,868 |  |  |  |  | [#12](https://github.com/OpenSpineConsortium/spine-datasets/issues/12) |
 | ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025) | Radiographs | To ask | restricted | 109,487 |  |  |  |  |  | [#11](https://github.com/OpenSpineConsortium/spine-datasets/issues/11) |
+| MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025) | Radiographs | To ask | open |  | 2,156 |  |  |  | 4.0 GB |  |
 | SOF lateral spine radiographs (Study of Osteoporotic Fractures) | Radiographs | To ask | restricted |  |  |  |  |  |  | [#10](https://github.com/OpenSpineConsortium/spine-datasets/issues/10) |
 | TVGH ankylosing spondylitis cervical and lumbar spine films | Radiographs | Asked, waiting | unknown |  |  |  |  |  |  | [#108](https://github.com/OpenSpineConsortium/spine-datasets/issues/108) |
 | TVGH-SpineXR | Radiographs | Asked, waiting | unknown |  |  |  |  |  |  | [#14](https://github.com/OpenSpineConsortium/spine-datasets/issues/14) |
@@ -610,6 +611,7 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-23 MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025): record added
 - 2026-10-23 Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity): record added
 - 2026-10-23 Radiopaedia spine cases: stage asked to granted; status requested to granted
 - 2026-10-23 LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group): stage asked to refused; status requested to refused; tier C to D
