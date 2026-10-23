@@ -1,6 +1,6 @@
 # Which datasets answer which question
 
-Source: the thread "Spine knowledge synthesis", 2026-10-23, step 4 of track #175 ("per question syntheses: for each research question, which sets answer it, how many people, at what level truth"). Read from this repository's records, datasets/*.json at main b44ba32, and, for the sets already held before this repository existed, from the counts of SchwingNet's sample index of 2026-10-22 (its docs/research/data-manifest/README.md), which are counts only. Nothing was fetched or sent for it. Dataset facts only, under CONTRIBUTING.md's confidentiality rule.
+Source: the thread "Spine knowledge synthesis", 2026-10-23, step 4 of track #175 ("per question syntheses: for each research question, which sets answer it, how many people, at what level truth"). Read from this repository's records, datasets/*.json at main 4b2c993, and, for the sets already held before this repository existed, from the counts of SchwingNet's sample index of 2026-10-22 (its docs/research/data-manifest/README.md), which are counts only. Nothing was fetched or sent for it. Dataset facts only, under CONTRIBUTING.md's confidentiality rule.
 
 The census (#178, tools/census.py) will generate the tables of what is held and what waits on whom from the records. This note does not repeat those tables. It groups the sets by the question each can answer, so a reader can see which question is short of data and which request would close the gap.
 
@@ -23,12 +23,13 @@ Above L1 is where the counting is hardest: a spot image of the mid-thoracic or m
 | SOF lateral spine | todo (a data request) | about 9,700 women | Genant grade per named level | thoracic and lumbar |
 | LevelCheck cohort (Johns Hopkins) | requested | 178 patients, 398 radiographs | each level placed by registration to the labelled preoperative CT | cervical to lumbar |
 | Bern myelography | requested (the MP4s are held) | 4 runs | thoracic levels named in the captions | thoracic, fluoroscopy |
+| Pittsburgh swallow | requested | 1,500 clips of 335 subjects | named corner landmarks on C2 and C4 only | cervical, fluoroscopy |
 
 Read together:
 
-- The held level truth above L1 is on films, not on intraoperative images. The only intraoperative sets with level truth above L1 are requested: Bournemouth's and Maastricht's cine, the LevelCheck cohort and the Bern runs.
+- The held level truth above L1 is on films, not on fluoroscopy or intraoperative images. The fluoroscopy sets with level truth above L1 are requested and diagnostic (Bournemouth, Maastricht, Bern, Pittsburgh). The only intraoperative ones are the LevelCheck cohort, requested, and the digital twin's cadaver of section 4, which reaches T2.
 - The LevelCheck cohort is the one request that would bring intraoperative radiographs with a CT of the same patient from the cervical to the lumbar spine. It waits on Ali Uneri's answer, and any data use agreement is the owner's to sign.
-- MrOS and SOF together would add about 15,700 people with a named level on every graded vertebra of the thoracic and lumbar spine, more than every held film set above L1 together. Both wait on the owner's data request (the NIA Aging Research Biobank, owner-paperwork-sitting.md in symphony-template).
+- MrOS and SOF together would add about 15,700 people with a named level on every graded vertebra of the thoracic and lumbar spine, more than the held films with level truth above L1 (about 7,100: CSXA 4,963, NHANES II's 543, Aariz 1,000, AASCE 609). Both wait on the owner's data request (the NIA Aging Research Biobank, owner-paperwork-sitting.md in symphony-template).
 - The chest film sets (MIMIC-CXR, CheXpert Plus, PadChest, BRAX, Open-i, NIH ChestX-ray14, ReXGradient, VinDr-CXR, VinDr-PCXR, BIMCV COVID-19+) show the thoracic spine on hundreds of thousands of images and carry no level truth. They answer the question only after someone reads the levels.
 
 ## 2. Agreement across devices and exposures
@@ -47,7 +48,7 @@ The question is whether the same anatomy reads the same through different hardwa
 | Veriserum | needs-owner | about 110,000 dual-plane frames | registered poses | none; knee phantoms |
 | The chest film sets of section 1 | various | over 1,000,000 films | many devices and sites | none |
 
-Read together: the device question has volume, and almost none of it carries a spine label. The labelled sets from several devices are Aariz (7 devices, upper cervical only) and the held C-arm sets (C-ArmLSpine, COBRA's projections and DeepFluoro, each from a different machine, per SchwingNet's records). So the measurement this question needs is leave-one-device-out agreement over the held labelled sets. The unlabelled pools serve only once their device field has been read from the files, which the sample index does for DICOM sets.
+Read together: the device question has volume, and almost none of it carries a spine label. The labelled sets from several devices are Aariz (7 devices, upper cervical only) and the held C-arm sets (C-ArmLSpine, COBRA's projections and DeepFluoro, each from a different machine, per SchwingNet's records). So the measurement this question needs is agreement compared device by device over the held labelled sets. The unlabelled pools serve only once their device field has been read from the files, which the sample index does for DICOM sets.
 
 ## 3. Transitional variants: counting the whole column
 
@@ -59,7 +60,7 @@ A transitional spine (L6, T13, a sacralised L5, eleven or thirteen rib pairs) is
 | RSNA RSPECT | granted | 7,279 patients | chest |
 | RSNA RATIC | granted | 3,147 patients | abdomen and trauma |
 | CADS | granted | 753 CTs | as the collection gives |
-| MAGIC-CT | needs-owner (approved 2026-10-22 per SchwingNet's records; the record has not caught up) | 562 CTs | as the collection gives |
+| MAGIC-CT | needs-owner (approved 2026-10-22 per SchwingNet's benchmarks note, unsent per owner-paperwork-sitting.md; section 5) | 562 CTs | as the collection gives |
 | Stanford AIMI Merlin | needs-owner (held pending storage) | 18,317 patients | abdomen |
 | Stanford AIMI INSPECT | needs-owner (held pending storage) | 19,402 patients | chest |
 | NLST | todo; 500-person pilot fetched | 24,713 subjects | chest |
@@ -67,12 +68,19 @@ A transitional spine (L6, T13, a sacralised L5, eleven or thirteen rib pairs) is
 | ENHANCE.PET 1.6k | todo | 1,683 studies | whole and total body |
 | The IDC tier 2 collections (ten records) | todo | 32 to 997 subjects each | chest, abdomen, pelvis or spine |
 | MrOS and SOF films | todo | about 15,700 people | thoracic and lumbar laterals, named levels |
+| UniToChest | fetched | 623 subjects | chest |
+| LumVBCanSeg | fetched | 185 subjects | lumbar |
+| MedPelvis3D | fetched | 99 subjects | pelvis |
+| TMTV benchmark | fetched | 60 subjects | PET/CT, coverage to confirm |
+| STOIC 2021 | todo | 2,000 subjects | chest |
+| AbdomenAtlas 2.0 Mini | requested | 10,135 volumes | abdomen |
+| VerSe, CTSpine1K, CTSpinoPelvic1K | held, per the sample index | 374, 1,005 and 802 CTs | spine, with levels labelled; CTSpinoPelvic1K flags L6 |
 
 Read together:
 
-- Every CT record above says its level truth is "counted by the census pipeline once fetched", so none of them has a count of transitional spines yet. The prevalence the literature gives (VerSe: 53 of 374 CTs with T13 or L6) is for a collection gathered for the spine. A collection screened whole is what gives honest odds, which is a reason to prefer the large unselected sets (NLST, CT-RATE, Merlin, INSPECT) once storage allows.
+- The held spine CTs (VerSe, CTSpine1K, CTSpinoPelvic1K) already carry level labels, so the question has an answer on collections gathered for the spine. Every other CT record above says its level truth is "counted by the census pipeline once fetched", so none of them has a count of transitional spines yet. The prevalence the literature gives (VerSe: 53 of 374 CTs with T13 or L6) is for a collection gathered for the spine. A collection screened whole is what gives honest odds, which is a reason to prefer the large unselected sets (NLST, CT-RATE, Merlin, INSPECT) once storage allows.
 - Chest-only coverage sees the thoracic count and the first lumbar bodies, and abdomen-only coverage sees the lumbosacral junction. Only whole-body sets (VSDFullBody, ENHANCE.PET) and chest-abdomen-pelvis studies see both junctions at once, so they are the ones that settle a column's count without a second study of the same person.
-- The real transitional cases with an intraoperative image are few. SchwingNet's records hold three persons with an L6 on C-arm images. No record here promises more, so new real cases come from the owner's own annotation or from the LevelCheck and Huashan requests below.
+- No record here promises a transitional case with an intraoperative image, so such cases come from the owner's own annotation or from the LevelCheck and Huashan requests below.
 
 ## 4. A real X-ray with a CT of the same person
 
@@ -82,6 +90,7 @@ This is the breakout the owner asked for on 2026-10-23, to plan annotating the p
 | --- | --- | --- | --- | --- | --- |
 | C-ArmLSpine | held | 149 cases | 299 spot frames, 2 sweeps | lumbar | registered by the project |
 | COBRA | held | 692 cases | 375,618 CBCT projections | lumbosacral and pelvis | geometry stored |
+| COBRA held-back cases | todo | 175 cases | CBCT projections | lumbosacral and pelvis | as COBRA |
 | DeepFluoro | held | 6 specimens | 366 frames, 2,659 vendor frames | pelvis and low lumbar | for the H5 frames |
 | Ljubljana gold standard | held | 1 cadaver | 18 frames | L1 to L5 | yes |
 | Geneva hip phantom | held | 1 phantom | 116 frames | pelvis | yes |
@@ -99,16 +108,16 @@ This is the breakout the owner asked for on 2026-10-23, to plan annotating the p
 Read together:
 
 - Held, the spine pairs are lumbar or lumbosacral, and one cadaver reaches T2. No held pair is cervical.
-- Requested, the LevelCheck cohort would be the first cervical-to-lumbar pair, and the largest paired set of intraoperative radiographs: 178 patients against C-ArmLSpine's 149 cases. Huashan would add 140 lumbar patients with both views. These two requests matter more to the paired work than any other open request.
+- Requested, the LevelCheck cohort would be the first cervical-to-lumbar pair, and the largest paired set of intraoperative radiographs, counting COBRA's CBCT projections apart: 178 patients against C-ArmLSpine's 149 cases. Huashan would add 140 lumbar patients with both views. These two requests matter more to the paired work than any other open request.
 - LUMOS is the largest lumbar pair that is open to download, and it waits on one decision: whether the project takes a non-commercial licence. COBRA (CC BY-NC) and DeepFluoro (CC BY-NC-SA) are already held under such terms, so the decision is one the project has made twice already. The manifest check refuses it until the owner records it.
-- No paired spine set ships body masks by level, so every pair needs its CT segmented and read before its X-rays carry per-pixel truth. SchwingNet's issue #127 holds that plan.
+- As far as is known, no paired spine set ships body masks by level (the cadaver's masks are to confirm on unzip), so every pair needs its CT segmented and read before its X-rays carry per-pixel truth. SchwingNet's issue #127 holds that plan.
 
 ## 5. Where the records disagree with what is known elsewhere
 
 These are reconciliation findings for step 1 of #175. They were sent to the census thread rather than edited here, since that thread writes the records:
 
 - ipcai2025_xray_ct still says "the anatomy, pelvis or spine, to confirm" and needs-owner on its licence. SchwingNet's record was corrected on 2026-10-23: the set is the distal femur, it is already on the grid, still zipped, and it enters no spine work.
-- veterinary_pig_levelcheck is named "the LevelCheck pig study". SchwingNet's retraining plan (section 10) records it as Goswami 2020's lower-limb registration phantom with no spine, not the LevelCheck study. The handoff of 2026-10-23 says the zips are on the grid while the status says fetching (the record's next step explains why: a set behind a login has no promoter manifest).
+- veterinary_pig_levelcheck is named "the LevelCheck pig study". SchwingNet's datasets inventory (docs/research/datasets-inventory.md) records it as Goswami 2020's lower-limb registration phantom with no spine, not the LevelCheck study. The handoff of 2026-10-23 says the zips are on the grid while the status says fetching (the record's next step explains why: a set behind a login has no promoter manifest).
 - aariz_cephalograms says todo, while SchwingNet's sample index of 2026-10-22 counts 1,000 Aariz cephalograms on the volume.
-- magic_ct says needs-owner, while SchwingNet's benchmarks note records its data-use application approved on 2026-10-22.
+- magic_ct says needs-owner, while SchwingNet's benchmarks note records its data-use application approved on 2026-10-22. symphony-template's owner-paperwork-sitting.md still lists the application as an unsent draft waiting on the CITI report, so the two notes need reconciling before the record changes.
 - Merlin and INSPECT are "held pending storage" (spine-dataset-status-audit.md in symphony-template). The volume held 9,605 GB of a 21,991 GB quota on 2026-10-23, so storage is now a number the owner can weigh against their sizes rather than a blanket stop.
