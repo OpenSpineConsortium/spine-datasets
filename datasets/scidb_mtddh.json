@@ -1,0 +1,37 @@
+{
+ "id": "scidb_mtddh",
+ "name": "MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025)",
+ "group": "films",
+ "what": "2,156 pelvic radiographs of children from the Children's Hospital of Zhejiang University School of Medicine and Hebei Children's Hospital in two parts: 1,250 annotated with four regions for image quality and eight key points for developmental dysplasia of the hip, and 906 with the eight key points (Science Data Bank doi:10.57760/sciencedb.24372, V1, issued 2025-04-29, 4.05 GB in three files); the lumbosacral junction is in the field of a pelvic film, as in the Mendeley DDH hip sets",
+ "level_truth": "none; pediatric pelvis",
+ "reach": "get",
+ "licence": "CC BY 4.0 (DataCite's record of the DOI, read 2026-10-23)",
+ "link": "https://doi.org/10.57760/sciencedb.24372",
+ "how_to_get": [
+  "The owner opens https://doi.org/10.57760/sciencedb.24372 (https://www.scidb.cn/detail?dataSetId=c088644bd0b2406eb49830ad447c17fb), reads whether a login is needed and reads the file list.",
+  "A Science Data Bank route is written for tools/acquisition_fetch.py before any job, as for scidb_enhance_pet_1_6k.",
+  "Fetch as a Slurm job on the owner's word, never on the login node: python3 data/reproduce/reacquire/reacquire.py http-get --url U --dest FILE, U being the address the page gives, onto /rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw by grid/README.md."
+ ],
+ "grid_path": null,
+ "counts": {
+  "xray_images": 2156,
+  "size_gb": 4.05
+ },
+ "measured": {},
+ "record": "symphony-template docs/research/spine-datasets-on-chinese-hosts.md (2026-10-23)",
+ "source_status": "found on 2026-10-23 by the search of the Chinese dataset hosts for the request-route sets (Science Data Bank); not fetched; the record read through DataCite and the page's meta tags, since the page is a JavaScript shell; the only other paediatric pelvic film source beside the Mendeley DDH hip sets",
+ "route": "owner-only",
+ "status": "todo",
+ "result": "",
+ "history": [
+  {
+   "date": "2026-10-23",
+   "step": "researched",
+   "note": "found by the search of the Chinese dataset hosts on 2026-10-23 (Science Data Bank, through its search page and then DataCite's record of the DOI); not fetched; CC BY 4.0, 4.05 GB in three files; the owner's hand: confirm whether Science Data Bank asks for a login, and a fetch route for Science Data Bank is written first"
+  }
+ ],
+ "obstacles": [
+  "the owner's hand: confirm whether Science Data Bank asks for a login; no fetch route exists yet for Science Data Bank"
+ ],
+ "next": "the owner's step as how_to_get says; then a grid job onto /rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw by grid/README.md from the holder's Beethoven session"
+}
