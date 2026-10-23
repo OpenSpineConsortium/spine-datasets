@@ -5,7 +5,7 @@
  "what": "real calibrated X-ray images with 5 CT scans, 6.7 GB, from 'Automatic multi-view X-ray/CT registration using bone substructure contours'; the anatomy, pelvis or spine, to confirm on the page",
  "level_truth": "from the CT by the registration, if spine",
  "reach": "get",
- "licence": "to confirm on the page",
+ "licence": "Research-Only Dataset License (as the Zenodo page's licence line reads for version 1.0, published 2025-05-20, read 2026-10-22)",
  "link": "https://zenodo.org/records/15753063",
  "how_to_get": [
   "Open https://zenodo.org/records/15753063 and read its licence line, the file list and what anatomy the images show.",
@@ -20,17 +20,22 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; anatomy to confirm; if spine or pelvis, one more real C-arm set with a registered CT, the COBRA and DeepFluoro kind, from a fourth device",
  "route": "download",
- "status": "todo",
+ "status": "needs-owner",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; anatomy to confirm; if spine or pelvis, one more real C-arm set with a registered CT, the COBRA and DeepFluoro kind, from a fourth device"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "licence read on the Zenodo page: Research-Only Dataset License; version 1.0 (2025-05-20) holds one file, dataset_ipcai.zip, 6.7 GB, md5 cc8bf3e445495d2deb6d50dd058dc977; the page does not say which anatomy the X-ray images show; no manifest written, since the check takes only an open licence or a granted step"
   }
  ],
  "obstacles": [
-  "the licence on the page is still to confirm before any fetch"
+  "the owner's hand: the licence is a research-only licence, not an open one, so its terms are his to read and accept or decline"
  ],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/ipcai2025_xray_ct/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "next": "the owner reads the research-only licence's terms; if he takes them, a granted step in the history lets a manifest of dataset_ipcai.zip go in"
 }
