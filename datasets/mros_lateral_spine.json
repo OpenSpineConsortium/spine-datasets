@@ -8,8 +8,8 @@
  "licence": "a MrOS data request agreement; terms to confirm on the page",
  "link": "https://mrosonline.ucsf.edu/",
  "how_to_get": [
-  "Request the lateral spine films through the NIA Aging Research Biobank (https://agingresearchbiobank.nia.nih.gov): log in or create an account there, open Requests, Request for Materials, choose Images at the top of the form and name the MrOS study; the biobank's sample agreement and costs pages give the terms and fees, and the request, the agreement and any fee are the owner's hand; the proposal text is letters/mros_lateral_spine.md.",
-  "MrOS Online itself (https://mrosonline.ucsf.edu/) is closed to registrations until its NIH update is done; the centre writes when it reopens, and the reading tables may still come from there.",
+  "Open https://mrosonline.ucsf.edu/ and read the data request route (an online application with a proposal), to confirm on the page.",
+  "The owner files the request in the owner's name and signs whatever agreement follows; a session drafts the proposal text once the owner asks.",
   "Once granted, fetch by the route the centre gives, as a Slurm job on the owner's word, never on the login node; no fetch helper applies until the route is known."
  ],
  "grid_path": null,
@@ -22,27 +22,15 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; a research data request through the MrOS coordinating centre (an online application with a proposal), not sent; the images are not on dbGaP, whose phs000373 covers genotypes (to confirm on the page); older osteoporotic spines with compression fractures, the anatomy the C-arm sees in kyphoplasty",
  "route": "form",
- "status": "needs-owner",
- "result": "Asked 2026-10-22 by the owner: an email to MrOSData@ucsf.edu for authorization to register on MrOS Online. the MrOS coordinating centre (Liezl Concepcion, Center for Aging Science, Sutter Health Research Institute) replied 2026-10-22 18:16 UTC: the portal is closed to registrations while it is updated for new NIH requirements, they will write when it reopens; the study images are being added to the NIA's Aging Research Biobank (https://agingresearchbiobank.nia.nih.gov), where the request should go. Since the biobank already has the images, it can give the timeline, the transfer, any fees and the terms.",
+ "status": "todo",
+ "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; a research data request through the MrOS coordinating centre (an online application with a proposal), not sent; the images are not on dbGaP, whose phs000373 covers genotypes (to confirm on the page); older osteoporotic spines with compression fractures, the anatomy the C-arm sees in kyphoplasty"
-  },
-  {
-   "date": "2026-10-22",
-   "step": "asked",
-   "note": "the owner asked MrOSData@ucsf.edu for authorization to register on MrOS Online"
-  },
-  {
-   "date": "2026-10-22",
-   "step": "note",
-   "note": "MrOS Online is closed to registrations for NIH updates; the images are going to the NIA Aging Research Biobank (agingresearchbiobank.nia.nih.gov), where the request is filed next"
   }
  ],
- "obstacles": [
-  "MrOS Online is closed to registrations; the biobank request, its agreement and any fee are the owner's hand"
- ],
- "next": "the owner files the image request with the NIA Aging Research Biobank (the text is letters/mros_lateral_spine.md) and records the date here"
+ "obstacles": [],
+ "next": "fill the form named in letters/mros_lateral_spine.md with its paragraphs as the purpose, then record the date here"
 }

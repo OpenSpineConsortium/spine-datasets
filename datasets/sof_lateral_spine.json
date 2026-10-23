@@ -8,8 +8,8 @@
  "licence": "a SOF data request agreement; terms to confirm on the page",
  "link": "https://sofonline.ucsf.edu/",
  "how_to_get": [
-  "Request the lateral spine films through the NIA Aging Research Biobank (https://agingresearchbiobank.nia.nih.gov): log in or create an account there, open Requests, Request for Materials, choose Images at the top of the form and name the SOF study; the biobank's sample agreement and costs pages give the terms and fees, and the request, the agreement and any fee are the owner's hand; the proposal text is letters/sof_lateral_spine.md.",
-  "SOF Online itself (https://sofonline.ucsf.edu/) is closed to registrations until its NIH update is done; the centre writes when it reopens, and the reading tables may still come from there.",
+  "Open https://sofonline.ucsf.edu/ and read the data request route, to confirm on the page.",
+  "The owner files the request in the owner's name and signs whatever agreement follows; a session drafts the proposal text once the owner asks.",
   "Once granted, fetch by the route the centre gives, as a Slurm job on the owner's word, never on the login node."
  ],
  "grid_path": null,
@@ -20,27 +20,15 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; the same kind of request as MrOS (to confirm on the page), not sent; with MrOS the largest level-labelled lateral spine film resource that exists",
  "route": "form",
- "status": "needs-owner",
- "result": "Asked 2026-10-22 by the owner: an email to SOFData@ucsf.edu for authorization to register on SOF Online. SOF's coordinating centre (Liezl Concepcion, Center for Aging Science, Sutter Health Research Institute) replied 2026-10-22 20:53 UTC: the portal is closed to registrations while it is updated for new NIH requirements, they will write when it reopens; the study images are being added to the NIA's Aging Research Biobank (https://agingresearchbiobank.nia.nih.gov), where the request should go.",
+ "status": "todo",
+ "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; the same kind of request as MrOS (to confirm on the page), not sent; with MrOS the largest level-labelled lateral spine film resource that exists"
-  },
-  {
-   "date": "2026-10-22",
-   "step": "asked",
-   "note": "the owner asked SOFData@ucsf.edu for authorization to register on SOF Online"
-  },
-  {
-   "date": "2026-10-22",
-   "step": "note",
-   "note": "SOF Online is closed to registrations for NIH updates; the images are going to the NIA Aging Research Biobank (agingresearchbiobank.nia.nih.gov), where the request is filed next"
   }
  ],
- "obstacles": [
-  "SOF Online is closed to registrations; the biobank request, its agreement and any fee are the owner's hand"
- ],
- "next": "the owner files the image request with the NIA Aging Research Biobank (the text is letters/sof_lateral_spine.md) and records the date here"
+ "obstacles": [],
+ "next": "fill the form named in letters/sof_lateral_spine.md with its paragraphs as the purpose, then record the date here"
 }
