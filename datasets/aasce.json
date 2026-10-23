@@ -1,0 +1,35 @@
+{
+ "id": "aasce",
+ "name": "AASCE 2019 / BoostNet AP whole-spine films",
+ "group": "films",
+ "what": "609 AP whole-spine films with 68 landmarks each, the corners of 17 vertebrae from T1 to L5 (481 and 128 in the BoostNet release's two parts), and 98 challenge films whose landmarks were never published; the GitHub mirror holds all 707, an older request-form copy 579 of them (Wu et al., MICCAI 2017; Wang et al., Medical Image Analysis 2021)",
+ "level_truth": "thoracic and lumbar, T1 to L5, by the landmarks",
+ "reach": "held",
+ "licence": "by request form (SpineWeb dataset 16); the mirror repository is MIT, the images' reuse terms not recorded",
+ "link": "https://aasce19.github.io/",
+ "how_to_get": [
+  "Held: on the grid at /rs/rs_grp_oschome/go2432/data/aasce2019_boostnet; the mirror at /rs/rs_grp_oschome/go2432/data/thoracic_xr/mirror_zlinzju_ke30_u7_AASCE2019, the request-form copy from SpineWeb and the GitHub mirror (md5-checked, 2026-09-22); nothing to fetch.",
+  "To share it with collaborators, copy it into /rs/rs_grp_oschome/shared/datasets/aasce/ with its checksums as a Slurm job, as the pig set of #22 was copied, and note the job in the history."
+ ],
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/aasce2019_boostnet; the mirror at /rs/rs_grp_oschome/go2432/data/thoracic_xr/mirror_zlinzju_ke30_u7_AASCE2019",
+ "counts": {
+  "xray_images": 707,
+  "labelled_films": 609,
+  "challenge_films": 98
+ },
+ "measured": {},
+ "record": "SchwingNet data/sources/aasce.json, 2026-10-23",
+ "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
+ "route": "form",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/aasce2019_boostnet; the mirror at /rs/rs_grp_oschome/go2432/data/thoracic_xr/mirror_zlinzju_ke30_u7_AASCE2019",
+ "history": [
+  {
+   "date": "2026-10-23",
+   "step": "held",
+   "note": "on the grid at /rs/rs_grp_oschome/go2432/data/aasce2019_boostnet; the mirror at /rs/rs_grp_oschome/go2432/data/thoracic_xr/mirror_zlinzju_ke30_u7_AASCE2019, the request-form copy from SpineWeb and the GitHub mirror (md5-checked, 2026-09-22), before the shared tree and its promoter existed; the record written for the census (#178) from SchwingNet's registry"
+  }
+ ],
+ "obstacles": [],
+ "next": ""
+}

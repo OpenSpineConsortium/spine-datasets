@@ -2,6 +2,17 @@
  "id": "cobra_embargoed",
  "name": "COBRA2026 embargoed cases",
  "group": "projections",
+ "pairing": {
+  "spine": true,
+  "region": "lumbosacral spine and pelvis",
+  "xray": "raw kV projections, as the public cases",
+  "ct": "the planning CT and the CBCT, as the public cases",
+  "subjects": "175 patients",
+  "pose": "stored, as the public cases",
+  "masks": "none for the vertebrae",
+  "annotate": "as COBRA2026's public cases, once the embargo ends on 2032-03-01",
+  "pair_key": "the case id"
+ },
  "what": "the challenge's held-back cases",
  "level_truth": "same",
  "reach": "embargoed",

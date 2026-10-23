@@ -1,0 +1,49 @@
+{
+ "id": "geneva_hip",
+ "name": "Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021)",
+ "group": "fluoro",
+ "pairing": {
+  "spine": false,
+  "region": "pelvis and hip, a phantom",
+  "xray": "116 frames",
+  "ct": "the phantom's CT",
+  "subjects": "1 phantom",
+  "pose": "stored: gold-standard rigid transforms and the projection matrix",
+  "masks": "none shipped",
+  "annotate": "nothing for the spine; a registration check on a C-arm no other set comes from",
+  "pair_key": "one phantom: every frame pairs with its one CT"
+ },
+ "what": "116 fluoroscopy frames of one hip phantom on a Philips BV Pulsera C-arm, with the phantom's CT, a gold-standard rigid transform for each frame and the projection matrix",
+ "level_truth": "none for the spine",
+ "reach": "held",
+ "licence": "not recorded; to confirm on the source's page",
+ "link": "",
+ "how_to_get": [
+  "Held: on the grid at /rs/rs_grp_oschome/go2432/data/geneva_hip_src, fetched by the owner; nothing to fetch.",
+  "To share it with collaborators, copy it into /rs/rs_grp_oschome/shared/datasets/geneva_hip/ with its checksums as a Slurm job, as the pig set of #22 was copied, and note the job in the history."
+ ],
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/geneva_hip_src",
+ "counts": {
+  "subjects": 1,
+  "xray_images": 116,
+  "ct_volumes": 1
+ },
+ "measured": {},
+ "record": "SchwingNet data/sources/geneva_hip.json, 2026-10-23",
+ "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
+ "route": "download",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/geneva_hip_src",
+ "history": [
+  {
+   "date": "2026-10-23",
+   "step": "held",
+   "note": "on the grid at /rs/rs_grp_oschome/go2432/data/geneva_hip_src, fetched by the owner, before the shared tree and its promoter existed; the record written for the census (#178) from SchwingNet's registry"
+  }
+ ],
+ "obstacles": [
+  "the licence line is still to confirm on the source's page",
+  "the source's link is not written in the registry"
+ ],
+ "next": ""
+}

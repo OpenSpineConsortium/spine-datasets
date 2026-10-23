@@ -12,8 +12,9 @@
   "Fetch it as a Slurm job on the owner's word, never on the login node: bash grid/run-xray-chain.sh --only aariz, whose stage 1 reads the API, runs http-get with the md5 and unpacks the zip (grid/README.md).",
   "The ISBI 2015 set of 400 cephalograms is the entry isbi2015_cephalograms of grid/fetch-xray.json, whose link is still to confirm."
  ],
- "grid_path": null,
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/aariz",
  "counts": {
+  "xray_images": 1000,
   "films": 1000,
   "devices": 7,
   "landmarks": 29,
@@ -24,15 +25,20 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; the 1,000-film set is an open figshare download (27986417, one zip of 2,098,209,792 bytes), entered in grid/fetch-xray.json as aariz on 2026-10-21 (issue #40); the 400-film ISBI 2015 set's link is still to confirm; pediatric anchors for the top of the cervical counter from seven devices",
  "route": "download",
- "status": "todo",
- "result": "",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/aariz",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; the 1,000-film set is an open figshare download (27986417, one zip of 2,098,209,792 bytes), entered in grid/fetch-xray.json as aariz on 2026-10-21 (issue #40); the 400-film ISBI 2015 set's link is still to confirm; pediatric anchors for the top of the cervical counter from seven devices"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "held",
+   "note": "the 1,000 films on the grid at /rs/rs_grp_oschome/go2432/data/aariz, fetched by the owner's chain (SchwingNet's registry, 2026-10-23); the ISBI 2015 cephalograms are not among them"
   }
  ],
  "obstacles": [],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/aariz_cephalograms/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "next": "fetch the ISBI 2015 set of 400 cephalograms once its link is confirmed"
 }

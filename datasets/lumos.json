@@ -2,6 +2,18 @@
  "id": "lumos",
  "name": "LUMOS (Zhejiang University)",
  "group": "fluoro",
+ "pairing": {
+  "spine": true,
+  "region": "lumbar",
+  "xray": "1,620 AP or lateral diagnostic radiographs",
+  "ct": "280 non-contrast lumbar CTs",
+  "subjects": "803 patients, 280 of them with a CT",
+  "pose": "none given: each film is registered to its CT",
+  "masks": "to confirm on the record",
+  "annotate": "masks on the 280 CTs, then each film registered to its CT",
+  "pair_key": "to confirm: whether a film and a CT of the same id are one patient",
+  "priority": 5
+ },
  "what": "803 living patients: 1,620 lumbar AP or lateral radiographs and 280 non-contrast lumbar CTs, anonymised DICOM and NPY; diagnostic radiography, not C-arm fluoroscopy; no pose given",
  "level_truth": "levels readable from the paired CT after a 2D/3D registration",
  "reach": "get",

@@ -23,6 +23,8 @@ request (.github/workflows/ci.yml):
   - a data file added to the repository (an image, an archive, a volume, a table of rows), outside
     docs/ and tests/, where it is flagged instead, since a figure or a fixture may belong there;
   - a record moved to fetched without a manifest, or with a grid_path outside the shared tree;
+  - a record moved to held with no grid_path, or with one outside the owner's grid root and the
+    shared tree, where the owner's own chain and the promoter put what they fetch;
   - a change to the promoter's own code (tools/promote.py, grid/promote.sh, and grid/promote.json,
     its old budget, should it come back), which runs as the owner on the grid, in a pull request someone other than
     the owner opened;
@@ -32,7 +34,9 @@ request (.github/workflows/ci.yml):
     attested, accepted terms), which only the owner may do;
   - a licence or link changed other than by replacing "to confirm on the page";
   - a non-commercial or no-derivatives licence, which also needs a grant in the history to be
-    fetched at all.
+    fetched at all;
+  - a record newly held, with the path it gives, since nothing in a pull request proves the set
+    is there: whoever merges checks it against a status listing of the grid.
 - NOTE: a CT manifest while X-ray sets still wait to be fetched; the promoter takes X-ray first.
 
 The report goes to the job's log and, on GitHub, to the job's summary page.
@@ -65,6 +69,11 @@ from check_docs import SECRET_PATTERNS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SHARED = "/rs/rs_grp_oschome/shared/datasets"
+# Where a held set may be: the owner's own grid root, where the owner's chain fetches, and the
+# shared tree, where the promoter installs; the status word lists both, so whoever merges can see
+# the path, and a copy elsewhere waits as needs-owner until it is moved under one of them.
+HELD_ROOTS = ("/rs/rs_grp_oschome/go2432/", SHARED + "/")
+GRID_PATH = re.compile(r"(?<![\w.])/[^\s;,()]+")
 XRAY_GROUPS = ("fluoro", "video", "projections", "films")
 TRUSTED_PATHS = ("tools/promote.py", "grid/promote.sh", "grid/promote.json")
 # Who may change what runs as the owner on the grid; the promoter holds the same rule on its side.
@@ -212,6 +221,20 @@ def review_record(path, base, report, root=ROOT):
         grid_path = after.get("grid_path") or ""
         if grid_path != "%s/%s/raw" % (SHARED, ident):
             report.add("FAIL", "%s: fetched needs grid_path %s/%s/raw, which the promoter writes" % (path, SHARED, ident))
+    if after.get("status") == "held" and (before or {}).get("status") != "held":
+        review_held(path, after, report)
+
+
+def review_held(path, after, report):
+    """A record the owner's chain put on the grid names where; a path outside both roots is wrong,
+    and one inside them is still only the record's word until a listing shows it."""
+    grid_path = after.get("grid_path") if isinstance(after.get("grid_path"), str) else ""
+    paths = GRID_PATH.findall(grid_path)
+    if not paths or not all(found.startswith(HELD_ROOTS) for found in paths):
+        report.add("FAIL", "%s: held needs a grid_path under %s" % (path, " or ".join(HELD_ROOTS)))
+    else:
+        report.add("FLAG", "%s: now held at %s; check it against a status listing of the grid before merging"
+                   % (path, grid_path))
 
 
 def xray_waiting(root=ROOT):

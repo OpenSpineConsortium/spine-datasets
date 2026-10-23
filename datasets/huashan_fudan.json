@@ -2,6 +2,17 @@
  "id": "huashan_fudan",
  "name": "Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024)",
  "group": "fluoro",
+ "pairing": {
+  "spine": true,
+  "region": "lumbar, L1 to L5",
+  "xray": "intraoperative AP and lateral films",
+  "ct": "the preoperative CT of each patient",
+  "subjects": "140 patients",
+  "pose": "none stated",
+  "masks": "none stated",
+  "annotate": "to read once the set is in hand",
+  "pair_key": "the patient"
+ },
  "what": "140 living lumbar patients (January 2020 to December 2023) with preoperative CT and intraoperative AP and lateral films of L1 to L5; the device is unnamed; two co-authors are from Shanghai Maestro Surgical Robotics; no data statement",
  "level_truth": "L1 to L5 on the intraoperative film, establishable from the same patient's preoperative CT",
  "licence": "not recorded; a data use agreement is the route",
@@ -12,7 +23,10 @@
  ],
  "reach": "get",
  "grid_path": null,
- "counts": {},
+ "counts": {
+  "subjects": 140,
+  "ct_volumes": 140
+ },
  "measured": {},
  "record": "SchwingNet docs/research/xray-dataset-requests.md section 15 (2026-10-21); no record under SchwingNet's data/sources/ existed for this set, so this one was written from that section",
  "source_status": "a letter sent 2026-10-21; no record in SchwingNet's registry yet",
