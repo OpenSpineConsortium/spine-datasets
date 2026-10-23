@@ -86,6 +86,7 @@ DOWNLOAD_HOSTS = {
     "figshare.com": ("ndownloader.figshare.com",),
     "data.mendeley.com": ("data.mendeley.com",),
     "zenodo.org": ("zenodo.org",),
+    "scidb.cn": ("download.scidb.cn",),
 }
 # Space the promoter leaves free on the shared volume, as the owner's own fetch chain does.
 RESERVE_BYTES = 10 ** 12

@@ -1,0 +1,30 @@
+{
+ "id": "scidb_mtddh",
+ "source": "https://www.scidb.cn/en/detail?dataSetId=c088644bd0b2406eb49830ad447c17fb",
+ "licence": "CC BY 4.0 (DataCite's record of the DOI, read 2026-10-23)",
+ "date": "2026-10-23",
+ "files": [
+  {
+   "path": "raw/JPG_DICOM.rar",
+   "url": "https://download.scidb.cn/download?fileId=6598e44aa54eb418af5add89c199fd9f&path=/V1/JPG_DICOM.rar&fileName=JPG_DICOM.rar",
+   "bytes": 1165024411,
+   "md5": "2029b761e5077e61280f4a5fb9308a32",
+   "verified_against": "Science Data Bank's public file-list API (childrenFileListByPath), read from the owner's computer on 2026-10-23; a HEAD of each link answered the same Content-Length"
+  },
+  {
+   "path": "raw/MTDDH.zip",
+   "url": "https://download.scidb.cn/download?fileId=c4ecee1aec98deb8327888bce3e07901&path=/V1/MTDDH.zip&fileName=MTDDH.zip",
+   "bytes": 1872032279,
+   "md5": "1508164e97c35b7063a163726bf4ef05",
+   "verified_against": "Science Data Bank's public file-list API (childrenFileListByPath), read from the owner's computer on 2026-10-23; a HEAD of each link answered the same Content-Length"
+  },
+  {
+   "path": "raw/code.zip",
+   "url": "https://download.scidb.cn/download?fileId=b4c4789e608dc5f66e654b47f072d5f1&path=/V1/code.zip&fileName=code.zip",
+   "bytes": 1016425362,
+   "md5": "a91952a0f1b6fc0989e8a1d53cd0432e",
+   "verified_against": "Science Data Bank's public file-list API (childrenFileListByPath), read from the owner's computer on 2026-10-23; a HEAD of each link answered the same Content-Length"
+  }
+ ],
+ "bytes_total": 4053482052
+}

@@ -25,7 +25,7 @@
  "record": "symphony-template docs/research/spine-datasets-on-chinese-hosts.md (2026-10-23)",
  "source_status": "found on 2026-10-23 by the search of the Chinese dataset hosts for the request-route sets (Science Data Bank); not fetched; the record read through DataCite and the page's meta tags, since the page is a JavaScript shell; the same day the owner opened the page (no login) and the file list with its download links was read from the owner's computer; the only other paediatric pelvic film source beside the Mendeley DDH hip sets",
  "route": "download",
- "status": "todo",
+ "status": "fetching",
  "result": "",
  "history": [
   {
@@ -37,10 +37,15 @@
    "date": "2026-10-23",
    "step": "researched",
    "note": "the owner opened the page: downloads with no login; the three files, their sizes, md5s and download links read through the site's public API from the owner's computer; the paper read (Scientific Data 2025); the authors' older figshare copy found as a fallback; the fetch waits on the owner's word for the manifest"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "fetching",
+   "note": "manifest ready; the promoter fetches after merge (the owner gave the word for one set of 4.05 GB at 19:54 UTC)"
   }
  ],
  "obstacles": [
-  "the fetch waits on the owner's word for the manifest (status fetching) and on the promoter learning download.scidb.cn (DOWNLOAD_HOSTS in tools/promote.py, installed on the grid by the owner's gate word promoter restart)"
+  "the promoter on the grid takes the host entry for download.scidb.cn only once the owner sends the gate word promoter-restart after this merge (grid/README.md), since a session's commits are tied to its own account"
  ],
- "next": "on the owner's word: manifests/scidb_mtddh.json from the three files above with status fetching, and the download.scidb.cn host rule in tools/promote.py in the same pull request; the owner sends promoter restart after the merge; the promoter installs the set"
+ "next": "the promoter installs it after merge"
 }
