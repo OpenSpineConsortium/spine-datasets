@@ -2,15 +2,16 @@
  "id": "cm_spine_drive_file",
  "name": "CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images",
  "group": "fluoro",
- "what": "208 anteroposterior lumbar spine images at 1024 x 1024, taken during surgery with a mobile dual-mode G-arm (Geelin500-A), of patients with lumbar disc herniation or vertebral compression fractures, each lumbar vertebra in view annotated by its level, L1 to L5, 537 vertebrae, split 148 and 60 in the paper (Zeng et al., Electronics 2024;13(11):2137); the paper's data statement points to its repository, which links this Drive file as the set; the data platform's download of the file came back empty, so what it holds now is not checked",
+ "what": "208 anteroposterior lumbar spine images at 1024 x 1024, taken during surgery with a mobile dual-mode G-arm (Geelin500-A), of patients with lumbar disc herniation or vertebral compression fractures, each lumbar vertebra in view annotated by its level, L1 to L5, 537 vertebrae, split 148 and 60 in the paper (Zeng et al., Electronics 2024;13(11):2137); the paper's data statement points to its repository, github.com/zengyuyuyu/Neighbor, whose README linked this Drive file as the set and whose code reads the set as COCO files (train2022, val2022, spine_train.json, spine_val.json); on 2026-10-23 the repository is no longer public and the Drive file does not open, so the set is held by its authors alone",
  "level_truth": "each lumbar vertebra's level, L1 to L5, as the authors annotated it",
  "reach": "get",
  "licence": "none stated: the paper's data statement and its repository's README name no licence, and the repository has no licence file (read 2026-10-23)",
  "link": "https://drive.google.com/file/d/1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ/view",
  "how_to_get": [
-  "Open https://drive.google.com/file/d/1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ/view logged in to the owner's Google account and see whether it still holds the 208 images, since the data platform's gdown got an empty download; the paper's repository, https://github.com/zengyuyuyu/Neighbor, links it as the set.",
-  "No licence is stated, so the owner decides whether to take the set as it is or to write to the corresponding author, Bo Song, for terms first; the fetch is then a Slurm job on the owner's word, never on the login node.",
-  "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid cm_spine_drive_file; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"cm_spine_drive_file\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
+  "Open https://drive.google.com/file/d/1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ/view logged in to the owner's Google account: a page saying you need access offers Request access, one press that mails the file's owner; a page saying the file does not exist means it is gone (the Drive API answers not found for both, 2026-10-23).",
+  "Send letters/cm_spine_drive_file.md from the owner's mailbox to the corresponding authors, Erkang Cheng (ekcheng@iim.ac.cn) and Bo Song (songbo@iim.ac.cn), with the first author Yu Zeng (yzeng@iim.ac.cn) in copy; the addresses are the paper's own.",
+  "If no answer comes in two weeks, write to the journal's editorial office (electronics@mdpi.com, or the ethics team at publication.ethics@mdpi.com) citing the paper's Data Availability Statement, which names the repository as where code and data are; MDPI's ethics page asks authors who remove data to tell the office, and asks a reader to write to the corresponding author first.",
+  "Once a copy is offered, the fetch is a Slurm job on the owner's word, never on the login node; the data platform's route (python3 data/reproduce/reacquire/reacquire.py --grid cm_spine_drive_file) works only if the Drive file comes back."
  ],
  "grid_path": null,
  "counts": {
@@ -18,8 +19,8 @@
  },
  "measured": {},
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
- "source_status": "empty in the data platform at bf1432f; the owner's hand: gdown into a scratch directory, inspect, then decide",
- "route": "owner-only",
+ "source_status": "unreachable: the Drive file answers not found to the owner's Google account (2026-10-23) and gave gdown an empty directory (2026-09-01); the repository github.com/zengyuyuyu/Neighbor is no longer public (its files answer 404 and the profile lists no public repository, 2026-10-23); the code survives in Software Heritage, src only, with no image or label; no public copy found by search on 2026-10-23 (the set's name, the paper, the device, the Drive id, grep.app, Zenodo, Roboflow Universe, Kaggle, six dataset lists, the three papers citing the paper); the route is a letter to the corresponding authors",
+ "route": "letter",
  "status": "todo",
  "result": "",
  "history": [
@@ -37,10 +38,15 @@
    "date": "2026-10-23",
    "step": "note",
    "note": "identified: CM Spine of Zeng et al., Electronics 2024;13(11):2137, whose data statement points to github.com/zengyuyuyu/Neighbor, whose README links this Drive file; 208 intraoperative AP lumbar G-arm images, L1 to L5 annotated; no licence in the paper or the repository; found by checking the owner's list of fluoroscopy sets of 2026-10-23"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "researched",
+   "note": "the Drive file answers not found to the owner's Google account and the repository is no longer public (its files 404, no public repository on the profile); Software Heritage keeps the code (src only); no public copy, fork or re-upload found by search; the paper's corresponding authors are Erkang Cheng and Bo Song, Institute of Intelligent Machines, Hefei; the letter is rewritten for them and the route is letter"
   }
  ],
  "obstacles": [
-  "the owner's hand: the owner opens the Drive file logged in to the owner's Google account, since the data platform's download came back empty, and decides on a set with no licence stated"
+  "the set was only ever a Google Drive file linked from a repository README, and both are gone from public view; no licence is stated and the paper carries no ethics or consent statement, so the terms and the approval must come from the authors"
  ],
- "next": "the owner opens the Drive file and says whether to take the set as it is or to ask the authors for terms first"
+ "next": "the owner opens the Drive link logged in (Request access if the page offers it) and sends the letter; the record moves to asked when it goes"
 }
