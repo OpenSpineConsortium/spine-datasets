@@ -17,9 +17,13 @@
 #                                     jobs of about equal stated size
 #   bash freeze.sh submit LIST JOBS   the same for any list of tools/freeze.py plan's lines
 #   bash freeze.sh status             the jobs, the sets frozen so far and each job's last lines
+#   bash freeze.sh report             the public copies kept so far, sent to the branch freeze-report
+#                                     of spine-datasets as one commit with no parent, through the
+#                                     account's own gh; no job, a few calls to GitHub's API, and a
+#                                     session brings them into the records (tools/freeze.py apply)
 #   bash freeze.sh run SHARE          inside a job: freeze each set of SHARE not yet frozen
 #
-# The grid gate's words freeze pilot, freeze start and freeze status (hpcworker's
+# The grid gate's words freeze pilot, freeze start, freeze status and freeze report (hpcworker's
 # tools/grid_gate.sh) fetch tools/freeze.py, this file and grid/freeze-plan.tsv at the head of the
 # default branch into code/ and run these, so nobody types them. A job that reaches its wall time or
 # is requeued carries on: a set already frozen is skipped, a set half read resumes from its
@@ -41,6 +45,8 @@ HOME_DIR=${FREEZE_HOME:-/rs/rs_grp_oschome/$USER/spine-datasets-freeze}
 PLAN=$HOME_DIR/code/freeze-plan.tsv
 HPCW=${HPCWORKER:-$HOME/hpcworker/framework/bin/hpcworker}
 CODE=${FREEZE_CODE:-$HOME_DIR/code/freeze.py}
+REPO=OpenSpineConsortium/spine-datasets
+REPORT_BRANCH=freeze-report
 
 python_bin() {
   for candidate in python3.12 python3.11 python3.10 python3.9 python3.8 python3 ; do
@@ -115,6 +121,26 @@ case "${1:-}" in
     done
     hpcw job status --project "$PROJECT" --last 8 || true
     ;;
+  report)
+    command -v gh >/dev/null 2>&1 || { echo "no gh on this account's path"; exit 2; }
+    py=$(python_bin)
+    tree_body=$HOME_DIR/report-tree.json
+    "$py" "$CODE" bundle "$HOME_DIR/frozen" > "$tree_body.tmp" && mv -f "$tree_body.tmp" "$tree_body" \
+      || { rm -f "$tree_body.tmp"; echo "nothing to report"; exit 1; }
+    tree=$(gh api -X POST "repos/$REPO/git/trees" --input "$tree_body" --jq .sha < /dev/null)
+    [[ "$tree" =~ ^[0-9a-f]{40}$ ]] || { echo "GitHub took no tree"; exit 1; }
+    sets=$(ls "$HOME_DIR"/frozen/*.json 2>/dev/null | wc -l)
+    commit=$(gh api -X POST "repos/$REPO/git/commits" -f message="The public copies of $sets frozen sets, as grid/freeze.sh report found them" \
+      -f tree="$tree" --jq .sha < /dev/null)
+    [[ "$commit" =~ ^[0-9a-f]{40}$ ]] || { echo "GitHub took no commit"; exit 1; }
+    # the branch holds only this commit, so each report replaces the last; a first report makes it
+    if gh api "repos/$REPO/git/ref/heads/$REPORT_BRANCH" --jq .object.sha < /dev/null > /dev/null 2>&1; then
+      gh api -X PATCH "repos/$REPO/git/refs/heads/$REPORT_BRANCH" -f sha="$commit" -F force=true --jq .object.sha < /dev/null > /dev/null
+    else
+      gh api -X POST "repos/$REPO/git/refs" -f ref="refs/heads/$REPORT_BRANCH" -f sha="$commit" --jq .object.sha < /dev/null > /dev/null
+    fi || { echo "GitHub did not move $REPORT_BRANCH"; exit 1; }
+    echo "reported $sets frozen sets to $REPORT_BRANCH at ${commit:0:12}"
+    ;;
   run)
     [ -n "${SLURM_JOB_ID:-}" ] || { echo "run is for inside a job; use submit"; exit 2; }
     py=$(python_bin)
@@ -137,6 +163,6 @@ case "${1:-}" in
     done < "$2"
     ;;
   *)
-    echo "usage: freeze.sh pilot ID | start JOBS | submit LIST JOBS | status | run SHARE"; exit 2
+    echo "usage: freeze.sh pilot ID | start JOBS | submit LIST JOBS | status | report | run SHARE"; exit 2
     ;;
 esac

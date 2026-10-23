@@ -203,9 +203,22 @@ class RepositoryCopy(unittest.TestCase):
         os.remove(os.path.join(self.root, "datasets", "demo_set.json"))
         self.assertTrue(any("no record" in p for p in freeze.check_repository(self.root)))
 
+    def test_only_copies_that_pass_are_bundled_and_applied(self):
+        back = os.path.join(self.root, "back")
+        os.makedirs(back)
+        Path(back, "demo_set.json").write_bytes(freeze.summary_bytes(self.copy))
+        Path(back, "leaky_set.json").write_bytes(freeze.summary_bytes(dict(self.summary, id="leaky_set")))
+        tree = freeze.bundle(back)["tree"]
+        self.assertEqual([entry["path"] for entry in tree], ["frozen/demo_set.json"])
+        self.assertNotIn("patient-0001", json.dumps(tree))
+        os.remove(os.path.join(self.root, "frozen", "demo_set.json"))
+        self.record({"bytes": 5, "note": "the landing pass"})
+        self.assertEqual(freeze.apply_copies(back, self.root), ["demo_set"])
+        measured = json.loads(Path(self.root, "datasets", "demo_set.json").read_text())["measured"]
+        self.assertEqual(measured["note"], "the landing pass")
+        self.assertEqual(measured["tree_sha256"], self.summary["tree_sha256"])
+        self.assertEqual(freeze.check_repository(self.root), [])
 
-if __name__ == "__main__":
-    unittest.main()
 
 
 class GridScript(unittest.TestCase):
@@ -255,3 +268,27 @@ class GridScript(unittest.TestCase):
         self.assertEqual(measured["files"], 1)
         listed = " ".join(Path(p).read_text() for p in self.shares(self.script("start")))
         self.assertNotIn("near\t", listed)
+
+    def test_report_sends_one_commit_of_the_public_copies(self):
+        self.script("run", self.shares(self.script("pilot"))[0], job="7")
+        bin_dir = os.path.join(self.tmp.name, "bin")
+        os.makedirs(bin_dir)
+        calls = os.path.join(self.tmp.name, "gh-calls")
+        Path(bin_dir, "gh").write_text(
+            '#!/bin/bash\necho "$*" >> %s\n'
+            'case "$*" in *git/trees*) cat "${@: -3:1}" > %s.tree; echo %s;; *git/commits*) echo %s;;\n'
+            '  *"git/ref/heads/"*) exit 1;; *) echo ok;; esac\n' % (calls, calls, "a" * 40, "b" * 40))
+        os.chmod(os.path.join(bin_dir, "gh"), 0o755)
+        env = dict(os.environ, FREEZE_HOME=self.home, HPCWORKER=self.hpcw, USER="someone",
+                   PATH=bin_dir + os.pathsep + os.environ["PATH"])
+        out = subprocess.run(["bash", os.path.join(self.home, "code", "freeze.sh"), "report"],
+                             env=env, capture_output=True, text=True, check=True).stdout
+        self.assertIn("reported 1 frozen sets to freeze-report at bbbbbbbbbbbb", out)
+        tree = json.loads(Path(calls + ".tree").read_text())["tree"]
+        self.assertEqual([entry["path"] for entry in tree], ["frozen/near.json"])
+        self.assertIn("-X POST repos/OpenSpineConsortium/spine-datasets/git/refs -f ref=refs/heads/freeze-report",
+                      Path(calls).read_text())
+
+
+if __name__ == "__main__":
+    unittest.main()
