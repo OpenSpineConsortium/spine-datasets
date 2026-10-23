@@ -253,11 +253,13 @@ class GridScript(unittest.TestCase):
     def shares(self, out):
         return [line.split(" run ")[1] for line in out.splitlines() if line.startswith("HPCW ")]
 
-    def test_the_pilot_is_the_set_nearest_100_gb_and_start_takes_four_jobs(self):
+    def test_the_pilot_is_the_set_nearest_100_gb_and_start_takes_one_job_unless_told(self):
         pilot = self.shares(self.script("pilot"))
         self.assertEqual([Path(p).read_text().split("\t")[0] for p in pilot], ["near"])
         start = self.shares(self.script("start"))
-        self.assertEqual(len(start), 4)
+        self.assertEqual(len(start), 1)
+        self.assertEqual(len(Path(start[0]).read_text().splitlines()), 4)
+        self.assertEqual(len(self.shares(self.script("start", "4"))), 4)
         self.assertNotIn(pilot[0], start)
         self.assertEqual(Path(pilot[0]).read_text().split("\t")[0], "near")
 
