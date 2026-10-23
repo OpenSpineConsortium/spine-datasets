@@ -1,0 +1,43 @@
+{
+ "id": "amos22",
+ "name": "AMOS22 CT, unlabelled (ids 5000-6899) and labelled",
+ "group": "ct",
+ "regions": [
+  "abdomen"
+ ],
+ "what": "AMOS, a large-scale abdominal multi-organ benchmark: its unlabelled CT parts and its labelled set, Zenodo records 7262757, 7295661 and 7262581; tier 1 of the anomaly harvest: all five archives fetched, 2,400 scans listed (1,900 and 500), of which the data platform counts 723 CTs, about two thirds being thicker than 3 mm, and 2,200 subjects qualifying, about 102.6 GB in the source's catalogue (NIfTI); the unlabelled part has no patient ids, so people against volumes is unknown, and 200 of the labelled CTs are AbdomenAtlas people",
+ "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "reach": "held",
+ "licence": "CC BY 4.0",
+ "link": "https://zenodo.org/records/7262757",
+ "how_to_get": [
+  "spinesurg-ct-nnunet's slurm/acquisition_fetch.sh zenodo --collection amos22 --record 7262757 7295661 7262581 --include '(amos22_unlabeled_ct_[0-9_]+\\.zip|amos22\\.zip)$', submitted from the harvest's acquisition folder; the check is FETCH_STATUS.json's unresolved_failures at 0, and, by the manifest's note, 5 zips by md5 to verify.",
+  "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid amos22; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"amos22\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
+ ],
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/amos22",
+ "counts": {
+  "subjects": 2200,
+  "ct_volumes": 723,
+  "size_gb": 102.6
+ },
+ "measured": {},
+ "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-23 from Zenodo in the first tier-1 launch of 2026-09-23; 5/5 archives; 723 CTs",
+ "route": "download",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/amos22 (103 GB)",
+ "history": [
+  {
+   "date": "2026-09-23",
+   "step": "held",
+   "note": "fetched from Zenodo in the first tier-1 launch of 2026-09-23, as the data platform's manifest at bf1432f records (5/5 archives; 723 CTs); on the grid at /rs/rs_grp_oschome/go2432/data/amos22, 96 GB by du in the data platform's census table of 2026-09-25; fetched by the owner's chain, not the promoter, so no manifest here covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the status listing of 2026-10-23 09:29 UTC (symphony-template grid branch, 1c8246b) shows the folder at 103 GB, and the sample index of 2026-10-22 13:39 it carries counts 3,067 files, 95.6 GB, in it"
+  }
+ ],
+ "obstacles": [],
+ "next": "the landing pass (#204) checks the files and their sizes"
+}

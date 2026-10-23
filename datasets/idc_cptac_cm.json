@@ -1,0 +1,47 @@
+{
+ "id": "idc_cptac_cm",
+ "name": "IDC `cptac_cm`",
+ "group": "ct",
+ "regions": [
+  "chest",
+  "abdomen",
+  "pelvis",
+  "whole body",
+  "other"
+ ],
+ "what": "IDC v24 collection cptac_cm (TCIA doi:10.7937/k9/tcia.2018.odu24gze), tier 1 of the anomaly harvest: 12 subjects and 12 CT series verified on fetch (DICOM), about 4.1 GB; chest, abdomen, pelvis, whole body and other",
+ "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "reach": "held",
+ "licence": "CC BY 4.0",
+ "link": "https://doi.org/10.7937/k9/tcia.2018.odu24gze",
+ "how_to_get": [
+  "Covered by the data platform's pooled IDC route (idc_tier1), which fetches all 39 tier-1 collections, 3,600 series, into its idc folder in one resumable job; this collection alone is that route's manifest idc_tier1.csv filtered on its first column to cptac_cm, submitted with spinesurg-ct-nnunet's slurm/acquisition_fetch.sh idc while no other fetch of the idc folder runs, since every IDC entry shares its fetch folder; the check is the count of its distinct series in idc/fetch/verified.jsonl, 12.",
+  "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid idc_cptac_cm; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"idc_cptac_cm\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
+ ],
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/idc/raw/cptac_cm",
+ "counts": {
+  "subjects": 12,
+  "ct_volumes": 12,
+  "size_gb": 4.1
+ },
+ "measured": {},
+ "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-23 through IDC in the first tier-1 launch of 2026-09-23, 12 series verified; the ranking's refusals: slice over 3.0 mm 34, no SliceThickness 8, localizer image type 4, non-axial reformat 3",
+ "route": "download",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/idc/raw/cptac_cm (3.9 GB in the sample index of 2026-10-22)",
+ "history": [
+  {
+   "date": "2026-09-23",
+   "step": "held",
+   "note": "fetched through IDC in the first tier-1 launch of 2026-09-23 (acquisition job 40425851), as the data platform's manifest at bf1432f records, 12 series verified; on the grid at /rs/rs_grp_oschome/go2432/data/idc/raw/cptac_cm; fetched by the owner's chain, not the promoter, so no manifest here covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the sample index of 2026-10-22 13:39, as the status listing of 2026-10-23 09:29 UTC (symphony-template grid branch, 1c8246b) carries it, counts 8,020 DICOM files, 3.9 GB, in the folder; the listing itself shows the pooled idc folder at 707 GB"
+  }
+ ],
+ "obstacles": [],
+ "next": "the landing pass (#204) checks the files and their sizes"
+}
