@@ -20,7 +20,7 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; warning: the licence and the images' origin are unstated in what was read (many Kaggle fracture sets are scraped from teaching sites), to confirm on the page; an exposure-diversity pool only, and not to be fetched until its origin is shown to be redistributable",
  "route": "account",
- "status": "todo",
+ "status": "fetching",
  "result": "",
  "history": [
   {
@@ -32,11 +32,21 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "read from Kaggle's dataset API: owner Madushani Rodrigo (bmadushanirodrigo), last updated 2024-04-23, 507,724,147 bytes, 10,580 images; the description says the images were merged from three other Kaggle uploads (Mohan Kumar's bone break upload, Abdelaziz Faramawy's bone_fracture, Harsha Arya's fracture dataset), so this is a copy of copies and its own open licence does not show the films may be passed on"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "fetching",
+   "note": "on the owner's yes of 2026-10-22 to Kaggle sets whose pages state no licence or origin, SchwingNet's gate word fetch kaggle_fracture_multiregion submitted fetch job 40712010, bank and ingest 40712012 and catalog 40712014 at SchwingNet 25159c0 (about 0.48 GB)"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the fetch job 40712010 completed in 5 min 31 s, so the archive is under /rs/rs_grp_oschome/go2432/data/kaggle_fracture_multiregion/raw, unpacked; the bank job 40712012 ended FAILED after 1 s, since SchwingNet's recipe grid/banks/kaggle_fracture_multiregion.json still carries four fields to confirm (the lumbar spine folder's glob, jpg or png, the person regex, whether frontal and lateral are mixed), and stage 2 refuses a recipe with a field to confirm by design; the catalog job 40712014 waits on the VinDr-PCXR fetch; kaggle.com answers a cloud session 403, so the folder names come from a look at raw/ on the grid"
   }
  ],
  "obstacles": [
-  "the three source uploads' own licences and the films' first origin are not read yet; not fetched until they show the films may be passed on",
-  "the owner's hand afterwards: a Kaggle download needs a Kaggle login and its token"
+  "SchwingNet's bank recipe grid/banks/kaggle_fracture_multiregion.json has four fields to confirm from the unpacked archive's folder names, which only a listing of raw/ on the grid settles, since kaggle.com answers a cloud session 403",
+  "the bank and catalog jobs run again only on the owner's word"
  ],
- "next": "a collaborator reads the three source uploads' Kaggle pages for their licence and where their films came from, and writes it here; only then the owner's Kaggle fetch"
+ "next": "a session on the grid lists raw/ and fills the recipe's four fields in SchwingNet by pull request; then, on the owner's word, the bank and catalog jobs again; the record turns fetched with its manifest once the files are banked and listed"
 }
