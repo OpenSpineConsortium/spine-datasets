@@ -6,8 +6,8 @@
   "datasets": 164,
   "by_stage": {
    "downloadable": 9,
-   "to-ask": 9,
-   "asked": 27,
+   "to-ask": 8,
+   "asked": 28,
    "granted": 5,
    "fetching": 0,
    "on-grid": 6,
@@ -1501,7 +1501,7 @@
    }
   },
   "cm_spine_drive_file": {
-   "digest": "361d26c4863a56b9893805ee2f454fdf3e1ef5281d5377a6f952310dcbbc1561",
+   "digest": "0ffa5c6e98a08610e6064990c6af5e76d8a5e4787fd39549cdb19d0d982a0906",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -1510,8 +1510,8 @@
     "group": "fluoro",
     "kind": "Fluoroscopy",
     "route": "letter",
-    "status": "todo",
-    "stage": "to-ask",
+    "status": "requested",
+    "stage": "asked",
     "licence": "none stated: the paper's data statement and its repository's README name no licence, and the repository has no licence file (read 2026-10-23)",
     "licence_kind": "unknown",
     "link": "https://drive.google.com/file/d/1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ/view",
@@ -1528,11 +1528,11 @@
     "ct_volumes": null,
     "bytes": null,
     "unread_counts": [],
-    "next": "the owner opens the Drive link logged in (Request access if the page offers it) and sends the letter; the record moves to asked when it goes",
+    "next": "waiting for the authors or the editorial office to answer the letter and the note of 2026-10-23; a yes moves the record to granted and the fetch is a Slurm job on the owner's word; the owner still opens the Drive link logged in (Request access if the page offers it)",
     "since": "2026-10-21",
     "last_step": {
      "date": "2026-10-23",
-     "step": "researched"
+     "step": "asked"
     },
     "paired": false,
     "tier": null,
@@ -10514,6 +10514,21 @@
     "route": [
      "owner-only",
      "letter"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "cm_spine_drive_file",
+   "kind": "changed",
+   "changes": {
+    "status": [
+     "todo",
+     "requested"
+    ],
+    "stage": [
+     "to-ask",
+     "asked"
     ]
    }
   }

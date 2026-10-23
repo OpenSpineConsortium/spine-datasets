@@ -23,8 +23,8 @@ since the last run. The page with filters is census.html beside this file, serve
 | Stage | Datasets |
 |---|---|
 | Downloadable now | 9 |
-| To ask | 9 |
-| Asked, waiting | 27 |
+| To ask | 8 |
+| Asked, waiting | 28 |
 | Granted, fetch pending | 5 |
 | Fetching | 0 |
 | On the grid | 6 |
@@ -115,7 +115,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 |---|---|---|---|---|---|---|---|---|---|---|
 | Balgrist ex-vivo lumbar CT plus C-arm (Jecklin) | Fluoroscopy | Refused | unknown |  |  |  |  |  |  | [#69](https://github.com/OpenSpineConsortium/spine-datasets/issues/69) |
 | C-ArmLSpine (Zhang et al., Medical Image Analysis 2024) | Fluoroscopy | Held by the owner | open | 149 | 299 | 2 | 602 | 149 | 86.8 GB |  |
-| CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images | Fluoroscopy | To ask | unknown |  | 208 |  |  |  |  | [#8](https://github.com/OpenSpineConsortium/spine-datasets/issues/8) |
+| CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images | Fluoroscopy | Asked, waiting | unknown |  | 208 |  |  |  |  | [#8](https://github.com/OpenSpineConsortium/spine-datasets/issues/8) |
 | DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs | Fluoroscopy | Held by the owner | restricted | 6 | 2,659 |  |  | 19 | 116.3 GB |  |
 | Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021) | Fluoroscopy | Held by the owner | open | 1 | 116 |  |  | 1 |  |  |
 | Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024) | Fluoroscopy | Asked, waiting | restricted | 140 |  |  |  | 140 |  | [#61](https://github.com/OpenSpineConsortium/spine-datasets/issues/61) |
@@ -608,6 +608,7 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-23 CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images: stage to-ask to asked; status todo to requested
 - 2026-10-23 CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images: route owner-only to letter
 - 2026-10-23 CAMS-Knee (ETH Zurich and Charite Berlin, J Biomech 2017): record added
 - 2026-10-23 CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images: licence not recorded to none stated: the paper's data statement and its repository's README name no licence, and the repository has no licence file (read 2026-10-23); xray_images none to 208
