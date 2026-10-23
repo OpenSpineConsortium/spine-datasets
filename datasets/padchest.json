@@ -21,7 +21,7 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; a licence form on the page (research use, by request); European devices and film-era digitised plates, the richest set of non-standard chest projections",
  "route": "form",
- "status": "fetching",
+ "status": "granted",
  "result": "",
  "history": [
   {
@@ -43,8 +43,15 @@
    "date": "2026-10-22",
    "step": "fetching",
    "note": "SchwingNet's gate word fetch padchest submitted fetch job 40711923, bank and ingest 40711925 and catalog 40711927 at SchwingNet 25159c0; about 52 hours for 1.02 TB"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the fetch job 40711923 ended FAILED after 2 min 26 s (padchest: fetching at 2026-10-22T17:40:20Z, failed at 17:42:39Z); the bank job 40711925 then failed with nothing to bank and the catalog job 40711927 waits on the VinDr-PCXR fetch; the gate's status word withholds the reason, as it withholds every line of a fetch log that is no traceback or status line, so it is read on the grid alone (hpcworker job log --project schwingnet 40711923, or grid/logs/01-fetch-STAGE-REPORT.md in the gate's clone of SchwingNet); not sent again, since a resend is a grid job and waits on the owner's word"
   }
  ],
- "obstacles": [],
- "next": "the fetch job 40711923 lands the set; the gate word status shows its size on the volume, and the record turns fetched with its checksums once the bank job 40711925 has run"
+ "obstacles": [
+  "the fetch job 40711923 failed after about two minutes for a reason the gate's status word withholds; it is read on the grid, and the resend waits on the owner's word"
+ ],
+ "next": "the owner, or a session on the grid, reads why job 40711923 failed (hpcworker job log --project schwingnet 40711923, or grid/logs/01-fetch-STAGE-REPORT.md in the gate's clone of SchwingNet) and fixes what it names in SchwingNet; then, on the owner's word, the gate word fetch padchest again; the record turns fetched with its checksums once the bank job has run"
 }
