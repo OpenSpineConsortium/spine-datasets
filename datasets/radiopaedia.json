@@ -9,7 +9,8 @@
  "link": "https://radiopaedia.org/licence",
  "how_to_get": [
   "The application text is /mnt/project-files/data-requests/radiopaedia-application-draft.md (the thread's file); the agreement is SignNow document 2b7a4819d4ea45198cd8e71ba0703993ba89663b, sent to andrew.murphy+ml@radiopaedia.org with license@radiopaedia.org in copy.",
-  "Wait for the countersigned copy and the agreement ID, which every publication must quote; then Radiopaedia says how the export is delivered (bulk export, never scraping).",
+  "Wait for Radiopaedia's copy with the approval ID, which every publication must quote, and record the ID here.",
+  "Radiopaedia supplies no export and no DICOM: the applicant collects the images from the site at a gentle rate under clause 3, by a route the owner chooses; the registry's rule that Radiopaedia is never fetched by script stands until the owner lifts it.",
   "A commercial product built from any model that touched these cases needs a negotiated licence first (clause 2b)."
  ],
  "grid_path": null,
@@ -18,8 +19,8 @@
  "record": "spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md 8; the thread SchwingNet video demo plan, 2026-10-21 (the signed form uploaded at 03:37 UTC)",
  "source_status": "applied for on 2026-10-21: the non-commercial machine-learning licence agreement (v1.3) signed and submitted through Radiopaedia's SignNow form at 03:36 UTC, fee USD 250 paid (receipt 1967-5247), checklist NO/NO/NO, pending Radiopaedia's countersignature; the form cut the Project Aims and Radiopaedia Content answers off, so the full text goes to license@radiopaedia.org in a follow-up; any model that reads these cases is a Model under the agreement (release only under CC BY-NC-SA, no commercial use), which is the lawyer's question before training on them",
  "route": "agreement",
- "status": "requested",
- "result": "Licence application signed and submitted 2026-10-21 03:36 UTC by the owner, fee USD 250 paid (receipt 1967-5247); the two cut-off fields were sent 04:00 UTC and acknowledged 04:33 UTC; pending Radiopaedia's review and countersignature.",
+ "status": "granted",
+ "result": "Approved 2026-10-23 03:17 UTC by Andrew Murphy (Deputy Academic Director): the application is approved as submitted, read with the full answers sent on 2026-10-21, for the first phase (recognising spinal anatomy across imaging modalities); Juliette sends Radiopaedia's copy with the approval ID; later phases need written confirmation or a new application, which Murphy does not expect to cost another fee; Radiopaedia supplies no export and no DICOM, the applicant collects the images from the site at a gentle rate (clause 3). The owner acknowledged at 10:35 UTC. The licence application went in on 2026-10-21 (receipt 1967-5247).",
  "history": [
   {
    "date": "2026-10-21",
@@ -35,10 +36,16 @@
    "date": "2026-10-21",
    "step": "note",
    "note": "the full text of the two cut-off fields went to license@radiopaedia.org at 04:00 UTC; Radiopaedia's Image License Manager acknowledged at 04:33 UTC and will add it to the application and write once it is reviewed"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "granted",
+   "note": "Murphy approved the application as submitted for the first phase at 03:17 UTC; the copy with the approval ID follows from Juliette; no export or DICOM, the images are collected from the site at a gentle rate (clause 3)"
   }
  ],
  "obstacles": [
-  "the owner's hand: the countersigned copy and the agreement ID; never fetched by script; the Model clause is a lawyer's question before training"
+  "the copy with the approval ID has not arrived yet",
+  "how the spine cases are collected within clause 3's rate is the owner's decision; what the agreement says about anything built from the cases is a lawyer's question before any use beyond the first phase"
  ],
- "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch"
+ "next": "wait for Juliette's copy with the approval ID and record it here; then the owner decides how the spine cases are collected within clause 3's rate"
 }

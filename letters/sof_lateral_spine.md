@@ -1,6 +1,8 @@
 # sof_lateral_spine: the request text
 
-Not sent.
+Sent 2026-10-22 by the owner as an email asking for authorization to register, answered the same day: the portal is closed and the images go to the NIA Aging Research Biobank, where the request is filed next (below).
+
+The route since 2026-10-22: the owner wrote to SOFData@ucsf.edu on 2026-10-22 for authorization to register, and the coordinating centre answered the same day that SOF Online is closed to registrations while it is updated for new NIH requirements, and that the study images are being added to the NIA Aging Research Biobank (https://agingresearchbiobank.nia.nih.gov), where the request now goes: log in or create an account, open Requests, Request for Materials, choose Images at the top of the form, name the SOF study, and paste the aims and data-requested paragraphs below; the sample agreement (/sample-agreement/) and the costs page (/costs/) give the terms and fees, all the owner's hand. The reading tables may still come from SOF Online when it reopens.
 
 To: the SOF coordinating centre (the same centre as MrOS), through https://sofonline.ucsf.edu/.
 Route: web form, with an account first; the proposal is filed in the owner's name and the data use agreement that follows is the owner's hand only.

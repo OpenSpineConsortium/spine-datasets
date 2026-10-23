@@ -19,7 +19,7 @@
  "source_status": "the only confirmed lumbar cine; asked for in request 1; the letter (request 1) was forwarded to ckaching.cheung@polyu.edu.hk on 2026-10-21 03:57 UTC",
  "route": "letter",
  "status": "requested",
- "result": "Asked for in request 1, sent 2026-10-20 by the owner and forwarded to ckaching.cheung@polyu.edu.hk on 2026-10-21 03:57 UTC; waiting for the answer.",
+ "result": "Asked for in request 1, sent 2026-10-20 by the owner and forwarded to ckaching.cheung@polyu.edu.hk on 2026-10-21 03:57 UTC; waiting for the answer. Jonny Branney (Bournemouth) replied 2026-10-22 10:56 UTC: happy to share, checking with the university's research department about the data-sharing arrangement, and will get back; waiting for that answer.",
  "history": [
   {
    "date": "2026-10-21",
@@ -30,8 +30,13 @@
    "date": "2026-10-20",
    "step": "asked",
    "note": "Asked for in request 1, sent 2026-10-20 by the owner and forwarded to ckaching.cheung@polyu.edu.hk on 2026-10-21 03:57 UTC; waiting for the answer."
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "Branney replied 10:56 UTC: happy to share; checking with Bournemouth's research department about the data-sharing arrangement; will get back"
   }
  ],
  "obstacles": [],
- "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch"
+ "next": "wait for Branney's second answer with the arrangement; a Bournemouth data-sharing agreement would be the owner's to sign; then record granted here and go on to the fetch"
 }

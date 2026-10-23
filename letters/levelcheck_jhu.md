@@ -1,6 +1,6 @@
 # levelcheck_jhu: the request text
 
-Sent 2026-10-21 by the owner; waiting for the answer.
+Sent 2026-10-21 by the owner; answered 2026-10-23 by Ali Uneri (Johns Hopkins): the study's IRB expired years ago and the set cannot be shared; he offered an introduction to the Harms Study Group, followed on hsg_ais_registry (letters/hsg_ais_registry.md).
 
 To: Jeffrey Siewerdsen (MD Anderson) and the JHU co-authors (Ali Uneri, Wojciech Zbijewski, J. Webster Stayman).
 Route: email, with the subject "[XR/CT Imaging Research] Request for the LevelCheck clinical cohort", the closing paragraph of section 15 and the sender block.
