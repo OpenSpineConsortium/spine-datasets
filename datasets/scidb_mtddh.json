@@ -2,25 +2,29 @@
  "id": "scidb_mtddh",
  "name": "MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025)",
  "group": "films",
- "what": "2,156 pelvic radiographs of children from the Children's Hospital of Zhejiang University School of Medicine and Hebei Children's Hospital in two parts: 1,250 annotated with four regions for image quality and eight key points for developmental dysplasia of the hip, and 906 with the eight key points (Science Data Bank doi:10.57760/sciencedb.24372, V1, issued 2025-04-29, 4.05 GB in three files); the lumbosacral junction is in the field of a pelvic film, as in the Mendeley DDH hip sets",
+ "what": "2,156 pelvic radiographs of children aged 5 to 40 months, one film per child, from the Children's Hospital of Zhejiang University School of Medicine and Hebei Children's Hospital, in two parts: 1,250 (781 girls, 469 boys, mean age 14.6 months) annotated with four regions for image quality (both obturator foramina and both ilia) and eight key points for developmental dysplasia of the hip, as JPG in three split folders with JSON annotations for the first two, and 906 (558 girls, 384 boys, mean age 14.3 months) with the eight key points alone, as PNG with COCO-format annotations; file names randomised by the authors; released with the hospital's ethics approval 2023-IRB-0287-P-01, consent waived, anonymised (Qi, Jiao, Li and others, Scientific Data 2025, doi:10.1038/s41597-025-05146-x; Science Data Bank doi:10.57760/sciencedb.24372, V1, issued 2025-04-29, 4,053,482,052 bytes in three files: JPG_DICOM.rar, MTDDH.zip and code.zip); the lumbosacral junction is in the field of a pelvic film, as in the Mendeley DDH hip sets",
  "level_truth": "none; pediatric pelvis",
  "reach": "get",
  "licence": "CC BY 4.0 (DataCite's record of the DOI, read 2026-10-23)",
- "link": "https://doi.org/10.57760/sciencedb.24372",
+ "link": "https://www.scidb.cn/en/detail?dataSetId=c088644bd0b2406eb49830ad447c17fb",
  "how_to_get": [
-  "The owner opens https://doi.org/10.57760/sciencedb.24372 (https://www.scidb.cn/detail?dataSetId=c088644bd0b2406eb49830ad447c17fb), reads whether a login is needed and reads the file list.",
-  "A Science Data Bank route is written for tools/acquisition_fetch.py before any job, as for scidb_enhance_pet_1_6k.",
-  "Fetch as a Slurm job on the owner's word, never on the login node: python3 data/reproduce/reacquire/reacquire.py http-get --url U --dest FILE, U being the address the page gives, onto /rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw by grid/README.md."
+  "No account is needed: the owner opened the page on 2026-10-23 and downloaded without a login.",
+  "The files, read from the page's public API (file tree and getAllUrl) on the owner's computer on 2026-10-23, each a plain download with no login whose HEAD answers 200 with the same size: JPG_DICOM.rar, 1,165,024,411 bytes, md5 2029b761e5077e61280f4a5fb9308a32, https://download.scidb.cn/download?fileId=6598e44aa54eb418af5add89c199fd9f&path=/V1/JPG_DICOM.rar&fileName=JPG_DICOM.rar; MTDDH.zip, 1,872,032,279 bytes, md5 1508164e97c35b7063a163726bf4ef05, https://download.scidb.cn/download?fileId=c4ecee1aec98deb8327888bce3e07901&path=/V1/MTDDH.zip&fileName=MTDDH.zip; code.zip, 1,016,425,362 bytes, md5 a91952a0f1b6fc0989e8a1d53cd0432e, https://download.scidb.cn/download?fileId=b4c4789e608dc5f66e654b47f072d5f1&path=/V1/code.zip&fileName=code.zip; no sha256 is published.",
+  "On the owner's word: write manifests/scidb_mtddh.json from that list (md5 in place of sha256, as the source publishes), set the record to fetching, and in the same pull request add download.scidb.cn to the hosts Science Data Bank serves files from (DOWNLOAD_HOSTS in tools/promote.py, as ndownloader.figshare.com is for figshare), which the promoter on the grid takes only through the owner's gate word promoter restart; then the promoter installs the set at /rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw (grid/README.md).",
+  "Fallback copy: the same authors' figshare item doi:10.6084/m9.figshare.27999131.v1 (MTDDH.rar, 1,871,869,324 bytes, md5 697c3c29b6a1faf69a2032e22486400e, CC BY 4.0, posted 2024-12-11, https://ndownloader.figshare.com/files/51075122), five months older and not the same archive as MTDDH.zip; the Science Data Bank version is the one the paper cites. Questions go to the corresponding authors, Guoqiang Zhao (hello868@zju.edu.cn) and Gang Yu (yugbme@zju.edu.cn)."
  ],
  "grid_path": null,
  "counts": {
   "xray_images": 2156,
+  "patients": 2156,
+  "files": 3,
+  "bytes": 4053482052,
   "size_gb": 4.05
  },
  "measured": {},
  "record": "symphony-template docs/research/spine-datasets-on-chinese-hosts.md (2026-10-23)",
- "source_status": "found on 2026-10-23 by the search of the Chinese dataset hosts for the request-route sets (Science Data Bank); not fetched; the record read through DataCite and the page's meta tags, since the page is a JavaScript shell; the only other paediatric pelvic film source beside the Mendeley DDH hip sets",
- "route": "owner-only",
+ "source_status": "found on 2026-10-23 by the search of the Chinese dataset hosts for the request-route sets (Science Data Bank); not fetched; the record read through DataCite and the page's meta tags, since the page is a JavaScript shell; the same day the owner opened the page (no login) and the file list with its download links was read from the owner's computer; the only other paediatric pelvic film source beside the Mendeley DDH hip sets",
+ "route": "download",
  "status": "todo",
  "result": "",
  "history": [
@@ -28,10 +32,15 @@
    "date": "2026-10-23",
    "step": "researched",
    "note": "found by the search of the Chinese dataset hosts on 2026-10-23 (Science Data Bank, through its search page and then DataCite's record of the DOI); not fetched; CC BY 4.0, 4.05 GB in three files; the owner's hand: confirm whether Science Data Bank asks for a login, and a fetch route for Science Data Bank is written first"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "researched",
+   "note": "the owner opened the page: downloads with no login; the three files, their sizes, md5s and download links read through the site's public API from the owner's computer; the paper read (Scientific Data 2025); the authors' older figshare copy found as a fallback; the fetch waits on the owner's word for the manifest"
   }
  ],
  "obstacles": [
-  "the owner's hand: confirm whether Science Data Bank asks for a login; no fetch route exists yet for Science Data Bank"
+  "the fetch waits on the owner's word for the manifest (status fetching) and on the promoter learning download.scidb.cn (DOWNLOAD_HOSTS in tools/promote.py, installed on the grid by the owner's gate word promoter restart)"
  ],
- "next": "the owner's step as how_to_get says; then a grid job onto /rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw by grid/README.md from the holder's Beethoven session"
+ "next": "on the owner's word: manifests/scidb_mtddh.json from the three files above with status fetching, and the download.scidb.cn host rule in tools/promote.py in the same pull request; the owner sends promoter restart after the merge; the promoter installs the set"
 }
