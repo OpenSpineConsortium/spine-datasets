@@ -5,7 +5,7 @@
  "what": "2D projections of the central slices of VerSe 19 and 20 vertebrae, with soft labels from proposal-based non-expert annotation ('Annotating ambiguous images', 2023); count to confirm on the page (VerSe holds 4,505 vertebrae over 374 scans)",
  "level_truth": "vertebral identity from VerSe",
  "reach": "get",
- "licence": "to confirm on the page (VerSe itself is CC BY-SA 4.0)",
+ "licence": "Other (Open) (as the Zenodo page's licence line reads for version v1.0, published 2022-10-06, read 2026-10-22); the record's license.txt names no licence for its two VerSe files",
  "link": "https://zenodo.org/records/8115942",
  "how_to_get": [
   "Open https://zenodo.org/records/8115942 and read its licence line and file list.",
@@ -17,17 +17,22 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; its people are already in the v9 base (verse), so train-side only: a cheap extra render arm or a sanity check of the project's own VerSe renders",
  "route": "download",
- "status": "todo",
+ "status": "needs-owner",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; its people are already in the v9 base (verse), so train-side only: a cheap extra render arm or a sanity check of the project's own VerSe renders"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "read on the Zenodo page: the record is the data of a data-centric benchmark of noisy and ambiguous labels over many image sets, licence line Other (Open); its license.txt gives CC BY-SA 4.0 for the benchmark repository and CC BY-NC-SA 4.0 for CIFAR-10H but names no licence for the two VerSe files, verse_blended-vps.zip (75.7 MB, md5 5802eac308309824957278d151055bbb) and verse_mask1-vps.zip (12.0 MB, md5 7a0a6d70171925d86e18dfa67058548f); no manifest written while their licence is unstated"
   }
  ],
  "obstacles": [
-  "the licence on the page is still to confirm before any fetch"
+  "the owner's hand: the licence of the two VerSe files is unstated (the record says Other (Open) and its license.txt does not name them; VerSe itself is CC BY-SA 4.0)"
  ],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/verse_2d_projections/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "next": "the owner decides whether the record's Other (Open) line with VerSe's own CC BY-SA 4.0 covers the two VerSe files; if so, a granted step in the history lets a manifest of those two files go in"
 }
