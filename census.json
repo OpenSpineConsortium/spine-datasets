@@ -1,5 +1,5 @@
 {
- "rules": "c9fa1ffb8f8aea99",
+ "rules": "597ca968e1c8b6d6",
  "repo": "OpenSpineConsortium/spine-datasets",
  "generated": "2026-10-23",
  "totals": {
@@ -67,6 +67,115 @@
    "sum": 1651,
    "counted": 5,
    "of": 5
+  },
+  "ct": {
+   "sets": 105,
+   "on_grid": 88,
+   "on_grid_ct_volumes": {
+    "sum": 24959,
+    "counted": 70,
+    "of": 88
+   },
+   "on_grid_subjects": {
+    "sum": 25991,
+    "counted": 80,
+    "of": 88
+   },
+   "on_grid_size": {
+    "sum": 3818692470271,
+    "counted": 78,
+    "of": 88,
+    "measured": 5
+   },
+   "by_stage": {
+    "downloadable": 2,
+    "to-ask": 2,
+    "asked": 4,
+    "granted": 4,
+    "fetching": 0,
+    "on-grid": 4,
+    "held": 84,
+    "needs-owner": 3,
+    "refused": 1,
+    "later": 1
+   },
+   "by_region": {
+    "head and neck": {
+     "sets": 4,
+     "on_grid": 4,
+     "ct_volumes": {
+      "sum": 3387,
+      "counted": 4,
+      "of": 4
+     }
+    },
+    "chest": {
+     "sets": 60,
+     "on_grid": 53,
+     "ct_volumes": {
+      "sum": 10567,
+      "counted": 44,
+      "of": 53
+     }
+    },
+    "abdomen": {
+     "sets": 60,
+     "on_grid": 55,
+     "ct_volumes": {
+      "sum": 18230,
+      "counted": 49,
+      "of": 55
+     }
+    },
+    "pelvis": {
+     "sets": 55,
+     "on_grid": 50,
+     "ct_volumes": {
+      "sum": 9317,
+      "counted": 44,
+      "of": 50
+     }
+    },
+    "spine": {
+     "sets": 28,
+     "on_grid": 23,
+     "ct_volumes": {
+      "sum": 8683,
+      "counted": 19,
+      "of": 23
+     }
+    },
+    "whole body": {
+     "sets": 30,
+     "on_grid": 28,
+     "ct_volumes": {
+      "sum": 5306,
+      "counted": 23,
+      "of": 28
+     }
+    },
+    "other": {
+     "sets": 22,
+     "on_grid": 21,
+     "ct_volumes": {
+      "sum": 1674,
+      "counted": 18,
+      "of": 21
+     }
+    }
+   },
+   "no_regions": 0,
+   "surveyed": 105,
+   "level_masks_on_grid": {
+    "sum": 4208,
+    "counted": 6,
+    "of": 6
+   },
+   "made_masks_on_grid": {
+    "sum": 15753,
+    "counted": 20,
+    "of": 62
+   }
   }
  },
  "tasks": {
@@ -358,7 +467,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "aasce": {
@@ -399,11 +511,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "abdomenatlas3_mini": {
-   "digest": "719a92602001b2dbaf058421c998e31735c44736fd9b4db08ec832e339bb5479",
+   "digest": "df021394e36a41bbd32bb5e9992e8c5597321a4b3421df363972263743a35197",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -437,11 +552,33 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "abdomen"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the fetch took the image_only folder alone, so whatever masks the release ships are not on the grid; what they are is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 7649,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/abdomenatlas3_mini"
+     }
+    ]
    }
   },
   "amos22": {
-   "digest": "00d039442748d0b3af91a1f95e4c92a302105b67a5f48acf13b485d99610ee26",
+   "digest": "619a5e46af5da7f8e97844f13168c119026a0ef00fa65d079c7a1fd8b30971da",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -475,11 +612,33 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "abdomen"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the labelled set's masks, inside the fetched amos22.zip; their structures are to confirm on the release's page",
+      "vertebrae": "not recorded",
+      "by": "the release's annotators",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/amos22"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 723,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/amos22"
+     }
+    ]
    }
   },
   "aortaseg60": {
-   "digest": "2d0c9ce9739fb429c89c4fcff49c8f5634d09a8d429ee74dd3df4cba97e50621",
+   "digest": "69749cae8ddee8abf292cb0cdfb71f0f88f8f921446a675a19c41c8ffee0e4d0",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -513,11 +672,35 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the fetch took the six case archives (Ven, Anev, Dissec, Old, Nat and Young), whose contents are to confirm",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 55,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/aortaseg60"
+     }
+    ]
    }
   },
   "aws_stoic2021": {
-   "digest": "d1dbdcf785416319886db78c5133254017ee1a1961e6ed67ab4a7d1a05815db7",
+   "digest": "7c207f08b107dbb666a3bd2391a241be509b31266cf3ff6dd5a3088d265dfbac",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -551,11 +734,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the fetch took the 2,000 MHA images alone",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "balgrist_lumbar": {
-   "digest": "e520096e78e4369b60d3472e5a22dbabee083fbd23921105dacf9ccb62b68d78",
+   "digest": "299d17fc2c49950262316ba4d87c95dc9b36833b3c572650558d9fe62b05fbf0",
    "first_seen": "2026-09-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -599,11 +796,25 @@
      "masks": "not stated",
      "annotate": "none: the source declined",
      "pair_key": "not stated"
-    }
+    },
+    "ct": true,
+    "regions": [
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the paper does not say, and the set was refused",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "barts_crl": {
-   "digest": "756c9c213a4f88dce431cf3b9c479fa6e4dad187652e21bb55918600a439fe44",
+   "digest": "5e56e96b9eac56da18965d96644d647c0963259ed5cc810a1bdad69616ee385b",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -637,7 +848,31 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the fetch took images.zip alone",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 212,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/barts_crl"
+     }
+    ]
    }
   },
   "bern_myelography": {
@@ -675,7 +910,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "bimcv_covid19": {
@@ -713,7 +951,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "bournemouth_cervical_qf": {
@@ -753,7 +994,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "bournemouth_lumbar_qf": {
@@ -791,7 +1035,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "brax": {
@@ -831,7 +1078,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "buu_lspine": {
@@ -872,7 +1122,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "cadica": {
@@ -910,11 +1163,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "cads": {
-   "digest": "09f18956ff21a56058087b0d38c83b787dbee8e88c91f19c4d076642ac3d46b8",
+   "digest": "7dfd11e2feedd4d62c922b3cac89068bd25bcae484b4ca775d57585982df3440",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -948,7 +1204,21 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: not fetched yet; what the release ships is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "canine_thoracic_vhs": {
@@ -986,11 +1256,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "carmlspine": {
-   "digest": "e6f57fe29c430d9dfd14a0d72f37d370fd11fbcf024e1894d95b6f670c96e725",
+   "digest": "5a0c65e641af03ea56c6726467e938580a390e7412ce1ab2914bc89e5c4131f5",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1035,7 +1308,37 @@
      "annotate": "a mask for each vertebral body, L1 to S1, on each CBCT, read by a person and checked by a second reader",
      "pair_key": "the case number: a case's spot frames and its CBCT share one case folder",
      "priority": 1
-    }
+    },
+    "ct": true,
+    "regions": [
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: the release ships no masks of the vertebral bodies",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "masks of T9 to L5, the sacrum, both hips and both femora on each case's CBCT, one folder per case",
+      "vertebrae": "by level",
+      "by": "the owner's runs, automatic (TotalSegmentator); no radiologist has read them",
+      "volumes": 149,
+      "where": "/rs/rs_grp_oschome/go2432/data/carmlspine/ts"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks on each case's CBCT, each vertebra named by level; the levels both runs agree on are kept in carmlspine/levels.json",
+      "vertebrae": "by level",
+      "by": "the owner's runs, automatic (SPINEPS with VERIDAH); no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/carmlspine/spineps"
+     }
+    ]
    }
   },
   "cathaction": {
@@ -1077,7 +1380,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "chexpert_plus": {
@@ -1115,7 +1421,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "cm_spine_drive_file": {
@@ -1153,11 +1462,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "cobra2026": {
-   "digest": "00a814ba4dafce09589eed8eba818a3bc93b6c1cada4cd90363d7fd2ff0e8efc",
+   "digest": "c45d79fdd77d0a47ddc250bac2ade42250c063fc1bc43b7122647d0196315edf",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1205,11 +1517,50 @@
      "annotate": "masks on each planning CT, L3 to S1 and the pelvis",
      "pair_key": "the case id: a case's projections, CBCT and planning CT share it",
      "priority": 2
-    }
+    },
+    "ct": true,
+    "regions": [
+     "pelvis",
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: the release ships no anatomical labels",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "masks by TotalSegmentator and by SPINEPS on each case's planning CT as the release registers it, the SPINEPS vertebrae named by level in seg/spineps_ctd",
+      "vertebrae": "by level",
+      "by": "the owner's runs, automatic (TotalSegmentator and SPINEPS); no radiologist has read them",
+      "volumes": 692,
+      "where": "/rs/rs_grp_oschome/go2432/data/cobra2026/seg"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks of the Varian cases' CTs, each vertebra named by level",
+      "vertebrae": "by level",
+      "by": "the owner's runs, automatic (SPINEPS); no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/spineps/cobra_varian"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/cobra"
+     }
+    ]
    }
   },
   "cobra_embargoed": {
-   "digest": "f6d76c8f5bfb3f4ca2d7b270e8dce8496ee6be142c28096905e59dd5f95bd097",
+   "digest": "ff66a69a15bac774bfc94649864d50ab5e2fdcb0a5b13ba0991a197e3859cf33",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -1253,7 +1604,22 @@
      "masks": "none for the vertebrae",
      "annotate": "as COBRA2026's public cases, once the embargo ends on 2032-03-01",
      "pair_key": "the case id"
-    }
+    },
+    "ct": true,
+    "regions": [
+     "pelvis",
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: the held-back cases are not released, and the public ones ship no anatomical labels",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "coronary_angiography": {
@@ -1296,11 +1662,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "csi2014": {
-   "digest": "6b1f93caf521b6c242e94e4238b346adf229500bc715c4e2f4c2fc096875e13c",
+   "digest": "66fd08f0b06a4ab445c177e5326541afd776e99f70b459a3919cb50611f4137b",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1334,7 +1703,29 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the fetch took the _image.mha files alone; whether the release ships vertebra labels is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 20,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/csi2014"
+     }
+    ]
    }
   },
   "csxa": {
@@ -1372,11 +1763,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "ct_rate": {
-   "digest": "78bf849ea6682ca07ddd8ce899539261750b6fde11454a695a6451c818bff90b",
+   "digest": "2f648771807606456a7b9123a0f96710d688304c152a8458656a1793cdcf317f",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -1410,11 +1804,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: not fetched yet; what the release ships is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "ctpelvic1k": {
-   "digest": "c0e9f7a75cd012c8b0c9210cbf1958e22bfb8752febb5fe4b945e0c3bbd33a12",
+   "digest": "65629daf01cdc75e8e0454b9985c8cf92df7c6e748af499dc9584e38503709ac",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1448,11 +1856,34 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "pelvis",
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the pelvic masks of the release's datasets 1 to 5: the lumbar spine as one label, the sacrum and both hips, mapped back to the source CTs, which other records hold; dataset 2's masks are at the folder named, which the data platform notes is on a delete list and may be stale",
+      "vertebrae": "together",
+      "by": "the release's annotators, under a radiologist",
+      "volumes": null,
+      "where": "/wsu/home/go/go24/go2432/CTSpinoPelvic1K/data/ctpelvic1k"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; over the release's datasets 6 and 7, which this record holds",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 172,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/ctpelvic1k_clinic"
+     }
+    ]
    }
   },
   "ctspine1k": {
-   "digest": "c28f2a37b454a3c23c2a76e8657c2441f53700abc2d8f761b3c34468c05c356f",
+   "digest": "8a0cb18566d12b12413c37d79b084b46a3098c7f1721841a8e3f37ff73727133",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1486,11 +1917,28 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "head and neck",
+     "chest",
+     "abdomen",
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "vertebra masks from C1 to L6 and the sacrum, each vertebra named by level in VerSe's convention (a T13 is label 28), as rawdata/labels/<source>/*_seg.nii.gz",
+      "vertebrae": "by level",
+      "by": "the release's annotators, expert",
+      "volumes": 1005,
+      "where": "/rs/rs_grp_oschome/go2432/data/ctspine1k"
+     }
+    ]
    }
   },
   "ctspinopelvic1k": {
-   "digest": "621f0bda5b6a898b9a1ec805e7a29e35d28f75ea8007bb9e7c823e0aad25ee59",
+   "digest": "b29e58c1a2220aef26b08415f9e372ffd42490f244d3d28c0570602311e51f47",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1524,11 +1972,44 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "vertebra masks from C1 to L6, each named by level, from CTSpine1K's radiologists; the sacrum and both hips, expert where fused and automatic elsewhere; the ribs, automatic and corrected by hand; L6 flags, and Castellvi reads on 33 cases, as labels/<id>_label.nii.gz with manifest.json",
+      "vertebrae": "by level",
+      "by": "the release's authors (Zenodo 22797014)",
+      "volumes": 802,
+      "where": "/rs/rs_grp_oschome/go2432/data/ctspinopelvic1k"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks and body masks, each vertebra named by level",
+      "vertebrae": "by level",
+      "by": "the owner's runs, automatic (SPINEPS); no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/spineps"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/ctsp"
+     }
+    ]
    }
   },
   "curvas": {
-   "digest": "b504b76098a835eb8bb0a95db40f7986ddc2cbb6aef9fae942512e51e808189e",
+   "digest": "e52ac7dacbee8ea1b683ac1b9bce931a5614f23cc690d7d9a4c09935d7c60907",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1562,11 +2043,36 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the fetch took every archive whose name ends in _set, one of which did not unpack; the folder holds 280 NIfTI files for its 70 CTs, so whether masks are among them is to confirm",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/curvas"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 70,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/curvas"
+     }
+    ]
    }
   },
   "curvas_pdacvi": {
-   "digest": "25252a3f8638620dc4ba7cfb66082f1b0ac3ef118d70a5751e6c52e414494787",
+   "digest": "d11a695b7fed2548bd2e9a9eeb38f3809d033cdceb16157a1d77a3ed19d11c47",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1600,7 +2106,31 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the fetch took every zip of the record, so any masks it ships are inside them",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/curvas_pdacvi"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 101,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/curvas_pdacvi"
+     }
+    ]
    }
   },
   "daradia_vertebroplasty": {
@@ -1638,11 +2168,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "deep_psma": {
-   "digest": "b82eb5ceefc0561d25ae97023b6c637b36d30aadd01028d8ef8eeb45c0085a1d",
+   "digest": "84b415052ce4027d18e04d1fc0a7175ddb3757cd6ba412d415a390e73e2bcac6",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1676,11 +2209,33 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the fetch took every case archive, so any masks the release ships are inside them",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/deep_psma"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 53,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/deep_psma"
+     }
+    ]
    }
   },
   "deepfluoro": {
-   "digest": "cf6826eced34ef96131db837cb5adb07c56346ae968d2577a9e5ecf0d1d328c3",
+   "digest": "3fc0a885019eaba626c9e18c09e377d773f036b9d986464212f5846ed583e503",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1727,7 +2282,30 @@
      "annotate": "split the vertebrae class into named lumbar bodies",
      "pair_key": "the specimen number",
      "priority": 3
-    }
+    },
+    "ct": true,
+    "regions": [
+     "pelvis",
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "a 3-D segmentation of 7 classes, the vertebrae one class with the upper sacrum, and a 2-D segmentation on every frame, in ipcai_2020_full_res_data.h5",
+      "vertebrae": "together",
+      "by": "the release's authors",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/deepfluoro_h5"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks of the specimens' CTs",
+      "vertebrae": "not recorded",
+      "by": "the owner's runs, automatic (SPINEPS); no radiologist has read them",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "dmx_imaging": {
@@ -1765,7 +2343,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "dysphagiabank": {
@@ -1805,7 +2386,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "faubel_painsource": {
@@ -1843,7 +2427,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "fracatlas": {
@@ -1885,7 +2472,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "fraiwan_spine_xray": {
@@ -1925,11 +2515,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "geneva_hip": {
-   "digest": "49c43f67e237152fb9e040baa6f4aa6ab524203a55398eb62a50123860089b4a",
+   "digest": "276ccd859fe572f3fc6f64debfe160966292fcca81bf802be8cc5c19facdac12",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -1973,7 +2566,30 @@
      "masks": "none shipped",
      "annotate": "nothing for the spine; a registration check on a C-arm no other set comes from",
      "pair_key": "one phantom: every frame pairs with its one CT"
-    }
+    },
+    "ct": true,
+    "regions": [
+     "pelvis",
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: the release ships the phantom's CT, its transforms and the projection matrix, no masks",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "masks of the phantom's CT",
+      "vertebrae": "not recorded",
+      "by": "the owner's runs, automatic (SPINEPS); no radiologist has read them",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "guide3d": {
@@ -2013,11 +2629,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "hf_abdomenatlas2_0_mini": {
-   "digest": "aa900309a1a3723048a893a3a5fdc144fe966189207ae2c2f8f1d345ef75d674",
+   "digest": "099ac9e61a26342fcf4ac98ae3a2b8c41927f07bfde8ab1cd78506d2e7423258",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -2053,11 +2672,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "abdomen"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: not fetched yet; what the release ships is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "huashan_fudan": {
-   "digest": "38fd2afe84499a771e885044e0601703de3e70e3d4eff350de8730a406334d75",
+   "digest": "df5a3f06ef1d970439ac3cdceb2a79489b5cb07b2b5ffc6374059f7bfcc1a391",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -2101,11 +2734,25 @@
      "masks": "none stated",
      "annotate": "to read once the set is in hand",
      "pair_key": "the patient"
-    }
+    },
+    "ct": true,
+    "regions": [
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the paper names none",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "idc_acrin_flt_breast": {
-   "digest": "4bbbb67cce37e2461b25ac0dc3e364b05931a3a8c0b2f532afdb99d34ed1b0d1",
+   "digest": "acb1dfe57705a3309286fe76cb9b88bd3082bbb8c3bab139c4e801298034c072",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2139,11 +2786,33 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_acrin_nsclc_fdg_pet": {
-   "digest": "723c56381b3642f0f8e9c5b332f5169736f66867ce869585b3a7bd2a03cac68d",
+   "digest": "07a3df598d6f1de1f3b2c17127fc528a3fdd0b3c3e8736722e6b8ee4d74721e2",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2177,11 +2846,38 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "head and neck",
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24's automatic annotations by BAMF Health in this collection are over its PET series, none over its CT",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_adrenal_acc_ki67_seg": {
-   "digest": "3d3d0ac1206bfa810e79de3fe851d97a109735cd96c3c0dd1a2a182b912d30dd",
+   "digest": "cd31187dcb91bc3795d86e075b37e514bd77f9338044dc4840a7eac3f67362de",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2215,11 +2911,35 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the adrenal mass: 53 segmentations over 53 of the collection's 124 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "the collection's authors, semi-automatic (Amira)",
+      "volumes": 53,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_anti_pd_1_lung": {
-   "digest": "c0d265977b2ad521852aecada1bef9ff007608ab4fa7a2c6a9d670675ae94c84",
+   "digest": "ad0ebf007e16d7564cdd1003454c0dcb9b1058f7920dd421c12f49b58ce7b993",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2253,11 +2973,36 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the lungs and their nodules: 94 segmentations over 79 of the collection's 571 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "BAMF Health, automatic, for IDC's analysis results, 15 of them semi-automatic",
+      "volumes": 79,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_cmb_brca": {
-   "digest": "a99152f80136619bc9683d65e4256de37c645951b7d5b5737df1265ded7216c7",
+   "digest": "bd753e4e91d67f543670532f7467d279661ad2a26ce6365334bd3f8e9cef511a",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2291,11 +3036,36 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_cmb_crc": {
-   "digest": "94bd8b91d0ea764d018bfb44523a7da38b03fe506f4ec4180bf6e57512565b4d",
+   "digest": "fe6c17dcbf22b84f8d1e4d51fadeae98b54d6bc94da1ed95f8795af3c4217516",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2329,11 +3099,37 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_cmb_lca": {
-   "digest": "e787614016ce6c1040a58246921a6691060a461a04142b851478f2f2c8190dad",
+   "digest": "8764b62b33f108eb9c4a82f8cc50fa47ff53393330f16d10fdec9887ae918fde",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2367,11 +3163,37 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_cmb_mel": {
-   "digest": "7a2f4ceb4fab9913838506f0d7b22fdaa165433db5996a85cca22c25d86a4613",
+   "digest": "8d3f223fb4dec85dc018b7856f92a085d948fa34a05991605eca83938dbab4eb",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2405,11 +3227,37 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "spine",
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_cmb_mml": {
-   "digest": "742dd2f3beb3dd16f31b5287f104c9bfdc044e79e01781b0714dd6e756d504f0",
+   "digest": "b5657a138d5f176843f4e29f2d286e0f520cddf5a44f33ebf94aa1f769ddb563",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2443,11 +3291,38 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "spine",
+     "whole body",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_cmb_ov": {
-   "digest": "de0ee42c469028940b6ee67c2573c0fe2919473e2bb855c7296fbf3b1ca6c61f",
+   "digest": "cd86afef1e6960dd1bb23ddad2d6db0e0f3123bdb381013af0f435b4ee0d3509",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2481,11 +3356,35 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_colorectal_liver_metastases": {
-   "digest": "ed84cdc851b87fe708dcb6d26ff32c96830201e58b307eff951b51deef0a205b",
+   "digest": "7fd9de8f89f5b419aedb9a35baf0fd6ddfd18f31ff7e7c95bbe0556b27f85350",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2519,11 +3418,41 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "abdomen"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the liver and its masses: 224 segmentations over all 197 of the collection's CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "BAMF Health, automatic, for IDC's analysis results, 27 of them semi-automatic",
+      "volumes": 197,
+      "where": null
+     },
+     {
+      "origin": "release",
+      "masks": "the liver, its masses and veins: 197 segmentations over all 197 of the collection's CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "the collection's authors, by hand",
+      "volumes": 197,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_covid_19_ar": {
-   "digest": "43fd37fa44a3b21b6efb515c50b05611c6207c2dd25ac5851afdd5f4162dd812",
+   "digest": "a27dd0e0912b5073d684500b9b290f124faf70491003237dfc4bedec563b3f39",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2557,11 +3486,35 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_covid_19_ny_sbu": {
-   "digest": "12b7b6043ba7d67ca73026af70d9df6d1a604eec4da5ceb922f4f47cd5d2d9ad",
+   "digest": "57c2ab343502d1db719df518d472608de5c4faeec91db52836854db167c5706c",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2595,11 +3548,36 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_cptac_ccrcc": {
-   "digest": "b58dffe2be09022f32b7e8b86aced7972601132a03cca972b93cf17420a29125",
+   "digest": "f17380a080c030cfdb53840b539069ffdb8c18b6599f534eeeefbf545e61c4d3",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2633,11 +3611,44 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the kidneys, their masses and cysts: 37 segmentations over 33 of the collection's 612 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "BAMF Health, automatic, for IDC's analysis results, 4 of them semi-automatic",
+      "volumes": 33,
+      "where": null
+     },
+     {
+      "origin": "release",
+      "masks": "tumour contours with their seed points: 575 contour sets over 137 of the collection's 612 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "CPTAC's tumour annotators, by hand",
+      "volumes": 137,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_cptac_cm": {
-   "digest": "f3e40bd071eb1d80793a50c0d304ec25ce7388012c18bab9bbe903886e5afbc9",
+   "digest": "1ee94e1744fad676359bfe47cc893ca72de4f150d563ced5965a371a89037a02",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2671,11 +3682,37 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_cptac_lscc": {
-   "digest": "2f119b07fa3192c8324498359ddeb1d2797be88940fc0265417ba2c3c5235e17",
+   "digest": "a78f4430a705ac1ae513711bd98431386ea8bf78d0aae2c25c5e1730e3799a68",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -2709,11 +3746,29 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "idc_cptac_luad": {
-   "digest": "c8b8d6e76e08244579fecea656aa009d3c2bbe6c573313558ae33dcc9459b032",
+   "digest": "9fdb73f52eb1732e4f192959493834c9c51d9e752a8613ea7f9af3821c696a07",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -2747,11 +3802,28 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "whole body",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "idc_cptac_pda": {
-   "digest": "2a0e6fd0d1983f6c46e9b739e37cfa50788919f9dc99490f5b686f5297814465",
+   "digest": "abbdbdb9d68965caa98f8fc4e7289c0308c22ae219e688eedd941bda7d0e5a6d",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2785,11 +3857,36 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "tumour contours with their seed points: 463 contour sets over 157 of the collection's 757 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "CPTAC's tumour annotators, by hand",
+      "volumes": 157,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_cptac_sar": {
-   "digest": "231a5c29a74b845c2aedd1e8f66319e59b58fc3431288607bb30af17ceb84a20",
+   "digest": "076f988bd12093446b175f884d6882edaa405b1250cbaff5ec61da8d58bce2c9",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2823,11 +3920,37 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_cptac_stad": {
-   "digest": "f9fe050a79baa333b0f61accf0d1884ded00e4c6edc84e57014efa2d902f23fc",
+   "digest": "9d8d128f7738b41dfa1c73e994b6a6b261bb2c71e8761029261a3e3f6e2004d3",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2861,11 +3984,35 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_cptac_ucec": {
-   "digest": "6b75738fe6dc2946335935012d4faf3c5d047a580bdc851efe71f502b0f68dff",
+   "digest": "b366f83dbff82490800ba1db5ccec1607869a254aca450dc1c03c8fbd5bcedee",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2899,11 +4046,36 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "tumour contours with their seed points: 181 contour sets over 65 of the collection's 894 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "CPTAC's tumour annotators, by hand",
+      "volumes": 65,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_ct_vs_pet_ventilation_imaging": {
-   "digest": "b2bb16f0d3a6b2feec0787624bc373f704825e2e258bc2d56902d5dd3e704a68",
+   "digest": "eba11df88990ed498a35f8b0bc41b09e38336f3396e0234ff8a419dfbb12ed97",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2937,11 +4109,34 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_ctpred_sunitinib_pannet": {
-   "digest": "efb44f1b478431a744d7dc8187e89f6390807e9c099ccf8f7578091189da6800",
+   "digest": "1e9fbdfdc0ea141226a1c002979ea62d43e839664b3a30f71598eb85c20d9426",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2975,11 +4170,36 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_eay131": {
-   "digest": "6530a0acfcc96398f1eac6acfe8c103a7b9e55cd4e259a42f736e504bfec321e",
+   "digest": "23c100f7c436a532ab57a6289edcdbf6efdedeeed3a309db0a9f8af8b65e73d5",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3013,11 +4233,46 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "spine",
+     "whole body",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "lesions: 1,350 segmentations over 456 of the collection's 13,166 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "the trial's tumour annotators",
+      "volumes": 456,
+      "where": null
+     },
+     {
+      "origin": "release",
+      "masks": "tumour contours with their seed points: 13,765 contour sets over 2,736 of the collection's 13,166 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "the trial's tumour annotators",
+      "volumes": 2736,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_hcc_tace_seg": {
-   "digest": "b8082c39248e9c4a2a4a3371d00664e8d0ea164c50bb43ee56c856cfbf242dc0",
+   "digest": "cc897d5058c2da5776fb3a0b3c5f228945255d93996bf365277485a1faa9b1e2",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3051,11 +4306,43 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the liver and its masses: 343 segmentations over 318 of the collection's 572 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "BAMF Health, automatic, for IDC's analysis results, 25 of them semi-automatic",
+      "volumes": 318,
+      "where": null
+     },
+     {
+      "origin": "release",
+      "masks": "the liver, its masses and necrosis, the abdominal aorta and the portal vein: 104 segmentations over 104 of the collection's 572 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "the collection's authors, semi-automatic (Amira)",
+      "volumes": 104,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_ldct_and_projection_data": {
-   "digest": "c9503227dd5ba15cf99b4cb572fba6338f2cd6174c493e29458b837ce01ec581",
+   "digest": "3438b678e5c836ca8f5b4e1dc6fb5e1324871b663770a040f340357f42e7400a",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -3089,11 +4376,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "idc_lidc_idri": {
-   "digest": "d9ce6e86c7717efa4cca13e10b8ea599bf7fa42cc0339ca79dbc18b1fae29745",
+   "digest": "5df1b71108e59e1569f911be8b1c714585d10d1363734b538adf309d3e27ff5a",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -3127,11 +4428,35 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "lung nodules, one segmentation for each reader who marked one: 6,859 segmentations over 883 of the collection's 1,018 CT series, in IDC v24; not fetched yet",
+      "vertebrae": "none",
+      "by": "the LIDC readers, by hand",
+      "volumes": 883,
+      "where": null
+     },
+     {
+      "origin": "release",
+      "masks": "lung masses: 90 segmentations over 10 of the collection's 1,018 CT series, in IDC v24; not fetched yet",
+      "vertebrae": "none",
+      "by": "QIN's lung CT segmentation study, semi-automatic",
+      "volumes": 10,
+      "where": null
+     }
+    ]
    }
   },
   "idc_lung_pet_ct_dx": {
-   "digest": "33aef2b88a4097a669218531775d5574884efd5f573d4b760da1a6a26546841b",
+   "digest": "c47f9cc7d2f6cce68490d7027f4575a2d2497e69cf5a5a9efe85d6188324fd0f",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3165,11 +4490,36 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "whole body",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the lungs and their nodules: 170 segmentations over 141 of the collection's 1,162 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "BAMF Health, automatic, for IDC's analysis results, 29 of them semi-automatic",
+      "volumes": 141,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_mediastinal_lymph_node_seg": {
-   "digest": "212d32300d8e997bd56d7a1b194444d0ed22b3775b018ba9de1c57c6846b0109",
+   "digest": "d43db625d322e0264e879aa2317be94844af67be99c3a259dc2ede9aa619ce94",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3203,11 +4553,37 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "head and neck",
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "mediastinal lymph nodes: 513 segmentations over all 513 of the collection's CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "the collection's authors, by hand",
+      "volumes": 513,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_midrc_ricord_1a": {
-   "digest": "2870996204840a07be179622b809e716d0b0b9c2ca8b275a3269eb94a50f2c72",
+   "digest": "0711b1aa9a0d8b62c7c17be35305ccd212d1dd03fb37898194bc222296fd3337",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3241,11 +4617,35 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_midrc_ricord_1b": {
-   "digest": "8662c3f0202c15400bee563e426ef0ee0543ea56a90ac02983d4a9a4f278e7b5",
+   "digest": "8b4325a4092a4165165cf74117bef0b9cbd9ed343e2e7f25c0b604b02da887c3",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -3279,11 +4679,28 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "idc_nlst": {
-   "digest": "8f30eda0e0ed03b529016c833b62cbaa4284f3123f0281dc27ef1c79a4f98aca",
+   "digest": "d9b2b100c2093a44634bfe6a1b2eb895c01fe328fff1b072377d32d077257eaf",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -3319,11 +4736,50 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the aorta, oesophagus, heart and trachea: 1,039 segmentations over 1,039 of the collection's 203,087 CT series, in IDC v24; not fetched yet",
+      "vertebrae": "none",
+      "by": "IDC's analysis results, automatic",
+      "volumes": 1039,
+      "where": null
+     },
+     {
+      "origin": "release",
+      "masks": "the lungs and their nodules: 1,144 segmentations over 1,042 of the collection's 203,087 CT series, in IDC v24; not fetched yet",
+      "vertebrae": "none",
+      "by": "BAMF Health, automatic, for IDC's analysis results, 102 of them semi-automatic",
+      "volumes": 1042,
+      "where": null
+     },
+     {
+      "origin": "release",
+      "masks": "76 structures, among them every vertebra in view from C1 to L5, each named by level, the sacrum and the ribs: 126,051 segmentations over 126,051 of the collection's 203,087 CT series, in IDC v24; not fetched yet",
+      "vertebrae": "by level",
+      "by": "IDC, automatic (TotalSegmentator 1.5.6); no radiologist has read them",
+      "volumes": 126051,
+      "where": null
+     },
+     {
+      "origin": "release",
+      "masks": "tumours and nodules: 596 segmentations over 596 of the collection's 203,087 CT series, in IDC v24; not fetched yet",
+      "vertebrae": "none",
+      "by": "NLSTSeg's readers, by hand",
+      "volumes": 596,
+      "where": null
+     }
+    ]
    }
   },
   "idc_nsclc_radiogenomics": {
-   "digest": "9a6b8b56f5c3801b8b7849cd43882e4e96af458c07eb1af00576c470817eee0b",
+   "digest": "e4566cfcd841917d1f079003f1a2f4936e12c20ab7421d61af23cd730eb206a6",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -3357,11 +4813,36 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the lungs and their nodules: 169 segmentations over 143 of the collection's 727 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "BAMF Health, automatic, for IDC's analysis results, 26 of them semi-automatic",
+      "volumes": 143,
+      "where": null
+     },
+     {
+      "origin": "release",
+      "masks": "the tumour regions, which IDC's index codes as heart, tissue and upper arm: 144 segmentations over 144 of the collection's 727 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "the collection's authors, semi-automatic (ePAD)",
+      "volumes": 144,
+      "where": null
+     }
+    ]
    }
   },
   "idc_nsclc_radiomics": {
-   "digest": "03e23f697dd48cc6ad2e419a8e6b5107af3cf07d12ec5d5894ab33f20bbf78f9",
+   "digest": "4241ca31d660c7cd4311b5ead31755c3f5683ada789360c16feeef4280b0114f",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -3395,11 +4876,41 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the aorta, oesophagus, heart and trachea: 1,242 segmentations over 414 of the collection's 422 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "IDC's analysis results, automatic",
+      "volumes": 414,
+      "where": null
+     },
+     {
+      "origin": "release",
+      "masks": "the primary tumour, the lungs, heart, oesophagus and spinal cord: 421 segmentations over 421 of the collection's 422 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "the collection's authors, by hand, region growing on most",
+      "volumes": 421,
+      "where": null
+     },
+     {
+      "origin": "release",
+      "masks": "contours of the tumour volumes, the spinal cord, oesophagus, lungs and heart: 422 contour sets over all 422 of the collection's CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "the collection's authors, by hand",
+      "volumes": 422,
+      "where": null
+     }
+    ]
    }
   },
   "idc_pancreatic_ct_cbct_seg": {
-   "digest": "4585bd824341d0238b3fd49c0dcbd59b57efd1931be5b8f2d67414b10ecf1606",
+   "digest": "3ba53425600f4a3fcccf52b7bfe14510639a05ff5bf52e7bdc4c36f6f5f86b3d",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3433,11 +4944,34 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "contours of the small bowel, the stomach and duodenum and the lungs, on the planning CT and the CBCT: 130 contour sets over 130 of the collection's 200 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "the collection's authors, by hand",
+      "volumes": 130,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_pediatric_ct_seg": {
-   "digest": "f9234948f083201cabf22c5d00403587e63ca8b98173df9d233ddb12ad98bc7e",
+   "digest": "7607a5e51ac7756ee4129ea7e37e1ee5003b26e890a5fb3641375146506be348",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3471,11 +5005,35 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "contours of 29 organs and structures, the bones as one of them and the spinal canal another: 359 contour sets over all 359 of the collection's CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "together",
+      "by": "the collection's authors, by hand, 42 of them automatic",
+      "volumes": 359,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_pelvic_reference_data": {
-   "digest": "327d22e6dfb21f88d3196a255399b399f06f2be96aebc5d79697974a8a887e24",
+   "digest": "c6e2f912b20aadd31e5ee84402d2857c42d98fc389b84bf8f27e71e71f0b6deb",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3509,11 +5067,35 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "abdomen",
+     "pelvis",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_prostate_anatomical_edge_cases": {
-   "digest": "b0d147cb54c42ec3a8b8e3f25d158f40c17283739cd9779dbb3f17418f120f0c",
+   "digest": "0e241c059deb388600320e9f9d3b8991a441833f4875cb8053671df769957641",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -3547,11 +5129,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "contours of the bladder, femoral heads, prostate, rectum and body outline: 131 contour sets over all 131 of the collection's CT series, in IDC v24; not fetched yet",
+      "vertebrae": "none",
+      "by": "the collection's authors, by hand",
+      "volumes": 131,
+      "where": null
+     }
+    ]
    }
   },
   "idc_psma_pet_ct_lesions": {
-   "digest": "654a0acdb64d1d5f240ea8e7d8334f025a8e484f99248141d3475a9c85686e94",
+   "digest": "b97be8f65fb07c2c68826b6f4026df62a93ce411b9cb2ff20646645a49b3e37b",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3585,11 +5181,33 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24's segmentations in this collection are over its PET series, none over its CT",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_rider_lung_pet_ct": {
-   "digest": "9227ba12bde1f62ec1ad65aa2318e392a14bbbe83c670ed9296077bdc257e956",
+   "digest": "7da8d199964842e02bb78dcddc82b41ea6df5632623003aa12b4689dbe2607d4",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3623,11 +5241,36 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the lungs and their nodules: 49 segmentations over 39 of the collection's 815 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "BAMF Health, automatic, for IDC's analysis results, 10 of them semi-automatic",
+      "volumes": 39,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_spinal_multiple_myeloma_seg": {
-   "digest": "c06a74118ec7cc273d6d78c7be729d55f83b23f8ee086bb728b81ef764681269",
+   "digest": "f6f6deed68d46dbf6283e9c34ebc464d0a41ac0a6db308b68955dc4674ddca6d",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -3661,11 +5304,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the vertebrae C7 to L5, each named by level, and the neoplasm: 2 segmentations over 1 of the collection's 576 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "by level",
+      "by": "the collection's authors, automatic",
+      "volumes": 1,
+      "where": null
+     }
+    ]
    }
   },
   "idc_spine_mets_ct_seg": {
-   "digest": "be72a33f616445126dc6b8e195f2d7ebfe2da63681fa5bd365cda14f816ae7b3",
+   "digest": "4078f9a789458074b0185d9d319c7174651ae8b8d661a3afbe11697f24097c28",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -3699,11 +5356,27 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "abdomen",
+     "pelvis",
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the vertebrae T1 to L5, each named by level: 55 segmentations over all 55 of the collection's CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "by level",
+      "by": "the collection's authors, semi-automatic (3D Slicer's editor)",
+      "volumes": 55,
+      "where": null
+     }
+    ]
    }
   },
   "idc_tcga_blca": {
-   "digest": "de1d6dbbdf951acb3d88f5a1a08038e12d92410bf70d0368764e57f28520fc04",
+   "digest": "edc0fa06fc3862c6c65e78c04e911b7b29b0fc3150a5b357bff5fcb61241c954",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3737,11 +5410,36 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24's segmentations in this collection are over its slide microscopy, none over its CT",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_tcga_esca": {
-   "digest": "0750da83dce80b421e31141a8f8e3b05c2b2a473688ebc5eb066b95699d89eed",
+   "digest": "5a340c892b3e5d9a1737663b6ec921a8afe15958a2be6b9067e714a6c1ace86f",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3775,11 +5473,35 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_tcga_kirc": {
-   "digest": "f4a4d3130b81f8105a4d4fb0c69c18172539aa7d3f6c51b7ca20f7ee9d9f2114",
+   "digest": "2202fa4cfb2718445c375a726419e1a311b9dcf0dc0f8a4fdc3ffceb16a585cc",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3813,11 +5535,35 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the kidneys, their masses and cysts: 183 segmentations over 156 of the collection's 1,736 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "BAMF Health, automatic, for IDC's analysis results",
+      "volumes": 156,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_tcga_lihc": {
-   "digest": "1ee969a8c81e35df321a93c1af54eb084d4b7aab6a4248b105fdc2cda3fcf542",
+   "digest": "8a1530e7b8c491be961d4f0be7547e358f64a18027bbf1929e1a6c11a1f24712",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3851,11 +5597,35 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the liver: 96 segmentations over 89 of the collection's 777 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "BAMF Health, automatic, for IDC's analysis results, 7 of them semi-automatic",
+      "volumes": 89,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_tcga_ov": {
-   "digest": "195a5f770859259e0db6ea1c79465b0ba366fa68db20c942068835a39397d456",
+   "digest": "20786218e649b887a3e2544d4b3a1ca515816df25016aa808a817d283f5400ff",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3889,11 +5659,35 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_tcga_stad": {
-   "digest": "f27119e19f9f7762d07891752d0f3874e12341f5b774f1efbc7fd61749be5712",
+   "digest": "1ae0735faa79f2808bc8e5ba3d72fa44974a13ddfca214c545d9ef8fd808f254",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3927,11 +5721,33 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "abdomen"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_tcga_ucec": {
-   "digest": "afd8d742e8ea6ba90a83a2f051b4d348827493c7272b24da9831b76c4de67408",
+   "digest": "84ae8f274b03b270508786cff035cd663fb383bd10fc0cae6e25b6ea07882de1",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -3965,11 +5781,36 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "idc_varepop_apollo": {
-   "digest": "0a8ebb381f6069014e9025f7bdac31c91e21b6e1a6551b90054bfb002e73447c",
+   "digest": "f29e3a6ad5920feb0e5c51201ca7226a6702550a4499af36c5927b0e70eebef4",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -4003,7 +5844,32 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis",
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+     }
+    ]
    }
   },
   "ieee_dataport_lateral_236": {
@@ -4041,11 +5907,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "ipcai2025_xray_ct": {
-   "digest": "841916732cb8202601206fd370c3b182608d9fc9f157251247e2b3128f9ec414",
+   "digest": "2724ce01898d5d850d8d539c91a5937cb3538049fff6927fbcf6b3a49d7bebb7",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -4089,7 +5958,21 @@
      "masks": "contour masks and bone surface meshes",
      "annotate": "nothing for the spine; a registration benchmark",
      "pair_key": "the specimen: its ten views and its CT"
-    }
+    },
+    "ct": true,
+    "regions": [
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "contour masks and bone surface meshes of the distal femur, in dataset_ipcai.zip",
+      "vertebrae": "none",
+      "by": "the release's authors",
+      "volumes": 5,
+      "where": "/rs/rs_grp_oschome/go2432/data/ipcai2025_xray_ct/raw"
+     }
+    ]
    }
   },
   "jefferson_drg": {
@@ -4127,7 +6010,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "kaggle_fracture_multiregion": {
@@ -4165,7 +6051,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "kaggle_scoliosis_yolov5": {
@@ -4203,11 +6092,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "kidney_thoraxabdomen": {
-   "digest": "d59cf6e58d6c2b1aa7ce71744a22bf0f04dbce00bd8cd1a47c450a9545892a51",
+   "digest": "25046a649b1378cb8620a220a587b8c748157f5496f462f0a3d0c3b7d19aa3ef",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -4241,7 +6133,30 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "kidney abnormalities, as the release's name says; the fetch took images1-4.zip alone, so they are not on the grid",
+      "vertebrae": "not recorded",
+      "by": "the release's authors",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 215,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/kidney_thoraxabdomen"
+     }
+    ]
    }
   },
   "konica_ddr": {
@@ -4279,7 +6194,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "kub_stonex": {
@@ -4319,11 +6237,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "levelcheck_jhu": {
-   "digest": "5286573cc0f0f7fc75262df7d0e4acb214cef011c33ad1ba3f54ef129170682d",
+   "digest": "fa29adcb6330ce5dd3bd1a491ce856589b0de2bf8d36ab237e66a49bc1b7d36a",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -4367,11 +6288,25 @@
      "masks": "levels labelled on the preoperative CT",
      "annotate": "to read once the set is in hand",
      "pair_key": "the patient"
-    }
+    },
+    "ct": true,
+    "regions": [
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the papers label the levels on the preoperative CT and do not say whether masks come with it",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "ljubljana_2d3d_gs": {
-   "digest": "90492050585a76fd818d43e16253ad8b571bdfce2af162bda80ac8409ed4eed1",
+   "digest": "139396eac241f76639c60f5f7cacf79f24fae005bcb4df0d2c00aebc88da5fdd",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -4416,11 +6351,25 @@
      "annotate": "five body masks kept beside the set, never inside it and never shared, since the licence allows no derivatives",
      "pair_key": "one specimen: every X-ray pairs with the five vertebra volumes through their transforms",
      "priority": 4
-    }
+    },
+    "ct": true,
+    "regions": [
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "no masks: each vertebra, L1 to L5, comes as a CT and an MR volume of its own, so the volume names the level",
+      "vertebrae": "by level",
+      "by": "the release's authors",
+      "volumes": 5,
+      "where": "/rs/rs_grp_oschome/go2432/data/ljubljana"
+     }
+    ]
    }
   },
   "lumos": {
-   "digest": "3ca58e45b6be41bc786b2ee1c5bc0f9d359978162088089f48ae1ba7fb5d57b4",
+   "digest": "8a463639269b6a07e3ee6bbcb7731b1222e0462ba6c24872c6ef1ca3f1c13fee",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -4465,7 +6414,21 @@
      "annotate": "masks on the 280 CTs, then each film registered to its CT",
      "pair_key": "to confirm: whether a film and a CT of the same id are one patient",
      "priority": 5
-    }
+    },
+    "ct": true,
+    "regions": [
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: to confirm on the record's page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "maastricht_cervical": {
@@ -4503,11 +6466,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "magic_ct": {
-   "digest": "a19680e26aace2259b09c7070409d8b95a5aaf7b8fc5692734f36f4262998486",
+   "digest": "bff221ec77bc94031d9ed0fd6b6ef5b369ba55fcc66e98ba005d79cd8b214ff8",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -4541,7 +6507,22 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: not fetched yet; what the release ships is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "mayfield_kyphoplasty": {
@@ -4579,7 +6560,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "mendeley_ddh_hips": {
@@ -4620,7 +6604,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "mimic_cxr": {
@@ -4660,7 +6647,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "mros_lateral_spine": {
@@ -4701,7 +6691,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "mtfi_lumbar_coupling": {
@@ -4739,7 +6732,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "neurosurgical_focus_video": {
@@ -4777,7 +6773,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "nhanes2_annotated": {
@@ -4815,7 +6814,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "nhanes2_unannotated": {
@@ -4853,7 +6855,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "nih_chestxray14": {
@@ -4893,11 +6898,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "nit_warangal_nims": {
-   "digest": "f4b8fa42306f8c663ef7b3281d068e164f3d8d6248a7163619f2755da7bd88c9",
+   "digest": "034021363fcac696dc3e71ead2f5a7ad07f03ad325f0073ca1b61cdbfb5ef097",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -4941,11 +6949,25 @@
      "masks": "level-named centroids; no masks",
      "annotate": "to read once the set is in hand",
      "pair_key": "the patient"
-    }
+    },
+    "ct": true,
+    "regions": [
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: L1 to L5 centroids named by level, no masks",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "nlst_pilot": {
-   "digest": "9e4bf45927d539b4bb4b8bf42c02f33ae28ffa84a5ee21acef4ff7d2995b2029",
+   "digest": "cfdcb600292b5327c89caafd9bbf60927d37a80552ab7a22e15248da03758799",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -4979,7 +7001,54 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "the aorta, oesophagus, heart and trachea: 1,039 segmentations over 1,039 of the full trial's 203,087 CT series in IDC v24, how many of them over the pilot's 500 not counted; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "IDC's analysis results, automatic",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "release",
+      "masks": "the lungs and their nodules: 1,144 segmentations over 1,042 of the full trial's 203,087 CT series in IDC v24, how many of them over the pilot's 500 not counted; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "BAMF Health, automatic, for IDC's analysis results, 102 of them semi-automatic",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "release",
+      "masks": "76 structures, among them every vertebra in view from C1 to L5, each named by level, the sacrum and the ribs: 126,051 segmentations over 126,051 of the full trial's 203,087 CT series in IDC v24, how many of them over the pilot's 500 not counted; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "by level",
+      "by": "IDC, automatic (TotalSegmentator 1.5.6); no radiologist has read them",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "release",
+      "masks": "tumours and nodules: 596 segmentations over 596 of the full trial's 203,087 CT series in IDC v24, how many of them over the pilot's 500 not counted; the IDC fetch takes the CT series alone, so they are not on the grid",
+      "vertebrae": "none",
+      "by": "NLSTSeg's readers, by hand",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 500,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/nlst_pilot"
+     }
+    ]
    }
   },
   "open_i_chest": {
@@ -5019,7 +7088,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "padchest": {
@@ -5059,11 +7131,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "panorama": {
-   "digest": "87cabd8fb06a3460535f40da79e25bba578f6f40914fd1f8ecb7138ca4b719d4",
+   "digest": "aec5aa381675b8a9e765007f3977df29cca891b64d1dc68f372307b09a35e5a1",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5097,7 +7172,31 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the fetch took the four image batches alone",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 2024,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/panorama"
+     }
+    ]
    }
   },
   "pediatric_iri": {
@@ -5135,11 +7234,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "pengwin2026": {
-   "digest": "e8427ac84bebc6e758b3daf4afe8d91e132b6e0a532f6e03d86f886bc9ec06c7",
+   "digest": "d806a2c253fac430fab1dcc0b04b40ae2fc841a96be511b579e6bf95510d60ce",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5173,11 +7275,33 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "masks of the pelvic fracture fragments, the release's own",
+      "vertebrae": "not recorded",
+      "by": "the release's annotators, expert",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/pengwin2026"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 340,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/pengwin2026"
+     }
+    ]
    }
   },
   "pengwin_task2_xrays": {
-   "digest": "4d89387128b0eb0963b7d69451d7f126fbe03183ed67d17e4d7672bf85f6f69a",
+   "digest": "836925cc157a4e4c9fc0d61dc24cbb4eeae21e22100d1a63c6991422e1818f17",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -5214,7 +7338,22 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "pelvis",
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "2-D masks of the fracture fragments on every one of the 50,000 simulated images, inside the fetched zip",
+      "vertebrae": "not recorded",
+      "by": "the release's authors, from the CT masks by pose",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/pengwin_task2_xrays"
+     }
+    ]
    }
   },
   "pittsburgh_swallow": {
@@ -5252,7 +7391,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "procedure_guide": {
@@ -5290,7 +7432,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "pumch_stitching": {
@@ -5328,11 +7473,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "quadra_hc": {
-   "digest": "f9c911be252b9a2517855db75d9b11572d5e7bd27fcf0086d603ed801546bbaa",
+   "digest": "3c00ed7ae2e7f0235899d51c4634509512ca8b70a01bdebdc39698c0f1bfa9c1",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5366,7 +7514,29 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the fetch took QUADRA_HC.zip whole, so any masks the release ships are inside it",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/quadra_hc"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 48,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/quadra_hc"
+     }
+    ]
    }
   },
   "radiopaedia": {
@@ -5404,7 +7574,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "rexgradient_160k": {
@@ -5445,11 +7618,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "ribfrac": {
-   "digest": "d5b7a30b35f46e00c2de4f453c9d0c0a07be11c1edc96508090a82d0b01623f7",
+   "digest": "3f85908452092b0012b2275d8c249b8235280c37d180a2d91fcdb6956083828a",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5483,11 +7659,42 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "rib fracture masks",
+      "vertebrae": "none",
+      "by": "the release's annotators",
+      "volumes": 660,
+      "where": "/rs/rs_grp_oschome/go2432/data/ribfrac"
+     },
+     {
+      "origin": "release",
+      "masks": "rib masks of RibSeg v2, corrected by experts, and Moller's rib masks",
+      "vertebrae": "none",
+      "by": "RibSeg v2's experts; Moller's, by hand and automatic",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds this set and RSNA 2022's cervical spine together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/other_ct"
+     }
+    ]
    }
   },
   "rsna_2022_cervical": {
-   "digest": "dd2d5d944ba1dcaeb04a1e5661c8a846578d667b4f66bffc8fbaba4495cfd2f8",
+   "digest": "3408f26292b2696f270b09e77d1a60aaa2fdc4d2ef80ba432da6baa5b1ec9e0d",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5521,11 +7728,33 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "vertebra masks for 87 of the 2,019 studies, each vertebra named by level, inside the zip, which is not unpacked; every study also has fracture labels by vertebra, C1 to C7, which are not masks",
+      "vertebrae": "by level",
+      "by": "the competition's annotators",
+      "volumes": 87,
+      "where": "/rs/rs_grp_oschome/go2432/data/rsna_2022_cspine"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds this set and RibFrac together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/other_ct"
+     }
+    ]
    }
   },
   "rsna_ratic": {
-   "digest": "2f79e3896815c9ac6a643a214cc78b07a7dfafd5629528defe3b97f7ab7201cf",
+   "digest": "f06e559e97d60b9ae9690597a361393c60d6f28fbecc81bca04534cfab290202",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -5559,11 +7788,27 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest",
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: not fetched yet; what the release ships is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "rsna_rspect": {
-   "digest": "7cc4c6edeadfa0360dec97b94eae15668cb8ca68411f3982847bc7268f0205d5",
+   "digest": "cab82d4659b69d1c21bc968a1d4c47a4608ccdd988444ea683cea163cec226fc",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -5597,11 +7842,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: not fetched yet; what the release ships is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "scidb_enhance_pet_1_6k": {
-   "digest": "2173a61ec7433abeef598691bf779a04d1ae0f9181ddf8b0c709fd9b5255d0ef",
+   "digest": "9ef25fc6ae102ff5a8fa2ae6efdd82620d0de99ae0a6af4746fae24329823040",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -5637,7 +7896,21 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: not fetched yet; what the release ships is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "seattle_science_foundation": {
@@ -5675,7 +7948,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "sof_lateral_spine": {
@@ -5715,11 +7991,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "stanford_aimi_inspect": {
-   "digest": "cee7847552998559b00b3624b0f887018a23dde9fcff4b43743018f9df325103",
+   "digest": "62753386b62cf1e77b273a4525334f9f1ac1ce792d8321b689d9d03800544057",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -5753,11 +8032,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: not fetched yet; what the release ships is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "stanford_aimi_merlin": {
-   "digest": "6764317253ed6a868f5a070388344ebcf7df1a757e56e28988b6ba39b8ace688",
+   "digest": "49f12f80ab4fa66c68339aaad90fdd9f69f09c298f06394ae64d251087102326",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -5791,7 +8084,22 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "abdomen",
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: not fetched yet; what the release ships is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "sx_stitch": {
@@ -5829,11 +8137,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "tcia_fdg_pet_ct_lesions": {
-   "digest": "6bb16d58846a2d3891b797d96bbb1864639d4d7c13c0292732a4f5985ad6b987",
+   "digest": "ded6d2bee6fad724c2f4fc489f6baec0e3a5fa381f17d603bf2e604307326134",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5867,11 +8178,33 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the fetch took the 900 CT series alone (509,282 DICOM files, the CT's own count), so the lesion masks the collection publishes are not on the grid",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 900,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/tcia_fdg_pet_ct_lesions"
+     }
+    ]
    }
   },
   "totalsegmentator": {
-   "digest": "e2a9073879c6abcbdef43696c6a2104ceff0c34c2b73341fff11fcc2f43f80d3",
+   "digest": "b011d0e4890edff0935aef5ff44b61d2d700a0da9d23fdfdac511aba162196ac",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -5907,7 +8240,58 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "head and neck",
+     "chest",
+     "abdomen",
+     "pelvis",
+     "spine",
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "117 structures in v2.0.1, every vertebra among them named by level, with no L6 or T13 label, as s*/segmentations/*.nii.gz",
+      "vertebrae": "by level",
+      "by": "the release's authors, automatic and refined by hand",
+      "volumes": 1228,
+      "where": "/rs/rs_grp_oschome/go2432/data/totalsegmentator_v201"
+     },
+     {
+      "origin": "release",
+      "masks": "the same structures in v3.0.0, with refined bone labels",
+      "vertebrae": "by level",
+      "by": "the release's authors, automatic and refined by hand",
+      "volumes": 1935,
+      "where": "/rs/rs_grp_oschome/go2432/data/totalsegmentator_v300"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks of v3's CTs, each vertebra named by level, relabelled in tsv3_ctd",
+      "vertebrae": "by level",
+      "by": "the owner's runs, automatic (SPINEPS); no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/spineps/tsv3"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks of v2's 1,228 CTs, each vertebra named by level",
+      "vertebrae": "by level",
+      "by": "the owner's runs, automatic (SPINEPS with VERIDAH); no radiologist has read them",
+      "volumes": 1228,
+      "where": "/wsu/home/go/go24/go2432/bench_ts"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/totalsegmentator"
+     }
+    ]
    }
   },
   "tvgh_as_spine_xray": {
@@ -5945,7 +8329,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "tvgh_spinexr": {
@@ -5983,7 +8370,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "vanderbilt_tha_fluoro": {
@@ -6021,7 +8411,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "veriserum": {
@@ -6072,11 +8465,14 @@
      "masks": "implant poses",
      "annotate": "nothing for the spine; real flat-panel noise and metal at scale",
      "pair_key": "the image's own registered pose"
-    }
+    },
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "verse": {
-   "digest": "5bef3dbb2758d7cd6672e83869cb40baa92ac571f13d050bf2233ffcd20f8eae",
+   "digest": "cba9c586fbf6db5e06f038cbb63ccc5dd303a36d2b43ec2fe0033da1ad2aeef3",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -6110,11 +8506,41 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "vertebra masks and centroids from C1 to L6, a T13 among them, each vertebra named by level; no sacrum",
+      "vertebrae": "by level",
+      "by": "the release's annotators, expert",
+      "volumes": 374,
+      "where": "/rs/rs_grp_oschome/go2432/data/versefusion/raw/VerSeFusion_data/raw"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks of the 374 CTs, each vertebra named by level",
+      "vertebrae": "by level",
+      "by": "the owner's runs, automatic (SPINEPS with VERIDAH); no radiologist has read them",
+      "volumes": 374,
+      "where": "/wsu/home/go/go24/go2432/bench_ts"
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/verse"
+     }
+    ]
    }
   },
   "verse_2d_projections": {
-   "digest": "8824cf4eb316495a2a50d280bd0f60d99756c21d83059f56265bb7d2b5e5ff6d",
+   "digest": "1fd5ca7d669916fd78bc01e3e69dee458ff3de03da0f5b93414b4e8bd2e05bd9",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6148,7 +8574,21 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: soft labels of each vertebra's identity on the projections, no masks",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "vertxnet_nhanes2_labels": {
@@ -6188,11 +8628,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "veterinary_pig_levelcheck": {
-   "digest": "1ccb77afc6c44dcbff5dde92264cd1e5173a0017b77db2b060aefb77a1faca9d",
+   "digest": "28ba243872a40ecb6860bd87c355d664db04a4bd4bc4a8d75be02f4cbe26aaf5",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6238,7 +8681,21 @@
      "masks": "none",
      "annotate": "nothing for the spine; a registration benchmark",
      "pair_key": "one phantom: every projection pairs with its CT"
-    }
+    },
+    "ct": true,
+    "regions": [
+     "other"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "none: a pig lower limb phantom, with no masks",
+      "vertebrae": "none",
+      "by": "none",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "vfss2022": {
@@ -6276,7 +8733,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "vindr_cxr": {
@@ -6316,7 +8776,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "vindr_pcxr": {
@@ -6354,7 +8817,10 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "vindr_spinexr": {
@@ -6394,11 +8860,14 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "waw_tace": {
-   "digest": "facd321dc485f2138b2da67af2133b17eff4a715120456f3ab9074c5c60ba52e",
+   "digest": "23a60bee3fd76515dd456eeb64bfe4edfdb0cde0fac00be9937700d15a9a4a3f",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -6432,11 +8901,33 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "abdomen"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: the fetch took the four CT archives alone",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     },
+     {
+      "origin": "made",
+      "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+      "vertebrae": "by level",
+      "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+      "volumes": 228,
+      "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/waw_tace"
+     }
+    ]
    }
   },
   "zenodo_lumvbcanseg": {
-   "digest": "7996e2267651d7a100bf2f0804f3367a8102ed23b519ad548f2db3e14bacfea0",
+   "digest": "6201e5961ddfef7930acaa69be1ce1cef9df28f6e9e5fed8749ab88cabb46800",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6470,11 +8961,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "spine"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: every file of the record was fetched, so any masks it ships are inside its archive",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/shared/datasets/zenodo_lumvbcanseg/raw"
+     }
+    ]
    }
   },
   "zenodo_medpelvis3d": {
-   "digest": "ec594b4c96f99267e1bbf27846789797f621b89f68ec74d0052d3bfcc32ec191",
+   "digest": "b21c88141cf3b307455582a9a705d5e91ca7d0dceb22b058840dd58d518dc350",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6508,11 +9013,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: every file of the record was fetched, so any masks it ships are inside its archives",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/shared/datasets/zenodo_medpelvis3d/raw"
+     }
+    ]
    }
   },
   "zenodo_tmtv_benchmark": {
-   "digest": "11482b7b5885dd8084cfac94bd9743dd31ca67b7fd1674225b0e2545a0e81ecb",
+   "digest": "80508d1e47983b12619a600bd54de0b9a80ce2aa4e15e5a4ebca025131c9cec0",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6546,11 +9065,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: every file of the record was fetched, so any masks it ships are inside its archives",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/shared/datasets/zenodo_tmtv_benchmark/raw"
+     }
+    ]
    }
   },
   "zenodo_ts_task_hip_implant": {
-   "digest": "3bff66aced31b12fe87c6caa2f05109f8e62f70c661fc6410318b2adf31c4214",
+   "digest": "3248524b0edeee3de83b793e9a942ebc058e7bc15871f877b5e03eb384dea071",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6584,11 +9117,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "pelvis"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: what the task data ships is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "zenodo_ts_task_liver_lesions": {
-   "digest": "b2ae416d05c0c20f7dad30e57f0086325456d3e73d8dd8c5c260ea7b96bca205",
+   "digest": "e11858ddd43d6e5035acd82667d5c9dc808f52693b9adc12452b6253f460549f",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6622,11 +9169,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "abdomen"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: what the task data ships is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "zenodo_ts_task_pleural_effusion": {
-   "digest": "d378faeb27f657ac103a22561eab875e23caba31d0c3b53c394a1a64efa42d30",
+   "digest": "81e6fb2d9f6122aeca682e2f4ae439d893ebb573edb497efe1cd65a7b60d47b9",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6660,11 +9221,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: what the task data ships is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   },
   "zenodo_unitochest": {
-   "digest": "134b48792a1cd7df3fc06f10f921ed3a514ca65649cd7ddc8c10e881e07a0dcf",
+   "digest": "ba34d98e793e911f2dd16e6688647a9de1e6ee941ce78c33f3bfb6b85e806431",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6698,11 +9273,25 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "chest"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: every file of the record was fetched, so any masks it ships are inside its archive",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": "/rs/rs_grp_oschome/shared/datasets/zenodo_unitochest/raw"
+     }
+    ]
    }
   },
   "zenodo_vsd_fullbody": {
-   "digest": "7d7c631285eb9f19308a48706c9926f753ab20038591ce653220c5d8958a81d8",
+   "digest": "b4287b47de3b8973f2a74e4717603fa5ddaca21f8d596b3c589443045f881640",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6736,7 +9325,21 @@
     },
     "paired": false,
     "tier": null,
-    "pairing": null
+    "pairing": null,
+    "ct": true,
+    "regions": [
+     "whole body"
+    ],
+    "segmentations": [
+     {
+      "origin": "release",
+      "masks": "not recorded: what the release ships is to confirm on its page",
+      "vertebrae": "not recorded",
+      "by": "not recorded",
+      "volumes": null,
+      "where": null
+     }
+    ]
    }
   }
  },
@@ -7642,6 +10245,17 @@
    "id": "waw_tace",
    "kind": "added",
    "changes": {}
+  },
+  {
+   "date": "2026-10-23",
+   "id": "",
+   "kind": "rules",
+   "changes": {
+    "rules": [
+     "c9fa1ffb8f8aea99",
+     "597ca968e1c8b6d6"
+    ]
+   }
   }
  ]
 }

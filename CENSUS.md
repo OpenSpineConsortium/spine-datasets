@@ -281,6 +281,165 @@ Tasks whose record is not written yet:
 - [#171](https://github.com/OpenSpineConsortium/spine-datasets/issues/171) Obtain FluoroSeg (Killeen 2025, Hugging Face, gated; CC BY-NC-SA 4.0 per its code repository, card to confirm): 2.95 million synthetic X-rays with masks, text and poses from 1,621 CTs
 - [#195](https://github.com/OpenSpineConsortium/spine-datasets/issues/195) Ask BG Klinik Ludwigshafen for the MINTOS cadaver series on three C-arms (Brunken et al. 2026)
 
+## CT, by region and masks
+
+Every record that holds CT: 105 sets, 88 of them on the grid. A set counts in
+each region its field of view covers; a sum counts a CT twice where two records hold it. The page
+with filters, and each set's masks in full, is census-ct.html beside this file.
+
+| | |
+|---|---|
+| Sets that hold CT | 105 |
+| On the grid | 88 |
+| CT volumes on the grid | 24,959 (70 of 88 sets counted) |
+| Subjects on the grid | 25,991 (80 of 88 sets counted) |
+| Size on the grid | 3.8 TB (78 of 88 sets counted) |
+| On the grid with the source's vertebra masks by level | 4,208 CT volumes in 6 sets |
+| On the grid with masks made on the grid | 15,753 CT volumes in 62 sets, 20 of them counted |
+| Sets whose masks are surveyed | 105 of 105 |
+
+| Region | Sets | On the grid | CT volumes on the grid |
+|---|---|---|---|
+| head and neck | 4 | 4 | 3,387 |
+| chest | 60 | 53 | 10,567 (44 of 53 sets counted) |
+| abdomen | 60 | 55 | 18,230 (49 of 55 sets counted) |
+| pelvis | 55 | 50 | 9,317 (44 of 50 sets counted) |
+| spine | 28 | 23 | 8,683 (19 of 23 sets counted) |
+| whole body | 30 | 28 | 5,306 (23 of 28 sets counted) |
+| other | 22 | 21 | 1,674 (18 of 21 sets counted) |
+
+| Dataset | Stage | CT volumes | Regions | Masks | Task |
+|---|---|---|---|---|---|
+| AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images) | Held by the owner | 7,649 | abdomen | from the source: not recorded; made on the grid: vertebrae by level, on the grid |  |
+| PANORAMA public set (pancreas CE-CT) | Held by the owner | 2,024 | chest, abdomen, pelvis | from the source: not recorded; made on the grid: vertebrae by level, on the grid |  |
+| RSNA 2022 cervical spine fracture CT (Kaggle) | Held by the owner | 2,019 | spine | from the source: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| TotalSegmentator datasets v2.0.1 and v3.0.0 | Held by the owner | 1,935 | head and neck, chest, abdomen, pelvis, spine, whole body | from the source: vertebrae by level, on the grid; from the source: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| CTSpine1K | Held by the owner | 1,005 | head and neck, chest, abdomen, spine | from the source: vertebrae by level, on the grid |  |
+| FDG-PET-CT-Lesions (autoPET), TCIA through NBIA | Held by the owner | 900 | whole body | from the source: not recorded; made on the grid: vertebrae by level, on the grid |  |
+| CTSpinoPelvic1K v11 (the consortium's own release) | Held by the owner | 802 | chest, abdomen, pelvis, spine | from the source: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| AMOS22 CT, unlabelled (ids 5000-6899) and labelled | Held by the owner | 723 | abdomen | from the source: vertebrae not recorded, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| COBRA2026 public cases (Elekta and Varian) | Held by the owner | 692 | pelvis, spine | from the source: none; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| RibFrac (MICCAI 2020) chest CT | Held by the owner | 660 | chest, spine | from the source: no vertebrae, on the grid; from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| NLST, the seeded 500-person pilot | Held by the owner | 500 | chest, other | from the source: no vertebrae; from the source: no vertebrae; from the source: vertebrae by level; from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| IDC `covid_19_ny_sbu` (COVID-19-NY-SBU) | Held by the owner | 443 | chest, abdomen, pelvis, whole body | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `eay131` (EAY131 (NCI-MATCH)) | Held by the owner | 376 | chest, abdomen, pelvis, spine, whole body, other | from the source: no vertebrae; from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| IDC `psma_pet_ct_lesions` (PSMA-PET-CT-Lesions (autoPET III)) | Held by the owner | 374 | whole body | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| VerSe 2019 and 2020 | Held by the owner | 374 | spine | from the source: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| IDC `pediatric_ct_seg` (Pediatric-CT-SEG) | Held by the owner | 352 | chest, abdomen, pelvis | from the source: vertebrae as one; made on the grid: vertebrae by level, on the grid |  |
+| PENGWIN 2026 peripelvic fracture CT (the public cases) | Held by the owner | 340 | pelvis | from the source: vertebrae not recorded, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| IDC `mediastinal_lymph_node_seg` | Held by the owner | 316 | head and neck, chest, abdomen, pelvis, whole body | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| LUMOS (Zhejiang University) | Held by the owner | 280 | spine | from the source: not recorded | [#27](https://github.com/OpenSpineConsortium/spine-datasets/issues/27) |
+| WAW-TACE (HCC multiphase CT, Warsaw) | Held by the owner | 228 | abdomen | from the source: not recorded; made on the grid: vertebrae by level, on the grid |  |
+| Kidney abnormality segmentation in thorax-abdomen CT | Held by the owner | 215 | chest, abdomen | from the source: vertebrae not recorded; made on the grid: vertebrae by level, on the grid |  |
+| Barts CRL (colorectal-cancer staging CT) | Held by the owner | 212 | chest, abdomen, pelvis | from the source: not recorded; made on the grid: vertebrae by level, on the grid |  |
+| CTPelvic1K | Held by the owner | 172 | pelvis, spine | from the source: vertebrae as one, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| IDC `lung_pet_ct_dx` (Lung-PET-CT-Dx) | Held by the owner | 158 | chest, abdomen, whole body, other | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| C-ArmLSpine (Zhang et al., Medical Image Analysis 2024) | Held by the owner | 149 | spine | from the source: none; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| IDC `acrin_nsclc_fdg_pet` | Held by the owner | 131 | head and neck, chest, abdomen, pelvis, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `tcga_kirc` | Held by the owner | 129 | chest, abdomen, pelvis | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| IDC `rider_lung_pet_ct` | Held by the owner | 117 | chest, abdomen, pelvis, whole body | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| CURVAS-PDACVI (MICCAI 2025) | Held by the owner | 101 | chest, abdomen, pelvis | from the source: not recorded, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| IDC `hcc_tace_seg` (HCC-TACE-Seg) | Held by the owner | 101 | chest, abdomen, pelvis | from the source: no vertebrae; from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| PENGWIN 2024 Task 2 synthetic X-rays | Held by the owner | 100 | pelvis, spine | from the source: vertebrae not recorded, on the grid | [#30](https://github.com/OpenSpineConsortium/spine-datasets/issues/30) |
+| IDC `midrc_ricord_1a` | Held by the owner | 98 | chest, abdomen, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `colorectal_liver_metastases` (Colorectal-Liver-Metastases) | Held by the owner | 80 | abdomen | from the source: no vertebrae; from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| IDC `tcga_blca` | Held by the owner | 79 | chest, abdomen, pelvis, whole body | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cmb_lca` | Held by the owner | 75 | chest, abdomen, pelvis, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| CURVAS 2024 | Held by the owner | 70 | chest, abdomen, pelvis, whole body | from the source: not recorded, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cptac_ucec` | Held by the owner | 66 | chest, abdomen, pelvis, whole body | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cptac_pda` | Held by the owner | 62 | chest, abdomen, pelvis, other | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| IDC `pelvic_reference_data` | Held by the owner | 58 | abdomen, pelvis, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| AortaSeg-60 | Held by the owner | 55 | chest, abdomen, pelvis | from the source: not recorded; made on the grid: vertebrae by level, on the grid |  |
+| DEEP-PSMA (PSMA + FDG PET/CT, mCRPC) | Held by the owner | 53 | whole body | from the source: not recorded, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cptac_ccrcc` | Held by the owner | 48 | chest, abdomen, pelvis, other | from the source: no vertebrae; from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| QUADRA_HC total-body FDG-PET/CT, healthy controls | Held by the owner | 48 | whole body | from the source: not recorded, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| IDC `tcga_stad` | Held by the owner | 45 | abdomen | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `tcga_lihc` | Held by the owner | 42 | chest, abdomen, pelvis | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| IDC `pancreatic_ct_cbct_seg` | Held by the owner | 40 | abdomen, pelvis | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| IDC `tcga_ucec` | Held by the owner | 38 | chest, abdomen, pelvis, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `varepop_apollo` | Held by the owner | 35 | chest, abdomen, pelvis, spine | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `anti_pd_1_lung` | Held by the owner | 34 | chest, abdomen, pelvis, whole body | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| IDC `ctpred_sunitinib_pannet` | Held by the owner | 34 | chest, abdomen, pelvis, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cmb_crc` | Held by the owner | 30 | chest, abdomen, pelvis, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `adrenal_acc_ki67_seg` | Held by the owner | 29 | chest, abdomen, pelvis | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
+| IDC `tcga_ov` | Held by the owner | 24 | chest, abdomen, pelvis | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cmb_mel` | Held by the owner | 23 | chest, abdomen, pelvis, spine, whole body | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `covid_19_ar` | Held by the owner | 23 | chest, abdomen, pelvis | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cmb_brca` | Held by the owner | 21 | chest, abdomen, pelvis, whole body | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| CSI 2014 spine CT | Held by the owner | 20 | spine | from the source: not recorded; made on the grid: vertebrae by level, on the grid |  |
+| IDC `ct_vs_pet_ventilation_imaging` | Held by the owner | 20 | chest, abdomen | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs | Held by the owner | 19 | pelvis, spine | from the source: vertebrae as one, on the grid; made on the grid: vertebrae not recorded |  |
+| IDC `cptac_stad` | Held by the owner | 19 | chest, abdomen, pelvis | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cmb_mml` | Held by the owner | 16 | chest, abdomen, pelvis, spine, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `tcga_esca` | Held by the owner | 16 | chest, abdomen, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `acrin_flt_breast` | Held by the owner | 15 | whole body | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cptac_sar` | Held by the owner | 14 | chest, abdomen, pelvis, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cptac_cm` | Held by the owner | 12 | chest, abdomen, pelvis, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cmb_ov` | Held by the owner | 7 | chest, abdomen, pelvis | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IPCAI 2025 paired X-ray and CT set of the distal femur (Flepp 2025, Zenodo 15753063) | Held by the owner | 5 | other | from the source: no vertebrae, on the grid | [#34](https://github.com/OpenSpineConsortium/spine-datasets/issues/34) |
+| Ljubljana 2D/3D registration gold standard (PIXIUM 4600) | Held by the owner | 5 | spine | from the source: vertebrae by level, on the grid |  |
+| Veterinary: pig lower limb CT, CBCT and planar images (Goswami 2020, IEEE DataPort) | Held by the owner | 3 | other | from the source: none | [#22](https://github.com/OpenSpineConsortium/spine-datasets/issues/22) |
+| Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021) | Held by the owner | 1 | pelvis, spine | from the source: none; made on the grid: vertebrae not recorded |  |
+| IDC `cptac_lscc` (tier 2) | Held by the owner |  | chest, abdomen, pelvis, whole body, other | from the source: none | [#45](https://github.com/OpenSpineConsortium/spine-datasets/issues/45) |
+| IDC `cptac_luad` (tier 2) | Held by the owner |  | chest, abdomen, whole body, other | from the source: none | [#46](https://github.com/OpenSpineConsortium/spine-datasets/issues/46) |
+| IDC `ldct_and_projection_data` (tier 2) | Held by the owner |  | chest | from the source: none | [#47](https://github.com/OpenSpineConsortium/spine-datasets/issues/47) |
+| IDC `midrc_ricord_1b` (tier 2) | Held by the owner |  | chest, abdomen, pelvis, other | from the source: none | [#49](https://github.com/OpenSpineConsortium/spine-datasets/issues/49) |
+| IDC `nsclc_radiogenomics` (tier 2) | Held by the owner |  | chest, abdomen, pelvis, whole body | from the source: no vertebrae; from the source: no vertebrae | [#50](https://github.com/OpenSpineConsortium/spine-datasets/issues/50) |
+| IDC `nsclc_radiomics` (tier 2) | Held by the owner |  | chest | from the source: no vertebrae; from the source: no vertebrae; from the source: no vertebrae | [#51](https://github.com/OpenSpineConsortium/spine-datasets/issues/51) |
+| IDC `spinal_multiple_myeloma_seg` (tier 2) | Held by the owner |  | spine | from the source: vertebrae by level | [#53](https://github.com/OpenSpineConsortium/spine-datasets/issues/53) |
+| IDC `spine_mets_ct_seg` (tier 2) | Held by the owner |  | abdomen, pelvis, spine | from the source: vertebrae by level | [#54](https://github.com/OpenSpineConsortium/spine-datasets/issues/54) |
+| International TMTV Benchmark, lymphoma FDG PET/CT (60) | On the grid |  | whole body | from the source: not recorded, on the grid | [#57](https://github.com/OpenSpineConsortium/spine-datasets/issues/57) |
+| LumVBCanSeg lumbar CT (185, ShengJing Hospital) | On the grid |  | spine | from the source: not recorded, on the grid | [#55](https://github.com/OpenSpineConsortium/spine-datasets/issues/55) |
+| MedPelvis3D pelvic CT (99, PLA General Hospital) | On the grid |  | pelvis | from the source: not recorded, on the grid | [#56](https://github.com/OpenSpineConsortium/spine-datasets/issues/56) |
+| STOIC2021 training (AWS Open Data) | Held by the owner |  | chest | from the source: not recorded | [#44](https://github.com/OpenSpineConsortium/spine-datasets/issues/44) |
+| TotalSegmentator task data 'hip_implant' (71 CT) | Held by the owner |  | pelvis | from the source: not recorded | [#66](https://github.com/OpenSpineConsortium/spine-datasets/issues/66) |
+| TotalSegmentator task data 'liver_lesions' (842 CT) | Held by the owner |  | abdomen | from the source: not recorded | [#67](https://github.com/OpenSpineConsortium/spine-datasets/issues/67) |
+| TotalSegmentator task data 'pleural_pericard_effusion' (600 CT) | Held by the owner |  | chest | from the source: not recorded | [#68](https://github.com/OpenSpineConsortium/spine-datasets/issues/68) |
+| UniToChest chest CT (623 patients; distributed as slices) | On the grid |  | chest | from the source: not recorded, on the grid | [#58](https://github.com/OpenSpineConsortium/spine-datasets/issues/58) |
+| VerSe 2D projections with soft labels (Zenodo 8115942) | Held by the owner |  | spine | from the source: none | [#29](https://github.com/OpenSpineConsortium/spine-datasets/issues/29) |
+| VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich | Held by the owner |  | whole body | from the source: not recorded | [#59](https://github.com/OpenSpineConsortium/spine-datasets/issues/59) |
+| AbdomenAtlas 2.0 Mini (10,135 CT) | Asked, waiting | 10,135 | abdomen | from the source: not recorded | [#89](https://github.com/OpenSpineConsortium/spine-datasets/issues/89) |
+| LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group) | Asked, waiting | 202 | spine | from the source: not recorded | [#60](https://github.com/OpenSpineConsortium/spine-datasets/issues/60) |
+| Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024) | Asked, waiting | 140 | spine | from the source: not recorded | [#61](https://github.com/OpenSpineConsortium/spine-datasets/issues/61) |
+| NIT Warangal and NIMS Hyderabad intraoperative C-arm sets (2D-3D-sci-registration) | Asked, waiting | 9 | spine | from the source: none | [#64](https://github.com/OpenSpineConsortium/spine-datasets/issues/64) |
+| Balgrist ex-vivo lumbar CT plus C-arm (Jecklin) | Refused |  | spine | from the source: not recorded | [#69](https://github.com/OpenSpineConsortium/spine-datasets/issues/69) |
+| CADS CT (unique cases) | Granted, fetch pending |  | whole body | from the source: not recorded | [#86](https://github.com/OpenSpineConsortium/spine-datasets/issues/86) |
+| COBRA2026 embargoed cases | Later |  | pelvis, spine | from the source: none | [#92](https://github.com/OpenSpineConsortium/spine-datasets/issues/92) |
+| CT-RATE chest CT | Granted, fetch pending |  | chest | from the source: not recorded | [#85](https://github.com/OpenSpineConsortium/spine-datasets/issues/85) |
+| ENHANCE.PET 1.6k: whole-/total-body FDG-PET/CT, 1,683 studies (NIfTI) | To ask |  | whole body | from the source: not recorded | [#90](https://github.com/OpenSpineConsortium/spine-datasets/issues/90) |
+| IDC `lidc_idri` (tier 2) | Downloadable now |  | chest, abdomen, pelvis | from the source: no vertebrae; from the source: no vertebrae | [#48](https://github.com/OpenSpineConsortium/spine-datasets/issues/48) |
+| IDC `prostate_anatomical_edge_cases` (tier 2) | Downloadable now |  | pelvis | from the source: no vertebrae | [#52](https://github.com/OpenSpineConsortium/spine-datasets/issues/52) |
+| MAGIC-CT (Zenodo) | Needs the owner |  | chest, abdomen | from the source: not recorded | [#7](https://github.com/OpenSpineConsortium/spine-datasets/issues/7) |
+| NLST, full (tier 2; 500-person pilot fetched) | To ask |  | chest, other | from the source: no vertebrae; from the source: no vertebrae; from the source: vertebrae by level; from the source: no vertebrae | [#91](https://github.com/OpenSpineConsortium/spine-datasets/issues/91) |
+| RSNA abdominal trauma CT (RATIC) | Granted, fetch pending |  | chest, abdomen, pelvis | from the source: not recorded | [#87](https://github.com/OpenSpineConsortium/spine-datasets/issues/87) |
+| RSNA pulmonary embolism CT (RSPECT) | Granted, fetch pending |  | chest | from the source: not recorded | [#88](https://github.com/OpenSpineConsortium/spine-datasets/issues/88) |
+| Stanford AIMI INSPECT chest CT | Needs the owner |  | chest | from the source: not recorded | [#19](https://github.com/OpenSpineConsortium/spine-datasets/issues/19) |
+| Stanford AIMI Merlin abdominal CT | Needs the owner |  | abdomen, pelvis | from the source: not recorded | [#18](https://github.com/OpenSpineConsortium/spine-datasets/issues/18) |
+
+What the CT records still lack:
+
+- LUMOS (Zhejiang University): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- AortaSeg-60: on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- STOIC2021 training (AWS Open Data): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- Barts CRL (colorectal-cancer staging CT): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- CSI 2014 spine CT: on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- CURVAS 2024: on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- CURVAS-PDACVI (MICCAI 2025): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- DEEP-PSMA (PSMA + FDG PET/CT, mCRPC): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- PANORAMA public set (pancreas CE-CT): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- QUADRA_HC total-body FDG-PET/CT, healthy controls: on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- FDG-PET-CT-Lesions (autoPET), TCIA through NBIA: on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- WAW-TACE (HCC multiphase CT, Warsaw): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- LumVBCanSeg lumbar CT (185, ShengJing Hospital): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- MedPelvis3D pelvic CT (99, PLA General Hospital): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- International TMTV Benchmark, lymphoma FDG PET/CT (60): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- TotalSegmentator task data 'hip_implant' (71 CT): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- TotalSegmentator task data 'liver_lesions' (842 CT): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- TotalSegmentator task data 'pleural_pericard_effusion' (600 CT): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- UniToChest chest CT (623 patients; distributed as slices): on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+- VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich: on the grid, and what masks its source ships is not recorded yet; its entry says where to look
+
 ## What the records still lack
 
 - Balgrist ex-vivo lumbar CT plus C-arm (Jecklin): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
@@ -346,6 +505,7 @@ Tasks whose record is not written yet:
 
 ## Changes, newest first
 
+- 2026-10-23 the census rules changed; every row was derived afresh
 - 2026-10-23 WAW-TACE (HCC multiphase CT, Warsaw): record added
 - 2026-10-23 FDG-PET-CT-Lesions (autoPET), TCIA through NBIA: record added
 - 2026-10-23 QUADRA_HC total-body FDG-PET/CT, healthy controls: record added
