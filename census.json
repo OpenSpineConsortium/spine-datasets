@@ -5,8 +5,8 @@
  "totals": {
   "datasets": 166,
   "by_stage": {
-   "downloadable": 9,
-   "to-ask": 10,
+   "downloadable": 10,
+   "to-ask": 9,
    "asked": 26,
    "granted": 5,
    "fetching": 0,
@@ -1013,7 +1013,7 @@
    }
   },
   "bournemouth_lumbar_qf": {
-   "digest": "92176f786829ee5da17dbda3d20aed1fca6baf0fd8c3fb84e153b2c49ed70b1f",
+   "digest": "13415388765504275bb9ef2515fcbd21fc33e06b320a9824144ce4ecc4016000",
    "first_seen": "2026-10-20",
    "last_changed": "2026-10-23",
    "row": {
@@ -1024,10 +1024,10 @@
     "route": "letter",
     "status": "requested",
     "stage": "asked",
-    "licence": "not recorded (OSF holds derived tables only)",
+    "licence": "not recorded (OSF a27py holds derived tables only; the image deposit OSF z2jby states no licence)",
     "licence_kind": "unknown",
     "link": "https://osf.io/a27py/",
-    "what": "weight-bearing and recumbent L2 to S1 flexion and extension cine of 127 subjects at 15 fps, 60 degrees at 6 degrees a second; only per-frame angles are public on OSF",
+    "what": "weight-bearing and recumbent L2 to S1 flexion and extension cine of 127 subjects at 15 fps, 60 degrees at 6 degrees a second; only per-frame angles are public on OSF a27py, while the group's public OSF deposit z2jby holds preproc_224_wb_flex.zip, 1,492,963,815 bytes of weight-bearing flexion frames preprocessed to 224 by 224 pixels, as its name and the repository's sample frames (five vertebral boxes) show, with no licence stated (how_to_get); the full-resolution cine, recumbent and extension included, stays the letter's ask",
     "level_truth": "lumbar, if corner templates exist as they do for the cervical set",
     "grid_path": null,
     "on_grid": false,
@@ -1040,11 +1040,11 @@
     "ct_volumes": null,
     "bytes": null,
     "unread_counts": [],
-    "next": "wait for Branney's second answer with the arrangement; a Bournemouth data-sharing agreement would be the owner's to sign; then record granted here and go on to the fetch",
+    "next": "wait for Branney's second answer with the arrangement, and ask then whether the OSF deposit may be used and whether it is the whole L2-S1 cine; a yes is recorded as a granted step; then the manifest from OSF's API and fetching; a Bournemouth data-sharing agreement would be the owner's to sign",
     "since": "2026-10-20",
     "last_step": {
-     "date": "2026-10-22",
-     "step": "note"
+     "date": "2026-10-23",
+     "step": "researched"
     },
     "paired": false,
     "tier": null,
@@ -8144,7 +8144,7 @@
    }
   },
   "scidb_mtddh": {
-   "digest": "2a3d9b92ae45bddca2e1671aef41303e25213064bc017bece90ba9c53faf4d7b",
+   "digest": "0c10226c41095270ef212deda17d5dca93171aad6eeeeab6cbae5734a5fcedeb",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -8152,26 +8152,29 @@
     "name": "MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025)",
     "group": "films",
     "kind": "Radiographs",
-    "route": "owner-only",
+    "route": "download",
     "status": "todo",
-    "stage": "to-ask",
+    "stage": "downloadable",
     "licence": "CC BY 4.0 (DataCite's record of the DOI, read 2026-10-23)",
     "licence_kind": "open",
-    "link": "https://doi.org/10.57760/sciencedb.24372",
-    "what": "2,156 pelvic radiographs of children from the Children's Hospital of Zhejiang University School of Medicine and Hebei Children's Hospital in two parts: 1,250 annotated with four regions for image quality and eight key points for developmental dysplasia of the hip, and 906 with the eight key points (Science Data Bank doi:10.57760/sciencedb.24372, V1, issued 2025-04-29, 4.05 GB in three files); the lumbosacral junction is in the field of a pelvic film, as in the Mendeley DDH hip sets",
+    "link": "https://www.scidb.cn/en/detail?dataSetId=c088644bd0b2406eb49830ad447c17fb",
+    "what": "2,156 pelvic radiographs of children aged 5 to 40 months, one film per child, from the Children's Hospital of Zhejiang University School of Medicine and Hebei Children's Hospital, in two parts: 1,250 (781 girls, 469 boys, mean age 14.6 months) annotated with four regions for image quality (both obturator foramina and both ilia) and eight key points for developmental dysplasia of the hip, as JPG in three split folders with JSON annotations for the first two, and 906 (558 girls, 384 boys, mean age 14.3 months) with the eight key points alone, as PNG with COCO-format annotations; file names randomised by the authors; released with the hospital's ethics approval 2023-IRB-0287-P-01, consent waived, anonymised (Qi, Jiao, Li and others, Scientific Data 2025, doi:10.1038/s41597-025-05146-x; Science Data Bank doi:10.57760/sciencedb.24372, V1, issued 2025-04-29, 4,053,482,052 bytes in three files: JPG_DICOM.rar, MTDDH.zip and code.zip); the lumbosacral junction is in the field of a pelvic film, as in the Mendeley DDH hip sets",
     "level_truth": "none; pediatric pelvis",
     "grid_path": null,
     "on_grid": false,
     "grid_bytes": null,
     "tree_sha256": null,
-    "subjects": null,
+    "subjects": 2156,
     "xray_images": 2156,
     "videos": null,
     "run_frames": null,
     "ct_volumes": null,
-    "bytes": 4050000000,
-    "unread_counts": [],
-    "next": "the owner's step as how_to_get says; then a grid job onto /rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw by grid/README.md from the holder's Beethoven session",
+    "bytes": 4053482052,
+    "unread_counts": [
+     "files",
+     "size_gb"
+    ],
+    "next": "on the owner's word: manifests/scidb_mtddh.json from the three files above with status fetching, and the download.scidb.cn host rule in tools/promote.py in the same pull request; the owner sends promoter restart after the merge; the promoter installs the set",
     "since": "2026-10-23",
     "last_step": {
      "date": "2026-10-23",
@@ -10680,6 +10683,40 @@
     "grid_path": [
      null,
      "/rs/rs_grp_oschome/go2432/data/rsna_rspect_pe/raw"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "bournemouth_lumbar_qf",
+   "kind": "changed",
+   "changes": {
+    "licence": [
+     "not recorded (OSF holds derived tables only)",
+     "not recorded (OSF a27py holds derived tables only; the image deposit OSF z2jby states no licence)"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "scidb_mtddh",
+   "kind": "changed",
+   "changes": {
+    "stage": [
+     "to-ask",
+     "downloadable"
+    ],
+    "route": [
+     "owner-only",
+     "download"
+    ],
+    "subjects": [
+     null,
+     2156
+    ],
+    "bytes": [
+     4050000000,
+     4053482052
     ]
    }
   }

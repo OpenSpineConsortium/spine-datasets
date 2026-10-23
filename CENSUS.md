@@ -22,8 +22,8 @@ since the last run. The page with filters is census.html beside this file, serve
 
 | Stage | Datasets |
 |---|---|
-| Downloadable now | 9 |
-| To ask | 10 |
+| Downloadable now | 10 |
+| To ask | 9 |
 | Asked, waiting | 26 |
 | Granted, fetch pending | 5 |
 | Fetching | 0 |
@@ -177,7 +177,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | Open-i Indiana chest collection | Radiographs | Needs the owner | restricted |  | 7,470 |  |  |  |  | [#35](https://github.com/OpenSpineConsortium/spine-datasets/issues/35) |
 | PadChest (BIMCV, Alicante) | Radiographs | To ask | restricted | 67,625 | 160,868 |  |  |  |  | [#12](https://github.com/OpenSpineConsortium/spine-datasets/issues/12) |
 | ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025) | Radiographs | To ask | restricted | 109,487 |  |  |  |  |  | [#11](https://github.com/OpenSpineConsortium/spine-datasets/issues/11) |
-| MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025) | Radiographs | To ask | open |  | 2,156 |  |  |  | 4.0 GB |  |
+| MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025) | Radiographs | Downloadable now | open | 2,156 | 2,156 |  |  |  | 4.1 GB |  |
 | SOF lateral spine radiographs (Study of Osteoporotic Fractures) | Radiographs | To ask | restricted |  |  |  |  |  |  | [#10](https://github.com/OpenSpineConsortium/spine-datasets/issues/10) |
 | TVGH ankylosing spondylitis cervical and lumbar spine films | Radiographs | Asked, waiting | unknown |  |  |  |  |  |  | [#108](https://github.com/OpenSpineConsortium/spine-datasets/issues/108) |
 | TVGH-SpineXR | Radiographs | Asked, waiting | unknown |  |  |  |  |  |  | [#14](https://github.com/OpenSpineConsortium/spine-datasets/issues/14) |
@@ -614,6 +614,8 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-23 MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025): bytes 4.0 GB to 4.1 GB; route owner-only to download; stage to-ask to downloadable; subjects none to 2156
+- 2026-10-23 Bournemouth lumbar quantitative fluoroscopy (Breen 2021): licence not recorded (OSF holds derived tables only) to not recorded (OSF a27py holds derived tables only; the image deposit OSF z2jby states no licence)
 - 2026-10-23 RSNA pulmonary embolism CT (RSPECT): grid_path none to /rs/rs_grp_oschome/go2432/data/rsna_rspect_pe/raw; stage granted to held; status granted to held
 - 2026-10-23 MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025): record added
 - 2026-10-23 Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity): record added
