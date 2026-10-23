@@ -51,10 +51,13 @@
    "date": "2026-10-23",
    "step": "held",
    "note": "on the grid at /rs/rs_grp_oschome/go2432/data/zenodo_lumos, 77 GB in the status listing of 2026-10-23 02:05 UTC (symphony-template grid branch, 26f3bde), no fetch job in the listing's window; more than the record's 46.4 GB; what makes up the difference is for the landing pass to read; fetched by the owner's chain, not the promoter, so no manifest covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the owner's word at 09:25 UTC, in the project's thread on the paired CT and X-ray sets: the non-commercial licence is fine for LUMOS; the copy on the grid, 77 GB in zenodo_lumos in the status listing of 2026-10-23 09:29 UTC (symphony-template grid branch, 1c8246b), needed no fetch"
   }
  ],
- "obstacles": [
-  "the owner's hand: the licence is non-commercial (CC BY-NC 4.0), which the manifest check refuses; whether the project may take the set under that term is his decision"
- ],
- "next": "the owner decides on the non-commercial term; if he takes it, a granted step in the history lets a manifest of the 15 files go in; a copy on the grid grants no use: the licence decision above still waits on the owner"
+ "obstacles": [],
+ "next": "the landing pass (#204) checks the files and their sizes; #207 shows whether film n and CT n are the same patient"
 }
