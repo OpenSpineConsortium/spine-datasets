@@ -33,6 +33,10 @@ set -euo pipefail
 
 PROJECT=spine-datasets
 JOB=freeze
+# the folder above code/ when run from there, as the gate and the jobs it queues run it, since a
+# job may not carry the gate's environment; else FREEZE_HOME, else the lab's usual place
+HERE=$(cd "$(dirname "$0")" && pwd)
+if [ -z "${FREEZE_HOME:-}" ] && [ "$(basename "$HERE")" = code ]; then FREEZE_HOME=$(dirname "$HERE"); fi
 HOME_DIR=${FREEZE_HOME:-/rs/rs_grp_oschome/$USER/spine-datasets-freeze}
 PLAN=$HOME_DIR/code/freeze-plan.tsv
 HPCW=${HPCWORKER:-$HOME/hpcworker/framework/bin/hpcworker}
