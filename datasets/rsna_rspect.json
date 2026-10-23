@@ -31,7 +31,7 @@
  "source_status": "the owner joined the competition on Kaggle on 2026-10-21; the fetch is the gate word fetch rsna_rspect_pe, which runs the kaggle command on a compute node with the Kaggle token read from ~/.fluorocap/credentials.env, never on a command line (the record said kagglehub until 2026-10-23; the job runs kaggle competitions download); the token the owner pasted into the chat is to be revoked and minted again; job id not yet recorded",
  "route": "agreement",
  "status": "held",
- "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/rsna_rspect_pe/raw, 1,937,447 DICOM files (980.1 GB) and 3 CSVs, matching the 1,937,450 files and 980.24 GB the competition's data page gives; fetch job 40746778, counted by explore job 40749098",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/rsna_rspect_pe/raw as the competition's download zip alone (533.7 GB, not unpacked); the zip holds 1,937,447 DICOM files (980.1 GB) and 3 CSVs, matching the 1,937,450 files and 980.24 GB the competition's data page gives; fetch job 40746778, the zip's members counted by explore job 40749098, and dropzip job 40751186 found none of them on disk",
  "history": [
   {
    "date": "2026-10-21",
@@ -62,10 +62,15 @@
    "date": "2026-10-23",
    "step": "held",
    "note": "job 40746778 ended COMPLETED, exit 0, after 1 h 25 min; the explore word's job 40749098 counted the landing: 1,937,447 .dcm files (980,108.8 MB), 3 .csv files (128.4 MB) and the downloaded zip (533,676.0 MB) still beside them, folders by study and series, test/ among them with 146,853 files; the DICOM and CSV files match the 1,937,450 files and 980.24 GB on the competition's data page; fetched by the owner's chain, not the promoter, so no manifest here covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "correction: the entry above read explore's counts as files on disk; they are the zip's members, which explore counts without unpacking. The owner said to delete the zip, and SchwingNet's gate word dropzip rsna_rspect_pe (job 40751186, 1 min 29 s) kept it, since none of its 1,937,450 members sits unpacked beside it, and freed nothing; the kaggle route never unpacked the download, and the status listing's 534 GB for the set is the zip"
   }
  ],
  "obstacles": [
-  "the owner's hand: the downloaded zip (534 GB) stays beside the unpacked files; whether to delete it and free the space is his decision"
+  "the owner's hand: the set is held only as its 534 GB zip; unpacking it needs about 980 GB more room under the size rule and one job, on his word, or it stays zipped"
  ],
- "next": "the owner decides on the zip; the census counts the CT volumes"
+ "next": "the owner decides whether to unpack the zip (about 980 GB, one job); the census counts the CT volumes once they are on disk"
 }
