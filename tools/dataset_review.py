@@ -25,10 +25,11 @@ request (.github/workflows/ci.yml):
   - a record moved to fetched without a manifest, or with a grid_path outside the shared tree;
   - a record moved to held with no grid_path, or with one outside the owner's grid root and the
     shared tree, where the owner's own chain and the promoter put what they fetch;
-  - a change to the promoter's own code (tools/promote.py, grid/promote.sh, and grid/promote.json,
+  - a change to the promoter's own code (tools/promote.py, tools/freeze.py, grid/promote.sh, and grid/promote.json,
     its old budget, should it come back), which runs as the owner on the grid, in a pull request someone other than
     the owner opened;
-  - a change on the promoter's own branch promote/<id> to anything but that one record.
+  - a change on the promoter's own branch promote/<id> to anything but that one record and its
+    freeze, frozen/<id>.json.
 - FLAG, written in the report for whoever merges, the check stays green:
   - a line that reads as something binding done in the owner's name (signed, agreed, paid,
     attested, accepted terms), which only the owner may do;
@@ -75,7 +76,7 @@ SHARED = "/rs/rs_grp_oschome/shared/datasets"
 HELD_ROOTS = ("/rs/rs_grp_oschome/go2432/", SHARED + "/")
 GRID_PATH = re.compile(r"(?<![\w.])/[^\s;,()]+")
 XRAY_GROUPS = ("fluoro", "video", "projections", "films")
-TRUSTED_PATHS = ("tools/promote.py", "grid/promote.sh", "grid/promote.json")
+TRUSTED_PATHS = ("tools/promote.py", "grid/promote.sh", "grid/promote.json", "tools/freeze.py")
 # Who may change what runs as the owner on the grid; the promoter holds the same rule on its side.
 OWNERS = ("Gregory-Schwing-MD-PhD",)
 # Lines of a record or manifest that name a place rather than describe anything: a file name such
@@ -284,10 +285,11 @@ def review_promote_branch(changes, pull, report):
     head = (((pull or {}).get("head") or {}).get("ref")) or ""
     if not head.startswith("promote/"):
         return
-    allowed = "datasets/%s.json" % head[len("promote/"):]
+    ident = head[len("promote/"):]
+    allowed = ("datasets/%s.json" % ident, "frozen/%s.json" % ident)
     for status, path in changes:
-        if path != allowed:
-            report.add("FAIL", "%s on %s: the promoter's branch changes only %s" % (path, head, allowed))
+        if path not in allowed:
+            report.add("FAIL", "%s on %s: the promoter's branch changes only %s" % (path, head, " and ".join(allowed)))
 
 
 def review_diff(base, root=ROOT, report=None, pull=None):
