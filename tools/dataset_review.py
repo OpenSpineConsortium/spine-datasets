@@ -38,12 +38,16 @@ request (.github/workflows/ci.yml):
 The report goes to the job's log and, on GitHub, to the job's summary page.
 
 `manifest` writes a manifest from what the source itself publishes, for the routes whose API
-gives every file's size and checksum: Mendeley Data (sha256) and Zenodo (md5). It needs the
-network, so it runs on a collaborator's own machine or on the grid, never in the check.
+gives every file's size and checksum: Mendeley Data (sha256) and Zenodo (md5). It takes a Mendeley
+dataset as its id or its page's address, one or several for a record that gathers several, the
+latest version unless the address or --version names one; it readies the record in the same
+step (the licence as the page reads it, given with --licence, and the status fetching with its
+history entry), then holds the result to the promoter's rules and says what is still to do. It
+needs the network, so it runs on a collaborator's own machine or on the grid, never in the check.
 
     python3 tools/dataset_review.py check
     python3 tools/dataset_review.py diff --base origin/main
-    python3 tools/dataset_review.py manifest ID --mendeley DATASET --version N
+    python3 tools/dataset_review.py manifest ID --mendeley https://data.mendeley.com/datasets/DATASET/N
     python3 tools/dataset_review.py manifest ID --zenodo RECORD
 """
 
@@ -293,31 +297,95 @@ def review_diff(base, root=ROOT, report=None, pull=None):
 
 # manifest: from the source's own file list.
 
+MENDELEY_DATASET = "https://data.mendeley.com/public-api/datasets/%s"
 MENDELEY_FILES = "https://data.mendeley.com/public-api/datasets/%s/files?folder_id=root&version=%s"
 ZENODO_RECORD = "https://zenodo.org/api/records/%s"
-
+# A Mendeley dataset as a collaborator has it: its bare id, its page's address, or the page's
+# address with the version after it, as the page's own link and its DOI 10.17632/<id>.<n> give it.
+MENDELEY_ID = re.compile(
+    r"^(?:https?://data\.mendeley\.com/datasets/|(?:https?://doi\.org/)?10\.17632/)?([a-z0-9]{6,20})(?:[/.](\d{1,4}))?/?$")
+UNSET_STATUSES = ("todo", "researched", "asked", "granted")
 
 # Mendeley's public API answers 403 to Python's own User-Agent and 200 to a browser's.
 USER_AGENT = "Mozilla/5.0 (spine-datasets manifest)"
 
 
+class ManifestError(Exception):
+    """A step the manifest command cannot take, said in one line with what to do."""
+
+
 def fetch_json(url):
+    import ssl
+    import urllib.error
     import urllib.request
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=60) as answer:
-        return json.load(answer)
+    try:
+        with urllib.request.urlopen(request, timeout=60) as answer:
+            return json.load(answer)
+    except urllib.error.HTTPError as error:
+        raise ManifestError("%s answered %d %s; check the id and the version on the dataset's page"
+                            % (url, error.code, error.reason)) from None
+    except urllib.error.URLError as error:
+        if isinstance(error.reason, ssl.SSLCertVerificationError):
+            raise ManifestError("this Python cannot verify %s's certificate; on a Mac run it as "
+                                "SSL_CERT_FILE=/etc/ssl/cert.pem python3 tools/dataset_review.py ..., "
+                                "or run python.org's Install Certificates.command once" % url) from None
+        raise ManifestError("%s could not be reached: %s" % (url, error.reason)) from None
+    except ValueError:
+        raise ManifestError("%s did not answer JSON" % url) from None
 
 
-def mendeley_files(listing):
-    """The manifest's file entries from Mendeley's public file list."""
+def mendeley_dataset(given, version=None):
+    """(id, version) from what the collaborator gave: a version in the address wins, then
+    --version, then the latest version Mendeley's public API names for the dataset."""
+    match = MENDELEY_ID.match((given or "").strip())
+    if not match:
+        raise ManifestError("'%s' is not a Mendeley Data id or https://data.mendeley.com/datasets/<id>/<n>" % given)
+    ident, in_address = match.groups()
+    found = in_address or version
+    if not found:
+        try:
+            latest = fetch_json(MENDELEY_DATASET % ident)
+        except ManifestError:
+            latest = None
+        found = latest.get("version") if isinstance(latest, dict) else None
+        if not isinstance(found, int) or isinstance(found, bool):
+            raise ManifestError("Mendeley did not say %s's latest version; give it, as the page shows it, "
+                                "with --version N or as https://data.mendeley.com/datasets/%s/N" % (ident, ident))
+    return ident, str(found)
+
+
+def mendeley_files(listing, folder=""):
+    """The manifest's file entries from Mendeley's public file list; folder, for a record that
+    gathers several datasets, keeps each one's files under raw/<its id>/ so no two names meet."""
+    if not isinstance(listing, list):
+        raise ManifestError("Mendeley's file list is not a list; the dataset may hold no public files")
     files = []
     for item in listing:
-        details = item["content_details"]
+        details = item.get("content_details") if isinstance(item, dict) else None
+        if not isinstance(details, dict) or not details.get("download_url"):
+            name = item.get("filename") if isinstance(item, dict) else item
+            raise ManifestError("Mendeley's list holds '%s' with no download link, perhaps a folder; "
+                                "write that part of the manifest by hand from the page" % name)
         files.append({
-            "path": "raw/" + item["filename"], "url": details["download_url"], "bytes": details["size"],
+            "path": "raw/" + folder + item["filename"], "url": details["download_url"], "bytes": details["size"],
             "sha256": details["sha256_hash"], "verified_against": "Mendeley Data's public API",
         })
     return files
+
+
+def mendeley_manifest_files(datasets, version):
+    """Every file of one or more Mendeley datasets, and how each was read, for the history."""
+    files, read = [], []
+    for given in datasets:
+        ident, number = mendeley_dataset(given, version)
+        folder = ident + "/" if len(datasets) > 1 else ""
+        found = mendeley_files(fetch_json(MENDELEY_FILES % (ident, number)), folder)
+        if not found:
+            raise ManifestError("Mendeley lists no files for %s version %s" % (ident, number))
+        files += found
+        read.append("%s version %s, %d files" % (ident, number, len(found)))
+    return files, read
 
 
 def zenodo_files(record):
@@ -325,7 +393,7 @@ def zenodo_files(record):
     for item in record["files"]:
         algorithm, _, value = item["checksum"].partition(":")
         if algorithm != "md5":
-            raise ValueError("Zenodo gave a %s checksum for %s" % (algorithm, item["key"]))
+            raise ManifestError("Zenodo gave a %s checksum for %s" % (algorithm, item["key"]))
         files.append({
             "path": "raw/" + item["key"], "url": item["links"]["self"], "bytes": item["size"],
             "md5": value, "verified_against": "Zenodo's API",
@@ -339,19 +407,55 @@ def build_manifest(record, files, today):
     }
 
 
+def readied(record, today, read, licence=None):
+    """The record as the manifest's pull request leaves it: the licence as read on the page, if
+    given, and the status fetching with its history entry, unless it is fetching or fetched."""
+    record = json.loads(json.dumps(record))
+    history = record.setdefault("history", [])
+    if licence and licence != record.get("licence"):
+        record["licence"] = licence
+        history.append({"date": today, "step": "note", "note": "licence read on the page: " + licence})
+    if record.get("status") in UNSET_STATUSES:
+        record["status"] = "fetching"
+        history.append({"date": today, "step": "fetching",
+                        "note": "manifest ready (%s); the promoter fetches it after merge" % "; ".join(read)})
+        record["next"] = "the promoter installs it after merge"
+    return record
+
+
+def write_json(path, value):
+    path.parent.mkdir(exist_ok=True)
+    path.write_text(json.dumps(value, indent=1, ensure_ascii=True) + "\n", encoding="ascii")
+
+
 def write_manifest(args, root=ROOT):
     from datetime import datetime, timezone
-    record = read_json(root / "datasets" / (args.id + ".json"))
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    record_path = root / "datasets" / (args.id + ".json")
+    if not record_path.exists():
+        raise ManifestError("there is no record datasets/%s.json; the manifest is named after its record" % args.id)
+    record = read_json(record_path)
     if args.mendeley:
-        files = mendeley_files(fetch_json(MENDELEY_FILES % (args.mendeley, args.version)))
+        files, read = mendeley_manifest_files(args.mendeley, args.version)
     else:
-        files = zenodo_files(fetch_json(ZENODO_RECORD % args.zenodo))
-    manifest = build_manifest(record, files, datetime.now(timezone.utc).strftime("%Y-%m-%d"))
+        files, read = zenodo_files(fetch_json(ZENODO_RECORD % args.zenodo)), ["Zenodo record %s" % args.zenodo]
+    if not args.leave_record:
+        record = readied(record, today, read, args.licence)
+        write_json(record_path, record)
+    manifest = build_manifest(record, files, today)
     path = root / "manifests" / (args.id + ".json")
-    path.parent.mkdir(exist_ok=True)
-    path.write_text(json.dumps(manifest, indent=1, ensure_ascii=True) + "\n", encoding="ascii")
-    print("wrote %s: %d files, %d bytes" % (path.relative_to(root), len(files), manifest["bytes_total"]))
-    return 0
+    write_json(path, manifest)
+    print("wrote %s: %d files, %d bytes (%s)" % (path.relative_to(root), len(files), manifest["bytes_total"],
+                                                  "; ".join(read)))
+    if not args.leave_record:
+        print("updated %s: status %s" % (record_path.relative_to(root), record.get("status")))
+    problems = promote.valid_manifest(manifest, record, args.id)
+    for problem in problems:
+        print("still to do: " + problem)
+    if any("to confirm" in problem or "licence" in problem for problem in problems):
+        print("read the licence line on the dataset's page and run again with --licence \"<that line>, "
+              "as the page reads it, %s\"" % today)
+    return 1 if problems else 0
 
 
 def main(argv=None):
@@ -363,12 +467,21 @@ def main(argv=None):
     make = sub.add_parser("manifest", help="write manifests/<id>.json from the source's own file list")
     make.add_argument("id")
     where = make.add_mutually_exclusive_group(required=True)
-    where.add_argument("--mendeley", help="the Mendeley Data dataset id, e.g. xkt857dsxk")
+    where.add_argument("--mendeley", action="append", metavar="DATASET",
+                       help="a Mendeley Data id or page address, e.g. xkt857dsxk or "
+                            "https://data.mendeley.com/datasets/xkt857dsxk/1; repeat it for a record of several")
     where.add_argument("--zenodo", help="the Zenodo record number")
-    make.add_argument("--version", default="1", help="the Mendeley version")
+    make.add_argument("--version", help="the Mendeley version, where the address gives none; the latest otherwise")
+    make.add_argument("--licence", help="the licence line as the page reads it, written into the record and the manifest")
+    make.add_argument("--leave-record", action="store_true",
+                      help="write only the manifest, leaving the record's status and history as they are")
     args = parser.parse_args(argv)
     if args.command == "manifest":
-        return write_manifest(args)
+        try:
+            return write_manifest(args)
+        except ManifestError as error:
+            print("manifest: " + str(error), file=sys.stderr)
+            return 1
     if args.command == "check":
         report = check_tree()
     else:

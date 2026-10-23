@@ -41,14 +41,26 @@ For Mendeley Data and Zenodo the source's own API gives every file's size and ch
 manifest is written from it, on any machine with the network (not in the check):
 
 ```
-python3 tools/dataset_review.py manifest <id> --mendeley <dataset id> --version <n>
+python3 tools/dataset_review.py manifest <id> --mendeley https://data.mendeley.com/datasets/<dataset>/<n> \
+  --licence "<the licence line, as the page reads it, YYYY-MM-DD>"
 python3 tools/dataset_review.py manifest <id> --zenodo <record number>
 ```
 
+`--mendeley` takes the page's address as the browser shows it, the bare dataset id, or the DOI
+10.17632/<dataset>.<n>; with no version in it, `--version N` or else the latest Mendeley names.
+A record that gathers several Mendeley datasets, as mendeley_ddh_hips does, gives `--mendeley`
+once for each, and each one's files go under raw/<dataset>/ so two files of one name never meet.
+The same command readies the record: it writes the licence you read on the page into the record
+and the manifest, sets the status to fetching with its history entry and next, and then holds the
+result to the promoter's rules, printing each thing still to do. Run it again after a fix; it
+adds no second fetching entry. `--leave-record` writes the manifest alone. Mendeley's list gives
+only the files at a dataset's top level: where it holds a folder, the command stops and names it,
+and that part is written by hand from the page.
+
 On a Mac with the python.org Python, the call fails certificate verification until Python is
-given the system's certificates: run it as `SSL_CERT_FILE=/etc/ssl/cert.pem python3 tools/...`, or
-run once the `Install Certificates.command` that python.org's installer puts in the Python folder
-under Applications.
+given the system's certificates, and the command says so: run it as
+`SSL_CERT_FILE=/etc/ssl/cert.pem python3 tools/...`, or run once the `Install
+Certificates.command` that python.org's installer puts in the Python folder under Applications.
 
 For any other source, write it by hand from what the page states. In the same pull request set
 the record's `status` to `fetching`, add a `fetching` entry to its `history` ("manifest ready; the
