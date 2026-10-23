@@ -608,6 +608,7 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-23 CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images: route owner-only to letter
 - 2026-10-23 CAMS-Knee (ETH Zurich and Charite Berlin, J Biomech 2017): record added
 - 2026-10-23 CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images: licence not recorded to none stated: the paper's data statement and its repository's README name no licence, and the repository has no licence file (read 2026-10-23); xray_images none to 208
 - 2026-10-23 the census rules changed; every row was derived afresh

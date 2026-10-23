@@ -1501,7 +1501,7 @@
    }
   },
   "cm_spine_drive_file": {
-   "digest": "de8a58e04ff86408b90d488313eb23c1e89680dbd673ca8a130b24aa56d2f116",
+   "digest": "361d26c4863a56b9893805ee2f454fdf3e1ef5281d5377a6f952310dcbbc1561",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -1509,13 +1509,13 @@
     "name": "CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images",
     "group": "fluoro",
     "kind": "Fluoroscopy",
-    "route": "owner-only",
+    "route": "letter",
     "status": "todo",
     "stage": "to-ask",
     "licence": "none stated: the paper's data statement and its repository's README name no licence, and the repository has no licence file (read 2026-10-23)",
     "licence_kind": "unknown",
     "link": "https://drive.google.com/file/d/1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ/view",
-    "what": "208 anteroposterior lumbar spine images at 1024 x 1024, taken during surgery with a mobile dual-mode G-arm (Geelin500-A), of patients with lumbar disc herniation or vertebral compression fractures, each lumbar vertebra in view annotated by its level, L1 to L5, 537 vertebrae, split 148 and 60 in the paper (Zeng et al., Electronics 2024;13(11):2137); the paper's data statement points to its repository, which links this Drive file as the set; the data platform's download of the file came back empty, so what it holds now is not checked",
+    "what": "208 anteroposterior lumbar spine images at 1024 x 1024, taken during surgery with a mobile dual-mode G-arm (Geelin500-A), of patients with lumbar disc herniation or vertebral compression fractures, each lumbar vertebra in view annotated by its level, L1 to L5, 537 vertebrae, split 148 and 60 in the paper (Zeng et al., Electronics 2024;13(11):2137); the paper's data statement points to its repository, github.com/zengyuyuyu/Neighbor, whose README linked this Drive file as the set and whose code reads the set as COCO files (train2022, val2022, spine_train.json, spine_val.json); on 2026-10-23 the repository is no longer public and the Drive file does not open, so the set is held by its authors alone",
     "level_truth": "each lumbar vertebra's level, L1 to L5, as the authors annotated it",
     "grid_path": null,
     "on_grid": false,
@@ -1528,11 +1528,11 @@
     "ct_volumes": null,
     "bytes": null,
     "unread_counts": [],
-    "next": "the owner opens the Drive file and says whether to take the set as it is or to ask the authors for terms first",
+    "next": "the owner opens the Drive link logged in (Request access if the page offers it) and sends the letter; the record moves to asked when it goes",
     "since": "2026-10-21",
     "last_step": {
      "date": "2026-10-23",
-     "step": "note"
+     "step": "researched"
     },
     "paired": false,
     "tier": null,
@@ -10505,6 +10505,17 @@
    "id": "cams_knee",
    "kind": "added",
    "changes": {}
+  },
+  {
+   "date": "2026-10-23",
+   "id": "cm_spine_drive_file",
+   "kind": "changed",
+   "changes": {
+    "route": [
+     "owner-only",
+     "letter"
+    ]
+   }
   }
  ]
 }
