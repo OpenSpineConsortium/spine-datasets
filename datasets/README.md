@@ -23,8 +23,12 @@ for which no patient was imaged: the project's own renders, derived rather than 
 Spinal-AI2024's synthetic films. Two collections the owner holds wait for his call before they get
 records: the public fluoroscopy clips gathered from articles and sites, and the FluoroCap
 literature panels. The anomaly harvest is a list of CT sources: its planned and gated members have
-records of their own, and the releases of it already on the grid get theirs by issue #181. The
-census (below) gives the count.
+records of their own, and so do the 54 releases of it already on the grid (issue #181), the 39
+collections its pooled IDC route fetched and 15 releases from Zenodo, Hugging Face, NBIA and IDC,
+written from the data platform's manifest at bf1432f and checked against the grid's status listing
+of 2026-10-23 09:29 UTC. The pooled route itself (idc_tier1) and the 70 TotalSegmentator CTs it
+links (validation_ts) have none, since each would count CTs that other records count. The census
+(below) gives the count.
 
 The fields, as SchwingNet's record has them, copied exactly (licence and link above all):
 
@@ -52,6 +56,9 @@ The fields this repository adds:
 - `obstacles`: a list of one-line strings, what stands in the way right now (a DUA to sign, a
   bounce, a licence line still to confirm, a token only the owner holds); empty when nothing.
 - `next`: one line, what whoever holds the task does next; empty when nothing is planned.
+- `regions`, on a CT record, placed after `group`: the body regions in its field of view, as words
+  from head and neck, chest, abdomen, pelvis, spine, whole body and other; the harvest's releases
+  carry the data platform's anatomy for them (issue #181).
 - `pairing`, only on a real X-ray set with the same subject's CT or CBCT, placed after `group`:
   `spine` (true, or false for a pair of something else, a femur, a phantom, a pig limb),
   `region`, `xray`, `ct`, `subjects`, `pose` (stored, shipped, or how it would be found), `masks`

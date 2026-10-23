@@ -1,0 +1,45 @@
+{
+ "id": "barts_crl",
+ "name": "Barts CRL (colorectal-cancer staging CT)",
+ "group": "ct",
+ "regions": [
+  "chest",
+  "abdomen",
+  "pelvis"
+ ],
+ "what": "Barts CRL, colorectal-cancer staging CT from three London hospitals, Zenodo record 14004841; tier 1 of the anomaly harvest: 220 CTs listed, of which the data platform counts 212 usable, and 220 subjects qualifying, about 20.32 GB in the catalogue (NIfTI)",
+ "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "reach": "held",
+ "licence": "CC BY 4.0",
+ "link": "https://zenodo.org/records/14004841",
+ "how_to_get": [
+  "spinesurg-ct-nnunet's slurm/acquisition_fetch.sh zenodo --collection barts_crl --record 14004841 --include '^images\\.zip$', submitted from the harvest's acquisition folder; the check is FETCH_STATUS.json's unresolved_failures at 0, and, by the manifest's note, images.zip by md5 and 220 CTs to verify.",
+  "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid barts_crl; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"barts_crl\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
+ ],
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/barts_crl",
+ "counts": {
+  "subjects": 220,
+  "ct_volumes": 212,
+  "size_gb": 20.32
+ },
+ "measured": {},
+ "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-24 from Zenodo in the late tier-1 launch of 2026-09-24; 212 CTs",
+ "route": "download",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/barts_crl (21 GB)",
+ "history": [
+  {
+   "date": "2026-09-24",
+   "step": "held",
+   "note": "fetched from Zenodo in the late tier-1 launch of 2026-09-24, as the data platform's manifest at bf1432f records (212 CTs); on the grid at /rs/rs_grp_oschome/go2432/data/barts_crl, 19 GB by du in the data platform's census table of 2026-09-25; fetched by the owner's chain, not the promoter, so no manifest here covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the status listing of 2026-10-23 09:29 UTC (symphony-template grid branch, 1c8246b) shows the folder at 21 GB, and the sample index of 2026-10-22 13:39 it carries counts 222 files, 18.9 GB, in it"
+  }
+ ],
+ "obstacles": [],
+ "next": "the landing pass (#204) checks the files and their sizes"
+}

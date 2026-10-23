@@ -1,0 +1,45 @@
+{
+ "id": "deep_psma",
+ "name": "DEEP-PSMA (PSMA + FDG PET/CT, mCRPC)",
+ "group": "ct",
+ "regions": [
+  "whole body"
+ ],
+ "what": "DEEP-PSMA, PSMA and FDG PET/CT of 100 patients with metastatic castration-resistant prostate cancer, Zenodo record 15281784; tier 1 of the anomaly harvest: 200 CTs in the release, of which the data platform counts 53, since about half the attenuation CTs are thicker than 3 mm, about 24.07 GB in the catalogue (NIfTI)",
+ "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "reach": "held",
+ "licence": "CC BY-NC 4.0",
+ "link": "https://zenodo.org/records/15281784",
+ "how_to_get": [
+  "spinesurg-ct-nnunet's slurm/acquisition_fetch.sh zenodo --collection deep_psma --record 15281784 --include '^[0-9]{4}-[0-9]{4}\\.zip$', submitted from the harvest's acquisition folder; the check is FETCH_STATUS.json's unresolved_failures at 0, and, by the manifest's note, 5 zips by md5 and 200 CT.nii.gz to verify.",
+  "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid deep_psma; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"deep_psma\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
+ ],
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/deep_psma",
+ "counts": {
+  "subjects": 100,
+  "ct_volumes": 53,
+  "size_gb": 24.07
+ },
+ "measured": {},
+ "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-24 from Zenodo in the late tier-1 launch of 2026-09-24; 53 CTs",
+ "route": "download",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/deep_psma (25 GB)",
+ "history": [
+  {
+   "date": "2026-09-24",
+   "step": "held",
+   "note": "fetched from Zenodo in the late tier-1 launch of 2026-09-24, as the data platform's manifest at bf1432f records (53 CTs); on the grid at /rs/rs_grp_oschome/go2432/data/deep_psma, 23 GB by du in the data platform's census table of 2026-09-25; fetched by the owner's chain, not the promoter, so no manifest here covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the status listing of 2026-10-23 09:29 UTC (symphony-template grid branch, 1c8246b) shows the folder at 25 GB, and the sample index of 2026-10-22 13:39 it carries counts 1,507 files, 22.6 GB, in it"
+  }
+ ],
+ "obstacles": [
+  "the owner's hand: the licence (CC BY-NC 4.0) is non-commercial; whether the project may use the copy on the grid under that term is his decision"
+ ],
+ "next": "the owner decides on the non-commercial term; the landing pass (#204) checks the files and their sizes"
+}
