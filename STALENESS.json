@@ -1,7 +1,7 @@
 {
  "default_branch": "main",
  "format": 1,
- "generated_at": "2026-10-23T17:22:14Z",
+ "generated_at": "2026-10-23T17:28:44Z",
  "pulls": [
   {
    "auto_merge_enabled": null,
@@ -1343,6 +1343,91 @@
    "auto_merge_enabled": null,
    "base": "main",
    "board_conflicts": 0,
+   "board_main_moved": 23,
+   "branch": "claude/88",
+   "catch_ups": 3,
+   "catch_ups_after_green": 0,
+   "catch_ups_by_button": 1,
+   "caused_by": [
+    [
+     "73cb6b285ac3dada46786b8b443dc5effc8eb243",
+     [
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      161,
+      162,
+      163,
+      139,
+      151
+     ]
+    ],
+    [
+     "51bf0c29d9204c3161f318b6f0ee44ab1a6ae904",
+     [
+      172
+     ]
+    ],
+    [
+     "80c5cf8599cb6a06860a01000474a9dcc5389286",
+     [
+      164,
+      166,
+      169,
+      165,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      130,
+      180,
+      179,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221
+     ]
+    ]
+   ],
+   "check_runs": 5,
+   "check_runs_redone": 1,
+   "check_seconds": 369,
+   "check_seconds_redone": 71,
+   "claim": true,
+   "closed": "2026-10-23T17:25:56Z",
+   "commits": 7,
+   "first_green": "2026-10-23T17:19:08Z",
+   "force_pushes": 0,
+   "landings_after_green": 1,
+   "landings_during_life": 41,
+   "merged": "2026-10-23T17:25:56Z",
+   "number": 160,
+   "opened": "2026-10-22T09:51:36Z",
+   "ready": "2026-10-23T17:01:18Z",
+   "reruns": 0,
+   "runs_cancelled": 2,
+   "stale_seconds": 0,
+   "started": "2026-10-22T09:51:05Z"
+  },
+  {
+   "auto_merge_enabled": null,
+   "base": "main",
+   "board_conflicts": 0,
    "board_main_moved": 1,
    "branch": "claude/56",
    "catch_ups": 0,
@@ -2121,7 +2206,7 @@
  "summary": {
   "auto_merge_used": 4,
   "board_conflicts": 0,
-  "board_main_moved": 133,
+  "board_main_moved": 156,
   "by_day": {
    "2026-10-21": {
     "catch_ups": 3,
@@ -2144,56 +2229,56 @@
     "with_catch_up": 2
    },
    "2026-10-23": {
-    "catch_ups": 4,
-    "check_runs": 38,
-    "check_runs_redone": 2,
-    "merged": 29,
-    "share_with_catch_up": 0.138,
+    "catch_ups": 7,
+    "check_runs": 43,
+    "check_runs_redone": 3,
+    "merged": 30,
+    "share_with_catch_up": 0.167,
     "stale_after_green": 1,
     "stale_hours": 23.88,
-    "with_catch_up": 4
+    "with_catch_up": 5
    }
   },
   "by_parallel_work": {
    "0": {
     "catch_ups": 0,
-    "check_runs": 13,
+    "check_runs": 1,
     "check_runs_redone": 0,
-    "merged": 10,
+    "merged": 1,
     "share_with_catch_up": 0.0,
     "stale_after_green": 0,
     "stale_hours": 0.0,
     "with_catch_up": 0
    },
    "1-2": {
-    "catch_ups": 2,
-    "check_runs": 19,
+    "catch_ups": 1,
+    "check_runs": 29,
     "check_runs_redone": 1,
-    "merged": 13,
-    "share_with_catch_up": 0.154,
+    "merged": 20,
+    "share_with_catch_up": 0.05,
     "stale_after_green": 0,
     "stale_hours": 0.0,
-    "with_catch_up": 2
+    "with_catch_up": 1
    },
    "11+": {
-    "catch_ups": 5,
-    "check_runs": 34,
-    "check_runs_redone": 1,
-    "merged": 28,
-    "share_with_catch_up": 0.107,
+    "catch_ups": 8,
+    "check_runs": 39,
+    "check_runs_redone": 2,
+    "merged": 29,
+    "share_with_catch_up": 0.138,
     "stale_after_green": 1,
     "stale_hours": 23.88,
-    "with_catch_up": 3
+    "with_catch_up": 4
    },
    "3-5": {
-    "catch_ups": 4,
-    "check_runs": 21,
+    "catch_ups": 5,
+    "check_runs": 23,
     "check_runs_redone": 1,
-    "merged": 11,
-    "share_with_catch_up": 0.364,
+    "merged": 13,
+    "share_with_catch_up": 0.385,
     "stale_after_green": 0,
     "stale_hours": 0.0,
-    "with_catch_up": 4
+    "with_catch_up": 5
    },
    "6-10": {
     "catch_ups": 0,
@@ -2208,14 +2293,14 @@
   },
   "by_protocol": {
    "claim": {
-    "catch_ups": 8,
-    "check_runs": 57,
-    "check_runs_redone": 2,
-    "merged": 35,
-    "share_with_catch_up": 0.171,
+    "catch_ups": 11,
+    "check_runs": 62,
+    "check_runs_redone": 3,
+    "merged": 36,
+    "share_with_catch_up": 0.194,
     "stale_after_green": 0,
     "stale_hours": 0.0,
-    "with_catch_up": 6
+    "with_catch_up": 7
    },
    "no_claim": {
     "catch_ups": 3,
@@ -2228,13 +2313,13 @@
     "with_catch_up": 3
    }
   },
-  "catch_ups": 11,
-  "catch_ups_by_button": 0,
+  "catch_ups": 14,
+  "catch_ups_by_button": 1,
   "catch_ups_max": 3,
-  "check_hours": 2.49,
-  "check_hours_redone": 0.08,
-  "check_runs": 92,
-  "check_runs_redone": 3,
+  "check_hours": 2.6,
+  "check_hours_redone": 0.1,
+  "check_runs": 97,
+  "check_runs_redone": 4,
   "closed_unmerged": 1,
   "closed_unmerged_branch_landed_later": 0,
   "default_branch_checks": {
@@ -2245,78 +2330,78 @@
     "success": 11
    },
    "2026-10-23": {
-    "success": 19
+    "success": 20
    }
   },
   "force_pushes": 3,
-  "landings_after_green_total": 277,
-  "landings_during_life_mean": 5.2,
-  "landings_during_life_median": 1.0,
+  "landings_after_green_total": 278,
+  "landings_during_life_mean": 5.73,
+  "landings_during_life_median": 1,
   "live": {
    "pulls_seen": 41,
    "pulls_seen_behind": 0,
    "pulls_seen_dirty": 0,
    "since": "2026-10-21T12:40:18Z",
-   "snapshots": 48
+   "snapshots": 49
   },
-  "merged": 66,
+  "merged": 67,
   "reruns": 2,
-  "share_runs_redone": 0.033,
+  "share_runs_redone": 0.041,
   "share_stale_after_green": 0.015,
-  "share_with_catch_up": 0.136,
+  "share_with_catch_up": 0.149,
   "stale_after_green": 1,
   "stale_hours_total": 23.88,
   "stale_minutes_median": 1433.1,
   "top_causes": [
    {
-    "branch": "claude/55",
-    "catch_ups_caused": 2,
-    "number": 140
-   },
-   {
     "branch": "claude/23",
-    "catch_ups_caused": 2,
+    "catch_ups_caused": 3,
     "number": 141
    },
    {
     "branch": "claude/24",
-    "catch_ups_caused": 2,
+    "catch_ups_caused": 3,
     "number": 142
    },
    {
     "branch": "claude/30",
-    "catch_ups_caused": 2,
+    "catch_ups_caused": 3,
     "number": 143
    },
    {
     "branch": "claude/32",
-    "catch_ups_caused": 2,
+    "catch_ups_caused": 3,
     "number": 144
    },
    {
     "branch": "claude/35",
-    "catch_ups_caused": 2,
+    "catch_ups_caused": 3,
     "number": 145
    },
    {
     "branch": "claude/59",
-    "catch_ups_caused": 2,
+    "catch_ups_caused": 3,
     "number": 146
    },
    {
     "branch": "claude/56",
-    "catch_ups_caused": 2,
+    "catch_ups_caused": 3,
     "number": 161
    },
    {
     "branch": "claude/57",
-    "catch_ups_caused": 2,
+    "catch_ups_caused": 3,
     "number": 162
    },
    {
     "branch": "claude/58",
-    "catch_ups_caused": 2,
+    "catch_ups_caused": 3,
     "number": 163
+   },
+   {
+    "branch": "claude/55",
+    "catch_ups_caused": 2,
+    "number": 140
    }
   ],
   "top_pairs": [
@@ -2372,7 +2457,7 @@
    }
   ],
   "with_board_conflict": 0,
-  "with_catch_up": 9
+  "with_catch_up": 10
  },
  "unread": 0,
  "workflow": "ci.yml"
