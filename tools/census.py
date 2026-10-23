@@ -641,6 +641,7 @@ a:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid 
   background: var(--card); color: var(--fg); }
 .filters input { flex: 1 1 220px; min-width: 0; }
 ul.plain { margin: 0; padding-left: 18px; display: grid; gap: 3px; }
+ul.plain li { min-width: 0; overflow-wrap: anywhere; }
 .log li { font-variant-numeric: tabular-nums; }
 .empty { color: var(--muted); font-style: italic; }
 </style>"""
