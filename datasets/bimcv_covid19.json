@@ -17,7 +17,7 @@
  "record": "the sweep of 2026-10-21 (this repository's issue #107)",
  "source_status": "found by the sweep of 2026-10-21; open access on IEEE DataPort (doi:10.21227/w3aw-rv39) behind a free IEEE login; tar.gz parts of about 389 GB in all, radiographs and CTs together",
  "route": "download",
- "status": "fetching",
+ "status": "granted",
  "result": "",
  "history": [
   {
@@ -39,8 +39,15 @@
    "date": "2026-10-23",
    "step": "fetching",
    "note": "the owner passed on BIMCV's B2DROP mirror share on 2026-10-22, kept only in SchwingNet's grid/fetch-xray.json; SchwingNet's gate word fetch bimcv_covid19 submitted fetch job 40732922, bank and ingest 40732924 and catalog 40732926 at SchwingNet b12fe33 (SchwingNet#139), 389 GB stated, about 20 hours of transfer"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the fetch job 40732922 ended FAILED after 9 s, so before any transfer; the bank job 40732924 completed in 3 s with nothing to bank and the catalog job 40732926 waits on the VinDr-PCXR fetch; the gate's status word shows six failed jobs at most and this was the seventh, so its log was not shown at all and is read on the grid alone (hpcworker job log --project schwingnet 40732922, or grid/logs/01-fetch-STAGE-REPORT.md in the gate's clone of SchwingNet), the share's listing step first; not sent again, since a resend is a grid job and waits on the owner's word"
   }
  ],
- "obstacles": [],
- "next": "the fetch job 40732922 lands the set at /rs/rs_grp_oschome/go2432/data/bimcv_covid19/raw; the record turns fetched with its checksums once the bank job 40732924 has run"
+ "obstacles": [
+  "the fetch job 40732922 failed after nine seconds, before any transfer, for a reason the gate's status word did not show; it is read on the grid, and the resend waits on the owner's word"
+ ],
+ "next": "the owner, or a session on the grid, reads why job 40732922 failed (hpcworker job log --project schwingnet 40732922, or grid/logs/01-fetch-STAGE-REPORT.md in the gate's clone of SchwingNet) and fixes what it names in SchwingNet; then, on the owner's word, the gate word fetch bimcv_covid19 again; the record turns fetched with its checksums once the bank job has run"
 }
