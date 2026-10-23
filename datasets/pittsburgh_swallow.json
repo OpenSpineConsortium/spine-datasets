@@ -3,7 +3,7 @@
  "name": "Pittsburgh videofluoroscopic swallow corpus (Sejdic, Coyle)",
  "group": "video",
  "what": "about 1,500 lateral swallow clips at 30 fps captured by video card, 265 patients and 70 volunteers on two machines",
- "level_truth": "thin: named corner landmarks on C2 and C4 only, no boxes, no other levels",
+ "level_truth": "thin: named corner points of C2, C3 and C4 (the antero-inferior corner of C2, the anterior-superior and anterior-inferior corners of C3 and C4), C3's on only the first three frames of each subject; no boxes, no other levels",
  "reach": "get",
  "licence": "by request",
  "link": "https://doi.org/10.1016/j.media.2021.102218",
@@ -32,6 +32,11 @@
    "date": "2026-09-26",
    "step": "asked",
    "note": "Request 4 of the 2026-09-26 sheet sent 2026-10-20 by the owner; waiting for the answer."
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "truth corrected from the paper's methods (PMC8560570): the points include C3's two corners, labelled on only the first three frames of each subject, which the old line left out"
   }
  ],
  "obstacles": [],
