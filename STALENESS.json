@@ -1,7 +1,7 @@
 {
  "default_branch": "main",
  "format": 1,
- "generated_at": "2026-10-23T03:19:52Z",
+ "generated_at": "2026-10-23T03:42:26Z",
  "pulls": [
   {
    "auto_merge_enabled": null,
@@ -1580,6 +1580,36 @@
    "started": "2026-10-22T23:36:16Z"
   },
   {
+   "auto_merge_enabled": null,
+   "base": "main",
+   "board_conflicts": 0,
+   "board_main_moved": 2,
+   "branch": "claude/178",
+   "catch_ups": 0,
+   "catch_ups_after_green": 0,
+   "catch_ups_by_button": 0,
+   "caused_by": [],
+   "check_runs": 4,
+   "check_runs_redone": 0,
+   "check_seconds": 307,
+   "check_seconds_redone": 0,
+   "claim": true,
+   "closed": "2026-10-23T03:41:08Z",
+   "commits": 6,
+   "first_green": "2026-10-23T03:40:11Z",
+   "force_pushes": 1,
+   "landings_after_green": 0,
+   "landings_during_life": 1,
+   "merged": "2026-10-23T03:41:08Z",
+   "number": 179,
+   "opened": "2026-10-23T02:19:46Z",
+   "ready": "2026-10-23T03:38:17Z",
+   "reruns": 0,
+   "runs_cancelled": 1,
+   "stale_seconds": 0,
+   "started": "2026-10-23T02:19:46Z"
+  },
+  {
    "auto_merge_enabled": "2026-10-23T03:15:57Z",
    "base": "main",
    "board_conflicts": 0,
@@ -1614,7 +1644,7 @@
  "summary": {
   "auto_merge_used": 4,
   "board_conflicts": 0,
-  "board_main_moved": 128,
+  "board_main_moved": 130,
   "by_day": {
    "2026-10-21": {
     "catch_ups": 3,
@@ -1638,10 +1668,10 @@
    },
    "2026-10-23": {
     "catch_ups": 1,
-    "check_runs": 15,
+    "check_runs": 19,
     "check_runs_redone": 1,
-    "merged": 13,
-    "share_with_catch_up": 0.077,
+    "merged": 14,
+    "share_with_catch_up": 0.071,
     "stale_after_green": 1,
     "stale_hours": 23.88,
     "with_catch_up": 1
@@ -1650,9 +1680,9 @@
   "by_parallel_work": {
    "0": {
     "catch_ups": 0,
-    "check_runs": 3,
+    "check_runs": 1,
     "check_runs_redone": 0,
-    "merged": 2,
+    "merged": 1,
     "share_with_catch_up": 0.0,
     "stale_after_green": 0,
     "stale_hours": 0.0,
@@ -1660,9 +1690,9 @@
    },
    "1-2": {
     "catch_ups": 0,
-    "check_runs": 11,
+    "check_runs": 13,
     "check_runs_redone": 0,
-    "merged": 7,
+    "merged": 8,
     "share_with_catch_up": 0.0,
     "stale_after_green": 0,
     "stale_hours": 0.0,
@@ -1670,10 +1700,10 @@
    },
    "11+": {
     "catch_ups": 5,
-    "check_runs": 30,
+    "check_runs": 34,
     "check_runs_redone": 1,
-    "merged": 27,
-    "share_with_catch_up": 0.111,
+    "merged": 28,
+    "share_with_catch_up": 0.107,
     "stale_after_green": 1,
     "stale_hours": 23.88,
     "with_catch_up": 3
@@ -1702,10 +1732,10 @@
   "by_protocol": {
    "claim": {
     "catch_ups": 7,
-    "check_runs": 49,
+    "check_runs": 53,
     "check_runs_redone": 1,
-    "merged": 32,
-    "share_with_catch_up": 0.156,
+    "merged": 33,
+    "share_with_catch_up": 0.152,
     "stale_after_green": 0,
     "stale_hours": 0.0,
     "with_catch_up": 5
@@ -1724,9 +1754,9 @@
   "catch_ups": 8,
   "catch_ups_by_button": 0,
   "catch_ups_max": 3,
-  "check_hours": 1.97,
+  "check_hours": 2.05,
   "check_hours_redone": 0.06,
-  "check_runs": 69,
+  "check_runs": 73,
   "check_runs_redone": 2,
   "closed_unmerged": 1,
   "closed_unmerged_branch_landed_later": 0,
@@ -1738,25 +1768,25 @@
     "success": 11
    },
    "2026-10-23": {
-    "success": 2
+    "success": 4
    }
   },
-  "force_pushes": 2,
+  "force_pushes": 3,
   "landings_after_green_total": 277,
-  "landings_during_life_mean": 6.7,
-  "landings_during_life_median": 2.0,
+  "landings_during_life_mean": 6.59,
+  "landings_during_life_median": 2,
   "live": {
    "pulls_seen": 40,
    "pulls_seen_behind": 0,
    "pulls_seen_dirty": 0,
    "since": "2026-10-21T12:40:18Z",
-   "snapshots": 33
+   "snapshots": 34
   },
-  "merged": 50,
+  "merged": 51,
   "reruns": 2,
-  "share_runs_redone": 0.029,
+  "share_runs_redone": 0.027,
   "share_stale_after_green": 0.02,
-  "share_with_catch_up": 0.12,
+  "share_with_catch_up": 0.118,
   "stale_after_green": 1,
   "stale_hours_total": 23.88,
   "stale_minutes_median": 1433.1,
