@@ -18,7 +18,7 @@
  "source_status": "an RSNA download link (a presigned zip, valid until 2026-10-28 02:38 UTC) received by the owner on 2026-10-21 after accepting RSNA's terms; the fetch command was given to the owner (curl -C - into DEST on reqp --qos=requeue); job id not yet recorded",
  "route": "agreement",
  "status": "granted",
- "result": "RSNA's terms accepted 2026-10-21; a presigned link valid until 2026-10-28 02:38 UTC is in the owner's ~/.rsna/ratic_link; job id not yet recorded.",
+ "result": "RSNA's terms accepted 2026-10-21; the presigned link (valid until 2026-10-28 02:38 UTC) is not yet on the grid: the gate found no ~/.rsna/ratic_link on 2026-10-22 and submitted nothing; the owner writes it, then the fetch word goes.",
  "history": [
   {
    "date": "2026-10-21",
@@ -29,10 +29,16 @@
    "date": "2026-10-21",
    "step": "granted",
    "note": "RSNA's terms accepted 2026-10-21; a presigned link valid until 2026-10-28 02:38 UTC is in the owner's ~/.rsna/ratic_link; job id not yet recorded."
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "the gate word fetch rsna_ratic_abdominal_trauma (2026-10-22 10:53 UTC) found no ~/.rsna/ratic_link on the owner's grid account and submitted nothing, so the earlier line saying the link is there was wrong; the owner was asked on 2026-10-23 to write it (mode 600, through the OnDemand shell); the link expires 2026-10-28 02:38 UTC, and a CT fetch waits on the live X-ray fetch 40704982, whose four-day wall time ends about 2026-10-26 15:39 UTC, so the owner was also asked whether this one may skip the wait"
   }
  ],
  "obstacles": [
-  "the owner's hand: the sbatch from the owner's grid account before the link expires; the job id goes in the record"
+  "the owner's hand: the link in ~/.rsna/ratic_link on the grid account, before 2026-10-28 02:38 UTC",
+  "the wait on the X-ray fetch 40704982, unless the owner lets this fetch skip it"
  ],
- "next": "the fetch: a grid job by grid/README.md, with what the result line says the fetch needs"
+ "next": "the fetch word once the link file is there: fetch rsna_ratic_abdominal_trauma through the gate; the job id goes in the record"
 }
