@@ -12,6 +12,7 @@ since the last run. The page with filters is census.html beside this file, serve
 | Datasets with a record | 163 |
 | On the grid (shared tree and the owner's root) | 101 |
 | Size on the grid | 3.9 TB (83 of 101 sets counted) |
+| Frozen on the grid, every file hashed (tools/freeze.py) | 0 of 101 |
 | Subjects on the grid | 62,843 (86 of 101 sets counted) |
 | X-ray images on the grid | 160,879 (16 of 101 sets counted) |
 | X-ray videos and sweeps on the grid | 694 (2 of 101 sets counted) |
@@ -443,17 +444,25 @@ What the CT records still lack:
 ## What the records still lack
 
 - Balgrist ex-vivo lumbar CT plus C-arm (Jecklin): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
+- C-ArmLSpine (Zhang et al., Medical Image Analysis 2024): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - cm_spine: one Google Drive file described only as 'intraoperative' (empty download): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
+- DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021): on the grid with no size: write the landing pass's bytes into measured
+- Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - Ljubljana 2D/3D registration gold standard (PIXIUM 4600): on the grid with no size: write the landing pass's bytes into measured
+- Ljubljana 2D/3D registration gold standard (PIXIUM 4600): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- LUMOS (Zhejiang University): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - PUMCH stitching series (Liu et al., Eur Spine J 2026): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - SX-Stitch intraoperative C-arm series (Li 2024, PUMCH): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Vanderbilt intraoperative THA fluoroscopy (Chan et al., J Arthroplasty 2025): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
+- CADICA invasive coronary angiography sequences (Mendeley p9bpx9ctcv): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - CathAction (Jianu et al. 2024, AIRVLab): on the grid with no size: write the landing pass's bytes into measured
+- CathAction (Jianu et al. 2024, AIRVLab): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - CathAction (Jianu et al. 2024, AIRVLab): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Coronary angiography sets (CADICA, ARCADE, XCAD, AngioCAD): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - DARADIA vertebroplasty video (Kolkata): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - DMX Imaging digital motion X-ray: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
+- DysphagiaBank (TalkBank), UNM corpus: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - DysphagiaBank (TalkBank), UNM corpus: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - ThePainSource (Faubel) fluoroscopy clips: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Guide3D (ACCV 2024, AIRVLab): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
@@ -463,18 +472,29 @@ What the CT records still lack:
 - Radiopaedia spine cases: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Veriserum (ETH Zurich, MICCAI 2025): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - VFSS2022 videofluoroscopic swallow frames (TIB): the licence is still to confirm on the source's page
+- COBRA2026 public cases (Elekta and Varian): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IPCAI 2025 paired X-ray and CT set of the distal femur (Flepp 2025, Zenodo 15753063): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- Aariz cephalometric benchmark (Khalid, Fraz 2023) and the ISBI 2015 cephalograms: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - AASCE 2019 / BoostNet AP whole-spine films: on the grid with no size: write the landing pass's bytes into measured
+- AASCE 2019 / BoostNet AP whole-spine films: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - BIMCV COVID-19+ chest films (IEEE DataPort): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - BUU-LSPINE (Klinwichit et al., Applied Sciences 2023): on the grid with no size: write the landing pass's bytes into measured
+- BUU-LSPINE (Klinwichit et al., Applied Sciences 2023): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - CSXA, the Cervical Spine X-ray Atlas V3.0 (Ran et al., Scientific Data 2024): on the grid with no size: write the landing pass's bytes into measured
+- CSXA, the Cervical Spine X-ray Atlas V3.0 (Ran et al., Scientific Data 2024): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- Fraiwan spine X-ray set (Mendeley xkt857dsxk): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - Kaggle scoliosis YOLOv5 annotated spine X-ray set (salmankey): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
+- KUB-StoneX (Daffodil International University HIRL): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - Mendeley DDH hip sets (jf3pv98m9g and 4gvcb6gmh2): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Mendeley DDH hip sets (jf3pv98m9g and 4gvcb6gmh2): the licence is still to confirm on the source's page
 - MIMIC-CXR and MIMIC-CXR-JPG (PhysioNet): the licence is still to confirm on the source's page
 - MrOS lateral spine radiographs (Osteoporotic Fractures in Men): the licence is still to confirm on the source's page
 - NHANES II spinal films with landmarks (Mo, Papiez, Chen et al., Zenodo): on the grid with no size: write the landing pass's bytes into measured
+- NHANES II spinal films with landmarks (Mo, Papiez, Chen et al., Zenodo): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - NHANES II cervical and lumbar spine films (NCHS, 1976 to 1980): on the grid with no size: write the landing pass's bytes into measured
+- NHANES II cervical and lumbar spine films (NCHS, 1976 to 1980): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - NIH ChestX-ray14 and the RSNA pneumonia subset: on the grid with no size: write the landing pass's bytes into measured
+- NIH ChestX-ray14 and the RSNA pneumonia subset: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - Open-i Indiana chest collection: the licence is still to confirm on the source's page
 - SOF lateral spine radiographs (Study of Osteoporotic Fractures): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - SOF lateral spine radiographs (Study of Osteoporotic Fractures): the licence is still to confirm on the source's page
@@ -484,27 +504,110 @@ What the CT records still lack:
 - VertXNet extra labels for NHANES II (Mo, Papiez, Chen 2023): the licence is still to confirm on the source's page
 - VinDr-CXR (PhysioNet): the licence is still to confirm on the source's page
 - VinDr-SpineXR (Nguyen et al., MICCAI 2021): on the grid with no size: write the landing pass's bytes into measured
+- VinDr-SpineXR (Nguyen et al., MICCAI 2021): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- AMOS22 CT, unlabelled (ids 5000-6899) and labelled: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- AortaSeg-60: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- STOIC2021 training (AWS Open Data): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- Barts CRL (colorectal-cancer staging CT): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - CADS CT (unique cases): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
+- CSI 2014 spine CT: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - CT-RATE chest CT: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - CTPelvic1K: on the grid with no size: write the landing pass's bytes into measured
+- CTPelvic1K: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - CTPelvic1K: the licence is still to confirm on the source's page
 - CTSpine1K: on the grid with no size: write the landing pass's bytes into measured
+- CTSpine1K: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - CTSpinoPelvic1K v11 (the consortium's own release): on the grid with no size: write the landing pass's bytes into measured
+- CTSpinoPelvic1K v11 (the consortium's own release): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- CURVAS 2024: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- CURVAS-PDACVI (MICCAI 2025): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- DEEP-PSMA (PSMA + FDG PET/CT, mCRPC): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `acrin_flt_breast`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `acrin_nsclc_fdg_pet`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `adrenal_acc_ki67_seg`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `anti_pd_1_lung`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `cmb_brca`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `cmb_crc`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `cmb_lca`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `cmb_mel`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `cmb_mml`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `cmb_ov`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `colorectal_liver_metastases` (Colorectal-Liver-Metastases): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `covid_19_ar`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `covid_19_ny_sbu` (COVID-19-NY-SBU): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `cptac_ccrcc`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `cptac_cm`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `cptac_lscc` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `cptac_luad` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `cptac_pda`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `cptac_sar`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `cptac_stad`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `cptac_ucec`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `ct_vs_pet_ventilation_imaging`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `ctpred_sunitinib_pannet`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `eay131` (EAY131 (NCI-MATCH)): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `hcc_tace_seg` (HCC-TACE-Seg): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `ldct_and_projection_data` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `lung_pet_ct_dx` (Lung-PET-CT-Dx): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `mediastinal_lymph_node_seg`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `midrc_ricord_1a`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `midrc_ricord_1b` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `nsclc_radiogenomics` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `nsclc_radiomics` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `pancreatic_ct_cbct_seg`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `pediatric_ct_seg` (Pediatric-CT-SEG): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `pelvic_reference_data`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `psma_pet_ct_lesions` (PSMA-PET-CT-Lesions (autoPET III)): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `rider_lung_pet_ct`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `spinal_multiple_myeloma_seg` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `spine_mets_ct_seg` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `tcga_blca`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `tcga_esca`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `tcga_kirc`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `tcga_lihc`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `tcga_ov`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `tcga_stad`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `tcga_ucec`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- IDC `varepop_apollo`: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- Kidney abnormality segmentation in thorax-abdomen CT: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - MAGIC-CT (Zenodo): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
+- NLST, the seeded 500-person pilot: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- PANORAMA public set (pancreas CE-CT): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- PENGWIN 2026 peripelvic fracture CT (the public cases): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - PENGWIN 2024 Task 2 synthetic X-rays: on the grid with no size: write the landing pass's bytes into measured
+- PENGWIN 2024 Task 2 synthetic X-rays: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- QUADRA_HC total-body FDG-PET/CT, healthy controls: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - RibFrac (MICCAI 2020) chest CT: on the grid with no size: write the landing pass's bytes into measured
+- RibFrac (MICCAI 2020) chest CT: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- RSNA 2022 cervical spine fracture CT (Kaggle): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - RSNA abdominal trauma CT (RATIC): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - RSNA pulmonary embolism CT (RSPECT): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - ENHANCE.PET 1.6k: whole-/total-body FDG-PET/CT, 1,683 studies (NIfTI): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Stanford AIMI INSPECT chest CT: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Stanford AIMI Merlin abdominal CT: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
+- FDG-PET-CT-Lesions (autoPET), TCIA through NBIA: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - TotalSegmentator datasets v2.0.1 and v3.0.0: on the grid with no size: write the landing pass's bytes into measured
+- TotalSegmentator datasets v2.0.1 and v3.0.0: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - VerSe 2019 and 2020: on the grid with no size: write the landing pass's bytes into measured
+- VerSe 2019 and 2020: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - VerSe 2D projections with soft labels (Zenodo 8115942): on the grid with no size: write the landing pass's bytes into measured
+- VerSe 2D projections with soft labels (Zenodo 8115942): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - VerSe 2D projections with soft labels (Zenodo 8115942): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
+- WAW-TACE (HCC multiphase CT, Warsaw): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- LumVBCanSeg lumbar CT (185, ShengJing Hospital): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- MedPelvis3D pelvic CT (99, PLA General Hospital): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- International TMTV Benchmark, lymphoma FDG PET/CT (60): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- TotalSegmentator task data 'hip_implant' (71 CT): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- TotalSegmentator task data 'liver_lesions' (842 CT): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- TotalSegmentator task data 'pleural_pericard_effusion' (600 CT): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- UniToChest chest CT (623 patients; distributed as slices): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- Veterinary: pig lower limb CT, CBCT and planar images (Goswami 2020, IEEE DataPort): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 
 ## Changes, newest first
 
+- 2026-10-23 the census rules changed; every row was derived afresh
 - 2026-10-23 the census rules changed; every row was derived afresh
 - 2026-10-23 WAW-TACE (HCC multiphase CT, Warsaw): record added
 - 2026-10-23 FDG-PET-CT-Lesions (autoPET), TCIA through NBIA: record added
