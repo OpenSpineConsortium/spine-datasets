@@ -288,6 +288,13 @@ class Diff(unittest.TestCase):
                 "title": "t", "body": ""}
         self.assertTrue(self.review(pull).failed())
 
+    def test_the_promoters_branch_may_add_the_sets_freeze(self):
+        (self.root / "frozen").mkdir()
+        self.write("frozen/demo_set.json", "{}\n")
+        pull = {"user": {"login": dataset_review.OWNERS[0]}, "head": {"ref": "promote/demo_set"},
+                "title": "t", "body": ""}
+        self.assertFalse(any("promoter's branch" in line for line in self.review(pull).text().splitlines()))
+
     def test_fetched_needs_the_shared_path_and_a_manifest(self):
         self.write("datasets/demo_set.json", record(status="fetched", grid_path="/home/someone/raw"))
         self.assertTrue(self.review().failed())

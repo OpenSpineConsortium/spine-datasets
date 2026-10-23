@@ -36,7 +36,9 @@ The fields, as SchwingNet's record has them, copied exactly (licence and link ab
 - `id`, `name`, `group` (fluoro, video, projections, films, ct, future), `what`, `level_truth`,
   `reach`, `licence`, `link`, `how_to_get` (the steps, as the registry gives them, naming
   SchwingNet's and the data platform's tools), `grid_path` (null until fetched), `counts`,
-  `measured` (empty until a grid job fills it), `record` (where the record came from).
+  `measured` (empty until a grid job fills it; a set's freeze, tools/freeze.py, writes its
+  `bytes`, `files`, `tree_sha256` and `frozen` date there, frozen/README.md), `record` (where the
+  record came from).
 - `source_status`: SchwingNet's own `status` text as of 2026-10-21, kept so nothing is lost.
 
 The fields this repository adds:

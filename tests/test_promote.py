@@ -110,6 +110,17 @@ class PromoterTest(unittest.TestCase):
         self.assertEqual(note["merged_by"], OWNER)
         self.assertEqual(self.opened, ["demo_set"])
 
+    def test_a_promoted_set_is_frozen_from_the_hashes_just_read(self):
+        files = self.dataset("demo_set", "films", {"a.zip": b"alpha", "b.zip": b"beta"})
+        self.run_once(files, {"manifests/demo_set.json": OWNER})
+        home = os.path.join(self.shared, "demo_set")
+        summary = json.loads(Path(home, "FROZEN.json").read_text())
+        self.assertEqual((summary["files"], summary["bytes"]), (2, 9))
+        self.assertEqual(promote.freeze.verify(home), [])
+        note = json.loads(Path(home, "PROMOTED.json").read_text())
+        listed = sorted(f["sha256"] for f in note["files"])
+        self.assertEqual(sorted(v[0] for v in promote.freeze.read_file_list(home).values()), listed)
+
     def test_a_merge_by_anyone_else_is_skipped(self):
         files = self.dataset("demo_set", "films", {"a.zip": b"alpha"})
         results, logs = self.run_once(files, {"manifests/demo_set.json": "a-collaborator"})
@@ -216,7 +227,16 @@ class RecordUpdate(unittest.TestCase):
         self.assertEqual(after["grid_path"], "/rs/shared/datasets/demo_set/raw")
         self.assertEqual(after["history"][-1]["step"], "fetched")
         self.assertEqual(after["obstacles"], [])
+        self.assertNotIn("measured", after)
         text.encode("ascii")
+
+    def test_the_record_carries_its_freeze(self):
+        rec = {"id": "demo_set", "status": "fetching", "history": []}
+        man = {"id": "demo_set", "files": [{}], "bytes_total": 5}
+        frozen = {"bytes": 5, "files": 1, "tree_sha256": "0" * 64, "frozen_at": "2026-10-23T00:00:00Z"}
+        after = json.loads(promote.updated_record(rec, man, "/rs/shared/datasets", "42", frozen))
+        self.assertEqual(after["measured"]["tree_sha256"], "0" * 64)
+        self.assertEqual(after["measured"]["frozen"], "2026-10-23")
 
 
 if __name__ == "__main__":

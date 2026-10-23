@@ -26,7 +26,10 @@ account reads the tree and never writes it, so nobody needs, or asks for, an ent
 list. Nothing is unpacked, renamed or converted there; a zip stays a zip until the owner's chain
 reads it. Every file is 0444 and every folder of raw/ 0555; beside raw/ the promoter writes
 PROMOTED.json (the manifest's commit, the pull request and who merged it, the promoter's job id,
-and every file's bytes and sha256 as measured after the copy).
+and every file's bytes and sha256 as measured after the copy). Beside them it writes the set's freeze,
+FROZEN.json and FROZEN.files.tsv.gz (tools/freeze.py, frozen/README.md), from the same hashes, so
+the set's size, files and tree hash are read without opening it again; the sets that landed
+before the freeze are frozen by grid/freeze.sh, on the owner's word.
 
 ## How a set gets there
 

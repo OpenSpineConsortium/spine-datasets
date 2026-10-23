@@ -97,6 +97,9 @@ BYTE_KEYS = (("bytes", 1), ("zip_bytes", 1), ("size_tb", 10 ** 12), ("size_gb", 
              ("gigabytes", 10 ** 9), ("size_mb", 10 ** 6))
 STANDARD_KEYS = ("subjects", "xray_images", "videos", "run_frames", "ct_volumes", "bytes")
 BYTES_IN_RESULT = re.compile(r"(\d[\d,]*) bytes")
+SHA256_SHAPE = re.compile(r"^[0-9a-f]{64}$")
+# What a freeze writes into measured (tools/freeze.py measured), each held to its shape.
+FROZEN_FIELDS = ("bytes", "files", "tree_sha256", "frozen")
 
 RESTRICTED = re.compile(
     r"non-?commercial|\bNC\b|\bND\b|no-?deriv|research[- ]only|data use agreement|\bDUA\b|"
@@ -240,6 +243,13 @@ def grid_bytes(record):
     return None
 
 
+def tree_of(record):
+    """The tree hash of the set's freeze on the grid (tools/freeze.py), or None before it is frozen."""
+    measured = record.get("measured") or {}
+    found = measured.get("tree_sha256") if isinstance(measured, dict) else None
+    return found if isinstance(found, str) and SHA256_SHAPE.match(found) else None
+
+
 def regions_of(record):
     """The record's regions in the census's order; a word that is none of them is left out, and
     `check` names it."""
@@ -308,6 +318,7 @@ def row_of(record):
         "grid_path": text_of(record, "grid_path", None),
         "on_grid": stage in ("on-grid", "held"),
         "grid_bytes": grid_bytes(record),
+        "tree_sha256": tree_of(record),
         **counts,
         "unread_counts": unread,
         "next": text_of(record, "next"),
@@ -429,6 +440,7 @@ def totals(rows):
         "by_kind": by_kind,
         "on_grid": len(held),
         "on_grid_size": size_on_grid(held),
+        "on_grid_frozen": sum(1 for row in held if row.get("tree_sha256")),
         "on_grid_subjects": summed(held, "subjects"),
         "on_grid_xray_images": summed(held, "xray_images"),
         "on_grid_videos": summed(held, "videos"),
@@ -520,6 +532,9 @@ def gaps(rows):
     for row in rows:
         if row["on_grid"] and row["grid_bytes"] is None and row["bytes"] is None:
             found.append((row["id"], "on the grid with no size: write the landing pass's bytes into measured"))
+        if row["on_grid"] and row.get("tree_sha256") is None:
+            found.append((row["id"], "on the grid and not frozen: run tools/freeze.py on its folder and write"
+                                     " frozen/<id>.json and measured from it"))
         if all(row[key] is None for key in ("subjects", "xray_images", "videos", "run_frames", "ct_volumes")):
             found.append((row["id"], "no count the census can read: add subjects, xray_images, videos, run_frames"
                                      " or ct_volumes to counts"))
@@ -725,6 +740,7 @@ def render_markdown(data, repo=DEFAULT_REPO):
         f"| Datasets with a record | {totals_['datasets']} |",
         f"| On the grid (shared tree and the owner's root) | {totals_['on_grid']} |",
         f"| Size on the grid | {counted(totals_['on_grid_size'], size_text)} |",
+        f"| Frozen on the grid, every file hashed (tools/freeze.py) | {totals_.get('on_grid_frozen', 0)} of {totals_['on_grid']} |",
         f"| Subjects on the grid | {counted(totals_['on_grid_subjects'])} |",
         f"| X-ray images on the grid | {counted(totals_['on_grid_xray_images'])} |",
         f"| X-ray videos and sweeps on the grid | {counted(totals_['on_grid_videos'])} |",
@@ -1380,6 +1396,23 @@ def problems(records):
         measured = record.get("measured")
         if measured is not None and not isinstance(measured, dict):
             found.append(f"{ident}: measured must be an object")
+        elif measured and "tree_sha256" in measured:
+            found.extend(frozen_problems(ident, measured))
+    return found
+
+
+def frozen_problems(ident, measured):
+    """A measured block from a freeze carries all of its fields, each of its shape."""
+    found = [f"{ident}: measured.{field} is missing beside tree_sha256" for field in FROZEN_FIELDS
+             if field not in measured]
+    if not SHA256_SHAPE.match(str(measured.get("tree_sha256"))):
+        found.append(f"{ident}: measured.tree_sha256 must be 64 lowercase hex digits")
+    for field in ("bytes", "files"):
+        value = measured.get(field)
+        if field in measured and (not isinstance(value, int) or isinstance(value, bool) or value < 0):
+            found.append(f"{ident}: measured.{field} must be a whole number")
+    if "frozen" in measured and not re.match(r"^\d{4}-\d{2}-\d{2}$", str(measured["frozen"])):
+        found.append(f"{ident}: measured.frozen must be a date, YYYY-MM-DD")
     return found
 
 
