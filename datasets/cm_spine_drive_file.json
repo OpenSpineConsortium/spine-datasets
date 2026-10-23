@@ -1,18 +1,21 @@
 {
  "id": "cm_spine_drive_file",
- "name": "cm_spine: one Google Drive file described only as 'intraoperative' (empty download)",
+ "name": "CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images",
  "group": "fluoro",
- "what": "one Google Drive file, id 1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ, described only as 'intraoperative' by download_sources.py's get_cm_spine(); the download was empty and what the file is has never been established",
- "level_truth": "unknown",
+ "what": "208 anteroposterior lumbar spine images at 1024 x 1024, taken during surgery with a mobile dual-mode G-arm (Geelin500-A), of patients with lumbar disc herniation or vertebral compression fractures, each lumbar vertebra in view annotated by its level, L1 to L5, 537 vertebrae, split 148 and 60 in the paper (Zeng et al., Electronics 2024;13(11):2137); the paper's data statement points to its repository, which links this Drive file as the set; the data platform's download of the file came back empty, so what it holds now is not checked",
+ "level_truth": "each lumbar vertebra's level, L1 to L5, as the authors annotated it",
  "reach": "get",
- "licence": "not recorded",
+ "licence": "none stated: the paper's data statement and its repository's README name no licence, and the repository has no licence file (read 2026-10-23)",
  "link": "https://drive.google.com/file/d/1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ/view",
  "how_to_get": [
-  "cd into a scratch directory on a compute node and gdown 1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ; inspect what came; then decide whether it is a source at all.",
+  "Open https://drive.google.com/file/d/1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ/view logged in to the owner's Google account and see whether it still holds the 208 images, since the data platform's gdown got an empty download; the paper's repository, https://github.com/zengyuyuyu/Neighbor, links it as the set.",
+  "No licence is stated, so the owner decides whether to take the set as it is or to write to the corresponding author, Bo Song, for terms first; the fetch is then a Slurm job on the owner's word, never on the login node.",
   "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid cm_spine_drive_file; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"cm_spine_drive_file\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
  ],
  "grid_path": null,
- "counts": {},
+ "counts": {
+  "xray_images": 208
+ },
  "measured": {},
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "empty in the data platform at bf1432f; the owner's hand: gdown into a scratch directory, inspect, then decide",
@@ -29,10 +32,15 @@
    "date": "2026-10-23",
    "step": "note",
    "note": "the link opens the Drive file by the id the data platform gives, so the owner's look is one press; the file was not opened from the session"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "identified: CM Spine of Zeng et al., Electronics 2024;13(11):2137, whose data statement points to github.com/zengyuyuyu/Neighbor, whose README links this Drive file; 208 intraoperative AP lumbar G-arm images, L1 to L5 annotated; no licence in the paper or the repository; found by checking the owner's list of fluoroscopy sets of 2026-10-23"
   }
  ],
  "obstacles": [
-  "the owner's hand: the owner opens the Drive file in a browser signed in to the owner's Google account; a letter follows only if a source is found"
+  "the owner's hand: the owner opens the Drive file logged in to the owner's Google account, since the data platform's download came back empty, and decides on a set with no licence stated"
  ],
- "next": "the owner's step as the task says; nothing for a collaborator yet"
+ "next": "the owner opens the Drive file and says whether to take the set as it is or to ask the authors for terms first"
 }
