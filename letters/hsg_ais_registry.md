@@ -1,8 +1,8 @@
 # hsg_ais_registry: the request text
 
-Not sent; it goes after Ali Uneri's introduction, which the owner's drafted reply to him accepts.
+Sent 2026-10-23 20:24 UTC as the owner's reply-all to Michelle Marks, Executive/Research Director of Setting Scoliosis Straight (mmarks@ssshsg.org), in Ali Uneri's introduction thread with him in copy, after his introduction and her welcome of the same day asked for the study's details and imaging needs. The subject stayed the thread's (RE: Introduction: Gregory Schwing), the greeting read "Dear Michelle" with a line of thanks to her and to Dr Uneri, the sentence on the introduction moved into the first paragraph, and a closing line offered to answer questions or talk by phone; the rest went as below. Waiting for her review; the answer is recorded on datasets/hsg_ais_registry.json.
 
-To: the Harms Study Group's administrative team (Setting Scoliosis Straight Foundation, San Diego; info@ssshsg.org, and mpetcharaporn@ssshsg.org from the Database User Program page's button), or whoever Dr Uneri's introduction names.
+To: Michelle Marks (mmarks@ssshsg.org), whom Dr Uneri's introduction named; the group's other addresses are info@ssshsg.org and mpetcharaporn@ssshsg.org (the Database User Program page's button), San Diego.
 Route: email, with the subject below and the sender block; the Database User Program's fee and any data use agreement are the owner's hand only.
 
 Source: the thread "Dataset census and roadmap", 2026-10-23: Ali Uneri's reply to the LevelCheck request (letters/levelcheck_jhu.md) named the group and offered the introduction, and the group's website (https://hsg.settingscoliosisstraight.org/ and its Database User Program page) was read the same day. The rules every text follows and the sender block are in letters/TEMPLATE.md.
