@@ -2,8 +2,21 @@
  "id": "zenodo_tmtv_benchmark",
  "name": "International TMTV Benchmark, lymphoma FDG PET/CT (60)",
  "group": "ct",
+ "regions": [
+  "whole body"
+ ],
  "what": "International TMTV Benchmark, lymphoma FDG PET/CT, 60 subjects, Zenodo 13255214 published 2024-08-07, about 6.9 GB; the NIfTI CTs on the PET grid are over 3 mm, so the DICOM is wanted",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: every file of the record was fetched, so any masks it ships are inside its archives",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/shared/datasets/zenodo_tmtv_benchmark/raw"
+  }
+ ],
  "reach": "get",
  "licence": "CC BY 4.0",
  "link": "https://zenodo.org/records/13255214",

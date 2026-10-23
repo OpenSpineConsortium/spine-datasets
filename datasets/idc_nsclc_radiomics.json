@@ -2,8 +2,37 @@
  "id": "idc_nsclc_radiomics",
  "name": "IDC `nsclc_radiomics` (tier 2)",
  "group": "ct",
+ "regions": [
+  "chest"
+ ],
  "what": "IDC v24 collection nsclc_radiomics (TCIA doi:10.7937/k9/tcia.2015.pf0m9rei), tier 2 of the anomaly harvest: 415 subjects, about 25.8 GB raw plus screen; chest",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "the aorta, oesophagus, heart and trachea: 1,242 segmentations over 414 of the collection's 422 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "none",
+   "by": "IDC's analysis results, automatic",
+   "volumes": 414,
+   "where": null
+  },
+  {
+   "origin": "release",
+   "masks": "the primary tumour, the lungs, heart, oesophagus and spinal cord: 421 segmentations over 421 of the collection's 422 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "none",
+   "by": "the collection's authors, by hand, region growing on most",
+   "volumes": 421,
+   "where": null
+  },
+  {
+   "origin": "release",
+   "masks": "contours of the tumour volumes, the spinal cord, oesophagus, lungs and heart: 422 contour sets over all 422 of the collection's CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "none",
+   "by": "the collection's authors, by hand",
+   "volumes": 422,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "CC BY-NC 3.0",
  "link": "https://doi.org/10.7937/k9/tcia.2015.pf0m9rei",

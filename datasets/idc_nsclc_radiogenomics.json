@@ -2,8 +2,32 @@
  "id": "idc_nsclc_radiogenomics",
  "name": "IDC `nsclc_radiogenomics` (tier 2)",
  "group": "ct",
+ "regions": [
+  "chest",
+  "abdomen",
+  "pelvis",
+  "whole body"
+ ],
  "what": "IDC v24 collection nsclc_radiogenomics (TCIA doi:10.7937/k9/tcia.2017.7hs46erv), tier 2 of the anomaly harvest: 188 subjects, about 28 GB raw plus screen; chest, abdomen, pelvis and whole body",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "the lungs and their nodules: 169 segmentations over 143 of the collection's 727 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "none",
+   "by": "BAMF Health, automatic, for IDC's analysis results, 26 of them semi-automatic",
+   "volumes": 143,
+   "where": null
+  },
+  {
+   "origin": "release",
+   "masks": "the tumour regions, which IDC's index codes as heart, tissue and upper arm: 144 segmentations over 144 of the collection's 727 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "none",
+   "by": "the collection's authors, semi-automatic (ePAD)",
+   "volumes": 144,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "CC BY 3.0",
  "link": "https://doi.org/10.7937/k9/tcia.2017.7hs46erv",

@@ -2,8 +2,21 @@
  "id": "zenodo_ts_task_hip_implant",
  "name": "TotalSegmentator task data 'hip_implant' (71 CT)",
  "group": "ct",
+ "regions": [
+  "pelvis"
+ ],
  "what": "TotalSegmentator task data 'hip_implant', 71 CT, Zenodo 20272031 published 2026-05-18, about 9.0 GB; the same institution as TotalSegmentator v2/v3 (on disk) with no subject map",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: what the task data ships is to confirm on its page",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "CC BY 4.0",
  "link": "https://zenodo.org/records/20272031",

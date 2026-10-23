@@ -2,8 +2,40 @@
  "id": "ctspinopelvic1k",
  "name": "CTSpinoPelvic1K v11 (the consortium's own release)",
  "group": "ct",
+ "regions": [
+  "chest",
+  "abdomen",
+  "pelvis",
+  "spine"
+ ],
  "what": "802 CT volumes from TCIA sources with vertebra, sacrum and pelvis labels (Zenodo 22797014)",
  "level_truth": "vertebra, sacrum and pelvis labels by level; L6 cases flagged",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "vertebra masks from C1 to L6, each named by level, from CTSpine1K's radiologists; the sacrum and both hips, expert where fused and automatic elsewhere; the ribs, automatic and corrected by hand; L6 flags, and Castellvi reads on 33 cases, as labels/<id>_label.nii.gz with manifest.json",
+   "vertebrae": "by level",
+   "by": "the release's authors (Zenodo 22797014)",
+   "volumes": 802,
+   "where": "/rs/rs_grp_oschome/go2432/data/ctspinopelvic1k"
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks and body masks, each vertebra named by level",
+   "vertebrae": "by level",
+   "by": "the owner's runs, automatic (SPINEPS); no radiologist has read them",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/go2432/data/spineps"
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/ctsp"
+  }
+ ],
  "reach": "held",
  "licence": "labels CC BY-NC-SA 4.0; the CT images CC BY 3.0 (TCIA)",
  "link": "https://zenodo.org/records/22797014",

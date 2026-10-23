@@ -2,6 +2,9 @@
  "id": "lumos",
  "name": "LUMOS (Zhejiang University)",
  "group": "fluoro",
+ "regions": [
+  "spine"
+ ],
  "pairing": {
   "spine": true,
   "region": "lumbar",
@@ -16,6 +19,16 @@
  },
  "what": "803 living patients: 1,620 lumbar AP or lateral radiographs and 280 non-contrast lumbar CTs, anonymised DICOM and NPY; diagnostic radiography, not C-arm fluoroscopy; no pose given",
  "level_truth": "levels readable from the paired CT after a 2D/3D registration",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: to confirm on the record's page",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "CC BY-NC 4.0 (Creative Commons Attribution Non Commercial 4.0 International, as the Zenodo page's licence line reads for v1, published 2025-10-27, read 2026-10-22)",
  "link": "https://zenodo.org/records/18173664",

@@ -2,8 +2,30 @@
  "id": "ctpelvic1k",
  "name": "CTPelvic1K",
  "group": "ct",
+ "regions": [
+  "pelvis",
+  "spine"
+ ],
  "what": "172 pelvic CT volumes of the release's datasets 6 and 7, with the pelvic masks of datasets 1 to 5 mapped back to their sources",
  "level_truth": "pelvis, sacrum and lumbar masks",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "the pelvic masks of the release's datasets 1 to 5: the lumbar spine as one label, the sacrum and both hips, mapped back to the source CTs, which other records hold; dataset 2's masks are at the folder named, which the data platform notes is on a delete list and may be stale",
+   "vertebrae": "together",
+   "by": "the release's annotators, under a radiologist",
+   "volumes": null,
+   "where": "/wsu/home/go/go24/go2432/CTSpinoPelvic1K/data/ctpelvic1k"
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; over the release's datasets 6 and 7, which this record holds",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": 172,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/ctpelvic1k_clinic"
+  }
+ ],
  "reach": "held",
  "licence": "CC BY 4.0 by one reading, non-commercial by another; to confirm on the page",
  "link": "https://zenodo.org/record/4588403",

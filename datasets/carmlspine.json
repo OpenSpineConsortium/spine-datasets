@@ -2,6 +2,9 @@
  "id": "carmlspine",
  "name": "C-ArmLSpine (Zhang et al., Medical Image Analysis 2024)",
  "group": "fluoro",
+ "regions": [
+  "spine"
+ ],
  "pairing": {
   "spine": true,
   "region": "lumbar",
@@ -16,6 +19,32 @@
  },
  "what": "149 lumbar intraoperative cases from one mobile C-arm: 299 AP and lateral spot frames, an intraoperative CBCT of every case from the same device, and the raw CBCT projection sweeps of two cases (case39 and case134, 301 frames each, rotational); 59,609 DICOM files in the release (Zenodo 22768651)",
  "level_truth": "lumbar levels, readable from each case's CBCT; three cases with an L6",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "none: the release ships no masks of the vertebral bodies",
+   "vertebrae": "none",
+   "by": "none",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "made",
+   "masks": "masks of T9 to L5, the sacrum, both hips and both femora on each case's CBCT, one folder per case",
+   "vertebrae": "by level",
+   "by": "the owner's runs, automatic (TotalSegmentator); no radiologist has read them",
+   "volumes": 149,
+   "where": "/rs/rs_grp_oschome/go2432/data/carmlspine/ts"
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks on each case's CBCT, each vertebra named by level; the levels both runs agree on are kept in carmlspine/levels.json",
+   "vertebrae": "by level",
+   "by": "the owner's runs, automatic (SPINEPS with VERIDAH); no radiologist has read them",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/go2432/data/carmlspine/spineps"
+  }
+ ],
  "reach": "held",
  "licence": "CC BY 4.0",
  "link": "https://zenodo.org/records/22768651",

@@ -2,8 +2,24 @@
  "id": "idc_midrc_ricord_1b",
  "name": "IDC `midrc_ricord_1b` (tier 2)",
  "group": "ct",
+ "regions": [
+  "chest",
+  "abdomen",
+  "pelvis",
+  "other"
+ ],
  "what": "IDC v24 collection midrc_ricord_1b (TCIA doi:10.7937/31v8-4a40), tier 2 of the anomaly harvest: 91 subjects, about 7 GB raw plus screen; chest, abdomen and pelvis",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+   "vertebrae": "none",
+   "by": "none",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "CC BY-NC 4.0",
  "link": "https://doi.org/10.7937/31v8-4a40",

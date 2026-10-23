@@ -2,8 +2,38 @@
  "id": "ribfrac",
  "name": "RibFrac (MICCAI 2020) chest CT",
  "group": "ct",
+ "regions": [
+  "chest",
+  "spine"
+ ],
  "what": "660 chest CT volumes with rib fracture labels, and the RibSeg v2 and Moller rib masks",
  "level_truth": "none for the vertebrae; the thoracic spine is in view",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "rib fracture masks",
+   "vertebrae": "none",
+   "by": "the release's annotators",
+   "volumes": 660,
+   "where": "/rs/rs_grp_oschome/go2432/data/ribfrac"
+  },
+  {
+   "origin": "release",
+   "masks": "rib masks of RibSeg v2, corrected by experts, and Moller's rib masks",
+   "vertebrae": "none",
+   "by": "RibSeg v2's experts; Moller's, by hand and automatic",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds this set and RSNA 2022's cervical spine together",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/other_ct"
+  }
+ ],
  "reach": "held",
  "licence": "CC BY-NC 4.0 (RibFrac); the Moller masks CC BY 4.0",
  "link": "https://zenodo.org/records/3893508",

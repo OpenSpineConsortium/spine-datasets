@@ -2,8 +2,22 @@
  "id": "stanford_aimi_merlin",
  "name": "Stanford AIMI Merlin abdominal CT",
  "group": "ct",
+ "regions": [
+  "abdomen",
+  "pelvis"
+ ],
  "what": "25,494 CT of 18,317 patients; a gated anomaly-harvest collection (group B7)",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: not fetched yet; what the release ships is to confirm on its page",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "gated",
  "licence": "a data use agreement (non-commercial)",
  "link": "https://stanfordaimi.azurewebsites.net/datasets/60b9c7ff-877b-48ce-96c3-0194c8205c40",

@@ -9,6 +9,24 @@
  ],
  "what": "CURVAS-PDACVI (MICCAI 2025), 109 CTs, Zenodo record 17552201; tier 1 of the anomaly harvest: the data platform counts 101 CTs and 109 subjects qualifying, about 15.42 GB in the catalogue (NIfTI); 78 of the 101 look like near-duplicates of CURVAS 2024's scans by a thumbnail correlation of 0.98 or more, as the overlap of the two sets would make them, and are not merged",
  "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: the fetch took every zip of the record, so any masks it ships are inside them",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/go2432/data/curvas_pdacvi"
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": 101,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/curvas_pdacvi"
+  }
+ ],
  "reach": "held",
  "licence": "CC BY 4.0",
  "link": "https://zenodo.org/records/17552201",

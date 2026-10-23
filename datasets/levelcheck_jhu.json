@@ -2,6 +2,9 @@
  "id": "levelcheck_jhu",
  "name": "LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group)",
  "group": "fluoro",
+ "regions": [
+  "spine"
+ ],
  "pairing": {
   "spine": true,
   "region": "thoracic and lumbar spine",
@@ -15,6 +18,16 @@
  },
  "what": "178 patients with preoperative CT and 398 intraoperative radiographs (De Silva et al., Spine 2016), plus Ketcha et al. 2017's 24 thoracolumbar patients with 61 Carestream DRX-1 radiographs, and the 62-image reader set of Manbachi et al. 2018; neither paper has a data statement",
  "level_truth": "the level of each vertebra on the radiograph, placed by registration to the labelled preoperative CT",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: the papers label the levels on the preoperative CT and do not say whether masks come with it",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "licence": "not recorded; a data use agreement with the PI is the route",
  "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5045321/",
  "how_to_get": [

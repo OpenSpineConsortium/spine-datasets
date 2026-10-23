@@ -2,8 +2,24 @@
  "id": "idc_cptac_luad",
  "name": "IDC `cptac_luad` (tier 2)",
  "group": "ct",
+ "regions": [
+  "chest",
+  "abdomen",
+  "whole body",
+  "other"
+ ],
  "what": "IDC v24 collection cptac_luad (TCIA doi:10.7937/k9/tcia.2018.pat12tbs), tier 2 of the anomaly harvest: 32 subjects, about 7 GB raw plus screen; chest, abdomen and whole body",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+   "vertebrae": "none",
+   "by": "none",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "CC BY 4.0",
  "link": "https://doi.org/10.7937/k9/tcia.2018.pat12tbs",

@@ -2,6 +2,9 @@
  "id": "ipcai2025_xray_ct",
  "name": "IPCAI 2025 paired X-ray and CT set of the distal femur (Flepp 2025, Zenodo 15753063)",
  "group": "projections",
+ "regions": [
+  "other"
+ ],
  "pairing": {
   "spine": false,
   "region": "distal femur, five cadaveric specimens",
@@ -15,6 +18,16 @@
  },
  "what": "one zip, dataset_ipcai.zip, 6.7 GB (md5 cc8bf3e445495d2deb6d50dd058dc977): 50 real calibrated X-rays of 5 cadaveric distal femur specimens (ten views each, about 9 degrees apart, Siemens Fluorospot), their 5 CTs at 0.2 mm slices, the poses, the contour masks and bone surface meshes, from 'Automatic multi-view X-ray/CT registration using bone substructure contours' (Flepp and others, IPCAI 2025, arXiv 2506.13292); the femur, no spine",
  "level_truth": "none; no spine; the stored poses make it a 2D/3D registration benchmark",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "contour masks and bone surface meshes of the distal femur, in dataset_ipcai.zip",
+   "vertebrae": "none",
+   "by": "the release's authors",
+   "volumes": 5,
+   "where": "/rs/rs_grp_oschome/go2432/data/ipcai2025_xray_ct/raw"
+  }
+ ],
  "reach": "held",
  "licence": "Research-Only Dataset License (as the Zenodo page's licence line reads for version 1.0, published 2025-05-20, read 2026-10-22)",
  "link": "https://zenodo.org/records/15753063",

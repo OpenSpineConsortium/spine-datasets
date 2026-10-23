@@ -2,8 +2,21 @@
  "id": "zenodo_lumvbcanseg",
  "name": "LumVBCanSeg lumbar CT (185, ShengJing Hospital)",
  "group": "ct",
+ "regions": [
+  "spine"
+ ],
  "what": "LumVBCanSeg lumbar CT, 185 subjects, ShengJing Hospital, Zenodo 8181250 published 2023-07-25, about 10.1 GB",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: every file of the record was fetched, so any masks it ships are inside its archive",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/shared/datasets/zenodo_lumvbcanseg/raw"
+  }
+ ],
  "reach": "get",
  "licence": "CC BY 4.0",
  "link": "https://zenodo.org/records/8181250",

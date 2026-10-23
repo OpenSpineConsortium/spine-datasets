@@ -2,8 +2,21 @@
  "id": "hf_abdomenatlas2_0_mini",
  "name": "AbdomenAtlas 2.0 Mini (10,135 CT)",
  "group": "ct",
+ "regions": [
+  "abdomen"
+ ],
  "what": "AbdomenAtlas 2.0 Mini, 10,135 CT in 21 tars, about 620 GB on Hugging Face (tree read 2026-09-24); no card, no metadata; the AbdomenAtlas line aggregates public sets, 3.0 Mini (9,262) is already fetched and the other about 873 are unidentified",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: not fetched yet; what the release ships is to confirm on its page",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "CC BY-NC-SA 4.0",
  "link": "https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas2.0Mini",

@@ -2,8 +2,21 @@
  "id": "verse_2d_projections",
  "name": "VerSe 2D projections with soft labels (Zenodo 8115942)",
  "group": "ct",
+ "regions": [
+  "spine"
+ ],
  "what": "2D projections of the central slices of VerSe 19 and 20 vertebrae, with soft labels from proposal-based non-expert annotation ('Annotating ambiguous images', 2023); count to confirm on the page (VerSe holds 4,505 vertebrae over 374 scans)",
  "level_truth": "vertebral identity from VerSe",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "none: soft labels of each vertebra's identity on the projections, no masks",
+   "vertebrae": "none",
+   "by": "none",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "Other (Open) (as the Zenodo page's licence line reads for version v1.0, published 2022-10-06, read 2026-10-22); the record's license.txt names no licence for its two VerSe files",
  "link": "https://zenodo.org/records/8115942",

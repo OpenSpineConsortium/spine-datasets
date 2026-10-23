@@ -8,6 +8,48 @@
  ],
  "what": "500 people of the National Lung Screening Trial in IDC v24 (TCIA doi:10.7937/tcia.hmq8-j677), drawn with a fixed seed from the data platform's NLST list; tier 1 of the anomaly harvest: 500 low-dose chest CT series, 89,363 DICOM instances, about 45.8 GB in the catalogue; these 500 are people of the full trial, which idc_nlst records, so a sum over both counts them twice",
  "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "the aorta, oesophagus, heart and trachea: 1,039 segmentations over 1,039 of the full trial's 203,087 CT series in IDC v24, how many of them over the pilot's 500 not counted; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "none",
+   "by": "IDC's analysis results, automatic",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "release",
+   "masks": "the lungs and their nodules: 1,144 segmentations over 1,042 of the full trial's 203,087 CT series in IDC v24, how many of them over the pilot's 500 not counted; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "none",
+   "by": "BAMF Health, automatic, for IDC's analysis results, 102 of them semi-automatic",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "release",
+   "masks": "76 structures, among them every vertebra in view from C1 to L5, each named by level, the sacrum and the ribs: 126,051 segmentations over 126,051 of the full trial's 203,087 CT series in IDC v24, how many of them over the pilot's 500 not counted; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "by level",
+   "by": "IDC, automatic (TotalSegmentator 1.5.6); no radiologist has read them",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "release",
+   "masks": "tumours and nodules: 596 segmentations over 596 of the full trial's 203,087 CT series in IDC v24, how many of them over the pilot's 500 not counted; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "none",
+   "by": "NLSTSeg's readers, by hand",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": 500,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/nlst_pilot"
+  }
+ ],
  "reach": "held",
  "licence": "CC BY 4.0",
  "link": "https://doi.org/10.7937/tcia.hmq8-j677",

@@ -2,6 +2,10 @@
  "id": "geneva_hip",
  "name": "Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021)",
  "group": "fluoro",
+ "regions": [
+  "pelvis",
+  "spine"
+ ],
  "pairing": {
   "spine": false,
   "region": "pelvis and hip, a phantom",
@@ -15,6 +19,24 @@
  },
  "what": "116 fluoroscopy frames of one hip phantom on a Philips BV Pulsera C-arm, with the phantom's CT, a gold-standard rigid transform for each frame and the projection matrix",
  "level_truth": "none for the spine",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "none: the release ships the phantom's CT, its transforms and the projection matrix, no masks",
+   "vertebrae": "none",
+   "by": "none",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "made",
+   "masks": "masks of the phantom's CT",
+   "vertebrae": "not recorded",
+   "by": "the owner's runs, automatic (SPINEPS); no radiologist has read them",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "held",
  "licence": "CC BY-SA 4.0, as the source's page gives it (read 2026-10-23), which also lists a 'Contract on the use of data' and shows none of its terms",
  "link": "https://yareta.unige.ch/archives/ed4bb43a-eaaa-4e62-8763-bd5803f5cd47",

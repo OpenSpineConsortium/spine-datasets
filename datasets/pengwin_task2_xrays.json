@@ -2,8 +2,22 @@
  "id": "pengwin_task2_xrays",
  "name": "PENGWIN 2024 Task 2 synthetic X-rays",
  "group": "ct",
+ "regions": [
+  "pelvis",
+  "spine"
+ ],
  "what": "50,000 DeepDRR images with 2D fragment masks from 100 pelvic-fracture CTs at 500 random C-arm poses each; projections 0250-0499 add up to 10 simulated K-wires and screws; pelvis, sacrum and the lower lumbar spine are in field; Zenodo doi:10.5281/zenodo.10913195, mirrored at huggingface.co/datasets/MedOtter/PENGWIN_Task2",
  "level_truth": "none in 2D; from the Task 1 CTs by pose (the manifest's pengwin2026, already on the grid)",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "2-D masks of the fracture fragments on every one of the 50,000 simulated images, inside the fetched zip",
+   "vertebrae": "not recorded",
+   "by": "the release's authors, from the CT masks by pose",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/go2432/data/pengwin_task2_xrays"
+  }
+ ],
  "reach": "get",
  "licence": "Creative Commons Attribution 4.0 International (the Zenodo record 10913195's licence line, read 2026-10-22)",
  "link": "https://pengwin.grand-challenge.org/",

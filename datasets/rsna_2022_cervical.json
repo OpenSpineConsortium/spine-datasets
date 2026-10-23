@@ -2,8 +2,29 @@
  "id": "rsna_2022_cervical",
  "name": "RSNA 2022 cervical spine fracture CT (Kaggle)",
  "group": "ct",
+ "regions": [
+  "spine"
+ ],
  "what": "2,019 cervical spine CT studies with fracture labels by vertebra, C1 to C7, and vertebra segmentations for part of them; one zip of 203,318,086,447 bytes",
  "level_truth": "fracture labels by vertebra, C1 to C7",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "vertebra masks for 87 of the 2,019 studies, each vertebra named by level, inside the zip, which is not unpacked; every study also has fracture labels by vertebra, C1 to C7, which are not masks",
+   "vertebrae": "by level",
+   "by": "the competition's annotators",
+   "volumes": 87,
+   "where": "/rs/rs_grp_oschome/go2432/data/rsna_2022_cspine"
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds this set and RibFrac together",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/other_ct"
+  }
+ ],
  "reach": "held",
  "licence": "Kaggle competition rules (non-commercial); the terms for derived labels not recorded",
  "link": "https://www.kaggle.com/competitions/rsna-2022-cervical-spine-fracture-detection",

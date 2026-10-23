@@ -2,6 +2,10 @@
  "id": "cobra2026",
  "name": "COBRA2026 public cases (Elekta and Varian)",
  "group": "projections",
+ "regions": [
+  "pelvis",
+  "spine"
+ ],
  "pairing": {
   "spine": true,
   "region": "lumbosacral spine and pelvis",
@@ -16,6 +20,40 @@
  },
  "what": "the 692 public cases of the COBRA2026 challenge, 467 from Elekta and 225 from Varian linacs at six centres: raw kV CBCT projections of supine pelvic radiotherapy patients (375,618 in all), each case with its CBCT reconstruction and the planning CT deformably registered; the held-back cases are cobra_embargoed (Thummerer, Rit, Kamp, Maspero et al.)",
  "level_truth": "levels readable from the planning CT; none shipped for the vertebrae",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "none: the release ships no anatomical labels",
+   "vertebrae": "none",
+   "by": "none",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "made",
+   "masks": "masks by TotalSegmentator and by SPINEPS on each case's planning CT as the release registers it, the SPINEPS vertebrae named by level in seg/spineps_ctd",
+   "vertebrae": "by level",
+   "by": "the owner's runs, automatic (TotalSegmentator and SPINEPS); no radiologist has read them",
+   "volumes": 692,
+   "where": "/rs/rs_grp_oschome/go2432/data/cobra2026/seg"
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks of the Varian cases' CTs, each vertebra named by level",
+   "vertebrae": "by level",
+   "by": "the owner's runs, automatic (SPINEPS); no radiologist has read them",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/go2432/data/spineps/cobra_varian"
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/cobra"
+  }
+ ],
  "reach": "held",
  "licence": "CC BY-NC 4.0",
  "link": "https://zenodo.org/records/21322350",
