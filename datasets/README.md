@@ -6,21 +6,25 @@ are src/schwingnet/sources.py), and the routes from docs/research/data-access-re
 held sets, the status `held`, the standard counts, the pairing block and the census come from the
 thread "Dataset census and roadmap", 2026-10-23 (issue #178).
 
-One JSON file per dataset, the one place its facts are written, so that every count of the data
-is made from these files and nobody passes over a dataset twice. They are, first, 81 of
-SchwingNet's 111 records, every one whose `reach` is `get` (public or by request, not yet
-fetched), `gated` (behind an agreement, an application or a login) or `embargoed`; second, five
-records written from docs/research/xray-dataset-requests.md section 15 for intraoperative sets the
-literature names that had no registry record (levelcheck_jhu, vanderbilt_tha_fluoro,
-huashan_fudan, pumch_stitching, nit_warangal_nims), each saying so in its `record` field; third,
-the sets the owner already held on Wayne State's grid when the census began, written from the
-registry's dataset facts with `reach` `held` and the status `held` (one record per release: the
-registry's three COBRA2026 entries are cobra2026, its C-ArmLSpine sweeps are inside carmlspine, and
-its CTSpine1K, CTPelvic1K and RibFrac entry is three records); and every record added since. Not
-here: the one set that exists nowhere (cervical_thoracic_intraop), the three set aside (spinesac,
-mendeley_5jdfdgp762, roboflow_vindr_relabels), the project's own synthetic renders, which are
-derived rather than obtained, and the anomaly harvest, a list of CT sources whose members have
-records of their own. The census (below) gives the count.
+One JSON file per dataset, the one place its facts are written, so that every count of the data is
+made from these files and nobody passes over a dataset twice. They are, first, 81 of SchwingNet's
+111 records, every one whose `reach` is `get` (public or by request, not yet fetched), `gated`
+(behind an agreement, an application or a login) or `embargoed`; second, five records written from
+docs/research/xray-dataset-requests.md section 15 for intraoperative sets the literature names
+that had no registry record (levelcheck_jhu, vanderbilt_tha_fluoro, huashan_fudan,
+pumch_stitching, nit_warangal_nims), each saying so in its `record` field; third, the sets the
+owner already held on Wayne State's grid when the census began, written from the registry's
+dataset facts with `reach` `held` and the status `held` (one record per release: the registry's
+three COBRA2026 entries are cobra2026, its C-ArmLSpine sweeps are inside carmlspine, and its
+CTSpine1K, CTPelvic1K and RibFrac entry is three records); and every record added since. Not here:
+the one set that exists nowhere (cervical_thoracic_intraop), the three set aside (spinesac,
+mendeley_5jdfdgp762, roboflow_vindr_relabels), and the synthetic films and renders already held,
+for which no patient was imaged: the project's own renders, derived rather than obtained, and
+Spinal-AI2024's synthetic films. Two collections the owner holds wait for his call before they get
+records: the public fluoroscopy clips gathered from articles and sites, and the FluoroCap
+literature panels. The anomaly harvest is a list of CT sources: its planned and gated members have
+records of their own, and the releases of it already on the grid get theirs by issue #181. The
+census (below) gives the count.
 
 The fields, as SchwingNet's record has them, copied exactly (licence and link above all):
 
@@ -37,8 +41,8 @@ The fields this repository adds:
 - `status`: where the task stands: `todo`, `requested`, `granted`, `fetching` (a manifest is in,
   manifests/README.md, and the promoter fetches it after merge), `fetched` (the promoter's word
   alone: in the shared tree with its manifest), `held` (on the grid by the owner's own chain,
-  not the promoter, so no manifest covers it: under the owner's data root, or copied into the
-  shared tree by hand; `grid_path` says where), `refused` or `needs-owner`.
+  not the promoter, so no manifest covers it: under the owner's data root or home, or copied
+  into the shared tree by hand; `grid_path` says where), `refused` or `needs-owner`.
 - `result`: free text, the dated result line README.md describes; empty until there is one.
 - `history`: the steps taken so far, oldest first, each `{"date": "YYYY-MM-DD", "step": ...,
   "note": ...}` with the step one of `researched`, `asked`, `granted`, `fetching`, `fetched`,
@@ -56,12 +60,16 @@ The fields this repository adds:
   and `priority` (a whole number, the order in which annotation takes the sets), both optional.
 
 The counts the census adds up are read from `counts` under the standard keys `subjects`,
-`xray_images`, `videos` (a run, clip, recording or sweep counted once), `ct_volumes` and `bytes`,
-and, where a record has none of these, under the names the records already use (`patients`,
-`films`, `frames`, `clips`, `cts`, `size_gb` and the rest, tools/census.py); the size on the grid
-is `measured.bytes`, else the bytes of the promoter's result line, else the record's own size. A
-record that gives a count under a standard key gives a number there; anything the census cannot
-read is listed on the census page under what the records still lack, to be written once, here.
+`xray_images` (a still image counted once), `videos` (a run, clip, recording or sweep counted
+once), `run_frames` (the frames inside those videos and sweeps, counted apart from still images:
+COBRA2026's 375,618 projections are 692 sweeps), `ct_volumes` and `bytes`, and, where a record has
+none of these, under the names the records already use (`patients`, `films`, `frames`, `clips`,
+`cts`, `size_gb` and the rest, read by the kind of set: in a video or projection set `frames`,
+`projections` and `images` are frames inside runs, and in a CT set only the standard keys name
+X-rays, tools/census.py); the size on the grid is `measured.bytes`, else the bytes of the
+promoter's result line, else the record's own size. A record that gives a count under a standard
+key gives a number there; anything the census cannot read is listed on the census page under what
+the records still lack, to be written once, here.
 
 The pipeline board (tools/pipeline.py; PIPELINE.md on the branch `pipeline`, and the interactive
 pipeline.html on the docs site) is drawn from these fields and nothing else: the status and the
@@ -76,12 +84,16 @@ census.html on the docs site) is folded from the same files: each run of the Cen
 (.github/workflows/census.yml) reads the last census.json and derives a row again only for a
 record that is new or whose content changed since, by the record's sha256, carrying every other
 row as it was, and logs what moved with the date: a record added or removed, a status, a stage, a
-count or a tier changed. It shows the totals, the paired CT and X-ray breakout in tiers (A on the
+count or a tier changed. A change to tools/census.py or tools/pipeline.py, the rules a row is
+derived by, derives every row afresh on the next run, with one line in the log; each record keeps
+the date the census first saw it, even if it is removed and written again, and the date its
+content last changed. It shows the totals, the paired CT and X-ray breakout in tiers (A on the
 grid, B open or granted, C asked or still to ask, D refused or embargoed, E pairs of something
-other than the spine), every dataset with filters, what the records still lack and the log. A
-pair moves from tier to tier by itself as its record's status moves. `bash scripts/check.sh` runs
-`python3 tools/census.py check`, which refuses a pairing block, a standard count or a `measured`
-that does not hold together.
+other than the spine), every dataset with filters, what the records still lack and the log. A pair
+moves from tier to tier by itself as its record's status moves. `bash scripts/check.sh` runs
+`python3 tools/census.py check`, which refuses a pairing block, a standard count, a text field or
+a `measured` that does not hold together, two records with one id, and a record whose id is not
+its file's name.
 
 A collaborator changes `status`, `result` and, after a fetch, `grid_path` and `measured`, and
 replaces a "to confirm on the page" with what the page says; `licence` and `link` change only when

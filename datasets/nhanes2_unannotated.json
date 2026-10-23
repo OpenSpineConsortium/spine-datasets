@@ -2,7 +2,7 @@
  "id": "nhanes2_unannotated",
  "name": "NHANES II cervical and lumbar spine films (NCHS, 1976 to 1980)",
  "group": "films",
- "what": "16,531 digitised cervical and lumbar spine films of the second National Health and Nutrition Examination Survey with no landmarks: the CDC's 17,073 less the 543 of nhanes2_annotated; two files are empty at the source (L00452, L00456)",
+ "what": "16,531 digitised cervical and lumbar spine films of the second National Health and Nutrition Examination Survey with no landmarks: the 17,073 films on disk (the CDC's index lists 17,075, two of them empty at the source, L00452 and L00456) less the 542 that nhanes2_annotated labels, whose 543rd, L00452, survives only in its landmarks file",
  "level_truth": "none in the release",
  "reach": "held",
  "licence": "US government work, public domain (NCHS)",

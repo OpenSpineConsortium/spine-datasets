@@ -2,16 +2,17 @@
 # datasets/<id>.json. Each run folds into the last census, census.json on the
 # branch "census", only the records that are new or whose content changed
 # since, by the sha256 of each record, so no dataset is passed over twice and
-# no record that did not change is read again; the census grows as records
-# are added. It writes census.json, the ledger the next run folds into,
-# CENSUS.md, which GitHub renders, and census.html, the page the docs site
-# serves too (docs.yml). The branch is written the way the pipeline board's
-# is, a commit built from the files alone (hash-object, mktree, commit-tree),
-# here with the commit it read as its parent, so the branch keeps every
-# census as history and a push that finds the branch moved is refused and
-# folded again. It runs on a push to the default branch that changes a
-# record or the scripts, on every issue event, since a task names its
-# record, daily as a fallback, and by hand. The issues are read with
+# no record that did not change is read again; the census grows as records are
+# added. A change to tools/census.py or tools/pipeline.py, the rules a row is
+# derived by, derives every row afresh once. It writes census.json, the ledger
+# the next run folds into, CENSUS.md, which GitHub renders, and census.html,
+# the page the docs site serves too (docs.yml). The branch is written the way
+# the pipeline board's is, a commit built from the files alone (hash-object,
+# mktree, commit-tree), here with the commit it read as its parent, so the
+# branch keeps every census as history and a push that finds the branch moved
+# is refused and folded again. It runs on a push to the default branch that
+# changes a record or the scripts, on every issue event, since a task names
+# its record, daily as a fallback, and by hand. The issues are read with
 # GITHUB_TOKEN alone through gh and handed to the script as a file; a push
 # made with GITHUB_TOKEN starts no workflow. A branch census that holds
 # anything else is the project's own and is left alone.
@@ -78,7 +79,8 @@ jobs:
             fi
             parent=""
             if [ -n "$previous" ]; then
-              git show "$previous:census.json" > "$last" || return 1
+              # A branch with no ledger on it starts the census afresh on top of it.
+              git show "$previous:census.json" > "$last" 2>/dev/null || rm -f "$last"
               parent="-p $previous"
             fi
             python3 tools/census.py render --out "$out" --previous "$last" --issues "$RUNNER_TEMP/issues.json" --repo "$GITHUB_REPOSITORY" || return 1
@@ -104,5 +106,6 @@ jobs:
           elif [ "$status" -eq 2 ]; then
             exit 1
           fi
-          echo "the branch census moved during this run; folding again onto what it holds now"
+          echo "the first try failed, most likely because the branch census moved during this run;"
+          echo "folding again onto what it holds now"
           write_census

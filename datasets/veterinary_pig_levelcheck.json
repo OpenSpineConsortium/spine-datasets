@@ -68,5 +68,5 @@
   }
  ],
  "obstacles": [],
- "next": "none for the fetch: the zips are in the shared tree; the status stays fetching because the review rule counts fetched only with a promoter manifest, which a set behind a login cannot have"
+ "next": "nothing to fetch: the seven zips are in the shared tree, checked against MD5SUMS.txt; unzip as a grid job on the owner's word before any use"
 }

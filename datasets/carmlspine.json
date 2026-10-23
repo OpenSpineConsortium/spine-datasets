@@ -28,6 +28,7 @@
   "subjects": 149,
   "xray_images": 299,
   "videos": 2,
+  "run_frames": 602,
   "ct_volumes": 149,
   "size_gb": 86.834
  },

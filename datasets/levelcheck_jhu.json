@@ -24,9 +24,9 @@
  "reach": "get",
  "grid_path": null,
  "counts": {
-  "subjects": 178,
-  "xray_images": 398,
-  "ct_volumes": 178
+  "subjects": 202,
+  "xray_images": 459,
+  "ct_volumes": 202
  },
  "measured": {},
  "record": "SchwingNet docs/research/xray-dataset-requests.md section 15 (2026-10-21); no record under SchwingNet's data/sources/ existed for this set, so this one was written from that section",

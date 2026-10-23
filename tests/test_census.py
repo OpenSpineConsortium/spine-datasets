@@ -58,9 +58,27 @@ class CountsTest(unittest.TestCase):
     def test_the_records_own_names_are_read_as_the_standard_keys(self):
         counts, unread = census.counts_of(record(counts={"patients": 42, "films": 300, "cts": 40, "size_gb": 1.5,
                                                          "devices": 7}))
-        self.assertEqual(counts, {"subjects": 42, "xray_images": 300, "videos": None, "ct_volumes": 40,
-                                  "bytes": 1500000000})
+        self.assertEqual(counts, {"subjects": 42, "xray_images": 300, "videos": None, "run_frames": None,
+                                  "ct_volumes": 40, "bytes": 1500000000})
         self.assertEqual(unread, ["devices"])
+
+    def test_the_frames_inside_videos_are_counted_apart_from_still_images(self):
+        counts, _ = census.counts_of(record(group="video", counts={"sequences": 1357, "images": 95308}))
+        self.assertEqual((counts["videos"], counts["run_frames"], counts["xray_images"]), (1357, 95308, None))
+
+    def test_a_sweep_set_counts_its_sweeps_and_their_projections(self):
+        counts, _ = census.counts_of(record(group="projections", counts={"videos": 692, "run_frames": 375618}))
+        self.assertEqual((counts["videos"], counts["run_frames"], counts["xray_images"]), (692, 375618, None))
+        counts, _ = census.counts_of(record(group="projections", counts={"projections": 1000}))
+        self.assertEqual((counts["run_frames"], counts["xray_images"]), (1000, None))
+
+    def test_fluoroscopy_shots_are_still_images(self):
+        counts, _ = census.counts_of(record(group="fluoro", counts={"frames": 299, "videos": 2}))
+        self.assertEqual((counts["xray_images"], counts["videos"], counts["run_frames"]), (299, 2, None))
+
+    def test_a_size_is_rounded_to_the_byte_not_cut(self):
+        counts, _ = census.counts_of(record(counts={"size_gb": 33.8}))
+        self.assertEqual(counts["bytes"], 33800000000)
 
     def test_the_standard_key_wins_over_an_alias(self):
         counts, _ = census.counts_of(record(counts={"xray_images": 5, "frames": 900}))
@@ -87,6 +105,20 @@ class CountsTest(unittest.TestCase):
         self.assertEqual(census.licence_kind("PhysioNet Credentialed Health Data License"), "restricted")
         self.assertEqual(census.licence_kind("not recorded"), "unknown")
         self.assertEqual(census.licence_kind(""), "unknown")
+        self.assertEqual(census.licence_kind(None), "unknown")
+        self.assertEqual(census.licence_kind("Creative Commons Attribution 4.0 International"), "open")
+        self.assertEqual(census.licence_kind("IEEE DataPort open access"), "open")
+
+    def test_a_note_in_parentheses_never_makes_a_licence_open(self):
+        self.assertEqual(census.licence_kind(
+            "Zenodo, open; licence to confirm on the page (the held record of the same authors is CC BY 4.0)"),
+            "unknown")
+        self.assertEqual(census.licence_kind("CC BY 4.0 (to confirm on the page)"), "open")
+
+    def test_a_restriction_counts_wherever_the_line_notes_it(self):
+        self.assertEqual(census.licence_kind("Kaggle competition rules (non-commercial)"), "restricted")
+        self.assertEqual(census.licence_kind(
+            "CC BY 4.0 (the article's videos); native DICOM available on reasonable request"), "restricted")
 
     def test_the_size_on_the_grid_is_what_the_landing_pass_measured(self):
         self.assertEqual(census.grid_bytes(record(measured={"bytes": 123})), 123)
@@ -131,16 +163,17 @@ class FoldTest(unittest.TestCase):
 
     def test_the_first_run_starts_the_census(self):
         folded, tally = census.fold(None, self.records(), "2026-10-23")
-        self.assertEqual(tally, {"new": 2, "changed": 0, "carried": 0, "removed": 0})
+        self.assertEqual(tally, {"new": 2, "changed": 0, "rederived": 0, "carried": 0, "removed": 0})
         self.assertEqual([event["kind"] for event in folded["events"]], ["started"])
         self.assertEqual(folded["records"]["second_set"]["first_seen"], "2026-09-30")
         self.assertEqual(folded["records"]["example_set"]["last_changed"], "2026-10-23")
+        self.assertEqual(folded["seen"], {"example_set": "2026-10-01", "second_set": "2026-09-30"})
 
     def test_an_unchanged_record_is_carried_and_never_read_again(self):
         first, _ = census.fold(None, self.records(), "2026-10-23")
         with mock.patch.object(census, "row_of", side_effect=AssertionError("read again")):
             second, tally = census.fold(first, self.records(), "2026-10-24")
-        self.assertEqual(tally, {"new": 0, "changed": 0, "carried": 2, "removed": 0})
+        self.assertEqual(tally, {"new": 0, "changed": 0, "rederived": 0, "carried": 2, "removed": 0})
         self.assertEqual(second["records"], first["records"])
         self.assertEqual(second["events"], first["events"])
 
@@ -181,13 +214,45 @@ class FoldTest(unittest.TestCase):
         self.assertEqual(second["records"]["third_set"]["first_seen"], "2026-10-24")
         self.assertNotIn("example_set", second["records"])
 
+    def test_a_record_removed_and_written_again_keeps_its_first_date(self):
+        first, _ = census.fold(None, [record()], "2026-10-23")
+        second, _ = census.fold(first, [], "2026-10-24")
+        third, tally = census.fold(second, [record()], "2026-10-25")
+        self.assertEqual(tally["new"], 1)
+        self.assertEqual(third["records"]["example_set"]["first_seen"], "2026-10-01")
+        self.assertEqual([event["kind"] for event in third["events"]], ["started", "removed", "added"])
+
+    def test_one_id_in_two_records_is_refused(self):
+        with self.assertRaisesRegex(ValueError, "example_set"):
+            census.fold(None, [record(), record(name="the same id again")], "2026-10-23")
+
     def test_new_rules_derive_every_row_afresh_with_one_event(self):
-        first, _ = census.fold(None, self.records(), "2026-10-23")
-        first["rules"] = census.RULES - 1
-        second, tally = census.fold(first, self.records(), "2026-10-24")
-        self.assertEqual(tally["changed"], 2)
-        self.assertEqual(second["rules"], census.RULES)
+        first, _ = census.fold(None, self.records(), "2026-10-23", rules="old")
+        second, tally = census.fold(first, self.records(), "2026-10-24", rules="new")
+        self.assertEqual((tally["rederived"], tally["changed"], tally["carried"]), (2, 0, 0))
+        self.assertEqual(second["rules"], "new")
         self.assertEqual([event["kind"] for event in second["events"]], ["started", "rules"])
+        # The records did not change, so neither does the date each last changed.
+        self.assertEqual(second["records"]["example_set"]["last_changed"], "2026-10-23")
+
+    def test_a_record_that_changes_with_the_rules_is_still_logged(self):
+        first, _ = census.fold(None, [record()], "2026-10-23", rules="old")
+        second, tally = census.fold(first, [record(status="granted")], "2026-10-24", rules="new")
+        self.assertEqual(tally["changed"], 1)
+        kinds = [(event["id"], event["kind"]) for event in second["events"]]
+        self.assertEqual(kinds, [("", "started"), ("example_set", "changed"), ("", "rules")])
+        self.assertEqual(second["records"]["example_set"]["last_changed"], "2026-10-24")
+
+    def test_the_rules_are_the_code_of_the_census_and_the_pipeline(self):
+        self.assertIn(Path(pipeline.__file__).resolve(), census.RULES_FILES)
+        self.assertIn(Path(census.__file__).resolve(), census.RULES_FILES)
+        with tempfile.TemporaryDirectory() as folder:
+            one, two = Path(folder) / "one.py", Path(folder) / "two.py"
+            one.write_text("A = 1\n")
+            two.write_text("B = 2\n")
+            before = census.rules_of((one, two))
+            two.write_text("B = 3\n")
+            self.assertNotEqual(census.rules_of((one, two)), before)
 
     def test_anything_but_a_census_starts_afresh(self):
         folded, tally = census.fold({"message": "Not Found"}, self.records(), "2026-10-23")
@@ -214,7 +279,7 @@ class FileTest(unittest.TestCase):
         ]
         folded, _ = census.fold(None, records, "2026-10-23")
         tasks, pending = census.tasks_of(issues, records)
-        return census.census_file(folded, tasks, pending, "2026-10-23")
+        return census.census_file(folded, tasks, pending, "2026-10-23", "o/r")
 
     def test_the_totals(self):
         totals = self.data()["totals"]
@@ -243,6 +308,8 @@ class FileTest(unittest.TestCase):
         later = dict(data, generated="2026-10-24")
         self.assertTrue(census.same(data, later))
         self.assertFalse(census.same(data, dict(later, tasks={})))
+        # The pages link to the repository, so a new name is a census to write.
+        self.assertFalse(census.same(data, dict(later, repo="o/renamed")))
 
     def test_markdown(self):
         text = census.render_markdown(self.data(), "o/r")
@@ -262,6 +329,27 @@ class FileTest(unittest.TestCase):
             {**self.data(), "generated": "<script>alert(1)</script>"}, "o/r"))
         self.assertTrue(text.isascii())
 
+    def test_nothing_a_record_or_a_task_says_runs_on_the_page(self):
+        records = [record(name="<script>alert(1)</script>", what='"><img src=x onerror=alert(1)>',
+                          link="javascript:alert(1)", pairing=pairing(region="<b>bold</b>"))]
+        asked = issue(8, "Record: datasets/missing_pair.json", ["todo", "paired"])
+        asked["title"] = "<script>alert(2)</script>"
+        folded, _ = census.fold(None, records, "2026-10-23")
+        tasks, pending = census.tasks_of([asked], records)
+        text = census.render_html(census.census_file(folded, tasks, pending, "2026-10-23", "o/r"), "o/r")
+        for unsafe in ("<script>alert", "<img", "javascript:", "<b>bold"):
+            self.assertNotIn(unsafe, text)
+        self.assertIn("&lt;script&gt;alert(1)&lt;/script&gt;", text)
+
+    def test_a_null_licence_or_a_number_for_a_name_stops_nothing(self):
+        odd = record(licence=None, name=5, what=None)
+        row = census.row_of(odd)
+        self.assertEqual((row["name"], row["licence"], row["licence_kind"]), ("example_set", "", "unknown"))
+        self.assertIn(("example_set", "the licence is still to confirm on the source's page"), census.gaps([row]))
+        text = "\n".join(census.problems([odd]))
+        self.assertIn("example_set: name must be text", text)
+        self.assertIn("example_set: licence must say", text)
+
 
 class CheckTest(unittest.TestCase):
     def test_the_repository_records_pass(self):
@@ -280,6 +368,18 @@ class CheckTest(unittest.TestCase):
 
     def test_a_good_pairing_passes(self):
         self.assertEqual(census.problems([record(pairing=pairing(priority=2))]), [])
+
+    def test_the_repository_files_pass(self):
+        self.assertEqual(census.file_problems(), [])
+
+    def test_one_id_in_two_files_and_an_id_unlike_its_files_name_are_refused(self):
+        with tempfile.TemporaryDirectory() as folder:
+            folder = Path(folder)
+            (folder / "example_set.json").write_text(json.dumps(record()), encoding="ascii")
+            (folder / "copy_of_set.json").write_text(json.dumps(record()), encoding="ascii")
+            found = census.file_problems(folder)
+        self.assertIn("copy_of_set.json: its id is 'example_set', not the file's name 'copy_of_set'", found)
+        self.assertIn("copy_of_set.json, example_set.json: 2 records with the one id 'example_set'", found)
 
 
 class CommandTest(unittest.TestCase):

@@ -26,7 +26,8 @@
  "grid_path": "/rs/rs_grp_oschome/go2432/data/cobra2026",
  "counts": {
   "subjects": 692,
-  "xray_images": 375618,
+  "videos": 692,
+  "run_frames": 375618,
   "ct_volumes": 692,
   "elekta_cases": 467,
   "varian_cases": 225,

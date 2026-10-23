@@ -6,7 +6,7 @@
   "spine": true,
   "region": "pelvis, hip and lower lumbar spine",
   "xray": "366 frames with registered poses (H5), and 2,659 vendor frames",
-  "ct": "a CT of each specimen (19 CT files in the vendor deposit)",
+  "ct": "6 CTs with the H5 set, one per specimen, and 19 CT files in the vendor deposit",
   "subjects": "6 cadaver specimens",
   "pose": "shipped for the 366 H5 frames",
   "masks": "7 classes in 3D and per frame in 2D; the vertebrae are one class, with the upper sacrum",

@@ -103,16 +103,18 @@ docs/research/same-ci-for-every-contributor.md says which rules GitHub enforces 
 ## How to record a result on the task
 
 One comment on the issue and the same line in datasets/<id>.json's `result` field, dated, in one
-of the shapes README.md lists (on the grid at <path> with the job id; requested, waiting;
-granted, fetch pending; refused, with the reason; needs the owner). Set `status` to the matching
-word (fetched, requested, granted, refused, needs-owner), add one entry to the record's `history`
-(the date, the step, one line) and rewrite its `obstacles` and `next`, so the pipeline board
-(PIPELINE.md on the branch `pipeline`) shows the move, and keep the record's licence and link
-exactly as they are. A fetch through the promoter leaves PROMOTED.json beside raw/, and the
-promoter's own pull request records the result, so a manifest's pull request stops at
-`fetching`. The
-pull request carries the record change and nothing of the data: no image, no listing of patient
-identifiers, no token, no address of a private person beyond what a public page prints.
+of the shapes README.md lists (on the grid at <path> with the job id; requested, waiting; granted,
+fetch pending; refused, with the reason; needs the owner). Set `status` to the matching word
+(fetched, requested, granted, refused, needs-owner, or held for a set the owner's own chain put on
+the grid, with `grid_path` saying where under the owner's grid root or home or the shared tree,
+which the review flags for whoever merges to check against a status listing), add one entry to the
+record's `history` (the date, the step, one line) and rewrite its `obstacles` and `next`, so the
+pipeline board (PIPELINE.md on the branch `pipeline`) shows the move, and keep the record's
+licence and link exactly as they are. A fetch through the promoter leaves PROMOTED.json beside
+raw/, and the promoter's own pull request records the result, so a manifest's pull request stops
+at `fetching`. The pull request carries the record change and nothing of the data: no image, no
+listing of patient identifiers, no token, no address of a private person beyond what a public page
+prints.
 
 ## How to ask for a new task
 
