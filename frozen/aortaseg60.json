@@ -1,0 +1,75 @@
+{
+ "bytes": 15929004557,
+ "depth": 1,
+ "extensions": {
+  "(none)": {
+   "bytes": 381176,
+   "files": 62
+  },
+  "(other)": {
+   "bytes": 8328,
+   "files": 63
+  },
+  ".json": {
+   "bytes": 220,
+   "files": 1
+  },
+  ".nii.gz": {
+   "bytes": 15928614833,
+   "files": 184
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 310,
+ "folders": [
+  {
+   "bytes": 1108,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "15b5b2dda338bc7c14edbf9e89d1729ed5dd47af33f1fee48d18702af21b31b1"
+  },
+  {
+   "bytes": 15929003449,
+   "files": 308,
+   "path": "raw",
+   "tree_sha256": "eb45c01152dc78de2375e0cece33ffa056441608c271473bdfb1c81f3b4faf1e"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:25:44Z",
+ "id": "aortaseg60",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 61
+  },
+  {
+   "depth": 4,
+   "files": 60,
+   "folders": 180
+  },
+  {
+   "depth": 5,
+   "files": 182,
+   "folders": 65
+  },
+  {
+   "depth": 6,
+   "files": 66,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "ecde438065ae57ec7b46a87b59223f4ca87889a578cba0f3f5c997c498655901"
+}

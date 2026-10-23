@@ -1,0 +1,80 @@
+{
+ "bytes": 8668721317,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 35424,
+   "files": 1
+  },
+  ".csv": {
+   "bytes": 12416,
+   "files": 1
+  },
+  ".dcm": {
+   "bytes": 8668672674,
+   "files": 21220
+  },
+  ".json": {
+   "bytes": 237,
+   "files": 1
+  },
+  ".yaml": {
+   "bytes": 566,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 21224,
+ "folders": [
+  {
+   "bytes": 35661,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "dbfc087964ae8d6fdb6cfa1407d6ba2a378e6f5bafe9058510a2bf4f2e5265d0"
+  },
+  {
+   "bytes": 12416,
+   "files": 1,
+   "path": "meta",
+   "tree_sha256": "b39f8894b5ae490cc411c45a7def9bdc07a69f6d641da3ca49766545093f7789"
+  },
+  {
+   "bytes": 8668672674,
+   "files": 21220,
+   "path": "raw",
+   "tree_sha256": "7d70d92448f4a64d61feb6f295039f63fa9f76fb6be11df7373ff9df50e170d2"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:50:08Z",
+ "id": "idc_midrc_ricord_1b",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 3
+  },
+  {
+   "depth": 2,
+   "files": 3,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 117
+  },
+  {
+   "depth": 4,
+   "files": 0,
+   "folders": 120
+  },
+  {
+   "depth": 5,
+   "files": 21220,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "b244c86422e55e7d98f8ca42fc507c2641ada1e4319a2249a5e08ca831c2afa6"
+}

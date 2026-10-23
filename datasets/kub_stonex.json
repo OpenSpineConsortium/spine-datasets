@@ -19,7 +19,13 @@
   "hospitals": 2,
   "zip_bytes": 20765554562
  },
- "measured": {},
+ "measured": {
+  "bytes": 55328666242,
+  "files": 9648,
+  "tree_sha256": "ceb8ea9a3bbf91c9d40fc055a228a4af3c07902d5ae6d8662a081bb02a32891d",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; an open figshare download (32049369, one zip of 20,765,554,562 bytes), entered in grid/fetch-xray.json as kub_stonex on 2026-10-21 (issue #40); the frontal counterpart of what the registry lacks in volume",
  "route": "download",

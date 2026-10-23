@@ -16,7 +16,13 @@
   "subjects": 364,
   "xray_images": 543
  },
- "measured": {},
+ "measured": {
+  "bytes": 3284647651,
+  "files": 1106,
+  "tree_sha256": "8dc0751f7b7b525b99c169268d330d1559f4d25accd8ea6537b0879b041ffe16",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "SchwingNet data/sources/nhanes2_annotated.json, 2026-10-23",
  "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
  "route": "download",

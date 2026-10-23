@@ -1,0 +1,79 @@
+{
+ "bytes": 102615496477,
+ "depth": 1,
+ "extensions": {
+  "(none)": {
+   "bytes": 41408,
+   "files": 4
+  },
+  "(other)": {
+   "bytes": 1088,
+   "files": 3
+  },
+  ".json": {
+   "bytes": 40599,
+   "files": 2
+  },
+  ".md": {
+   "bytes": 3188,
+   "files": 2
+  },
+  ".nii.gz": {
+   "bytes": 102615410194,
+   "files": 3056
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 3067,
+ "folders": [
+  {
+   "bytes": 1076,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "0939d78ec54ac87e4cd974882b4cb9eeab1c7c74884264ec4b3ed8a53504a449"
+  },
+  {
+   "bytes": 102615495401,
+   "files": 3065,
+   "path": "raw",
+   "tree_sha256": "c93e87a7462b65c121447c64ccf8fc13fa4160f86268f2c2a5a8e677e5b8c554"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T13:28:53Z",
+ "id": "amos22",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 3
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 6
+  },
+  {
+   "depth": 4,
+   "files": 1868,
+   "folders": 6
+  },
+  {
+   "depth": 5,
+   "files": 965,
+   "folders": 5
+  },
+  {
+   "depth": 6,
+   "files": 232,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "b7dbf111187ea13a87abacd6eaee64b409d5a44d47abf949b75115a92620e712"
+}

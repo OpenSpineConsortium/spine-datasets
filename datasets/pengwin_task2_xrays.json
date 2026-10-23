@@ -31,7 +31,13 @@
   "cts": 100,
   "poses_per_ct": 500
  },
- "measured": {},
+ "measured": {
+  "bytes": 34950751395,
+  "files": 6,
+  "tree_sha256": "526ce347196e987a4d3218911c6ca7be70ec3b41bc0c74d62cb4a065208ccdd9",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; a 2D product of the challenge's CTs already on the grid; the only large public DRR set rendered with real C-arm poses and simulated hardware, so pelvic-ring and sacral appearance under instruments without any patient",
  "route": "download",

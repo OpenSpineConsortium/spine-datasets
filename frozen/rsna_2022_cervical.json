@@ -1,0 +1,50 @@
+{
+ "bytes": 203321991870,
+ "depth": 1,
+ "extensions": {
+  ".csv": {
+   "bytes": 116,
+   "files": 1
+  },
+  ".log": {
+   "bytes": 3642712,
+   "files": 1
+  },
+  ".zip": {
+   "bytes": 203318349042,
+   "files": 2
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 4,
+ "folders": [
+  {
+   "bytes": 203321991870,
+   "files": 4,
+   "path": "raw",
+   "tree_sha256": "7fc04c55555c5663d234f40781d0365de4b81a9a2989100c79af33c8aa5f0e3e"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:10:49Z",
+ "id": "rsna_2022_cervical",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 1
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 4,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "62b7448a469f4ef392bcf060869359414c14de5e41077b6aa9e78fd0eadde2a8"
+}

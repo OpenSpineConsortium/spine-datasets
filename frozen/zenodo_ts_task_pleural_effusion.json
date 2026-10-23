@@ -1,0 +1,65 @@
+{
+ "bytes": 9012772615,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 182,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 750,
+   "files": 2
+  },
+  ".nii.gz": {
+   "bytes": 9012770934,
+   "files": 1200
+  },
+  ".yaml": {
+   "bytes": 749,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 1204,
+ "folders": [
+  {
+   "bytes": 434,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "fb1ec2dd5b1bd4d76740ae0e695680f7fa7f0d115a67cefbae3ae48dbee68f52"
+  },
+  {
+   "bytes": 9012771432,
+   "files": 1201,
+   "path": "raw",
+   "tree_sha256": "372031dafd431850e9b13cdc382d53ad77659872823b3ef315164a6f3d7091ac"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:17:59Z",
+ "id": "zenodo_ts_task_pleural_effusion",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 1,
+   "folders": 2
+  },
+  {
+   "depth": 4,
+   "files": 1200,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "bf9f94fdc789abc4dbf327349af17827f83934cbc3d5331280881f56dd7c9a88"
+}

@@ -1,0 +1,35 @@
+{
+ "bytes": 9966507748,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 9966507748,
+   "files": 18869
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 18869,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:48:30Z",
+ "id": "idc_tcga_kirc",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 129
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 129
+  },
+  {
+   "depth": 3,
+   "files": 18869,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "adeafa52e24dd626cbc79fcdf5025b01a5624da9fe9d46b9945f826e43d13ba6"
+}

@@ -1,0 +1,82 @@
+{
+ "bytes": 252158307717,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 15945,
+   "files": 1
+  },
+  ".dcm": {
+   "bytes": 133999571650,
+   "files": 264809
+  },
+  ".json": {
+   "bytes": 2603253,
+   "files": 378
+  },
+  ".mha": {
+   "bytes": 1064299,
+   "files": 2
+  },
+  ".nii": {
+   "bytes": 118154980944,
+   "files": 68
+  },
+  ".txt": {
+   "bytes": 71008,
+   "files": 377
+  },
+  ".yaml": {
+   "bytes": 618,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 265636,
+ "folders": [
+  {
+   "bytes": 16188,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "02b759ac9390c4d9e8361eb2c81de7fa4c8e0c055bfd45d651983ae48a96517d"
+  },
+  {
+   "bytes": 252158290911,
+   "files": 265633,
+   "path": "raw",
+   "tree_sha256": "22be156badee9343e3b21ba8657bb173a8584a688d9a06bc93e867a505cfccc9"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:39:34Z",
+ "id": "zenodo_vsd_fullbody",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 105
+  },
+  {
+   "depth": 4,
+   "files": 0,
+   "folders": 377
+  },
+  {
+   "depth": 5,
+   "files": 265633,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "0199d0d274a308bcf5cf3eaaafd7f9904b1d7e6c1f5980f2ac892ed1bc5de797"
+}

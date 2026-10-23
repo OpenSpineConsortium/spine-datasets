@@ -1,0 +1,86 @@
+{
+ "bytes": 3691537837,
+ "depth": 1,
+ "extensions": {
+  "(none)": {
+   "bytes": 70298,
+   "files": 2
+  },
+  ".json": {
+   "bytes": 1972116410,
+   "files": 4966
+  },
+  ".npy": {
+   "bytes": 9695616,
+   "files": 3
+  },
+  ".pdf": {
+   "bytes": 1700335,
+   "files": 1
+  },
+  ".png": {
+   "bytes": 1647353756,
+   "files": 4963
+  },
+  ".py": {
+   "bytes": 37950,
+   "files": 6
+  },
+  ".xlsx": {
+   "bytes": 43286370,
+   "files": 3
+  },
+  ".zip": {
+   "bytes": 17277102,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 9945,
+ "folders": [
+  {
+   "bytes": 9699537,
+   "files": 6,
+   "path": "derived",
+   "tree_sha256": "c4621c78af3feb989bb10f28b14852f29789a780b2aab6e7dd72b600ab0a9e62"
+  },
+  {
+   "bytes": 3681838300,
+   "files": 9939,
+   "path": "raw",
+   "tree_sha256": "f725a07259e57573fdbbd7a1660fb04855b5f47d7dd7fbd846bfc0a501aab34e"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:35:08Z",
+ "id": "csxa",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 3,
+   "files": 3,
+   "folders": 6
+  },
+  {
+   "depth": 4,
+   "files": 11,
+   "folders": 3
+  },
+  {
+   "depth": 5,
+   "files": 9931,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "9e5f1316d707844ba2b7a7ed524875ff8eff19887f2c60d2c4863e42ed12c831"
+}

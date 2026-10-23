@@ -1,0 +1,61 @@
+{
+ "bytes": 194439363448,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 612,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 219,
+   "files": 1
+  },
+  ".nii.gz": {
+   "bytes": 194439362617,
+   "files": 2238
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 2240,
+ "folders": [
+  {
+   "bytes": 831,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "f70378c8cd1522ac936d627259f21b4086597290ade93d9856672c0186000269"
+  },
+  {
+   "bytes": 194439362617,
+   "files": 2238,
+   "path": "raw",
+   "tree_sha256": "2bceedff5f1671b28a942d01a7a75ba554434127e71b1ced5a40d18387662fc2"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:18:57Z",
+ "id": "panorama",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 4
+  },
+  {
+   "depth": 3,
+   "files": 1123,
+   "folders": 2
+  },
+  {
+   "depth": 4,
+   "files": 1115,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "a858cae8f54733c0a6f5c23fc43d34851625e17b370c1e21d594c66284e20471"
+}

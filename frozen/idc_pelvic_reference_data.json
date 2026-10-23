@@ -1,0 +1,35 @@
+{
+ "bytes": 4499041132,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 4499041132,
+   "files": 8540
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 8540,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:25:35Z",
+ "id": "idc_pelvic_reference_data",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 58
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 58
+  },
+  {
+   "depth": 3,
+   "files": 8540,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "24cd647196aa879fea48a7dc5edc10ffe3ecffa3b6f16cea5dd9bf92599a9032"
+}

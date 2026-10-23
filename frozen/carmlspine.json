@@ -1,0 +1,110 @@
+{
+ "bytes": 103686719641,
+ "depth": 1,
+ "extensions": {
+  "(none)": {
+   "bytes": 0,
+   "files": 298
+  },
+  "(other)": {
+   "bytes": 1402851640,
+   "files": 706
+  },
+  ".bin": {
+   "bytes": 26,
+   "files": 1
+  },
+  ".csv": {
+   "bytes": 75112,
+   "files": 5
+  },
+  ".dcm": {
+   "bytes": 21944235484,
+   "files": 58911
+  },
+  ".json": {
+   "bytes": 1268839125,
+   "files": 143992
+  },
+  ".md": {
+   "bytes": 3945,
+   "files": 2
+  },
+  ".nii.gz": {
+   "bytes": 15286622120,
+   "files": 2981
+  },
+  ".npy": {
+   "bytes": 2114187264,
+   "files": 2016
+  },
+  ".npz": {
+   "bytes": 14548339446,
+   "files": 13
+  },
+  ".png": {
+   "bytes": 31495040991,
+   "files": 125525
+  },
+  ".pt": {
+   "bytes": 44826386,
+   "files": 1
+  },
+  ".raw": {
+   "bytes": 1486,
+   "files": 2
+  },
+  ".tsv": {
+   "bytes": 2617,
+   "files": 1
+  },
+  ".txt": {
+   "bytes": 79746,
+   "files": 3
+  },
+  ".zip": {
+   "bytes": 15581614253,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 334458,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:41:32Z",
+ "id": "carmlspine",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 19,
+   "folders": 18
+  },
+  {
+   "depth": 2,
+   "files": 2026,
+   "folders": 416
+  },
+  {
+   "depth": 3,
+   "files": 4208,
+   "folders": 613
+  },
+  {
+   "depth": 4,
+   "files": 67391,
+   "folders": 765
+  },
+  {
+   "depth": 5,
+   "files": 225818,
+   "folders": 290
+  },
+  {
+   "depth": 6,
+   "files": 34996,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "08e3b8cc127d3c59cf774e2e8fd36efcf91be3acc7cbae3d017b9acabdff7b10"
+}

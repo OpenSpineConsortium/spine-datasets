@@ -1,0 +1,61 @@
+{
+ "bytes": 20313374662,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 152,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 218,
+   "files": 1
+  },
+  ".nii.gz": {
+   "bytes": 20313374292,
+   "files": 220
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 222,
+ "folders": [
+  {
+   "bytes": 370,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "801ff7aca60e58c19e3c0ee96f7264a53585fb6d0a4295ddde9fc285a49da158"
+  },
+  {
+   "bytes": 20313374292,
+   "files": 220,
+   "path": "raw",
+   "tree_sha256": "feeb95c6cda14b6262f6d3b3e5eaf7cd09253f0370a6ddf128f2586f06c7f6c1"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:09:25Z",
+ "id": "barts_crl",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 1
+  },
+  {
+   "depth": 4,
+   "files": 220,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "418e1e5d7955aae9952aa1dc120edb83f08b5fe99d71ae0d6e4fec43df411597"
+}

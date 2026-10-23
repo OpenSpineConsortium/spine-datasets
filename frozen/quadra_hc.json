@@ -1,0 +1,85 @@
+{
+ "bytes": 20413498578,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 155,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 219,
+   "files": 1
+  },
+  ".nii.gz": {
+   "bytes": 20413417646,
+   "files": 960
+  },
+  ".xlsx": {
+   "bytes": 80558,
+   "files": 4
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 966,
+ "folders": [
+  {
+   "bytes": 374,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "de78e025a3837893fbbf0c3bb773f562766928f49b56e562a0f17fb76811458b"
+  },
+  {
+   "bytes": 20413498204,
+   "files": 964,
+   "path": "raw",
+   "tree_sha256": "ccb8651ca14ce83cd160aa18e789d408e2d4e6dafbd35f9e2bc056f83193a5e1"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:21:48Z",
+ "id": "quadra_hc",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 1
+  },
+  {
+   "depth": 4,
+   "files": 4,
+   "folders": 1
+  },
+  {
+   "depth": 5,
+   "files": 0,
+   "folders": 48
+  },
+  {
+   "depth": 6,
+   "files": 0,
+   "folders": 96
+  },
+  {
+   "depth": 7,
+   "files": 192,
+   "folders": 96
+  },
+  {
+   "depth": 8,
+   "files": 768,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "5ad453f90eea840b7308aac2912cd1feb78b26425439601c53dee049875a0617"
+}

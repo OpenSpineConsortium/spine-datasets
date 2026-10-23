@@ -1,0 +1,41 @@
+{
+ "bytes": 84067545368,
+ "depth": 1,
+ "extensions": {
+  ".jpg": {
+   "bytes": 218547,
+   "files": 1
+  },
+  ".zip": {
+   "bytes": 84067326821,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 2,
+ "folders": [
+  {
+   "bytes": 84067545368,
+   "files": 2,
+   "path": "raw",
+   "tree_sha256": "5994c6e755dfa64e0709f344fef0e2000a6897f2cfe6c778225b239c8393c451"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:48:44Z",
+ "id": "zenodo_unitochest",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 1
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "baa668122a84a749fc76ac521761169d44b309727c70502664ee83b12c58e2de"
+}

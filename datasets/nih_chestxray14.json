@@ -18,7 +18,13 @@
   "patients": 30805,
   "rsna_subset_films": 30000
  },
- "measured": {},
+ "measured": {
+  "bytes": 45079872841,
+  "files": 14,
+  "tree_sha256": "89336b8afb203f80b7b49a1dc969c94a18ab38dbc174c429273d390c65757612",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; open (NIH) and Kaggle competition rules (RSNA); volume with no agreement, no laterals",
  "route": "download",

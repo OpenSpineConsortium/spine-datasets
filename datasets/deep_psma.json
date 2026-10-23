@@ -38,7 +38,13 @@
   "ct_volumes": 53,
   "size_gb": 24.07
  },
- "measured": {},
+ "measured": {
+  "bytes": 24253086312,
+  "files": 1507,
+  "tree_sha256": "3961322c9d39c3260df9c1c96c6d0421ac1175a9f586390ab983bdd6a0a073b1",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-24 from Zenodo in the late tier-1 launch of 2026-09-24; 53 CTs",
  "route": "download",

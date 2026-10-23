@@ -1,0 +1,108 @@
+{
+ "bytes": 202680383788,
+ "depth": 1,
+ "extensions": {
+  "(none)": {
+   "bytes": 1061,
+   "files": 1
+  },
+  ".csv": {
+   "bytes": 148947,
+   "files": 3
+  },
+  ".json": {
+   "bytes": 14100849,
+   "files": 4379
+  },
+  ".log": {
+   "bytes": 12619,
+   "files": 2
+  },
+  ".md": {
+   "bytes": 46923,
+   "files": 3
+  },
+  ".nii.gz": {
+   "bytes": 199347725494,
+   "files": 2438
+  },
+  ".npy": {
+   "bytes": 1786760960,
+   "files": 4598
+  },
+  ".npz": {
+   "bytes": 381134608,
+   "files": 21
+  },
+  ".png": {
+   "bytes": 266451243,
+   "files": 1234
+  },
+  ".py": {
+   "bytes": 12688,
+   "files": 2
+  },
+  ".txt": {
+   "bytes": 75443,
+   "files": 3
+  },
+  ".zip": {
+   "bytes": 883912953,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 12685,
+ "folders": [
+  {
+   "bytes": 196195055488,
+   "files": 2417,
+   "path": "converted",
+   "tree_sha256": "143c941ccf005daf6a79ee08da05ba8b1634d6647021d9b164e6ff5bd002ab17"
+  },
+  {
+   "bytes": 6485182385,
+   "files": 10266,
+   "path": "derived",
+   "tree_sha256": "21f7734ee15b50061d5ec60bd93ecf1d03980388453f257dcd6104b5a8ca9efe"
+  },
+  {
+   "bytes": 145915,
+   "files": 2,
+   "path": "meta",
+   "tree_sha256": "5c6c6d57a7d116dfb9d03c2663a4fee3b85a9c30a0491d2d6f9c0c9fb52062e4"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:32:48Z",
+ "id": "ctspinopelvic1k",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 3
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 16
+  },
+  {
+   "depth": 3,
+   "files": 41,
+   "folders": 27
+  },
+  {
+   "depth": 4,
+   "files": 11376,
+   "folders": 15
+  },
+  {
+   "depth": 5,
+   "files": 1266,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "ac2828b37738f05f1ca2fc8b8cfc89b9037b82898e4f351b766da3e407c05272"
+}

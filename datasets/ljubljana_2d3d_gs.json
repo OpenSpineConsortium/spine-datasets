@@ -42,7 +42,13 @@
   "xray_images": 18,
   "ct_volumes": 5
  },
- "measured": {},
+ "measured": {
+  "bytes": 306504065,
+  "files": 181,
+  "tree_sha256": "e8bd19d69c841e5b3448c39374998e157c8cb10382c8e86576bc51baaabe65c5",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "SchwingNet data/sources/ljubljana_2d3d_gs.json, 2026-10-23",
  "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
  "route": "download",

@@ -16,7 +16,13 @@
   "xray_images": 10466,
   "studies": 5000
  },
- "measured": {},
+ "measured": {
+  "bytes": 114749095458,
+  "files": 58116,
+  "tree_sha256": "8750850e89cb150f4194936876a8ee0e7ead34a10d049f9b6ce2d6efd2e40554",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "SchwingNet data/sources/vindr_spinexr.json, 2026-10-23",
  "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
  "route": "agreement",

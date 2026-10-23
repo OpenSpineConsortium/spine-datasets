@@ -38,7 +38,13 @@
   "ct_volumes": 7649,
   "size_gb": 570.7
  },
- "measured": {},
+ "measured": {
+  "bytes": 570557160234,
+  "files": 9264,
+  "tree_sha256": "e1aab7e4d9f7b4f7190f4e2b48746460011da19e8a9c9c0630b56102c20a50cb",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-23 from Hugging Face in the first tier-1 launch of 2026-09-23; 40/40 archives; 7,649 CTs",
  "route": "download",

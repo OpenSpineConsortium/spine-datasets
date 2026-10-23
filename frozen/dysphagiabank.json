@@ -1,0 +1,49 @@
+{
+ "bytes": 19557720024,
+ "depth": 1,
+ "extensions": {
+  "(none)": {
+   "bytes": 6438,
+   "files": 1
+  },
+  "(other)": {
+   "bytes": 27601,
+   "files": 2
+  },
+  ".log": {
+   "bytes": 107,
+   "files": 1
+  },
+  ".mp4": {
+   "bytes": 19557379475,
+   "files": 87
+  },
+  ".pdf": {
+   "bytes": 301234,
+   "files": 1
+  },
+  ".tsv": {
+   "bytes": 3939,
+   "files": 1
+  },
+  ".txt": {
+   "bytes": 1230,
+   "files": 2
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 95,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:09:54Z",
+ "id": "dysphagiabank",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 95,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "96862da03af87c88f891891b7f0c2ff1c18b5a56f6353f5bf339e58383d4d374"
+}

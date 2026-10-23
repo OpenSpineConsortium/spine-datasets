@@ -45,7 +45,13 @@
  "counts": {
   "ct_volumes": 660
  },
- "measured": {},
+ "measured": {
+  "bytes": 156899015256,
+  "files": 750,
+  "tree_sha256": "2c734244e8a6345e73057c85d2c55d7e1b7dba77add8a8b7b8356a2d315c443d",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "SchwingNet data/sources/ctspine1k_ctpelvic1k_ribfrac.json, split into its three sets, 2026-10-23",
  "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
  "route": "download",

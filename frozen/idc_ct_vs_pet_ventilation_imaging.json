@@ -1,0 +1,35 @@
+{
+ "bytes": 1792570632,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 1792570632,
+   "files": 3397
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 3397,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:33:42Z",
+ "id": "idc_ct_vs_pet_ventilation_imaging",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 20
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 20
+  },
+  {
+   "depth": 3,
+   "files": 3397,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "3f5385de3201566647c3d7e511b69337fe6a72e785ab9884208c3a9a5e6af496"
+}

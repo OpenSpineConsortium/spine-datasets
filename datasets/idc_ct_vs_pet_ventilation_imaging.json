@@ -39,7 +39,13 @@
   "ct_volumes": 20,
   "size_gb": 1.8
  },
- "measured": {},
+ "measured": {
+  "bytes": 1792570632,
+  "files": 3397,
+  "tree_sha256": "3f5385de3201566647c3d7e511b69337fe6a72e785ab9884208c3a9a5e6af496",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-23 through IDC in the first tier-1 launch of 2026-09-23, 20 series verified; the ranking's refusals: not a regularly spaced 3-D volume 20",
  "route": "download",

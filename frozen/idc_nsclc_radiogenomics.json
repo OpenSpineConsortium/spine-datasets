@@ -1,0 +1,80 @@
+{
+ "bytes": 90920028002,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 206929,
+   "files": 1
+  },
+  ".csv": {
+   "bytes": 71054,
+   "files": 1
+  },
+  ".dcm": {
+   "bytes": 90919749206,
+   "files": 171826
+  },
+  ".json": {
+   "bytes": 242,
+   "files": 1
+  },
+  ".yaml": {
+   "bytes": 571,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 171830,
+ "folders": [
+  {
+   "bytes": 207171,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "b1d7bbce83853be1baf6b2ef9bb103002701c8267bbe46cafe6161c451dd3b15"
+  },
+  {
+   "bytes": 71054,
+   "files": 1,
+   "path": "meta",
+   "tree_sha256": "82500c7c55eee812f056edae00df331d5d9d04c33ecaf3616d38a19817c634d8"
+  },
+  {
+   "bytes": 90919749206,
+   "files": 171826,
+   "path": "raw",
+   "tree_sha256": "51c4f64d2a94724030739c0e263acf823bd298f74381daf751ce79258c801b76"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:16:24Z",
+ "id": "idc_nsclc_radiogenomics",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 3
+  },
+  {
+   "depth": 2,
+   "files": 3,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 211
+  },
+  {
+   "depth": 4,
+   "files": 0,
+   "folders": 727
+  },
+  {
+   "depth": 5,
+   "files": 171826,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "17f90a65ccfdfc5b6e13a9a116b6c4d826360327cd635545534fca4aa871cde8"
+}

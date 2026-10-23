@@ -1,0 +1,71 @@
+{
+ "bytes": 75937730899,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 603,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 231,
+   "files": 1
+  },
+  ".mha": {
+   "bytes": 38336739965,
+   "files": 215
+  },
+  ".nii.gz": {
+   "bytes": 37600990100,
+   "files": 215
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 432,
+ "folders": [
+  {
+   "bytes": 834,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "17c16a5ab7e78c1b3d8db0d9729911c563a82f721c877eb77a220574e889ac97"
+  },
+  {
+   "bytes": 37600990100,
+   "files": 215,
+   "path": "nifti",
+   "tree_sha256": "3e07983e6174e9807054ce85a90293c5a82d980bd5363c8bf6dcfeca818701c0"
+  },
+  {
+   "bytes": 38336739965,
+   "files": 215,
+   "path": "raw",
+   "tree_sha256": "92ba62e85d6d3fddd15de0dc98513d5b127b61ecdc3e3e460d831ccc31f680ad"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:03:08Z",
+ "id": "kidney_thoraxabdomen",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 3
+  },
+  {
+   "depth": 2,
+   "files": 217,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 4
+  },
+  {
+   "depth": 4,
+   "files": 215,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "1eecd6e5f89cc65619876cb0d59df24b3b5d1a2b58990203969c167115945fb8"
+}

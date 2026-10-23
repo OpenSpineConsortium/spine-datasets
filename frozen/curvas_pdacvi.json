@@ -1,0 +1,66 @@
+{
+ "bytes": 16878618437,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 472,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 222,
+   "files": 1
+  },
+  ".nii.gz": {
+   "bytes": 16878617743,
+   "files": 873
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 875,
+ "folders": [
+  {
+   "bytes": 694,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "c69db625f2e516f7e8e3beeb8249eb917b07a9c643d61014df95e3c8fca75ea1"
+  },
+  {
+   "bytes": 16878617743,
+   "files": 873,
+   "path": "raw",
+   "tree_sha256": "989fe589da8b069ffdd6710eeb25429f94e923b8e88d1d7a0ac2539d50fc8703"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:15:47Z",
+ "id": "curvas_pdacvi",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 3
+  },
+  {
+   "depth": 4,
+   "files": 0,
+   "folders": 109
+  },
+  {
+   "depth": 5,
+   "files": 873,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "491a128114343dc07cf23bcb11826bdb441e7a11f52f2630a2d64ab6adcc6927"
+}

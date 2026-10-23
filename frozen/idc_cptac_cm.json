@@ -1,0 +1,108 @@
+{
+ "bytes": 4231397264,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 4231397264,
+   "files": 8020
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 8020,
+ "folders": [
+  {
+   "bytes": 152985734,
+   "files": 290,
+   "path": "C3L-00275",
+   "tree_sha256": "5fd5cad449708cbf8a669fb50698f427e9a012ede187f9fa8300768e5f865860"
+  },
+  {
+   "bytes": 303741324,
+   "files": 576,
+   "path": "C3N-02040",
+   "tree_sha256": "0e7b6818e7a455c825989067170b7ef790cf2102b3b57b78578f06a2b9bf9178"
+  },
+  {
+   "bytes": 263354988,
+   "files": 499,
+   "path": "C3N-02270",
+   "tree_sha256": "9cc9b5a3732093529bfcf8ed52c23eb47236f384ed84b43fc81279f6c4b3ded3"
+  },
+  {
+   "bytes": 356458390,
+   "files": 676,
+   "path": "C3N-02324",
+   "tree_sha256": "3e38a732ca9645738fa99868f238acb8b45986db407b407914a5ad9d91a0cbd9"
+  },
+  {
+   "bytes": 371406492,
+   "files": 705,
+   "path": "C3N-02330",
+   "tree_sha256": "2ae13d888f5b1f2db60da0f45def33454e1c225832f27ecc24a2593c4513a3d6"
+  },
+  {
+   "bytes": 467109596,
+   "files": 885,
+   "path": "C3N-02633",
+   "tree_sha256": "2c83caa732df080ea026babd81eaea49651ceb54d58f4c44e91db0fffd8ed9fb"
+  },
+  {
+   "bytes": 514091572,
+   "files": 974,
+   "path": "C3N-02679",
+   "tree_sha256": "b97d72116b5ef093ced50ae9b1423dc4f816264a15f9c14504417f69d0d4b813"
+  },
+  {
+   "bytes": 179424588,
+   "files": 340,
+   "path": "C3N-03029",
+   "tree_sha256": "412d126dc784c27d55d6d5693a4d89d83ef4eb7bcb3fa33c670fe634217ccaf2"
+  },
+  {
+   "bytes": 409135888,
+   "files": 776,
+   "path": "C3N-03460",
+   "tree_sha256": "f04b26619c77b18f755d19a5fb3b83482ec15952b90c14e0379e8620039409d0"
+  },
+  {
+   "bytes": 256246796,
+   "files": 485,
+   "path": "C3N-03614",
+   "tree_sha256": "272eab6dd8d720fcbc72a9359a475b1d988574181e09c8d34f2b7e706a100bd5"
+  },
+  {
+   "bytes": 467105486,
+   "files": 885,
+   "path": "C3N-04293",
+   "tree_sha256": "ad545a175641d5bde294365b08d8afa9e74628f512993fe190c58bbb1748a3c3"
+  },
+  {
+   "bytes": 490336410,
+   "files": 929,
+   "path": "C3N-04294",
+   "tree_sha256": "41ce5247bc19a368a54e93e74a89ffa91ffeca7dbdef58e049bfa7a1ee7207fe"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:32:25Z",
+ "id": "idc_cptac_cm",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 12
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 12
+  },
+  {
+   "depth": 3,
+   "files": 8020,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "a6eccebe9a8cf298097855140fada0e1509a904e25e7ad31046f9f63031ffbe0"
+}

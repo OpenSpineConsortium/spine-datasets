@@ -16,7 +16,13 @@
   "subjects": 338,
   "classes": 3
  },
- "measured": {},
+ "measured": {
+  "bytes": 85596630,
+  "files": 6,
+  "tree_sha256": "e276a19f3f8367edc19a4cf54a81eb4a3daf3aedc5324858bb63dac29c363d01",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; new people from a Middle-Eastern centre, with spondylolisthesis cases",
  "route": "download",

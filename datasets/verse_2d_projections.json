@@ -26,7 +26,13 @@
  ],
  "grid_path": "/rs/rs_grp_oschome/go2432/data/verse_2d_projections",
  "counts": {},
- "measured": {},
+ "measured": {
+  "bytes": 4417086105,
+  "files": 16,
+  "tree_sha256": "527744b71331bcf06ecc833b5dfa7534c3c1c3781dfa37392728281dbf73f664",
+  "frozen": "2026-10-23",
+  "by": "tools/freeze.py"
+ },
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; its people are already in the v9 base (verse), so train-side only: a cheap extra render arm or a sanity check of the project's own VerSe renders",
  "route": "download",

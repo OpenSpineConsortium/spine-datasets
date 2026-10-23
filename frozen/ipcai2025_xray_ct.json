@@ -1,0 +1,25 @@
+{
+ "bytes": 6670978774,
+ "depth": 1,
+ "extensions": {
+  ".zip": {
+   "bytes": 6670978774,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 1,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:51:29Z",
+ "id": "ipcai2025_xray_ct",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "7693d9e93be98e5b419c8513b75cd5bd0e8a61ef9455748b67216f785a82ae41"
+}

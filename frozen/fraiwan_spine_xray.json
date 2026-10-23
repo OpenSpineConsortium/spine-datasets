@@ -1,0 +1,37 @@
+{
+ "bytes": 85596630,
+ "depth": 1,
+ "extensions": {
+  ".zip": {
+   "bytes": 85596630,
+   "files": 6
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 6,
+ "folders": [
+  {
+   "bytes": 85596630,
+   "files": 6,
+   "path": "raw",
+   "tree_sha256": "29cd47ff2e18a72b8a9daf61a4f54b38ffcb1dd3dc0f309db2b2ff7e2f9f7b6f"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:34:21Z",
+ "id": "fraiwan_spine_xray",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 1
+  },
+  {
+   "depth": 2,
+   "files": 6,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "e276a19f3f8367edc19a4cf54a81eb4a3daf3aedc5324858bb63dac29c363d01"
+}

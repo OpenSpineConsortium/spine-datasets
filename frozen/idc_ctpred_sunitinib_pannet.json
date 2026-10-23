@@ -1,0 +1,35 @@
+{
+ "bytes": 6163724386,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 6163724386,
+   "files": 11689
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 11689,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:52:34Z",
+ "id": "idc_ctpred_sunitinib_pannet",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 34
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 34
+  },
+  {
+   "depth": 3,
+   "files": 11689,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "5b969049ef84f4b7380c1225373a154f1384217f54fb5730592147f9a43ffaba"
+}

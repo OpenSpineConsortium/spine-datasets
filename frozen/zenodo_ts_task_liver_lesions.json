@@ -1,0 +1,65 @@
+{
+ "bytes": 39039571028,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 171,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 675,
+   "files": 2
+  },
+  ".nii.gz": {
+   "bytes": 39039569439,
+   "files": 1684
+  },
+  ".yaml": {
+   "bytes": 743,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 1688,
+ "folders": [
+  {
+   "bytes": 421,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "74e068b5aa82ca470e4fc3879c80a657d8aa142d1afb39edd676714872f5f534"
+  },
+  {
+   "bytes": 39039569864,
+   "files": 1685,
+   "path": "raw",
+   "tree_sha256": "26bcdef5549cf9be316113ae5bca86211f58bffd7b0940215a6c4f97a2a802a9"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:59:25Z",
+ "id": "zenodo_ts_task_liver_lesions",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 1,
+   "folders": 2
+  },
+  {
+   "depth": 4,
+   "files": 1684,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "505ec223026d674b65b85ed5507d3b6762377232f998317abeaa39ed6182d623"
+}
