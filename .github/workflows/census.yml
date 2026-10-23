@@ -5,17 +5,18 @@
 # no record that did not change is read again; the census grows as records are
 # added. A change to tools/census.py or tools/pipeline.py, the rules a row is
 # derived by, derives every row afresh once. It writes census.json, the ledger
-# the next run folds into, CENSUS.md, which GitHub renders, and census.html,
-# the page the docs site serves too (docs.yml). The branch is written the way
-# the pipeline board's is, a commit built from the files alone (hash-object,
-# mktree, commit-tree), here with the commit it read as its parent, so the
-# branch keeps every census as history and a push that finds the branch moved
-# is refused and folded again. It runs on a push to the default branch that
-# changes a record or the scripts, on every issue event, since a task names
-# its record, daily as a fallback, and by hand. The issues are read with
-# GITHUB_TOKEN alone through gh and handed to the script as a file; a push
-# made with GITHUB_TOKEN starts no workflow. A branch census that holds
-# anything else is the project's own and is left alone.
+# the next run folds into, CENSUS.md, which GitHub renders, census.html, the
+# page, and census-ct.html, the CT page with every record that holds CT by
+# region and its masks; the docs site serves both pages too (docs.yml). The
+# branch is written the way the pipeline board's is, a commit built from the
+# files alone (hash-object, mktree, commit-tree), here with the commit it read
+# as its parent, so the branch keeps every census as history and a push that
+# finds the branch moved is refused and folded again. It runs on a push to the
+# default branch that changes a record or the scripts, on every issue event,
+# since a task names its record, daily as a fallback, and by hand. The issues
+# are read with GITHUB_TOKEN alone through gh and handed to the script as a
+# file; a push made with GITHUB_TOKEN starts no workflow. A branch census that
+# holds anything else is the project's own and is left alone.
 
 name: Census
 
@@ -62,7 +63,7 @@ jobs:
           out="$RUNNER_TEMP/census"
           last="$RUNNER_TEMP/last-census.json"
           foreign_files() {
-            git ls-tree --name-only "$1" | grep -v -x -e census.json -e CENSUS.md -e census.html
+            git ls-tree --name-only "$1" | grep -v -x -e census.json -e CENSUS.md -e census.html -e census-ct.html
           }
           write_census() {
             previous=""
@@ -93,7 +94,8 @@ jobs:
             ledger="$(git hash-object -w "$out/census.json")" || return 1
             md="$(git hash-object -w "$out/CENSUS.md")" || return 1
             page="$(git hash-object -w "$out/census.html")" || return 1
-            tree="$(printf '100644 blob %s\tCENSUS.md\n100644 blob %s\tcensus.html\n100644 blob %s\tcensus.json\n' "$md" "$page" "$ledger" | git mktree)" || return 1
+            ct_page="$(git hash-object -w "$out/census-ct.html")" || return 1
+            tree="$(printf '100644 blob %s\tCENSUS.md\n100644 blob %s\tcensus-ct.html\n100644 blob %s\tcensus.html\n100644 blob %s\tcensus.json\n' "$md" "$ct_page" "$page" "$ledger" | git mktree)" || return 1
             # shellcheck disable=SC2086 # parent is empty or the two words -p <sha>
             commit="$(git commit-tree "$tree" $parent -m "Census as of $(date -u +%Y-%m-%d)")" || return 1
             git push --quiet origin "$commit:refs/heads/census" || return 1

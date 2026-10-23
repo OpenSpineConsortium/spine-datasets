@@ -1,6 +1,7 @@
 """The census (tools/census.py): the counts read under the records' own names, the tier a pair
 takes from its status, the fold that carries an unchanged record without reading it again, the
-three files it writes, and the check that refuses census fields that do not hold together."""
+CT page's regions and masks, the four files it writes, and the check that refuses census fields
+that do not hold together."""
 
 import json
 import subprocess
@@ -41,6 +42,33 @@ def pairing(**fields):
             "pose": "stored", "masks": "none", "annotate": "body masks", "pair_key": "the case number"}
     base.update(fields)
     return base
+
+
+def made(volumes=20, where="/grid/harvest/ct_set", vertebrae="by level"):
+    return {"origin": "made", "masks": "vertebra masks by level", "vertebrae": vertebrae,
+            "by": "the harvest, automatic", "volumes": volumes, "where": where}
+
+
+def shipped(volumes=20, where="/grid/ct_set", vertebrae="by level", masks="vertebra masks by level, refined by hand"):
+    return {"origin": "release", "masks": masks, "vertebrae": vertebrae, "by": "the release's annotators",
+            "volumes": volumes, "where": where}
+
+
+def none_shipped():
+    return {"origin": "release", "masks": "none: the release ships images alone", "vertebrae": "none",
+            "by": "none", "volumes": None, "where": None}
+
+
+def not_recorded(where=None):
+    return {"origin": "release", "masks": "not recorded: the fetch took the images alone",
+            "vertebrae": "not recorded", "by": "not recorded", "volumes": None, "where": where}
+
+
+def ct_record(**fields):
+    base = {"id": "ct_set", "name": "A CT set", "group": "ct", "counts": {"cts": 20, "subjects": 20},
+            "regions": ["spine", "pelvis"], "segmentations": [shipped(), made()]}
+    base.update(fields)
+    return record(**base)
 
 
 def issue(number, body, labels=(), state="open"):
@@ -351,6 +379,162 @@ class FileTest(unittest.TestCase):
         self.assertIn("example_set: licence must say", text)
 
 
+class CTTest(unittest.TestCase):
+    def rows(self):
+        records = [
+            ct_record(status="held", grid_path="/grid/ct_set", measured={"bytes": 10 ** 9}),
+            ct_record(id="second_ct", name="A second CT set", status="held", grid_path="/grid/second",
+                      counts={"cts": 5}, regions=["chest"], segmentations=[not_recorded("/grid/second"), made(5)]),
+            ct_record(id="asked_ct", name="An asked CT set", route="letter", status="requested", counts={"cts": 300},
+                      regions=["chest", "abdomen"], segmentations=[none_shipped()]),
+            ct_record(id="bare_ct", name="A bare CT set", status="fetched", grid_path="/grid/bare", counts={"cts": 3},
+                      regions=None, segmentations=None),
+            record(),
+        ]
+        for one in records:
+            for key in ("regions", "segmentations"):
+                if one.get(key, "") is None:
+                    del one[key]
+        return [census.row_of(one) for one in records]
+
+    def test_a_record_holds_ct_by_its_regions_its_group_or_its_count(self):
+        self.assertFalse(census.row_of(record())["ct"])
+        self.assertTrue(census.row_of(record(group="ct"))["ct"])
+        self.assertTrue(census.row_of(record(regions=["chest"]))["ct"])
+        self.assertTrue(census.row_of(record(counts={"cts": 3}))["ct"])
+
+    def test_regions_keep_the_census_order_and_drop_words_that_are_none_of_them(self):
+        self.assertEqual(census.regions_of({"regions": ["spine", "legs", "chest"]}), ["chest", "spine"])
+        self.assertEqual(census.regions_of({"regions": "spine"}), [])
+        self.assertEqual(census.regions_of({}), [])
+
+    def test_an_entry_says_masks_none_or_not_recorded(self):
+        self.assertEqual(census.mask_kind(made()), "masks")
+        self.assertEqual(census.mask_kind(none_shipped()), "none")
+        self.assertEqual(census.mask_kind(not_recorded()), "unknown")
+        self.assertEqual(census.mask_kind({"masks": 5}), "masks")
+
+    def test_no_segmentations_written_is_unsurveyed_and_unlike_an_empty_list(self):
+        self.assertIsNone(census.segmentations_of({}))
+        self.assertEqual(census.segmentations_of({"segmentations": []}), [])
+        self.assertEqual(census.segmentations_of({"segmentations": [made(), "a note"]}), [made()])
+
+    def test_a_set_with_two_entries_for_the_same_cts_counts_them_once(self):
+        row = census.row_of(ct_record(segmentations=[made(10), made(7, where="/grid/other"), made(None)]))
+        unsized = census.row_of(ct_record(id="unsized", segmentations=[made(None)]))
+        covered = census.masks_covered([row, unsized], census.made_masks_on_grid)
+        self.assertEqual(covered, {"sum": 10, "counted": 1, "of": 2})
+
+    def test_masks_with_no_grid_folder_are_not_on_the_grid(self):
+        self.assertFalse(census.made_masks_on_grid(made(where=None)))
+        self.assertFalse(census.made_masks_on_grid(made(where="  ")))
+        self.assertFalse(census.level_masks_on_grid(shipped(vertebrae="together")))
+        self.assertFalse(census.level_masks_on_grid(not_recorded("/grid/ct_set")))
+        self.assertTrue(census.level_masks_on_grid(shipped()))
+
+    def test_the_ct_totals(self):
+        ct = census.ct_totals(self.rows())
+        self.assertEqual((ct["sets"], ct["on_grid"], ct["surveyed"], ct["no_regions"]), (4, 3, 3, 1))
+        self.assertEqual(ct["on_grid_ct_volumes"], {"sum": 28, "counted": 3, "of": 3})
+        self.assertEqual(ct["by_region"]["chest"], {"sets": 2, "on_grid": 1,
+                                                    "ct_volumes": {"sum": 5, "counted": 1, "of": 1}})
+        self.assertEqual(ct["by_region"]["head and neck"]["sets"], 0)
+        self.assertEqual(ct["level_masks_on_grid"], {"sum": 20, "counted": 1, "of": 1})
+        self.assertEqual(ct["made_masks_on_grid"], {"sum": 25, "counted": 2, "of": 2})
+        self.assertEqual(ct["by_stage"]["held"], 2)
+
+    def test_the_ct_gaps_name_what_each_ct_record_lacks(self):
+        found = census.ct_gaps(self.rows())
+        self.assertIn(("bare_ct", "no regions: write the body regions its CT covers into regions"), found)
+        self.assertTrue(any(ident == "bare_ct" and "not surveyed" in text for ident, text in found))
+        self.assertTrue(any(ident == "second_ct" and "still to confirm" in text for ident, text in found))
+        # A set asked for, whose source ships none, lacks nothing on this page.
+        self.assertFalse(any(ident in ("asked_ct", "ct_set") for ident, _ in found))
+
+    def test_the_mask_filter_words(self):
+        rows = {row["id"]: row for row in self.rows()}
+        self.assertEqual(census.mask_words(rows["ct_set"]), "|level|level-grid|made|release|")
+        self.assertEqual(census.mask_words(rows["second_ct"]), "|level|level-grid|made|unknown|")
+        self.assertEqual(census.mask_words(rows["asked_ct"]), "|none|")
+        self.assertEqual(census.mask_words(rows["bare_ct"]), "|unsurveyed|")
+
+    def test_on_the_grid_first_then_the_most_cts(self):
+        order = [row["id"] for row in census.ct_in_order(self.rows())]
+        self.assertEqual(order, ["ct_set", "second_ct", "bare_ct", "asked_ct"])
+
+    def data(self):
+        records = [ct_record(status="held", grid_path="/grid/ct_set"),
+                   ct_record(id="odd_ct", name="<script>alert(1)</script>", regions=["chest"],
+                             segmentations=[made(where="<img src=x onerror=alert(1)>")])]
+        folded, _ = census.fold(None, records, "2026-10-23")
+        tasks, pending = census.tasks_of([issue(7, "Record: datasets/ct_set.json", ["todo"])], records)
+        return census.census_file(folded, tasks, pending, "2026-10-23", "o/r")
+
+    def test_the_ct_page(self):
+        text = census.render_ct_html(self.data(), "o/r")
+        self.assertIn("<title>Spine CT Census</title>", text)
+        for filter_id in ("f-region", "f-stage", "f-licence", "f-masks", "f-q"):
+            self.assertIn(f'id="{filter_id}"', text)
+        self.assertIn('data-regions="|pelvis|spine|"', text)
+        self.assertIn('data-masks="|level|level-grid|made|release|"', text)
+        self.assertIn("/grid/harvest/ct_set", text)
+        self.assertIn('href="census.html"', text)
+        self.assertIn("https://github.com/o/r/issues/7", text)
+        for unsafe in ("<script>alert", "<img"):
+            self.assertNotIn(unsafe, text)
+        self.assertTrue(text.isascii())
+
+    def test_the_whole_census_links_the_ct_page_and_its_markdown_holds_the_ct_section(self):
+        data = self.data()
+        self.assertIn('href="census-ct.html"', census.render_html(data, "o/r"))
+        markdown = census.render_markdown(data, "o/r")
+        self.assertIn("## CT, by region and masks", markdown)
+        self.assertIn("| A CT set | Held by the owner | 20 | pelvis, spine |", markdown)
+        self.assertIn("from the source: vertebrae by level, on the grid; made on the grid: vertebrae by level,"
+                      " on the grid", markdown)
+
+
+class CTCheckTest(unittest.TestCase):
+    def found(self, **fields):
+        return "\n".join(census.problems([ct_record(**fields)]))
+
+    def test_good_regions_and_masks_pass(self):
+        self.assertEqual(census.problems([ct_record()]), [])
+        self.assertEqual(census.problems([ct_record(segmentations=[none_shipped()])]), [])
+        self.assertEqual(census.problems([ct_record(segmentations=[not_recorded("/grid/ct_set"), made(None, None)])]),
+                         [])
+
+    def test_bad_regions_are_named(self):
+        self.assertIn("ct_set: regions must be a list of one or more of", self.found(regions="spine"))
+        self.assertIn("ct_set: regions must be a list of one or more of", self.found(regions=[]))
+        self.assertIn("ct_set: regions holds 'legs', which is none of", self.found(regions=["spine", "legs"]))
+        self.assertIn("ct_set: regions names one region twice", self.found(regions=["spine", "spine"]))
+
+    def test_a_list_of_entries_is_required(self):
+        self.assertIn("ct_set: segmentations must be a list of one or more entries", self.found(segmentations=[]))
+        self.assertIn("ct_set: segmentations entry 1 must be an object", self.found(segmentations=["masks"]))
+
+    def test_a_bad_entry_is_named_by_its_place(self):
+        bad = dict(made(), origin="found", vertebrae="some", masks="", by=None, volumes=-1, where="", colour="red")
+        text = self.found(segmentations=[made(), bad])
+        for line in ("segmentations entry 2: colour is not one of", "segmentations entry 2: origin must be one of",
+                     "segmentations entry 2: vertebrae must be one of", "segmentations entry 2: masks must be a line",
+                     "segmentations entry 2: by must be a line", "segmentations entry 2: volumes must be a whole",
+                     "segmentations entry 2: where must be a grid folder"):
+            self.assertIn(line, text)
+        self.assertNotIn("segmentations entry 1", text)
+        self.assertIn("volumes must be a whole", self.found(segmentations=[made(True)]))
+
+    def test_an_entry_that_names_no_masks_speaks_of_the_source(self):
+        self.assertIn("are the source's: origin release", self.found(segmentations=[dict(none_shipped(), origin="made")]))
+        self.assertIn("an entry that says none has vertebrae none and where null",
+                      self.found(segmentations=[dict(none_shipped(), vertebrae="by level")]))
+        self.assertIn("an entry that says none has vertebrae none and where null",
+                      self.found(segmentations=[dict(none_shipped(), where="/grid/ct_set")]))
+        self.assertIn("an entry that says not recorded has vertebrae not recorded",
+                      self.found(segmentations=[dict(not_recorded(), vertebrae="none")]))
+
+
 class CheckTest(unittest.TestCase):
     def test_the_repository_records_pass(self):
         self.assertEqual(census.problems(pipeline.load_records()), [])
@@ -392,7 +576,7 @@ class CommandTest(unittest.TestCase):
             first, second = Path(folder) / "first", Path(folder) / "second"
             run = self.run_census("render", "--out", str(first), "--date", "2026-10-23")
             self.assertEqual(run.returncode, 0, run.stderr)
-            for name in ("census.json", "CENSUS.md", "census.html"):
+            for name in ("census.json", "CENSUS.md", "census.html", "census-ct.html"):
                 self.assertTrue((first / name).exists(), name)
             run = self.run_census("render", "--out", str(second), "--previous", str(first / "census.json"),
                                   "--date", "2026-10-24")
