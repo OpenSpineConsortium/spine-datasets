@@ -2,8 +2,21 @@
  "id": "idc_prostate_anatomical_edge_cases",
  "name": "IDC `prostate_anatomical_edge_cases` (tier 2)",
  "group": "ct",
+ "regions": [
+  "pelvis"
+ ],
  "what": "IDC v24 collection prostate_anatomical_edge_cases (TCIA doi:10.7937/qstf-st65), tier 2 of the anomaly harvest: 131 subjects, about 16.6 GB raw plus screen; pelvis",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "contours of the bladder, femoral heads, prostate, rectum and body outline: 131 contour sets over all 131 of the collection's CT series, in IDC v24; not fetched yet",
+   "vertebrae": "none",
+   "by": "the collection's authors, by hand",
+   "volumes": 131,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "CC BY 4.0",
  "link": "https://doi.org/10.7937/qstf-st65",

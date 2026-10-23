@@ -2,6 +2,9 @@
  "id": "huashan_fudan",
  "name": "Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024)",
  "group": "fluoro",
+ "regions": [
+  "spine"
+ ],
  "pairing": {
   "spine": true,
   "region": "lumbar, L1 to L5",
@@ -15,6 +18,16 @@
  },
  "what": "140 living lumbar patients (January 2020 to December 2023) with preoperative CT and intraoperative AP and lateral films of L1 to L5; the device is unnamed; two co-authors are from Shanghai Maestro Surgical Robotics; no data statement",
  "level_truth": "L1 to L5 on the intraoperative film, establishable from the same patient's preoperative CT",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: the paper names none",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "licence": "not recorded; a data use agreement is the route",
  "link": null,
  "how_to_get": [

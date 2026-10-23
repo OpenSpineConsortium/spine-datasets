@@ -27,10 +27,15 @@ embargoed or never released, E a real pair of something other than the spine, wh
 or CT is the registration code's truth. A pair moves from tier to tier by itself as its record's
 status moves.
 
-It writes three files: census.json, the ledger the next run folds into; CENSUS.md, which GitHub
-renders; and census.html, the page, with the totals, the paired breakout, every dataset, what the
-records still lack and the log. The census workflow writes them to the branch census
-(.github/workflows/census.yml) and the docs site serves census.html.
+For a record that holds CT it also derives the body regions its field of view covers and the
+masks the set has, from the record's regions and segmentations: who made each, whether it names
+the vertebrae by level, how many CT volumes it covers and where it is on the grid.
+
+It writes four files: census.json, the ledger the next run folds into; CENSUS.md, which GitHub
+renders; census.html, the page, with the totals, the paired breakout, every dataset, what the
+records still lack and the log; and census-ct.html, the CT page, with every record that holds CT
+by region and the masks each set has. The census workflow writes them to the branch census
+(.github/workflows/census.yml) and the docs site serves both pages.
 
     python3 tools/census.py render --out DIR [--previous census.json] [--issues issues.json]
                                    [--repo OWNER/NAME] [--date YYYY-MM-DD]
@@ -113,6 +118,28 @@ TIERS = (
      "frames shipped with a CT or an exact pose: the registration code's truth, not spine labels"),
 )
 TIER_TITLES = {key: title for key, title, _ in TIERS}
+
+# The body regions a CT record's field of view covers, in the order the CT page lists them, and
+# what a segmentations entry holds (datasets/README.md): where the masks come from, how they name
+# the vertebrae, and its keys. An entry whose masks begin "none" says the source ships none, and
+# one whose masks begin "not recorded" that nothing here says what it ships.
+REGIONS = ("head and neck", "chest", "abdomen", "pelvis", "spine", "whole body", "other")
+SEG_ORIGINS = ("release", "made")
+SEG_VERTEBRAE = ("by level", "together", "none", "not recorded")
+SEG_KEYS = ("origin", "masks", "vertebrae", "by", "volumes", "where")
+ORIGIN_TITLES = {"release": "from the source", "made": "made on the grid"}
+VERTEBRAE_TITLES = {"by level": "vertebrae by level", "together": "vertebrae as one", "none": "no vertebrae",
+                    "not recorded": "vertebrae not recorded"}
+# The CT page's mask filter, each word a row carries when one of its entries says so.
+MASK_FILTERS = (
+    ("level", "vertebra masks by level"),
+    ("level-grid", "vertebra masks by level, on the grid"),
+    ("made", "masks made on the grid"),
+    ("release", "masks the source ships"),
+    ("unknown", "the source's masks not recorded"),
+    ("none", "no masks known"),
+    ("unsurveyed", "masks not surveyed"),
+)
 
 # What a change event names when it moves; other edits (a next step, an obstacle) refresh the row
 # without an event.
@@ -213,6 +240,37 @@ def grid_bytes(record):
     return None
 
 
+def regions_of(record):
+    """The record's regions in the census's order; a word that is none of them is left out, and
+    `check` names it."""
+    regions = record.get("regions")
+    return [region for region in REGIONS if region in regions] if isinstance(regions, list) else []
+
+
+def segmentations_of(record):
+    """The record's segmentation entries, or None where it has none written: a set whose masks
+    nobody has surveyed yet, which the CT page lists as a gap."""
+    entries = record.get("segmentations")
+    if not isinstance(entries, list):
+        return None
+    return [entry for entry in entries if isinstance(entry, dict)]
+
+
+def mask_kind(entry):
+    """What an entry says: masks it names, none shipped, or nothing recorded."""
+    masks = entry.get("masks") if isinstance(entry.get("masks"), str) else ""
+    if masks.startswith("none"):
+        return "none"
+    if masks.startswith("not recorded"):
+        return "unknown"
+    return "masks"
+
+
+def on_grid_path(entry):
+    where = entry.get("where")
+    return isinstance(where, str) and bool(where.strip())
+
+
 def tier_of(stage, pairing):
     if not pairing.get("spine"):
         return "E"
@@ -233,6 +291,7 @@ def row_of(record):
     history = sorted(entries, key=lambda entry: str(entry.get("date") or ""))
     pairing = record.get("pairing") if isinstance(record.get("pairing"), dict) else None
     group = text_of(record, "group")
+    regions = regions_of(record)
     return {
         "id": text_of(record, "id"),
         "name": text_of(record, "name") or text_of(record, "id"),
@@ -257,6 +316,11 @@ def row_of(record):
         "paired": pairing is not None,
         "tier": tier_of(stage, pairing) if pairing else None,
         "pairing": pairing,
+        # A record holds CT when it says which regions its CT covers, is a CT set, or counts CT
+        # volumes; one with no regions is listed on the CT page as a gap.
+        "ct": bool(regions) or group == "ct" or counts["ct_volumes"] is not None,
+        "regions": regions,
+        "segmentations": segmentations_of(record),
     }
 
 
@@ -372,7 +436,82 @@ def totals(rows):
         "on_grid_ct_volumes": summed(held, "ct_volumes"),
         "paired": {key: sum(1 for row in pairs if row["tier"] == key) for key, _, _ in TIERS},
         "paired_spine_subjects_on_grid": summed(spine_held, "subjects"),
+        "ct": ct_totals(rows),
     }
+
+
+def ct_rows(rows):
+    return [row for row in rows if row.get("ct")]
+
+
+def level_masks_on_grid(entry):
+    """Vertebra masks by level that the source ships and that are on the grid."""
+    return (entry.get("origin") == "release" and entry.get("vertebrae") == "by level" and mask_kind(entry) == "masks"
+            and on_grid_path(entry))
+
+
+def made_masks_on_grid(entry):
+    return entry.get("origin") == "made" and mask_kind(entry) == "masks" and on_grid_path(entry)
+
+
+def masks_covered(rows, chosen):
+    """The sets with an entry `chosen` takes, and the CT volumes those entries cover: per set the
+    largest count among them, since two entries of one set may cover the same CTs."""
+    total, counted, sets = 0, 0, 0
+    for row in rows:
+        counts = []
+        taken = False
+        for entry in row.get("segmentations") or []:
+            if chosen(entry):
+                taken = True
+                if number(entry.get("volumes")) is not None:
+                    counts.append(number(entry["volumes"]))
+        if taken:
+            sets += 1
+            if counts:
+                total += max(counts)
+                counted += 1
+    return {"sum": total, "counted": counted, "of": sets}
+
+
+def ct_totals(rows):
+    """The CT page's figures: every record that holds CT, by region and by the masks it has. A set
+    counts in each region its field of view covers."""
+    ct = ct_rows(rows)
+    held = [row for row in ct if row["on_grid"]]
+    by_region = {}
+    for region in REGIONS:
+        chosen = [row for row in ct if region in row["regions"]]
+        on = [row for row in chosen if row["on_grid"]]
+        by_region[region] = {"sets": len(chosen), "on_grid": len(on), "ct_volumes": summed(on, "ct_volumes")}
+    return {
+        "sets": len(ct),
+        "on_grid": len(held),
+        "on_grid_ct_volumes": summed(held, "ct_volumes"),
+        "on_grid_subjects": summed(held, "subjects"),
+        "on_grid_size": size_on_grid(held),
+        "by_stage": {key: sum(1 for row in ct if row["stage"] == key) for key, _, _ in pipeline.STAGES},
+        "by_region": by_region,
+        "no_regions": sum(1 for row in ct if not row["regions"]),
+        "surveyed": sum(1 for row in ct if row["segmentations"] is not None),
+        "level_masks_on_grid": masks_covered(held, level_masks_on_grid),
+        "made_masks_on_grid": masks_covered(held, made_masks_on_grid),
+    }
+
+
+def ct_gaps(rows):
+    """What the CT records still lack, one line each: each is filled once, in the record."""
+    found = []
+    for row in ct_rows(rows):
+        if not row["regions"]:
+            found.append((row["id"], "no regions: write the body regions its CT covers into regions"))
+        if row["segmentations"] is None:
+            found.append((row["id"], "its masks are not surveyed: write segmentations, even one entry that says none"))
+        elif row["on_grid"] and any(entry.get("origin") == "release" and mask_kind(entry) == "unknown"
+                                    for entry in row["segmentations"]):
+            found.append((row["id"], "on the grid, and what masks its source ships is not recorded yet; its entry says"
+                                     " where to look"))
+    return found
 
 
 def gaps(rows):
@@ -506,6 +645,66 @@ def md_cell(text):
     return str(text if text is not None else "").replace("|", "/").replace("\n", " ")
 
 
+def masks_text(total):
+    """A mask figure: the CT volumes the masks cover, in how many sets, and how many sets give a
+    count."""
+    text = f"{amount(total['sum'])} CT volumes in {total['of']} sets"
+    if total["counted"] < total["of"]:
+        text += f", {total['counted']} of them counted"
+    return text
+
+
+def masks_summary(row):
+    """A set's masks in one line for a table cell: each entry's origin, its vertebrae and whether
+    it is on the grid."""
+    entries = row.get("segmentations")
+    if entries is None:
+        return "not surveyed"
+    parts = []
+    for entry in entries:
+        origin = ORIGIN_TITLES.get(entry.get("origin"), str(entry.get("origin")))
+        kind = mask_kind(entry)
+        said = {"none": "none", "unknown": "not recorded"}.get(kind) or VERTEBRAE_TITLES.get(
+            entry.get("vertebrae"), "vertebrae not recorded")
+        parts.append(f"{origin}: {said}" + (", on the grid" if kind != "none" and on_grid_path(entry) else ""))
+    return "; ".join(parts) or "none"
+
+
+def ct_in_order(rows):
+    """The CT sets as the CT page lists them: those on the grid first, then the most CT volumes."""
+    return sorted(ct_rows(rows), key=lambda row: (not row["on_grid"], -(row["ct_volumes"] or 0), row["name"].lower()))
+
+
+def ct_markdown(rows, ct, tasks, repo):
+    lines = ["## CT, by region and masks", "",
+             f"Every record that holds CT: {ct['sets']} sets, {ct['on_grid']} of them on the grid. A set counts in",
+             "each region its field of view covers; a sum counts a CT twice where two records hold it. The page",
+             "with filters, and each set's masks in full, is census-ct.html beside this file.", "",
+             "| | |", "|---|---|",
+             f"| Sets that hold CT | {ct['sets']} |",
+             f"| On the grid | {ct['on_grid']} |",
+             f"| CT volumes on the grid | {counted(ct['on_grid_ct_volumes'])} |",
+             f"| Subjects on the grid | {counted(ct['on_grid_subjects'])} |",
+             f"| Size on the grid | {counted(ct['on_grid_size'], size_text)} |",
+             f"| On the grid with the source's vertebra masks by level | {masks_text(ct['level_masks_on_grid'])} |",
+             f"| On the grid with masks made on the grid | {masks_text(ct['made_masks_on_grid'])} |",
+             f"| Sets whose masks are surveyed | {ct['surveyed']} of {ct['sets']} |",
+             "", "| Region | Sets | On the grid | CT volumes on the grid |", "|---|---|---|---|"]
+    for region in REGIONS:
+        counts = ct["by_region"][region]
+        lines.append(f"| {region} | {counts['sets']} | {counts['on_grid']} | {counted(counts['ct_volumes'])} |")
+    lines += ["", "| Dataset | Stage | CT volumes | Regions | Masks | Task |", "|---|---|---|---|---|---|"]
+    for row in ct_in_order(rows):
+        lines.append("| " + " | ".join(md_cell(value) for value in (
+            row["name"], pipeline.STAGE_TITLES.get(row["stage"], row["stage"]), amount(row["ct_volumes"]),
+            ", ".join(row["regions"]) or "not written", masks_summary(row),
+            task_markdown(row["id"], tasks, repo))) + " |")
+    names = {row["id"]: row["name"] for row in rows}
+    lines += ["", "What the CT records still lack:", ""]
+    lines += [f"- {md_cell(names.get(ident, ident))}: {text}" for ident, text in ct_gaps(rows)] or ["Nothing."]
+    return lines
+
+
 def render_markdown(data, repo=DEFAULT_REPO):
     rows = sorted((entry["row"] for entry in data["records"].values()), key=pipeline.group_key)
     totals_ = data["totals"]
@@ -578,6 +777,7 @@ def render_markdown(data, repo=DEFAULT_REPO):
     if others:
         lines += ["", "Tasks whose record is not written yet:", ""]
         lines += [f"- [#{task['number']}]({task['url']}) {md_cell(task['title'])}" for task in others]
+    lines += [""] + ct_markdown(rows, totals_["ct"], tasks, repo)
     lines += ["", "## What the records still lack", ""]
     found = gaps(rows)
     lines += [f"- {md_cell(names.get(ident, ident))}: {text}" for ident, text in found] or ["Nothing."]
@@ -644,6 +844,38 @@ ul.plain { margin: 0; padding-left: 18px; display: grid; gap: 3px; }
 ul.plain li { min-width: 0; overflow-wrap: anywhere; }
 .log li { font-variant-numeric: tabular-nums; }
 .empty { color: var(--muted); font-style: italic; }
+/* The CT page: each set's masks as a short stack of entries inside its row. */
+td.masks { min-width: 340px; }
+td.licence { min-width: 150px; }
+td.regions { min-width: 120px; }
+.seg { display: grid; gap: 2px; padding-block: 6px; border-top: 1px dashed var(--line); min-width: 0; }
+.seg:first-child { border-top: none; padding-top: 0; }
+.seg:last-child { padding-bottom: 0; }
+.seg-head { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.o-release { color: var(--info); } .o-made { color: var(--ok); }
+.label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+code.where { font-size: 12px; overflow-wrap: anywhere; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+button.linkish { background: none; border: none; padding: 0; font: inherit; color: var(--accent);
+  text-decoration: underline; cursor: pointer; text-align: left; }
+button.linkish:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+th.num { text-align: right; }
+[hidden] { display: none !important; }
+/* At phone width each CT set is a card: its name, its small facts on one wrapped line, then the rest,
+   each under its column's name, since a table eleven columns wide hides the masks off to the right. */
+@media (max-width: 760px) {
+  #ct thead { display: none; }
+  #ct, #ct tbody { display: block; }
+  #ct tr { display: flex; flex-wrap: wrap; column-gap: 18px; row-gap: 6px; padding: 10px 12px;
+    border-bottom: 1px solid var(--line); }
+  #ct tr:last-child { border-bottom: none; }
+  #ct td { display: block; flex: 1 1 100%; min-width: 0; padding: 0; border: none; text-align: left;
+    white-space: normal; }
+  #ct td.name { order: -2; font-size: 15px; }
+  #ct td.fact { order: -1; flex: 0 0 auto; }
+  #ct td[data-label]::before { content: attr(data-label); display: block; color: var(--muted); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+}
 </style>"""
 
 HTML_SCRIPT = """<script>
@@ -663,6 +895,37 @@ HTML_SCRIPT = """<script>
   }
   [stage, kind, licence].forEach(function (el) { el.addEventListener('change', draw); });
   query.addEventListener('input', draw);
+  draw();
+})();
+</script>"""
+
+# The CT page's filters: a row carries its regions and its mask words between bars, |chest|spine|,
+# so one region or one word matches whole.
+CT_SCRIPT = """<script>
+(function () {
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#ct tbody tr'));
+  function el(id) { return document.getElementById(id); }
+  var region = el('f-region'), stage = el('f-stage'), licence = el('f-licence'), masks = el('f-masks'),
+      query = el('f-q'), shown = el('shown');
+  function has(list, word) { return !word || list.indexOf('|' + word + '|') >= 0; }
+  function draw() {
+    var q = query.value.toLowerCase(), n = 0;
+    rows.forEach(function (row) {
+      var ok = has(row.dataset.regions, region.value) && (!stage.value || row.dataset.stage === stage.value)
+        && (!licence.value || row.dataset.licence === licence.value) && has(row.dataset.masks, masks.value)
+        && (!q || row.dataset.text.indexOf(q) >= 0);
+      row.hidden = !ok; if (ok) n += 1;
+    });
+    shown.textContent = n + ' of ' + rows.length + ' shown';
+  }
+  [region, stage, licence, masks].forEach(function (one) { one.addEventListener('change', draw); });
+  query.addEventListener('input', draw);
+  Array.prototype.slice.call(document.querySelectorAll('[data-region]')).forEach(function (button) {
+    button.addEventListener('click', function () {
+      region.value = button.dataset.region; draw();
+      el('h-sets').scrollIntoView({behavior: 'smooth', block: 'start'});
+    });
+  });
   draw();
 })();
 </script>"""
@@ -818,7 +1081,8 @@ def render_html(data, repo=DEFAULT_REPO):
         f"record, written on {esc(data['generated'])}. The census reads the records alone, never a dataset's files, and "
         "folds in only the records that are new or changed since its last run, so adding a dataset is adding its record. "
         "Counts are what each record states or what its landing pass measured; a figure counts only the sets whose "
-        "record gives it.</p>",
+        'record gives it. <a href="census-ct.html">The CT page</a> lists every record that holds CT by region, with '
+        "the masks each set has.</p>",
         "</header>",
         f'<section aria-labelledby="h-figures"><h2 id="h-figures">In numbers</h2><div class="figures">{figures_html(totals_)}</div>'
         f'<div class="stages">{stage_chips}</div></section>',
@@ -834,6 +1098,182 @@ def render_html(data, repo=DEFAULT_REPO):
         f'<section aria-labelledby="h-log"><h2 id="h-log">Changes, newest first</h2><ul class="plain log">{log}</ul></section>',
         "</main>",
         HTML_SCRIPT,
+        "</body>",
+        "</html>",
+    )) + "\n"
+
+
+def mask_words(row):
+    """The CT page's mask filter words a row carries, between bars."""
+    entries = row.get("segmentations")
+    if entries is None:
+        return "|unsurveyed|"
+    words = set()
+    for entry in entries:
+        kind = mask_kind(entry)
+        if kind == "unknown" and entry.get("origin") == "release":
+            words.add("unknown")
+        if kind != "masks":
+            continue
+        words.add(entry.get("origin") if entry.get("origin") in SEG_ORIGINS else "release")
+        if entry.get("vertebrae") == "by level":
+            words.add("level")
+            if on_grid_path(entry):
+                words.add("level-grid")
+    if not any(mask_kind(entry) == "masks" for entry in entries):
+        words.add("none")
+    return "|" + "|".join(sorted(words)) + "|"
+
+
+def segmentation_html(entry):
+    """One entry of a set's masks: where they come from, how they name the vertebrae, how many
+    CTs they cover, what they are, who made them and where they are on the grid."""
+    kind = mask_kind(entry)
+    origin = str(entry.get("origin"))
+    head = [f'<span class="pill o-{esc(origin)}">{esc(ORIGIN_TITLES.get(origin, origin))}</span>']
+    if kind == "masks":
+        vertebrae = str(entry.get("vertebrae"))
+        head.append(f'<span class="chip">{esc(VERTEBRAE_TITLES.get(vertebrae, vertebrae))}</span>')
+    if number(entry.get("volumes")) is not None:
+        head.append(f'<span class="note">{esc(amount(entry["volumes"]))} CTs</span>')
+    parts = ['<div class="seg"><div class="seg-head">' + "".join(head) + "</div>", f"<div>{esc(entry.get('masks'))}</div>"]
+    if kind == "masks":
+        parts.append(f'<div><span class="label">Made by</span> {esc(entry.get("by"))}</div>')
+    if on_grid_path(entry):
+        parts.append(f'<div><code class="where">{esc(entry["where"])}</code></div>')
+    elif kind == "masks":
+        parts.append('<div class="note">no grid path recorded</div>')
+    return "".join(parts) + "</div>"
+
+
+def masks_html(row):
+    entries = row.get("segmentations")
+    if entries is None:
+        return '<span class="empty">not surveyed yet</span>'
+    return "".join(segmentation_html(entry) for entry in entries) or '<span class="empty">none</span>'
+
+
+def ct_figures_html(ct):
+    def masks_figure(total, label):
+        note = "" if total["counted"] == total["of"] else f", {total['counted']} of them counted"
+        return figure_html(amount(total["sum"]), f"CT volumes {label}, in {total['of']} sets on the grid{note}")
+    size = ct["on_grid_size"]
+    return "".join((
+        figure_html(ct["sets"], "sets that hold CT"),
+        figure_html(ct["on_grid"], "of them on the grid"),
+        figure_html(amount(ct["on_grid_ct_volumes"]["sum"]), "CT volumes on the grid" + counted_note(ct["on_grid_ct_volumes"])),
+        figure_html(amount(ct["on_grid_subjects"]["sum"]), "subjects on the grid" + counted_note(ct["on_grid_subjects"])),
+        figure_html(size_text(size["sum"]), "on the grid" + counted_note(size)),
+        masks_figure(ct["level_masks_on_grid"], "with the source's vertebra masks by level"),
+        masks_figure(ct["made_masks_on_grid"], "with masks made on the grid"),
+        figure_html(f"{ct['surveyed']} of {ct['sets']}", "sets whose masks are surveyed"),
+    ))
+
+
+def regions_table_html(ct):
+    body = []
+    for region in REGIONS:
+        counts = ct["by_region"][region]
+        body.append("<tr>" + "".join((
+            f'<td><button type="button" class="linkish" data-region="{esc(region)}">{esc(region)}</button></td>',
+            f'<td class="num">{counts["sets"]}</td>', f'<td class="num">{counts["on_grid"]}</td>',
+            f'<td class="num">{esc(counted(counts["ct_volumes"]))}</td>',
+        )) + "</tr>")
+    return ('<div class="frame"><table><thead><tr><th>Region</th><th class="num">Sets</th><th class="num">On the grid</th>'
+            '<th class="num">CT volumes on the grid</th></tr></thead><tbody>' + "".join(body) + "</tbody></table></div>")
+
+
+def ct_sets_html(rows, data, repo):
+    body = []
+    for row in ct_in_order(rows):
+        label, url = task_link(row["id"], data["tasks"], repo)
+        size = row["grid_bytes"] if row["grid_bytes"] is not None else row["bytes"]
+        stage = pipeline.STAGE_TITLES.get(row["stage"], row["stage"])
+        entries = row.get("segmentations") or []
+        text = " ".join([row["name"], row["id"], row["what"], row["licence"], " ".join(row["regions"])]
+                        + [str(entry.get(key) or "") for entry in entries for key in ("masks", "by", "where")]).lower()
+        regions = "".join(f'<span class="chip">{esc(region)}</span>' for region in row["regions"])
+        regions = regions or '<span class="empty">not written</span>'
+        body.append(
+            f'<tr data-regions="|{esc("|".join(row["regions"]))}|" data-stage="{esc(row["stage"])}"'
+            f' data-licence="{esc(row["licence_kind"])}" data-masks="{esc(mask_words(row))}" data-text="{esc(text)}">'
+            + "".join((
+                f'<td class="name">{link_html(row["name"], row["link"])}</td>',
+                f'<td class="fact" data-label="Kind">{esc(row["kind"])}</td>',
+                f'<td class="fact" data-label="Stage"><span class="pill s-{esc(row["stage"])}">{esc(stage)}</span></td>',
+                f'<td class="num fact" data-label="CT volumes">{esc(amount(row["ct_volumes"]))}</td>',
+                f'<td class="num fact" data-label="Subjects">{esc(amount(row["subjects"]))}</td>',
+                f'<td class="regions" data-label="Regions"><div class="chips">{regions}</div></td>',
+                f'<td class="masks" data-label="Masks">{masks_html(row)}</td>',
+                f'<td class="licence" data-label="Licence"><span class="k-{esc(row["licence_kind"])}">'
+                f'{esc(row["licence_kind"])}</span><div class="note">{esc(row["licence"])}</div></td>',
+                f'<td class="num fact" data-label="Size">{esc(size_text(size))}</td>',
+                f'<td class="wide" data-label="What it holds">{esc(row["what"])}</td>',
+                f'<td data-label="Task">{link_html(label, url)}</td>',
+            )) + "</tr>")
+    options = lambda pairs: "".join(f'<option value="{esc(key)}">{esc(title)}</option>' for key, title in pairs)  # noqa: E731
+    filters = (f'<div class="filters"><select id="f-region" aria-label="region"><option value="">every region</option>'
+               f'{options((region, region) for region in REGIONS)}</select>'
+               f'<select id="f-stage" aria-label="stage"><option value="">every stage</option>'
+               f'{options((key, title) for key, title, _ in pipeline.STAGES)}</select>'
+               '<select id="f-licence" aria-label="licence"><option value="">every licence</option>'
+               f'{options((kind, kind) for kind in ("open", "restricted", "unknown"))}</select>'
+               f'<select id="f-masks" aria-label="masks"><option value="">any masks</option>{options(MASK_FILTERS)}</select>'
+               '<input id="f-q" type="search" placeholder="search names, tools, folders" aria-label="search">'
+               '<span class="note" id="shown"></span></div>')
+    table = ('<div class="frame"><table id="ct"><thead><tr><th>Dataset</th><th>Kind</th><th>Stage</th>'
+             '<th class="num">CT volumes</th><th class="num">Subjects</th><th>Regions</th><th>Masks</th><th>Licence</th>'
+             '<th class="num">Size</th><th>What it holds</th><th>Task</th></tr></thead><tbody>' + "".join(body)
+             + "</tbody></table></div>")
+    return filters + table
+
+
+def render_ct_html(data, repo=DEFAULT_REPO):
+    """The CT page: every record that holds CT, by region, with the masks each set has."""
+    rows = [entry["row"] for entry in data["records"].values()]
+    names = {row["id"]: row["name"] for row in rows}
+    ct = data["totals"]["ct"]
+    stage_chips = "".join(f'<span class="chip">{esc(title)} {ct["by_stage"].get(key, 0)}</span>'
+                          for key, title, _ in pipeline.STAGES if ct["by_stage"].get(key, 0))
+    found = ct_gaps(rows)
+    gap_list = ("<ul class=\"plain\">" + "".join(f"<li><b>{esc(names.get(ident, ident))}</b>: {esc(text)}</li>"
+                                                  for ident, text in found) + "</ul>") if found else '<p class="empty">Nothing.</p>'
+    no_regions = f" {ct['no_regions']} sets have no regions yet." if ct["no_regions"] else ""
+    return "\n".join((
+        "<!doctype html>",
+        '<html lang="en">',
+        "<head>",
+        '<meta charset="utf-8">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
+        "<title>Spine CT Census</title>",
+        '<meta name="claude:viewport-fit-sides" content="cover">',
+        HTML_STYLE,
+        "</head>",
+        "<body>",
+        "<main>",
+        "<header>",
+        "<h1>Spine CT Census</h1>",
+        f'<p class="lead">Every record of <a href="https://github.com/{esc(repo)}">{esc(repo)}</a> that holds CT, '
+        f"counted from its record, written on {esc(data['generated'])}: the body regions its field of view covers, the "
+        "masks the set has, who made them, whether they name the vertebrae by level and where they are on the grid. "
+        "A set's masks are what its record's segmentations say, from the data platform's manifest, IDC's own index and "
+        'the grid; the source\'s own masks and those made on the grid are kept apart. <a href="census.html">The whole '
+        "census</a> counts every dataset.</p>",
+        "</header>",
+        f'<section aria-labelledby="h-figures"><h2 id="h-figures">In numbers</h2><div class="figures">{ct_figures_html(ct)}'
+        f'</div><div class="stages">{stage_chips}</div></section>',
+        '<section aria-labelledby="h-regions"><h2 id="h-regions">By region</h2>'
+        '<p class="note">A set counts in every region its field of view covers, so the rows add up to more than the '
+        f"sets.{esc(no_regions)} Pick a region to list its sets.</p>" + regions_table_html(ct) + "</section>",
+        '<section aria-labelledby="h-sets"><h2 id="h-sets">Every CT set</h2>'
+        '<p class="note">On the grid first, then the most CT volumes. A sum counts a CT twice where two records hold '
+        "it: each record's text names the overlaps it knows, and the census does not fold them. Masks from IDC are over "
+        "IDC's series, and its fetch takes the CT alone.</p>" + ct_sets_html(rows, data, repo) + "</section>",
+        '<section aria-labelledby="h-gaps"><h2 id="h-gaps">What the CT records still lack</h2>'
+        '<p class="note">Each line is filled once, in the record, and leaves this list on the next run.</p>'
+        f"{gap_list}</section>",
+        "</main>",
+        CT_SCRIPT,
         "</body>",
         "</html>",
     )) + "\n"
@@ -860,6 +1300,55 @@ def pairing_problems(ident, pairing):
     return found
 
 
+def regions_problems(ident, regions):
+    if not isinstance(regions, list) or not regions:
+        return [f"{ident}: regions must be a list of one or more of: {', '.join(REGIONS)}"]
+    found = [f"{ident}: regions holds {region!r}, which is none of: {', '.join(REGIONS)}"
+             for region in regions if region not in REGIONS]
+    if len({str(region) for region in regions}) < len(regions):
+        found.append(f"{ident}: regions names one region twice")
+    return found
+
+
+def entry_problems(label, entry):
+    """What is wrong with one segmentations entry, each line opening with the entry's label."""
+    found = [f"{label}: {key} is not one of {', '.join(SEG_KEYS)}" for key in sorted(set(entry) - set(SEG_KEYS))]
+    if entry.get("origin") not in SEG_ORIGINS:
+        found.append(f"{label}: origin must be one of {', '.join(SEG_ORIGINS)}")
+    if entry.get("vertebrae") not in SEG_VERTEBRAE:
+        found.append(f"{label}: vertebrae must be one of {', '.join(SEG_VERTEBRAE)}")
+    for key in ("masks", "by"):
+        if not isinstance(entry.get(key), str) or not entry[key].strip():
+            found.append(f"{label}: {key} must be a line of text")
+    volumes = entry.get("volumes")
+    if volumes is not None and (isinstance(volumes, bool) or not isinstance(volumes, int) or volumes < 0):
+        found.append(f"{label}: volumes must be a whole number from 0, or null")
+    if entry.get("where") is not None and not on_grid_path(entry):
+        found.append(f"{label}: where must be a grid folder, or null")
+    kind = mask_kind(entry)
+    # An entry that names no masks speaks of the source's, and says so in its vertebrae too.
+    if kind != "masks" and entry.get("origin") != "release":
+        found.append(f"{label}: masks that begin 'none' or 'not recorded' are the source's: origin release")
+    if kind == "none" and (entry.get("vertebrae") != "none" or entry.get("where") is not None):
+        found.append(f"{label}: an entry that says none has vertebrae none and where null")
+    if kind == "unknown" and entry.get("vertebrae") != "not recorded":
+        found.append(f"{label}: an entry that says not recorded has vertebrae not recorded")
+    return found
+
+
+def segmentations_problems(ident, entries):
+    if not isinstance(entries, list) or not entries:
+        return [f"{ident}: segmentations must be a list of one or more entries"]
+    found = []
+    for index, entry in enumerate(entries, 1):
+        label = f"{ident}: segmentations entry {index}"
+        if isinstance(entry, dict):
+            found.extend(entry_problems(label, entry))
+        else:
+            found.append(f"{label} must be an object")
+    return found
+
+
 TEXT_FIELDS = ("name", "group", "what", "licence", "level_truth", "grid_path")
 
 
@@ -877,6 +1366,10 @@ def problems(records):
             found.append(f"{ident}: link must be an address or null")
         if "pairing" in record:
             found.extend(pairing_problems(ident, record["pairing"]))
+        if "regions" in record:
+            found.extend(regions_problems(ident, record["regions"]))
+        if "segmentations" in record:
+            found.extend(segmentations_problems(ident, record["segmentations"]))
         counts = record.get("counts")
         if counts is not None and not isinstance(counts, dict):
             found.append(f"{ident}: counts must be an object")
@@ -921,7 +1414,7 @@ def read_json_file(path):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     sub = parser.add_subparsers(dest="command", required=True)
-    render = sub.add_parser("render", help="fold the records into the last census and write the three files")
+    render = sub.add_parser("render", help="fold the records into the last census and write the four files")
     render.add_argument("--out", required=True, help="the folder to write into")
     render.add_argument("--previous", help="the last census.json, from the branch census")
     render.add_argument("--issues", help="a JSON list of the repository's issues, from gh api")
@@ -957,6 +1450,7 @@ def main(argv=None):
     (out / "CENSUS.md").write_text(render_markdown(data, args.repo), encoding="utf-8")
     # The docs site holds its pages to ASCII; a name with an accent becomes a character reference.
     (out / "census.html").write_bytes(render_html(data, args.repo).encode("ascii", "xmlcharrefreplace"))
+    (out / "census-ct.html").write_bytes(render_ct_html(data, args.repo).encode("ascii", "xmlcharrefreplace"))
     print("census: %d records, %d new, %d changed, %d derived afresh under new rules, %d carried unread, %d removed"
           % (len(records), tally["new"], tally["changed"], tally["rederived"], tally["carried"], tally["removed"]))
     return 0

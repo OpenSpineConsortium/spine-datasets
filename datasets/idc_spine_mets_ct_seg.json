@@ -2,8 +2,23 @@
  "id": "idc_spine_mets_ct_seg",
  "name": "IDC `spine_mets_ct_seg` (tier 2)",
  "group": "ct",
+ "regions": [
+  "abdomen",
+  "pelvis",
+  "spine"
+ ],
  "what": "IDC v24 collection spine_mets_ct_seg (TCIA doi:10.7937/kh36-ds04), tier 2 of the anomaly harvest: 54 subjects, about 17.2 GB raw plus screen; spine, abdomen and pelvis",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "the vertebrae T1 to L5, each named by level: 55 segmentations over all 55 of the collection's CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "by level",
+   "by": "the collection's authors, semi-automatic (3D Slicer's editor)",
+   "volumes": 55,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "CC BY 4.0",
  "link": "https://doi.org/10.7937/kh36-ds04",

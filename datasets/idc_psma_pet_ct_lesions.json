@@ -7,6 +7,24 @@
  ],
  "what": "IDC v24 collection psma_pet_ct_lesions (PSMA-PET-CT-Lesions (autoPET III); TCIA doi:10.7937/r7ep-3x37), tier 1 of the anomaly harvest: 374 subjects and 374 CT series verified on fetch (DICOM), about 61.7 GB; whole body",
  "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "none: IDC v24's segmentations in this collection are over its PET series, none over its CT",
+   "vertebrae": "none",
+   "by": "none",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+  }
+ ],
  "reach": "held",
  "licence": "CC BY 4.0",
  "link": "https://doi.org/10.7937/r7ep-3x37",

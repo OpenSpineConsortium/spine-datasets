@@ -3,8 +3,9 @@
 Source: the SchwingNet thread "SchwingNet video demo plan", 2026-10-21; the records are copied from
 SchwingNet's data/sources/<id>.json (the registry rendered by tools/sources.py, whose field rules
 are src/schwingnet/sources.py), and the routes from docs/research/data-access-requirements.md. The
-held sets, the status `held`, the standard counts, the pairing block and the census come from the
-thread "Dataset census and roadmap", 2026-10-23 (issue #178).
+held sets, the status `held`, the standard counts, the pairing block, the regions, the
+segmentations and the census with its CT page come from the thread "Dataset census and roadmap",
+2026-10-23 (issue #178).
 
 One JSON file per dataset, the one place its facts are written, so that every count of the data is
 made from these files and nobody passes over a dataset twice. They are, first, 81 of SchwingNet's
@@ -57,14 +58,27 @@ The fields this repository adds:
   bounce, a licence line still to confirm, a token only the owner holds); empty when nothing.
 - `next`: one line, what whoever holds the task does next; empty when nothing is planned.
 - `regions`, on a CT record, placed after `group`: the body regions in its field of view, as words
-  from head and neck, chest, abdomen, pelvis, spine, whole body and other; the harvest's releases
-  carry the data platform's anatomy for them (issue #181).
+  from head and neck, chest, abdomen, pelvis, spine, whole body and other, from the data
+  platform's anatomy for the manifest records the registry's map ties it to (issue #181), else from
+  its own text. Every record that holds CT carries them.
 - `pairing`, only on a real X-ray set with the same subject's CT or CBCT, placed after `group`:
   `spine` (true, or false for a pair of something else, a femur, a phantom, a pig limb),
   `region`, `xray`, `ct`, `subjects`, `pose` (stored, shipped, or how it would be found), `masks`
   (what segmentation ships), `annotate` (what a reader would add), each one line of text, and
   `pair_key` (how each X-ray is matched to its CT: the case number, the patient, one specimen)
   and `priority` (a whole number, the order in which annotation takes the sets), both optional.
+- `segmentations`, on a CT record, placed after `level_truth`: the masks the set has, a list of
+  entries, each `{"origin", "masks", "vertebrae", "by", "volumes", "where"}`. `origin` is `release`
+  for masks the source ships and `made` for masks made on the grid from its CTs; `masks` says in
+  one line what they are, beginning "none" where the source ships none and "not recorded" where
+  nothing here says what it ships (both are `release`); `vertebrae` is how they name the
+  vertebrae, `by level`, `together` (the spine as one mask), `none` or `not recorded`; `by` is who
+  made them and how; `volumes` the CT volumes they cover, or null where nobody counted; `where` the
+  grid folder that holds them, or null where they are not on the grid or no folder is recorded. A
+  record with no `segmentations` has masks nobody has surveyed yet, which the CT page lists as a
+  gap. The entries come from the data platform's manifest, the registry's map to it, IDC's own
+  index and the grid's listings; IDC's fetch takes the CT series alone, so no IDC mask is on the
+  grid until a fetch takes it.
 
 The counts the census adds up are read from `counts` under the standard keys `subjects`,
 `xray_images` (a still image counted once), `videos` (a run, clip, recording or sweep counted
@@ -86,8 +100,8 @@ whose fields do not hold together. Inside every column the X-ray groups (fluoro,
 projections, films) come before ct, and the fetch order follows the same rule: X-ray sets before
 CT, the owner's order of 2026-10-21.
 
-The census (tools/census.py; census.json, CENSUS.md and census.html on the branch `census`, and
-census.html on the docs site) is folded from the same files: each run of the Census workflow
+The census (tools/census.py; census.json, CENSUS.md, census.html and census-ct.html on the branch
+`census`, and the two pages on the docs site) is folded from the same files: each run of the Census workflow
 (.github/workflows/census.yml) reads the last census.json and derives a row again only for a
 record that is new or whose content changed since, by the record's sha256, carrying every other
 row as it was, and logs what moved with the date: a record added or removed, a status, a stage, a
@@ -97,10 +111,14 @@ the date the census first saw it, even if it is removed and written again, and t
 content last changed. It shows the totals, the paired CT and X-ray breakout in tiers (A on the
 grid, B open or granted, C asked or still to ask, D refused or embargoed, E pairs of something
 other than the spine), every dataset with filters, what the records still lack and the log. A pair
-moves from tier to tier by itself as its record's status moves. `bash scripts/check.sh` runs
-`python3 tools/census.py check`, which refuses a pairing block, a standard count, a text field or
-a `measured` that does not hold together, two records with one id, and a record whose id is not
-its file's name.
+moves from tier to tier by itself as its record's status moves. The CT page, census-ct.html, lists
+every record that holds CT (one with `regions`, of the group ct, or with a count of CT volumes) by
+region, with each set's masks from its `segmentations`, the CT and the masks on the grid in
+figures, filters by region, stage, licence and masks, and what the CT records still lack; a sum
+there counts a CT twice where two records hold it. `bash scripts/check.sh` runs
+`python3 tools/census.py check`, which refuses a pairing block, `regions`, `segmentations`, a
+standard count, a text field or a `measured` that does not hold together, two records with one id,
+and a record whose id is not its file's name.
 
 A collaborator changes `status`, `result` and, after a fetch, `grid_path` and `measured`, and
 replaces a "to confirm on the page" with what the page says; `licence` and `link` change only when

@@ -2,8 +2,46 @@
  "id": "idc_nlst",
  "name": "NLST, full (tier 2; 500-person pilot fetched)",
  "group": "ct",
+ "regions": [
+  "chest",
+  "other"
+ ],
  "what": "the National Lung Screening Trial in IDC v24 (TCIA doi:10.7937/tcia.hmq8-j677), full: 24,713 subjects, about 2,305 GB raw plus screen; the 500-person pilot is fetched (the manifest's nlst_pilot, in the harvest)",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "the aorta, oesophagus, heart and trachea: 1,039 segmentations over 1,039 of the collection's 203,087 CT series, in IDC v24; not fetched yet",
+   "vertebrae": "none",
+   "by": "IDC's analysis results, automatic",
+   "volumes": 1039,
+   "where": null
+  },
+  {
+   "origin": "release",
+   "masks": "the lungs and their nodules: 1,144 segmentations over 1,042 of the collection's 203,087 CT series, in IDC v24; not fetched yet",
+   "vertebrae": "none",
+   "by": "BAMF Health, automatic, for IDC's analysis results, 102 of them semi-automatic",
+   "volumes": 1042,
+   "where": null
+  },
+  {
+   "origin": "release",
+   "masks": "76 structures, among them every vertebra in view from C1 to L5, each named by level, the sacrum and the ribs: 126,051 segmentations over 126,051 of the collection's 203,087 CT series, in IDC v24; not fetched yet",
+   "vertebrae": "by level",
+   "by": "IDC, automatic (TotalSegmentator 1.5.6); no radiologist has read them",
+   "volumes": 126051,
+   "where": null
+  },
+  {
+   "origin": "release",
+   "masks": "tumours and nodules: 596 segmentations over 596 of the collection's 203,087 CT series, in IDC v24; not fetched yet",
+   "vertebrae": "none",
+   "by": "NLSTSeg's readers, by hand",
+   "volumes": 596,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "CC BY 4.0",
  "link": "https://doi.org/10.7937/tcia.hmq8-j677",

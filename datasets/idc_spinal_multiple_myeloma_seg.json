@@ -2,8 +2,21 @@
  "id": "idc_spinal_multiple_myeloma_seg",
  "name": "IDC `spinal_multiple_myeloma_seg` (tier 2)",
  "group": "ct",
+ "regions": [
+  "spine"
+ ],
  "what": "IDC v24 collection spinal_multiple_myeloma_seg (TCIA doi:10.7937/k4qv-hh78), tier 2 of the anomaly harvest: 67 subjects, about 33.8 GB raw plus screen; spine",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "the vertebrae C7 to L5, each named by level, and the neoplasm: 2 segmentations over 1 of the collection's 576 CT series, in IDC v24; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "by level",
+   "by": "the collection's authors, automatic",
+   "volumes": 1,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "CC BY 4.0",
  "link": "https://doi.org/10.7937/k4qv-hh78",

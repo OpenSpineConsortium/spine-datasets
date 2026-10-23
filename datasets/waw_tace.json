@@ -7,6 +7,24 @@
  ],
  "what": "WAW-TACE, multiphase abdominal CT of 233 patients with hepatocellular carcinoma, from Warsaw, Zenodo record 12741586; tier 1 of the anomaly harvest: 854 scans in the release's four CT archives, of which the data platform counts 228 CTs, about 47.15 GB in the catalogue (NIfTI); it is the Medical University of Warsaw part of PanTSMini",
  "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: the fetch took the four CT archives alone",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": 228,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/waw_tace"
+  }
+ ],
  "reach": "held",
  "licence": "CC BY 4.0",
  "link": "https://zenodo.org/records/12741586",

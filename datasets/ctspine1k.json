@@ -2,8 +2,24 @@
  "id": "ctspine1k",
  "name": "CTSpine1K",
  "group": "ct",
+ "regions": [
+  "head and neck",
+  "chest",
+  "abdomen",
+  "spine"
+ ],
  "what": "1,005 CT volumes with vertebra masks, gathered from four public sources (MIRACLE-Center; doi:10.59275/j.melba.2025-gf84)",
  "level_truth": "vertebra masks by level",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "vertebra masks from C1 to L6 and the sacrum, each vertebra named by level in VerSe's convention (a T13 is label 28), as rawdata/labels/<source>/*_seg.nii.gz",
+   "vertebrae": "by level",
+   "by": "the release's annotators, expert",
+   "volumes": 1005,
+   "where": "/rs/rs_grp_oschome/go2432/data/ctspine1k"
+  }
+ ],
  "reach": "held",
  "licence": "CC BY-NC-SA 4.0",
  "link": "https://github.com/MIRACLE-Center/CTSpine1K",

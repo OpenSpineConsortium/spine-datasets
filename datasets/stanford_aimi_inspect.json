@@ -2,8 +2,21 @@
  "id": "stanford_aimi_inspect",
  "name": "Stanford AIMI INSPECT chest CT",
  "group": "ct",
+ "regions": [
+  "chest"
+ ],
  "what": "19,402 patients; a gated anomaly-harvest collection (group B7)",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: not fetched yet; what the release ships is to confirm on its page",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "gated",
  "licence": "a data use agreement (non-commercial)",
  "link": "https://stanfordaimi.azurewebsites.net/",

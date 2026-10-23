@@ -2,6 +2,10 @@
  "id": "deepfluoro",
  "name": "DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs",
  "group": "fluoro",
+ "regions": [
+  "pelvis",
+  "spine"
+ ],
  "pairing": {
   "spine": true,
   "region": "pelvis, hip and lower lumbar spine",
@@ -16,6 +20,24 @@
  },
  "what": "6 cadaver specimens from pelvic osteotomy experiments: 366 fluoroscopy frames with registered poses and 3D and 2D labels in one H5 file (doi:10.7281/T1/IFSXNV), and the vendor DICOM deposit of the same experiments, 2,659 frames and 19 CT files (doi:10.7281/T1/C304HZ)",
  "level_truth": "pelvis and lower lumbar spine, from the CT",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "a 3-D segmentation of 7 classes, the vertebrae one class with the upper sacrum, and a 2-D segmentation on every frame, in ipcai_2020_full_res_data.h5",
+   "vertebrae": "together",
+   "by": "the release's authors",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/go2432/data/deepfluoro_h5"
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks of the specimens' CTs",
+   "vertebrae": "not recorded",
+   "by": "the owner's runs, automatic (SPINEPS); no radiologist has read them",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "held",
  "licence": "CC BY-NC 4.0 by the H5 release's LICENSE, CC BY-NC-SA 4.0 by its datasheet: non-commercial either way",
  "link": "https://github.com/rg2/DeepFluoroLabeling-IPCAI2020",

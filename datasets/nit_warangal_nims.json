@@ -2,6 +2,9 @@
  "id": "nit_warangal_nims",
  "name": "NIT Warangal and NIMS Hyderabad intraoperative C-arm sets (2D-3D-sci-registration)",
  "group": "fluoro",
+ "regions": [
+  "spine"
+ ],
  "pairing": {
   "spine": true,
   "region": "lumbar, L1 to L5",
@@ -15,6 +18,16 @@
  },
  "what": "nine living patients and 51 AP and lateral C-arm sets in the repository's README (at most 49 unique frames), a Ziehm C-arm, preoperative CT with level-named L1 to L5 centroids; the 60 centroid files and 54 overlay PNGs (the real frame at 8 bits beside a simulated projection) are public on the repository, the CT and raw X-rays available upon reasonable request",
  "level_truth": "L1 to L5 centroids named by level, from the preoperative CT",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "none: L1 to L5 centroids named by level, no masks",
+   "vertebrae": "none",
+   "by": "none",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "licence": "not recorded; the raw frames and CTs are available upon reasonable request",
  "link": "https://github.com/RaghuGangoluNITW/2D-3D-sci-registration",
  "how_to_get": [

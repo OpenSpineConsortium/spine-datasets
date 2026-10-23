@@ -2,8 +2,21 @@
  "id": "zenodo_medpelvis3d",
  "name": "MedPelvis3D pelvic CT (99, PLA General Hospital)",
  "group": "ct",
+ "regions": [
+  "pelvis"
+ ],
  "what": "MedPelvis3D pelvic CT, 99 subjects, PLA General Hospital, Zenodo 21757686 published 2026-08-02, about 15.1 GB",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: every file of the record was fetched, so any masks it ships are inside its archives",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/shared/datasets/zenodo_medpelvis3d/raw"
+  }
+ ],
  "reach": "get",
  "licence": "CC BY 4.0",
  "link": "https://zenodo.org/records/21757686",

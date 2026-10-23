@@ -2,6 +2,9 @@
  "id": "ljubljana_2d3d_gs",
  "name": "Ljubljana 2D/3D registration gold standard (PIXIUM 4600)",
  "group": "fluoro",
+ "regions": [
+  "spine"
+ ],
  "pairing": {
   "spine": true,
   "region": "lumbar, L1 to L5",
@@ -16,6 +19,16 @@
  },
  "what": "18 X-ray images of one cadaver lumbar spine with fiducial markers, L1 to L5, each with its sensor pose and source position in its header; five CT and five MR volumes, one per vertebra, each with a gold-standard rigid transform to the X-rays; the flat panel is a PIXIUM 4600 as SchwingNet's registry records it, which neither the source's page nor its user guide names",
  "level_truth": "L1 to L5: each vertebra is its own CT and MR volume, placed on every X-ray by its gold-standard transform and the X-ray's header geometry",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "no masks: each vertebra, L1 to L5, comes as a CT and an MR volume of its own, so the volume names the level",
+   "vertebrae": "by level",
+   "by": "the release's authors",
+   "volumes": 5,
+   "where": "/rs/rs_grp_oschome/go2432/data/ljubljana"
+  }
+ ],
  "reach": "held",
  "licence": "CC BY-NC-ND, as the source's page gives it (read 2026-10-23); the user guide that comes with the set says the data are used only under an agreement form between the user and the Laboratory of Imaging Technologies, and never redistributed",
  "link": "https://lit.fe.uni-lj.si/en/raziskave/viri/2D-3D-GS",

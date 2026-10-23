@@ -2,6 +2,10 @@
  "id": "cobra_embargoed",
  "name": "COBRA2026 embargoed cases",
  "group": "projections",
+ "regions": [
+  "pelvis",
+  "spine"
+ ],
  "pairing": {
   "spine": true,
   "region": "lumbosacral spine and pelvis",
@@ -15,6 +19,16 @@
  },
  "what": "the challenge's held-back cases",
  "level_truth": "same",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "none: the held-back cases are not released, and the public ones ship no anatomical labels",
+   "vertebrae": "none",
+   "by": "none",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "embargoed",
  "licence": "CC BY-NC 4.0",
  "link": "https://zenodo.org/records/21322350",

@@ -10,6 +10,24 @@
  ],
  "what": "IDC v24 collection covid_19_ny_sbu (COVID-19-NY-SBU; TCIA doi:10.7937/tcia.bbag-2923), tier 1 of the anomaly harvest: 443 subjects and 443 CT series verified on fetch (DICOM), about 63.1 GB; chest, abdomen, pelvis and whole body; its CR and DX films are task #185",
  "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+   "vertebrae": "none",
+   "by": "none",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together; the folder holds the 39 collections of IDC's first tier together, 3,499 usable CTs of the 3,600 fetched, and this collection's share of them is not counted here",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/idc"
+  }
+ ],
  "reach": "held",
  "licence": "CC BY 4.0",
  "link": "https://doi.org/10.7937/tcia.bbag-2923",

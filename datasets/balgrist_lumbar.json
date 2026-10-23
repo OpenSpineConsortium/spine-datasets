@@ -2,6 +2,9 @@
  "id": "balgrist_lumbar",
  "name": "Balgrist ex-vivo lumbar CT plus C-arm (Jecklin)",
  "group": "fluoro",
+ "regions": [
+  "spine"
+ ],
  "pairing": {
   "spine": true,
   "region": "lumbar spine of cadavers",
@@ -15,6 +18,16 @@
  },
  "what": "cadaver lumbar CT with real C-arm frames",
  "level_truth": "yes, from the CT",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: the paper does not say, and the set was refused",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "not recorded",
  "link": "https://rocs.balgrist.ch/en/contact",
