@@ -16,7 +16,7 @@
  "what": "nine living patients and 51 AP and lateral C-arm sets in the repository's README (at most 49 unique frames), a Ziehm C-arm, preoperative CT with level-named L1 to L5 centroids; the 60 centroid files and 54 overlay PNGs (the real frame at 8 bits beside a simulated projection) are public on the repository, the CT and raw X-rays available upon reasonable request",
  "level_truth": "L1 to L5 centroids named by level, from the preoperative CT",
  "licence": "not recorded; the raw frames and CTs are available upon reasonable request",
- "link": null,
+ "link": "https://github.com/RaghuGangoluNITW/2D-3D-sci-registration",
  "how_to_get": [
   "Write to the authors named on the repository and the manuscript (National Institute of Technology Warangal; Nizam's Institute of Medical Sciences, Hyderabad), to confirm; the letter is letters/nit_warangal_nims.md.",
   "A yes brings whatever agreement the authors ask for, which the owner signs, then a transfer by link, fetched as a grid job on the owner's word."
@@ -44,6 +44,11 @@
    "date": "2026-10-21",
    "step": "asked",
    "note": "Letter sent 2026-10-21 09:40 UTC by the owner; waiting for the answer."
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the link is the 2D-3D-sci-registration repository the record names, found on 2026-10-23 by its name and description; its page could not be read from the session"
   }
  ],
  "obstacles": [],

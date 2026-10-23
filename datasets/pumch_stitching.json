@@ -5,7 +5,7 @@
  "what": "43 scoliosis patients, four to six overlapping prone AP exposures each on a Philips Zenition 70; the shift between shots estimated, not recorded; no labels stated; the paper says no datasets were generated or analysed",
  "level_truth": "none stated; the series carries the count from one exposure to the next",
  "licence": "not recorded; a data use agreement is the route",
- "link": null,
+ "link": "https://doi.org/10.1007/s00586-026-09872-7",
  "how_to_get": [
   "Write to the corresponding author at Peking Union Medical College Hospital (Department of Orthopaedics), to confirm; one letter can carry this ask and SX-Stitch's; the letter is letters/pumch_stitching.md.",
   "A yes brings a data use agreement, which the owner signs, then a transfer by link, fetched as a grid job on the owner's word."
@@ -29,6 +29,11 @@
    "date": "2026-10-21",
    "step": "asked",
    "note": "Letter sent 2026-10-21 09:40 UTC by the owner; waiting for the answer."
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the link is Liu et al.'s paper (European Spine Journal 2026, PubMed 41910750), found on 2026-10-23 by its journal and subject; its page could not be read from the session"
   }
  ],
  "obstacles": [],

@@ -6,7 +6,7 @@
  "level_truth": "unknown",
  "reach": "get",
  "licence": "not recorded",
- "link": null,
+ "link": "https://drive.google.com/file/d/1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ/view",
  "how_to_get": [
   "cd into a scratch directory on a compute node and gdown 1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ; inspect what came; then decide whether it is a source at all.",
   "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid cm_spine_drive_file; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"cm_spine_drive_file\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
@@ -24,6 +24,11 @@
    "date": "2026-10-21",
    "step": "researched",
    "note": "empty in the data platform at bf1432f; the owner's hand: gdown into a scratch directory, inspect, then decide"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the link opens the Drive file by the id the data platform gives, so the owner's look is one press; the file was not opened from the session"
   }
  ],
  "obstacles": [

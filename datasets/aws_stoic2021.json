@@ -6,7 +6,7 @@
  "level_truth": "counted by the census pipeline once fetched",
  "reach": "get",
  "licence": "CC BY-NC 4.0",
- "link": "s3://stoic2021-training",
+ "link": "https://registry.opendata.aws/stoic2021-training/",
  "how_to_get": [
   "spinesurg-ct-nnunet's slurm/acquisition_fetch.sh s3 --collection stoic2021 --bucket s3://stoic2021-training/data/mha --include '\\.mha$', submitted from the harvest's acquisition folder; the check is FETCH_STATUS.json's unresolved_failures at 0, and the 2,000 MHA verified by size.",
   "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid aws_stoic2021; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"aws_stoic2021\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
@@ -32,6 +32,11 @@
    "date": "2026-10-23",
    "step": "held",
    "note": "on the grid at /rs/rs_grp_oschome/go2432/data/aws_stoic2021, 265 GB in the status listing of 2026-10-23 02:05 UTC (symphony-template grid branch, 26f3bde), no fetch job in the listing's window; the record states about 240 GB and 2,000 subjects; the listing's sample report counts 2,000 images; fetched by the owner's chain, not the promoter, so no manifest covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the link is now the bucket's page on the Registry of Open Data on AWS, read 2026-10-23, in place of its s3 address, which no page can open; the page gives CC BY-NC 4.0, 2,000 CT scans and the bucket the record's what names, as the record does"
   }
  ],
  "obstacles": [
