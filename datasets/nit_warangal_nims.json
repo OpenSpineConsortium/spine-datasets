@@ -2,6 +2,17 @@
  "id": "nit_warangal_nims",
  "name": "NIT Warangal and NIMS Hyderabad intraoperative C-arm sets (2D-3D-sci-registration)",
  "group": "fluoro",
+ "pairing": {
+  "spine": true,
+  "region": "lumbar, L1 to L5",
+  "xray": "51 AP and lateral C-arm sets on a Ziehm C-arm, at most 49 unique frames",
+  "ct": "the preoperative CT, with L1 to L5 centroids named by level",
+  "subjects": "9 patients",
+  "pose": "the public overlays set each real frame beside a simulated projection",
+  "masks": "level-named centroids; no masks",
+  "annotate": "to read once the set is in hand",
+  "pair_key": "the patient"
+ },
  "what": "nine living patients and 51 AP and lateral C-arm sets in the repository's README (at most 49 unique frames), a Ziehm C-arm, preoperative CT with level-named L1 to L5 centroids; the 60 centroid files and 54 overlay PNGs (the real frame at 8 bits beside a simulated projection) are public on the repository, the CT and raw X-rays available upon reasonable request",
  "level_truth": "L1 to L5 centroids named by level, from the preoperative CT",
  "licence": "not recorded; the raw frames and CTs are available upon reasonable request",
@@ -12,7 +23,11 @@
  ],
  "reach": "get",
  "grid_path": null,
- "counts": {},
+ "counts": {
+  "subjects": 9,
+  "xray_images": 49,
+  "ct_volumes": 9
+ },
  "measured": {},
  "record": "SchwingNet docs/research/xray-dataset-requests.md section 15 (2026-10-21); no record under SchwingNet's data/sources/ existed for this set, so this one was written from that section",
  "source_status": "a letter sent 2026-10-21; no record in SchwingNet's registry yet",

@@ -1,0 +1,108 @@
+# The census (tools/census.py): every dataset counted from its one record,
+# datasets/<id>.json. Each run folds into the last census, census.json on the
+# branch "census", only the records that are new or whose content changed
+# since, by the sha256 of each record, so no dataset is passed over twice and
+# no record that did not change is read again; the census grows as records
+# are added. It writes census.json, the ledger the next run folds into,
+# CENSUS.md, which GitHub renders, and census.html, the page the docs site
+# serves too (docs.yml). The branch is written the way the pipeline board's
+# is, a commit built from the files alone (hash-object, mktree, commit-tree),
+# here with the commit it read as its parent, so the branch keeps every
+# census as history and a push that finds the branch moved is refused and
+# folded again. It runs on a push to the default branch that changes a
+# record or the scripts, on every issue event, since a task names its
+# record, daily as a fallback, and by hand. The issues are read with
+# GITHUB_TOKEN alone through gh and handed to the script as a file; a push
+# made with GITHUB_TOKEN starts no workflow. A branch census that holds
+# anything else is the project's own and is left alone.
+
+name: Census
+
+on:
+  push:
+    branches: [main]
+    paths: ["datasets/**", "tools/census.py", "tools/pipeline.py", ".github/workflows/census.yml"]
+  issues:
+    types: [opened, edited, closed, reopened, labeled, unlabeled]
+  schedule:
+    - cron: "41 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: census
+  cancel-in-progress: false
+
+jobs:
+  census:
+    if: github.event.repository.fork == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Read the tasks
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --paginate "repos/$GITHUB_REPOSITORY/issues?state=all&per_page=100" --slurp | python3 -c 'import json,sys; print(json.dumps([i for page in json.load(sys.stdin) for i in page]))' > "$RUNNER_TEMP/issues.json"
+
+      - name: Fold the records into the census on the branch census
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          out="$RUNNER_TEMP/census"
+          last="$RUNNER_TEMP/last-census.json"
+          foreign_files() {
+            git ls-tree --name-only "$1" | grep -v -x -e census.json -e CENSUS.md -e census.html
+          }
+          write_census() {
+            previous=""
+            rm -f "$last"
+            git update-ref -d refs/remotes/origin/census 2>/dev/null || true
+            if git fetch --quiet --no-tags origin +refs/heads/census:refs/remotes/origin/census 2>/dev/null; then
+              previous="$(git rev-parse refs/remotes/origin/census)" || return 1
+            fi
+            if [ -n "$previous" ] && foreign="$(foreign_files "$previous")"; then
+              echo "the branch census holds files this workflow did not write:"
+              echo "$foreign"
+              echo "It is the project's own branch and stays as it is; nothing was pushed."
+              return 2
+            fi
+            parent=""
+            if [ -n "$previous" ]; then
+              git show "$previous:census.json" > "$last" || return 1
+              parent="-p $previous"
+            fi
+            python3 tools/census.py render --out "$out" --previous "$last" --issues "$RUNNER_TEMP/issues.json" --repo "$GITHUB_REPOSITORY" || return 1
+            # The date of writing changes every day; a census that differs in
+            # nothing else pushes nothing.
+            if [ -n "$previous" ] && python3 tools/census.py same "$last" "$out/census.json"; then
+              echo "census unchanged"
+              return 0
+            fi
+            ledger="$(git hash-object -w "$out/census.json")" || return 1
+            md="$(git hash-object -w "$out/CENSUS.md")" || return 1
+            page="$(git hash-object -w "$out/census.html")" || return 1
+            tree="$(printf '100644 blob %s\tCENSUS.md\n100644 blob %s\tcensus.html\n100644 blob %s\tcensus.json\n' "$md" "$page" "$ledger" | git mktree)" || return 1
+            # shellcheck disable=SC2086 # parent is empty or the two words -p <sha>
+            commit="$(git commit-tree "$tree" $parent -m "Census as of $(date -u +%Y-%m-%d)")" || return 1
+            git push --quiet origin "$commit:refs/heads/census" || return 1
+            echo "census written as $commit"
+          }
+          status=0
+          write_census || status=$?
+          if [ "$status" -eq 0 ]; then
+            exit 0
+          elif [ "$status" -eq 2 ]; then
+            exit 1
+          fi
+          echo "the branch census moved during this run; folding again onto what it holds now"
+          write_census

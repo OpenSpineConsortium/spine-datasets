@@ -1,0 +1,49 @@
+{
+ "id": "deepfluoro",
+ "name": "DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs",
+ "group": "fluoro",
+ "pairing": {
+  "spine": true,
+  "region": "pelvis, hip and lower lumbar spine",
+  "xray": "366 frames with registered poses (H5), and 2,659 vendor frames",
+  "ct": "a CT of each specimen (19 CT files in the vendor deposit)",
+  "subjects": "6 cadaver specimens",
+  "pose": "shipped for the 366 H5 frames",
+  "masks": "7 classes in 3D and per frame in 2D; the vertebrae are one class, with the upper sacrum",
+  "annotate": "split the vertebrae class into named lumbar bodies",
+  "pair_key": "the specimen number",
+  "priority": 3
+ },
+ "what": "6 cadaver specimens from pelvic osteotomy experiments: 366 fluoroscopy frames with registered poses and 3D and 2D labels in one H5 file (doi:10.7281/T1/IFSXNV), and the vendor DICOM deposit of the same experiments, 2,659 frames and 19 CT files (doi:10.7281/T1/C304HZ)",
+ "level_truth": "pelvis and lower lumbar spine, from the CT",
+ "reach": "held",
+ "licence": "CC BY-NC 4.0 by the H5 release's LICENSE, CC BY-NC-SA 4.0 by its datasheet: non-commercial either way",
+ "link": "https://github.com/rg2/DeepFluoroLabeling-IPCAI2020",
+ "how_to_get": [
+  "Held: on the grid at /rs/rs_grp_oschome/go2432/data/deepfluoro_h5; /rs/rs_grp_oschome/go2432/data/deepfluoro_vendor, fetched from the JHU Dataverse on 2026-09-20 and 2026-09-22; nothing to fetch.",
+  "To share it with collaborators, copy it into /rs/rs_grp_oschome/shared/datasets/deepfluoro/ with its checksums as a Slurm job, as the pig set of #22 was copied, and note the job in the history."
+ ],
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/deepfluoro_h5; /rs/rs_grp_oschome/go2432/data/deepfluoro_vendor",
+ "counts": {
+  "subjects": 6,
+  "xray_images": 2659,
+  "ct_volumes": 19,
+  "h5_frames": 366,
+  "size_gb": 116.26
+ },
+ "measured": {},
+ "record": "SchwingNet data/sources/deepfluoro.json, 2026-10-23",
+ "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
+ "route": "download",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/deepfluoro_h5; /rs/rs_grp_oschome/go2432/data/deepfluoro_vendor",
+ "history": [
+  {
+   "date": "2026-10-23",
+   "step": "held",
+   "note": "on the grid at /rs/rs_grp_oschome/go2432/data/deepfluoro_h5; /rs/rs_grp_oschome/go2432/data/deepfluoro_vendor, fetched from the JHU Dataverse on 2026-09-20 and 2026-09-22, before the shared tree and its promoter existed; the record written for the census (#178) from SchwingNet's registry"
+  }
+ ],
+ "obstacles": [],
+ "next": ""
+}

@@ -19,7 +19,7 @@
  "record": "spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md Not drafted",
  "source_status": "a registration, not a letter; the count on the corpus page is to be checked when registering",
  "route": "account",
- "status": "fetched",
+ "status": "held",
  "result": "Held: the UNM corpus is on Ceph at /rs/rs_grp_oschome/go2432/data/external/fluoro_video/dysphagiabank_unm, 87 files, 19 GB, listed by spine-program 01_carm_level_detection/MANIFEST_GRID.md (ls of 2026-10-08) and held in data_mining/data/datasets.json; downloaded under the owner's TalkBank account (address verified 2026-09-27). Nothing to obtain; the swallow clips are cut but never scored.",
  "history": [
   {
@@ -36,6 +36,11 @@
    "date": "2026-10-21",
    "step": "note",
    "note": "audit (#97): held on Ceph, 87 files, 19 GB (MANIFEST_GRID.md, ls 2026-10-08); the record said todo because SchwingNet's registry had it as reach get"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "held",
+   "note": "the corpus is in the owner's data root, not the shared tree, so the status is held; only the promoter marks a set fetched (the census, #178)"
   }
  ],
  "obstacles": [

@@ -1,17 +1,31 @@
 {
  "id": "veterinary_pig_levelcheck",
- "name": "Veterinary: pig CBCT, CT and planar images (Goswami 2020, LevelCheck)",
+ "name": "Veterinary: pig lower limb CT, CBCT and planar images (Goswami 2020, IEEE DataPort)",
  "group": "future",
- "what": "the LevelCheck pig study's seven zips of CBCT, CT and planar images, about 205 MB, with the paper (IEEE Access 2020), 3D-to-2D intensity-based registration",
- "level_truth": "from the CT, by registration",
+ "pairing": {
+  "spine": false,
+  "region": "pig lower limb, a phantom; no spine",
+  "xray": "14 C-arm planar projections: 7 poses with soft tissue and 7 without",
+  "ct": "a CT and two CBCTs, with and without soft tissue",
+  "subjects": "1 phantom",
+  "pose": "registration matrices shipped",
+  "masks": "none",
+  "annotate": "nothing for the spine; a registration benchmark",
+  "pair_key": "one phantom: every projection pairs with its CT"
+ },
+ "what": "seven zips, about 205 MB: the CT of a pig lower limb phantom, two CBCTs (with and without soft tissue), 7 C-arm planar projections at different poses in each condition and the registration matrices, from 'A new workflow for image-guided intraoperative electron radiotherapy' (IEEE Access 2020, doi 10.21227/gxpd-d998); not the LevelCheck pig study this record once named, and no spine",
+ "level_truth": "none; no spine",
  "reach": "get",
  "licence": "IEEE DataPort open access",
  "link": "https://ieee-dataport.org/open-access/pig-data-2d-3d-intensity-based-registration",
  "how_to_get": [
   "Download from IEEE DataPort (an IEEE account, no agreement) to Ceph as a job; or restore the seven zips from the archive the record names (spine-program 99_archive/MANIFEST_CODE.md)."
  ],
- "grid_path": null,
+ "grid_path": "/rs/rs_grp_oschome/shared/datasets/veterinary_pig_levelcheck",
  "counts": {
+  "subjects": 1,
+  "xray_images": 14,
+  "ct_volumes": 3,
   "zips": 7,
   "size_mb": 205
  },
@@ -19,7 +33,7 @@
  "record": "spine-program 99_archive/MANIFEST_CODE.md; 99_archive/LITERATURE_BY_PATH.md",
  "source_status": "the owner's future direction of 2026-10-20: expand the workflow into veterinary medicine; the zips sit in spine-program's archive, excluded from the record, and the set is open on IEEE DataPort; the Mendeley canine thoracic set (canine_thoracic_vhs) stands beside it since the sweep of 2026-10-21",
  "route": "account",
- "status": "fetching",
+ "status": "held",
  "result": "on the grid at /rs/rs_grp_oschome/go2432/data/veterinary_pig_levelcheck/raw/: seven zips, 205,004,261 bytes (CTscan_Pig.zip 48,336,485 md5 36117ac1d0b7c9ca09a1751b71093740; CBCT_SoftTissue.zip 43,628,186 md5 9eef2a6abf96e6217880f2b5610da01f; CTscan_Applicator.zip 42,542,916 md5 dc9422c0a396662c3a3b3bac909e0594; PlanarImagesSofttissue.zip 12,319,446 md5 714741e8bd4604365dc2834902dddf8c; CBCT_NOSoftTissue.zip 45,775,701 md5 0586398b22e79494a1477855713f138b; PlanarImagesNoSoftTissue.zip 12,396,682 md5 42a1f423401a4b3bc80d5939d42bbd9b; MatricesSoftTissue.zip 4,845 md5 7b4540fc7a42a671522afd3e9e9b84b5)",
  "history": [
   {
@@ -46,6 +60,11 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "the seven zips and meta/ copied into /rs/rs_grp_oschome/shared/datasets/veterinary_pig_levelcheck/ by Slurm job 40731458 on asx1, every file passing md5sum -c against MD5SUMS.txt; the files came through a login, so no public-link manifest exists for the promoter to replay"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "held",
+   "note": "the zips came through the owner's login and were copied into the shared tree by hand (job 40731458), so no promoter manifest covers them and the status is held; the name and contents corrected from SchwingNet's registry: the pig lower-limb set of IEEE Access 2020, not the LevelCheck pig study, and no spine"
   }
  ],
  "obstacles": [],

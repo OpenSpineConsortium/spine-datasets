@@ -5,8 +5,8 @@ interactive scrum board listing all the datasets that have been attained, those 
 contacted, those that can be downloaded online, and every step along the way".
 
 The records under datasets/ are the one source: each carries its route, its status, a dated
-history of the steps taken (researched, asked, granted, fetching, fetched, refused, handed back,
-or a note), the obstacles in the way and the next step. The tasks, read from a JSON snapshot of
+history of the steps taken (researched, asked, granted, fetching, fetched, held, refused, handed
+back, or a note), the obstacles in the way and the next step. The tasks, read from a JSON snapshot of
 the repository's issues, add who holds each dataset and the link to its task. From those this
 script writes two views of the same board: PIPELINE.md, which GitHub renders, one column per
 stage with a card per dataset that opens to its steps; and pipeline.html, the interactive one,
@@ -35,8 +35,11 @@ LETTERS = ROOT / "letters"
 DEFAULT_REPO = "OpenSpineConsortium/spine-datasets"
 
 ROUTES = ("letter", "form", "account", "agreement", "download", "owner-only")
-STATUSES = ("todo", "requested", "granted", "fetching", "fetched", "refused", "needs-owner")
-STEPS = ("researched", "asked", "granted", "fetching", "fetched", "refused", "handed-back", "note")
+# held: on the grid by the owner's own chain rather than the promoter, so no manifest covers it:
+# under the owner's data root, or copied into the shared tree by hand; grid_path says where.
+# Only the promoter marks a set fetched (tools/dataset_review.py).
+STATUSES = ("todo", "requested", "granted", "fetching", "fetched", "held", "refused", "needs-owner")
+STEPS = ("researched", "asked", "granted", "fetching", "fetched", "held", "refused", "handed-back", "note")
 OWNER_ROUTES = ("account", "agreement", "owner-only")
 # X-ray sets come before CT everywhere (the owner, 2026-10-21): the columns, the page and the
 # fetch order follow this order of groups, and the id inside a group.
@@ -51,6 +54,7 @@ STAGES = (
     ("granted", "Granted, fetch pending", "the source said yes; the fetch is next"),
     ("fetching", "Fetching", "a grid job is submitted or running"),
     ("on-grid", "On the grid", "under /rs/rs_grp_oschome/shared/datasets/<id>/raw with checksums"),
+    ("held", "Held by the owner", "on the grid by the owner's own chain, not the promoter; grid_path says where"),
     ("needs-owner", "Needs the owner", "a signature, a fee, an account or a budget decision"),
     ("refused", "Refused", "the source said no, or the terms cannot be met"),
     ("later", "Later", "embargoed, or nothing can be done yet"),
@@ -87,6 +91,8 @@ def stage_of(record):
         return status
     if status == "fetched":
         return "on-grid"
+    if status == "held":
+        return "held"
     if record.get("reach") == "embargoed":
         return "later"
     if record.get("route") == "download":
@@ -258,7 +264,7 @@ p.lead { margin: 0 0 12px; color: var(--muted); max-width: 70ch; }
 .card .name { font-weight: 600; }
 .card .meta { color: var(--muted); font-size: 12px; }
 .card .next { font-size: 12px; margin-top: 2px; }
-.card[data-stage="on-grid"] { border-left-color: var(--ok); }
+.card[data-stage="on-grid"], .card[data-stage="held"] { border-left-color: var(--ok); }
 .card[data-stage="needs-owner"], .card[data-stage="later"] { border-left-color: var(--warn); }
 .card[data-stage="refused"] { border-left-color: var(--bad); }
 .detail { position: fixed; right: 0; top: 0; bottom: 0; width: min(480px, 100%); background: var(--card); border-left: 1px solid var(--line); padding: 16px; overflow-y: auto; box-shadow: -4px 0 16px rgba(0,0,0,0.15); }
@@ -397,8 +403,10 @@ def problems(records, letters=None):
             found.append(f"{ident}: obstacles must be a list of strings")
         if not isinstance(record.get("next"), str):
             found.append(f"{ident}: next must be a string")
-        if record.get("status") in ("requested", "granted", "fetching", "fetched", "refused", "needs-owner") and not record.get("history"):
+        if record.get("status") in ("requested", "granted", "fetching", "fetched", "held", "refused", "needs-owner") and not record.get("history"):
             found.append(f"{ident}: status {record['status']} with no history entry saying when")
+        if record.get("status") == "held" and not (record.get("grid_path") or "").strip():
+            found.append(f"{ident}: status held with no grid_path saying where on the grid")
         if record.get("route") in ("letter", "form") and record.get("status") == "todo" and ident not in letters:
             found.append(f"{ident}: route {record['route']} still to send with no letters/{ident}.md")
     return found
