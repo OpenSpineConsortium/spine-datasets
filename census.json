@@ -3,7 +3,7 @@
  "repo": "OpenSpineConsortium/spine-datasets",
  "generated": "2026-10-23",
  "totals": {
-  "datasets": 163,
+  "datasets": 164,
   "by_stage": {
    "downloadable": 9,
    "to-ask": 9,
@@ -12,13 +12,13 @@
    "fetching": 0,
    "on-grid": 6,
    "held": 95,
-   "needs-owner": 10,
+   "needs-owner": 11,
    "refused": 1,
    "later": 1
   },
   "by_kind": {
    "fluoro": 13,
-   "video": 24,
+   "video": 25,
    "projections": 3,
    "films": 29,
    "ct": 92,
@@ -62,7 +62,7 @@
    "B": 0,
    "C": 3,
    "D": 2,
-   "E": 4
+   "E": 5
   },
   "paired_spine_subjects_on_grid": {
    "sum": 1651,
@@ -1238,6 +1238,58 @@
     ]
    }
   },
+  "cams_knee": {
+   "digest": "0233923ace53311fa611f6e007565810881dd874db3ccf816053006aa3b21d32",
+   "first_seen": "2026-10-23",
+   "last_changed": "2026-10-23",
+   "row": {
+    "id": "cams_knee",
+    "name": "CAMS-Knee (ETH Zurich and Charite Berlin, J Biomech 2017)",
+    "group": "video",
+    "kind": "Fluoroscopy video",
+    "route": "agreement",
+    "status": "needs-owner",
+    "stage": "needs-owner",
+    "licence": "the CAMS-Knee licence agreement, which the requesting institution signs: non-commercial, scientific use without any commercial benefit, at the registered institute only, not passed on to third parties (as the data request page reads, read 2026-10-23)",
+    "licence_kind": "restricted",
+    "link": "https://cams-knee.orthoload.com/data/data-request/",
+    "what": "6 people with instrumented total knee replacements (Charite Berlin), measured at ETH Zurich in June 2014 during level walking, stair and ramp descent, sitting down and standing up, squats and standing: the joint loads the implants measured, a moving fluoroscope following the knee (pulsed at 25 Hz, 1000 x 1000 pixels at 12 bits, a 30.5 cm field) whose images come registered to the implant components, whole-body markers, force plates, 16-channel EMG and camera video (Taylor et al., J Biomech 2017;65:32-39, doi:10.1016/j.jbiomech.2017.09.022); the same form offers Stan (Dreyer et al., J Biomech 2022;141:111171), a reference subject made from these data, whose files are loads and kinematics alone, with no images, so it has no record of its own",
+    "level_truth": "none; no spine",
+    "grid_path": null,
+    "on_grid": false,
+    "grid_bytes": null,
+    "tree_sha256": null,
+    "subjects": 6,
+    "xray_images": null,
+    "videos": null,
+    "run_frames": null,
+    "ct_volumes": null,
+    "bytes": null,
+    "unread_counts": [],
+    "next": "the owner decides on the agreement's terms; if they are taken, the form goes in with the agreement and a project description",
+    "since": "2026-10-23",
+    "last_step": {
+     "date": "2026-10-23",
+     "step": "researched"
+    },
+    "paired": true,
+    "tier": "E",
+    "pairing": {
+     "spine": false,
+     "region": "instrumented total knee replacements in living subjects",
+     "xray": "fluoroscopic image series from a moving fluoroscope that follows the knee, at 25 Hz, registered to the implant components",
+     "ct": "the implant components' CAD files, not a CT",
+     "subjects": "6 people with instrumented knee implants",
+     "pose": "the tibial and femoral 4 x 4 poses at every fluoroscope capture, shipped",
+     "masks": "none; the registered images carry the implant components",
+     "annotate": "nothing for the spine; fluoroscopy of metal implants in living subjects during daily activities",
+     "pair_key": "the trial's own registered poses"
+    },
+    "ct": false,
+    "regions": [],
+    "segmentations": null
+   }
+  },
   "canine_thoracic_vhs": {
    "digest": "757d649bbd05bcf3dcaca819208b2ec82a6fcfbcd9a975396221fe9fd311dd00",
    "first_seen": "2026-10-21",
@@ -1449,34 +1501,34 @@
    }
   },
   "cm_spine_drive_file": {
-   "digest": "4e53c654e7d86655edf793c57f497fbb98c6f292ce0635c148743164d10ad462",
+   "digest": "de8a58e04ff86408b90d488313eb23c1e89680dbd673ca8a130b24aa56d2f116",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
     "id": "cm_spine_drive_file",
-    "name": "cm_spine: one Google Drive file described only as 'intraoperative' (empty download)",
+    "name": "CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images",
     "group": "fluoro",
     "kind": "Fluoroscopy",
     "route": "owner-only",
     "status": "todo",
     "stage": "to-ask",
-    "licence": "not recorded",
+    "licence": "none stated: the paper's data statement and its repository's README name no licence, and the repository has no licence file (read 2026-10-23)",
     "licence_kind": "unknown",
     "link": "https://drive.google.com/file/d/1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ/view",
-    "what": "one Google Drive file, id 1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ, described only as 'intraoperative' by download_sources.py's get_cm_spine(); the download was empty and what the file is has never been established",
-    "level_truth": "unknown",
+    "what": "208 anteroposterior lumbar spine images at 1024 x 1024, taken during surgery with a mobile dual-mode G-arm (Geelin500-A), of patients with lumbar disc herniation or vertebral compression fractures, each lumbar vertebra in view annotated by its level, L1 to L5, 537 vertebrae, split 148 and 60 in the paper (Zeng et al., Electronics 2024;13(11):2137); the paper's data statement points to its repository, which links this Drive file as the set; the data platform's download of the file came back empty, so what it holds now is not checked",
+    "level_truth": "each lumbar vertebra's level, L1 to L5, as the authors annotated it",
     "grid_path": null,
     "on_grid": false,
     "grid_bytes": null,
     "tree_sha256": null,
     "subjects": null,
-    "xray_images": null,
+    "xray_images": 208,
     "videos": null,
     "run_frames": null,
     "ct_volumes": null,
     "bytes": null,
     "unread_counts": [],
-    "next": "the owner's step as the task says; nothing for a collaborator yet",
+    "next": "the owner opens the Drive file and says whether to take the set as it is or to ask the authors for terms first",
     "since": "2026-10-21",
     "last_step": {
      "date": "2026-10-23",
@@ -9524,6 +9576,7 @@
   "buu_lspine": "2026-10-23",
   "cadica": "2026-10-21",
   "cads": "2026-10-21",
+  "cams_knee": "2026-10-23",
   "canine_thoracic_vhs": "2026-10-21",
   "carmlspine": "2026-10-23",
   "cathaction": "2026-10-21",
@@ -10431,6 +10484,27 @@
      "fa3c1ba0485667d1"
     ]
    }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "cm_spine_drive_file",
+   "kind": "changed",
+   "changes": {
+    "licence": [
+     "not recorded",
+     "none stated: the paper's data statement and its repository's README name no licence, and the repository has no licence file (read 2026-10-23)"
+    ],
+    "xray_images": [
+     null,
+     208
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "cams_knee",
+   "kind": "added",
+   "changes": {}
   }
  ]
 }

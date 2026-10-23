@@ -1,6 +1,6 @@
 # Census: every dataset, counted from its record
 
-Written by tools/census.py on 2026-10-23 from the 163 records under datasets/ of
+Written by tools/census.py on 2026-10-23 from the 164 records under datasets/ of
 https://github.com/OpenSpineConsortium/spine-datasets; nobody edits it by hand. Each dataset is one record; the census reads
 the records alone, never a dataset's files, and folds in only the records that are new or changed
 since the last run. The page with filters is census.html beside this file, served by the docs site.
@@ -9,7 +9,7 @@ since the last run. The page with filters is census.html beside this file, serve
 
 | | |
 |---|---|
-| Datasets with a record | 163 |
+| Datasets with a record | 164 |
 | On the grid (shared tree and the owner's root) | 101 |
 | Size on the grid | 3.9 TB (83 of 101 sets counted) |
 | Frozen on the grid, every file hashed (tools/freeze.py) | 0 of 101 |
@@ -29,7 +29,7 @@ since the last run. The page with filters is census.html beside this file, serve
 | Fetching | 0 |
 | On the grid | 6 |
 | Held by the owner | 95 |
-| Needs the owner | 10 |
+| Needs the owner | 11 |
 | Refused | 1 |
 | Later | 1 |
 
@@ -75,12 +75,13 @@ Kept so nobody asks twice.
 | Balgrist ex-vivo lumbar CT plus C-arm (Jecklin) | lumbar spine of cadavers | real C-arm frames | the cadavers' CT | not stated | not stated | not stated | none: the source declined | not stated | [#69](https://github.com/OpenSpineConsortium/spine-datasets/issues/69) |
 | COBRA2026 embargoed cases | lumbosacral spine and pelvis | raw kV projections, as the public cases | the planning CT and the CBCT, as the public cases | 175 patients | stored, as the public cases | none for the vertebrae | as COBRA2026's public cases, once the embargo ends on 2032-03-01 | the case id | [#92](https://github.com/OpenSpineConsortium/spine-datasets/issues/92) |
 
-### E. Real pairs of something other than the spine (4)
+### E. Real pairs of something other than the spine (5)
 
 Frames shipped with a CT or an exact pose: the registration code's truth, not spine labels.
 
 | Set | Region | X-rays | CT | Subjects | Pose | Masks shipped | What annotation adds | Pair key | Task |
 |---|---|---|---|---|---|---|---|---|---|
+| CAMS-Knee (ETH Zurich and Charite Berlin, J Biomech 2017) | instrumented total knee replacements in living subjects | fluoroscopic image series from a moving fluoroscope that follows the knee, at 25 Hz, registered to the implant components | the implant components' CAD files, not a CT | 6 people with instrumented knee implants | the tibial and femoral 4 x 4 poses at every fluoroscope capture, shipped | none; the registered images carry the implant components | nothing for the spine; fluoroscopy of metal implants in living subjects during daily activities | the trial's own registered poses |  |
 | Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021) | pelvis and hip, a phantom | 116 frames | the phantom's CT | 1 phantom | stored: gold-standard rigid transforms and the projection matrix | none shipped | nothing for the spine; a registration check on a C-arm no other set comes from | one phantom: every frame pairs with its one CT |  |
 | IPCAI 2025 paired X-ray and CT set of the distal femur (Flepp 2025, Zenodo 15753063) | distal femur, five cadaveric specimens | 50 calibrated X-rays, ten views of each specimen about 9 degrees apart (Siemens Fluorospot) | 5 CTs at 0.2 mm slices | 5 cadaveric distal femora | stored | contour masks and bone surface meshes | nothing for the spine; a registration benchmark | the specimen: its ten views and its CT | [#34](https://github.com/OpenSpineConsortium/spine-datasets/issues/34) |
 | Veriserum (ETH Zurich, MICCAI 2025) | knee implant phantoms | about 110,000 dual-plane fluoroscopic images | the implants' 3D shapes as CAD meshes, not a CT | phantoms | registered for every image, 200 by hand | implant poses | nothing for the spine; real flat-panel noise and metal at scale | the image's own registered pose | [#41](https://github.com/OpenSpineConsortium/spine-datasets/issues/41) |
@@ -114,7 +115,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 |---|---|---|---|---|---|---|---|---|---|---|
 | Balgrist ex-vivo lumbar CT plus C-arm (Jecklin) | Fluoroscopy | Refused | unknown |  |  |  |  |  |  | [#69](https://github.com/OpenSpineConsortium/spine-datasets/issues/69) |
 | C-ArmLSpine (Zhang et al., Medical Image Analysis 2024) | Fluoroscopy | Held by the owner | open | 149 | 299 | 2 | 602 | 149 | 86.8 GB |  |
-| cm_spine: one Google Drive file described only as 'intraoperative' (empty download) | Fluoroscopy | To ask | unknown |  |  |  |  |  |  | [#8](https://github.com/OpenSpineConsortium/spine-datasets/issues/8) |
+| CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images | Fluoroscopy | To ask | unknown |  | 208 |  |  |  |  | [#8](https://github.com/OpenSpineConsortium/spine-datasets/issues/8) |
 | DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs | Fluoroscopy | Held by the owner | restricted | 6 | 2,659 |  |  | 19 | 116.3 GB |  |
 | Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021) | Fluoroscopy | Held by the owner | open | 1 | 116 |  |  | 1 |  |  |
 | Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024) | Fluoroscopy | Asked, waiting | restricted | 140 |  |  |  | 140 |  | [#61](https://github.com/OpenSpineConsortium/spine-datasets/issues/61) |
@@ -129,6 +130,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | Bournemouth cervical quantitative fluoroscopy (BORDaR 385) | Fluoroscopy video | Asked, waiting | restricted | 63 |  | 252 |  |  |  | [#70](https://github.com/OpenSpineConsortium/spine-datasets/issues/70) |
 | Bournemouth lumbar quantitative fluoroscopy (Breen 2021) | Fluoroscopy video | Asked, waiting | unknown | 127 |  |  |  |  |  | [#71](https://github.com/OpenSpineConsortium/spine-datasets/issues/71) |
 | CADICA invasive coronary angiography sequences (Mendeley p9bpx9ctcv) | Fluoroscopy video | On the grid | open | 42 |  |  |  |  | 3.1 GB | [#109](https://github.com/OpenSpineConsortium/spine-datasets/issues/109) |
+| CAMS-Knee (ETH Zurich and Charite Berlin, J Biomech 2017) | Fluoroscopy video | Needs the owner | restricted | 6 |  |  |  |  |  |  |
 | CathAction (Jianu et al. 2024, AIRVLab) | Fluoroscopy video | Held by the owner | restricted |  |  |  |  |  |  | [#39](https://github.com/OpenSpineConsortium/spine-datasets/issues/39) |
 | Coronary angiography sets (CADICA, ARCADE, XCAD, AngioCAD) | Fluoroscopy video | Downloadable now | unknown |  |  |  |  |  |  | [#38](https://github.com/OpenSpineConsortium/spine-datasets/issues/38) |
 | DARADIA vertebroplasty video (Kolkata) | Fluoroscopy video | Asked, waiting | unknown |  |  |  |  |  |  | [#83](https://github.com/OpenSpineConsortium/spine-datasets/issues/83) |
@@ -445,7 +447,6 @@ What the CT records still lack:
 
 - Balgrist ex-vivo lumbar CT plus C-arm (Jecklin): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - C-ArmLSpine (Zhang et al., Medical Image Analysis 2024): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
-- cm_spine: one Google Drive file described only as 'intraoperative' (empty download): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021): on the grid with no size: write the landing pass's bytes into measured
 - Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
@@ -607,6 +608,8 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-23 CAMS-Knee (ETH Zurich and Charite Berlin, J Biomech 2017): record added
+- 2026-10-23 CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images: licence not recorded to none stated: the paper's data statement and its repository's README name no licence, and the repository has no licence file (read 2026-10-23); xray_images none to 208
 - 2026-10-23 the census rules changed; every row was derived afresh
 - 2026-10-23 the census rules changed; every row was derived afresh
 - 2026-10-23 WAW-TACE (HCC multiphase CT, Warsaw): record added
