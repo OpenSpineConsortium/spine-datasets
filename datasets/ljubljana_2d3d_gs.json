@@ -5,20 +5,20 @@
  "pairing": {
   "spine": true,
   "region": "lumbar, L1 to L5",
-  "xray": "18 frames",
-  "ct": "the cadaver's CT",
+  "xray": "18 X-ray images",
+  "ct": "five CT volumes, one per vertebra L1 to L5, and five MR volumes the same way",
   "subjects": "1 cadaver",
-  "pose": "stored: a gold-standard pose for each frame",
-  "masks": "none for the vertebral bodies",
+  "pose": "stored: a gold-standard rigid transform for each vertebra's CT and MR volume, and each X-ray's sensor pose and source position in its header",
+  "masks": "none shipped; each vertebra comes as a volume of its own",
   "annotate": "five body masks kept beside the set, never inside it and never shared, since the licence allows no derivatives",
-  "pair_key": "one specimen: every frame pairs with its one CT",
+  "pair_key": "one specimen: every X-ray pairs with the five vertebra volumes through their transforms",
   "priority": 4
  },
- "what": "18 X-ray frames of one cadaver lumbar spine, L1 to L5, on a PIXIUM 4600 flat panel, with the cadaver's CT and a gold-standard pose for each frame",
- "level_truth": "L1 to L5, readable from the CT through each frame's pose",
+ "what": "18 X-ray images of one cadaver lumbar spine with fiducial markers, L1 to L5, each with its sensor pose and source position in its header; five CT and five MR volumes, one per vertebra, each with a gold-standard rigid transform to the X-rays; the flat panel is a PIXIUM 4600 as SchwingNet's registry records it, which neither the source's page nor its user guide names",
+ "level_truth": "L1 to L5: each vertebra is its own CT and MR volume, placed on every X-ray by its gold-standard transform and the X-ray's header geometry",
  "reach": "held",
- "licence": "ND (no derivatives), read-only, as SchwingNet's registry records it; to confirm on the source's page",
- "link": "",
+ "licence": "CC BY-NC-ND, as the source's page gives it (read 2026-10-23); the user guide that comes with the set says the data are used only under an agreement form between the user and the Laboratory of Imaging Technologies, and never redistributed",
+ "link": "https://lit.fe.uni-lj.si/en/raziskave/viri/2D-3D-GS",
  "how_to_get": [
   "Held: on the grid at /rs/rs_grp_oschome/go2432/data/ljubljana, fetched by the owner; nothing to fetch.",
   "To share it with collaborators, copy it into /rs/rs_grp_oschome/shared/datasets/ljubljana_2d3d_gs/ with its checksums as a Slurm job, as the pig set of #22 was copied, and note the job in the history."
@@ -27,7 +27,7 @@
  "counts": {
   "subjects": 1,
   "xray_images": 18,
-  "ct_volumes": 1
+  "ct_volumes": 5
  },
  "measured": {},
  "record": "SchwingNet data/sources/ljubljana_2d3d_gs.json, 2026-10-23",
@@ -40,11 +40,15 @@
    "date": "2026-10-23",
    "step": "held",
    "note": "on the grid at /rs/rs_grp_oschome/go2432/data/ljubljana, fetched by the owner, before the shared tree and its promoter existed; the record written for the census (#178) from SchwingNet's registry"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the source's page (the link) and its user guide read: CC BY-NC-ND on the page, an agreement form with the Laboratory of Imaging Technologies in the guide; five CT and five MR volumes, one per vertebra, each with a gold-standard rigid transform, and 18 X-ray images whose headers give the sensor pose and source position, where the record had one CT and a pose per frame; neither names the X-ray device; link, licence, what, level truth, pairing and counts corrected"
   }
  ],
  "obstacles": [
-  "the licence line is still to confirm on the source's page",
-  "the source's link is not written in the registry"
+  "the owner's hand: the source's page gives CC BY-NC-ND (non-commercial, no derivatives) and its user guide an agreement form with the lab; which terms govern, and whether the project uses the copy on the grid under them, is his decision"
  ],
- "next": ""
+ "next": "the owner decides which terms govern the copy on the grid"
 }

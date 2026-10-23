@@ -16,8 +16,8 @@
  "what": "116 fluoroscopy frames of one hip phantom on a Philips BV Pulsera C-arm, with the phantom's CT, a gold-standard rigid transform for each frame and the projection matrix",
  "level_truth": "none for the spine",
  "reach": "held",
- "licence": "not recorded; to confirm on the source's page",
- "link": "",
+ "licence": "CC BY-SA 4.0, as the source's page gives it (read 2026-10-23), which also lists a 'Contract on the use of data' and shows none of its terms",
+ "link": "https://yareta.unige.ch/archives/ed4bb43a-eaaa-4e62-8763-bd5803f5cd47",
  "how_to_get": [
   "Held: on the grid at /rs/rs_grp_oschome/go2432/data/geneva_hip_src, fetched by the owner; nothing to fetch.",
   "To share it with collaborators, copy it into /rs/rs_grp_oschome/shared/datasets/geneva_hip/ with its checksums as a Slurm job, as the pig set of #22 was copied, and note the job in the history."
@@ -39,11 +39,15 @@
    "date": "2026-10-23",
    "step": "held",
    "note": "on the grid at /rs/rs_grp_oschome/go2432/data/geneva_hip_src, fetched by the owner, before the shared tree and its promoter existed; the record written for the census (#178) from SchwingNet's registry"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the source's page on Yareta (the link; doi 10.26037/yareta:2kw5s2jadbbv3ngtkzsovihtnu, the paper Medical Physics 48(10) 2021, doi 10.1002/mp.15124) read: CC BY-SA 4.0, public, with a 'Contract on the use of data' whose terms it does not show; it gives no frame count or C-arm, so what stays as the registry gives it; link and licence written"
   }
  ],
  "obstacles": [
-  "the licence line is still to confirm on the source's page",
-  "the source's link is not written in the registry"
+  "the owner's hand: the source's page lists a contract on the use of data with no terms shown; whether one binds the copy on the grid is his decision"
  ],
- "next": ""
+ "next": "the owner decides whether the contract the page lists binds the copy on the grid"
 }
