@@ -23,8 +23,8 @@ since the last run. The page with filters is census.html beside this file, serve
 | Stage | Datasets |
 |---|---|
 | Downloadable now | 9 |
-| To ask | 9 |
-| Asked, waiting | 26 |
+| To ask | 8 |
+| Asked, waiting | 27 |
 | Granted, fetch pending | 5 |
 | Fetching | 1 |
 | On the grid | 6 |
@@ -163,7 +163,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | CSXA, the Cervical Spine X-ray Atlas V3.0 (Ran et al., Scientific Data 2024) | Radiographs | Held by the owner | open |  | 4,963 |  |  |  | 3.7 GB |  |
 | FracAtlas (Abedeen 2023, Scientific Data) | Radiographs | Downloadable now | open |  | 4,083 |  |  |  |  | [#36](https://github.com/OpenSpineConsortium/spine-datasets/issues/36) |
 | Fraiwan spine X-ray set (Mendeley xkt857dsxk) | Radiographs | On the grid | open | 338 |  |  |  |  | 85.6 MB | [#31](https://github.com/OpenSpineConsortium/spine-datasets/issues/31) |
-| Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity) | Radiographs | To ask | unknown |  |  |  |  |  |  |  |
+| Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity) | Radiographs | Asked, waiting | unknown |  |  |  |  |  |  |  |
 | IEEE DataPort lateral full-spine X-ray dataset (236 films) | Radiographs | Needs the owner | unknown | 236 | 236 |  |  |  | 1.3 GB |  |
 | Kaggle bone fracture multi-region X-ray data (bmadushanirodrigo) | Radiographs | To ask | open |  | 10,580 |  |  |  | 481.0 MB | [#24](https://github.com/OpenSpineConsortium/spine-datasets/issues/24) |
 | Kaggle scoliosis YOLOv5 annotated spine X-ray set (salmankey) | Radiographs | Needs the owner | open |  |  |  |  |  |  | [#23](https://github.com/OpenSpineConsortium/spine-datasets/issues/23) |
@@ -503,6 +503,7 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-23 Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity): stage to-ask to asked; status todo to requested
 - 2026-10-23 MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025): stage downloadable to fetching; status todo to fetching
 - 2026-10-23 Veterinary: pig lower limb CT, CBCT and planar images (Goswami 2020, IEEE DataPort): grid_bytes 205.0 MB to 205.0 MB
 - 2026-10-23 VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich: grid_bytes none to 252.2 GB

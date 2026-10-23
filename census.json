@@ -6,8 +6,8 @@
   "datasets": 166,
   "by_stage": {
    "downloadable": 9,
-   "to-ask": 9,
-   "asked": 26,
+   "to-ask": 8,
+   "asked": 27,
    "granted": 5,
    "fetching": 1,
    "on-grid": 6,
@@ -2786,7 +2786,7 @@
    }
   },
   "hsg_ais_registry": {
-   "digest": "d57ca36a4a1147a00d446470fa635c14ebf73deaa691c6e29d735180d7622047",
+   "digest": "37ad9d525f6c51fc657ff5a673e71d6629471bf49a5cfcff011ab186a9864506",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2795,12 +2795,12 @@
     "group": "films",
     "kind": "Radiographs",
     "route": "letter",
-    "status": "todo",
-    "stage": "to-ask",
+    "status": "requested",
+    "stage": "asked",
     "licence": "not recorded; the Database User Program page lists a research tool at USD 5,000 a year (database user access and hosting) and custom research database building at USD 50,000 to 150,000; the terms of a data release are not on the site",
     "licence_kind": "unknown",
     "link": "https://hsg.settingscoliosisstraight.org/database-user-program/",
-    "what": "the Harms Study Group's prospective multicentre registries of pediatric spinal deformity, run with the Setting Scoliosis Straight Foundation: the adolescent idiopathic scoliosis registry, which the group calls the largest AIS database, with cerebral palsy, Scheuermann's kyphosis and Marfan syndrome registries beside it and a quality improvement registry; about twenty years of surgical cases from 37 member surgeons; whether the standing radiographs themselves are shared, or only the measurements taken from them, is not stated on the site and is the first question to ask",
+    "what": "the Harms Study Group's prospective multicentre registries of pediatric spinal deformity, run with the Setting Scoliosis Straight Foundation: the adolescent idiopathic scoliosis registry, which the group calls the largest AIS database, with cerebral palsy, Scheuermann's kyphosis and Marfan syndrome registries beside it and a quality improvement registry; about twenty years of surgical cases from 37 member surgeons; whether the standing radiographs themselves are shared, or only the measurements taken from them, is not stated on the site and is what the request asks",
     "level_truth": "to confirm: standing coronal and lateral films of operated scoliosis patients, before and after surgery, with the instrumented levels known from the operative record, if the images are shared",
     "grid_path": null,
     "on_grid": false,
@@ -2813,11 +2813,11 @@
     "ct_volumes": null,
     "bytes": null,
     "unread_counts": [],
-    "next": "wait for Uneri's introduction to the Harms Study Group's administrative team (the owner's reply went 2026-10-23 16:56 UTC); then letters/hsg_ais_registry.md goes to the administrative team, and the answer is recorded here",
+    "next": "wait for Michelle Marks' review (the request went 2026-10-23 20:24 UTC); record her answer here as granted or refused, with the terms, which are the owner's to decide and sign; if nothing has come by 2026-11-06, the owner follows up in the same thread",
     "since": "2026-10-23",
     "last_step": {
      "date": "2026-10-23",
-     "step": "note"
+     "step": "asked"
     },
     "paired": false,
     "tier": null,
@@ -11722,6 +11722,21 @@
     "stage": [
      "downloadable",
      "fetching"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "hsg_ais_registry",
+   "kind": "changed",
+   "changes": {
+    "status": [
+     "todo",
+     "requested"
+    ],
+    "stage": [
+     "to-ask",
+     "asked"
     ]
    }
   }
