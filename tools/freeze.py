@@ -49,6 +49,16 @@ newer and only the standard library, as tools/promote.py does.
     python3 tools/freeze.py measured FROZEN_JSON
     python3 tools/freeze.py plan
     python3 tools/freeze.py check [--root DIR]
+    python3 tools/freeze.py bundle COPIES_DIR      the git tree that carries the public copies back
+    python3 tools/freeze.py apply COPIES_DIR [--root DIR]
+
+The public copies a freeze job keeps under its home come back by a branch of their own,
+freeze-report: grid/freeze.sh report, which the grid gate's word freeze report runs, sends the tree
+`bundle` prints for every copy that passes the public copy's rules, as one commit with no parent,
+and a session then runs `apply` on a checkout of that branch's frozen/ folder, which puts each copy
+under frozen/ and writes its measured block into the record, for a pull request that the census
+and the check read like any other. The tree hash cannot come back through the gate's log, which
+hides every long run of letters and digits, so it comes this way.
 """
 
 import argparse
@@ -551,6 +561,59 @@ def stated_bytes(record):
     return None
 
 
+# Bringing the public copies back from the grid.
+
+def copies_in(folder, log=None):
+    """{id: public copy} for each <id>.json in a folder that passes the public copy's rules; any
+    other file is named in the log and left out, so nothing with a name in it leaves the grid."""
+    found = {}
+    for name in sorted(os.listdir(folder)):
+        ident = name[:-5] if name.endswith(".json") else ""
+        if not ID_SHAPE.match(ident):
+            continue
+        try:
+            copy = read_summary(os.path.join(folder, name))
+        except (ValueError, UnicodeDecodeError) as error:
+            problems = ["not ASCII JSON (%s)" % error]
+        else:
+            problems = summary_problems(copy, ident)
+        if problems:
+            if log:
+                log("%s: left out: %s" % (ident, "; ".join(problems)))
+            continue
+        found[ident] = copy
+    return found
+
+
+def bundle(folder, log=None):
+    """The body of a POST to git/trees: frozen/<id>.json for every copy that passes."""
+    return {"tree": [{"path": "frozen/%s.json" % ident, "mode": "100644", "type": "blob",
+                      "content": summary_bytes(copy).decode("ascii")}
+                     for ident, copy in sorted(copies_in(folder, log).items())]}
+
+
+def apply_copies(folder, root=ROOT, log=None):
+    """Each copy into frozen/ and its measured block into its record; the ids written."""
+    written = []
+    for ident, copy in sorted(copies_in(folder, log).items()):
+        record_path = os.path.join(root, "datasets", ident + ".json")
+        if not os.path.exists(record_path):
+            if log:
+                log("%s: left out: no record datasets/%s.json" % (ident, ident))
+            continue
+        with io.open(record_path, encoding="utf-8") as handle:
+            record = json.load(handle)
+        measured = record.get("measured") if isinstance(record.get("measured"), dict) else {}
+        measured.update(measured_of(copy))
+        record["measured"] = measured
+        with io.open(record_path, "w", encoding="ascii", newline="\n") as handle:
+            handle.write(json.dumps(record, indent=1, ensure_ascii=True) + "\n")
+        with open(os.path.join(root, "frozen", ident + ".json"), "wb") as handle:
+            handle.write(summary_bytes(copy))
+        written.append(ident)
+    return written
+
+
 # The command line.
 
 def log_line(text):
@@ -583,6 +646,11 @@ def main(argv=None):
     todo.add_argument("--root", default=ROOT)
     repo = sub.add_parser("check", help="frozen/<id>.json against the records")
     repo.add_argument("--root", default=ROOT)
+    pack = sub.add_parser("bundle", help="the git tree of the public copies in a folder, as JSON")
+    pack.add_argument("copies")
+    put = sub.add_parser("apply", help="the public copies in a folder into frozen/ and the records")
+    put.add_argument("copies")
+    put.add_argument("--root", default=ROOT)
     args = parser.parse_args(argv)
     if args.command == "freeze":
         if not ID_SHAPE.match(args.id):
@@ -628,6 +696,17 @@ def main(argv=None):
         for problem in problems:
             print(problem)
         return 1 if problems else 0
+    if args.command == "bundle":
+        tree = bundle(args.copies, log_line)
+        if not tree["tree"]:
+            sys.stderr.write("no public copy to send\n")
+            return 1
+        print(json.dumps(tree, sort_keys=True))
+        return 0
+    if args.command == "apply":
+        written = apply_copies(args.copies, args.root, log_line)
+        print("%d sets frozen into the repository: %s" % (len(written), " ".join(written)))
+        return 0
     parser.print_help()
     return 2
 
