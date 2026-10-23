@@ -1,7 +1,7 @@
 {
  "default_branch": "main",
  "format": 1,
- "generated_at": "2026-10-23T10:08:45Z",
+ "generated_at": "2026-10-23T10:31:53Z",
  "pulls": [
   {
    "auto_merge_enabled": null,
@@ -1778,13 +1778,50 @@
    "runs_cancelled": 1,
    "stale_seconds": 0,
    "started": "2026-10-23T09:15:23Z"
+  },
+  {
+   "auto_merge_enabled": null,
+   "base": "main",
+   "board_conflicts": 0,
+   "board_main_moved": 1,
+   "branch": "claude/181",
+   "catch_ups": 1,
+   "catch_ups_after_green": 0,
+   "catch_ups_by_button": 0,
+   "caused_by": [
+    [
+     "fefbffabdb2ccc6c8a6bd1052cb12ef18801b314",
+     [
+      212
+     ]
+    ]
+   ],
+   "check_runs": 2,
+   "check_runs_redone": 1,
+   "check_seconds": 134,
+   "check_seconds_redone": 68,
+   "claim": true,
+   "closed": "2026-10-23T10:29:46Z",
+   "commits": 4,
+   "first_green": "2026-10-23T10:26:14Z",
+   "force_pushes": 0,
+   "landings_after_green": 0,
+   "landings_during_life": 1,
+   "merged": "2026-10-23T10:29:46Z",
+   "number": 213,
+   "opened": "2026-10-23T09:57:48Z",
+   "ready": "2026-10-23T10:19:11Z",
+   "reruns": 0,
+   "runs_cancelled": 2,
+   "stale_seconds": 0,
+   "started": "2026-10-23T09:57:27Z"
   }
  ],
  "repository": "OpenSpineConsortium/spine-datasets",
  "summary": {
   "auto_merge_used": 4,
   "board_conflicts": 0,
-  "board_main_moved": 130,
+  "board_main_moved": 131,
   "by_day": {
    "2026-10-21": {
     "catch_ups": 3,
@@ -1807,14 +1844,14 @@
     "with_catch_up": 2
    },
    "2026-10-23": {
-    "catch_ups": 3,
-    "check_runs": 24,
-    "check_runs_redone": 1,
-    "merged": 18,
-    "share_with_catch_up": 0.167,
+    "catch_ups": 4,
+    "check_runs": 26,
+    "check_runs_redone": 2,
+    "merged": 19,
+    "share_with_catch_up": 0.211,
     "stale_after_green": 1,
     "stale_hours": 23.88,
-    "with_catch_up": 3
+    "with_catch_up": 4
    }
   },
   "by_parallel_work": {
@@ -1830,8 +1867,8 @@
    },
    "1-2": {
     "catch_ups": 2,
-    "check_runs": 16,
-    "check_runs_redone": 0,
+    "check_runs": 17,
+    "check_runs_redone": 1,
     "merged": 11,
     "share_with_catch_up": 0.182,
     "stale_after_green": 0,
@@ -1849,14 +1886,14 @@
     "with_catch_up": 3
    },
    "3-5": {
-    "catch_ups": 3,
-    "check_runs": 20,
+    "catch_ups": 4,
+    "check_runs": 21,
     "check_runs_redone": 1,
-    "merged": 10,
-    "share_with_catch_up": 0.3,
+    "merged": 11,
+    "share_with_catch_up": 0.364,
     "stale_after_green": 0,
     "stale_hours": 0.0,
-    "with_catch_up": 3
+    "with_catch_up": 4
    },
    "6-10": {
     "catch_ups": 0,
@@ -1871,14 +1908,14 @@
   },
   "by_protocol": {
    "claim": {
-    "catch_ups": 7,
-    "check_runs": 55,
-    "check_runs_redone": 1,
-    "merged": 34,
-    "share_with_catch_up": 0.147,
+    "catch_ups": 8,
+    "check_runs": 57,
+    "check_runs_redone": 2,
+    "merged": 35,
+    "share_with_catch_up": 0.171,
     "stale_after_green": 0,
     "stale_hours": 0.0,
-    "with_catch_up": 5
+    "with_catch_up": 6
    },
    "no_claim": {
     "catch_ups": 3,
@@ -1891,13 +1928,13 @@
     "with_catch_up": 3
    }
   },
-  "catch_ups": 10,
+  "catch_ups": 11,
   "catch_ups_by_button": 0,
   "catch_ups_max": 3,
-  "check_hours": 2.18,
-  "check_hours_redone": 0.06,
-  "check_runs": 78,
-  "check_runs_redone": 2,
+  "check_hours": 2.22,
+  "check_hours_redone": 0.08,
+  "check_runs": 80,
+  "check_runs_redone": 3,
   "closed_unmerged": 1,
   "closed_unmerged_branch_landed_later": 0,
   "default_branch_checks": {
@@ -1908,25 +1945,25 @@
     "success": 11
    },
    "2026-10-23": {
-    "success": 8
+    "success": 9
    }
   },
   "force_pushes": 3,
   "landings_after_green_total": 277,
-  "landings_during_life_mean": 6.16,
-  "landings_during_life_median": 2,
+  "landings_during_life_mean": 6.07,
+  "landings_during_life_median": 1.5,
   "live": {
    "pulls_seen": 41,
    "pulls_seen_behind": 0,
    "pulls_seen_dirty": 0,
    "since": "2026-10-21T12:40:18Z",
-   "snapshots": 37
+   "snapshots": 38
   },
-  "merged": 55,
+  "merged": 56,
   "reruns": 2,
-  "share_runs_redone": 0.026,
+  "share_runs_redone": 0.037,
   "share_stale_after_green": 0.018,
-  "share_with_catch_up": 0.145,
+  "share_with_catch_up": 0.161,
   "stale_after_green": 1,
   "stale_hours_total": 23.88,
   "stale_minutes_median": 1433.1,
@@ -2035,7 +2072,7 @@
    }
   ],
   "with_board_conflict": 0,
-  "with_catch_up": 8
+  "with_catch_up": 9
  },
  "unread": 0,
  "workflow": "ci.yml"
