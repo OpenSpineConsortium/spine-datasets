@@ -19,17 +19,22 @@
  "source_status": "none: found 2026-10-23 through the LevelCheck answer; no record in SchwingNet's registry",
  "route": "letter",
  "status": "todo",
- "result": "",
+ "result": "The owner's reply accepting Uneri's introduction went 2026-10-23 16:56 UTC; waiting for the introduction.",
  "history": [
   {
    "date": "2026-10-23",
    "step": "researched",
    "note": "named by Ali Uneri (Johns Hopkins) in his answer on LevelCheck, with an offer to introduce the owner to the group's administrative team; the site read the same day gives the registries, 37 members, the Database User Program's fees and the contact addresses, and says nothing about sharing images"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the owner sent the reply to Uneri at 16:56 UTC on 2026-10-23, thanking him, letting LevelCheck go and accepting the introduction to the Harms Study Group's administrative team, with the question whether the radiographs themselves can be shared with a research user; waiting for the introduction"
   }
  ],
  "obstacles": [
   "whether the registry shares the radiographs, or only measurements, is unknown",
   "the Database User Program's fee (USD 5,000 a year) and any agreement are the owner's decision and hand"
  ],
- "next": "the owner sends the drafted reply accepting Uneri's introduction; then letters/hsg_ais_registry.md goes to the administrative team, and the answer is recorded here"
+ "next": "wait for Uneri's introduction to the Harms Study Group's administrative team (the owner's reply went 2026-10-23 16:56 UTC); then letters/hsg_ais_registry.md goes to the administrative team, and the answer is recorded here"
 }

@@ -46,7 +46,7 @@
  "source_status": "a letter sent 2026-10-21; no record in SchwingNet's registry yet",
  "route": "letter",
  "status": "refused",
- "result": "Letter sent 2026-10-21 09:40 UTC by the owner to J. H. Siewerdsen (now MD Anderson), who replied 12:48 UTC that the data stay at Johns Hopkins and pointed to Ali Uneri; the follow-up went to Uneri at 13:37 UTC. Uneri replied 2026-10-23 16:00 UTC, Siewerdsen copied: the LevelCheck study's IRB expired years ago and sharing would be hard even with a new approval; he suggested the Harms Study Group's multi-institutional dataset (https://hsg.settingscoliosisstraight.org/) and offered to connect the owner with its administrative team. Closed as refused; the lead is the record hsg_ais_registry, and the reply accepting the introduction waits in the owner's drafts.",
+ "result": "Letter sent 2026-10-21 09:40 UTC by the owner to J. H. Siewerdsen (now MD Anderson), who replied 12:48 UTC that the data stay at Johns Hopkins and pointed to Ali Uneri; the follow-up went to Uneri at 13:37 UTC. Uneri replied 2026-10-23 16:00 UTC, Siewerdsen copied: the LevelCheck study's IRB expired years ago and sharing would be hard even with a new approval; he suggested the Harms Study Group's multi-institutional dataset (https://hsg.settingscoliosisstraight.org/) and offered to connect the owner with its administrative team. Closed as refused; the lead is the record hsg_ais_registry, and the reply accepting the introduction waits in the owner's drafts. The owner's reply went 2026-10-23 16:56 UTC.",
  "history": [
   {
    "date": "2026-10-21",
@@ -77,10 +77,15 @@
    "date": "2026-10-23",
    "step": "refused",
    "note": "Uneri replied 16:00 UTC: the study's IRB expired years ago and sharing would be hard even with approval; he suggested the Harms Study Group (hsg.settingscoliosisstraight.org) and offered an introduction to its administrative team"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the owner's reply to Uneri went 16:56 UTC: LevelCheck is let go, the introduction to the Harms Study Group accepted; the lead continues on hsg_ais_registry"
   }
  ],
  "obstacles": [
   "the LevelCheck IRB at Johns Hopkins expired years ago; no sharing without a new approval, which Uneri called difficult"
  ],
- "next": "none for this set; the owner sends the drafted reply to Uneri accepting the introduction, and the Harms Study Group lead is followed on hsg_ais_registry"
+ "next": "none for this set; the owner's reply to Uneri went 2026-10-23 16:56 UTC, and the Harms Study Group lead is followed on hsg_ais_registry"
 }
