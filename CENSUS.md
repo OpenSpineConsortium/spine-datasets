@@ -95,6 +95,17 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 - [#187](https://github.com/OpenSpineConsortium/spine-datasets/issues/187) Obtain US-X Complete (TUM CAMP): lumbar phantoms with Loop-X lateral X-rays and co-registered CBCT
 - [#188](https://github.com/OpenSpineConsortium/spine-datasets/issues/188) Obtain MIDRC Open Data Commons cases with both CT and CR or DX, the spine-labelled studies first
 - [#189](https://github.com/OpenSpineConsortium/spine-datasets/issues/189) Ask for the UCLA spine radiotherapy setup radiographs with their planning CTs (Charters et al. 2024)
+- [#190](https://github.com/OpenSpineConsortium/spine-datasets/issues/190) Ask for the ExacTrac spine radiotherapy kV images with planning CTs (Petragallo, Lamb et al. 2023)
+- [#191](https://github.com/OpenSpineConsortium/spine-datasets/issues/191) Ask for the standing biplanar lumbar radiographs with CT (Yu, Tsai et al., Med Phys 2026)
+- [#192](https://github.com/OpenSpineConsortium/spine-datasets/issues/192) Ask FAU or Siemens Healthineers for the thoracolumbar CBCT sweeps (Jaganathan, Maier et al.)
+- [#193](https://github.com/OpenSpineConsortium/spine-datasets/issues/193) Ask the Siewerdsen and Zbijewski groups for their cadaver frames with CT (Otake 2013, Huang 2022)
+- [#194](https://github.com/OpenSpineConsortium/spine-datasets/issues/194) Ask for the intraoperative spine cases of RadGS-Reg (MICCAI 2025)
+- [#196](https://github.com/OpenSpineConsortium/spine-datasets/issues/196) Ask the Framingham Heart Study for the CT scouts of its MDCT cohort (low priority)
+- [#197](https://github.com/OpenSpineConsortium/spine-datasets/issues/197) Ask AGES-Reykjavik for the CT scouts of its cohort (low priority)
+- [#198](https://github.com/OpenSpineConsortium/spine-datasets/issues/198) Ask for the Spine-DART cadaver frames with their Loop-X CT (Johns Hopkins 2026)
+- [#199](https://github.com/OpenSpineConsortium/spine-datasets/issues/199) Ask for the UC Davis and Augmedics cadaver screw study's frames with CT (Global Spine J 2025)
+- [#200](https://github.com/OpenSpineConsortium/spine-datasets/issues/200) Ask Giessen and Jena for the canine biplanar fluoroscopy of the lumbosacral spine with CT (Front Vet Sci 2021)
+- [#201](https://github.com/OpenSpineConsortium/spine-datasets/issues/201) Ask for SheepSpineX: ovine cervical AP and lateral films with CT (Shanghai Jiao Tong University)
 
 ## Every dataset
 
@@ -214,6 +225,7 @@ Tasks whose record is not written yet:
 
 - [#170](https://github.com/OpenSpineConsortium/spine-datasets/issues/170) Obtain the IPCAI 2025 language digital twin cadaver set (Killeen 2025, Google Drive, 845 MB)
 - [#171](https://github.com/OpenSpineConsortium/spine-datasets/issues/171) Obtain FluoroSeg (Killeen 2025, Hugging Face, gated; CC BY-NC-SA 4.0 per its code repository, card to confirm): 2.95 million synthetic X-rays with masks, text and poses from 1,621 CTs
+- [#195](https://github.com/OpenSpineConsortium/spine-datasets/issues/195) Ask BG Klinik Ludwigshafen for the MINTOS cadaver series on three C-arms (Brunken et al. 2026)
 
 ## What the records still lack
 

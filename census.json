@@ -231,6 +231,90 @@
    "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/189",
    "id": "ucla_kv_mv_setup",
    "paired": true
+  },
+  {
+   "number": 190,
+   "title": "Ask for the ExacTrac spine radiotherapy kV images with planning CTs (Petragallo, Lamb et al. 2023)",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/190",
+   "id": "exactrac_spine_rt",
+   "paired": true
+  },
+  {
+   "number": 191,
+   "title": "Ask for the standing biplanar lumbar radiographs with CT (Yu, Tsai et al., Med Phys 2026)",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/191",
+   "id": "sjtu_biplanar_lumbar",
+   "paired": true
+  },
+  {
+   "number": 192,
+   "title": "Ask FAU or Siemens Healthineers for the thoracolumbar CBCT sweeps (Jaganathan, Maier et al.)",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/192",
+   "id": "fau_cbct_sweeps",
+   "paired": true
+  },
+  {
+   "number": 193,
+   "title": "Ask the Siewerdsen and Zbijewski groups for their cadaver frames with CT (Otake 2013, Huang 2022)",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/193",
+   "id": "jhu_cadaver_sets",
+   "paired": true
+  },
+  {
+   "number": 194,
+   "title": "Ask for the intraoperative spine cases of RadGS-Reg (MICCAI 2025)",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/194",
+   "id": "radgs_reg",
+   "paired": true
+  },
+  {
+   "number": 195,
+   "title": "Ask BG Klinik Ludwigshafen for the MINTOS cadaver series on three C-arms (Brunken et al. 2026)",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/195",
+   "id": "mintos_cadavers",
+   "paired": false
+  },
+  {
+   "number": 196,
+   "title": "Ask the Framingham Heart Study for the CT scouts of its MDCT cohort (low priority)",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/196",
+   "id": "framingham_mdct_scouts",
+   "paired": true
+  },
+  {
+   "number": 197,
+   "title": "Ask AGES-Reykjavik for the CT scouts of its cohort (low priority)",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/197",
+   "id": "ages_reykjavik_scouts",
+   "paired": true
+  },
+  {
+   "number": 198,
+   "title": "Ask for the Spine-DART cadaver frames with their Loop-X CT (Johns Hopkins 2026)",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/198",
+   "id": "spine_dart",
+   "paired": true
+  },
+  {
+   "number": 199,
+   "title": "Ask for the UC Davis and Augmedics cadaver screw study's frames with CT (Global Spine J 2025)",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/199",
+   "id": "ucdavis_augmedics_cadaver",
+   "paired": true
+  },
+  {
+   "number": 200,
+   "title": "Ask Giessen and Jena for the canine biplanar fluoroscopy of the lumbosacral spine with CT (Front Vet Sci 2021)",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/200",
+   "id": "giessen_canine_fluoro",
+   "paired": true
+  },
+  {
+   "number": 201,
+   "title": "Ask for SheepSpineX: ovine cervical AP and lateral films with CT (Shanghai Jiao Tong University)",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/201",
+   "id": "sheepspinex",
+   "paired": true
   }
  ],
  "records": {
