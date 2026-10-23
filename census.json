@@ -3,24 +3,24 @@
  "repo": "OpenSpineConsortium/spine-datasets",
  "generated": "2026-10-23",
  "totals": {
-  "datasets": 164,
+  "datasets": 165,
   "by_stage": {
    "downloadable": 9,
-   "to-ask": 8,
-   "asked": 28,
-   "granted": 5,
+   "to-ask": 9,
+   "asked": 26,
+   "granted": 6,
    "fetching": 0,
    "on-grid": 6,
    "held": 95,
    "needs-owner": 11,
-   "refused": 1,
+   "refused": 2,
    "later": 1
   },
   "by_kind": {
    "fluoro": 13,
    "video": 25,
    "projections": 3,
-   "films": 29,
+   "films": 30,
    "ct": 92,
    "future": 2
   },
@@ -60,8 +60,8 @@
   "paired": {
    "A": 5,
    "B": 0,
-   "C": 3,
-   "D": 2,
+   "C": 2,
+   "D": 3,
    "E": 5
   },
   "paired_spine_subjects_on_grid": {
@@ -91,13 +91,13 @@
    "by_stage": {
     "downloadable": 2,
     "to-ask": 2,
-    "asked": 4,
+    "asked": 3,
     "granted": 4,
     "fetching": 0,
     "on-grid": 4,
     "held": 84,
     "needs-owner": 3,
-    "refused": 1,
+    "refused": 2,
     "later": 1
    },
    "by_region": {
@@ -969,7 +969,7 @@
    }
   },
   "bournemouth_cervical_qf": {
-   "digest": "00240c25c78f5a9bc035b9755d7e94dcb235e837c49ca81c09067e474aec85dc",
+   "digest": "5eafe030fa416ded5f38d224690835797c71029e21a333eca800783bcffa2bfb",
    "first_seen": "2026-09-26",
    "last_changed": "2026-10-23",
    "row": {
@@ -998,11 +998,11 @@
     "unread_counts": [
      "frames_per_sequence_median"
     ],
-    "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch",
+    "next": "wait for Branney's second answer with the arrangement; a Bournemouth data-sharing agreement would be the owner's to sign; then record granted here and go on to the fetch",
     "since": "2026-09-26",
     "last_step": {
-     "date": "2026-10-21",
-     "step": "researched"
+     "date": "2026-10-22",
+     "step": "note"
     },
     "paired": false,
     "tier": null,
@@ -1013,7 +1013,7 @@
    }
   },
   "bournemouth_lumbar_qf": {
-   "digest": "21c9fd60756e5c4e66d891b9f98e904ce399c64283a8c8aee32a0b794c51d832",
+   "digest": "92176f786829ee5da17dbda3d20aed1fca6baf0fd8c3fb84e153b2c49ed70b1f",
    "first_seen": "2026-10-20",
    "last_changed": "2026-10-23",
    "row": {
@@ -1040,11 +1040,11 @@
     "ct_volumes": null,
     "bytes": null,
     "unread_counts": [],
-    "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch",
+    "next": "wait for Branney's second answer with the arrangement; a Bournemouth data-sharing agreement would be the owner's to sign; then record granted here and go on to the fetch",
     "since": "2026-10-20",
     "last_step": {
-     "date": "2026-10-21",
-     "step": "researched"
+     "date": "2026-10-22",
+     "step": "note"
     },
     "paired": false,
     "tier": null,
@@ -2219,7 +2219,7 @@
    }
   },
   "daradia_vertebroplasty": {
-   "digest": "9050385d90322ad67875eaef96536415c7f0fe9b6c366d5b387f86efe89663a5",
+   "digest": "b3a8e8104c91d0f209a29e54659721bc7f7dff572843d186066b0954e2fb4b0d",
    "first_seen": "2026-09-26",
    "last_changed": "2026-10-23",
    "row": {
@@ -2246,11 +2246,11 @@
     "ct_volumes": null,
     "bytes": null,
     "unread_counts": [],
-    "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch",
+    "next": "wait for Daradia's answer after Dr Das's review; if none by 2026-11-04, the owner sends one follow-up",
     "since": "2026-09-26",
     "last_step": {
      "date": "2026-10-21",
-     "step": "researched"
+     "step": "note"
     },
     "paired": false,
     "tier": null,
@@ -2783,6 +2783,48 @@
       "where": null
      }
     ]
+   }
+  },
+  "hsg_ais_registry": {
+   "digest": "a08ef99dc2edabcdab976dfdb5c1f472c25626c1592693b5e0afcea1233dc490",
+   "first_seen": "2026-10-23",
+   "last_changed": "2026-10-23",
+   "row": {
+    "id": "hsg_ais_registry",
+    "name": "Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity)",
+    "group": "films",
+    "kind": "Radiographs",
+    "route": "letter",
+    "status": "todo",
+    "stage": "to-ask",
+    "licence": "not recorded; the Database User Program page lists a research tool at USD 5,000 a year (database user access and hosting) and custom research database building at USD 50,000 to 150,000; the terms of a data release are not on the site",
+    "licence_kind": "unknown",
+    "link": "https://hsg.settingscoliosisstraight.org/database-user-program/",
+    "what": "the Harms Study Group's prospective multicentre registries of pediatric spinal deformity, run with the Setting Scoliosis Straight Foundation: the adolescent idiopathic scoliosis registry, which the group calls the largest AIS database, with cerebral palsy, Scheuermann's kyphosis and Marfan syndrome registries beside it and a quality improvement registry; about twenty years of surgical cases from 37 member surgeons; whether the standing radiographs themselves are shared, or only the measurements taken from them, is not stated on the site and is the first question to ask",
+    "level_truth": "to confirm: standing coronal and lateral films of operated scoliosis patients, before and after surgery, with the instrumented levels known from the operative record, if the images are shared",
+    "grid_path": null,
+    "on_grid": false,
+    "grid_bytes": null,
+    "tree_sha256": null,
+    "subjects": null,
+    "xray_images": null,
+    "videos": null,
+    "run_frames": null,
+    "ct_volumes": null,
+    "bytes": null,
+    "unread_counts": [],
+    "next": "the owner sends the drafted reply accepting Uneri's introduction; then letters/hsg_ais_registry.md goes to the administrative team, and the answer is recorded here",
+    "since": "2026-10-23",
+    "last_step": {
+     "date": "2026-10-23",
+     "step": "researched"
+    },
+    "paired": false,
+    "tier": null,
+    "pairing": null,
+    "ct": false,
+    "regions": [],
+    "segmentations": null
    }
   },
   "huashan_fudan": {
@@ -6399,7 +6441,7 @@
    }
   },
   "levelcheck_jhu": {
-   "digest": "fa29adcb6330ce5dd3bd1a491ce856589b0de2bf8d36ab237e66a49bc1b7d36a",
+   "digest": "22bdd0bdd1d38f9ef9aa5c83d8f038296ed5d9ef5e73258b701b57716a67a09a",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6408,8 +6450,8 @@
     "group": "fluoro",
     "kind": "Fluoroscopy",
     "route": "letter",
-    "status": "requested",
-    "stage": "asked",
+    "status": "refused",
+    "stage": "refused",
     "licence": "not recorded; a data use agreement with the PI is the route",
     "licence_kind": "restricted",
     "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5045321/",
@@ -6426,14 +6468,14 @@
     "ct_volumes": 202,
     "bytes": null,
     "unread_counts": [],
-    "next": "wait for Ali Uneri's answer; any Johns Hopkins data use agreement is the owner's to sign",
+    "next": "none for this set; the owner sends the drafted reply to Uneri accepting the introduction, and the Harms Study Group lead is followed on hsg_ais_registry",
     "since": "2026-10-21",
     "last_step": {
      "date": "2026-10-23",
-     "step": "note"
+     "step": "refused"
     },
     "paired": true,
-    "tier": "C",
+    "tier": "D",
     "pairing": {
      "spine": true,
      "region": "thoracic and lumbar spine",
@@ -7534,7 +7576,7 @@
    }
   },
   "pittsburgh_swallow": {
-   "digest": "0ae4725352354518c974f00e6d435c55940908e71607d4ee65ba3efae06f3c57",
+   "digest": "8d4800b2b7f7ec23e52b3d1dc6e6326600f5704928eb1d961dbe53cb6ebf309e",
    "first_seen": "2026-09-26",
    "last_changed": "2026-10-23",
    "row": {
@@ -7561,7 +7603,7 @@
     "ct_volumes": null,
     "bytes": null,
     "unread_counts": [],
-    "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch",
+    "next": "wait for James Coyle's answer; if none by 2026-10-28, the owner sends one short follow-up to him alone",
     "since": "2026-09-26",
     "last_step": {
      "date": "2026-10-23",
@@ -7721,7 +7763,7 @@
    }
   },
   "radiopaedia": {
-   "digest": "187dac5c1130f5e71fcccace08a7d544db77c8050967d7f3286444dc4d93b20c",
+   "digest": "02202c73a0b8dd2026086118d980c00635fa304479caeeacdbf14e2e5b5fb8a4",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -7730,8 +7772,8 @@
     "group": "video",
     "kind": "Fluoroscopy video",
     "route": "agreement",
-    "status": "requested",
-    "stage": "asked",
+    "status": "granted",
+    "stage": "granted",
     "licence": "CC BY-NC-SA 3.0 (the site); ML use by application",
     "licence_kind": "restricted",
     "link": "https://radiopaedia.org/licence",
@@ -7748,11 +7790,11 @@
     "ct_volumes": null,
     "bytes": null,
     "unread_counts": [],
-    "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch",
+    "next": "wait for Juliette's copy with the approval ID and record it here; then the owner decides how the spine cases are collected within clause 3's rate",
     "since": "2026-10-21",
     "last_step": {
-     "date": "2026-10-21",
-     "step": "note"
+     "date": "2026-10-23",
+     "step": "granted"
     },
     "paired": false,
     "tier": null,
@@ -9294,7 +9336,7 @@
    }
   },
   "zenodo_ts_task_hip_implant": {
-   "digest": "3248524b0edeee3de83b793e9a942ebc058e7bc15871f877b5e03eb384dea071",
+   "digest": "51f15d963eac1c37391c756722de07634538d50d724d40563bb4514d2f903c94",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -9321,7 +9363,7 @@
     "ct_volumes": null,
     "bytes": 9030000000,
     "unread_counts": [],
-    "next": "record the authors' answer; the landing pass (#204) checks the files",
+    "next": "the owner sends the drafted follow-up; record the answer on the task sets here; the landing pass (#204) checks the files",
     "since": "2026-10-21",
     "last_step": {
      "date": "2026-10-23",
@@ -9347,7 +9389,7 @@
    }
   },
   "zenodo_ts_task_liver_lesions": {
-   "digest": "e11858ddd43d6e5035acd82667d5c9dc808f52693b9adc12452b6253f460549f",
+   "digest": "f29e05928dea56baae96e83af870a0df892c5c433ef9fd5ee327f83d3c07444d",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -9374,7 +9416,7 @@
     "ct_volumes": null,
     "bytes": 38870000000,
     "unread_counts": [],
-    "next": "record the authors' answer; the landing pass (#204) checks the files",
+    "next": "the owner sends the drafted follow-up; record the answer on the task sets here; the landing pass (#204) checks the files",
     "since": "2026-10-21",
     "last_step": {
      "date": "2026-10-23",
@@ -9400,7 +9442,7 @@
    }
   },
   "zenodo_ts_task_pleural_effusion": {
-   "digest": "81e6fb2d9f6122aeca682e2f4ae439d893ebb573edb497efe1cd65a7b60d47b9",
+   "digest": "e840652f616d06a14234db46c92c383300150734e4b0269176ba18d0dc546414",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -9427,7 +9469,7 @@
     "ct_volumes": null,
     "bytes": 8990000000,
     "unread_counts": [],
-    "next": "record the authors' answer; the landing pass (#204) checks the files",
+    "next": "the owner sends the drafted follow-up; record the answer on the task sets here; the landing pass (#204) checks the files",
     "since": "2026-10-21",
     "last_step": {
      "date": "2026-10-23",
@@ -9604,6 +9646,7 @@
   "geneva_hip": "2026-10-23",
   "guide3d": "2026-10-21",
   "hf_abdomenatlas2_0_mini": "2026-10-21",
+  "hsg_ais_registry": "2026-10-23",
   "huashan_fudan": "2026-10-21",
   "idc_acrin_flt_breast": "2026-10-23",
   "idc_acrin_nsclc_fdg_pet": "2026-10-23",
@@ -10531,6 +10574,46 @@
      "asked"
     ]
    }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "levelcheck_jhu",
+   "kind": "changed",
+   "changes": {
+    "status": [
+     "requested",
+     "refused"
+    ],
+    "stage": [
+     "asked",
+     "refused"
+    ],
+    "tier": [
+     "C",
+     "D"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "radiopaedia",
+   "kind": "changed",
+   "changes": {
+    "status": [
+     "requested",
+     "granted"
+    ],
+    "stage": [
+     "asked",
+     "granted"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "id": "hsg_ais_registry",
+   "kind": "added",
+   "changes": {}
   }
  ]
 }

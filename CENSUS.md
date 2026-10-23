@@ -1,6 +1,6 @@
 # Census: every dataset, counted from its record
 
-Written by tools/census.py on 2026-10-23 from the 164 records under datasets/ of
+Written by tools/census.py on 2026-10-23 from the 165 records under datasets/ of
 https://github.com/OpenSpineConsortium/spine-datasets; nobody edits it by hand. Each dataset is one record; the census reads
 the records alone, never a dataset's files, and folds in only the records that are new or changed
 since the last run. The page with filters is census.html beside this file, served by the docs site.
@@ -9,7 +9,7 @@ since the last run. The page with filters is census.html beside this file, serve
 
 | | |
 |---|---|
-| Datasets with a record | 164 |
+| Datasets with a record | 165 |
 | On the grid (shared tree and the owner's root) | 101 |
 | Size on the grid | 3.9 TB (83 of 101 sets counted) |
 | Frozen on the grid, every file hashed (tools/freeze.py) | 0 of 101 |
@@ -23,14 +23,14 @@ since the last run. The page with filters is census.html beside this file, serve
 | Stage | Datasets |
 |---|---|
 | Downloadable now | 9 |
-| To ask | 8 |
-| Asked, waiting | 28 |
-| Granted, fetch pending | 5 |
+| To ask | 9 |
+| Asked, waiting | 26 |
+| Granted, fetch pending | 6 |
 | Fetching | 0 |
 | On the grid | 6 |
 | Held by the owner | 95 |
 | Needs the owner | 11 |
-| Refused | 1 |
+| Refused | 2 |
 | Later | 1 |
 
 ## Paired CT and X-ray
@@ -56,17 +56,16 @@ A download or a fetch away.
 
 None yet.
 
-### C. Behind a letter, an agreement or the owner's hand (3)
+### C. Behind a letter, an agreement or the owner's hand (2)
 
 Asked, or still to ask.
 
 | Set | Region | X-rays | CT | Subjects | Pose | Masks shipped | What annotation adds | Pair key | Task |
 |---|---|---|---|---|---|---|---|---|---|
 | Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024) | lumbar, L1 to L5 | intraoperative AP and lateral films | the preoperative CT of each patient | 140 patients | none stated | none stated | to read once the set is in hand | the patient | [#61](https://github.com/OpenSpineConsortium/spine-datasets/issues/61) |
-| LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group) | thoracic and lumbar spine | 398 intraoperative radiographs (De Silva 2016), and 61 more (Ketcha 2017) | the preoperative CT of each patient | 178 patients, and 24 more | not shipped; each level is placed by registration to the CT | levels labelled on the preoperative CT | to read once the set is in hand | the patient | [#60](https://github.com/OpenSpineConsortium/spine-datasets/issues/60) |
 | NIT Warangal and NIMS Hyderabad intraoperative C-arm sets (2D-3D-sci-registration) | lumbar, L1 to L5 | 51 AP and lateral C-arm sets on a Ziehm C-arm, at most 49 unique frames | the preoperative CT, with L1 to L5 centroids named by level | 9 patients | the public overlays set each real frame beside a simulated projection | level-named centroids; no masks | to read once the set is in hand | the patient | [#64](https://github.com/OpenSpineConsortium/spine-datasets/issues/64) |
 
-### D. Refused, embargoed or never released (2)
+### D. Refused, embargoed or never released (3)
 
 Kept so nobody asks twice.
 
@@ -74,6 +73,7 @@ Kept so nobody asks twice.
 |---|---|---|---|---|---|---|---|---|---|
 | Balgrist ex-vivo lumbar CT plus C-arm (Jecklin) | lumbar spine of cadavers | real C-arm frames | the cadavers' CT | not stated | not stated | not stated | none: the source declined | not stated | [#69](https://github.com/OpenSpineConsortium/spine-datasets/issues/69) |
 | COBRA2026 embargoed cases | lumbosacral spine and pelvis | raw kV projections, as the public cases | the planning CT and the CBCT, as the public cases | 175 patients | stored, as the public cases | none for the vertebrae | as COBRA2026's public cases, once the embargo ends on 2032-03-01 | the case id | [#92](https://github.com/OpenSpineConsortium/spine-datasets/issues/92) |
+| LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group) | thoracic and lumbar spine | 398 intraoperative radiographs (De Silva 2016), and 61 more (Ketcha 2017) | the preoperative CT of each patient | 178 patients, and 24 more | not shipped; each level is placed by registration to the CT | levels labelled on the preoperative CT | to read once the set is in hand | the patient | [#60](https://github.com/OpenSpineConsortium/spine-datasets/issues/60) |
 
 ### E. Real pairs of something other than the spine (5)
 
@@ -119,7 +119,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs | Fluoroscopy | Held by the owner | restricted | 6 | 2,659 |  |  | 19 | 116.3 GB |  |
 | Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021) | Fluoroscopy | Held by the owner | open | 1 | 116 |  |  | 1 |  |  |
 | Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024) | Fluoroscopy | Asked, waiting | restricted | 140 |  |  |  | 140 |  | [#61](https://github.com/OpenSpineConsortium/spine-datasets/issues/61) |
-| LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group) | Fluoroscopy | Asked, waiting | restricted | 202 | 459 |  |  | 202 |  | [#60](https://github.com/OpenSpineConsortium/spine-datasets/issues/60) |
+| LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group) | Fluoroscopy | Refused | restricted | 202 | 459 |  |  | 202 |  | [#60](https://github.com/OpenSpineConsortium/spine-datasets/issues/60) |
 | Ljubljana 2D/3D registration gold standard (PIXIUM 4600) | Fluoroscopy | Held by the owner | restricted | 1 | 18 |  |  | 5 |  |  |
 | LUMOS (Zhejiang University) | Fluoroscopy | Held by the owner | restricted | 803 | 1,620 |  |  | 280 | 46.4 GB | [#27](https://github.com/OpenSpineConsortium/spine-datasets/issues/27) |
 | NIT Warangal and NIMS Hyderabad intraoperative C-arm sets (2D-3D-sci-registration) | Fluoroscopy | Asked, waiting | restricted | 9 | 49 |  |  | 9 |  | [#64](https://github.com/OpenSpineConsortium/spine-datasets/issues/64) |
@@ -147,7 +147,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | IRI-VFI: pediatric interventional radiology image sequences (Chongqing) | Fluoroscopy video | Asked, waiting | unknown |  |  | 1,357 | 95,308 |  |  | [#21](https://github.com/OpenSpineConsortium/spine-datasets/issues/21) |
 | Pittsburgh videofluoroscopic swallow corpus (Sejdic, Coyle) | Fluoroscopy video | Asked, waiting | restricted | 335 |  | 1,500 |  |  |  | [#74](https://github.com/OpenSpineConsortium/spine-datasets/issues/74) |
 | The Procedure Guide (Puranik) live fluoroscopy clips | Fluoroscopy video | Asked, waiting | restricted |  |  | 4 |  |  |  | [#78](https://github.com/OpenSpineConsortium/spine-datasets/issues/78) |
-| Radiopaedia spine cases | Fluoroscopy video | Asked, waiting | restricted |  |  |  |  |  |  | [#84](https://github.com/OpenSpineConsortium/spine-datasets/issues/84) |
+| Radiopaedia spine cases | Fluoroscopy video | Granted, fetch pending | restricted |  |  |  |  |  |  | [#84](https://github.com/OpenSpineConsortium/spine-datasets/issues/84) |
 | Seattle Science Foundation spine videos | Fluoroscopy video | Asked, waiting | unknown |  |  | 12 |  |  |  | [#75](https://github.com/OpenSpineConsortium/spine-datasets/issues/75) |
 | Veriserum (ETH Zurich, MICCAI 2025) | Fluoroscopy video | Needs the owner | restricted |  |  |  |  |  |  | [#41](https://github.com/OpenSpineConsortium/spine-datasets/issues/41) |
 | VFSS2022 videofluoroscopic swallow frames (TIB) | Fluoroscopy video | Downloadable now | unknown |  |  |  | 440 |  |  | [#42](https://github.com/OpenSpineConsortium/spine-datasets/issues/42) |
@@ -163,6 +163,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | CSXA, the Cervical Spine X-ray Atlas V3.0 (Ran et al., Scientific Data 2024) | Radiographs | Held by the owner | open |  | 4,963 |  |  |  |  |  |
 | FracAtlas (Abedeen 2023, Scientific Data) | Radiographs | Downloadable now | open |  | 4,083 |  |  |  |  | [#36](https://github.com/OpenSpineConsortium/spine-datasets/issues/36) |
 | Fraiwan spine X-ray set (Mendeley xkt857dsxk) | Radiographs | On the grid | open | 338 |  |  |  |  | 85.6 MB | [#31](https://github.com/OpenSpineConsortium/spine-datasets/issues/31) |
+| Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity) | Radiographs | To ask | unknown |  |  |  |  |  |  |  |
 | IEEE DataPort lateral full-spine X-ray dataset (236 films) | Radiographs | Needs the owner | unknown | 236 | 236 |  |  |  | 1.3 GB |  |
 | Kaggle bone fracture multi-region X-ray data (bmadushanirodrigo) | Radiographs | To ask | open |  | 10,580 |  |  |  | 481.0 MB | [#24](https://github.com/OpenSpineConsortium/spine-datasets/issues/24) |
 | Kaggle scoliosis YOLOv5 annotated spine X-ray set (salmankey) | Radiographs | Needs the owner | open |  |  |  |  |  |  | [#23](https://github.com/OpenSpineConsortium/spine-datasets/issues/23) |
@@ -402,7 +403,7 @@ with filters, and each set's masks in full, is census-ct.html beside this file.
 | VerSe 2D projections with soft labels (Zenodo 8115942) | Held by the owner |  | spine | from the source: none | [#29](https://github.com/OpenSpineConsortium/spine-datasets/issues/29) |
 | VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich | Held by the owner |  | whole body | from the source: not recorded | [#59](https://github.com/OpenSpineConsortium/spine-datasets/issues/59) |
 | AbdomenAtlas 2.0 Mini (10,135 CT) | Asked, waiting | 10,135 | abdomen | from the source: not recorded | [#89](https://github.com/OpenSpineConsortium/spine-datasets/issues/89) |
-| LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group) | Asked, waiting | 202 | spine | from the source: not recorded | [#60](https://github.com/OpenSpineConsortium/spine-datasets/issues/60) |
+| LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group) | Refused | 202 | spine | from the source: not recorded | [#60](https://github.com/OpenSpineConsortium/spine-datasets/issues/60) |
 | Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024) | Asked, waiting | 140 | spine | from the source: not recorded | [#61](https://github.com/OpenSpineConsortium/spine-datasets/issues/61) |
 | NIT Warangal and NIMS Hyderabad intraoperative C-arm sets (2D-3D-sci-registration) | Asked, waiting | 9 | spine | from the source: none | [#64](https://github.com/OpenSpineConsortium/spine-datasets/issues/64) |
 | Balgrist ex-vivo lumbar CT plus C-arm (Jecklin) | Refused |  | spine | from the source: not recorded | [#69](https://github.com/OpenSpineConsortium/spine-datasets/issues/69) |
@@ -484,6 +485,7 @@ What the CT records still lack:
 - CSXA, the Cervical Spine X-ray Atlas V3.0 (Ran et al., Scientific Data 2024): on the grid with no size: write the landing pass's bytes into measured
 - CSXA, the Cervical Spine X-ray Atlas V3.0 (Ran et al., Scientific Data 2024): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - Fraiwan spine X-ray set (Mendeley xkt857dsxk): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
+- Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Kaggle scoliosis YOLOv5 annotated spine X-ray set (salmankey): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - KUB-StoneX (Daffodil International University HIRL): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - Mendeley DDH hip sets (jf3pv98m9g and 4gvcb6gmh2): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
@@ -608,6 +610,9 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-23 Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity): record added
+- 2026-10-23 Radiopaedia spine cases: stage asked to granted; status requested to granted
+- 2026-10-23 LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group): stage asked to refused; status requested to refused; tier C to D
 - 2026-10-23 CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images: stage to-ask to asked; status todo to requested
 - 2026-10-23 CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images: route owner-only to letter
 - 2026-10-23 CAMS-Knee (ETH Zurich and Charite Berlin, J Biomech 2017): record added
