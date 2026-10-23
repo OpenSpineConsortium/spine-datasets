@@ -2786,7 +2786,7 @@
    }
   },
   "hsg_ais_registry": {
-   "digest": "a08ef99dc2edabcdab976dfdb5c1f472c25626c1592693b5e0afcea1233dc490",
+   "digest": "d57ca36a4a1147a00d446470fa635c14ebf73deaa691c6e29d735180d7622047",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-23",
    "row": {
@@ -2813,11 +2813,11 @@
     "ct_volumes": null,
     "bytes": null,
     "unread_counts": [],
-    "next": "the owner sends the drafted reply accepting Uneri's introduction; then letters/hsg_ais_registry.md goes to the administrative team, and the answer is recorded here",
+    "next": "wait for Uneri's introduction to the Harms Study Group's administrative team (the owner's reply went 2026-10-23 16:56 UTC); then letters/hsg_ais_registry.md goes to the administrative team, and the answer is recorded here",
     "since": "2026-10-23",
     "last_step": {
      "date": "2026-10-23",
-     "step": "researched"
+     "step": "note"
     },
     "paired": false,
     "tier": null,
@@ -6441,7 +6441,7 @@
    }
   },
   "levelcheck_jhu": {
-   "digest": "22bdd0bdd1d38f9ef9aa5c83d8f038296ed5d9ef5e73258b701b57716a67a09a",
+   "digest": "e27761372e3bb1322c6049fbdd45116a7d14513771eda77498a32a6d4aec50d9",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-23",
    "row": {
@@ -6468,11 +6468,11 @@
     "ct_volumes": 202,
     "bytes": null,
     "unread_counts": [],
-    "next": "none for this set; the owner sends the drafted reply to Uneri accepting the introduction, and the Harms Study Group lead is followed on hsg_ais_registry",
+    "next": "none for this set; the owner's reply to Uneri went 2026-10-23 16:56 UTC, and the Harms Study Group lead is followed on hsg_ais_registry",
     "since": "2026-10-21",
     "last_step": {
      "date": "2026-10-23",
-     "step": "refused"
+     "step": "note"
     },
     "paired": true,
     "tier": "D",
