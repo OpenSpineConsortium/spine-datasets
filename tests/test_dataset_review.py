@@ -1,5 +1,8 @@
 """The automated review of dataset pull requests (tools/dataset_review.py)."""
 
+import argparse
+import contextlib
+import io
 import json
 import os
 import subprocess
@@ -92,6 +95,91 @@ class MendeleyManifest(unittest.TestCase):
             "download_url": "https://data.mendeley.com/public-files/datasets/abc/files/1/file_downloaded"}}]
         built = dataset_review.build_manifest(record(), dataset_review.mendeley_files(listing), "2026-10-21")
         self.assertEqual(promote.valid_manifest(built, record(), "demo_set"), [])
+
+
+def listing(*names):
+    return [{"filename": name, "content_details": {
+        "sha256_hash": SHA, "size": 10,
+        "download_url": "https://data.mendeley.com/public-files/datasets/abc/files/%d/file_downloaded" % number}}
+        for number, name in enumerate(names)]
+
+
+class FakeMendeley:
+    """Stands in for fetch_json: answers from a table of addresses, and records what was asked."""
+
+    def __init__(self, answers):
+        self.answers, self.asked = answers, []
+
+    def __enter__(self):
+        self.saved = dataset_review.fetch_json
+        dataset_review.fetch_json = self.fetch
+        return self
+
+    def __exit__(self, *_):
+        dataset_review.fetch_json = self.saved
+
+    def fetch(self, url):
+        self.asked.append(url)
+        if url not in self.answers:
+            raise dataset_review.ManifestError("%s answered 404 Not Found" % url)
+        return self.answers[url]
+
+
+class MendeleyDatasets(unittest.TestCase):
+    def test_an_id_a_page_or_a_doi_names_the_dataset(self):
+        for given, expected in (("https://data.mendeley.com/datasets/xkt857dsxk/2", ("xkt857dsxk", "2")),
+                                ("https://data.mendeley.com/datasets/xkt857dsxk/1/", ("xkt857dsxk", "1")),
+                                ("10.17632/xkt857dsxk.3", ("xkt857dsxk", "3")),
+                                ("xkt857dsxk", ("xkt857dsxk", "4"))):
+            self.assertEqual(dataset_review.mendeley_dataset(given, "4"), expected)
+        with self.assertRaises(dataset_review.ManifestError):
+            dataset_review.mendeley_dataset("https://example.org/xkt857dsxk")
+
+    def test_with_no_version_the_latest_is_asked_and_its_absence_says_what_to_give(self):
+        with FakeMendeley({dataset_review.MENDELEY_DATASET % "abcdef": {"version": 3}}):
+            self.assertEqual(dataset_review.mendeley_dataset("abcdef"), ("abcdef", "3"))
+        with FakeMendeley({}):
+            with self.assertRaisesRegex(dataset_review.ManifestError, "--version N"):
+                dataset_review.mendeley_dataset("abcdef")
+
+    def test_an_entry_with_no_download_link_stops_rather_than_vanish(self):
+        with self.assertRaisesRegex(dataset_review.ManifestError, "folder"):
+            dataset_review.mendeley_files(listing("a.zip") + [{"filename": "images", "content_details": None}])
+
+    def test_several_datasets_keep_their_files_apart(self):
+        answers = {dataset_review.MENDELEY_FILES % ("aaaaaa", "1"): listing("data.zip"),
+                   dataset_review.MENDELEY_FILES % ("bbbbbb", "2"): listing("data.zip")}
+        with FakeMendeley(answers):
+            files, read = dataset_review.mendeley_manifest_files(["aaaaaa/1", "bbbbbb.2"], None)
+        self.assertEqual([entry["path"] for entry in files], ["raw/aaaaaa/data.zip", "raw/bbbbbb/data.zip"])
+        self.assertEqual(read, ["aaaaaa version 1, 1 files", "bbbbbb version 2, 1 files"])
+
+    def test_the_command_writes_the_manifest_and_readies_the_record(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / "datasets").mkdir()
+            todo = record(status="todo", licence="CC BY 4.0 (to confirm on the page)")
+            dataset_review.write_json(root / "datasets" / "demo_set.json", todo)
+            args = argparse.Namespace(
+                id="demo_set", mendeley=["https://data.mendeley.com/datasets/abc123/1"], zenodo=None,
+                version=None, licence=None, leave_record=False)
+            answers = {dataset_review.MENDELEY_FILES % ("abc123", "1"): listing("a.zip")}
+            with FakeMendeley(answers), contextlib.redirect_stdout(io.StringIO()) as printed:
+                self.assertEqual(dataset_review.write_manifest(args, root=root), 1)
+            self.assertIn("--licence", printed.getvalue())
+            args.licence = "CC BY 4.0, as the page reads it"
+            with FakeMendeley(answers), contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(dataset_review.write_manifest(args, root=root), 0)
+            readied = json.loads((root / "datasets" / "demo_set.json").read_text())
+            self.assertEqual((readied["status"], readied["licence"]), ("fetching", args.licence))
+            self.assertEqual([entry["step"] for entry in readied["history"]], ["researched", "fetching", "note"])
+            built = json.loads((root / "manifests" / "demo_set.json").read_text())
+            self.assertEqual(promote.valid_manifest(built, readied, "demo_set"), [])
+
+    def test_a_refusal_is_one_line_not_a_traceback(self):
+        with FakeMendeley({}), contextlib.redirect_stderr(io.StringIO()) as said:
+            self.assertEqual(dataset_review.main(["manifest", "demo_set", "--mendeley", "abcdef", "--version", "1"]), 1)
+        self.assertTrue(said.getvalue().startswith("manifest: "))
 
 
 class Fetch(unittest.TestCase):
@@ -200,9 +288,34 @@ class Diff(unittest.TestCase):
                 "title": "t", "body": ""}
         self.assertTrue(self.review(pull).failed())
 
+    def test_the_promoters_branch_may_add_the_sets_freeze(self):
+        (self.root / "frozen").mkdir()
+        self.write("frozen/demo_set.json", "{}\n")
+        pull = {"user": {"login": dataset_review.OWNERS[0]}, "head": {"ref": "promote/demo_set"},
+                "title": "t", "body": ""}
+        self.assertFalse(any("promoter's branch" in line for line in self.review(pull).text().splitlines()))
+
     def test_fetched_needs_the_shared_path_and_a_manifest(self):
         self.write("datasets/demo_set.json", record(status="fetched", grid_path="/home/someone/raw"))
         self.assertTrue(self.review().failed())
+
+    def test_held_needs_a_path_on_the_owners_root_or_the_shared_tree(self):
+        self.write("datasets/demo_set.json", record(status="held", grid_path="/home/someone/raw"))
+        self.assertTrue(self.review().failed())
+
+    def test_a_copy_in_the_owners_home_is_not_held(self):
+        # The status word lists the data root and the shared tree, never the home, so a copy
+        # there waits as needs-owner until it is moved where whoever merges can see it.
+        self.write("datasets/demo_set.json", record(status="held", grid_path="/wsu/home/go/go24/go2432/raw"))
+        self.assertTrue(self.review().failed())
+
+    def test_a_newly_held_record_is_flagged_for_a_listing(self):
+        rec = record(status="held", grid_path="/rs/rs_grp_oschome/go2432/data/demo_set")
+        rec["history"].append({"date": "2026-10-23", "step": "held", "note": "on the grid"})
+        self.write("datasets/demo_set.json", rec)
+        report = self.review()
+        self.assertFalse(report.failed(), report.text())
+        self.assertTrue(any(level == "FLAG" and "now held at" in text for level, text in report.lines))
 
 
 if __name__ == "__main__":

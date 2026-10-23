@@ -2,8 +2,33 @@
  "id": "cobra_embargoed",
  "name": "COBRA2026 embargoed cases",
  "group": "projections",
+ "regions": [
+  "pelvis",
+  "spine"
+ ],
+ "pairing": {
+  "spine": true,
+  "region": "lumbosacral spine and pelvis",
+  "xray": "raw kV projections, as the public cases",
+  "ct": "the planning CT and the CBCT, as the public cases",
+  "subjects": "175 patients",
+  "pose": "stored, as the public cases",
+  "masks": "none for the vertebrae",
+  "annotate": "as COBRA2026's public cases, once the embargo ends on 2032-03-01",
+  "pair_key": "the case id"
+ },
  "what": "the challenge's held-back cases",
  "level_truth": "same",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "none: the held-back cases are not released, and the public ones ship no anatomical labels",
+   "vertebrae": "none",
+   "by": "none",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "embargoed",
  "licence": "CC BY-NC 4.0",
  "link": "https://zenodo.org/records/21322350",

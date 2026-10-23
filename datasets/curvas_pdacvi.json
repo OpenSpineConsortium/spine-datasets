@@ -1,0 +1,63 @@
+{
+ "id": "curvas_pdacvi",
+ "name": "CURVAS-PDACVI (MICCAI 2025)",
+ "group": "ct",
+ "regions": [
+  "chest",
+  "abdomen",
+  "pelvis"
+ ],
+ "what": "CURVAS-PDACVI (MICCAI 2025), 109 CTs, Zenodo record 17552201; tier 1 of the anomaly harvest: the data platform counts 101 CTs and 109 subjects qualifying, about 15.42 GB in the catalogue (NIfTI); 78 of the 101 look like near-duplicates of CURVAS 2024's scans by a thumbnail correlation of 0.98 or more, as the overlap of the two sets would make them, and are not merged",
+ "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: the fetch took every zip of the record, so any masks it ships are inside them",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/go2432/data/curvas_pdacvi"
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": 101,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/curvas_pdacvi"
+  }
+ ],
+ "reach": "held",
+ "licence": "CC BY 4.0",
+ "link": "https://zenodo.org/records/17552201",
+ "how_to_get": [
+  "spinesurg-ct-nnunet's slurm/acquisition_fetch.sh zenodo --collection curvas_pdacvi --record 17552201 --include '\\.zip$', submitted from the harvest's acquisition folder; the check is FETCH_STATUS.json's unresolved_failures at 0, and, by the manifest's note, 3 zips by md5 and 109 image.nii.gz to verify.",
+  "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid curvas_pdacvi; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"curvas_pdacvi\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
+ ],
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/curvas_pdacvi",
+ "counts": {
+  "subjects": 109,
+  "ct_volumes": 101,
+  "size_gb": 15.42
+ },
+ "measured": {},
+ "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-24 from Zenodo in the late tier-1 launch of 2026-09-24; 101 CTs",
+ "route": "download",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/curvas_pdacvi (17 GB)",
+ "history": [
+  {
+   "date": "2026-09-24",
+   "step": "held",
+   "note": "fetched from Zenodo in the late tier-1 launch of 2026-09-24, as the data platform's manifest at bf1432f records (101 CTs); on the grid at /rs/rs_grp_oschome/go2432/data/curvas_pdacvi, 16 GB by du in the data platform's census table of 2026-09-25; fetched by the owner's chain, not the promoter, so no manifest here covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the status listing of 2026-10-23 09:29 UTC (symphony-template grid branch, 1c8246b) shows the folder at 17 GB, and the sample index of 2026-10-22 13:39 it carries counts 875 files, 15.7 GB, in it"
+  }
+ ],
+ "obstacles": [],
+ "next": "the landing pass (#204) checks the files and their sizes"
+}

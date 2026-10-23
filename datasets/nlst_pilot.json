@@ -1,0 +1,86 @@
+{
+ "id": "nlst_pilot",
+ "name": "NLST, the seeded 500-person pilot",
+ "group": "ct",
+ "regions": [
+  "chest",
+  "other"
+ ],
+ "what": "500 people of the National Lung Screening Trial in IDC v24 (TCIA doi:10.7937/tcia.hmq8-j677), drawn with a fixed seed from the data platform's NLST list; tier 1 of the anomaly harvest: 500 low-dose chest CT series, 89,363 DICOM instances, about 45.8 GB in the catalogue; these 500 are people of the full trial, which idc_nlst records, so a sum over both counts them twice",
+ "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "the aorta, oesophagus, heart and trachea: 1,039 segmentations over 1,039 of the full trial's 203,087 CT series in IDC v24, how many of them over the pilot's 500 not counted; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "none",
+   "by": "IDC's analysis results, automatic",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "release",
+   "masks": "the lungs and their nodules: 1,144 segmentations over 1,042 of the full trial's 203,087 CT series in IDC v24, how many of them over the pilot's 500 not counted; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "none",
+   "by": "BAMF Health, automatic, for IDC's analysis results, 102 of them semi-automatic",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "release",
+   "masks": "76 structures, among them every vertebra in view from C1 to L5, each named by level, the sacrum and the ribs: 126,051 segmentations over 126,051 of the full trial's 203,087 CT series in IDC v24, how many of them over the pilot's 500 not counted; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "by level",
+   "by": "IDC, automatic (TotalSegmentator 1.5.6); no radiologist has read them",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "release",
+   "masks": "tumours and nodules: 596 segmentations over 596 of the full trial's 203,087 CT series in IDC v24, how many of them over the pilot's 500 not counted; the IDC fetch takes the CT series alone, so they are not on the grid",
+   "vertebrae": "none",
+   "by": "NLSTSeg's readers, by hand",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": 500,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/nlst_pilot"
+  }
+ ],
+ "reach": "held",
+ "licence": "CC BY 4.0",
+ "link": "https://doi.org/10.7937/tcia.hmq8-j677",
+ "how_to_get": [
+  "spinesurg-ct-nnunet's slurm/acquisition_fetch.sh idc --collection nlst_pilot --manifest manifests/idc_nlst_pilot500.csv --batch 100, submitted from the harvest's acquisition folder; the check is FETCH_STATUS.json's unresolved_failures at 0, and, by the manifest's note, 500 series / 89,363 instances to verify.",
+  "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid nlst_pilot; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"nlst_pilot\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
+ ],
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/nlst_pilot",
+ "counts": {
+  "subjects": 500,
+  "ct_volumes": 500,
+  "size_gb": 45.8
+ },
+ "measured": {},
+ "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-23 from IDC in the first tier-1 launch of 2026-09-23; 500 series; 500 CTs",
+ "route": "download",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/nlst_pilot (74 GB)",
+ "history": [
+  {
+   "date": "2026-09-23",
+   "step": "held",
+   "note": "fetched from IDC in the first tier-1 launch of 2026-09-23, as the data platform's manifest at bf1432f records (500 series; 500 CTs); on the grid at /rs/rs_grp_oschome/go2432/data/nlst_pilot, 69 GB by du in the data platform's census table of 2026-09-25; fetched by the owner's chain, not the promoter, so no manifest here covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the status listing of 2026-10-23 09:29 UTC (symphony-template grid branch, 1c8246b) shows the folder at 74 GB, and the sample index of 2026-10-22 13:39 it carries counts 89,865 files, 68.5 GB, in it"
+  }
+ ],
+ "obstacles": [],
+ "next": "the landing pass (#204) checks the files and their sizes"
+}

@@ -57,7 +57,7 @@ fetch_code() {
   # through self-update's provenance rule
   local ref=$1 path
   mkdir -p "$HOME_DIR/code" "$HOME_DIR/logs"
-  for path in tools/promote.py grid/promote.sh; do
+  for path in tools/promote.py grid/promote.sh tools/freeze.py; do
     if [ ! -f "$HOME_DIR/code/${path##*/}" ]; then
       gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$path?ref=$ref" > "$HOME_DIR/code/${path##*/}.tmp"
       mv "$HOME_DIR/code/${path##*/}.tmp" "$HOME_DIR/code/${path##*/}"

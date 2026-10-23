@@ -2,16 +2,41 @@
  "id": "lumos",
  "name": "LUMOS (Zhejiang University)",
  "group": "fluoro",
+ "regions": [
+  "spine"
+ ],
+ "pairing": {
+  "spine": true,
+  "region": "lumbar",
+  "xray": "1,620 AP or lateral diagnostic radiographs",
+  "ct": "280 non-contrast lumbar CTs",
+  "subjects": "803 patients, 280 of them with a CT",
+  "pose": "none given: each film is registered to its CT",
+  "masks": "to confirm on the record",
+  "annotate": "masks on the 280 CTs, then each film registered to its CT",
+  "pair_key": "to confirm: whether a film and a CT of the same id are one patient",
+  "priority": 5
+ },
  "what": "803 living patients: 1,620 lumbar AP or lateral radiographs and 280 non-contrast lumbar CTs, anonymised DICOM and NPY; diagnostic radiography, not C-arm fluoroscopy; no pose given",
  "level_truth": "levels readable from the paired CT after a 2D/3D registration",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: to confirm on the record's page",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "get",
- "licence": "not recorded on the card; to confirm on the record",
+ "licence": "CC BY-NC 4.0 (Creative Commons Attribution Non Commercial 4.0 International, as the Zenodo page's licence line reads for v1, published 2025-10-27, read 2026-10-22)",
  "link": "https://zenodo.org/records/18173664",
  "how_to_get": [
   "Open https://zenodo.org/records/18173664 and read its licence line.",
   "Fetch the 46.4 GB archive to Ceph as a Slurm job (sbatch, never on the login node), verify the record's md5."
  ],
- "grid_path": null,
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/zenodo_lumos",
  "counts": {
   "patients": 803,
   "radiographs": 1620,
@@ -22,17 +47,30 @@
  "record": "spine-program 01_carm_level_detection/docs/research/research_datasets_fourth_pass_verified_2026-09-22.json; https://keyueshi.github.io/LUMOS",
  "source_status": "open on Zenodo; never fetched; still open on Zenodo at the sweep of 2026-10-21, never fetched; queued in the fetch chain of #38",
  "route": "download",
- "status": "todo",
- "result": "",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/zenodo_lumos (77 GB)",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "open on Zenodo; never fetched; still open on Zenodo at the sweep of 2026-10-21, never fetched; queued in the fetch chain of #38"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "licence read on the Zenodo page: Creative Commons Attribution Non Commercial 4.0 International; v1 (2025-10-27) lists 15 files with an md5 each, about 46.4 GB, and its README says lumos_x_741_670_dcm.zip should read lumos_x_741_770_dcm.zip; no manifest written, since the check takes no non-commercial licence"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "held",
+   "note": "on the grid at /rs/rs_grp_oschome/go2432/data/zenodo_lumos, 77 GB in the status listing of 2026-10-23 02:05 UTC (symphony-template grid branch, 26f3bde), no fetch job in the listing's window; more than the record's 46.4 GB; what makes up the difference is for the landing pass to read; fetched by the owner's chain, not the promoter, so no manifest covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the owner's word at 09:25 UTC, in the project's thread on the paired CT and X-ray sets: the non-commercial licence is fine for LUMOS; the copy on the grid, 77 GB in zenodo_lumos in the status listing of 2026-10-23 09:29 UTC (symphony-template grid branch, 1c8246b), needed no fetch"
   }
  ],
- "obstacles": [
-  "the licence on the page is still to confirm before any fetch"
- ],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/lumos/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "obstacles": [],
+ "next": "the landing pass (#204) checks the files and their sizes; #207 shows whether film n and CT n are the same patient"
 }

@@ -54,6 +54,7 @@ class StageTest(unittest.TestCase):
         self.assertEqual(pipeline.stage_of(record(status="refused")), "refused")
         self.assertEqual(pipeline.stage_of(record(status="needs-owner")), "needs-owner")
         self.assertEqual(pipeline.stage_of(record(reach="embargoed")), "later")
+        self.assertEqual(pipeline.stage_of(record(status="held", reach="embargoed")), "held")
 
     def test_every_stage_has_a_column(self):
         keys = {key for key, _, _ in pipeline.STAGES}
@@ -144,6 +145,14 @@ class CheckTest(unittest.TestCase):
         found = pipeline.problems([record(route="letter")], letters=set())
         self.assertTrue(any("no letters/example_set.md" in line for line in found))
         self.assertEqual(pipeline.problems([record(route="letter")], letters={"example_set"}), [])
+
+    def test_held_says_when_and_where(self):
+        found = pipeline.problems([record(status="held")], letters=set())
+        self.assertTrue(any("no history entry" in line for line in found))
+        self.assertTrue(any("status held with no grid_path" in line for line in found))
+        held = record(status="held", grid_path="/rs/rs_grp_oschome/go2432/data/example_set",
+                      history=[{"date": "2026-10-23", "step": "held", "note": "on the grid"}])
+        self.assertEqual(pipeline.problems([held], letters=set()), [])
 
 
 if __name__ == "__main__":

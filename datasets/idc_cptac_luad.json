@@ -2,8 +2,24 @@
  "id": "idc_cptac_luad",
  "name": "IDC `cptac_luad` (tier 2)",
  "group": "ct",
+ "regions": [
+  "chest",
+  "abdomen",
+  "whole body",
+  "other"
+ ],
  "what": "IDC v24 collection cptac_luad (TCIA doi:10.7937/k9/tcia.2018.pat12tbs), tier 2 of the anomaly harvest: 32 subjects, about 7 GB raw plus screen; chest, abdomen and whole body",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "none: IDC v24 holds no segmentation over this collection's CT series",
+   "vertebrae": "none",
+   "by": "none",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "CC BY 4.0",
  "link": "https://doi.org/10.7937/k9/tcia.2018.pat12tbs",
@@ -11,7 +27,7 @@
   "Regenerate the tier-2 manifest idc_tier2.csv with spinesurg-ct-nnunet's tools/acquisition_census.py (its inputs aa3_meta.csv and fdg_ct_series.json are not on local disk), then slurm/acquisition_submit.sh tier2; or this one collection alone, filtering that manifest on its first column as the tier-1 cards do.",
   "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid idc_cptac_luad; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"idc_cptac_luad\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
  ],
- "grid_path": null,
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/idc_cptac_luad",
  "counts": {
   "subjects": 32,
   "size_gb": 7
@@ -20,15 +36,20 @@
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "planned in the data platform at bf1432f; fetch job in the 2026-10-21 chain after idc_tier2.csv is regenerated; the ranking's refusals: slice over 3.0 mm 78, non-axial reformat 72, localizer 66, under 60 slices 37",
  "route": "download",
- "status": "todo",
- "result": "",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/idc_cptac_luad (39 GB)",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "planned in the data platform at bf1432f; fetch job in the 2026-10-21 chain after idc_tier2.csv is regenerated; the ranking's refusals: slice over 3.0 mm 78, non-axial reformat 72, localizer 66, under 60 slices 37"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "held",
+   "note": "on the grid at /rs/rs_grp_oschome/go2432/data/idc_cptac_luad, 39 GB in the status listing of 2026-10-23 02:05 UTC (symphony-template grid branch, 26f3bde), job 40697697 COMPLETED; more than the record's 7 GB raw, which leaves out the screen products the folder holds beside it; fetched by the owner's chain, not the promoter, so no manifest covers it"
   }
  ],
  "obstacles": [],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/idc_cptac_luad/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "next": "the landing pass (#204) checks the files and their sizes"
 }

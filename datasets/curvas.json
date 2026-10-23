@@ -1,0 +1,64 @@
+{
+ "id": "curvas",
+ "name": "CURVAS 2024",
+ "group": "ct",
+ "regions": [
+  "chest",
+  "abdomen",
+  "pelvis",
+  "whole body"
+ ],
+ "what": "CURVAS 2024, 90 CTs under UKCHLL ids, Zenodo record 13767408; tier 1 of the anomaly harvest: the data platform counts 70 CTs, the 90 less the 20 of one archive whose Deflate64 unpacking failed, with no file saying whether it was repaired, about 29.4 GB in the catalogue (NIfTI); it may overlap CURVAS-PDACVI",
+ "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: the fetch took every archive whose name ends in _set, one of which did not unpack; the folder holds 280 NIfTI files for its 70 CTs, so whether masks are among them is to confirm",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/go2432/data/curvas"
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": 70,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/curvas"
+  }
+ ],
+ "reach": "held",
+ "licence": "CC BY 4.0",
+ "link": "https://zenodo.org/records/13767408",
+ "how_to_get": [
+  "spinesurg-ct-nnunet's slurm/acquisition_fetch.sh zenodo --collection curvas --record 13767408 --include '_set\\.zip$', submitted from the harvest's acquisition folder; the check is FETCH_STATUS.json's unresolved_failures at 0, and, by the manifest's note, 3 zips by md5 to verify.",
+  "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid curvas; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"curvas\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
+ ],
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/curvas",
+ "counts": {
+  "subjects": 90,
+  "ct_volumes": 70,
+  "size_gb": 29.4
+ },
+ "measured": {},
+ "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-24 from Zenodo in the late tier-1 launch of 2026-09-24; 70 CTs",
+ "route": "download",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/curvas (30 GB)",
+ "history": [
+  {
+   "date": "2026-09-24",
+   "step": "held",
+   "note": "fetched from Zenodo in the late tier-1 launch of 2026-09-24, as the data platform's manifest at bf1432f records (70 CTs); on the grid at /rs/rs_grp_oschome/go2432/data/curvas, 28 GB by du in the data platform's census table of 2026-09-25; fetched by the owner's chain, not the promoter, so no manifest here covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the status listing of 2026-10-23 09:29 UTC (symphony-template grid branch, 1c8246b) shows the folder at 30 GB, and the sample index of 2026-10-22 13:39 it carries counts 284 files, 27.9 GB, in it"
+  }
+ ],
+ "obstacles": [],
+ "next": "the landing pass (#204) checks the files and their sizes"
+}

@@ -2,8 +2,21 @@
  "id": "rsna_rspect",
  "name": "RSNA pulmonary embolism CT (RSPECT)",
  "group": "ct",
+ "regions": [
+  "chest"
+ ],
  "what": "7,279 patients; a gated anomaly-harvest collection (group B7)",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: not fetched yet; what the release ships is to confirm on its page",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "gated",
  "licence": "a data use agreement (non-commercial)",
  "link": "https://www.kaggle.com/competitions/rsna-str-pulmonary-embolism-detection",

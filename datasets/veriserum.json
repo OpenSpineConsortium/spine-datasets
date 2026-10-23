@@ -2,10 +2,21 @@
  "id": "veriserum",
  "name": "Veriserum (ETH Zurich, MICCAI 2025)",
  "group": "video",
+ "pairing": {
+  "spine": false,
+  "region": "knee implant phantoms",
+  "xray": "about 110,000 dual-plane fluoroscopic images",
+  "ct": "the implants' 3D shapes as CAD meshes, not a CT",
+  "subjects": "phantoms",
+  "pose": "registered for every image, 200 by hand",
+  "masks": "implant poses",
+  "annotate": "nothing for the spine; real flat-panel noise and metal at scale",
+  "pair_key": "the image's own registered pose"
+ },
  "what": "about 110,000 dual-plane fluoroscopic images of knee implant phantoms with registered poses, 200 with manual registration (ETH Research Collection doi:10.3929/ethz-b-000701146)",
  "level_truth": "none; no spine",
  "reach": "get",
- "licence": "to confirm on the page",
+ "licence": "In Copyright - Non-Commercial Use Permitted (as the ETH Research Collection record's rights line reads, read 2026-10-22)",
  "link": "https://movement.ethz.ch/data-repository/veriserum.html",
  "how_to_get": [
   "Open https://movement.ethz.ch/data-repository/veriserum.html and the ETH Research Collection record doi:10.3929/ethz-b-000701146; read the licence and the file list.",
@@ -20,17 +31,22 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; freely accessible per the authors, licence to confirm on the page; real flat-panel fluoroscopy of metal implants at scale, which the project otherwise learns only from simulation",
  "route": "download",
- "status": "todo",
+ "status": "needs-owner",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; freely accessible per the authors, licence to confirm on the page; real flat-panel fluoroscopy of metal implants at scale, which the project otherwise learns only from simulation"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "rights line read on the ETH Research Collection record doi:10.3929/ethz-b-000701146: In Copyright - Non-Commercial Use Permitted (rightsstatements.org InC-NC 1.0); the project page says 'Free for academic and research use'; the record's file list did not load (429), so no sizes are noted; no manifest written, since the check takes no non-commercial term"
   }
  ],
  "obstacles": [
-  "the licence on the page is still to confirm before any fetch"
+  "the owner's hand: the rights line is In Copyright with non-commercial use permitted, not an open licence; whether the project takes the set under it is his decision"
  ],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/veriserum/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "next": "the owner decides on the non-commercial term; if he takes it, a granted step in the history lets a manifest of the record's files go in"
 }

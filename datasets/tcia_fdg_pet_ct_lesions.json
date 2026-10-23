@@ -1,0 +1,61 @@
+{
+ "id": "tcia_fdg_pet_ct_lesions",
+ "name": "FDG-PET-CT-Lesions (autoPET), TCIA through NBIA",
+ "group": "ct",
+ "regions": [
+  "whole body"
+ ],
+ "what": "TCIA collection FDG-PET-CT-Lesions (autoPET; doi:10.7937/gkr0-xv29), which IDC v24 does not hold, fetched through NBIA; tier 1 of the anomaly harvest: 900 subjects and the 900 CT series of their whole-body PET/CT studies, 509,282 DICOM instances, about 250.6 GB in the source's catalogue; the same Tuebingen people appear in PanTSMini and may appear in ENHANCE.PET 1.6k (scidb_enhance_pet_1_6k)",
+ "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: the fetch took the 900 CT series alone (509,282 DICOM files, the CT's own count), so the lesion masks the collection publishes are not on the grid",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": 900,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/tcia_fdg_pet_ct_lesions"
+  }
+ ],
+ "reach": "held",
+ "licence": "CC BY 4.0",
+ "link": "https://doi.org/10.7937/gkr0-xv29",
+ "how_to_get": [
+  "spinesurg-ct-nnunet's slurm/acquisition_fetch.sh nbia --collection tcia_fdg_pet_ct_lesions --manifest manifests/nbia_fdg_pet_ct_lesions.csv, submitted from the harvest's acquisition folder; the check is FETCH_STATUS.json's unresolved_failures at 0, and, by the manifest's note, 900 series / 509,282 instances to verify.",
+  "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid tcia_fdg_pet_ct_lesions; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"tcia_fdg_pet_ct_lesions\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
+ ],
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/tcia_fdg_pet_ct_lesions",
+ "counts": {
+  "subjects": 900,
+  "ct_volumes": 900,
+  "size_gb": 250.6
+ },
+ "measured": {},
+ "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-23 from NBIA in the first tier-1 launch of 2026-09-23; 900 series; 900 CTs",
+ "route": "download",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/tcia_fdg_pet_ct_lesions (394 GB)",
+ "history": [
+  {
+   "date": "2026-09-23",
+   "step": "held",
+   "note": "fetched from NBIA in the first tier-1 launch of 2026-09-23, as the data platform's manifest at bf1432f records (900 series; 900 CTs); on the grid at /rs/rs_grp_oschome/go2432/data/tcia_fdg_pet_ct_lesions, 367 GB by du in the data platform's census table of 2026-09-25; fetched by the owner's chain, not the promoter, so no manifest here covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the status listing of 2026-10-23 09:29 UTC (symphony-template grid branch, 1c8246b) shows the folder at 394 GB, and the sample index of 2026-10-22 13:39 it carries counts 511,084 files, 366.8 GB, in it"
+  }
+ ],
+ "obstacles": [],
+ "next": "the landing pass (#204) checks the files and their sizes"
+}

@@ -2,8 +2,31 @@
  "id": "idc_lidc_idri",
  "name": "IDC `lidc_idri` (tier 2)",
  "group": "ct",
+ "regions": [
+  "chest",
+  "abdomen",
+  "pelvis"
+ ],
  "what": "IDC v24 collection lidc_idri (TCIA doi:10.7937/k9/tcia.2015.lo9ql9sx), tier 2 of the anomaly harvest: 997 subjects, about 123.3 GB raw plus screen; chest, abdomen and pelvis",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "lung nodules, one segmentation for each reader who marked one: 6,859 segmentations over 883 of the collection's 1,018 CT series, in IDC v24; not fetched yet",
+   "vertebrae": "none",
+   "by": "the LIDC readers, by hand",
+   "volumes": 883,
+   "where": null
+  },
+  {
+   "origin": "release",
+   "masks": "lung masses: 90 segmentations over 10 of the collection's 1,018 CT series, in IDC v24; not fetched yet",
+   "vertebrae": "none",
+   "by": "QIN's lung CT segmentation study, semi-automatic",
+   "volumes": 10,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "CC BY 3.0",
  "link": "https://doi.org/10.7937/k9/tcia.2015.lo9ql9sx",

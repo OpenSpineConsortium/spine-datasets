@@ -2,8 +2,21 @@
  "id": "zenodo_ts_task_hip_implant",
  "name": "TotalSegmentator task data 'hip_implant' (71 CT)",
  "group": "ct",
+ "regions": [
+  "pelvis"
+ ],
  "what": "TotalSegmentator task data 'hip_implant', 71 CT, Zenodo 20272031 published 2026-05-18, about 9.0 GB; the same institution as TotalSegmentator v2/v3 (on disk) with no subject map",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: what the task data ships is to confirm on its page",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "get",
  "licence": "CC BY 4.0",
  "link": "https://zenodo.org/records/20272031",
@@ -12,7 +25,7 @@
   "Read the record listing and choose the include pattern, then spinesurg-ct-nnunet's tools/acquisition_fetch.py zenodo --collection ts_task_hip_implant --record 20272031 --include '<pattern>' (md5-verified) through slurm/acquisition_fetch.sh; as liver_lesions.",
   "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid zenodo_ts_task_hip_implant; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"zenodo_ts_task_hip_implant\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
  ],
- "grid_path": null,
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/zenodo_ts_task_hip_implant",
  "counts": {
   "subjects": 71,
   "size_gb": 9.03
@@ -21,8 +34,8 @@
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "the owner's hand: ask the TotalSegmentator authors whether these subjects overlap the public v2/v3 release (planned in the data platform at bf1432f)",
  "route": "letter",
- "status": "requested",
- "result": "The overlap question went 2026-10-21 09:40 UTC by the owner to the corresponding author; waiting for the answer. The set itself is CC BY 4.0 and needs only a grid job; until the answer comes it is treated as overlapping v2 and v3 (no new people).",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_hip_implant (10 GB); The overlap question went 2026-10-21 09:40 UTC by the owner to the corresponding author; waiting for the answer. The set itself is CC BY 4.0 and needs only a grid job; until the answer comes it is treated as overlapping v2 and v3 (no new people).",
  "history": [
   {
    "date": "2026-10-21",
@@ -33,8 +46,15 @@
    "date": "2026-10-21",
    "step": "asked",
    "note": "The overlap question went 2026-10-21 09:40 UTC by the owner to the corresponding author; waiting for the answer. The set itself is CC BY 4.0 and needs only a grid job; until the answer comes it is treated as overlapping v2 and v3 (no new people)."
+  },
+  {
+   "date": "2026-10-23",
+   "step": "held",
+   "note": "on the grid at /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_hip_implant, 10 GB in the status listing of 2026-10-23 02:05 UTC (symphony-template grid branch, 26f3bde), no fetch job in the listing's window; beside the record's 9.03 GB; fetched by the owner's chain, not the promoter, so no manifest covers it"
   }
  ],
- "obstacles": [],
- "next": "wait for the answer; when it comes, record it here as granted or refused and go on to the fetch"
+ "obstacles": [
+  "the overlap question to the TotalSegmentator authors (2026-10-21) is still unanswered, so the set is treated as overlapping v2 and v3 until it is"
+ ],
+ "next": "record the authors' answer; the landing pass (#204) checks the files"
 }

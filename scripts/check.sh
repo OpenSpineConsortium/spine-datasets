@@ -32,10 +32,19 @@ python3 tools/living_docs.py check
 # next) must hold together, since the pipeline board is drawn from them
 # (tools/pipeline.py, PIPELINE.md on the branch pipeline).
 python3 tools/pipeline.py check
+# Every record's census fields (an optional pairing block, a CT record's
+# regions and segmentations, the standard counts, measured) must hold
+# together, since the census is folded from them (tools/census.py; CENSUS.md,
+# census.html and census-ct.html on the branch census).
+python3 tools/census.py check
 # Every manifest under manifests/ must hold by the rules the promoter applies
 # before it fetches anything as the owner (tools/dataset_review.py,
 # tools/promote.py); the required check also reviews what a pull request adds.
 python3 tools/dataset_review.py check
+# Every set's public freeze under frozen/ must name nothing below its top
+# folders and agree with its record's measured block (tools/freeze.py), since
+# the census and anyone reading the repository take a set's size from it.
+python3 tools/freeze.py check
 # The tests, every module of them here and by hand; CI runs them as parts
 # side by side, each in a job of its own, and sets CHECK_TESTS=none for the
 # part that runs this script, so the tests run once (tools/test_shard.py,

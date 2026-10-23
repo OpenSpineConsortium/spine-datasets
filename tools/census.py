@@ -1,0 +1,1493 @@
+"""The census: every dataset counted from its one record, folded in as records come and change.
+
+Source: the thread "Dataset census and roadmap", 2026-10-23, the owner's ask of that day for an
+automatic census tracker that never passes over a dataset more than once: one formatted metadata
+file per dataset, and a script that keeps the census current and lets it accumulate as datasets,
+and so their metadata files, are added.
+
+The metadata file is the record, datasets/<id>.json (datasets/README.md). A dataset's files are
+read once, when they land: the promoter checks every byte and checksum (tools/promote.py), and
+what that pass, or the owner's own chain, measured is written into the record. This script never
+opens a dataset. It reads the records alone, and it folds into the last census only the records
+that are new or whose content changed since, by the sha256 of the record; a record that did not
+change is carried over as it was, unless the rules that derive a row changed since (this file or
+tools/pipeline.py, whose stage the census shows), when every row is derived afresh. Each record
+keeps the date the census first saw it (on the census's first run, the date of its oldest history
+step, when the work on it began; a record removed and written again keeps its first date) and the
+date its content last changed, and the census keeps a dated log of what moved: a record added, a
+status or a count changed, a record removed, the rules changed.
+
+From the records it derives, never stores twice: the stage (tools/pipeline.py's, so the board and
+the census agree), the counts in standard keys (subjects, still X-ray images, X-ray videos and
+sweeps, the frames inside those, CT volumes, bytes, read from the record's counts under the names
+the records use), the licence's kind (open, restricted, unknown), and for a record with a pairing
+block, a real X-ray set with the subject's CT, its tier:
+A on the grid, B open or granted, C behind a letter, an agreement or the owner's hand, D refused,
+embargoed or never released, E a real pair of something other than the spine, whose shipped pose
+or CT is the registration code's truth. A pair moves from tier to tier by itself as its record's
+status moves.
+
+For a record that holds CT it also derives the body regions its field of view covers and the
+masks the set has, from the record's regions and segmentations: who made each, whether it names
+the vertebrae by level, how many CT volumes it covers and where it is on the grid.
+
+It writes four files: census.json, the ledger the next run folds into; CENSUS.md, which GitHub
+renders; census.html, the page, with the totals, the paired breakout, every dataset, what the
+records still lack and the log; and census-ct.html, the CT page, with every record that holds CT
+by region and the masks each set has. The census workflow writes them to the branch census
+(.github/workflows/census.yml) and the docs site serves both pages.
+
+    python3 tools/census.py render --out DIR [--previous census.json] [--issues issues.json]
+                                   [--repo OWNER/NAME] [--date YYYY-MM-DD]
+    python3 tools/census.py same OLD NEW
+    python3 tools/census.py check
+
+`same` exits 0 when two census.json files differ in nothing but the day they were written, so a
+quiet day pushes nothing, while a change to the rules or the repository's name, which census.json
+records, puts the new pages on the branch. `check` also refuses two records with one id and a
+record whose id is not its file's name, since one dataset is one record. The standard library
+alone; no token, no network: the workflow fetches the issues with gh and the last census from the
+branch, and hands both in as files.
+"""
+
+import argparse
+import hashlib
+import html
+import json
+import re
+import sys
+from collections import Counter
+from datetime import date
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+import pipeline  # noqa: E402
+
+ROOT = pipeline.ROOT
+DEFAULT_REPO = pipeline.DEFAULT_REPO
+
+# The rules a row is derived by are the code of this file and of tools/pipeline.py, whose stage
+# the census shows: a change to either derives every row afresh on the next run, so no carried
+# row keeps a stage or a count the old code gave it.
+RULES_FILES = (Path(__file__).resolve(), Path(pipeline.__file__).resolve())
+
+KINDS = {
+    "fluoro": "Fluoroscopy",
+    "video": "Fluoroscopy video",
+    "projections": "CBCT projections",
+    "films": "Radiographs",
+    "ct": "CT",
+    "future": "Veterinary and later",
+}
+
+# The standard count keys, and the names the records already use for each, first match winning,
+# read by the kind of set. A still image counts once as an X-ray image. A run, clip, recording,
+# sweep or cine series counts once as a video whatever its frames, and in a video or projection
+# set the frames inside the videos are counted apart, as run_frames: COBRA2026's 375,618
+# projections are 692 sweeps, not 375,618 images. A CT set's "images" are slices and its "frames"
+# are not X-rays, so for CT every X-ray count is read from its standard key alone.
+SUBJECT_KEYS = ("subjects", "patients", "people", "men", "cases", "specimens")
+STILL_KEYS = ("xray_images", "radiographs", "films", "spot_frames", "frames", "projections", "images")
+RUN_KEYS = ("videos", "clips", "recordings", "sequences", "runs", "sweeps", "series")
+RUN_FRAME_KEYS = ("run_frames", "frames", "projections", "images")
+CT_KEYS = ("ct_volumes", "cts", "ct_scans", "cbct_volumes", "volumes")
+RUN_GROUPS = ("video", "projections")
+BYTE_KEYS = (("bytes", 1), ("zip_bytes", 1), ("size_tb", 10 ** 12), ("size_gb", 10 ** 9),
+             ("gigabytes", 10 ** 9), ("size_mb", 10 ** 6))
+STANDARD_KEYS = ("subjects", "xray_images", "videos", "run_frames", "ct_volumes", "bytes")
+BYTES_IN_RESULT = re.compile(r"(\d[\d,]*) bytes")
+SHA256_SHAPE = re.compile(r"^[0-9a-f]{64}$")
+# What a freeze writes into measured (tools/freeze.py measured), each held to its shape.
+FROZEN_FIELDS = ("bytes", "files", "tree_sha256", "frozen")
+
+RESTRICTED = re.compile(
+    r"non-?commercial|\bNC\b|\bND\b|no-?deriv|research[- ]only|data use agreement|\bDUA\b|"
+    r"agreement|credential|restricted|proprietary|in copyright|not released|request", re.IGNORECASE)
+OPEN = re.compile(r"\bCC[ -]?BY\b|\bCC0\b|creative commons attribution|public domain|open access|\bMIT\b|"
+                  r"apache|\bODC", re.IGNORECASE)
+# Only a web address becomes a link on the page, never a javascript: or data: one a record holds.
+WEB_ADDRESS = re.compile(r"https?://", re.IGNORECASE)
+
+PAIRING_TEXT = ("region", "xray", "ct", "subjects", "pose", "masks", "annotate")
+PAIRING_KEYS = PAIRING_TEXT + ("spine", "pair_key", "priority")
+
+TIERS = (
+    ("A", "On the grid", "real spine X-rays with the same subject's CT, held now: the annotation starts here"),
+    ("B", "Open or granted, not yet on the grid", "a download or a fetch away"),
+    ("C", "Behind a letter, an agreement or the owner's hand", "asked, or still to ask"),
+    ("D", "Refused, embargoed or never released", "kept so nobody asks twice"),
+    ("E", "Real pairs of something other than the spine",
+     "frames shipped with a CT or an exact pose: the registration code's truth, not spine labels"),
+)
+TIER_TITLES = {key: title for key, title, _ in TIERS}
+
+# The body regions a CT record's field of view covers, in the order the CT page lists them, and
+# what a segmentations entry holds (datasets/README.md): where the masks come from, how they name
+# the vertebrae, and its keys. An entry whose masks begin "none" says the source ships none, and
+# one whose masks begin "not recorded" that nothing here says what it ships.
+REGIONS = ("head and neck", "chest", "abdomen", "pelvis", "spine", "whole body", "other")
+SEG_ORIGINS = ("release", "made")
+SEG_VERTEBRAE = ("by level", "together", "none", "not recorded")
+SEG_KEYS = ("origin", "masks", "vertebrae", "by", "volumes", "where")
+ORIGIN_TITLES = {"release": "from the source", "made": "made on the grid"}
+VERTEBRAE_TITLES = {"by level": "vertebrae by level", "together": "vertebrae as one", "none": "no vertebrae",
+                    "not recorded": "vertebrae not recorded"}
+# The CT page's mask filter, each word a row carries when one of its entries says so.
+MASK_FILTERS = (
+    ("level", "vertebra masks by level"),
+    ("level-grid", "vertebra masks by level, on the grid"),
+    ("made", "masks made on the grid"),
+    ("release", "masks the source ships"),
+    ("unknown", "the source's masks not recorded"),
+    ("none", "no masks known"),
+    ("unsurveyed", "masks not surveyed"),
+)
+
+# What a change event names when it moves; other edits (a next step, an obstacle) refresh the row
+# without an event.
+TRACKED = ("status", "stage", "route", "licence", "grid_path", "subjects", "xray_images", "videos",
+           "run_frames", "ct_volumes", "bytes", "grid_bytes", "paired", "tier")
+
+
+# Reading one record
+
+def digest_of(record):
+    """The sha256 of the record's content, so a reformatted file is the same record."""
+    text = json.dumps(record, sort_keys=True, ensure_ascii=True, separators=(",", ":"))
+    return hashlib.sha256(text.encode("ascii")).hexdigest()
+
+
+def rules_of(files=RULES_FILES):
+    """A fingerprint of the code that derives a row, so a change to it derives every row afresh."""
+    digest = hashlib.sha256()
+    for path in files:
+        digest.update(Path(path).read_bytes())
+    return digest.hexdigest()[:16]
+
+
+def text_of(record, field, default=""):
+    """A text field as text: a null, or a number where text belongs, reads as the default, so one
+    odd field never stops the census; `check` names it."""
+    value = record.get(field)
+    return value if isinstance(value, str) else default
+
+
+def number(value):
+    """A count as a number, or None for anything that is not one (a bool, a note, a range)."""
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return None
+    return value
+
+
+def first_number(counts, keys):
+    for key in keys:
+        if key in counts and number(counts[key]) is not None:
+            return number(counts[key]), key
+    return None, None
+
+
+def count_keys(group):
+    """The names each standard count is read under, for a record of this group."""
+    if group == "ct":
+        return {"subjects": SUBJECT_KEYS, "xray_images": ("xray_images",), "videos": ("videos",),
+                "run_frames": ("run_frames",), "ct_volumes": CT_KEYS}
+    if group in RUN_GROUPS:
+        return {"subjects": SUBJECT_KEYS, "xray_images": ("xray_images", "radiographs", "films", "spot_frames"),
+                "videos": RUN_KEYS, "run_frames": RUN_FRAME_KEYS, "ct_volumes": CT_KEYS}
+    return {"subjects": SUBJECT_KEYS, "xray_images": STILL_KEYS, "videos": RUN_KEYS,
+            "run_frames": ("run_frames",), "ct_volumes": CT_KEYS}
+
+
+def counts_of(record):
+    """The standard counts, read under the names the records use, and the keys left unread."""
+    counts = record.get("counts") or {}
+    if not isinstance(counts, dict):
+        return {key: None for key in STANDARD_KEYS}, ["counts"]
+    found, used = {}, set()
+    for name, keys in count_keys(record.get("group")).items():
+        found[name], key = first_number(counts, keys)
+        used.add(key)
+    found["bytes"] = None
+    for key, scale in BYTE_KEYS:
+        if key in counts and number(counts[key]) is not None:
+            # round, not int: 33.8 GB times 10**9 is 33799999999.999996 in floating point.
+            found["bytes"] = round(number(counts[key]) * scale)
+            used.add(key)
+            break
+    unread = sorted(key for key in counts if key not in used)
+    return found, unread
+
+
+def licence_kind(text):
+    """Open, restricted or unknown. A restriction counts wherever the licence line notes it; an
+    open licence counts only in the line's own words, outside its notes in parentheses, since a
+    note may speak of another record's licence ("the held record of the same authors is CC BY")."""
+    text = text if isinstance(text, str) else ""
+    if RESTRICTED.search(text):
+        return "restricted"
+    if OPEN.search(re.sub(r"\([^)]*\)", " ", text)):
+        return "open"
+    return "unknown"
+
+
+def grid_bytes(record):
+    """What the landing pass measured on the grid: the record's measured bytes, else the
+    promoter's result line."""
+    measured = record.get("measured") or {}
+    if isinstance(measured, dict) and number(measured.get("bytes")) is not None:
+        return round(measured["bytes"])
+    found = BYTES_IN_RESULT.search(text_of(record, "result"))
+    if found and record.get("status") in ("fetched", "held", "fetching"):
+        return int(found.group(1).replace(",", ""))
+    return None
+
+
+def tree_of(record):
+    """The tree hash of the set's freeze on the grid (tools/freeze.py), or None before it is frozen."""
+    measured = record.get("measured") or {}
+    found = measured.get("tree_sha256") if isinstance(measured, dict) else None
+    return found if isinstance(found, str) and SHA256_SHAPE.match(found) else None
+
+
+def regions_of(record):
+    """The record's regions in the census's order; a word that is none of them is left out, and
+    `check` names it."""
+    regions = record.get("regions")
+    return [region for region in REGIONS if region in regions] if isinstance(regions, list) else []
+
+
+def segmentations_of(record):
+    """The record's segmentation entries, or None where it has none written: a set whose masks
+    nobody has surveyed yet, which the CT page lists as a gap."""
+    entries = record.get("segmentations")
+    if not isinstance(entries, list):
+        return None
+    return [entry for entry in entries if isinstance(entry, dict)]
+
+
+def mask_kind(entry):
+    """What an entry says: masks it names, none shipped, or nothing recorded."""
+    masks = entry.get("masks") if isinstance(entry.get("masks"), str) else ""
+    if masks.startswith("none"):
+        return "none"
+    if masks.startswith("not recorded"):
+        return "unknown"
+    return "masks"
+
+
+def on_grid_path(entry):
+    where = entry.get("where")
+    return isinstance(where, str) and bool(where.strip())
+
+
+def tier_of(stage, pairing):
+    if not pairing.get("spine"):
+        return "E"
+    if stage in ("on-grid", "held"):
+        return "A"
+    if stage in ("downloadable", "granted", "fetching"):
+        return "B"
+    if stage in ("refused", "later"):
+        return "D"
+    return "C"
+
+
+def row_of(record):
+    """Everything the census shows of one record, derived from the record alone."""
+    stage = pipeline.stage_of(record)
+    counts, unread = counts_of(record)
+    entries = [entry for entry in record.get("history") or [] if isinstance(entry, dict)]
+    history = sorted(entries, key=lambda entry: str(entry.get("date") or ""))
+    pairing = record.get("pairing") if isinstance(record.get("pairing"), dict) else None
+    group = text_of(record, "group")
+    regions = regions_of(record)
+    return {
+        "id": text_of(record, "id"),
+        "name": text_of(record, "name") or text_of(record, "id"),
+        "group": group,
+        "kind": KINDS.get(group, group),
+        "route": text_of(record, "route"),
+        "status": text_of(record, "status"),
+        "stage": stage,
+        "licence": text_of(record, "licence"),
+        "licence_kind": licence_kind(record.get("licence")),
+        "link": text_of(record, "link"),
+        "what": text_of(record, "what"),
+        "level_truth": text_of(record, "level_truth"),
+        "grid_path": text_of(record, "grid_path", None),
+        "on_grid": stage in ("on-grid", "held"),
+        "grid_bytes": grid_bytes(record),
+        "tree_sha256": tree_of(record),
+        **counts,
+        "unread_counts": unread,
+        "next": text_of(record, "next"),
+        "since": str(history[0].get("date") or "") if history else "",
+        "last_step": {"date": history[-1].get("date", ""), "step": history[-1].get("step", "")} if history else None,
+        "paired": pairing is not None,
+        "tier": tier_of(stage, pairing) if pairing else None,
+        "pairing": pairing,
+        # A record holds CT when it says which regions its CT covers, is a CT set, or counts CT
+        # volumes; one with no regions is listed on the CT page as a gap.
+        "ct": bool(regions) or group == "ct" or counts["ct_volumes"] is not None,
+        "regions": regions,
+        "segmentations": segmentations_of(record),
+    }
+
+
+# Folding the records into the last census
+
+def shared_ids(records):
+    """The ids two or more records carry; the census keys each dataset by its id."""
+    tally = Counter(record.get("id", "") for record in records)
+    return sorted(str(ident) for ident, count in tally.items() if count > 1)
+
+
+def ledger_entry(ledger, ident):
+    """The last census's entry for one record, or None where it holds none that reads."""
+    entry = ledger.get(ident)
+    return entry if isinstance(entry, dict) and isinstance(entry.get("row"), dict) else None
+
+
+def fold(previous, records, today, rules=None):
+    """The new census: the last one's rows carried for every record whose content did not change,
+    rows derived afresh for the rest, and the log grown by what moved. Every row is derived afresh
+    when the rules changed since; a row whose record did not change keeps its date of last change
+    then, and the log says the rules changed, not that the record did."""
+    rules = rules_of() if rules is None else rules
+    twice = shared_ids(records)
+    if twice:
+        raise ValueError("one id in two or more records: " + ", ".join(twice))
+    # Anything but a census, an error page a fetch wrote say, starts the census afresh.
+    previous = previous if isinstance(previous, dict) and isinstance(previous.get("records"), dict) else None
+    starting = previous is None
+    rules_changed = not starting and previous.get("rules") != rules
+    ledger = {} if starting else previous["records"]
+    seen = {} if starting else dict(previous.get("seen") or {})
+    events = [] if starting else list(previous.get("events") or [])
+    folded = {}
+    tally = {"new": 0, "changed": 0, "rederived": 0, "carried": 0, "removed": 0}
+    for record in records:
+        ident = record.get("id", "")
+        digest = digest_of(record)
+        before = ledger_entry(ledger, ident)
+        unchanged = before is not None and before.get("digest") == digest
+        if unchanged and not rules_changed:
+            folded[ident] = before
+            seen.setdefault(ident, before.get("first_seen", today))
+            tally["carried"] += 1
+            continue
+        row = row_of(record)
+        last_changed = today
+        if before is None:
+            # A record removed and written again keeps the date the census first saw it.
+            first_seen = seen.get(ident) or ((row["since"] or today) if starting else today)
+            tally["new"] += 1
+            if not starting:
+                events.append({"date": today, "id": ident, "kind": "added", "changes": {}})
+        elif unchanged:
+            first_seen = before.get("first_seen", today)
+            last_changed = before.get("last_changed", today)
+            tally["rederived"] += 1
+        else:
+            first_seen = before.get("first_seen", today)
+            tally["changed"] += 1
+            moved = {field: [before["row"].get(field), row.get(field)] for field in TRACKED
+                     if before["row"].get(field) != row.get(field)}
+            if moved:
+                events.append({"date": today, "id": ident, "kind": "changed", "changes": moved})
+        seen[ident] = first_seen
+        folded[ident] = {"digest": digest, "first_seen": first_seen, "last_changed": last_changed, "row": row}
+    for ident in sorted(set(ledger) - set(folded)):
+        entry = ledger[ident] if isinstance(ledger[ident], dict) else {}
+        seen.setdefault(ident, entry.get("first_seen", today))
+        tally["removed"] += 1
+        events.append({"date": today, "id": ident, "kind": "removed", "changes": {}})
+    if starting:
+        events.append({"date": today, "id": "", "kind": "started", "changes": {"records": [None, len(folded)]}})
+    elif rules_changed:
+        events.append({"date": today, "id": "", "kind": "rules", "changes": {"rules": [previous.get("rules"), rules]}})
+    return {"rules": rules, "records": folded, "events": events, "seen": dict(sorted(seen.items()))}, tally
+
+
+# What the census adds up
+
+def rows_in_order(census):
+    return sorted((entry["row"] for entry in census["records"].values()), key=pipeline.group_key)
+
+
+def summed(rows, field):
+    values = [row[field] for row in rows if row.get(field) is not None]
+    return {"sum": sum(values), "counted": len(values), "of": len(rows)}
+
+
+def size_on_grid(rows):
+    values = [row["grid_bytes"] if row["grid_bytes"] is not None else row["bytes"] for row in rows]
+    known = [value for value in values if value is not None]
+    return {"sum": sum(known), "counted": len(known), "of": len(rows),
+            "measured": sum(1 for row in rows if row["grid_bytes"] is not None)}
+
+
+def totals(rows):
+    held = [row for row in rows if row["on_grid"]]
+    pairs = [row for row in rows if row["paired"]]
+    spine_held = [row for row in pairs if row["tier"] == "A"]
+    by_stage = {key: sum(1 for row in rows if row["stage"] == key) for key, _, _ in pipeline.STAGES}
+    by_kind = {group: sum(1 for row in rows if row["group"] == group) for group in KINDS}
+    return {
+        "datasets": len(rows),
+        "by_stage": by_stage,
+        "by_kind": by_kind,
+        "on_grid": len(held),
+        "on_grid_size": size_on_grid(held),
+        "on_grid_frozen": sum(1 for row in held if row.get("tree_sha256")),
+        "on_grid_subjects": summed(held, "subjects"),
+        "on_grid_xray_images": summed(held, "xray_images"),
+        "on_grid_videos": summed(held, "videos"),
+        "on_grid_run_frames": summed(held, "run_frames"),
+        "on_grid_ct_volumes": summed(held, "ct_volumes"),
+        "paired": {key: sum(1 for row in pairs if row["tier"] == key) for key, _, _ in TIERS},
+        "paired_spine_subjects_on_grid": summed(spine_held, "subjects"),
+        "ct": ct_totals(rows),
+    }
+
+
+def ct_rows(rows):
+    return [row for row in rows if row.get("ct")]
+
+
+def level_masks_on_grid(entry):
+    """Vertebra masks by level that the source ships and that are on the grid."""
+    return (entry.get("origin") == "release" and entry.get("vertebrae") == "by level" and mask_kind(entry) == "masks"
+            and on_grid_path(entry))
+
+
+def made_masks_on_grid(entry):
+    return entry.get("origin") == "made" and mask_kind(entry) == "masks" and on_grid_path(entry)
+
+
+def masks_covered(rows, chosen):
+    """The sets with an entry `chosen` takes, and the CT volumes those entries cover: per set the
+    largest count among them, since two entries of one set may cover the same CTs."""
+    total, counted, sets = 0, 0, 0
+    for row in rows:
+        counts = []
+        taken = False
+        for entry in row.get("segmentations") or []:
+            if chosen(entry):
+                taken = True
+                if number(entry.get("volumes")) is not None:
+                    counts.append(number(entry["volumes"]))
+        if taken:
+            sets += 1
+            if counts:
+                total += max(counts)
+                counted += 1
+    return {"sum": total, "counted": counted, "of": sets}
+
+
+def ct_totals(rows):
+    """The CT page's figures: every record that holds CT, by region and by the masks it has. A set
+    counts in each region its field of view covers."""
+    ct = ct_rows(rows)
+    held = [row for row in ct if row["on_grid"]]
+    by_region = {}
+    for region in REGIONS:
+        chosen = [row for row in ct if region in row["regions"]]
+        on = [row for row in chosen if row["on_grid"]]
+        by_region[region] = {"sets": len(chosen), "on_grid": len(on), "ct_volumes": summed(on, "ct_volumes")}
+    return {
+        "sets": len(ct),
+        "on_grid": len(held),
+        "on_grid_ct_volumes": summed(held, "ct_volumes"),
+        "on_grid_subjects": summed(held, "subjects"),
+        "on_grid_size": size_on_grid(held),
+        "by_stage": {key: sum(1 for row in ct if row["stage"] == key) for key, _, _ in pipeline.STAGES},
+        "by_region": by_region,
+        "no_regions": sum(1 for row in ct if not row["regions"]),
+        "surveyed": sum(1 for row in ct if row["segmentations"] is not None),
+        "level_masks_on_grid": masks_covered(held, level_masks_on_grid),
+        "made_masks_on_grid": masks_covered(held, made_masks_on_grid),
+    }
+
+
+def ct_gaps(rows):
+    """What the CT records still lack, one line each: each is filled once, in the record."""
+    found = []
+    for row in ct_rows(rows):
+        if not row["regions"]:
+            found.append((row["id"], "no regions: write the body regions its CT covers into regions"))
+        if row["segmentations"] is None:
+            found.append((row["id"], "its masks are not surveyed: write segmentations, even one entry that says none"))
+        elif row["on_grid"] and any(entry.get("origin") == "release" and mask_kind(entry) == "unknown"
+                                    for entry in row["segmentations"]):
+            found.append((row["id"], "on the grid, and what masks its source ships is not recorded yet; its entry says"
+                                     " where to look"))
+    return found
+
+
+def gaps(rows):
+    """What the records still lack, one line each: each is filled once, in the record."""
+    found = []
+    for row in rows:
+        if row["on_grid"] and row["grid_bytes"] is None and row["bytes"] is None:
+            found.append((row["id"], "on the grid with no size: write the landing pass's bytes into measured"))
+        if row["on_grid"] and row.get("tree_sha256") is None:
+            found.append((row["id"], "on the grid and not frozen: run tools/freeze.py on its folder and write"
+                                     " frozen/<id>.json and measured from it"))
+        if all(row[key] is None for key in ("subjects", "xray_images", "videos", "run_frames", "ct_volumes")):
+            found.append((row["id"], "no count the census can read: add subjects, xray_images, videos, run_frames"
+                                     " or ct_volumes to counts"))
+        if "to confirm" in row["licence"] or not row["licence"].strip():
+            found.append((row["id"], "the licence is still to confirm on the source's page"))
+        if row["paired"] and not str(row["pairing"].get("pair_key") or "").strip():
+            found.append((row["id"], "a pair with no pair_key: how each X-ray is matched to its CT is not written"))
+    return found
+
+
+def tasks_of(issues, records):
+    """The task of each record, and the open tasks whose record is not written yet."""
+    tasks = pipeline.tasks_by_id(issues)
+    known = {record.get("id") for record in records}
+    pending = []
+    for issue in issues:
+        if "pull_request" in issue or issue.get("state") != "open":
+            continue
+        found = pipeline.RECORD_LINE.search(issue.get("body") or "")
+        if not found or found.group(1) in known:
+            continue
+        labels = [label["name"] if isinstance(label, dict) else label for label in issue.get("labels", [])]
+        pending.append({"number": issue["number"], "title": issue.get("title", ""), "url": issue.get("html_url", ""),
+                        "id": found.group(1), "paired": "paired" in labels})
+    return ({ident: task["number"] for ident, task in tasks.items() if ident in known},
+            sorted(pending, key=lambda t: t["number"]))
+
+
+def census_file(census, tasks, pending, generated, repo=DEFAULT_REPO):
+    """The ledger as written. It names the repository, which the pages link to, so a rename
+    changes the file and the pages are written again."""
+    rows = rows_in_order(census)
+    return {
+        "rules": census["rules"],
+        "repo": repo,
+        "generated": generated,
+        "totals": totals(rows),
+        "tasks": dict(sorted(tasks.items())),
+        "pending_tasks": pending,
+        "records": dict(sorted(census["records"].items())),
+        "seen": census["seen"],
+        "events": census["events"],
+    }
+
+
+def same(old, new):
+    """Two census files that differ in nothing but the day they were written. Everything the
+    pages show comes from the file, and the code that draws them is part of the rules the file
+    records, so two files alike draw alike pages."""
+    strip = lambda data: {key: value for key, value in data.items() if key != "generated"}  # noqa: E731
+    return strip(old) == strip(new)
+
+
+# Writing it out
+
+def amount(value):
+    if value is None:
+        return ""
+    return f"{int(value):,}" if float(value).is_integer() else f"{value:,}"
+
+
+def size_text(value):
+    if value is None:
+        return ""
+    for unit, scale in (("TB", 10 ** 12), ("GB", 10 ** 9), ("MB", 10 ** 6), ("kB", 10 ** 3)):
+        if value >= scale:
+            return f"{value / scale:,.1f} {unit}"
+    return f"{value} B"
+
+
+def counted(total, unit=amount):
+    text = unit(total["sum"])
+    if total["counted"] < total["of"]:
+        text += f" ({total['counted']} of {total['of']} sets counted)"
+    return text
+
+
+def task_link(ident, tasks, repo):
+    number_ = tasks.get(ident)
+    return (f"#{number_}", f"https://github.com/{repo}/issues/{number_}") if number_ else ("", "")
+
+
+def task_markdown(ident, tasks, repo):
+    """A link GitHub follows in a file, where a bare #N is plain text."""
+    label, url = task_link(ident, tasks, repo)
+    return f"[{label}]({url})" if url else ""
+
+
+def priority_of(row):
+    priority = row["pairing"].get("priority")
+    return priority if isinstance(priority, int) and not isinstance(priority, bool) else 999
+
+
+def paired_rows(rows, tier):
+    chosen = [row for row in rows if row["tier"] == tier]
+    return sorted(chosen, key=lambda row: (priority_of(row), row["name"].lower()))
+
+
+def events_newest_first(events, limit=200):
+    return list(reversed(events))[:limit]
+
+
+def event_text(event, names):
+    kind = event["kind"]
+    if kind == "started":
+        return f"the census began with {event['changes']['records'][1]} records"
+    if kind == "rules":
+        return "the census rules changed; every row was derived afresh"
+    name = names.get(event["id"], event["id"])
+    if kind == "added":
+        return f"{name}: record added"
+    if kind == "removed":
+        return f"{name}: record removed"
+    parts = []
+    for field, (old, new) in sorted(event["changes"].items()):
+        if field in ("bytes", "grid_bytes"):
+            old, new = size_text(old), size_text(new)
+        parts.append(f"{field} {old if old not in (None, '') else 'none'} to {new if new not in (None, '') else 'none'}")
+    return f"{name}: " + "; ".join(parts)
+
+
+def md_cell(text):
+    return str(text if text is not None else "").replace("|", "/").replace("\n", " ")
+
+
+def masks_text(total):
+    """A mask figure: the CT volumes the masks cover, in how many sets, and how many sets give a
+    count."""
+    text = f"{amount(total['sum'])} CT volumes in {total['of']} sets"
+    if total["counted"] < total["of"]:
+        text += f", {total['counted']} of them counted"
+    return text
+
+
+def masks_summary(row):
+    """A set's masks in one line for a table cell: each entry's origin, its vertebrae and whether
+    it is on the grid."""
+    entries = row.get("segmentations")
+    if entries is None:
+        return "not surveyed"
+    parts = []
+    for entry in entries:
+        origin = ORIGIN_TITLES.get(entry.get("origin"), str(entry.get("origin")))
+        kind = mask_kind(entry)
+        said = {"none": "none", "unknown": "not recorded"}.get(kind) or VERTEBRAE_TITLES.get(
+            entry.get("vertebrae"), "vertebrae not recorded")
+        parts.append(f"{origin}: {said}" + (", on the grid" if kind != "none" and on_grid_path(entry) else ""))
+    return "; ".join(parts) or "none"
+
+
+def ct_in_order(rows):
+    """The CT sets as the CT page lists them: those on the grid first, then the most CT volumes."""
+    return sorted(ct_rows(rows), key=lambda row: (not row["on_grid"], -(row["ct_volumes"] or 0), row["name"].lower()))
+
+
+def ct_markdown(rows, ct, tasks, repo):
+    lines = ["## CT, by region and masks", "",
+             f"Every record that holds CT: {ct['sets']} sets, {ct['on_grid']} of them on the grid. A set counts in",
+             "each region its field of view covers; a sum counts a CT twice where two records hold it. The page",
+             "with filters, and each set's masks in full, is census-ct.html beside this file.", "",
+             "| | |", "|---|---|",
+             f"| Sets that hold CT | {ct['sets']} |",
+             f"| On the grid | {ct['on_grid']} |",
+             f"| CT volumes on the grid | {counted(ct['on_grid_ct_volumes'])} |",
+             f"| Subjects on the grid | {counted(ct['on_grid_subjects'])} |",
+             f"| Size on the grid | {counted(ct['on_grid_size'], size_text)} |",
+             f"| On the grid with the source's vertebra masks by level | {masks_text(ct['level_masks_on_grid'])} |",
+             f"| On the grid with masks made on the grid | {masks_text(ct['made_masks_on_grid'])} |",
+             f"| Sets whose masks are surveyed | {ct['surveyed']} of {ct['sets']} |",
+             "", "| Region | Sets | On the grid | CT volumes on the grid |", "|---|---|---|---|"]
+    for region in REGIONS:
+        counts = ct["by_region"][region]
+        lines.append(f"| {region} | {counts['sets']} | {counts['on_grid']} | {counted(counts['ct_volumes'])} |")
+    lines += ["", "| Dataset | Stage | CT volumes | Regions | Masks | Task |", "|---|---|---|---|---|---|"]
+    for row in ct_in_order(rows):
+        lines.append("| " + " | ".join(md_cell(value) for value in (
+            row["name"], pipeline.STAGE_TITLES.get(row["stage"], row["stage"]), amount(row["ct_volumes"]),
+            ", ".join(row["regions"]) or "not written", masks_summary(row),
+            task_markdown(row["id"], tasks, repo))) + " |")
+    names = {row["id"]: row["name"] for row in rows}
+    lines += ["", "What the CT records still lack:", ""]
+    lines += [f"- {md_cell(names.get(ident, ident))}: {text}" for ident, text in ct_gaps(rows)] or ["Nothing."]
+    return lines
+
+
+def render_markdown(data, repo=DEFAULT_REPO):
+    rows = sorted((entry["row"] for entry in data["records"].values()), key=pipeline.group_key)
+    totals_ = data["totals"]
+    tasks = data["tasks"]
+    names = {row["id"]: row["name"] for row in rows}
+    lines = [
+        "# Census: every dataset, counted from its record",
+        "",
+        f"Written by tools/census.py on {data['generated']} from the {len(rows)} records under datasets/ of",
+        f"https://github.com/{repo}; nobody edits it by hand. Each dataset is one record; the census reads",
+        "the records alone, never a dataset's files, and folds in only the records that are new or changed",
+        "since the last run. The page with filters is census.html beside this file, served by the docs site.",
+        "",
+        "## In numbers",
+        "",
+        "| | |",
+        "|---|---|",
+        f"| Datasets with a record | {totals_['datasets']} |",
+        f"| On the grid (shared tree and the owner's root) | {totals_['on_grid']} |",
+        f"| Size on the grid | {counted(totals_['on_grid_size'], size_text)} |",
+        f"| Frozen on the grid, every file hashed (tools/freeze.py) | {totals_.get('on_grid_frozen', 0)} of {totals_['on_grid']} |",
+        f"| Subjects on the grid | {counted(totals_['on_grid_subjects'])} |",
+        f"| X-ray images on the grid | {counted(totals_['on_grid_xray_images'])} |",
+        f"| X-ray videos and sweeps on the grid | {counted(totals_['on_grid_videos'])} |",
+        f"| Frames inside those videos and sweeps | {counted(totals_['on_grid_run_frames'])} |",
+        f"| CT volumes on the grid | {counted(totals_['on_grid_ct_volumes'])} |",
+        f"| Real spine X-ray and CT pairs on the grid | {totals_['paired']['A']} sets, "
+        f"{counted(totals_['paired_spine_subjects_on_grid'])} subjects |",
+        "",
+        "| Stage | Datasets |",
+        "|---|---|",
+    ]
+    for key, title, _ in pipeline.STAGES:
+        lines.append(f"| {title} | {totals_['by_stage'].get(key, 0)} |")
+    lines += ["", "## Paired CT and X-ray", "",
+              "Every record with a pairing block: real X-ray frames, films or projections with the same subject's",
+              "CT or CBCT. The tier follows the record's status by itself.", ""]
+    for key, title, blurb in TIERS:
+        chosen = paired_rows(rows, key)
+        lines += [f"### {key}. {title} ({len(chosen)})", "", f"{blurb[0].upper()}{blurb[1:]}.", ""]
+        if not chosen:
+            lines += ["None yet.", ""]
+            continue
+        lines += ["| Set | Region | X-rays | CT | Subjects | Pose | Masks shipped | What annotation adds | Pair key | Task |",
+                  "|---|---|---|---|---|---|---|---|---|---|"]
+        for row in chosen:
+            pairing = row["pairing"]
+            label = task_markdown(row["id"], tasks, repo)
+            lines.append("| " + " | ".join(md_cell(value) for value in (
+                row["name"], pairing.get("region"), pairing.get("xray"), pairing.get("ct"), pairing.get("subjects"),
+                pairing.get("pose"), pairing.get("masks"), pairing.get("annotate"),
+                pairing.get("pair_key") or "not written", label)) + " |")
+        lines.append("")
+    pending = [task for task in data["pending_tasks"] if task["paired"]]
+    if pending:
+        lines += ["### Pairs asked for, no record yet", ""]
+        lines += [f"- [#{task['number']}]({task['url']}) {md_cell(task['title'])}" for task in pending]
+        lines.append("")
+    lines += ["## Every dataset", "",
+              "| Dataset | Kind | Stage | Licence | Subjects | X-ray images | Videos and sweeps | Their frames "
+              "| CT volumes | Size | Task |",
+              "|---|---|---|---|---|---|---|---|---|---|---|"]
+    for row in rows:
+        label = task_markdown(row["id"], tasks, repo)
+        size = row["grid_bytes"] if row["grid_bytes"] is not None else row["bytes"]
+        lines.append("| " + " | ".join(md_cell(value) for value in (
+            row["name"], row["kind"], pipeline.STAGE_TITLES.get(row["stage"], row["stage"]), row["licence_kind"],
+            amount(row["subjects"]), amount(row["xray_images"]), amount(row["videos"]), amount(row["run_frames"]),
+            amount(row["ct_volumes"]), size_text(size), label)) + " |")
+    others = [task for task in data["pending_tasks"] if not task["paired"]]
+    if others:
+        lines += ["", "Tasks whose record is not written yet:", ""]
+        lines += [f"- [#{task['number']}]({task['url']}) {md_cell(task['title'])}" for task in others]
+    lines += [""] + ct_markdown(rows, totals_["ct"], tasks, repo)
+    lines += ["", "## What the records still lack", ""]
+    found = gaps(rows)
+    lines += [f"- {md_cell(names.get(ident, ident))}: {text}" for ident, text in found] or ["Nothing."]
+    lines += ["", "## Changes, newest first", ""]
+    lines += [f"- {event['date']} {md_cell(event_text(event, names))}" for event in events_newest_first(data["events"])]
+    return "\n".join(lines).rstrip() + "\n"
+
+
+HTML_STYLE = """<style>
+/* Layout: a figures strip, then the paired breakout by tier, every dataset with filters, the gaps
+   and the log; one column, tables scroll inside their own frames. Tokens as the pipeline board's. */
+:root { --bg: #f6f4ef; --fg: #1f2328; --muted: #6b665c; --card: #ffffff; --line: #d9d4c7; --accent: #8a4b12;
+  --ok: #2d6a4f; --warn: #b7791f; --bad: #a23b3b; --info: #2f5d8a; --other: #6a5a8c; --chip: #efebe1; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #1c1b18; --fg: #e8e4da; --muted: #a39d90;
+  --card: #262420; --line: #3b382f; --accent: #e0a165; --ok: #7bc7a0; --warn: #e3b55a; --bad: #e08484; --info: #8db6e0;
+  --other: #b9a8dd; --chip: #302d27; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #1c1b18; --fg: #e8e4da; --muted: #a39d90; --card: #262420; --line: #3b382f;
+  --accent: #e0a165; --ok: #7bc7a0; --warn: #e3b55a; --bad: #e08484; --info: #8db6e0; --other: #b9a8dd; --chip: #302d27;
+  color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding-block: 20px 40px; padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+main { max-width: 1180px; margin: 0 auto; display: grid; gap: 28px; }
+h1 { font-size: 22px; margin: 0 0 4px; text-wrap: balance; }
+h2 { font-size: 17px; margin: 0 0 6px; text-wrap: balance; }
+h3 { font-size: 14px; margin: 0; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+p { margin: 0; max-width: 72ch; }
+.lead, .note { color: var(--muted); }
+section { display: grid; gap: 12px; min-width: 0; }
+.figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.figure { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; min-width: 0; }
+.figure b { display: block; font-size: 22px; font-variant-numeric: tabular-nums; }
+.figure span { color: var(--muted); font-size: 12px; }
+.stages { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { background: var(--chip); border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; font-size: 12px;
+  font-variant-numeric: tabular-nums; }
+.tier { display: grid; gap: 6px; min-width: 0; }
+.tier-key { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 5px; color: var(--bg);
+  font-weight: 700; font-size: 12px; }
+.t-A { background: var(--ok); } .t-B { background: var(--info); } .t-C { background: var(--warn); }
+.t-D { background: var(--bad); } .t-E { background: var(--other); }
+.frame { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { text-align: left; vertical-align: top; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); font-weight: 600;
+  white-space: nowrap; background: var(--card); }
+tr:last-child td { border-bottom: none; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.name { min-width: 180px; font-weight: 600; }
+td.wide { min-width: 200px; }
+.paired td { min-width: 120px; }
+a { color: var(--accent); }
+a:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pill { display: inline-block; padding: 0 7px; border-radius: 999px; font-size: 11px; border: 1px solid var(--line);
+  white-space: nowrap; }
+.k-open { color: var(--ok); } .k-restricted { color: var(--warn); } .k-unknown { color: var(--muted); }
+.s-on-grid, .s-held { color: var(--ok); } .s-refused { color: var(--bad); } .s-needs-owner, .s-later { color: var(--warn); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.filters select, .filters input { font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--card); color: var(--fg); }
+.filters input { flex: 1 1 220px; min-width: 0; }
+ul.plain { margin: 0; padding-left: 18px; display: grid; gap: 3px; }
+ul.plain li { min-width: 0; overflow-wrap: anywhere; }
+.log li { font-variant-numeric: tabular-nums; }
+.empty { color: var(--muted); font-style: italic; }
+/* The CT page: each set's masks as a short stack of entries inside its row. */
+td.masks { min-width: 340px; }
+td.licence { min-width: 150px; }
+td.regions { min-width: 120px; }
+.seg { display: grid; gap: 2px; padding-block: 6px; border-top: 1px dashed var(--line); min-width: 0; }
+.seg:first-child { border-top: none; padding-top: 0; }
+.seg:last-child { padding-bottom: 0; }
+.seg-head { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.o-release { color: var(--info); } .o-made { color: var(--ok); }
+.label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+code.where { font-size: 12px; overflow-wrap: anywhere; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+button.linkish { background: none; border: none; padding: 0; font: inherit; color: var(--accent);
+  text-decoration: underline; cursor: pointer; text-align: left; }
+button.linkish:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+th.num { text-align: right; }
+[hidden] { display: none !important; }
+/* At phone width each CT set is a card: its name, its small facts on one wrapped line, then the rest,
+   each under its column's name, since a table eleven columns wide hides the masks off to the right. */
+@media (max-width: 760px) {
+  #ct thead { display: none; }
+  #ct, #ct tbody { display: block; }
+  #ct tr { display: flex; flex-wrap: wrap; column-gap: 18px; row-gap: 6px; padding: 10px 12px;
+    border-bottom: 1px solid var(--line); }
+  #ct tr:last-child { border-bottom: none; }
+  #ct td { display: block; flex: 1 1 100%; min-width: 0; padding: 0; border: none; text-align: left;
+    white-space: normal; }
+  #ct td.name { order: -2; font-size: 15px; }
+  #ct td.fact { order: -1; flex: 0 0 auto; }
+  #ct td[data-label]::before { content: attr(data-label); display: block; color: var(--muted); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+}
+</style>"""
+
+HTML_SCRIPT = """<script>
+(function () {
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#every tbody tr'));
+  var stage = document.getElementById('f-stage'), kind = document.getElementById('f-kind'),
+      licence = document.getElementById('f-licence'), query = document.getElementById('f-q'),
+      shown = document.getElementById('shown');
+  function draw() {
+    var q = query.value.toLowerCase(), n = 0;
+    rows.forEach(function (row) {
+      var ok = (!stage.value || row.dataset.stage === stage.value) && (!kind.value || row.dataset.kind === kind.value)
+        && (!licence.value || row.dataset.licence === licence.value) && (!q || row.dataset.text.indexOf(q) >= 0);
+      row.hidden = !ok; if (ok) n += 1;
+    });
+    shown.textContent = n + ' of ' + rows.length + ' shown';
+  }
+  [stage, kind, licence].forEach(function (el) { el.addEventListener('change', draw); });
+  query.addEventListener('input', draw);
+  draw();
+})();
+</script>"""
+
+# The CT page's filters: a row carries its regions and its mask words between bars, |chest|spine|,
+# so one region or one word matches whole.
+CT_SCRIPT = """<script>
+(function () {
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#ct tbody tr'));
+  function el(id) { return document.getElementById(id); }
+  var region = el('f-region'), stage = el('f-stage'), licence = el('f-licence'), masks = el('f-masks'),
+      query = el('f-q'), shown = el('shown');
+  function has(list, word) { return !word || list.indexOf('|' + word + '|') >= 0; }
+  function draw() {
+    var q = query.value.toLowerCase(), n = 0;
+    rows.forEach(function (row) {
+      var ok = has(row.dataset.regions, region.value) && (!stage.value || row.dataset.stage === stage.value)
+        && (!licence.value || row.dataset.licence === licence.value) && has(row.dataset.masks, masks.value)
+        && (!q || row.dataset.text.indexOf(q) >= 0);
+      row.hidden = !ok; if (ok) n += 1;
+    });
+    shown.textContent = n + ' of ' + rows.length + ' shown';
+  }
+  [region, stage, licence, masks].forEach(function (one) { one.addEventListener('change', draw); });
+  query.addEventListener('input', draw);
+  Array.prototype.slice.call(document.querySelectorAll('[data-region]')).forEach(function (button) {
+    button.addEventListener('click', function () {
+      region.value = button.dataset.region; draw();
+      el('h-sets').scrollIntoView({behavior: 'smooth', block: 'start'});
+    });
+  });
+  draw();
+})();
+</script>"""
+
+
+def esc(text):
+    return html.escape(str(text if text is not None else ""))
+
+
+def link_html(label, url):
+    """A link only to a web address; any other address a record holds shows as its label alone."""
+    url = url.strip() if isinstance(url, str) else ""
+    if not WEB_ADDRESS.match(url):
+        return esc(label)
+    return f'<a href="{esc(url)}" target="_blank" rel="noopener">{esc(label)}</a>'
+
+
+def figure_html(value, label):
+    return f'<div class="figure"><b>{esc(value)}</b><span>{esc(label)}</span></div>'
+
+
+def counted_note(total):
+    return "" if total["counted"] == total["of"] else f", {total['counted']} of {total['of']} sets counted"
+
+
+def figures_html(totals_):
+    size = totals_["on_grid_size"]
+    return "".join((
+        figure_html(totals_["datasets"], "datasets with a record"),
+        figure_html(totals_["on_grid"], "on the grid"),
+        figure_html(size_text(size["sum"]), "on the grid" + counted_note(size)),
+        figure_html(amount(totals_["on_grid_subjects"]["sum"]), "subjects on the grid" + counted_note(totals_["on_grid_subjects"])),
+        figure_html(amount(totals_["on_grid_xray_images"]["sum"]),
+                    "X-ray images on the grid" + counted_note(totals_["on_grid_xray_images"])),
+        figure_html(amount(totals_["on_grid_videos"]["sum"]),
+                    "X-ray videos and sweeps on the grid" + counted_note(totals_["on_grid_videos"])),
+        figure_html(amount(totals_["on_grid_run_frames"]["sum"]),
+                    "frames inside those" + counted_note(totals_["on_grid_run_frames"])),
+        figure_html(amount(totals_["on_grid_ct_volumes"]["sum"]),
+                    "CT volumes on the grid" + counted_note(totals_["on_grid_ct_volumes"])),
+        figure_html(totals_["paired"]["A"], "real spine X-ray and CT pairs on the grid"),
+    ))
+
+
+def paired_html(rows, data, repo):
+    parts = []
+    for key, title, blurb in TIERS:
+        chosen = paired_rows(rows, key)
+        parts.append(f'<div class="tier"><h3><span class="tier-key t-{key}">{key}</span>{esc(title)}'
+                     f' <span class="note">{len(chosen)} sets; {esc(blurb)}</span></h3>')
+        if not chosen:
+            parts.append('<p class="empty">None yet.</p></div>')
+            continue
+        body = []
+        for row in chosen:
+            pairing = row["pairing"]
+            label, url = task_link(row["id"], data["tasks"], repo)
+            stage = pipeline.STAGE_TITLES.get(row["stage"], row["stage"])
+            body.append("<tr>" + "".join((
+                f'<td class="name">{link_html(row["name"], row["link"])}</td>',
+                f"<td>{esc(pairing.get('region'))}</td>", f"<td>{esc(pairing.get('xray'))}</td>",
+                f"<td>{esc(pairing.get('ct'))}</td>", f"<td>{esc(pairing.get('subjects'))}</td>",
+                f"<td>{esc(pairing.get('pose'))}</td>", f"<td>{esc(pairing.get('masks'))}</td>",
+                f'<td class="wide">{esc(pairing.get("annotate"))}</td>',
+                f"<td>{esc(pairing.get('pair_key') or 'not written')}</td>",
+                f'<td><span class="pill s-{esc(row["stage"])}">{esc(stage)}</span></td>',
+                f"<td>{link_html(label, url)}</td>",
+            )) + "</tr>")
+        parts.append('<div class="frame"><table class="paired"><thead><tr><th>Set</th><th>Region</th><th>X-rays</th>'
+                     '<th>CT</th><th>Subjects</th><th>Pose</th><th>Masks shipped</th><th>What annotation adds</th>'
+                     '<th>Pair key</th><th>Stage</th><th>Task</th></tr></thead><tbody>' + "".join(body)
+                     + "</tbody></table></div></div>")
+    pending = [task for task in data["pending_tasks"] if task["paired"]]
+    if pending:
+        parts.append('<div class="tier"><h3>Pairs asked for, no record yet</h3><ul class="plain">'
+                     + "".join(f"<li>{link_html('#%d' % task['number'], task['url'])} {esc(task['title'])}</li>"
+                               for task in pending) + "</ul></div>")
+    return "".join(parts)
+
+
+def every_html(rows, data, repo):
+    body = []
+    for row in rows:
+        label, url = task_link(row["id"], data["tasks"], repo)
+        size = row["grid_bytes"] if row["grid_bytes"] is not None else row["bytes"]
+        text = " ".join((row["name"], row["id"], row["what"], row["licence"], row["level_truth"] or "")).lower()
+        stage = pipeline.STAGE_TITLES.get(row["stage"], row["stage"])
+        body.append(
+            f'<tr data-stage="{esc(row["stage"])}" data-kind="{esc(row["group"])}" data-licence="{esc(row["licence_kind"])}"'
+            f' data-text="{esc(text)}">'
+            + "".join((
+                f'<td class="name">{link_html(row["name"], row["link"])}</td>',
+                f"<td>{esc(row['kind'])}</td>",
+                f'<td><span class="pill s-{esc(row["stage"])}">{esc(stage)}</span></td>',
+                f'<td><span class="k-{esc(row["licence_kind"])}">{esc(row["licence_kind"])}</span></td>',
+                f'<td class="num">{esc(amount(row["subjects"]))}</td>',
+                f'<td class="num">{esc(amount(row["xray_images"]))}</td>',
+                f'<td class="num">{esc(amount(row["videos"]))}</td>',
+                f'<td class="num">{esc(amount(row["run_frames"]))}</td>',
+                f'<td class="num">{esc(amount(row["ct_volumes"]))}</td>',
+                f'<td class="num">{esc(size_text(size))}</td>',
+                f'<td class="wide">{esc(row["what"])}</td>',
+                f"<td>{link_html(label, url)}</td>",
+            )) + "</tr>")
+    stages = "".join(f'<option value="{esc(key)}">{esc(title)}</option>' for key, title, _ in pipeline.STAGES)
+    kinds = "".join(f'<option value="{esc(group)}">{esc(title)}</option>' for group, title in KINDS.items())
+    filters = (f'<div class="filters"><select id="f-stage"><option value="">every stage</option>{stages}</select>'
+               f'<select id="f-kind"><option value="">every kind</option>{kinds}</select>'
+               '<select id="f-licence"><option value="">every licence</option><option value="open">open</option>'
+               '<option value="restricted">restricted</option><option value="unknown">unknown</option></select>'
+               '<input id="f-q" type="search" placeholder="search names, contents, licences">'
+               '<span class="note" id="shown"></span></div>')
+    table = ('<div class="frame"><table id="every"><thead><tr><th>Dataset</th><th>Kind</th><th>Stage</th><th>Licence</th>'
+             '<th>Subjects</th><th>X-ray images</th><th>Videos and sweeps</th><th>Their frames</th><th>CT volumes</th>'
+             '<th>Size</th><th>What it holds</th>'
+             '<th>Task</th>'
+             '</tr></thead><tbody>' + "".join(body) + "</tbody></table></div>")
+    others = [task for task in data["pending_tasks"] if not task["paired"]]
+    extra = ""
+    if others:
+        extra = ('<p class="note">Tasks whose record is not written yet:</p><ul class="plain">'
+                 + "".join(f"<li>{link_html('#%d' % task['number'], task['url'])} {esc(task['title'])}</li>"
+                           for task in others) + "</ul>")
+    return filters + table + extra
+
+
+def render_html(data, repo=DEFAULT_REPO):
+    rows = sorted((entry["row"] for entry in data["records"].values()), key=pipeline.group_key)
+    names = {row["id"]: row["name"] for row in rows}
+    totals_ = data["totals"]
+    stage_chips = "".join(f'<span class="chip">{esc(title)} {totals_["by_stage"].get(key, 0)}</span>'
+                          for key, title, _ in pipeline.STAGES)
+    found = gaps(rows)
+    gap_list = ("<ul class=\"plain\">" + "".join(f"<li><b>{esc(names.get(ident, ident))}</b>: {esc(text)}</li>"
+                                                  for ident, text in found) + "</ul>") if found else '<p class="empty">Nothing.</p>'
+    log = "".join(f"<li>{esc(event['date'])} {esc(event_text(event, names))}</li>"
+                  for event in events_newest_first(data["events"]))
+    return "\n".join((
+        "<!doctype html>",
+        '<html lang="en">',
+        "<head>",
+        '<meta charset="utf-8">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
+        "<title>Spine Data Census</title>",
+        '<meta name="claude:viewport-fit-sides" content="cover">',
+        HTML_STYLE,
+        "</head>",
+        "<body>",
+        "<main>",
+        "<header>",
+        "<h1>Spine Data Census</h1>",
+        f'<p class="lead">Every dataset of <a href="https://github.com/{esc(repo)}">{esc(repo)}</a> counted from its one '
+        f"record, written on {esc(data['generated'])}. The census reads the records alone, never a dataset's files, and "
+        "folds in only the records that are new or changed since its last run, so adding a dataset is adding its record. "
+        "Counts are what each record states or what its landing pass measured; a figure counts only the sets whose "
+        'record gives it. <a href="census-ct.html">The CT page</a> lists every record that holds CT by region, with '
+        "the masks each set has.</p>",
+        "</header>",
+        f'<section aria-labelledby="h-figures"><h2 id="h-figures">In numbers</h2><div class="figures">{figures_html(totals_)}</div>'
+        f'<div class="stages">{stage_chips}</div></section>',
+        '<section aria-labelledby="h-paired"><h2 id="h-paired">Paired CT and X-ray</h2>'
+        '<p class="note">Every record with a pairing block: real X-ray frames, films or projections with the same '
+        "subject's CT or CBCT. The tier follows the record's status by itself: a set fetched tomorrow moves to A tomorrow. "
+        "Tier A is where annotation starts; E holds the pairs whose shipped pose or CT checks the registration code.</p>"
+        + paired_html(rows, data, repo) + "</section>",
+        f'<section aria-labelledby="h-every"><h2 id="h-every">Every dataset</h2>{every_html(rows, data, repo)}</section>',
+        '<section aria-labelledby="h-gaps"><h2 id="h-gaps">What the records still lack</h2>'
+        '<p class="note">Each line is filled once, in the record, and leaves this list on the next run.</p>'
+        f"{gap_list}</section>",
+        f'<section aria-labelledby="h-log"><h2 id="h-log">Changes, newest first</h2><ul class="plain log">{log}</ul></section>',
+        "</main>",
+        HTML_SCRIPT,
+        "</body>",
+        "</html>",
+    )) + "\n"
+
+
+def mask_words(row):
+    """The CT page's mask filter words a row carries, between bars."""
+    entries = row.get("segmentations")
+    if entries is None:
+        return "|unsurveyed|"
+    words = set()
+    for entry in entries:
+        kind = mask_kind(entry)
+        if kind == "unknown" and entry.get("origin") == "release":
+            words.add("unknown")
+        if kind != "masks":
+            continue
+        words.add(entry.get("origin") if entry.get("origin") in SEG_ORIGINS else "release")
+        if entry.get("vertebrae") == "by level":
+            words.add("level")
+            if on_grid_path(entry):
+                words.add("level-grid")
+    if not any(mask_kind(entry) == "masks" for entry in entries):
+        words.add("none")
+    return "|" + "|".join(sorted(words)) + "|"
+
+
+def segmentation_html(entry):
+    """One entry of a set's masks: where they come from, how they name the vertebrae, how many
+    CTs they cover, what they are, who made them and where they are on the grid."""
+    kind = mask_kind(entry)
+    origin = str(entry.get("origin"))
+    head = [f'<span class="pill o-{esc(origin)}">{esc(ORIGIN_TITLES.get(origin, origin))}</span>']
+    if kind == "masks":
+        vertebrae = str(entry.get("vertebrae"))
+        head.append(f'<span class="chip">{esc(VERTEBRAE_TITLES.get(vertebrae, vertebrae))}</span>')
+    if number(entry.get("volumes")) is not None:
+        head.append(f'<span class="note">{esc(amount(entry["volumes"]))} CTs</span>')
+    parts = ['<div class="seg"><div class="seg-head">' + "".join(head) + "</div>", f"<div>{esc(entry.get('masks'))}</div>"]
+    if kind == "masks":
+        parts.append(f'<div><span class="label">Made by</span> {esc(entry.get("by"))}</div>')
+    if on_grid_path(entry):
+        parts.append(f'<div><code class="where">{esc(entry["where"])}</code></div>')
+    elif kind == "masks":
+        parts.append('<div class="note">no grid path recorded</div>')
+    return "".join(parts) + "</div>"
+
+
+def masks_html(row):
+    entries = row.get("segmentations")
+    if entries is None:
+        return '<span class="empty">not surveyed yet</span>'
+    return "".join(segmentation_html(entry) for entry in entries) or '<span class="empty">none</span>'
+
+
+def ct_figures_html(ct):
+    def masks_figure(total, label):
+        note = "" if total["counted"] == total["of"] else f", {total['counted']} of them counted"
+        return figure_html(amount(total["sum"]), f"CT volumes {label}, in {total['of']} sets on the grid{note}")
+    size = ct["on_grid_size"]
+    return "".join((
+        figure_html(ct["sets"], "sets that hold CT"),
+        figure_html(ct["on_grid"], "of them on the grid"),
+        figure_html(amount(ct["on_grid_ct_volumes"]["sum"]), "CT volumes on the grid" + counted_note(ct["on_grid_ct_volumes"])),
+        figure_html(amount(ct["on_grid_subjects"]["sum"]), "subjects on the grid" + counted_note(ct["on_grid_subjects"])),
+        figure_html(size_text(size["sum"]), "on the grid" + counted_note(size)),
+        masks_figure(ct["level_masks_on_grid"], "with the source's vertebra masks by level"),
+        masks_figure(ct["made_masks_on_grid"], "with masks made on the grid"),
+        figure_html(f"{ct['surveyed']} of {ct['sets']}", "sets whose masks are surveyed"),
+    ))
+
+
+def regions_table_html(ct):
+    body = []
+    for region in REGIONS:
+        counts = ct["by_region"][region]
+        body.append("<tr>" + "".join((
+            f'<td><button type="button" class="linkish" data-region="{esc(region)}">{esc(region)}</button></td>',
+            f'<td class="num">{counts["sets"]}</td>', f'<td class="num">{counts["on_grid"]}</td>',
+            f'<td class="num">{esc(counted(counts["ct_volumes"]))}</td>',
+        )) + "</tr>")
+    return ('<div class="frame"><table><thead><tr><th>Region</th><th class="num">Sets</th><th class="num">On the grid</th>'
+            '<th class="num">CT volumes on the grid</th></tr></thead><tbody>' + "".join(body) + "</tbody></table></div>")
+
+
+def ct_sets_html(rows, data, repo):
+    body = []
+    for row in ct_in_order(rows):
+        label, url = task_link(row["id"], data["tasks"], repo)
+        size = row["grid_bytes"] if row["grid_bytes"] is not None else row["bytes"]
+        stage = pipeline.STAGE_TITLES.get(row["stage"], row["stage"])
+        entries = row.get("segmentations") or []
+        text = " ".join([row["name"], row["id"], row["what"], row["licence"], " ".join(row["regions"])]
+                        + [str(entry.get(key) or "") for entry in entries for key in ("masks", "by", "where")]).lower()
+        regions = "".join(f'<span class="chip">{esc(region)}</span>' for region in row["regions"])
+        regions = regions or '<span class="empty">not written</span>'
+        body.append(
+            f'<tr data-regions="|{esc("|".join(row["regions"]))}|" data-stage="{esc(row["stage"])}"'
+            f' data-licence="{esc(row["licence_kind"])}" data-masks="{esc(mask_words(row))}" data-text="{esc(text)}">'
+            + "".join((
+                f'<td class="name">{link_html(row["name"], row["link"])}</td>',
+                f'<td class="fact" data-label="Kind">{esc(row["kind"])}</td>',
+                f'<td class="fact" data-label="Stage"><span class="pill s-{esc(row["stage"])}">{esc(stage)}</span></td>',
+                f'<td class="num fact" data-label="CT volumes">{esc(amount(row["ct_volumes"]))}</td>',
+                f'<td class="num fact" data-label="Subjects">{esc(amount(row["subjects"]))}</td>',
+                f'<td class="regions" data-label="Regions"><div class="chips">{regions}</div></td>',
+                f'<td class="masks" data-label="Masks">{masks_html(row)}</td>',
+                f'<td class="licence" data-label="Licence"><span class="k-{esc(row["licence_kind"])}">'
+                f'{esc(row["licence_kind"])}</span><div class="note">{esc(row["licence"])}</div></td>',
+                f'<td class="num fact" data-label="Size">{esc(size_text(size))}</td>',
+                f'<td class="wide" data-label="What it holds">{esc(row["what"])}</td>',
+                f'<td data-label="Task">{link_html(label, url)}</td>',
+            )) + "</tr>")
+    options = lambda pairs: "".join(f'<option value="{esc(key)}">{esc(title)}</option>' for key, title in pairs)  # noqa: E731
+    filters = (f'<div class="filters"><select id="f-region" aria-label="region"><option value="">every region</option>'
+               f'{options((region, region) for region in REGIONS)}</select>'
+               f'<select id="f-stage" aria-label="stage"><option value="">every stage</option>'
+               f'{options((key, title) for key, title, _ in pipeline.STAGES)}</select>'
+               '<select id="f-licence" aria-label="licence"><option value="">every licence</option>'
+               f'{options((kind, kind) for kind in ("open", "restricted", "unknown"))}</select>'
+               f'<select id="f-masks" aria-label="masks"><option value="">any masks</option>{options(MASK_FILTERS)}</select>'
+               '<input id="f-q" type="search" placeholder="search names, tools, folders" aria-label="search">'
+               '<span class="note" id="shown"></span></div>')
+    table = ('<div class="frame"><table id="ct"><thead><tr><th>Dataset</th><th>Kind</th><th>Stage</th>'
+             '<th class="num">CT volumes</th><th class="num">Subjects</th><th>Regions</th><th>Masks</th><th>Licence</th>'
+             '<th class="num">Size</th><th>What it holds</th><th>Task</th></tr></thead><tbody>' + "".join(body)
+             + "</tbody></table></div>")
+    return filters + table
+
+
+def render_ct_html(data, repo=DEFAULT_REPO):
+    """The CT page: every record that holds CT, by region, with the masks each set has."""
+    rows = [entry["row"] for entry in data["records"].values()]
+    names = {row["id"]: row["name"] for row in rows}
+    ct = data["totals"]["ct"]
+    stage_chips = "".join(f'<span class="chip">{esc(title)} {ct["by_stage"].get(key, 0)}</span>'
+                          for key, title, _ in pipeline.STAGES if ct["by_stage"].get(key, 0))
+    found = ct_gaps(rows)
+    gap_list = ("<ul class=\"plain\">" + "".join(f"<li><b>{esc(names.get(ident, ident))}</b>: {esc(text)}</li>"
+                                                  for ident, text in found) + "</ul>") if found else '<p class="empty">Nothing.</p>'
+    no_regions = f" {ct['no_regions']} sets have no regions yet." if ct["no_regions"] else ""
+    return "\n".join((
+        "<!doctype html>",
+        '<html lang="en">',
+        "<head>",
+        '<meta charset="utf-8">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
+        "<title>Spine CT Census</title>",
+        '<meta name="claude:viewport-fit-sides" content="cover">',
+        HTML_STYLE,
+        "</head>",
+        "<body>",
+        "<main>",
+        "<header>",
+        "<h1>Spine CT Census</h1>",
+        f'<p class="lead">Every record of <a href="https://github.com/{esc(repo)}">{esc(repo)}</a> that holds CT, '
+        f"counted from its record, written on {esc(data['generated'])}: the body regions its field of view covers, the "
+        "masks the set has, who made them, whether they name the vertebrae by level and where they are on the grid. "
+        "A set's masks are what its record's segmentations say, from the data platform's manifest, IDC's own index and "
+        'the grid; the source\'s own masks and those made on the grid are kept apart. <a href="census.html">The whole '
+        "census</a> counts every dataset.</p>",
+        "</header>",
+        f'<section aria-labelledby="h-figures"><h2 id="h-figures">In numbers</h2><div class="figures">{ct_figures_html(ct)}'
+        f'</div><div class="stages">{stage_chips}</div></section>',
+        '<section aria-labelledby="h-regions"><h2 id="h-regions">By region</h2>'
+        '<p class="note">A set counts in every region its field of view covers, so the rows add up to more than the '
+        f"sets.{esc(no_regions)} Pick a region to list its sets.</p>" + regions_table_html(ct) + "</section>",
+        '<section aria-labelledby="h-sets"><h2 id="h-sets">Every CT set</h2>'
+        '<p class="note">On the grid first, then the most CT volumes. A sum counts a CT twice where two records hold '
+        "it: each record's text names the overlaps it knows, and the census does not fold them. Masks from IDC are over "
+        "IDC's series, and its fetch takes the CT alone.</p>" + ct_sets_html(rows, data, repo) + "</section>",
+        '<section aria-labelledby="h-gaps"><h2 id="h-gaps">What the CT records still lack</h2>'
+        '<p class="note">Each line is filled once, in the record, and leaves this list on the next run.</p>'
+        f"{gap_list}</section>",
+        "</main>",
+        CT_SCRIPT,
+        "</body>",
+        "</html>",
+    )) + "\n"
+
+
+# The check
+
+def pairing_problems(ident, pairing):
+    if not isinstance(pairing, dict):
+        return [f"{ident}: pairing must be an object"]
+    found = []
+    if not isinstance(pairing.get("spine"), bool):
+        found.append(f"{ident}: pairing.spine must be true or false")
+    for key in PAIRING_TEXT:
+        if not isinstance(pairing.get(key), str) or not pairing[key].strip():
+            found.append(f"{ident}: pairing.{key} must be a line of text")
+    if "pair_key" in pairing and not isinstance(pairing["pair_key"], str):
+        found.append(f"{ident}: pairing.pair_key must be text")
+    priority = pairing.get("priority")
+    if priority is not None and (isinstance(priority, bool) or not isinstance(priority, int) or priority < 1):
+        found.append(f"{ident}: pairing.priority must be a whole number from 1")
+    for key in sorted(set(pairing) - set(PAIRING_KEYS)):
+        found.append(f"{ident}: pairing.{key} is not one of {PAIRING_KEYS}")
+    return found
+
+
+def regions_problems(ident, regions):
+    if not isinstance(regions, list) or not regions:
+        return [f"{ident}: regions must be a list of one or more of: {', '.join(REGIONS)}"]
+    found = [f"{ident}: regions holds {region!r}, which is none of: {', '.join(REGIONS)}"
+             for region in regions if region not in REGIONS]
+    if len({str(region) for region in regions}) < len(regions):
+        found.append(f"{ident}: regions names one region twice")
+    return found
+
+
+def entry_problems(label, entry):
+    """What is wrong with one segmentations entry, each line opening with the entry's label."""
+    found = [f"{label}: {key} is not one of {', '.join(SEG_KEYS)}" for key in sorted(set(entry) - set(SEG_KEYS))]
+    if entry.get("origin") not in SEG_ORIGINS:
+        found.append(f"{label}: origin must be one of {', '.join(SEG_ORIGINS)}")
+    if entry.get("vertebrae") not in SEG_VERTEBRAE:
+        found.append(f"{label}: vertebrae must be one of {', '.join(SEG_VERTEBRAE)}")
+    for key in ("masks", "by"):
+        if not isinstance(entry.get(key), str) or not entry[key].strip():
+            found.append(f"{label}: {key} must be a line of text")
+    volumes = entry.get("volumes")
+    if volumes is not None and (isinstance(volumes, bool) or not isinstance(volumes, int) or volumes < 0):
+        found.append(f"{label}: volumes must be a whole number from 0, or null")
+    if entry.get("where") is not None and not on_grid_path(entry):
+        found.append(f"{label}: where must be a grid folder, or null")
+    kind = mask_kind(entry)
+    # An entry that names no masks speaks of the source's, and says so in its vertebrae too.
+    if kind != "masks" and entry.get("origin") != "release":
+        found.append(f"{label}: masks that begin 'none' or 'not recorded' are the source's: origin release")
+    if kind == "none" and (entry.get("vertebrae") != "none" or entry.get("where") is not None):
+        found.append(f"{label}: an entry that says none has vertebrae none and where null")
+    if kind == "unknown" and entry.get("vertebrae") != "not recorded":
+        found.append(f"{label}: an entry that says not recorded has vertebrae not recorded")
+    return found
+
+
+def segmentations_problems(ident, entries):
+    if not isinstance(entries, list) or not entries:
+        return [f"{ident}: segmentations must be a list of one or more entries"]
+    found = []
+    for index, entry in enumerate(entries, 1):
+        label = f"{ident}: segmentations entry {index}"
+        if isinstance(entry, dict):
+            found.extend(entry_problems(label, entry))
+        else:
+            found.append(f"{label} must be an object")
+    return found
+
+
+TEXT_FIELDS = ("name", "group", "what", "licence", "level_truth", "grid_path")
+
+
+def problems(records):
+    """What is wrong with the records' census fields, one line each; empty when nothing."""
+    found = []
+    for record in records:
+        ident = record.get("id", "?")
+        for field in TEXT_FIELDS:
+            if field in record and record[field] is not None and not isinstance(record[field], str):
+                found.append(f"{ident}: {field} must be text")
+        if not text_of(record, "licence").strip():
+            found.append(f"{ident}: licence must say what the source's terms are, or that they are to confirm")
+        if record.get("link") is not None and not isinstance(record["link"], str):
+            found.append(f"{ident}: link must be an address or null")
+        if "pairing" in record:
+            found.extend(pairing_problems(ident, record["pairing"]))
+        if "regions" in record:
+            found.extend(regions_problems(ident, record["regions"]))
+        if "segmentations" in record:
+            found.extend(segmentations_problems(ident, record["segmentations"]))
+        counts = record.get("counts")
+        if counts is not None and not isinstance(counts, dict):
+            found.append(f"{ident}: counts must be an object")
+        elif counts:
+            for key in STANDARD_KEYS:
+                if key in counts and number(counts[key]) is None:
+                    found.append(f"{ident}: counts.{key} must be a number")
+        measured = record.get("measured")
+        if measured is not None and not isinstance(measured, dict):
+            found.append(f"{ident}: measured must be an object")
+        elif measured and "tree_sha256" in measured:
+            found.extend(frozen_problems(ident, measured))
+    return found
+
+
+def frozen_problems(ident, measured):
+    """A measured block from a freeze carries all of its fields, each of its shape."""
+    found = [f"{ident}: measured.{field} is missing beside tree_sha256" for field in FROZEN_FIELDS
+             if field not in measured]
+    if not SHA256_SHAPE.match(str(measured.get("tree_sha256"))):
+        found.append(f"{ident}: measured.tree_sha256 must be 64 lowercase hex digits")
+    for field in ("bytes", "files"):
+        value = measured.get(field)
+        if field in measured and (not isinstance(value, int) or isinstance(value, bool) or value < 0):
+            found.append(f"{ident}: measured.{field} must be a whole number")
+    if "frozen" in measured and not re.match(r"^\d{4}-\d{2}-\d{2}$", str(measured["frozen"])):
+        found.append(f"{ident}: measured.frozen must be a date, YYYY-MM-DD")
+    return found
+
+
+def file_problems(folder=pipeline.RECORDS):
+    """Records the census cannot key: a record whose id is not its file's name, and one id in two
+    files. One dataset is one record, found by its id, and the census keeps one row per id."""
+    found, files_of = [], {}
+    for path in sorted(Path(folder).glob("*.json")):
+        try:
+            record = json.loads(path.read_text(encoding="ascii"))
+        except (OSError, ValueError):
+            found.append(f"{path.name}: does not read as an ASCII JSON record")
+            continue
+        ident = record.get("id") if isinstance(record, dict) else None
+        if ident != path.stem:
+            found.append(f"{path.name}: its id is {ident!r}, not the file's name {path.stem!r}")
+        files_of.setdefault(str(ident), []).append(path.name)
+    for ident, names in sorted(files_of.items()):
+        if len(names) > 1:
+            found.append(f"{', '.join(names)}: {len(names)} records with the one id {ident!r}")
+    return found
+
+
+def read_json_file(path):
+    """A JSON file, or None where it is missing or unreadable, so a first run starts the census."""
+    try:
+        return json.loads(Path(path).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    sub = parser.add_subparsers(dest="command", required=True)
+    render = sub.add_parser("render", help="fold the records into the last census and write the four files")
+    render.add_argument("--out", required=True, help="the folder to write into")
+    render.add_argument("--previous", help="the last census.json, from the branch census")
+    render.add_argument("--issues", help="a JSON list of the repository's issues, from gh api")
+    render.add_argument("--repo", default=DEFAULT_REPO)
+    render.add_argument("--date", default=date.today().isoformat())
+    compare = sub.add_parser("same", help="exit 0 when two census files differ only in their date")
+    compare.add_argument("old")
+    compare.add_argument("new")
+    sub.add_parser("check", help="fail when a record's census fields do not hold together")
+    args = parser.parse_args(argv)
+    if args.command == "same":
+        old, new = read_json_file(args.old), read_json_file(args.new)
+        return 0 if old is not None and new is not None and same(old, new) else 1
+    records = pipeline.load_records()
+    if args.command == "check":
+        found = file_problems() + problems(records)
+        for line in found:
+            print(line)
+        print(f"census: {len(records)} records, {len(found)} problems")
+        return 1 if found else 0
+    previous = read_json_file(args.previous) if args.previous else None
+    try:
+        census, tally = fold(previous, records, args.date)
+    except ValueError as error:
+        print(f"census: {error}; nothing written", file=sys.stderr)
+        return 1
+    issues = json.loads(Path(args.issues).read_text(encoding="utf-8")) if args.issues else []
+    tasks, pending = tasks_of(issues, records)
+    data = census_file(census, tasks, pending, args.date, args.repo)
+    out = Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "census.json").write_text(json.dumps(data, indent=1, ensure_ascii=True) + "\n", encoding="ascii")
+    (out / "CENSUS.md").write_text(render_markdown(data, args.repo), encoding="utf-8")
+    # The docs site holds its pages to ASCII; a name with an accent becomes a character reference.
+    (out / "census.html").write_bytes(render_html(data, args.repo).encode("ascii", "xmlcharrefreplace"))
+    (out / "census-ct.html").write_bytes(render_ct_html(data, args.repo).encode("ascii", "xmlcharrefreplace"))
+    print("census: %d records, %d new, %d changed, %d derived afresh under new rules, %d carried unread, %d removed"
+          % (len(records), tally["new"], tally["changed"], tally["rederived"], tally["carried"], tally["removed"]))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

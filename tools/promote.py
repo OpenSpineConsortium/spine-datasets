@@ -19,8 +19,10 @@ keeps queued, and for each manifest on the default branch that is not yet promot
    more than its stated size) into shared/<id>/.incoming-<job>, resuming what an earlier job
    left, and checks the bytes and the checksum of what landed, never of what was promised;
 4. moves the checked tree to shared/<id>/raw in one rename, makes every file 0444 and every
-   folder 0555, and writes PROMOTED.json beside it;
-5. opens the record's update (status fetched, grid_path, a history entry) as a pull request from
+   folder 0555, and writes PROMOTED.json beside it, then freezes the set (tools/freeze.py):
+   FROZEN.json and FROZEN.files.tsv.gz beside raw/, from the hashes this pass has just read;
+5. opens the record's update (status fetched, grid_path, a history entry, measured from the
+   freeze, with the freeze's summary as frozen/<id>.json) as a pull request from
    the branch promote/<id>, with auto-merge on for that exact commit only, so the required check
    reviews that change too and a push by anyone else is never merged by it.
 
@@ -55,6 +57,11 @@ import subprocess
 import sys
 import time
 
+try:
+    import freeze
+except ImportError:  # a copy on the grid from before the freeze came; it freezes nothing until updated
+    freeze = None
+
 DEFAULT_BRANCH = "main"
 # X-ray groups first, CT after them (the owner, 2026-10-21), as tools/pipeline.py orders them.
 GROUP_ORDER = ("fluoro", "video", "projections", "films", "ct", "future")
@@ -72,7 +79,7 @@ OPEN_LICENCE = re.compile(
     r"\b(CC[ -]?BY|CC0|CC[ -]?ZERO|PDDL|ODC[ -]?BY|ODbL|public domain|MIT|Apache)\b", re.IGNORECASE
 )
 RESTRICTED_LICENCE = re.compile(r"\b(NC|ND|non-?commercial|no ?deriv)", re.IGNORECASE)
-TRUSTED_CODE = ("tools/promote.py", "grid/promote.sh")
+TRUSTED_CODE = ("tools/promote.py", "grid/promote.sh", "tools/freeze.py")
 # A source whose files are served from another host of its own; any other file must be on the
 # source's own host exactly, so a shared suffix (s3.amazonaws.com, github.io) is never enough.
 DOWNLOAD_HOSTS = {
@@ -374,14 +381,38 @@ def install(shared, manifest, origin, job, log, reserve=RESERVE_BYTES):
         except OSError:
             pass
     make_read_only(raw)
-    write_promoted(home, manifest, origin, job)
+    note = write_promoted(home, manifest, origin, job)
+    freeze_home(home, manifest["id"], note, log)
     return "promoted"
+
+
+def freeze_home(home, ident, note, log):
+    """The set's freeze, from the sha256 PROMOTED.json has just recorded, so no file is read again;
+    a failure is logged and leaves the set promoted, since the freeze can be written later."""
+    if freeze is None:
+        log("%s: no tools/freeze.py beside the promoter; not frozen" % ident)
+        return None
+    known = dict((entry["path"], (entry["sha256"], entry["bytes"])) for entry in note["files"])
+    try:
+        return freeze.freeze(home, ident, known=known)
+    except (OSError, ValueError) as error:
+        log("%s: not frozen: %s" % (ident, error))
+        return None
+
+
+def frozen_summary(shared, ident):
+    path = os.path.join(shared, ident, "FROZEN.json")
+    if freeze is None or not os.path.isfile(path):
+        return None
+    return freeze.read_summary(path)
 
 
 # The record's update, as a pull request the required check reviews.
 
-def updated_record(record, manifest, shared, job):
+def updated_record(record, manifest, shared, job, frozen=None):
     record = json.loads(json.dumps(record))
+    if frozen:
+        record["measured"] = freeze.measured_of(frozen)
     path = "%s/%s/raw" % (shared.rstrip("/"), manifest["id"])
     today = time.strftime("%Y-%m-%d", time.gmtime())
     line = "%s: on the grid at %s, %d files, %d bytes, sha256-checked, promoter job %s" % (
@@ -418,7 +449,11 @@ def open_record_update(repo, manifest, shared, job, origin):
         if not gh_json(["api", "repos/%s/pulls?state=open&head=%s:%s" % (repo, owner, branch)]):
             raise RuntimeError("%s exists with no open pull request; the owner looks at it" % branch)
         return None
-    body = updated_record(json.loads(text), manifest, shared, job)
+    frozen = frozen_summary(shared, ident)
+    if frozen:
+        put_file(repo, branch, "frozen/%s.json" % ident, freeze.summary_bytes(freeze.public_copy(frozen)),
+                 "Freeze %s as the promoter found it (promoter job %s)" % (ident, job))
+    body = updated_record(json.loads(text), manifest, shared, job, frozen)
     written = gh_json(["api", "-X", "PUT", "repos/%s/contents/datasets/%s.json" % (repo, ident), "--input", "-"],
                       json.dumps({
                           "message": "Record %s as on the grid (promoter job %s)" % (ident, job),
@@ -443,6 +478,15 @@ def open_record_update(repo, manifest, shared, job, origin):
     except RuntimeError as error:
         print("auto-merge not set on #%d: %s" % (pull["number"], error))
     return pull["number"]
+
+
+def put_file(repo, branch, path, data, message):
+    """A file on the promoter's branch, new or replacing what the branch already holds there."""
+    text, blob = file_at(repo, path, branch)
+    request = {"message": message, "content": base64.b64encode(data).decode("ascii"), "branch": branch}
+    if text is not None:
+        request["sha"] = blob
+    return gh_json(["api", "-X", "PUT", "repos/%s/contents/%s" % (repo, path), "--input", "-"], json.dumps(request))
 
 
 def enable_auto_merge(pull_id, head_sha):

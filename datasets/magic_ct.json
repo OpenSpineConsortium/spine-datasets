@@ -2,8 +2,22 @@
  "id": "magic_ct",
  "name": "MAGIC-CT (Zenodo)",
  "group": "ct",
+ "regions": [
+  "chest",
+  "abdomen"
+ ],
  "what": "562 CTs; a gated anomaly-harvest collection (group B7)",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: not fetched yet; what the release ships is to confirm on its page",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "reach": "gated",
  "licence": "a data use agreement (non-commercial)",
  "link": "https://zenodo.org/records/18389015",

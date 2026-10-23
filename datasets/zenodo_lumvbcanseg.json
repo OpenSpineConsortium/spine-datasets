@@ -2,8 +2,21 @@
  "id": "zenodo_lumvbcanseg",
  "name": "LumVBCanSeg lumbar CT (185, ShengJing Hospital)",
  "group": "ct",
+ "regions": [
+  "spine"
+ ],
  "what": "LumVBCanSeg lumbar CT, 185 subjects, ShengJing Hospital, Zenodo 8181250 published 2023-07-25, about 10.1 GB",
  "level_truth": "counted by the census pipeline once fetched",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: every file of the record was fetched, so any masks it ships are inside its archive",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": "/rs/rs_grp_oschome/shared/datasets/zenodo_lumvbcanseg/raw"
+  }
+ ],
  "reach": "get",
  "licence": "CC BY 4.0",
  "link": "https://zenodo.org/records/8181250",
@@ -11,7 +24,7 @@
   "Read the record listing and choose the include pattern, then spinesurg-ct-nnunet's tools/acquisition_fetch.py zenodo --collection lumvbcanseg --record 8181250 --include '<pattern>' (md5-verified) through slurm/acquisition_fetch.sh; then a chain entry with convert arguments, which does not exist yet.",
   "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid zenodo_lumvbcanseg; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"zenodo_lumvbcanseg\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
  ],
- "grid_path": null,
+ "grid_path": "/rs/rs_grp_oschome/shared/datasets/zenodo_lumvbcanseg/raw",
  "counts": {
   "subjects": 185,
   "size_gb": 10.08
@@ -20,8 +33,8 @@
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
  "source_status": "planned in the data platform at bf1432f; fetch job in the 2026-10-21 chain",
  "route": "download",
- "status": "fetching",
- "result": "",
+ "status": "fetched",
+ "result": "2026-10-22: on the grid at /rs/rs_grp_oschome/shared/datasets/zenodo_lumvbcanseg/raw, 1 files, 10075438693 bytes, sha256-checked, promoter job 40702867",
  "history": [
   {
    "date": "2026-10-21",
@@ -32,8 +45,13 @@
    "date": "2026-10-22",
    "step": "fetching",
    "note": "manifest ready from Zenodo's file list (1 files, 10.08 GB, md5 each); the licence on the page reads CC BY 4.0; the promoter fetches after merge"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "fetched",
+   "note": "on the grid at /rs/rs_grp_oschome/shared/datasets/zenodo_lumvbcanseg/raw, 1 files, 10075438693 bytes, sha256-checked, promoter job 40702867"
   }
  ],
  "obstacles": [],
- "next": "the promoter installs it after merge"
+ "next": ""
 }

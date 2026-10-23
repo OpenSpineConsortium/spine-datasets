@@ -2,17 +2,45 @@
  "id": "levelcheck_jhu",
  "name": "LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group)",
  "group": "fluoro",
+ "regions": [
+  "spine"
+ ],
+ "pairing": {
+  "spine": true,
+  "region": "thoracic and lumbar spine",
+  "xray": "398 intraoperative radiographs (De Silva 2016), and 61 more (Ketcha 2017)",
+  "ct": "the preoperative CT of each patient",
+  "subjects": "178 patients, and 24 more",
+  "pose": "not shipped; each level is placed by registration to the CT",
+  "masks": "levels labelled on the preoperative CT",
+  "annotate": "to read once the set is in hand",
+  "pair_key": "the patient"
+ },
  "what": "178 patients with preoperative CT and 398 intraoperative radiographs (De Silva et al., Spine 2016), plus Ketcha et al. 2017's 24 thoracolumbar patients with 61 Carestream DRX-1 radiographs, and the 62-image reader set of Manbachi et al. 2018; neither paper has a data statement",
  "level_truth": "the level of each vertebra on the radiograph, placed by registration to the labelled preoperative CT",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: the papers label the levels on the preoperative CT and do not say whether masks come with it",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  }
+ ],
  "licence": "not recorded; a data use agreement with the PI is the route",
- "link": null,
+ "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5045321/",
  "how_to_get": [
   "Write to Jeffrey Siewerdsen (MD Anderson, Surgical Data Science, since 2022), copying the JHU co-authors still there (Ali Uneri, Wojciech Zbijewski, J. Webster Stayman), addresses from the institutional directories, to confirm; the letter is letters/levelcheck_jhu.md.",
   "A yes brings a data use agreement with Johns Hopkins or MD Anderson, which the owner signs, then a transfer by link, fetched as a grid job on the owner's word."
  ],
  "reach": "get",
  "grid_path": null,
- "counts": {},
+ "counts": {
+  "subjects": 202,
+  "xray_images": 459,
+  "ct_volumes": 202
+ },
  "measured": {},
  "record": "SchwingNet docs/research/xray-dataset-requests.md section 15 (2026-10-21); no record under SchwingNet's data/sources/ existed for this set, so this one was written from that section",
  "source_status": "a letter sent 2026-10-21; no record in SchwingNet's registry yet",
@@ -39,6 +67,11 @@
    "date": "2026-10-21",
    "step": "asked",
    "note": "follow-up sent 13:37 UTC to Ali Uneri, JHU BME (address from a JHU BME page), Siewerdsen copied"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the link is De Silva et al.'s paper on PubMed Central (PMC5045321, Spine 2016), whose index entry read on 2026-10-23 gives 398 radiographs and 178 CT, as the record does; the record's counts add Ketcha et al. 2017's"
   }
  ],
  "obstacles": [

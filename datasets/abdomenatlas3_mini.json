@@ -1,0 +1,63 @@
+{
+ "id": "abdomenatlas3_mini",
+ "name": "AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images)",
+ "group": "ct",
+ "regions": [
+  "abdomen"
+ ],
+ "what": "AbdomenAtlas 3.0 Mini, the Hugging Face dataset AbdomenAtlas/AbdomenAtlas3.0Mini, the images of AbdomenAtlas 1.1, gathered from public sets that arXiv 2407.16697 lists in its Table 1; tier 1 of the anomaly harvest: all 40 archives fetched, 9,262 CT volumes in the release, of which the data platform counts 7,649 CTs, and 7,835 subjects qualifying, about 570.7 GB in the source's catalogue (NIfTI); its ids are volumes, not people, so one person can hold two scans; it holds CTSpine1K's 150 MSD-T10 cases and PANORAMA's 274 MSD and NIH cases, and 200 of AMOS22's labelled CTs are its people",
+ "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: the fetch took the image_only folder alone, so whatever masks the release ships are not on the grid; what they are is to confirm on its page",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": 7649,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/abdomenatlas3_mini"
+  }
+ ],
+ "reach": "held",
+ "licence": "CC BY-NC-SA 4.0",
+ "link": "https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas3.0Mini",
+ "how_to_get": [
+  "spinesurg-ct-nnunet's slurm/acquisition_fetch.sh hf --collection abdomenatlas3_mini --repo AbdomenAtlas/AbdomenAtlas3.0Mini --include '^image_only/', submitted from the harvest's acquisition folder; the check is FETCH_STATUS.json's unresolved_failures at 0, and, by the manifest's note, 40 tars by LFS sha256 and 9,262 ct.nii.gz to verify.",
+  "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid abdomenatlas3_mini; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"abdomenatlas3_mini\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
+ ],
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/abdomenatlas3_mini",
+ "counts": {
+  "subjects": 7835,
+  "ct_volumes": 7649,
+  "size_gb": 570.7
+ },
+ "measured": {},
+ "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-23 from Hugging Face in the first tier-1 launch of 2026-09-23; 40/40 archives; 7,649 CTs",
+ "route": "download",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/abdomenatlas3_mini (571 GB)",
+ "history": [
+  {
+   "date": "2026-09-23",
+   "step": "held",
+   "note": "fetched from Hugging Face in the first tier-1 launch of 2026-09-23, as the data platform's manifest at bf1432f records (40/40 archives; 7,649 CTs); on the grid at /rs/rs_grp_oschome/go2432/data/abdomenatlas3_mini, 532 GB by du in the data platform's census table of 2026-09-25; fetched by the owner's chain, not the promoter, so no manifest here covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the status listing of 2026-10-23 09:29 UTC (symphony-template grid branch, 1c8246b) shows the folder at 571 GB, and the sample index of 2026-10-22 13:39 it carries counts 9,264 files, 531.4 GB, in it; the manifest records no anatomy, so the region is the abdomen the release's name gives"
+  }
+ ],
+ "obstacles": [
+  "the owner's hand: the licence (CC BY-NC-SA 4.0) is non-commercial and share-alike; whether the project may use the copy on the grid under that term is his decision"
+ ],
+ "next": "the owner decides on the non-commercial term; the landing pass (#204) checks the files and their sizes"
+}

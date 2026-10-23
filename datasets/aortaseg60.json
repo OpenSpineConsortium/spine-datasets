@@ -1,0 +1,63 @@
+{
+ "id": "aortaseg60",
+ "name": "AortaSeg-60",
+ "group": "ct",
+ "regions": [
+  "chest",
+  "abdomen",
+  "pelvis"
+ ],
+ "what": "AortaSeg-60, 60 aorta CTs, angiograms and non-contrast scans, Zenodo record 18147026; tier 1 of the anomaly harvest: the data platform counts 55 usable CTs of the 60, about 15.87 GB in the catalogue (NIfTI)",
+ "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "not recorded: the fetch took the six case archives (Ven, Anev, Dissec, Old, Nat and Young), whose contents are to confirm",
+   "vertebrae": "not recorded",
+   "by": "not recorded",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": 55,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/aortaseg60"
+  }
+ ],
+ "reach": "held",
+ "licence": "CC0 1.0",
+ "link": "https://zenodo.org/records/18147026",
+ "how_to_get": [
+  "spinesurg-ct-nnunet's slurm/acquisition_fetch.sh zenodo --collection aortaseg60 --record 18147026 --include '^(Ven|Anev|Dissec|Old|Nat|Young)\\.zip$', submitted from the harvest's acquisition folder; the check is FETCH_STATUS.json's unresolved_failures at 0, and, by the manifest's note, 6 zips by md5 and 60 _image.nii.gz to verify.",
+  "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid aortaseg60; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"aortaseg60\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
+ ],
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/aortaseg60",
+ "counts": {
+  "subjects": 60,
+  "ct_volumes": 55,
+  "size_gb": 15.87
+ },
+ "measured": {},
+ "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-24 from Zenodo in the late tier-1 launch of 2026-09-24; 55 CTs",
+ "route": "download",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/aortaseg60 (16 GB)",
+ "history": [
+  {
+   "date": "2026-09-24",
+   "step": "held",
+   "note": "fetched from Zenodo in the late tier-1 launch of 2026-09-24, as the data platform's manifest at bf1432f records (55 CTs); on the grid at /rs/rs_grp_oschome/go2432/data/aortaseg60, 15 GB by du in the data platform's census table of 2026-09-25; fetched by the owner's chain, not the promoter, so no manifest here covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the status listing of 2026-10-23 09:29 UTC (symphony-template grid branch, 1c8246b) shows the folder at 16 GB, and the sample index of 2026-10-22 13:39 it carries counts 310 files, 14.8 GB, in it"
+  }
+ ],
+ "obstacles": [],
+ "next": "the landing pass (#204) checks the files and their sizes"
+}

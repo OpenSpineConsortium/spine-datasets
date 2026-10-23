@@ -1,0 +1,62 @@
+{
+ "id": "kidney_thoraxabdomen",
+ "name": "Kidney abnormality segmentation in thorax-abdomen CT",
+ "group": "ct",
+ "regions": [
+  "chest",
+  "abdomen"
+ ],
+ "what": "the kidney abnormality segmentation set of thorax-abdomen CT, Zenodo record 8014290; tier 1 of the anomaly harvest: its four image archives fetched, 215 CTs in MHA, one scan per file and the people not stated, about 38.35 GB in the catalogue; one of its CTs is the same voxels as one of PANORAMA's",
+ "level_truth": "the data platform records no level labels from the release; its own automatic level calls, which no radiologist has read, are kept apart under its anomaly_harvest folder",
+ "segmentations": [
+  {
+   "origin": "release",
+   "masks": "kidney abnormalities, as the release's name says; the fetch took images1-4.zip alone, so they are not on the grid",
+   "vertebrae": "not recorded",
+   "by": "the release's authors",
+   "volumes": null,
+   "where": null
+  },
+  {
+   "origin": "made",
+   "masks": "vertebra masks by TotalSegmentator and by SPINEPS with VERIDAH, each vertebra named by level, and the level call made from the two together",
+   "vertebrae": "by level",
+   "by": "the data platform's anomaly harvest, automatic; no radiologist has read them",
+   "volumes": 215,
+   "where": "/rs/rs_grp_oschome/go2432/data/anomaly_harvest/kidney_thoraxabdomen"
+  }
+ ],
+ "reach": "held",
+ "licence": "CC BY 4.0",
+ "link": "https://zenodo.org/records/8014290",
+ "how_to_get": [
+  "spinesurg-ct-nnunet's slurm/acquisition_fetch.sh zenodo --collection kidney_thoraxabdomen --record 8014290 --include '^images[1-4]\\.zip$', submitted from the harvest's acquisition folder; the check is FETCH_STATUS.json's unresolved_failures at 0, and, by the manifest's note, 4 zips by md5 and 215 MHA to verify.",
+  "The route as the manifest prints it: python3 data/reproduce/reacquire/reacquire.py --grid kidney_thoraxabdomen; on the grid, from ~/spinesurg-ct-nnunet/data_platform/reacquire, sbatch -D \"$PWD\" --export=ALL,IDS=\"kidney_thoraxabdomen\",MODE=--run reacquire.sbatch, as a Slurm job on the owner's word."
+ ],
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/kidney_thoraxabdomen",
+ "counts": {
+  "subjects": 215,
+  "ct_volumes": 215,
+  "size_gb": 38.35
+ },
+ "measured": {},
+ "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-24 from Zenodo in the late tier-1 launch of 2026-09-24; 215 CTs",
+ "route": "download",
+ "status": "held",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/kidney_thoraxabdomen (76 GB)",
+ "history": [
+  {
+   "date": "2026-09-24",
+   "step": "held",
+   "note": "fetched from Zenodo in the late tier-1 launch of 2026-09-24, as the data platform's manifest at bf1432f records (215 CTs); on the grid at /rs/rs_grp_oschome/go2432/data/kidney_thoraxabdomen, 71 GB by du in the data platform's census table of 2026-09-25; fetched by the owner's chain, not the promoter, so no manifest here covers it"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "the status listing of 2026-10-23 09:29 UTC (symphony-template grid branch, 1c8246b) shows the folder at 76 GB, and the sample index of 2026-10-22 13:39 it carries counts 432 files, 70.7 GB, in it"
+  }
+ ],
+ "obstacles": [],
+ "next": "the landing pass (#204) checks the files and their sizes"
+}

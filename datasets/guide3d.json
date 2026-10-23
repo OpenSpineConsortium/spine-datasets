@@ -5,7 +5,7 @@
  "what": "more than 8,700 bi-planar fluoroscopic frames of guidewires in a vascular phantom, two guidewires, varied flow",
  "level_truth": "none; phantom only",
  "reach": "get",
- "licence": "to confirm on the page",
+ "licence": "CC BY-NC 4.0 (cc-by-nc-4.0, as the Hugging Face dataset airvlab/guide3d's licence line reads, read 2026-10-22)",
  "link": "https://airvlab.github.io/guide3d/",
  "how_to_get": [
   "Open https://airvlab.github.io/guide3d/ and read the download route and the licence.",
@@ -19,17 +19,22 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; open per the paper, licence to confirm on the page; bi-planar real fluoroscopy geometry from one device, domain and calibration value only",
  "route": "download",
- "status": "todo",
+ "status": "needs-owner",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; open per the paper, licence to confirm on the page; bi-planar real fluoroscopy geometry from one device, domain and calibration value only"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "licence read on https://huggingface.co/datasets/airvlab/guide3d, the dataset the project page links: cc-by-nc-4.0; the project page itself names no licence and counts 8,746 samples (4,148 with fluid, 4,598 without); no manifest written, since the check takes no non-commercial licence"
   }
  ],
  "obstacles": [
-  "the licence on the page is still to confirm before any fetch"
+  "the owner's hand: the licence is non-commercial (CC BY-NC 4.0), which the manifest check refuses; whether the project takes the set under that term is his decision"
  ],
- "next": "a grid job onto /rs/rs_grp_oschome/shared/datasets/guide3d/raw by grid/README.md, from the holder's Beethoven session, once the licence on the page is confirmed"
+ "next": "the owner decides on the non-commercial term; if he takes it, a granted step in the history lets a manifest of the Hugging Face files go in"
 }

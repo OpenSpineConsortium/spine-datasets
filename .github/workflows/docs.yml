@@ -83,6 +83,21 @@ jobs:
       - name: Render the pipeline board into the site
         run: python3 tools/pipeline.py render --out "$RUNNER_TEMP/board" --issues "$RUNNER_TEMP/issues.json" --repo "$GITHUB_REPOSITORY" && cp "$RUNNER_TEMP/board/pipeline.html" "$RUNNER_TEMP/site/pipeline.html"
 
+      # The census (tools/census.py) is served beside the site at /census.html,
+      # with its CT page at /census-ct.html, folded from the records onto the
+      # ledger the Census workflow keeps on the branch census, so the pages
+      # carry each record's dates and the log even when this push reaches the
+      # site before the Census run reaches the branch. Before that branch
+      # exists the census starts afresh.
+      - name: Render the census into the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -H "Accept: application/vnd.github.raw" "repos/$GITHUB_REPOSITORY/contents/census.json?ref=census" > "$RUNNER_TEMP/last-census.json" 2>/dev/null || rm -f "$RUNNER_TEMP/last-census.json"
+          python3 tools/census.py render --out "$RUNNER_TEMP/census" --previous "$RUNNER_TEMP/last-census.json" --issues "$RUNNER_TEMP/issues.json" --repo "$GITHUB_REPOSITORY"
+          cp "$RUNNER_TEMP/census/census.html" "$RUNNER_TEMP/site/census.html"
+          cp "$RUNNER_TEMP/census/census-ct.html" "$RUNNER_TEMP/site/census-ct.html"
+
       - uses: actions/upload-pages-artifact@v5
         with:
           path: ${{ runner.temp }}/site
