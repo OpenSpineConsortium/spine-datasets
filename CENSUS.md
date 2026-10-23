@@ -294,6 +294,7 @@ Tasks whose record is not written yet:
 
 ## Changes, newest first
 
+- 2026-10-23 the census rules changed; every row was derived afresh
 - 2026-10-23 TotalSegmentator task data 'pleural_pericard_effusion' (600 CT): grid_path none to /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_pleural_effusion; stage asked to held; status requested to held
 - 2026-10-23 TotalSegmentator task data 'liver_lesions' (842 CT): grid_path none to /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_liver_lesions; stage asked to held; status requested to held
 - 2026-10-23 TotalSegmentator task data 'hip_implant' (71 CT): grid_path none to /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_hip_implant; stage asked to held; status requested to held
