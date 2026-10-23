@@ -85,6 +85,17 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | Veriserum (ETH Zurich, MICCAI 2025) | knee implant phantoms | about 110,000 dual-plane fluoroscopic images | the implants' 3D shapes as CAD meshes, not a CT | phantoms | registered for every image, 200 by hand | implant poses | nothing for the spine; real flat-panel noise and metal at scale | the image's own registered pose | [#41](https://github.com/OpenSpineConsortium/spine-datasets/issues/41) |
 | Veterinary: pig lower limb CT, CBCT and planar images (Goswami 2020, IEEE DataPort) | pig lower limb, a phantom; no spine | 14 C-arm planar projections: 7 poses with soft tissue and 7 without | a CT and two CBCTs, with and without soft tissue | 1 phantom | registration matrices shipped | none | nothing for the spine; a registration benchmark | one phantom: every projection pairs with its CT | [#22](https://github.com/OpenSpineConsortium/spine-datasets/issues/22) |
 
+### Pairs asked for, no record yet
+
+- [#182](https://github.com/OpenSpineConsortium/spine-datasets/issues/182) Obtain the Loop-X lower-torso cadaver frames of Zenodo 10390295 (Killeen, Unberath et al., JHU ARCADE), or show they are #170's cadaver
+- [#183](https://github.com/OpenSpineConsortium/spine-datasets/issues/183) Obtain the interventional XA frames of TCIA's CMB-MML and CMB-AML collections, with the same patients' CT
+- [#184](https://github.com/OpenSpineConsortium/spine-datasets/issues/184) Obtain the CMB-MML skeletal-survey radiographs for the patients whose CT is in the same collection
+- [#185](https://github.com/OpenSpineConsortium/spine-datasets/issues/185) Obtain the COVID-19-NY-SBU films of the patients whose CT is held, the 27 abdominal pairs first
+- [#186](https://github.com/OpenSpineConsortium/spine-datasets/issues/186) Find the CT localizers of TCIA's CT COLONOGRAPHY and other held CT collections, and fetch those missing
+- [#187](https://github.com/OpenSpineConsortium/spine-datasets/issues/187) Obtain US-X Complete (TUM CAMP): lumbar phantoms with Loop-X lateral X-rays and co-registered CBCT
+- [#188](https://github.com/OpenSpineConsortium/spine-datasets/issues/188) Obtain MIDRC Open Data Commons cases with both CT and CR or DX, the spine-labelled studies first
+- [#189](https://github.com/OpenSpineConsortium/spine-datasets/issues/189) Ask for the UCLA spine radiotherapy setup radiographs with their planning CTs (Charters et al. 2024)
+
 ## Every dataset
 
 | Dataset | Kind | Stage | Licence | Subjects | X-ray images | Videos and sweeps | Their frames | CT volumes | Size | Task |

@@ -175,6 +175,62 @@
    "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/171",
    "id": "fluoroseg",
    "paired": false
+  },
+  {
+   "number": 182,
+   "title": "Obtain the Loop-X lower-torso cadaver frames of Zenodo 10390295 (Killeen, Unberath et al., JHU ARCADE), or show they are #170's cadaver",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/182",
+   "id": "zenodo_loopx_torso",
+   "paired": true
+  },
+  {
+   "number": 183,
+   "title": "Obtain the interventional XA frames of TCIA's CMB-MML and CMB-AML collections, with the same patients' CT",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/183",
+   "id": "cmb_xa_frames",
+   "paired": true
+  },
+  {
+   "number": 184,
+   "title": "Obtain the CMB-MML skeletal-survey radiographs for the patients whose CT is in the same collection",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/184",
+   "id": "cmb_mml_radiographs",
+   "paired": true
+  },
+  {
+   "number": 185,
+   "title": "Obtain the COVID-19-NY-SBU films of the patients whose CT is held, the 27 abdominal pairs first",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/185",
+   "id": "covid19_ny_sbu_films",
+   "paired": true
+  },
+  {
+   "number": 186,
+   "title": "Find the CT localizers of TCIA's CT COLONOGRAPHY and other held CT collections, and fetch those missing",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/186",
+   "id": "tcia_ct_localizers",
+   "paired": true
+  },
+  {
+   "number": 187,
+   "title": "Obtain US-X Complete (TUM CAMP): lumbar phantoms with Loop-X lateral X-rays and co-registered CBCT",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/187",
+   "id": "usx_complete",
+   "paired": true
+  },
+  {
+   "number": 188,
+   "title": "Obtain MIDRC Open Data Commons cases with both CT and CR or DX, the spine-labelled studies first",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/188",
+   "id": "midrc_open_data",
+   "paired": true
+  },
+  {
+   "number": 189,
+   "title": "Ask for the UCLA spine radiotherapy setup radiographs with their planning CTs (Charters et al. 2024)",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/issues/189",
+   "id": "ucla_kv_mv_setup",
+   "paired": true
   }
  ],
  "records": {
