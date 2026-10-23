@@ -211,6 +211,7 @@ class Hosts(unittest.TestCase):
         self.assertFalse(promote.same_site("attacker.s3.amazonaws.com", "data.s3.amazonaws.com"))
         self.assertTrue(promote.same_site("ndownloader.figshare.com", "figshare.com"))
         self.assertTrue(promote.same_site("zenodo.org", "zenodo.org"))
+        self.assertTrue(promote.same_site("download.scidb.cn", "www.scidb.cn"))
 
     def test_a_restricted_licence_needs_a_grant(self):
         rec = {"licence": "CC BY-NC 4.0", "status": "fetching", "history": []}
