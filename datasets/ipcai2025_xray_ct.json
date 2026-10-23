@@ -2,6 +2,17 @@
  "id": "ipcai2025_xray_ct",
  "name": "IPCAI 2025 paired X-ray and CT set (Zenodo 15753063)",
  "group": "projections",
+ "pairing": {
+  "spine": false,
+  "region": "femur, as the paper's title and figures give it; to confirm on unzip",
+  "xray": "50 calibrated X-rays",
+  "ct": "5 CTs",
+  "subjects": "not stated",
+  "pose": "stored",
+  "masks": "contour masks and bone surface meshes",
+  "annotate": "nothing for the spine; a registration benchmark",
+  "pair_key": "to confirm on unzip"
+ },
  "what": "real calibrated X-ray images with 5 CT scans, 6.7 GB, from 'Automatic multi-view X-ray/CT registration using bone substructure contours'; the anatomy, pelvis or spine, to confirm on the page",
  "level_truth": "from the CT by the registration, if spine",
  "reach": "get",

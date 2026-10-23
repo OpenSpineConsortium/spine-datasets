@@ -2,6 +2,17 @@
  "id": "veriserum",
  "name": "Veriserum (ETH Zurich, MICCAI 2025)",
  "group": "video",
+ "pairing": {
+  "spine": false,
+  "region": "knee implant phantoms",
+  "xray": "about 110,000 dual-plane fluoroscopic images",
+  "ct": "the implants' 3D shapes as CAD meshes, not a CT",
+  "subjects": "phantoms",
+  "pose": "registered for every image, 200 by hand",
+  "masks": "implant poses",
+  "annotate": "nothing for the spine; real flat-panel noise and metal at scale",
+  "pair_key": "the image's own registered pose"
+ },
  "what": "about 110,000 dual-plane fluoroscopic images of knee implant phantoms with registered poses, 200 with manual registration (ETH Research Collection doi:10.3929/ethz-b-000701146)",
  "level_truth": "none; no spine",
  "reach": "get",
