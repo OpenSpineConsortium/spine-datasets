@@ -9,8 +9,8 @@
  "link": "https://drive.google.com/file/d/1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ/view",
  "how_to_get": [
   "Open https://drive.google.com/file/d/1r9wX1802gkU4-EQHMMlyAlEiWXGWLhhJ/view logged in to the owner's Google account: a page saying you need access offers Request access, one press that mails the file's owner; a page saying the file does not exist means it is gone (the Drive API answers not found for both, 2026-10-23).",
-  "Send letters/cm_spine_drive_file.md from the owner's mailbox to the corresponding authors, Erkang Cheng (ekcheng@iim.ac.cn) and Bo Song (songbo@iim.ac.cn), with the first author Yu Zeng (yzeng@iim.ac.cn) in copy; the addresses are the paper's own.",
-  "If no answer comes in two weeks, write to the journal's editorial office (electronics@mdpi.com, or the ethics team at publication.ethics@mdpi.com) citing the paper's Data Availability Statement, which names the repository as where code and data are; MDPI's ethics page asks authors who remove data to tell the office, and asks a reader to write to the corresponding author first.",
+  "Sent 2026-10-23 from the owner's mailbox: letters/cm_spine_drive_file.md to the corresponding authors, Erkang Cheng (ekcheng@iim.ac.cn) and Bo Song (songbo@iim.ac.cn), with the first author Yu Zeng (yzeng@iim.ac.cn) in copy; the addresses are the paper's own. The owner had written to the same three on 2026-09-10 and 2026-09-20 about the dead Drive link, with no answer, and the letter says so.",
+  "Written the same day, 2026-10-23, since the September emails were already the step MDPI asks for first: a note to the journal's editorial office (electronics@mdpi.com), the corresponding authors in copy, citing the paper's Data Availability Statement, which names the repository as where code and data are, and asking that the data be restored or deposited, or the statement corrected; MDPI's ethics page asks authors who remove data to tell the office. The ethics team (publication.ethics@mdpi.com) is the next step if the office does not answer.",
   "Once a copy is offered, the fetch is a Slurm job on the owner's word, never on the login node; the data platform's route (python3 data/reproduce/reacquire/reacquire.py --grid cm_spine_drive_file) works only if the Drive file comes back."
  ],
  "grid_path": null,
@@ -19,9 +19,9 @@
  },
  "measured": {},
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
- "source_status": "unreachable: the Drive file answers not found to the owner's Google account (2026-10-23) and gave gdown an empty directory (2026-09-01); the repository github.com/zengyuyuyu/Neighbor is no longer public (its files answer 404 and the profile lists no public repository, 2026-10-23); the code survives in Software Heritage, src only, with no image or label; no public copy found by search on 2026-10-23 (the set's name, the paper, the device, the Drive id, grep.app, Zenodo, Roboflow Universe, Kaggle, six dataset lists, the three papers citing the paper); the route is a letter to the corresponding authors",
+ "source_status": "unreachable: the Drive file answers not found to the owner's Google account (2026-10-23) and gave gdown an empty directory (2026-09-01); the repository github.com/zengyuyuyu/Neighbor is no longer public (its files answer 404 and the profile lists no public repository, 2026-10-23); the code survives in Software Heritage, src only, with no image or label; no public copy found by search on 2026-10-23 (the set's name, the paper, the device, the Drive id, grep.app, Zenodo, Roboflow Universe, Kaggle, six dataset lists, the three papers citing the paper); the letter to the corresponding authors and a note to the journal's editorial office went on 2026-10-23",
  "route": "letter",
- "status": "todo",
+ "status": "requested",
  "result": "",
  "history": [
   {
@@ -43,10 +43,15 @@
    "date": "2026-10-23",
    "step": "researched",
    "note": "the Drive file answers not found to the owner's Google account and the repository is no longer public (its files 404, no public repository on the profile); Software Heritage keeps the code (src only); no public copy, fork or re-upload found by search; the paper's corresponding authors are Erkang Cheng and Bo Song, Institute of Intelligent Machines, Hefei; the letter is rewritten for them and the route is letter"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "asked",
+   "note": "the letter sent from the owner's mailbox to Cheng and Song, Zeng in copy, and the same day a note to the Electronics editorial office with the two corresponding authors in copy, citing the Data Availability Statement, since the owner's own emails of 2026-09-10 and 2026-09-20 to the three authors about the dead Drive link had no answer; waiting for either; the Drive link is still the owner's to open logged in"
   }
  ],
  "obstacles": [
   "the set was only ever a Google Drive file linked from a repository README, and both are gone from public view; no licence is stated and the paper carries no ethics or consent statement, so the terms and the approval must come from the authors"
  ],
- "next": "the owner opens the Drive link logged in (Request access if the page offers it) and sends the letter; the record moves to asked when it goes"
+ "next": "waiting for the authors or the editorial office to answer the letter and the note of 2026-10-23; a yes moves the record to granted and the fetch is a Slurm job on the owner's word; the owner still opens the Drive link logged in (Request access if the page offers it)"
 }
