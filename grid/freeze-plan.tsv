@@ -11,7 +11,7 @@ cathaction	/rs/rs_grp_oschome/go2432/data/cathaction	-
 cobra2026	/rs/rs_grp_oschome/go2432/data/cobra2026	808615000000
 csi2014	/rs/rs_grp_oschome/go2432/data/csi2014	3600000000
 csxa	/rs/rs_grp_oschome/go2432/data/csxa_cervical_xray_atlas	-
-ctpelvic1k	/rs/rs_grp_oschome/go2432/data/ctpelvic1k	-
+ctpelvic1k	/rs/rs_grp_oschome/go2432/data/ctpelvic1k_clinic	14000000000
 ctspine1k	/rs/rs_grp_oschome/go2432/data/ctspine1k	-
 ctspinopelvic1k	/rs/rs_grp_oschome/go2432/data/ctspinopelvic1k	-
 curvas	/rs/rs_grp_oschome/go2432/data/curvas	29400000000
