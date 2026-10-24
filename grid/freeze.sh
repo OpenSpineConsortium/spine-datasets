@@ -23,9 +23,15 @@
 #                                     account's own gh; no job, a few calls to GitHub's API, and a
 #                                     session brings them into the records (tools/freeze.py apply)
 #   bash freeze.sh run SHARE          inside a job: freeze each set of SHARE not yet frozen
+#   bash freeze.sh overlap            one job that reads every frozen set's file list and a few DICOM
+#                                     headers per folder into lineage/ (tools/lineage.py): the ledger,
+#                                     which stays here, and OVERLAP.json, counts alone, which report
+#                                     then carries back too; it reads no image and writes into no set
+#   bash freeze.sh lineage            inside that job: tools/lineage.py build
 #
-# The grid gate's words freeze pilot, freeze start, freeze status and freeze report (hpcworker's
-# tools/grid_gate.sh) fetch tools/freeze.py, this file and grid/freeze-plan.tsv at the head of the
+# The grid gate's words freeze pilot, freeze start, freeze status, freeze report and freeze overlap
+# (hpcworker's tools/grid_gate.sh) fetch tools/freeze.py, tools/lineage.py, this file and
+# grid/freeze-plan.tsv at the head of the
 # default branch into code/ and run these, so nobody types them. A job that reaches its wall time or
 # is requeued carries on: a set already frozen is skipped, a set half read resumes from its
 # checkpoint (.FROZEN.partial) in its folder, and a lock per set, which the kernel lets go when a job
@@ -47,6 +53,8 @@ HOME_DIR=${FREEZE_HOME:-/rs/rs_grp_oschome/$USER/spine-datasets-freeze}
 PLAN=$HOME_DIR/code/freeze-plan.tsv
 HPCW=${HPCWORKER:-$HOME/hpcworker/framework/bin/hpcworker}
 CODE=${FREEZE_CODE:-$HOME_DIR/code/freeze.py}
+LINEAGE=${FREEZE_LINEAGE:-$HOME_DIR/code/lineage.py}
+SHARED=${PROMOTER_SHARED:-/rs/rs_grp_oschome/shared/datasets}
 REPO=OpenSpineConsortium/spine-datasets
 REPORT_BRANCH=freeze-report
 
@@ -121,6 +129,9 @@ case "${1:-}" in
     for ident in $(ls -t "$HOME_DIR"/measured/*.json 2>/dev/null | head -20 | xargs -r -n1 basename | sed 's/\.json$//'); do
       echo "measured $ident: $(tr -d ' \n' < "$HOME_DIR/measured/$ident.json")"
     done
+    if [ -f "$HOME_DIR/lineage/OVERLAP.json" ]; then
+      echo "overlap: $(grep -o '"built_at": "[^"]*"' "$HOME_DIR/lineage/OVERLAP.json"), $(grep -c '"a":' "$HOME_DIR/lineage/OVERLAP.json") pairs share something"
+    fi
     hpcw job status --project "$PROJECT" --last 8 || true
     ;;
   report)
@@ -129,6 +140,9 @@ case "${1:-}" in
     tree_body=$HOME_DIR/report-tree.json
     "$py" "$CODE" bundle "$HOME_DIR/frozen" > "$tree_body.tmp" && mv -f "$tree_body.tmp" "$tree_body" \
       || { rm -f "$tree_body.tmp"; echo "nothing to report"; exit 1; }
+    if [ -f "$HOME_DIR/lineage/OVERLAP.json" ] && [ -f "$LINEAGE" ]; then
+      "$py" "$LINEAGE" tree "$HOME_DIR/lineage/OVERLAP.json" "$tree_body" && echo "with lineage/OVERLAP.json"
+    fi
     tree=$(gh api -X POST "repos/$REPO/git/trees" --input "$tree_body" --jq .sha < /dev/null)
     [[ "$tree" =~ ^[0-9a-f]{40}$ ]] || { echo "GitHub took no tree"; exit 1; }
     sets=$(ls "$HOME_DIR"/frozen/*.json 2>/dev/null | wc -l)
@@ -164,7 +178,23 @@ case "${1:-}" in
       ) 9>"$HOME_DIR/locks/$ident.lock"
     done < "$2"
     ;;
+  overlap)
+    [ -f "$LINEAGE" ] && [ -f "$HOME_DIR/code/freeze.sh" ] || { echo "copy tools/lineage.py and grid/freeze.sh from the default branch into $HOME_DIR/code first"; exit 2; }
+    if squeue -h -u "$USER" -n "$PROJECT-lineage" -o %i 2>/dev/null | grep -q .; then
+      echo "a lineage job is already queued or running; not queueing another"; exit 0
+    fi
+    echo "queueing one lineage job: every frozen set's file list and DICOM headers, no image read"
+    hpcw job submit --project "$PROJECT" --name lineage --class batch --dir "$HOME_DIR" \
+      -- "$HOME_DIR/code/freeze.sh" lineage
+    ;;
+  lineage)
+    [ -n "${SLURM_JOB_ID:-}" ] || { echo "lineage is for inside a job; use overlap"; exit 2; }
+    py=$(python_bin)
+    echo "$(date -u +%FT%TZ) lineage job $SLURM_JOB_ID on $(hostname -s)"
+    "$py" "$LINEAGE" build --plan "$PLAN" --shared "$SHARED" --out "$HOME_DIR/lineage" \
+      --workers "${SLURM_CPUS_PER_TASK:-1}"
+    ;;
   *)
-    echo "usage: freeze.sh pilot ID | start JOBS | submit LIST JOBS | status | report | run SHARE"; exit 2
+    echo "usage: freeze.sh pilot ID | start JOBS | submit LIST JOBS | status | report | overlap | run SHARE | lineage"; exit 2
     ;;
 esac

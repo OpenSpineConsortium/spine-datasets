@@ -229,7 +229,7 @@ class GridScript(unittest.TestCase):
         self.home = os.path.join(self.tmp.name, "home")
         os.makedirs(os.path.join(self.home, "code"))
         root = Path(__file__).resolve().parent.parent
-        for name in ("tools/freeze.py", "grid/freeze.sh"):
+        for name in ("tools/freeze.py", "tools/lineage.py", "grid/freeze.sh"):
             Path(self.home, "code", os.path.basename(name)).write_bytes((root / name).read_bytes())
         plan = "".join("%s\t%s\t%s\n" % (ident, os.path.join(self.tmp.name, ident), size)
                        for ident, size in (("big", 800 * 10 ** 9), ("near", 102 * 10 ** 9), ("small", 3 * 10 ** 9),
@@ -290,6 +290,32 @@ class GridScript(unittest.TestCase):
         self.assertEqual([entry["path"] for entry in tree], ["frozen/near.json"])
         self.assertIn("-X POST repos/OpenSpineConsortium/spine-datasets/git/refs -f ref=refs/heads/freeze-report",
                       Path(calls).read_text())
+
+    def test_overlap_queues_one_lineage_job_whose_table_report_carries_back(self):
+        out = self.script("overlap")
+        queued = [line for line in out.splitlines() if line.startswith("HPCW ")]
+        self.assertEqual(len(queued), 1)
+        self.assertIn("--name lineage", queued[0])
+        self.assertTrue(queued[0].endswith("freeze.sh lineage"))
+        for share in self.shares(self.script("start", "4")):
+            self.script("run", share, job="7")
+        self.script("lineage", job="8")
+        table = json.loads(Path(self.home, "lineage", "OVERLAP.json").read_text())
+        self.assertEqual(sorted(table["sets"]), ["big", "near", "small", "unknown"])
+        self.assertIn("overlap: ", self.script("status"))
+        bin_dir = os.path.join(self.tmp.name, "bin")
+        os.makedirs(bin_dir)
+        calls = os.path.join(self.tmp.name, "gh-calls")
+        Path(bin_dir, "gh").write_text(
+            '#!/bin/bash\ncase "$*" in *git/trees*) cat "${@: -3:1}" > %s.tree; echo %s;; *git/commits*) echo %s;;\n'
+            '  *"git/ref/heads/"*) exit 1;; *) echo ok;; esac\n' % (calls, "a" * 40, "b" * 40))
+        os.chmod(os.path.join(bin_dir, "gh"), 0o755)
+        env = dict(os.environ, FREEZE_HOME=self.home, HPCWORKER=self.hpcw, USER="someone",
+                   PATH=bin_dir + os.pathsep + os.environ["PATH"])
+        subprocess.run(["bash", os.path.join(self.home, "code", "freeze.sh"), "report"],
+                       env=env, capture_output=True, text=True, check=True)
+        paths = [entry["path"] for entry in json.loads(Path(calls + ".tree").read_text())["tree"]]
+        self.assertEqual(paths[-1], "lineage/OVERLAP.json")
 
 
 if __name__ == "__main__":
