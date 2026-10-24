@@ -141,9 +141,13 @@ These are leads to measure in step 2, not conclusions.
 
 1. This note and the record schema for `lineage` and `retired`, with the census check that
    refuses a retirement which breaks the rules above (no grid job).
-2. One read-only grid job, on the owner's word: build lineage.sqlite from the frozen file lists,
-   the sets' own mapping files and the sample index, and write OVERLAP.json. It reads lists and
-   headers, not image bytes, and writes nothing into any dataset folder.
+2. One read-only grid job, on the owner's word (given 2026-10-24): build lineage.sqlite from the
+   frozen file lists and the DICOM headers, and write OVERLAP.json. It reads lists and headers, not
+   image bytes, and writes nothing into any dataset folder. Built as tools/lineage.py, queued by
+   the gate word freeze overlap (grid/freeze.sh overlap), its table carried back by freeze report
+   as lineage/OVERLAP.json. The sets' own mapping files and the sample index are not read in this
+   first pass: the UIDs, the hashes and identifier-like names come first, and the mapping files
+   join once their formats are read from the grid.
 3. A removal list from OVERLAP.json: for each candidate, the bytes it frees, the patients it
    shares and with which set, what it alone holds, and its recipe. The owner picks by name.
 4. Retirement jobs for the sets the owner picks, one deletion job each, each written into its
