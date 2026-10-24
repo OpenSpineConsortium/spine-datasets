@@ -117,6 +117,10 @@ class PlannerTest(unittest.TestCase):
             with open(request) as handle:
                 made = json.load(handle)
             self.assertEqual([a["id"] for a in made["actions"]], ["big", "wanted"])
+            self.assertEqual((made["actions"][0]["grid_path"], made["actions"][0]["tree_sha256"]),
+                             ("/rs/rs_grp_oschome/go2432/data/x", TREE))
+            self.assertNotIn("grid_path", made["actions"][1])
+            self.assertEqual(made["actions"][0]["folder"], "/rs/rs_grp_oschome/go2432/data/x")
             with open(text) as handle:
                 body = handle.read()
             self.assertIn("big (BIG): retire", body)
