@@ -500,6 +500,7 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-24 CTPelvic1K: grid_path /rs/rs_grp_oschome/go2432/data/ctpelvic1k to /rs/rs_grp_oschome/go2432/data/ctpelvic1k_clinic
 - 2026-10-24 RSNA pulmonary embolism CT (RSPECT): grid_bytes none to 980.2 GB
 - 2026-10-24 SOF lateral spine radiographs (Study of Osteoporotic Fractures): licence a SOF data request agreement; terms to confirm on the page to an NIA Outgoing Human Data Transfer Agreement signed by the PI and Wayne State's Signing Official: non-profit research on the approved project only, no redistribution, no re-identification, acknowledgement, 12 months renewable, destruction certified at the end; stage to-ask to needs-owner; status todo to needs-owner
 - 2026-10-24 MrOS lateral spine radiographs (Osteoporotic Fractures in Men): licence a MrOS data request agreement; terms to confirm on the page to an NIA Outgoing Human Data Transfer Agreement signed by the PI and Wayne State's Signing Official: non-profit research on the approved project only, no redistribution, no re-identification, acknowledgement, 12 months renewable, destruction certified at the end; stage to-ask to needs-owner; status todo to needs-owner

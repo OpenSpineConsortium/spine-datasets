@@ -1902,9 +1902,9 @@
    }
   },
   "ctpelvic1k": {
-   "digest": "65629daf01cdc75e8e0454b9985c8cf92df7c6e748af499dc9584e38503709ac",
+   "digest": "6fc873eaa15ee83082474fbca68eb61701ff18f9477e54910a5283ce6a6abd85",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-24",
    "row": {
     "id": "ctpelvic1k",
     "name": "CTPelvic1K",
@@ -1918,7 +1918,7 @@
     "link": "https://zenodo.org/record/4588403",
     "what": "172 pelvic CT volumes of the release's datasets 6 and 7, with the pelvic masks of datasets 1 to 5 mapped back to their sources",
     "level_truth": "pelvis, sacrum and lumbar masks",
-    "grid_path": "/rs/rs_grp_oschome/go2432/data/ctpelvic1k",
+    "grid_path": "/rs/rs_grp_oschome/go2432/data/ctpelvic1k_clinic",
     "on_grid": true,
     "grid_bytes": null,
     "tree_sha256": null,
@@ -1932,7 +1932,7 @@
     "next": "",
     "since": "2026-10-23",
     "last_step": {
-     "date": "2026-10-23",
+     "date": "2026-10-24",
      "step": "held"
     },
     "paired": false,
@@ -11839,6 +11839,17 @@
     "grid_bytes": [
      null,
      980237210056
+    ]
+   }
+  },
+  {
+   "date": "2026-10-24",
+   "id": "ctpelvic1k",
+   "kind": "changed",
+   "changes": {
+    "grid_path": [
+     "/rs/rs_grp_oschome/go2432/data/ctpelvic1k",
+     "/rs/rs_grp_oschome/go2432/data/ctpelvic1k_clinic"
     ]
    }
   }
