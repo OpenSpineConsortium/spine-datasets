@@ -162,6 +162,18 @@ What the next pass needs, to see a scan across re-encodings:
    reads image data, unlike the first pass, so it is a heavier job and needs the owner's word and
    count.
 
+The second fingerprint is built (the owner's "Go" of 2026-10-24, one job): tools/lineage.py
+now reads every NIfTI image volume's 348-byte header, its labels and masks left out, and keys it
+by geometry, the three axes' sizes and spacings sorted so another axis order keys the same. Only
+volumes whose geometry another set's volume shares are read whole, in processes, for two
+signatures: the sha256 of the voxel bytes (the same scan stored alike, however compressed) and the
+voxel count with the sum of the scaled values (the same values in any axis order or integer
+type). OVERLAP.json, format 2, adds per pair same_geometry (a lead), same_values and same_voxels
+(the same scan), and per set nifti_volumes and nifti_read; no voxel batch starts after 8 hours,
+so a pass longer than the job's 12-hour wall time still writes its table, and nifti_read says how
+far it got. A volume cropped, resampled or re-windowed by a release changes geometry or values,
+so it is still not seen; the mapping files remain the way to those.
+
 What the first pass does give now: the per-set sizes, file counts and DICOM series, study and
 patient counts for the 52 DICOM sets (6.5 TB across all 98), which feed the removal list's sizes.
 

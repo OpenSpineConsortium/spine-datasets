@@ -19,6 +19,18 @@ folder, and needs no fetch. It writes two things into its own folder:
   path, name, UID or patient ID, so it may leave the grid (public_problems holds it to that), and
   freeze.sh report carries it back as lineage/OVERLAP.json.
 
+Since a NIfTI volume carries no UID and each release re-encodes it (the first pass, grid job
+40775283, found no pair sharing a byte), `build` also reads every NIfTI image volume's header
+(its first 348 bytes, the gzip's start alone), and keys it by its geometry: the sizes and voxel
+spacings of its three axes, sorted, so a volume stored in another axis order keys the same. Only
+volumes whose geometry another set's volume shares are then read whole, once, for two signatures:
+the sha256 of the voxel bytes, the same scan stored the same way however the file was compressed,
+and the sum of the scaled voxel values with their count, the same values in any axis order or any
+integer type. These read image data, so they run only in the job the owner gave his word for
+(2026-10-24, "Go" on the voxel fingerprint), and the counts alone leave the grid: for each pair,
+how many volumes share a geometry (a lead), share their values (the same scan), and share their
+voxel bytes (the same scan stored alike).
+
 Three kinds of evidence, strongest first: a DICOM series or study UID is unique by construction,
 so a shared one is the same scan; a shared sha256 is the same bytes; a shared name is a lead only,
 since sets name cases case_001 alike, so names count only when they look like an identifier
@@ -43,12 +55,13 @@ import sqlite3
 import struct
 import sys
 import time
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 
 FILE_LIST = "FROZEN.files.tsv.gz"
 LEDGER = "lineage.sqlite"
 OVERLAP = "OVERLAP.json"
-FORMAT = "spine-datasets/overlap 1"
+FORMAT = "spine-datasets/overlap 2"
+OLD_FORMAT = "spine-datasets/overlap 1"
 ID_SHAPE = re.compile(r"^[a-z0-9_]+$")
 # files smaller than this are licences, readmes and empty masks, which many sets share by chance
 DATA_BYTES = 64 * 1024
@@ -268,16 +281,135 @@ def file_rows(folder):
             yield digest, int(size), path
 
 
+# NIfTI volumes: the geometry from the header, the signatures from the voxels.
+
+NIFTI_HEADER = 348
+LABEL_WORDS = re.compile(r"(^|[/_.-])(seg|segs|segmentation|segmentations|label|labels|labelstr|mask|masks|msk|gt)([/_.-]|$)",
+                         re.IGNORECASE)
+# datatype code -> (array typecode, bytes per voxel); the integer and float types volumes are stored in
+NIFTI_TYPES = {2: ("B", 1), 4: ("h", 2), 8: ("i", 4), 16: ("f", 4), 64: ("d", 8), 256: ("b", 1),
+               512: ("H", 2), 768: ("I", 4)}
+
+
+def is_volume(path):
+    lower = path.lower()
+    return lower.endswith((".nii.gz", ".nii")) and not LABEL_WORDS.search(lower)
+
+
+def open_volume(path):
+    return gzip.open(path, "rb") if path.lower().endswith(".gz") else open(path, "rb")
+
+
+def nifti_header(path):
+    """(endian, dims, spacings, datatype, vox_offset, slope, inter) from a NIfTI-1 header, or None."""
+    try:
+        with open_volume(path) as handle:
+            raw = handle.read(NIFTI_HEADER)
+    except (OSError, EOFError, ValueError):
+        return None
+    if len(raw) < NIFTI_HEADER:
+        return None
+    for endian in "<>":
+        if struct.unpack(endian + "i", raw[:4])[0] == NIFTI_HEADER:
+            break
+    else:
+        return None
+    dim = struct.unpack(endian + "8h", raw[40:56])
+    datatype = struct.unpack(endian + "h", raw[70:72])[0]
+    pixdim = struct.unpack(endian + "8f", raw[76:108])
+    vox_offset, slope, inter = struct.unpack(endian + "3f", raw[108:120])
+    if not 3 <= dim[0] <= 7 or any(size < 1 for size in dim[1:4]):
+        return None
+    return endian, dim[1:dim[0] + 1], pixdim[1:4], datatype, int(vox_offset), slope, inter
+
+
+def geometry_of(header):
+    """The three spatial axes' sizes and spacings, sorted, so an axis order does not change it."""
+    if not header:
+        return None
+    _endian, dims, spacings, _datatype, _offset, _slope, _inter = header
+    axes = sorted("%dx%.3f" % (size, abs(spacing)) for size, spacing in zip(dims[:3], spacings))
+    extra = "".join("x%d" % size for size in dims[3:] if size > 1)
+    return ",".join(axes) + extra
+
+
+def signatures_of(path):
+    """(sha256 of the voxel bytes, scaled sum with count) of one volume, or ('', '') when unreadable."""
+    import array
+    import hashlib
+    header = nifti_header(path)
+    if not header or header[3] not in NIFTI_TYPES:
+        return "", ""
+    endian, dims, _spacings, datatype, offset, slope, inter = header
+    typecode, width = NIFTI_TYPES[datatype]
+    count = 1
+    for size in dims:
+        count *= size
+    digest, total = hashlib.sha256(), 0
+    try:
+        with open_volume(path) as handle:
+            handle.read(max(offset, NIFTI_HEADER))
+            left = count * width
+            while left > 0:
+                block = handle.read(min(left, 64 * 1024 * 1024))
+                if not block or len(block) % width:
+                    return "", ""
+                left -= len(block)
+                digest.update(block)
+                values = array.array(typecode)
+                values.frombytes(block)
+                if (endian == ">") != (sys.byteorder == "big"):
+                    values.byteswap()
+                total += sum(values)
+    except (OSError, EOFError, ValueError, MemoryError):
+        return "", ""
+    if slope and slope == slope:
+        total = total * slope + (inter if inter == inter else 0) * count
+    return digest.hexdigest(), "%d:%.0f" % (count, total)
+
+
+def fingerprint_shared(db, folders, workers=1, log=None, budget=None):
+    """Read whole only the volumes whose geometry a volume of another set shares.
+
+    Summing voxels holds Python's lock, so the reads run in processes, a batch at a time; once
+    budget seconds have gone no further batch starts, the volumes left keep blank signatures and
+    the table's nifti_read says how many were read, so a pass that would outrun the job's wall
+    time still writes its table."""
+    rows = db.execute(
+        "SELECT v.dataset, v.path FROM volume v WHERE EXISTS (SELECT 1 FROM volume w"
+        " WHERE w.geometry = v.geometry AND w.dataset != v.dataset) ORDER BY v.dataset, v.path").fetchall()
+    if log:
+        log("%d volumes share a geometry with another set's; reading their voxels" % len(rows))
+    started, done, step = time.time(), 0, max(1, workers) * 8
+    with ProcessPoolExecutor(max_workers=max(1, workers)) as pool:
+        for first in range(0, len(rows), step):
+            if budget is not None and time.time() - started > budget:
+                if log:
+                    log("the voxel budget is spent: %d of %d volumes read" % (done, len(rows)))
+                break
+            batch = rows[first:first + step]
+            paths = [os.path.join(folders[ident], path) for ident, path in batch]
+            for (ident, path), (voxels, vsum) in zip(batch, pool.map(signatures_of, paths)):
+                db.execute("UPDATE volume SET voxels = ?, vsum = ? WHERE dataset = ? AND path = ?",
+                           (voxels, vsum, ident, path))
+            done += len(batch)
+            db.commit()
+            if log and done % 200 < step:
+                log("%d of %d volumes read, %.0f s" % (done, len(rows), time.time() - started))
+    db.commit()
+
+
 # The ledger.
 
 SCHEMA = """
 CREATE TABLE dataset(id TEXT PRIMARY KEY, folder TEXT, files INTEGER, bytes INTEGER);
 CREATE TABLE file(dataset TEXT, path TEXT, sha256 TEXT, bytes INTEGER, stem TEXT);
 CREATE TABLE dicom(dataset TEXT, folder TEXT, patient TEXT, study TEXT, series TEXT);
+CREATE TABLE volume(dataset TEXT, path TEXT, geometry TEXT, voxels TEXT, vsum TEXT);
 """
 
 
-def build(sets, out, workers=1, log=None):
+def build(sets, out, workers=1, log=None, budget=None):
     """Write the ledger and the overlap table into out; returns the table."""
     os.makedirs(out, exist_ok=True)
     ledger = os.path.join(out, LEDGER)
@@ -290,6 +422,8 @@ def build(sets, out, workers=1, log=None):
         files, size = load_set(db, ident, folder, workers)
         if log:
             log("%s: %d files, %d bytes, %.0f s" % (ident, files, size, time.time() - started))
+    db.execute("CREATE INDEX volume_geometry ON volume(geometry)")
+    fingerprint_shared(db, dict(sets), workers, log, budget)
     db.executescript("""
 CREATE INDEX file_sha ON file(sha256);
 CREATE INDEX dicom_series ON dicom(series);
@@ -317,11 +451,15 @@ def load_set(db, ident, folder, workers):
     db.executemany("INSERT INTO file VALUES (?,?,?,?,?)", batch)
     db.execute("INSERT INTO dataset VALUES (?,?,?,?)", (ident, folder, count, total))
     candidates = dicom_candidates(paths)
+    volumes = [path for path in paths if is_volume(path)]
     del paths
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
         headers = pool.map(lambda item: (item[0], first_header(folder, item[1])), sorted(candidates.items()))
         db.executemany("INSERT INTO dicom VALUES (?,?,?,?,?)",
                        ((ident, sub, h[0], h[1], h[2]) for sub, h in headers if h))
+        shapes = pool.map(lambda path: (path, geometry_of(nifti_header(os.path.join(folder, path)))), volumes)
+        db.executemany("INSERT INTO volume VALUES (?,?,?,'','')",
+                       ((ident, path, key) for path, key in shapes if key))
     db.commit()
     return count, total
 
@@ -347,13 +485,16 @@ CREATE INDEX temp.set_uid_uid ON set_uid(uid);
             "SELECT dataset, count(DISTINCT nullif(series,'')), count(DISTINCT nullif(study,'')),"
             " count(DISTINCT nullif(patient,'')) FROM dicom GROUP BY dataset"):
         sets[ident].update({"dicom_series": series, "dicom_studies": studies, "patients": patients})
+    for ident, volumes, read in db.execute(
+            "SELECT dataset, count(*), sum(voxels != '') FROM volume GROUP BY dataset"):
+        sets[ident].update({"nifti_volumes": volumes, "nifti_read": read or 0})
     for ident, unique in db.execute(
             "SELECT a.dataset, sum(a.bytes) FROM set_sha a WHERE NOT EXISTS"
             " (SELECT 1 FROM set_sha b WHERE b.sha256 = a.sha256 AND b.dataset != a.dataset)"
             " GROUP BY a.dataset"):
         sets[ident]["unique_bytes"] = unique
     for entry in sets.values():
-        for key in ("dicom_series", "dicom_studies", "patients", "unique_bytes"):
+        for key in ("dicom_series", "dicom_studies", "patients", "unique_bytes", "nifti_volumes", "nifti_read"):
             entry.setdefault(key, 0)
     pairs = {}
     queries = {
@@ -372,6 +513,13 @@ CREATE INDEX temp.set_uid_uid ON set_uid(uid);
                  " ON a.stem = b.stem AND a.dataset < b.dataset GROUP BY 1, 2",
         "names_to_uids": "SELECT s.dataset, u.dataset, count(DISTINCT s.stem) FROM set_stem s JOIN set_uid u"
                          " ON s.stem = u.uid AND s.dataset != u.dataset GROUP BY 1, 2",
+        "same_geometry": "SELECT a.dataset, b.dataset, count(DISTINCT a.path) FROM volume a JOIN volume b"
+                         " ON a.geometry = b.geometry AND a.dataset < b.dataset GROUP BY 1, 2",
+        "same_values": "SELECT a.dataset, b.dataset, count(DISTINCT a.path) FROM volume a JOIN volume b"
+                       " ON a.geometry = b.geometry AND a.vsum = b.vsum AND a.dataset < b.dataset"
+                       " WHERE a.vsum != '' GROUP BY 1, 2",
+        "same_voxels": "SELECT a.dataset, b.dataset, count(DISTINCT a.path) FROM volume a JOIN volume b"
+                       " ON a.voxels = b.voxels AND a.dataset < b.dataset WHERE a.voxels != '' GROUP BY 1, 2",
     }
     for key, query in queries.items():
         for a, b, value in db.execute(query):
@@ -390,15 +538,18 @@ CREATE INDEX temp.set_uid_uid ON set_uid(uid);
 
 # The public table.
 
-PAIR_KEYS = {"a", "b", "same_files", "same_bytes", "series", "studies", "patients", "names", "names_to_uids"}
-SET_KEYS = {"files", "bytes", "dicom_series", "dicom_studies", "patients", "unique_bytes"}
+OLD_PAIR_KEYS = {"a", "b", "same_files", "same_bytes", "series", "studies", "patients", "names", "names_to_uids"}
+OLD_SET_KEYS = {"files", "bytes", "dicom_series", "dicom_studies", "patients", "unique_bytes"}
+PAIR_KEYS = OLD_PAIR_KEYS | {"same_geometry", "same_values", "same_voxels"}
+SET_KEYS = OLD_SET_KEYS | {"nifti_volumes", "nifti_read"}
 
 
 def public_problems(table):
     """What would keep the table on the grid: anything but ids and whole numbers where they belong."""
     problems = []
-    if not isinstance(table, dict) or table.get("format") != FORMAT:
+    if not isinstance(table, dict) or table.get("format") not in (FORMAT, OLD_FORMAT):
         return ["not an overlap table of format %s" % FORMAT]
+    pair_keys, set_keys = (PAIR_KEYS, SET_KEYS) if table["format"] == FORMAT else (OLD_PAIR_KEYS, OLD_SET_KEYS)
     if set(table) - {"format", "built_at", "data_bytes_floor", "sets", "pairs"}:
         problems.append("keys beyond the table's own")
     if not re.match(r"^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$", str(table.get("built_at", ""))):
@@ -407,17 +558,17 @@ def public_problems(table):
     if not isinstance(sets, dict):
         return problems + ["sets is not a mapping"]
     for ident, entry in sets.items():
-        if not ID_SHAPE.match(ident) or not isinstance(entry, dict) or set(entry) != SET_KEYS:
+        if not ID_SHAPE.match(ident) or not isinstance(entry, dict) or set(entry) != set_keys:
             problems.append("set %r is not an id with its counts" % ident[:40])
         elif not all(whole(value) for value in entry.values()):
             problems.append("set %s has a count that is no whole number" % ident)
     for row in table.get("pairs", []):
-        if not isinstance(row, dict) or set(row) != PAIR_KEYS:
+        if not isinstance(row, dict) or set(row) != pair_keys:
             problems.append("a pair without exactly its counts")
             continue
         if row["a"] not in sets or row["b"] not in sets or not row["a"] < row["b"]:
             problems.append("a pair that names no two sets in order")
-        if not all(whole(row[key]) for key in PAIR_KEYS - {"a", "b"}):
+        if not all(whole(row[key]) for key in pair_keys - {"a", "b"}):
             problems.append("a pair with a count that is no whole number")
     return problems
 
@@ -475,6 +626,8 @@ def main(argv=None):
     run.add_argument("--shared", help="the promoter's shared tree, each <id>/ frozen beside raw/")
     run.add_argument("--out", required=True)
     run.add_argument("--workers", type=int, default=1)
+    run.add_argument("--voxel-hours", type=float, default=8.0,
+                     help="no voxel batch starts after this many hours (the job's wall time is 12)")
     look = sub.add_parser("check", help="whether an overlap table holds counts alone")
     look.add_argument("overlap")
     pack = sub.add_parser("tree", help="add the overlap table to freeze.sh report's git tree")
@@ -486,7 +639,7 @@ def main(argv=None):
         if not sets:
             parser.error("no frozen set found from --plan or --shared")
         log_line("%d frozen sets to read" % len(sets))
-        table = build(sets, args.out, args.workers, log_line)
+        table = build(sets, args.out, args.workers, log_line, args.voxel_hours * 3600)
         print("%d sets, %d pairs that share something; %s" % (len(table["sets"]), len(table["pairs"]),
                                                             os.path.join(args.out, OVERLAP)))
         return 0
