@@ -178,7 +178,12 @@ patient counts for the 52 DICOM sets (6.5 TB across all 98), which feed the remo
    join once their formats are read from the grid.
 3. A removal list from OVERLAP.json: for each candidate, the bytes it frees, the patients it
    shares and with which set, what it alone holds, and its recipe. The owner picks by name.
-4. Retirement jobs for the sets the owner picks, one deletion job each, each written into its
-   record's history; the census then shows the room gained against the cap.
+4. Retirement jobs for the sets the owner picks, each written into its record's history; the
+   census then shows the room gained against the cap. The first half is built: a merged storage
+   request is planned on the grid by grid/storage.sh apply, whose job lists, through
+   tools/retire.py, what each retirement would delete once the folder, its freeze and its files
+   are shown to be the ones the request names, and keeps the freeze, labels, masks and metadata.
+   The step that deletes waits for the owner's answer on whether a merged request may delete
+   through the grid gate.
 5. `repair` and the derived-dataset builder, proved by retiring one small set, repairing it and
    matching its tree_sha256.

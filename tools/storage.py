@@ -36,6 +36,7 @@ import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import census  # noqa: E402
+import freeze  # noqa: E402
 
 FORMAT = "spine-datasets/storage 1"
 REQUEST_FORMAT = "spine-datasets/storage-request 1"
@@ -286,14 +287,27 @@ def tb(value):
     return "%.2f TB" % (value / 10 ** 12)
 
 
-def request_of(plan, actions, result, selection):
+def request_action(kind, ident, place, entry, record):
+    """One action as the grid reads it. A retirement or a move carries the set's folder and its
+    freeze's tree hash, so the job acts only on the folder whose freeze matches what the owner
+    merged; the request lives in this private repository, never in the public feed."""
+    action = {"kind": kind, "id": ident, "place": place, "bytes": entry["bytes"],
+              "bytes_known": entry["bytes_known"]}
+    if kind in ("retire", "move"):
+        action["grid_path"] = record.get("grid_path")
+        action["folder"] = freeze.folder_to_freeze(record.get("grid_path") or "")
+        action["tree_sha256"] = census.tree_of(record)
+    return action
+
+
+def request_of(plan, actions, result, selection, records):
     by_id = {entry["id"]: entry for entry in plan["sets"]}
     return {
         "format": REQUEST_FORMAT,
         "made_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "selection": selection,
-        "actions": [{"kind": kind, "id": ident, "place": place, "bytes": by_id[ident]["bytes"],
-                     "bytes_known": by_id[ident]["bytes_known"]} for kind, ident, place in actions],
+        "actions": [request_action(kind, ident, place, by_id[ident], records[ident])
+                    for kind, ident, place in actions],
         "lab_after": result["lab_after"],
         "home_after": result["home_after"],
     }
@@ -340,8 +354,8 @@ def main(argv=None):
     request_cmd.add_argument("--text", required=True)
     args = parser.parse_args(argv)
 
-    plan = build_plan(load_records(args.records), read_json(args.volume) or {}, read_json(args.overlap),
-                      read_json(args.pulls))
+    records = load_records(args.records)
+    plan = build_plan(records, read_json(args.volume) or {}, read_json(args.overlap), read_json(args.pulls))
     if args.command == "plan":
         return write_plan(plan, args.out, args.check)
     try:
@@ -361,7 +375,7 @@ def main(argv=None):
     if args.command == "request":
         os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
         with open(args.out, "w", encoding="utf-8") as handle:
-            json.dump(request_of(plan, actions, result, args.selection), handle, indent=1, sort_keys=True)
+            json.dump(request_of(plan, actions, result, args.selection, records), handle, indent=1, sort_keys=True)
             handle.write("\n")
         with open(args.text, "w", encoding="utf-8") as handle:
             handle.write(summary(plan, actions, result))

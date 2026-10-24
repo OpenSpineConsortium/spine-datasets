@@ -20,6 +20,14 @@ the textbook's artifact, and keep some data in his own home on the grid, which h
   and offers it as a pull request naming every set. The owner's merge is his word for each set
   it names; a session never merges one. Every fetch still passes the grid's size rule, which reads
   the exact size from the source before a byte lands.
-- Not built yet: the grid job words that carry out a merged request (retire, fetch, move), and the
-  reading of the home's use. Until they are, a merged request is the record of what to do, and
-  each action is sent by its own gate word on the owner's word.
+- On the grid, grid/storage.sh carries out a merged request: `apply STAMP` reads
+  requests/STAMP.json as the default branch holds it and queues one job that plans each
+  retirement (tools/retire.py: the folder must be the set's own under a data root with no link on
+  its path, its freeze must be the tree hash the request names, and its files the freeze's, or
+  nothing is listed), and names the fetch word of each fetch for the owner to press; `home` reads
+  the home's use; `report` carries the plans' counts and the home's reading to the branch
+  storage-report. A plan keeps the freeze, labels, masks and metadata and deletes nothing.
+- Not built yet: the step that deletes what a plan lists, which waits for the owner's answer on
+  whether a merged request may delete through the grid gate; moves to the home, which wait for its
+  path; and the gate words that run grid/storage.sh. Until then each action is sent by its own gate
+  word on the owner's word.
