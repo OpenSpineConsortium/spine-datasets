@@ -41,7 +41,7 @@
  "source_status": "the owner's hand: ask the TotalSegmentator authors whether these subjects overlap the public v2/v3 release (planned in the data platform at bf1432f)",
  "route": "letter",
  "status": "held",
- "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_liver_lesions (40 GB); The overlap question went 2026-10-21 09:40 UTC by the owner to the corresponding author; waiting for the answer. The set itself is CC BY 4.0 and needs only a grid job; until the answer comes it is treated as overlapping v2 and v3 (no new people). Wasserthal replied 2026-10-22 07:32 UTC about v2 and v3 only (v2 is a complete subset of v3, the ids unchanged, v3 only added subjects) and said nothing about the task sets, so the conservative count stands; a one-line follow-up waits in the owner's drafts.",
+ "result": "2026-10-23: held on the grid at /rs/rs_grp_oschome/go2432/data/zenodo_ts_task_liver_lesions (40 GB); The overlap question went 2026-10-21 09:40 UTC by the owner to the corresponding author; waiting for the answer. The set itself is CC BY 4.0 and needs only a grid job; until the answer comes it is treated as overlapping v2 and v3 (no new people). Wasserthal replied 2026-10-22 07:32 UTC about v2 and v3 only (v2 is a complete subset of v3, the ids unchanged, v3 only added subjects) and said nothing about the task sets, so the conservative count stands; the one-line follow-up went 2026-10-24 03:05 UTC as the owner's reply to Wasserthal, asking whether the task sets' subjects are among the v2 and v3 subjects with the same identifiers or new people; waiting for his answer.",
  "history": [
   {
    "date": "2026-10-21",
@@ -62,10 +62,15 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "Wasserthal replied 07:32 UTC: v2 is a complete subset of v3, ids unchanged, v3 only added subjects; nothing on the task sets, so they stay counted as overlapping; a follow-up is drafted"
+  },
+  {
+   "date": "2026-10-24",
+   "step": "asked",
+   "note": "the one-line follow-up went 03:05 UTC as the owner's reply to Wasserthal alone: are the three task sets' subjects among the v2 and v3 subjects, with the same identifiers, or new people; a yes or no is enough"
   }
  ],
  "obstacles": [
-  "the overlap question of 2026-10-21 was answered on 2026-10-22 for v2 and v3 only; the task sets stay counted as overlapping v2 and v3 until the follow-up is answered"
+  "the overlap question of 2026-10-21 was answered on 2026-10-22 for v2 and v3 only; the task sets stay counted as overlapping v2 and v3 until the follow-up of 2026-10-24 is answered"
  ],
- "next": "the owner sends the drafted follow-up; record the answer on the task sets here; the landing pass (#204) checks the files"
+ "next": "wait for Wasserthal's answer to the follow-up of 2026-10-24 03:05 UTC; record it on the task sets here; the landing pass (#204) checks the files"
 }

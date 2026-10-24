@@ -1,6 +1,6 @@
 # totalsegmentator_tasks: the request text
 
-Sent 2026-10-21 by the owner; answered 2026-10-22 by Jakob Wasserthal about v2 and v3 only (v2 is a complete subset of v3, the ids unchanged); the question on the task sets stands, and a one-line follow-up waits in the owner's drafts.
+Sent 2026-10-21 by the owner; answered 2026-10-22 by Jakob Wasserthal about v2 and v3 only (v2 is a complete subset of v3, the ids unchanged); the question on the task sets stands; the one-line follow-up went 2026-10-24 03:05 UTC as the owner's reply, asking whether the task sets' subjects are among the v2 and v3 subjects with the same identifiers or new people; waiting for his answer.
 
 To: Jakob Wasserthal (University Hospital Basel, Department of Radiology), the corresponding author of the TotalSegmentator papers; one letter covers the records zenodo_ts_task_hip_implant, zenodo_ts_task_liver_lesions and zenodo_ts_task_pleural_effusion.
 Route: email, with the sender block; nothing binding, the sets are CC BY 4.0.
