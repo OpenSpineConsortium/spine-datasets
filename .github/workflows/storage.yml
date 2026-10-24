@@ -1,0 +1,150 @@
+# The storage planner (tools/storage.py). The job feed writes storage/PLAN.json,
+# what each set takes on the lab volume and in the owner's home and whether it
+# can be rebuilt, to the branch storage-feed, where the textbook's artifact reads it;
+# a name of its own, since the requests' branches are storage/request-<time>;
+# it runs on a push to the default branch that changes a record, the overlap
+# table, the volume's reading or the script, daily as a fallback, and by hand.
+# The branch is written as the census's is, a commit built from the one file
+# with the commit it read as its parent, so it keeps every feed as history.
+#
+# The job request takes a selection by hand or from the artifact (-id retires a
+# held set, +id fetches one, id@home and id@lab move one), refuses it when it
+# would pass the lab cap or the home's 4 TB or names a set that cannot go ahead,
+# and otherwise offers it as a pull request that names every set by name. The
+# owner's merge of that pull request is his word for each set it names; a
+# session never merges one, since a retirement deletes the set's images. The
+# grid's size rule still reads every fetch's exact size before a byte lands.
+# Only someone who may write here may start it. A push made with GITHUB_TOKEN
+# starts no workflow, so the request starts the checks on its branch itself.
+
+name: Storage
+
+on:
+  push:
+    branches: [main]
+    paths: ["datasets/**", "lineage/**", "storage/VOLUME.json", "tools/storage.py", "tools/census.py", ".github/workflows/storage.yml"]
+  schedule:
+    - cron: "53 5 * * *"
+  workflow_dispatch:
+    inputs:
+      selection:
+        description: "Actions, separated by spaces or commas: -id retires, +id fetches, id@home or id@lab moves; empty writes the feed only"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: storage-${{ github.event.inputs.selection != '' && 'request' || 'feed' }}
+  cancel-in-progress: false
+
+jobs:
+  feed:
+    if: github.event.repository.fork == false && (github.event_name != 'workflow_dispatch' || github.event.inputs.selection == '')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Write the feed to the branch storage-feed
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          out="$RUNNER_TEMP/PLAN.json"
+          write_feed() {
+            previous=""
+            git update-ref -d refs/remotes/origin/storage-feed 2>/dev/null || true
+            if git fetch --quiet --no-tags origin +refs/heads/storage-feed:refs/remotes/origin/storage-feed 2>/dev/null; then
+              previous="$(git rev-parse refs/remotes/origin/storage-feed)" || return 1
+            fi
+            if [ -n "$previous" ] && foreign="$(git ls-tree --name-only "$previous" | grep -v -x PLAN.json)"; then
+              echo "the branch storage-feed holds files this workflow did not write:"
+              echo "$foreign"
+              echo "It is the project's own branch and stays as it is; nothing was pushed."
+              return 2
+            fi
+            python3 tools/storage.py plan --out "$out" || return 1
+            parent=""
+            if [ -n "$previous" ]; then
+              parent="-p $previous"
+              git show "$previous:PLAN.json" > "$RUNNER_TEMP/last.json" 2>/dev/null || true
+              if python3 tools/storage.py plan --out "$RUNNER_TEMP/last.json" --check 2>/dev/null; then
+                echo "feed unchanged"
+                return 0
+              fi
+            fi
+            blob="$(git hash-object -w "$out")" || return 1
+            tree="$(printf '100644 blob %s\tPLAN.json\n' "$blob" | git mktree)" || return 1
+            # shellcheck disable=SC2086 # parent is empty or the two words -p <sha>
+            commit="$(git commit-tree "$tree" $parent -m "Storage feed as of $(date -u +%Y-%m-%dT%H:%MZ)")" || return 1
+            git push --quiet origin "$commit:refs/heads/storage-feed" || return 1
+            echo "feed written as $commit"
+          }
+          status=0
+          write_feed || status=$?
+          if [ "$status" -eq 0 ]; then
+            exit 0
+          elif [ "$status" -eq 2 ]; then
+            exit 1
+          fi
+          echo "the first try failed, most likely because the branch storage-feed moved; writing again"
+          write_feed
+
+  request:
+    if: github.event.repository.fork == false && github.event_name == 'workflow_dispatch' && github.event.inputs.selection != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      ACTOR: ${{ github.actor }}
+      SELECTION: ${{ github.event.inputs.selection }}
+      DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+      GIT_AUTHOR_NAME: github-actions[bot]
+      GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+      GIT_COMMITTER_NAME: github-actions[bot]
+      GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Check the selection and offer it as a pull request
+        run: |
+          set -eu
+          role=$(gh api "repos/$REPO/collaborators/$ACTOR/permission" --jq .role_name 2>/dev/null || echo none)
+          case "$role" in
+            admin|maintain|write) ;;
+            *) echo "$ACTOR may not write here ($role); nothing offered"; exit 1 ;;
+          esac
+          stamp=$(date -u +%Y%m%dT%H%M%SZ)
+          file="storage/requests/$stamp.json"
+          if ! python3 tools/storage.py request --out "$file" --text "$RUNNER_TEMP/summary.md" -- "$SELECTION" 2> "$RUNNER_TEMP/problems.txt"; then
+            echo "The selection cannot go ahead:" | tee -a "$GITHUB_STEP_SUMMARY"
+            sed 's/^/- /' "$RUNNER_TEMP/problems.txt" | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+          branch="storage/request-$stamp"
+          {
+            echo "A storage request made by $ACTOR from the planner. Merging it is the owner's word for every set named below; nothing on the grid changes before then."
+            echo
+            cat "$RUNNER_TEMP/summary.md"
+            echo
+            echo "Each fetch still passes the grid's size rule, which reads the exact size from the source before a byte lands."
+          } > "$RUNNER_TEMP/body.md"
+          git checkout -q -B "$branch"
+          git add "$file"
+          git commit -q -m "Storage request $stamp" -m "$(cat "$RUNNER_TEMP/summary.md")"
+          git push -q origin "HEAD:refs/heads/$branch"
+          url=$(gh pr create --repo "$REPO" --head "$branch" --base "$DEFAULT_BRANCH" \
+                  --title "Storage request $stamp" --body-file "$RUNNER_TEMP/body.md")
+          gh workflow run ci.yml --repo "$REPO" --ref "$branch" || echo "the checks start with the pull request's next event"
+          { echo "Offered: $url"; echo; cat "$RUNNER_TEMP/summary.md"; } | tee -a "$GITHUB_STEP_SUMMARY"
