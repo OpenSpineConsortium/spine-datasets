@@ -23,13 +23,13 @@ since the last run. The page with filters is census.html beside this file, serve
 | Stage | Datasets |
 |---|---|
 | Downloadable now | 9 |
-| To ask | 7 |
+| To ask | 5 |
 | Asked, waiting | 27 |
 | Granted, fetch pending | 5 |
 | Fetching | 0 |
 | On the grid | 7 |
 | Held by the owner | 97 |
-| Needs the owner | 11 |
+| Needs the owner | 13 |
 | Refused | 2 |
 | Later | 1 |
 
@@ -170,7 +170,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | KUB-StoneX (Daffodil International University HIRL) | Radiographs | Held by the owner | open | 1,703 | 2,570 |  |  |  | 55.3 GB | [#26](https://github.com/OpenSpineConsortium/spine-datasets/issues/26) |
 | Mendeley DDH hip sets (jf3pv98m9g and 4gvcb6gmh2) | Radiographs | Downloadable now | open |  |  |  |  |  |  | [#33](https://github.com/OpenSpineConsortium/spine-datasets/issues/33) |
 | MIMIC-CXR and MIMIC-CXR-JPG (PhysioNet) | Radiographs | Asked, waiting | restricted | 65,379 | 377,110 |  |  |  |  | [#15](https://github.com/OpenSpineConsortium/spine-datasets/issues/15) |
-| MrOS lateral spine radiographs (Osteoporotic Fractures in Men) | Radiographs | To ask | restricted | 5,994 |  |  |  |  |  | [#9](https://github.com/OpenSpineConsortium/spine-datasets/issues/9) |
+| MrOS lateral spine radiographs (Osteoporotic Fractures in Men) | Radiographs | Needs the owner | restricted | 5,994 |  |  |  |  |  | [#9](https://github.com/OpenSpineConsortium/spine-datasets/issues/9) |
 | NHANES II spinal films with landmarks (Mo, Papiez, Chen et al., Zenodo) | Radiographs | Held by the owner | open | 364 | 543 |  |  |  | 3.3 GB |  |
 | NHANES II cervical and lumbar spine films (NCHS, 1976 to 1980) | Radiographs | Held by the owner | open |  | 16,531 |  |  |  | 138.4 GB |  |
 | NIH ChestX-ray14 and the RSNA pneumonia subset | Radiographs | Held by the owner | unknown | 30,805 | 112,120 |  |  |  | 45.1 GB | [#37](https://github.com/OpenSpineConsortium/spine-datasets/issues/37) |
@@ -178,7 +178,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | PadChest (BIMCV, Alicante) | Radiographs | To ask | restricted | 67,625 | 160,868 |  |  |  |  | [#12](https://github.com/OpenSpineConsortium/spine-datasets/issues/12) |
 | ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025) | Radiographs | Held by the owner | restricted | 109,487 |  |  |  |  |  | [#11](https://github.com/OpenSpineConsortium/spine-datasets/issues/11) |
 | MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025) | Radiographs | On the grid | open | 2,156 | 2,156 |  |  |  | 4.1 GB |  |
-| SOF lateral spine radiographs (Study of Osteoporotic Fractures) | Radiographs | To ask | restricted |  |  |  |  |  |  | [#10](https://github.com/OpenSpineConsortium/spine-datasets/issues/10) |
+| SOF lateral spine radiographs (Study of Osteoporotic Fractures) | Radiographs | Needs the owner | restricted |  |  |  |  |  |  | [#10](https://github.com/OpenSpineConsortium/spine-datasets/issues/10) |
 | TVGH ankylosing spondylitis cervical and lumbar spine films | Radiographs | Asked, waiting | unknown |  |  |  |  |  |  | [#108](https://github.com/OpenSpineConsortium/spine-datasets/issues/108) |
 | TVGH-SpineXR | Radiographs | Asked, waiting | unknown |  |  |  |  |  |  | [#14](https://github.com/OpenSpineConsortium/spine-datasets/issues/14) |
 | VertXNet extra labels for NHANES II (Mo, Papiez, Chen 2023) | Radiographs | Downloadable now | unknown |  |  |  |  |  |  | [#28](https://github.com/OpenSpineConsortium/spine-datasets/issues/28) |
@@ -474,12 +474,10 @@ What the CT records still lack:
 - Mendeley DDH hip sets (jf3pv98m9g and 4gvcb6gmh2): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Mendeley DDH hip sets (jf3pv98m9g and 4gvcb6gmh2): the licence is still to confirm on the source's page
 - MIMIC-CXR and MIMIC-CXR-JPG (PhysioNet): the licence is still to confirm on the source's page
-- MrOS lateral spine radiographs (Osteoporotic Fractures in Men): the licence is still to confirm on the source's page
 - Open-i Indiana chest collection: the licence is still to confirm on the source's page
 - ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025): on the grid with no size: write the landing pass's bytes into measured
 - ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - SOF lateral spine radiographs (Study of Osteoporotic Fractures): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
-- SOF lateral spine radiographs (Study of Osteoporotic Fractures): the licence is still to confirm on the source's page
 - TVGH ankylosing spondylitis cervical and lumbar spine films: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - TVGH-SpineXR: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - VertXNet extra labels for NHANES II (Mo, Papiez, Chen 2023): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
@@ -504,6 +502,8 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-24 SOF lateral spine radiographs (Study of Osteoporotic Fractures): licence a SOF data request agreement; terms to confirm on the page to an NIA Outgoing Human Data Transfer Agreement signed by the PI and Wayne State's Signing Official: non-profit research on the approved project only, no redistribution, no re-identification, acknowledgement, 12 months renewable, destruction certified at the end; stage to-ask to needs-owner; status todo to needs-owner
+- 2026-10-24 MrOS lateral spine radiographs (Osteoporotic Fractures in Men): licence a MrOS data request agreement; terms to confirm on the page to an NIA Outgoing Human Data Transfer Agreement signed by the PI and Wayne State's Signing Official: non-profit research on the approved project only, no redistribution, no re-identification, acknowledgement, 12 months renewable, destruction certified at the end; stage to-ask to needs-owner; status todo to needs-owner
 - 2026-10-24 IDC `ldct_and_projection_data` (tier 2): grid_bytes none to 862.7 GB
 - 2026-10-24 ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025): grid_path none to /rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k; stage to-ask to held; status todo to held
 - 2026-10-24 MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025): grid_bytes none to 4.1 GB; grid_path none to /rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw; stage fetching to on-grid; status fetching to fetched

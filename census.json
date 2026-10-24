@@ -6,13 +6,13 @@
   "datasets": 166,
   "by_stage": {
    "downloadable": 9,
-   "to-ask": 7,
+   "to-ask": 5,
    "asked": 27,
    "granted": 5,
    "fetching": 0,
    "on-grid": 7,
    "held": 97,
-   "needs-owner": 11,
+   "needs-owner": 13,
    "refused": 2,
    "later": 1
   },
@@ -6859,20 +6859,20 @@
    }
   },
   "mros_lateral_spine": {
-   "digest": "06fa69e635377178d2d2a576263cb0fee823d2e00172a13e151bb008d2244ac6",
+   "digest": "39bb4f52db7f00690bcc882db46c1f44b4657a035b490ad15d79ed21b96ac8c3",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-24",
    "row": {
     "id": "mros_lateral_spine",
     "name": "MrOS lateral spine radiographs (Osteoporotic Fractures in Men)",
     "group": "films",
     "kind": "Radiographs",
     "route": "form",
-    "status": "todo",
-    "stage": "to-ask",
-    "licence": "a MrOS data request agreement; terms to confirm on the page",
+    "status": "needs-owner",
+    "stage": "needs-owner",
+    "licence": "an NIA Outgoing Human Data Transfer Agreement signed by the PI and Wayne State's Signing Official: non-profit research on the approved project only, no redistribution, no re-identification, acknowledgement, 12 months renewable, destruction certified at the end",
     "licence_kind": "restricted",
-    "link": "https://mrosonline.ucsf.edu/",
+    "link": "https://agingresearchbiobank.nia.nih.gov/",
     "what": "lateral thoracic and lumbar films of 5,994 men at six US centres, two visits (2000-2002 and about 4.6 years later), with Genant semi-quantitative vertebral fracture grades per vertebra; one deep-learning study used 4,461 subjects and 15,524 films; the image counts and the request steps to confirm on the page",
     "level_truth": "Genant grades on named levels, so level truth exists",
     "grid_path": null,
@@ -6889,11 +6889,11 @@
      "centres",
      "visits"
     ],
-    "next": "fill the form named in letters/mros_lateral_spine.md with its paragraphs as the purpose, then record the date here",
+    "next": "the owner settles who files, the commercial-purpose answer and the IRB supplement, then submits the drafted Biobank request",
     "since": "2026-10-21",
     "last_step": {
-     "date": "2026-10-21",
-     "step": "researched"
+     "date": "2026-10-24",
+     "step": "note"
     },
     "paired": false,
     "tier": null,
@@ -8231,20 +8231,20 @@
    }
   },
   "sof_lateral_spine": {
-   "digest": "d1649045df525a2224f6d7c019c5633fccb79e99583d7b3be98338476c72e2b9",
+   "digest": "c85ab6863153e7375c5c362d7f9f70ce6c91d34070e1af45826bd30276efe063",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-24",
    "row": {
     "id": "sof_lateral_spine",
     "name": "SOF lateral spine radiographs (Study of Osteoporotic Fractures)",
     "group": "films",
     "kind": "Radiographs",
     "route": "form",
-    "status": "todo",
-    "stage": "to-ask",
-    "licence": "a SOF data request agreement; terms to confirm on the page",
+    "status": "needs-owner",
+    "stage": "needs-owner",
+    "licence": "an NIA Outgoing Human Data Transfer Agreement signed by the PI and Wayne State's Signing Official: non-profit research on the approved project only, no redistribution, no re-identification, acknowledgement, 12 months renewable, destruction certified at the end",
     "licence_kind": "restricted",
-    "link": "https://sofonline.ucsf.edu/",
+    "link": "https://agingresearchbiobank.nia.nih.gov/",
     "what": "the women's counterpart of MrOS: lateral thoracolumbar films at several visits, about 9,700 women, Genant grading per vertebra; counts to confirm on the page",
     "level_truth": "Genant grades on named levels, so level truth exists",
     "grid_path": null,
@@ -8260,11 +8260,11 @@
     "unread_counts": [
      "women_about"
     ],
-    "next": "fill the form named in letters/sof_lateral_spine.md with its paragraphs as the purpose, then record the date here",
+    "next": "the owner settles who files, the commercial-purpose answer and the IRB supplement, then submits the drafted Biobank request",
     "since": "2026-10-21",
     "last_step": {
-     "date": "2026-10-21",
-     "step": "researched"
+     "date": "2026-10-24",
+     "step": "note"
     },
     "paired": false,
     "tier": null,
@@ -11790,6 +11790,44 @@
     "grid_bytes": [
      null,
      862724923831
+    ]
+   }
+  },
+  {
+   "date": "2026-10-24",
+   "id": "mros_lateral_spine",
+   "kind": "changed",
+   "changes": {
+    "status": [
+     "todo",
+     "needs-owner"
+    ],
+    "stage": [
+     "to-ask",
+     "needs-owner"
+    ],
+    "licence": [
+     "a MrOS data request agreement; terms to confirm on the page",
+     "an NIA Outgoing Human Data Transfer Agreement signed by the PI and Wayne State's Signing Official: non-profit research on the approved project only, no redistribution, no re-identification, acknowledgement, 12 months renewable, destruction certified at the end"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-24",
+   "id": "sof_lateral_spine",
+   "kind": "changed",
+   "changes": {
+    "status": [
+     "todo",
+     "needs-owner"
+    ],
+    "stage": [
+     "to-ask",
+     "needs-owner"
+    ],
+    "licence": [
+     "a SOF data request agreement; terms to confirm on the page",
+     "an NIA Outgoing Human Data Transfer Agreement signed by the PI and Wayne State's Signing Official: non-profit research on the approved project only, no redistribution, no re-identification, acknowledgement, 12 months renewable, destruction certified at the end"
     ]
    }
   }
