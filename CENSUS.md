@@ -11,8 +11,8 @@ since the last run. The page with filters is census.html beside this file, serve
 |---|---|
 | Datasets with a record | 166 |
 | On the grid (shared tree and the owner's root) | 104 |
-| Size on the grid | 5.8 TB (99 of 104 sets counted) |
-| Frozen on the grid, every file hashed (tools/freeze.py) | 97 of 104 |
+| Size on the grid | 6.6 TB (99 of 104 sets counted) |
+| Frozen on the grid, every file hashed (tools/freeze.py) | 98 of 104 |
 | Subjects on the grid | 174,486 (88 of 104 sets counted) |
 | X-ray images on the grid | 163,035 (17 of 104 sets counted) |
 | X-ray videos and sweeps on the grid | 694 (2 of 104 sets counted) |
@@ -225,7 +225,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | IDC `ctpred_sunitinib_pannet` | CT | Held by the owner | open | 34 |  |  |  | 34 | 6.2 GB |  |
 | IDC `eay131` (EAY131 (NCI-MATCH)) | CT | Held by the owner | open | 376 |  |  |  | 376 | 37.2 GB |  |
 | IDC `hcc_tace_seg` (HCC-TACE-Seg) | CT | Held by the owner | open | 101 |  |  |  | 101 | 5.1 GB |  |
-| IDC `ldct_and_projection_data` (tier 2) | CT | Held by the owner | open | 99 |  |  |  |  | 16.5 GB | [#47](https://github.com/OpenSpineConsortium/spine-datasets/issues/47) |
+| IDC `ldct_and_projection_data` (tier 2) | CT | Held by the owner | open | 99 |  |  |  |  | 862.7 GB | [#47](https://github.com/OpenSpineConsortium/spine-datasets/issues/47) |
 | IDC `lidc_idri` (tier 2) | CT | Downloadable now | open | 997 |  |  |  |  | 123.3 GB | [#48](https://github.com/OpenSpineConsortium/spine-datasets/issues/48) |
 | IDC `lung_pet_ct_dx` (Lung-PET-CT-Dx) | CT | Held by the owner | open | 158 |  |  |  | 158 | 29.9 GB |  |
 | IDC `mediastinal_lymph_node_seg` | CT | Held by the owner | open | 316 |  |  |  | 316 | 25.7 GB |  |
@@ -298,7 +298,7 @@ with filters, and each set's masks in full, is census-ct.html beside this file.
 | On the grid | 89 |
 | CT volumes on the grid | 24,959 (70 of 89 sets counted) |
 | Subjects on the grid | 25,991 (80 of 89 sets counted) |
-| Size on the grid | 5.3 TB (86 of 89 sets counted) |
+| Size on the grid | 6.2 TB (86 of 89 sets counted) |
 | On the grid with the source's vertebra masks by level | 4,208 CT volumes in 6 sets |
 | On the grid with masks made on the grid | 15,753 CT volumes in 62 sets, 20 of them counted |
 | Sets whose masks are surveyed | 105 of 105 |
@@ -490,7 +490,6 @@ What the CT records still lack:
 - CTPelvic1K: on the grid with no size: write the landing pass's bytes into measured
 - CTPelvic1K: on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - CTPelvic1K: the licence is still to confirm on the source's page
-- IDC `ldct_and_projection_data` (tier 2): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - MAGIC-CT (Zenodo): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - RSNA abdominal trauma CT (RATIC): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - RSNA pulmonary embolism CT (RSPECT): on the grid with no size: write the landing pass's bytes into measured
@@ -505,6 +504,7 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-24 IDC `ldct_and_projection_data` (tier 2): grid_bytes none to 862.7 GB
 - 2026-10-24 ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025): grid_path none to /rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k; stage to-ask to held; status todo to held
 - 2026-10-24 MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025): grid_bytes none to 4.1 GB; grid_path none to /rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw; stage fetching to on-grid; status fetching to fetched
 - 2026-10-23 Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity): stage to-ask to asked; status todo to requested

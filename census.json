@@ -26,12 +26,12 @@
   },
   "on_grid": 104,
   "on_grid_size": {
-   "sum": 5799573002592,
+   "sum": 6645797926423,
    "counted": 99,
    "of": 104,
-   "measured": 97
+   "measured": 98
   },
-  "on_grid_frozen": 97,
+  "on_grid_frozen": 98,
   "on_grid_subjects": {
    "sum": 174486,
    "counted": 88,
@@ -83,10 +83,10 @@
     "of": 89
    },
    "on_grid_size": {
-    "sum": 5314541073416,
+    "sum": 6160765997247,
     "counted": 86,
     "of": 89,
-    "measured": 84
+    "measured": 85
    },
    "by_stage": {
     "downloadable": 2,
@@ -4506,9 +4506,9 @@
    }
   },
   "idc_ldct_and_projection_data": {
-   "digest": "3438b678e5c836ca8f5b4e1dc6fb5e1324871b663770a040f340357f42e7400a",
+   "digest": "18ea27ae5921c905dbc149a44d3e88b0d5c8242fe4c832da42eeddc3f102a73c",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-24",
    "row": {
     "id": "idc_ldct_and_projection_data",
     "name": "IDC `ldct_and_projection_data` (tier 2)",
@@ -4524,8 +4524,8 @@
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/idc_ldct_and_projection_data",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 862724923831,
+    "tree_sha256": "eb43cd930058b2d276df201ac066513c2a1d8be8c8c72ff9acc3a61a904b24fe",
     "subjects": 99,
     "xray_images": null,
     "videos": null,
@@ -11779,6 +11779,17 @@
     "grid_path": [
      null,
      "/rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-24",
+   "id": "idc_ldct_and_projection_data",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     862724923831
     ]
    }
   }
