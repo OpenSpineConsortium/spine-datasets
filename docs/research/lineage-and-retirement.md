@@ -137,6 +137,34 @@ These are leads to measure in step 2, not conclusions.
 - The IDC collections held as idc_* are each a refetch from IDC with a known tree hash, so any of
   them can be retired and repaired once the ledger shows nothing unique would be lost.
 
+## The first measurement (2026-10-24, grid job 40775283)
+
+The first pass of tools/lineage.py read 98 frozen sets (lineage/OVERLAP.json, built
+2026-10-24T17:59:50Z; rsna_rspect froze after it ran and ctpelvic1k is not frozen yet). It found
+no pair of sets that shares anything it can see: no file over 64 KB with the same sha256, no DICOM
+series or study UID, no PatientID that looks like an identifier, no identifier-like file name.
+
+That is a true reading of what this pass measures and no answer to the owner's question. The sets
+the question is about (CTSpine1K, CTSpinoPelvic1K, CTPelvic1K, AbdomenAtlas, AMOS) are NIfTI
+volumes: each release re-encoded and renamed its scans, so no two copies share a byte, and NIfTI
+carries no UID. The 52 sets where the pass did read DICOM headers are mostly separate IDC and TCIA
+collections, which are not expected to share patients, and none shares a UID with another. So "0 pairs" says that
+nothing is held twice byte for byte, and says nothing about the same patient held twice in two
+encodings.
+
+What the next pass needs, to see a scan across re-encodings:
+
+1. The sets' own mapping files, which say where each case came from (CTSpine1K's source lists,
+   the CTSpinoPelvic1K manifest, AbdomenAtlas's case table, CTPelvic1K's per-dataset lists). Their
+   formats have to be read on the grid first.
+2. A content fingerprint of each NIfTI volume that survives re-encoding: the shape, the voxel
+   spacing and a hash of the voxel values after decompression, read from each volume once. This
+   reads image data, unlike the first pass, so it is a heavier job and needs the owner's word and
+   count.
+
+What the first pass does give now: the per-set sizes, file counts and DICOM series, study and
+patient counts for the 52 DICOM sets (6.5 TB across all 98), which feed the removal list's sizes.
+
 ## The plan
 
 1. This note and the record schema for `lineage` and `retired`, with the census check that
