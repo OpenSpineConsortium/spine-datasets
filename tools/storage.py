@@ -81,13 +81,18 @@ def can_rebuild(record):
 
 
 def overlap_of(table, ident):
+    """The sets that hold some of ident's scans: a shared patient ID, series UID, file or voxel
+    values (same_scans, the volumes a format-2 table finds alike). A pair that shares only a
+    volume's geometry is a lead for the ledger, not an overlap, and is left out."""
     found = []
     for pair in (table or {}).get("pairs", []):
         if ident not in (pair["a"], pair["b"]):
             continue
-        other = pair["b"] if pair["a"] == ident else pair["a"]
-        found.append({"with": other, "patients": pair["patients"], "series": pair["series"],
-                      "same_bytes": pair["same_bytes"]})
+        entry = {"with": pair["b"] if pair["a"] == ident else pair["a"], "patients": pair["patients"],
+                 "series": pair["series"], "same_bytes": pair["same_bytes"],
+                 "same_scans": pair.get("same_values", 0)}
+        if any(entry[key] for key in ("patients", "series", "same_bytes", "same_scans")):
+            found.append(entry)
     return found
 
 

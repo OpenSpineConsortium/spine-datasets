@@ -128,5 +128,18 @@ class PlannerTest(unittest.TestCase):
             self.assertEqual(storage.main(base + ["check", "--", "-thawed"]), 1)
 
 
+
+class OverlapTest(unittest.TestCase):
+    def test_only_shared_scans_count(self):
+        pair = dict.fromkeys(("patients", "series", "same_bytes", "same_values", "same_geometry"), 0)
+        table = {"pairs": [dict(pair, a="ctspine1k", b="ctspinopelvic1k", same_values=526, same_geometry=747),
+                           dict(pair, a="amos22", b="ctspine1k", same_geometry=3),
+                           {"a": "ctspine1k", "b": "verse", "patients": 2, "series": 0, "same_bytes": 0}]}
+        found = storage.overlap_of(table, "ctspine1k")
+        self.assertEqual([entry["with"] for entry in found], ["ctspinopelvic1k", "verse"])
+        self.assertEqual(found[0]["same_scans"], 526)
+        self.assertEqual(found[1]["same_scans"], 0, "a format-1 pair has no voxel count")
+
+
 if __name__ == "__main__":
     unittest.main()
