@@ -1,0 +1,792 @@
+{
+ "built_at": "2026-10-24T17:59:50Z",
+ "data_bytes_floor": 65536,
+ "format": "spine-datasets/overlap 1",
+ "pairs": [],
+ "sets": {
+  "aariz_cephalograms": {
+   "bytes": 6338426763,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 4005,
+   "patients": 0,
+   "unique_bytes": 6304135921
+  },
+  "abdomenatlas3_mini": {
+   "bytes": 570557160234,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 9264,
+   "patients": 0,
+   "unique_bytes": 570557150688
+  },
+  "amos22": {
+   "bytes": 102615496477,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 3067,
+   "patients": 0,
+   "unique_bytes": 98044058278
+  },
+  "aortaseg60": {
+   "bytes": 15929004557,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 310,
+   "patients": 0,
+   "unique_bytes": 14528456214
+  },
+  "aws_stoic2021": {
+   "bytes": 264277371447,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 2034,
+   "patients": 0,
+   "unique_bytes": 264277370593
+  },
+  "barts_crl": {
+   "bytes": 20313374662,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 222,
+   "patients": 0,
+   "unique_bytes": 19612121177
+  },
+  "buu_lspine": {
+   "bytes": 35225321802,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 46723,
+   "patients": 0,
+   "unique_bytes": 28264054259
+  },
+  "cadica": {
+   "bytes": 3076112179,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 1,
+   "patients": 0,
+   "unique_bytes": 3076112179
+  },
+  "carmlspine": {
+   "bytes": 103686719641,
+   "dicom_series": 296,
+   "dicom_studies": 296,
+   "files": 334458,
+   "patients": 0,
+   "unique_bytes": 92339051505
+  },
+  "cathaction": {
+   "bytes": 56183481264,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 24,
+   "patients": 0,
+   "unique_bytes": 56183466440
+  },
+  "cobra2026": {
+   "bytes": 808617728356,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 30655,
+   "patients": 0,
+   "unique_bytes": 793911920814
+  },
+  "csi2014": {
+   "bytes": 6640702200,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 42,
+   "patients": 0,
+   "unique_bytes": 6640698994
+  },
+  "csxa": {
+   "bytes": 3691537837,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 9945,
+   "patients": 0,
+   "unique_bytes": 3674101312
+  },
+  "ctspine1k": {
+   "bytes": 162350473572,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 2020,
+   "patients": 0,
+   "unique_bytes": 162348239900
+  },
+  "ctspinopelvic1k": {
+   "bytes": 202680383788,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 12685,
+   "patients": 0,
+   "unique_bytes": 202629680040
+  },
+  "curvas": {
+   "bytes": 29993980558,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 284,
+   "patients": 0,
+   "unique_bytes": 29993979641
+  },
+  "curvas_pdacvi": {
+   "bytes": 16878618437,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 875,
+   "patients": 0,
+   "unique_bytes": 16876961688
+  },
+  "deep_psma": {
+   "bytes": 24253086312,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 1507,
+   "patients": 0,
+   "unique_bytes": 24236597464
+  },
+  "dysphagiabank": {
+   "bytes": 19557720024,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 95,
+   "patients": 0,
+   "unique_bytes": 19557680709
+  },
+  "fraiwan_spine_xray": {
+   "bytes": 85596630,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 6,
+   "patients": 0,
+   "unique_bytes": 85596630
+  },
+  "geneva_hip": {
+   "bytes": 1110686125,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 485,
+   "patients": 0,
+   "unique_bytes": 1110196914
+  },
+  "idc_acrin_flt_breast": {
+   "bytes": 2820716228,
+   "dicom_series": 15,
+   "dicom_studies": 15,
+   "files": 5341,
+   "patients": 15,
+   "unique_bytes": 2820716228
+  },
+  "idc_acrin_nsclc_fdg_pet": {
+   "bytes": 15803448804,
+   "dicom_series": 131,
+   "dicom_studies": 131,
+   "files": 29541,
+   "patients": 131,
+   "unique_bytes": 15803448804
+  },
+  "idc_adrenal_acc_ki67_seg": {
+   "bytes": 3554260496,
+   "dicom_series": 29,
+   "dicom_studies": 29,
+   "files": 6729,
+   "patients": 29,
+   "unique_bytes": 3554260496
+  },
+  "idc_anti_pd_1_lung": {
+   "bytes": 4255529904,
+   "dicom_series": 34,
+   "dicom_studies": 34,
+   "files": 8055,
+   "patients": 34,
+   "unique_bytes": 4255529904
+  },
+  "idc_cmb_brca": {
+   "bytes": 2592712452,
+   "dicom_series": 21,
+   "dicom_studies": 21,
+   "files": 4909,
+   "patients": 21,
+   "unique_bytes": 2592712452
+  },
+  "idc_cmb_crc": {
+   "bytes": 5415090502,
+   "dicom_series": 30,
+   "dicom_studies": 30,
+   "files": 10256,
+   "patients": 30,
+   "unique_bytes": 5415090502
+  },
+  "idc_cmb_lca": {
+   "bytes": 10016371716,
+   "dicom_series": 75,
+   "dicom_studies": 75,
+   "files": 18851,
+   "patients": 75,
+   "unique_bytes": 10016371716
+  },
+  "idc_cmb_mel": {
+   "bytes": 2182027164,
+   "dicom_series": 23,
+   "dicom_studies": 23,
+   "files": 4074,
+   "patients": 23,
+   "unique_bytes": 2182027164
+  },
+  "idc_cmb_mml": {
+   "bytes": 2325630444,
+   "dicom_series": 16,
+   "dicom_studies": 16,
+   "files": 4407,
+   "patients": 16,
+   "unique_bytes": 2325630444
+  },
+  "idc_cmb_ov": {
+   "bytes": 1046667648,
+   "dicom_series": 7,
+   "dicom_studies": 7,
+   "files": 1983,
+   "patients": 7,
+   "unique_bytes": 1046667648
+  },
+  "idc_colorectal_liver_metastases": {
+   "bytes": 6306640878,
+   "dicom_series": 80,
+   "dicom_studies": 80,
+   "files": 11967,
+   "patients": 80,
+   "unique_bytes": 6306640878
+  },
+  "idc_covid_19_ar": {
+   "bytes": 5663331196,
+   "dicom_series": 23,
+   "dicom_studies": 23,
+   "files": 10729,
+   "patients": 23,
+   "unique_bytes": 5663331196
+  },
+  "idc_covid_19_ny_sbu": {
+   "bytes": 64665429890,
+   "dicom_series": 443,
+   "dicom_studies": 443,
+   "files": 122272,
+   "patients": 443,
+   "unique_bytes": 64665429890
+  },
+  "idc_cptac_ccrcc": {
+   "bytes": 7899579642,
+   "dicom_series": 48,
+   "dicom_studies": 48,
+   "files": 13242,
+   "patients": 48,
+   "unique_bytes": 7899579642
+  },
+  "idc_cptac_cm": {
+   "bytes": 4231397264,
+   "dicom_series": 12,
+   "dicom_studies": 12,
+   "files": 8020,
+   "patients": 12,
+   "unique_bytes": 4231397264
+  },
+  "idc_cptac_lscc": {
+   "bytes": 29521912984,
+   "dicom_series": 171,
+   "dicom_studies": 35,
+   "files": 45444,
+   "patients": 34,
+   "unique_bytes": 29521835230
+  },
+  "idc_cptac_luad": {
+   "bytes": 38946321618,
+   "dicom_series": 350,
+   "dicom_studies": 65,
+   "files": 56829,
+   "patients": 35,
+   "unique_bytes": 38946284109
+  },
+  "idc_cptac_pda": {
+   "bytes": 10052805748,
+   "dicom_series": 61,
+   "dicom_studies": 61,
+   "files": 18952,
+   "patients": 61,
+   "unique_bytes": 10052805748
+  },
+  "idc_cptac_sar": {
+   "bytes": 3091957308,
+   "dicom_series": 14,
+   "dicom_studies": 14,
+   "files": 4971,
+   "patients": 14,
+   "unique_bytes": 3091957308
+  },
+  "idc_cptac_stad": {
+   "bytes": 7112447934,
+   "dicom_series": 19,
+   "dicom_studies": 19,
+   "files": 13485,
+   "patients": 19,
+   "unique_bytes": 7112447934
+  },
+  "idc_cptac_ucec": {
+   "bytes": 10535515130,
+   "dicom_series": 65,
+   "dicom_studies": 65,
+   "files": 19942,
+   "patients": 65,
+   "unique_bytes": 10535515130
+  },
+  "idc_ct_vs_pet_ventilation_imaging": {
+   "bytes": 1792570632,
+   "dicom_series": 20,
+   "dicom_studies": 20,
+   "files": 3397,
+   "patients": 20,
+   "unique_bytes": 1792570632
+  },
+  "idc_ctpred_sunitinib_pannet": {
+   "bytes": 6163724386,
+   "dicom_series": 34,
+   "dicom_studies": 34,
+   "files": 11689,
+   "patients": 34,
+   "unique_bytes": 6163724386
+  },
+  "idc_eay131": {
+   "bytes": 37225661636,
+   "dicom_series": 376,
+   "dicom_studies": 376,
+   "files": 65202,
+   "patients": 376,
+   "unique_bytes": 37225661636
+  },
+  "idc_hcc_tace_seg": {
+   "bytes": 5119552398,
+   "dicom_series": 101,
+   "dicom_studies": 101,
+   "files": 9717,
+   "patients": 101,
+   "unique_bytes": 5119552398
+  },
+  "idc_ldct_and_projection_data": {
+   "bytes": 862724923831,
+   "dicom_series": 698,
+   "dicom_studies": 399,
+   "files": 8044941,
+   "patients": 200,
+   "unique_bytes": 854699235811
+  },
+  "idc_lung_pet_ct_dx": {
+   "bytes": 29895161732,
+   "dicom_series": 158,
+   "dicom_studies": 158,
+   "files": 56646,
+   "patients": 158,
+   "unique_bytes": 29895161732
+  },
+  "idc_mediastinal_lymph_node_seg": {
+   "bytes": 25695564010,
+   "dicom_series": 316,
+   "dicom_studies": 316,
+   "files": 48770,
+   "patients": 316,
+   "unique_bytes": 25695564010
+  },
+  "idc_midrc_ricord_1a": {
+   "bytes": 6690856480,
+   "dicom_series": 98,
+   "dicom_studies": 98,
+   "files": 14964,
+   "patients": 98,
+   "unique_bytes": 6690856480
+  },
+  "idc_midrc_ricord_1b": {
+   "bytes": 8668721317,
+   "dicom_series": 120,
+   "dicom_studies": 120,
+   "files": 21224,
+   "patients": 117,
+   "unique_bytes": 8668672674
+  },
+  "idc_nsclc_radiogenomics": {
+   "bytes": 90920028002,
+   "dicom_series": 727,
+   "dicom_studies": 393,
+   "files": 171830,
+   "patients": 211,
+   "unique_bytes": 90920027189
+  },
+  "idc_nsclc_radiomics": {
+   "bytes": 26952714219,
+   "dicom_series": 422,
+   "dicom_studies": 422,
+   "files": 51234,
+   "patients": 422,
+   "unique_bytes": 26952673507
+  },
+  "idc_pancreatic_ct_cbct_seg": {
+   "bytes": 2957497980,
+   "dicom_series": 40,
+   "dicom_studies": 40,
+   "files": 5614,
+   "patients": 40,
+   "unique_bytes": 2957497980
+  },
+  "idc_pediatric_ct_seg": {
+   "bytes": 56902381622,
+   "dicom_series": 352,
+   "dicom_studies": 352,
+   "files": 108019,
+   "patients": 352,
+   "unique_bytes": 56902381622
+  },
+  "idc_pelvic_reference_data": {
+   "bytes": 4499041132,
+   "dicom_series": 58,
+   "dicom_studies": 58,
+   "files": 8540,
+   "patients": 58,
+   "unique_bytes": 4499041132
+  },
+  "idc_psma_pet_ct_lesions": {
+   "bytes": 63139697062,
+   "dicom_series": 374,
+   "dicom_studies": 374,
+   "files": 119632,
+   "patients": 374,
+   "unique_bytes": 63139697062
+  },
+  "idc_rider_lung_pet_ct": {
+   "bytes": 18537943612,
+   "dicom_series": 117,
+   "dicom_studies": 117,
+   "files": 35229,
+   "patients": 117,
+   "unique_bytes": 18537943612
+  },
+  "idc_spinal_multiple_myeloma_seg": {
+   "bytes": 297769275017,
+   "dicom_series": 576,
+   "dicom_studies": 72,
+   "files": 564468,
+   "patients": 67,
+   "unique_bytes": 297769213038
+  },
+  "idc_spine_mets_ct_seg": {
+   "bytes": 18724919264,
+   "dicom_series": 55,
+   "dicom_studies": 55,
+   "files": 35531,
+   "patients": 55,
+   "unique_bytes": 18724898228
+  },
+  "idc_tcga_blca": {
+   "bytes": 10284999264,
+   "dicom_series": 79,
+   "dicom_studies": 79,
+   "files": 19484,
+   "patients": 79,
+   "unique_bytes": 10284999264
+  },
+  "idc_tcga_esca": {
+   "bytes": 2501238054,
+   "dicom_series": 16,
+   "dicom_studies": 16,
+   "files": 4738,
+   "patients": 16,
+   "unique_bytes": 2501238054
+  },
+  "idc_tcga_kirc": {
+   "bytes": 9966507748,
+   "dicom_series": 129,
+   "dicom_studies": 129,
+   "files": 18869,
+   "patients": 129,
+   "unique_bytes": 9966507748
+  },
+  "idc_tcga_lihc": {
+   "bytes": 4976751636,
+   "dicom_series": 42,
+   "dicom_studies": 42,
+   "files": 9429,
+   "patients": 42,
+   "unique_bytes": 4976751636
+  },
+  "idc_tcga_ov": {
+   "bytes": 2474408344,
+   "dicom_series": 24,
+   "dicom_studies": 24,
+   "files": 4687,
+   "patients": 24,
+   "unique_bytes": 2474408344
+  },
+  "idc_tcga_stad": {
+   "bytes": 6437945576,
+   "dicom_series": 45,
+   "dicom_studies": 45,
+   "files": 12189,
+   "patients": 45,
+   "unique_bytes": 6437945576
+  },
+  "idc_tcga_ucec": {
+   "bytes": 4171151216,
+   "dicom_series": 38,
+   "dicom_studies": 38,
+   "files": 7900,
+   "patients": 38,
+   "unique_bytes": 4171151216
+  },
+  "idc_varepop_apollo": {
+   "bytes": 5483126018,
+   "dicom_series": 35,
+   "dicom_studies": 35,
+   "files": 10376,
+   "patients": 35,
+   "unique_bytes": 5483126018
+  },
+  "ipcai2025_xray_ct": {
+   "bytes": 6670978774,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 1,
+   "patients": 0,
+   "unique_bytes": 6670978774
+  },
+  "kidney_thoraxabdomen": {
+   "bytes": 75937730899,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 432,
+   "patients": 0,
+   "unique_bytes": 75937730065
+  },
+  "kub_stonex": {
+   "bytes": 55328666242,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 9648,
+   "patients": 0,
+   "unique_bytes": 37609402090
+  },
+  "ljubljana_2d3d_gs": {
+   "bytes": 306504065,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 181,
+   "patients": 0,
+   "unique_bytes": 304891861
+  },
+  "lumos": {
+   "bytes": 76386234420,
+   "dicom_series": 1081,
+   "dicom_studies": 1081,
+   "files": 106004,
+   "patients": 0,
+   "unique_bytes": 76377495110
+  },
+  "nhanes2_annotated": {
+   "bytes": 3284647651,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 1106,
+   "patients": 0,
+   "unique_bytes": 3217029593
+  },
+  "nhanes2_unannotated": {
+   "bytes": 138377968433,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 49548,
+   "patients": 0,
+   "unique_bytes": 138364917574
+  },
+  "nih_chestxray14": {
+   "bytes": 45079872841,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 14,
+   "patients": 0,
+   "unique_bytes": 45079862784
+  },
+  "nlst_pilot": {
+   "bytes": 73543991208,
+   "dicom_series": 500,
+   "dicom_studies": 500,
+   "files": 89865,
+   "patients": 500,
+   "unique_bytes": 73543990990
+  },
+  "panorama": {
+   "bytes": 194439363448,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 2240,
+   "patients": 0,
+   "unique_bytes": 194411269490
+  },
+  "pengwin2026": {
+   "bytes": 83498925109,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 1022,
+   "patients": 0,
+   "unique_bytes": 83498924193
+  },
+  "pengwin_task2_xrays": {
+   "bytes": 34950751395,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 6,
+   "patients": 0,
+   "unique_bytes": 34950730179
+  },
+  "quadra_hc": {
+   "bytes": 20413498578,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 966,
+   "patients": 0,
+   "unique_bytes": 20413417646
+  },
+  "ribfrac": {
+   "bytes": 156899015256,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 750,
+   "patients": 0,
+   "unique_bytes": 156898634545
+  },
+  "rsna_2022_cervical": {
+   "bytes": 203321991870,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 4,
+   "patients": 0,
+   "unique_bytes": 203321991754
+  },
+  "scidb_mtddh": {
+   "bytes": 4053482052,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 3,
+   "patients": 0,
+   "unique_bytes": 4053482052
+  },
+  "tcia_fdg_pet_ct_lesions": {
+   "bytes": 393872197196,
+   "dicom_series": 900,
+   "dicom_studies": 900,
+   "files": 511084,
+   "patients": 900,
+   "unique_bytes": 393869678763
+  },
+  "verse": {
+   "bytes": 52189925392,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 1872,
+   "patients": 0,
+   "unique_bytes": 52187657889
+  },
+  "verse_2d_projections": {
+   "bytes": 4417086105,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 16,
+   "patients": 0,
+   "unique_bytes": 4417064516
+  },
+  "veterinary_pig_levelcheck": {
+   "bytes": 205012607,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 10,
+   "patients": 0,
+   "unique_bytes": 204999416
+  },
+  "vindr_spinexr": {
+   "bytes": 114749095458,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 58116,
+   "patients": 0,
+   "unique_bytes": 110685028944
+  },
+  "waw_tace": {
+   "bytes": 47150828519,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 856,
+   "patients": 0,
+   "unique_bytes": 47126900493
+  },
+  "zenodo_lumvbcanseg": {
+   "bytes": 10075438693,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 1,
+   "patients": 0,
+   "unique_bytes": 10075438693
+  },
+  "zenodo_medpelvis3d": {
+   "bytes": 31351310903,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 100,
+   "patients": 0,
+   "unique_bytes": 31351304465
+  },
+  "zenodo_tmtv_benchmark": {
+   "bytes": 6846084599,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 5,
+   "patients": 0,
+   "unique_bytes": 6846053832
+  },
+  "zenodo_ts_task_hip_implant": {
+   "bytes": 9129987506,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 146,
+   "patients": 0,
+   "unique_bytes": 9129985917
+  },
+  "zenodo_ts_task_liver_lesions": {
+   "bytes": 39039571028,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 1688,
+   "patients": 0,
+   "unique_bytes": 39025274926
+  },
+  "zenodo_ts_task_pleural_effusion": {
+   "bytes": 9012772615,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 1204,
+   "patients": 0,
+   "unique_bytes": 9011006513
+  },
+  "zenodo_unitochest": {
+   "bytes": 84067545368,
+   "dicom_series": 0,
+   "dicom_studies": 0,
+   "files": 2,
+   "patients": 0,
+   "unique_bytes": 84067545368
+  },
+  "zenodo_vsd_fullbody": {
+   "bytes": 252158307717,
+   "dicom_series": 307,
+   "dicom_studies": 59,
+   "files": 265636,
+   "patients": 72,
+   "unique_bytes": 252152464241
+  }
+ }
+}

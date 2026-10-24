@@ -1,0 +1,57 @@
+{
+ "bytes": 980237210056,
+ "depth": 1,
+ "extensions": {
+  ".csv": {
+   "bytes": 128384348,
+   "files": 3
+  },
+  ".dcm": {
+   "bytes": 980108825708,
+   "files": 1937447
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 1937450,
+ "folders": [
+  {
+   "bytes": 77108820470,
+   "files": 146853,
+   "path": "test",
+   "tree_sha256": "f6203b773157d2d289d275e52c9978abd6a0130a8be444cfdb5f3d39e4b5c6d8"
+  },
+  {
+   "bytes": 903000005238,
+   "files": 1790594,
+   "path": "train",
+   "tree_sha256": "3a7b0387206ead804a61de463eb7c1d6f19135e592a44f8f8f0388c6dec6f4e8"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-24T19:23:45Z",
+ "id": "rsna_rspect",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 3,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 7929
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 7929
+  },
+  {
+   "depth": 4,
+   "files": 1937447,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "048f53237ebd3a538690cf12f900a20af4f9745ed52bf8768c371ba57a857b83"
+}
