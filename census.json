@@ -26,12 +26,12 @@
   },
   "on_grid": 104,
   "on_grid_size": {
-   "sum": 6645797926423,
-   "counted": 99,
+   "sum": 7626035136479,
+   "counted": 100,
    "of": 104,
-   "measured": 98
+   "measured": 99
   },
-  "on_grid_frozen": 98,
+  "on_grid_frozen": 99,
   "on_grid_subjects": {
    "sum": 174486,
    "counted": 88,
@@ -83,10 +83,10 @@
     "of": 89
    },
    "on_grid_size": {
-    "sum": 6160765997247,
-    "counted": 86,
+    "sum": 7141003207303,
+    "counted": 87,
     "of": 89,
-    "measured": 85
+    "measured": 86
    },
    "by_stage": {
     "downloadable": 2,
@@ -8036,7 +8036,7 @@
    }
   },
   "rsna_rspect": {
-   "digest": "d32e93db7f78c3e9eb794bfcdf094cb011700a866bf36131624146c6c1e512f0",
+   "digest": "e7552a49ec54b6a425f9def6e7f070ba937b92eebb6f0ea79721bd91d0705fce",
    "first_seen": "2026-10-21",
    "last_changed": "2026-10-24",
    "row": {
@@ -8054,8 +8054,8 @@
     "level_truth": "counted by the census pipeline once fetched",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/rsna_rspect_pe/raw",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 980237210056,
+    "tree_sha256": "048f53237ebd3a538690cf12f900a20af4f9745ed52bf8768c371ba57a857b83",
     "subjects": null,
     "xray_images": null,
     "videos": null,
@@ -11828,6 +11828,17 @@
     "licence": [
      "a SOF data request agreement; terms to confirm on the page",
      "an NIA Outgoing Human Data Transfer Agreement signed by the PI and Wayne State's Signing Official: non-profit research on the approved project only, no redistribution, no re-identification, acknowledgement, 12 months renewable, destruction certified at the end"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-24",
+   "id": "rsna_rspect",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     980237210056
     ]
    }
   }

@@ -11,8 +11,8 @@ since the last run. The page with filters is census.html beside this file, serve
 |---|---|
 | Datasets with a record | 166 |
 | On the grid (shared tree and the owner's root) | 104 |
-| Size on the grid | 6.6 TB (99 of 104 sets counted) |
-| Frozen on the grid, every file hashed (tools/freeze.py) | 98 of 104 |
+| Size on the grid | 7.6 TB (100 of 104 sets counted) |
+| Frozen on the grid, every file hashed (tools/freeze.py) | 99 of 104 |
 | Subjects on the grid | 174,486 (88 of 104 sets counted) |
 | X-ray images on the grid | 163,035 (17 of 104 sets counted) |
 | X-ray videos and sweeps on the grid | 694 (2 of 104 sets counted) |
@@ -260,7 +260,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | RibFrac (MICCAI 2020) chest CT | CT | Held by the owner | restricted |  |  |  |  | 660 | 156.9 GB |  |
 | RSNA 2022 cervical spine fracture CT (Kaggle) | CT | Held by the owner | restricted |  |  |  |  | 2,019 | 203.3 GB |  |
 | RSNA abdominal trauma CT (RATIC) | CT | Granted, fetch pending | restricted |  |  |  |  |  |  | [#87](https://github.com/OpenSpineConsortium/spine-datasets/issues/87) |
-| RSNA pulmonary embolism CT (RSPECT) | CT | Held by the owner | restricted |  |  |  |  |  |  | [#88](https://github.com/OpenSpineConsortium/spine-datasets/issues/88) |
+| RSNA pulmonary embolism CT (RSPECT) | CT | Held by the owner | restricted |  |  |  |  |  | 980.2 GB | [#88](https://github.com/OpenSpineConsortium/spine-datasets/issues/88) |
 | ENHANCE.PET 1.6k: whole-/total-body FDG-PET/CT, 1,683 studies (NIfTI) | CT | To ask | open |  |  |  |  |  | 286.3 GB | [#90](https://github.com/OpenSpineConsortium/spine-datasets/issues/90) |
 | Stanford AIMI INSPECT chest CT | CT | Needs the owner | restricted |  |  |  |  |  |  | [#19](https://github.com/OpenSpineConsortium/spine-datasets/issues/19) |
 | Stanford AIMI Merlin abdominal CT | CT | Needs the owner | restricted |  |  |  |  |  |  | [#18](https://github.com/OpenSpineConsortium/spine-datasets/issues/18) |
@@ -298,7 +298,7 @@ with filters, and each set's masks in full, is census-ct.html beside this file.
 | On the grid | 89 |
 | CT volumes on the grid | 24,959 (70 of 89 sets counted) |
 | Subjects on the grid | 25,991 (80 of 89 sets counted) |
-| Size on the grid | 6.2 TB (86 of 89 sets counted) |
+| Size on the grid | 7.1 TB (87 of 89 sets counted) |
 | On the grid with the source's vertebra masks by level | 4,208 CT volumes in 6 sets |
 | On the grid with masks made on the grid | 15,753 CT volumes in 62 sets, 20 of them counted |
 | Sets whose masks are surveyed | 105 of 105 |
@@ -490,8 +490,6 @@ What the CT records still lack:
 - CTPelvic1K: the licence is still to confirm on the source's page
 - MAGIC-CT (Zenodo): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - RSNA abdominal trauma CT (RATIC): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
-- RSNA pulmonary embolism CT (RSPECT): on the grid with no size: write the landing pass's bytes into measured
-- RSNA pulmonary embolism CT (RSPECT): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - RSNA pulmonary embolism CT (RSPECT): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - ENHANCE.PET 1.6k: whole-/total-body FDG-PET/CT, 1,683 studies (NIfTI): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - Stanford AIMI INSPECT chest CT: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
@@ -502,6 +500,7 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-24 RSNA pulmonary embolism CT (RSPECT): grid_bytes none to 980.2 GB
 - 2026-10-24 SOF lateral spine radiographs (Study of Osteoporotic Fractures): licence a SOF data request agreement; terms to confirm on the page to an NIA Outgoing Human Data Transfer Agreement signed by the PI and Wayne State's Signing Official: non-profit research on the approved project only, no redistribution, no re-identification, acknowledgement, 12 months renewable, destruction certified at the end; stage to-ask to needs-owner; status todo to needs-owner
 - 2026-10-24 MrOS lateral spine radiographs (Osteoporotic Fractures in Men): licence a MrOS data request agreement; terms to confirm on the page to an NIA Outgoing Human Data Transfer Agreement signed by the PI and Wayne State's Signing Official: non-profit research on the approved project only, no redistribution, no re-identification, acknowledgement, 12 months renewable, destruction certified at the end; stage to-ask to needs-owner; status todo to needs-owner
 - 2026-10-24 IDC `ldct_and_projection_data` (tier 2): grid_bytes none to 862.7 GB
