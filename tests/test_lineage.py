@@ -75,6 +75,23 @@ def write_set(top, ident, files):
     return folder
 
 
+def nifti_file(shape, spacing, values, datatype=4, endian="<", slope=0.0, inter=0.0):
+    """A gzipped NIfTI-1 volume: the 348-byte header, four bytes of extension flag, then the voxels."""
+    import array
+    typecode, width = lineage.NIFTI_TYPES[datatype]
+    header = bytearray(348)
+    struct.pack_into(endian + "i", header, 0, 348)
+    struct.pack_into(endian + "8h", header, 40, len(shape), *(list(shape) + [1] * (7 - len(shape))))
+    struct.pack_into(endian + "hh", header, 70, datatype, width * 8)
+    struct.pack_into(endian + "8f", header, 76, 1.0, *(list(spacing) + [1.0] * (7 - len(spacing))))
+    struct.pack_into(endian + "3f", header, 108, 352.0, slope, inter)
+    header[344:348] = b"n+1\x00"
+    voxels = array.array(typecode, values)
+    if (endian == ">") != (sys.byteorder == "big"):
+        voxels.byteswap()
+    return gzip.compress(bytes(header) + b"\x00" * 4 + voxels.tobytes())
+
+
 BIG = lineage.DATA_BYTES
 
 
@@ -172,6 +189,81 @@ class BuildTest(unittest.TestCase):
         found = dict(lineage.sets_from(self.plan, shared))
         self.assertIn("set_d", found)
         self.assertNotIn("missing", found)
+
+
+class VolumeTest(unittest.TestCase):
+    """The NIfTI pass: geometry from the header, and the two signatures from the voxels, which find
+    the same scan re-compressed, stored in another axis order or in another integer type."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.values = list(range(24))
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def path(self, name, data):
+        full = os.path.join(self.tmp.name, name)
+        with open(full, "wb") as handle:
+            handle.write(data)
+        return full
+
+    def test_header_and_geometry(self):
+        header = lineage.nifti_header(self.path("a.nii.gz", nifti_file((2, 3, 4), (0.5, 0.5, 2.0), self.values)))
+        self.assertEqual(header[1], (2, 3, 4))
+        self.assertEqual(header[3], 4)
+        self.assertEqual(lineage.geometry_of(header), "2x0.500,3x0.500,4x2.000")
+        other = lineage.nifti_header(self.path("b.nii.gz", nifti_file((4, 3, 2), (2.0, 0.5, 0.5), self.values, endian=">")))
+        self.assertEqual(lineage.geometry_of(other), lineage.geometry_of(header), "axis order and byte order")
+        self.assertIsNone(lineage.nifti_header(self.path("c.nii.gz", gzip.compress(b"x" * 400))))
+        self.assertIsNone(lineage.nifti_header(self.path("d.nii.gz", b"not gzip at all")))
+
+    def test_signatures(self):
+        first = lineage.signatures_of(self.path("a.nii.gz", nifti_file((2, 3, 4), (1, 1, 1), self.values)))
+        level = gzip.compress(gzip.decompress(nifti_file((2, 3, 4), (1, 1, 1), self.values)), compresslevel=1)
+        self.assertEqual(lineage.signatures_of(self.path("b.nii.gz", level)), first, "re-compressed")
+        swapped = lineage.signatures_of(self.path("c.nii.gz", nifti_file((4, 3, 2), (1, 1, 1), self.values[::-1], datatype=16)))
+        self.assertNotEqual(swapped[0], first[0], "other bytes")
+        self.assertEqual(swapped[1], first[1], "the same values")
+        self.assertEqual(first[1], "24:276")
+        scaled = lineage.signatures_of(self.path("d.nii.gz", nifti_file((2, 3, 4), (1, 1, 1), [0] * 24, slope=1.0, inter=11.5)))
+        self.assertEqual(scaled[1], "24:276")
+        short = gzip.decompress(nifti_file((2, 3, 4), (1, 1, 1), self.values))[:-8]
+        self.assertEqual(lineage.signatures_of(self.path("e.nii.gz", gzip.compress(short))), ("", ""))
+
+    def test_labels_are_not_volumes(self):
+        self.assertTrue(lineage.is_volume("imagesTr/case_001_0000.nii.gz"))
+        self.assertFalse(lineage.is_volume("labelsTr/case_001.nii.gz"))
+        self.assertFalse(lineage.is_volume("derivatives/sub-01_seg.nii.gz"))
+        self.assertFalse(lineage.is_volume("a/b.dcm"))
+
+    def test_the_build_counts_shared_scans(self):
+        top = self.tmp.name
+        scan = nifti_file((2, 3, 4), (0.8, 0.8, 3.0), self.values)
+        recompressed = gzip.compress(gzip.decompress(scan), compresslevel=1)
+        a = write_set(top, "set_a", {"imagesTr/one_0000.nii.gz": scan,
+                                     "imagesTr/two_0000.nii.gz": nifti_file((5, 5, 5), (1, 1, 1), [1] * 125),
+                                     "labelsTr/one.nii.gz": scan})
+        b = write_set(top, "set_b", {"img/x.nii.gz": recompressed,
+                                     "img/y.nii.gz": nifti_file((5, 5, 5), (1, 1, 1), [2] * 125)})
+        c = write_set(top, "set_c", {"vol/z.nii.gz": nifti_file((4, 3, 2), (3.0, 0.8, 0.8), self.values[::-1], datatype=512)})
+        out = os.path.join(top, "out")
+        table = lineage.build([("set_a", a), ("set_b", b), ("set_c", c)], out, workers=2)
+        pairs = {(row["a"], row["b"]): row for row in table["pairs"]}
+        ab = pairs[("set_a", "set_b")]
+        self.assertEqual((ab["same_geometry"], ab["same_values"], ab["same_voxels"]), (2, 1, 1))
+        ac = pairs[("set_a", "set_c")]
+        self.assertEqual((ac["same_geometry"], ac["same_values"], ac["same_voxels"]), (1, 1, 0))
+        self.assertEqual(table["sets"]["set_a"]["nifti_volumes"], 2, "the label is no image volume")
+        self.assertEqual(lineage.public_problems(lineage.read_overlap(os.path.join(out, lineage.OVERLAP))), [])
+        db = sqlite3.connect(os.path.join(out, lineage.LEDGER))
+        read = db.execute("SELECT count(*) FROM volume WHERE voxels != ''").fetchone()[0]
+        db.close()
+        self.assertEqual(read, 5, "every volume here shares a geometry with another set's")
+        self.assertEqual(table["sets"]["set_a"]["nifti_read"], 2)
+        spent = lineage.build([("set_a", a), ("set_b", b), ("set_c", c)], out, budget=-1)
+        self.assertEqual(spent["sets"]["set_a"]["nifti_read"], 0, "no batch starts once the budget is spent")
+        self.assertEqual(spent["pairs"][0]["same_values"], 0)
 
 
 class PublicTest(unittest.TestCase):

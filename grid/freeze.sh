@@ -23,10 +23,11 @@
 #                                     account's own gh; no job, a few calls to GitHub's API, and a
 #                                     session brings them into the records (tools/freeze.py apply)
 #   bash freeze.sh run SHARE          inside a job: freeze each set of SHARE not yet frozen
-#   bash freeze.sh overlap            one job that reads every frozen set's file list and a few DICOM
-#                                     headers per folder into lineage/ (tools/lineage.py): the ledger,
+#   bash freeze.sh overlap            one job that reads every frozen set's file list, a few DICOM
+#                                     headers per folder and the voxels of NIfTI volumes whose geometry
+#                                     two sets share into lineage/ (tools/lineage.py): the ledger,
 #                                     which stays here, and OVERLAP.json, counts alone, which report
-#                                     then carries back too; it reads no image and writes into no set
+#                                     then carries back too; it writes into no set
 #   bash freeze.sh lineage            inside that job: tools/lineage.py build
 #
 # The grid gate's words freeze pilot, freeze start, freeze status, freeze report and freeze overlap
@@ -183,7 +184,7 @@ case "${1:-}" in
     if squeue -h -u "$USER" -n "$PROJECT-lineage" -o %i 2>/dev/null | grep -q .; then
       echo "a lineage job is already queued or running; not queueing another"; exit 0
     fi
-    echo "queueing one lineage job: every frozen set's file list and DICOM headers, no image read"
+    echo "queueing one lineage job: every frozen set's file list and DICOM headers, and the voxels of NIfTI volumes whose geometry two sets share"
     hpcw job submit --project "$PROJECT" --name lineage --class batch --dir "$HOME_DIR" \
       -- "$HOME_DIR/code/freeze.sh" lineage
     ;;
