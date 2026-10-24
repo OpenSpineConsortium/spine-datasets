@@ -22,7 +22,7 @@
  "source_status": "the tracks are on the grid; the DICOM cine is request 1, drafted, never sent; the letter (request 1) was forwarded to ckaching.cheung@polyu.edu.hk on 2026-10-21 03:57 UTC",
  "route": "letter",
  "status": "requested",
- "result": "Request 1 of the 2026-09-26 sheet sent 2026-10-20 by the owner and forwarded to ckaching.cheung@polyu.edu.hk on 2026-10-21 03:57 UTC; waiting for the answer. The letter text is spine-program's and is not in this repository. Jonny Branney (Bournemouth) replied 2026-10-22 10:56 UTC: happy to share, checking with the university's research department about the data-sharing arrangement, and will get back; waiting for that answer.",
+ "result": "Request 1 of the 2026-09-26 sheet sent 2026-10-20 by the owner and forwarded to ckaching.cheung@polyu.edu.hk on 2026-10-21 03:57 UTC; waiting for the answer. The letter text is spine-program's and is not in this repository. Jonny Branney (Bournemouth) replied 2026-10-22 10:56 UTC: happy to share, checking with the university's research department about the data-sharing arrangement, and will get back; waiting for that answer. The owner's reply-all of 2026-10-24 03:08 UTC in the same thread asked about the lumbar OSF deposit and said the request for the cine stands as written.",
  "history": [
   {
    "date": "2026-10-21",
@@ -38,6 +38,11 @@
    "date": "2026-10-22",
    "step": "note",
    "note": "Branney replied 10:56 UTC: happy to share; checking with Bournemouth's research department about the data-sharing arrangement; will get back"
+  },
+  {
+   "date": "2026-10-24",
+   "step": "note",
+   "note": "the owner's reply-all of 03:08 UTC in Branney's thread asked about the lumbar OSF deposit and said the request for the cine stands as written; nothing new asked for this set"
   }
  ],
  "obstacles": [],
