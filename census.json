@@ -1,7 +1,7 @@
 {
  "rules": "fa3c1ba0485667d1",
  "repo": "OpenSpineConsortium/spine-datasets",
- "generated": "2026-10-23",
+ "generated": "2026-10-24",
  "totals": {
   "datasets": 166,
   "by_stage": {
@@ -9,8 +9,8 @@
    "to-ask": 8,
    "asked": 27,
    "granted": 5,
-   "fetching": 1,
-   "on-grid": 6,
+   "fetching": 0,
+   "on-grid": 7,
    "held": 96,
    "needs-owner": 11,
    "refused": 2,
@@ -24,38 +24,38 @@
    "ct": 92,
    "future": 2
   },
-  "on_grid": 102,
+  "on_grid": 103,
   "on_grid_size": {
-   "sum": 5795519520540,
-   "counted": 98,
-   "of": 102,
-   "measured": 96
+   "sum": 5799573002592,
+   "counted": 99,
+   "of": 103,
+   "measured": 97
   },
-  "on_grid_frozen": 96,
+  "on_grid_frozen": 97,
   "on_grid_subjects": {
-   "sum": 62843,
-   "counted": 86,
-   "of": 102
+   "sum": 64999,
+   "counted": 87,
+   "of": 103
   },
   "on_grid_xray_images": {
-   "sum": 160879,
-   "counted": 16,
-   "of": 102
+   "sum": 163035,
+   "counted": 17,
+   "of": 103
   },
   "on_grid_videos": {
    "sum": 694,
    "counted": 2,
-   "of": 102
+   "of": 103
   },
   "on_grid_run_frames": {
    "sum": 376220,
    "counted": 2,
-   "of": 102
+   "of": 103
   },
   "on_grid_ct_volumes": {
    "sum": 24959,
    "counted": 70,
-   "of": 102
+   "of": 103
   },
   "paired": {
    "A": 5,
@@ -8144,26 +8144,26 @@
    }
   },
   "scidb_mtddh": {
-   "digest": "baf55ff0f748b8c0b278addd673b7681d126b0562210fc9fe78bee8639539a4b",
+   "digest": "711f11047eca0ea5717adc25a3741ea1412ad5142373bfa08a6d7eca6f06d165",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-24",
    "row": {
     "id": "scidb_mtddh",
     "name": "MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025)",
     "group": "films",
     "kind": "Radiographs",
     "route": "download",
-    "status": "fetching",
-    "stage": "fetching",
+    "status": "fetched",
+    "stage": "on-grid",
     "licence": "CC BY 4.0 (DataCite's record of the DOI, read 2026-10-23)",
     "licence_kind": "open",
     "link": "https://www.scidb.cn/en/detail?dataSetId=c088644bd0b2406eb49830ad447c17fb",
     "what": "2,156 pelvic radiographs of children aged 5 to 40 months, one film per child, from the Children's Hospital of Zhejiang University School of Medicine and Hebei Children's Hospital, in two parts: 1,250 (781 girls, 469 boys, mean age 14.6 months) annotated with four regions for image quality (both obturator foramina and both ilia) and eight key points for developmental dysplasia of the hip, as JPG in three split folders with JSON annotations for the first two, and 906 (558 girls, 384 boys, mean age 14.3 months) with the eight key points alone, as PNG with COCO-format annotations; file names randomised by the authors; released with the hospital's ethics approval 2023-IRB-0287-P-01, consent waived, anonymised (Qi, Jiao, Li and others, Scientific Data 2025, doi:10.1038/s41597-025-05146-x; Science Data Bank doi:10.57760/sciencedb.24372, V1, issued 2025-04-29, 4,053,482,052 bytes in three files: JPG_DICOM.rar, MTDDH.zip and code.zip); the lumbosacral junction is in the field of a pelvic film, as in the Mendeley DDH hip sets",
     "level_truth": "none; pediatric pelvis",
-    "grid_path": null,
-    "on_grid": false,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_path": "/rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw",
+    "on_grid": true,
+    "grid_bytes": 4053482052,
+    "tree_sha256": "54bc12b443d54adcc4f73fed418529a38ce6f25cfdb31c8c5033a00c372238df",
     "subjects": 2156,
     "xray_images": 2156,
     "videos": null,
@@ -8174,11 +8174,11 @@
      "files",
      "size_gb"
     ],
-    "next": "the promoter installs it after merge",
+    "next": "",
     "since": "2026-10-23",
     "last_step": {
-     "date": "2026-10-23",
-     "step": "fetching"
+     "date": "2026-10-24",
+     "step": "fetched"
     },
     "paired": false,
     "tier": null,
@@ -11737,6 +11737,29 @@
     "stage": [
      "to-ask",
      "asked"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-24",
+   "id": "scidb_mtddh",
+   "kind": "changed",
+   "changes": {
+    "status": [
+     "fetching",
+     "fetched"
+    ],
+    "stage": [
+     "fetching",
+     "on-grid"
+    ],
+    "grid_path": [
+     null,
+     "/rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw"
+    ],
+    "grid_bytes": [
+     null,
+     4053482052
     ]
    }
   }

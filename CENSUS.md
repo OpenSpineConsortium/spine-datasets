@@ -1,6 +1,6 @@
 # Census: every dataset, counted from its record
 
-Written by tools/census.py on 2026-10-23 from the 166 records under datasets/ of
+Written by tools/census.py on 2026-10-24 from the 166 records under datasets/ of
 https://github.com/OpenSpineConsortium/spine-datasets; nobody edits it by hand. Each dataset is one record; the census reads
 the records alone, never a dataset's files, and folds in only the records that are new or changed
 since the last run. The page with filters is census.html beside this file, served by the docs site.
@@ -10,14 +10,14 @@ since the last run. The page with filters is census.html beside this file, serve
 | | |
 |---|---|
 | Datasets with a record | 166 |
-| On the grid (shared tree and the owner's root) | 102 |
-| Size on the grid | 5.8 TB (98 of 102 sets counted) |
-| Frozen on the grid, every file hashed (tools/freeze.py) | 96 of 102 |
-| Subjects on the grid | 62,843 (86 of 102 sets counted) |
-| X-ray images on the grid | 160,879 (16 of 102 sets counted) |
-| X-ray videos and sweeps on the grid | 694 (2 of 102 sets counted) |
-| Frames inside those videos and sweeps | 376,220 (2 of 102 sets counted) |
-| CT volumes on the grid | 24,959 (70 of 102 sets counted) |
+| On the grid (shared tree and the owner's root) | 103 |
+| Size on the grid | 5.8 TB (99 of 103 sets counted) |
+| Frozen on the grid, every file hashed (tools/freeze.py) | 97 of 103 |
+| Subjects on the grid | 64,999 (87 of 103 sets counted) |
+| X-ray images on the grid | 163,035 (17 of 103 sets counted) |
+| X-ray videos and sweeps on the grid | 694 (2 of 103 sets counted) |
+| Frames inside those videos and sweeps | 376,220 (2 of 103 sets counted) |
+| CT volumes on the grid | 24,959 (70 of 103 sets counted) |
 | Real spine X-ray and CT pairs on the grid | 5 sets, 1,651 subjects |
 
 | Stage | Datasets |
@@ -26,8 +26,8 @@ since the last run. The page with filters is census.html beside this file, serve
 | To ask | 8 |
 | Asked, waiting | 27 |
 | Granted, fetch pending | 5 |
-| Fetching | 1 |
-| On the grid | 6 |
+| Fetching | 0 |
+| On the grid | 7 |
 | Held by the owner | 96 |
 | Needs the owner | 11 |
 | Refused | 2 |
@@ -177,7 +177,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | Open-i Indiana chest collection | Radiographs | Needs the owner | restricted |  | 7,470 |  |  |  |  | [#35](https://github.com/OpenSpineConsortium/spine-datasets/issues/35) |
 | PadChest (BIMCV, Alicante) | Radiographs | To ask | restricted | 67,625 | 160,868 |  |  |  |  | [#12](https://github.com/OpenSpineConsortium/spine-datasets/issues/12) |
 | ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025) | Radiographs | To ask | restricted | 109,487 |  |  |  |  |  | [#11](https://github.com/OpenSpineConsortium/spine-datasets/issues/11) |
-| MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025) | Radiographs | Fetching | open | 2,156 | 2,156 |  |  |  | 4.1 GB |  |
+| MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025) | Radiographs | On the grid | open | 2,156 | 2,156 |  |  |  | 4.1 GB |  |
 | SOF lateral spine radiographs (Study of Osteoporotic Fractures) | Radiographs | To ask | restricted |  |  |  |  |  |  | [#10](https://github.com/OpenSpineConsortium/spine-datasets/issues/10) |
 | TVGH ankylosing spondylitis cervical and lumbar spine films | Radiographs | Asked, waiting | unknown |  |  |  |  |  |  | [#108](https://github.com/OpenSpineConsortium/spine-datasets/issues/108) |
 | TVGH-SpineXR | Radiographs | Asked, waiting | unknown |  |  |  |  |  |  | [#14](https://github.com/OpenSpineConsortium/spine-datasets/issues/14) |
@@ -503,6 +503,7 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-24 MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025): grid_bytes none to 4.1 GB; grid_path none to /rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw; stage fetching to on-grid; status fetching to fetched
 - 2026-10-23 Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity): stage to-ask to asked; status todo to requested
 - 2026-10-23 MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025): stage downloadable to fetching; status todo to fetching
 - 2026-10-23 Veterinary: pig lower limb CT, CBCT and planar images (Goswami 2020, IEEE DataPort): grid_bytes 205.0 MB to 205.0 MB
