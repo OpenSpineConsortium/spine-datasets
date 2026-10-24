@@ -10,6 +10,10 @@
 #                                     fetch word of each set it fetches, for the owner to press;
 #                                     a move waits for the home's path (STORAGE_HOME)
 #   bash storage.sh plan STAMP        inside that job: each retirement's plan, written to plans/
+#   bash storage.sh retire STAMP      one job that carries out the request's retirements whose plans
+#                                     list files (tools/retire.py delete); sent by the owner's press
+#   bash storage.sh delete STAMP      inside that job: each retirement, RETIRED.json written beside
+#                                     the freeze and a copy kept under plans/ for report
 #   bash storage.sh status            the jobs, the plans so far and the home's reading
 #   bash storage.sh home              the home's size and use, read with df, into home.json
 #   bash storage.sh report            the plans' counts and the home's reading, sent to the branch
@@ -17,8 +21,10 @@
 #                                     through the account's own gh, as freeze report does
 #
 # A plan lists what a retirement would delete and keeps the freeze, the labels and the metadata;
-# it deletes nothing. Deleting waits for the owner's answer on whether a merged request may delete
-# a set's images through the grid gate, and comes as a step of its own after that answer.
+# it deletes nothing. The owner allowed on 2026-10-24 that a merged request deletes a set's images
+# through the grid gate, narrowly: retire deletes only what a plan listed, after tools/retire.py has
+# run the same checks again on the folder as it is and found the same list, and it is a word of
+# its own, sent after the plans have been reported, so what goes is seen before it goes.
 #
 # The grid gate's words (hpcworker's tools/grid_gate.sh) fetch tools/retire.py, tools/freeze.py,
 # this file and the request at the head of the default branch into code/, so only a merged request
@@ -94,6 +100,38 @@ case "${1:-}" in
     done < <("$py" "$RETIRE" actions "$file")
     exit "$status"
     ;;
+  retire)
+    file=$(request_of "${2:-}")
+    py=$(python_bin)
+    ready=0
+    while IFS=$'\t' read -r kind ident _place _folder _tree; do
+      [ "$kind" = retire ] || continue
+      if [ -s "$HOME_DIR/plans/$ident.delete" ] && grep -q '"problems": \[\]' "$HOME_DIR/plans/$ident.json" 2>/dev/null; then
+        ready=$((ready + 1))
+      else
+        echo "$ident: no plan that lists files; send storage apply $2 first, or read its problems"
+      fi
+    done < <("$py" "$RETIRE" actions "$file")
+    [ "$ready" -gt 0 ] || { echo "nothing to retire"; exit 1; }
+    if squeue -h -u "$USER" -n "$PROJECT-$JOB" -o %i 2>/dev/null | grep -q .; then
+      echo "a storage job is already queued or running; not queueing another"; exit 0
+    fi
+    echo "queueing one job to retire $ready sets of request $2"
+    hpcw job submit --project "$PROJECT" --name "$JOB" --class batch --dir "$HOME_DIR" \
+      -- "$HOME_DIR/code/storage.sh" delete "$2"
+    ;;
+  delete)
+    [ -n "${SLURM_JOB_ID:-}" ] || { echo "delete is for inside a job; use retire"; exit 2; }
+    file=$(request_of "${2:-}")
+    py=$(python_bin)
+    echo "$(date -u +%FT%TZ) storage job $SLURM_JOB_ID on $(hostname -s), retiring request $2"
+    status=0
+    while IFS=$'\t' read -r kind ident _place folder tree; do
+      [ "$kind" = retire ] || continue
+      "$py" "$RETIRE" delete "$folder" --id "$ident" --tree "$tree" --plans "$HOME_DIR/plans" --request "$2" || status=1
+    done < <("$py" "$RETIRE" actions "$file")
+    exit "$status"
+    ;;
   home)
     [ -n "${STORAGE_HOME:-}" ] || { echo "the home's path is not set: STORAGE_HOME names the folder that holds 4 TB"; exit 2; }
     [ -d "$STORAGE_HOME" ] || { echo "the home's path is not a folder"; exit 2; }
@@ -105,7 +143,7 @@ case "${1:-}" in
     ;;
   status)
     squeue -u "$USER" -n "$PROJECT-$JOB" || true
-    for plan in $(ls -t "$HOME_DIR"/plans/*.json 2>/dev/null | head -20); do
+    for plan in $(ls -t "$HOME_DIR"/plans/*.json 2>/dev/null | head -40); do
       echo "plan $(basename "$plan" .json): $(tr -d ' \n' < "$plan")"
     done
     [ -f "$HOME_DIR/home.json" ] && echo "home: $(cat "$HOME_DIR/home.json")"
@@ -145,6 +183,6 @@ EOF
     echo "reported to $REPORT_BRANCH at ${commit:0:12}"
     ;;
   *)
-    echo "usage: storage.sh apply STAMP | plan STAMP | status | home | report"; exit 2
+    echo "usage: storage.sh apply STAMP | plan STAMP | retire STAMP | delete STAMP | status | home | report"; exit 2
     ;;
 esac
