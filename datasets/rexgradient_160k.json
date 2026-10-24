@@ -19,10 +19,10 @@
  },
  "measured": {},
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
- "source_status": "held: fetched by the owner's own chain on 2026-10-23 (schwingnet fetch hf_rexgradient_160k, job 40743347, the owner's Hugging Face token), 156 GB under the data root in the status listing of 2026-10-24 02:17 UTC, the set's stated size; the gate on the Hugging Face page was passed under the owner's account; 79 sites means 79 exposure recipes",
+ "source_status": "held: fetched by the owner's own chain on 2026-10-23 (the gate word fetch hf_rexgradient_160k, job 40743347, the owner's Hugging Face token), 156 GB under the data root in the status listing of 2026-10-24 02:17 UTC, the set's stated size; the owner accepted the gate's data access and use agreement on 2026-10-22 and chose the whole repository knowing clause A.5; the owner's note asking the corresponding author's leave for all ten parts went 2026-10-24 03:24 UTC, the answer awaited; 79 sites means 79 exposure recipes",
  "route": "form",
  "status": "held",
- "result": "2026-10-24: held on the grid at /rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k, 156 GB in the status listing of 2026-10-24 02:17 UTC (symphony-template grid branch, 281cfcb), the set's stated size; fetched by the owner's chain on 2026-10-23 11:27 UTC (schwingnet fetch hf_rexgradient_160k, job 40743347, done in 59 minutes with the owner's Hugging Face token), not the promoter, so no manifest covers it. A gated download needs the gate passed, so the owner passed it under the owner's own account before the fetch. The agreement's section A.5, as the owner's unsent note of 2026-10-22 to the corresponding author reads it, allows only the portion a project needs and forbids downloading the entire repository; the chain took all ten image parts, since the archive is split blind; what is kept once the view-position metadata is read, and whether that note goes, are the owner's to decide.",
+ "result": "2026-10-24: held on the grid at /rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k, 156 GB in the status listing of 2026-10-24 02:17 UTC (symphony-template grid branch, 281cfcb), the set's stated size; fetched by the owner's chain on 2026-10-23 11:27 UTC (the gate word fetch hf_rexgradient_160k, job 40743347, done in 59 minutes with the owner's Hugging Face token), not the promoter, so no manifest covers it. The owner accepted the data access and use agreement on Hugging Face on 2026-10-22 and chose to take the whole repository, about 156 GB, knowing that clause A.5 limits a download to the part the project needs, since the images come as one archive in ten parts (deid_png.part00 to part09) and the lateral views cannot be picked out before download; the first job, 40712197 of 2026-10-22, ended in six seconds with nothing fetched, its include filter matching no file, and the resend of 2026-10-23 brought the set. On 2026-10-24 at 03:24 UTC the owner sent the corresponding author, Dr Xiaoman Zhang, the note drafted on 2026-10-22: it asks leave to download all ten image parts with the metadata, keeping only the studies the work uses and deleting the rest once they are identified from the view-position metadata; waiting for the answer. The claim of 2026-10-22 on this set recorded the sitting, the agreement and the first fetch on its branch, which was released unmerged on 2026-10-23; this record carries that history.",
  "history": [
   {
    "date": "2026-10-21",
@@ -30,18 +30,43 @@
    "note": "found by the sweep of 2026-10-21; not fetched; Hugging Face gated behind a non-commercial data access and use agreement signed on the page; 79 sites means 79 exposure recipes"
   },
   {
-   "date": "2026-10-24",
-   "step": "held",
-   "note": "on the grid at /rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k, 156 GB in the status listing of 2026-10-24 02:17 UTC (symphony-template grid branch, 281cfcb), the stated size; fetched by the owner's chain on 2026-10-23 11:27 UTC (job 40743347, done in 59 minutes with the owner's Hugging Face token), not the promoter, so no manifest covers it; the record said todo until the owner recalled the fetch on 2026-10-24"
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "owner's sitting prepared: the Hugging Face gate asks only for a signed-in account and agreement to share contact information, under a non-commercial, non-clinical agreement that forbids downloading the whole repository (only the part the project needs), redistribution and re-identification, and asks citation and credit to Gradient Health; 273,004 images in 160,000 studies, downsampled to 25 percent, as split deid_png.part files"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "granted",
+   "note": "the owner accepted the data access and use agreement on Hugging Face"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "note",
+   "note": "the owner chose to take the whole repository, about 156 GB, knowing that clause A.5 of the agreement limits a download to the part the project needs; it is a gated source of SchwingNet's platform fetch, read with his Hugging Face token"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "fetching",
+   "note": "on the owner's choice to take the whole repository despite clause A.5, and with his Hugging Face token on the grid, SchwingNet's gate word fetch hf_rexgradient_160k submitted job 40712197 at SchwingNet 25159c0, about 156 GB"
+  },
+  {
+   "date": "2026-10-23",
+   "step": "note",
+   "note": "job 40712197 ended COMPLETED after 6 s with nothing fetched (the status word, 2026-10-23 09:29 UTC): the chain read its include filter as a glob that matched no file and still returned 0; the chain was changed the same day to fetch the whole repository with no filter and to fail such a run by name, and the resend went as the gate word fetch hf_rexgradient_160k on the owner's word and count (156 GB), job 40743347"
   },
   {
    "date": "2026-10-24",
-   "step": "note",
-   "note": "the note to the corresponding author drafted 2026-10-22 in the owner's mailbox, asking leave to download all ten image parts under the agreement's section A.5, is moot as written, since the parts are on the grid; whether it goes reworded as an after-the-fact note, or is deleted and only the lateral studies kept, is the owner's call"
+   "step": "held",
+   "note": "on the grid at /rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k, 156 GB in the status listing of 2026-10-24 02:17 UTC (symphony-template grid branch, 281cfcb), the stated size; fetched by the owner's chain on 2026-10-23 11:27 UTC (job 40743347, done in 59 minutes with the owner's Hugging Face token), not the promoter, so no manifest covers it; the record on the default branch said todo until 2026-10-24, the claim that had recorded the sitting and the first fetch having been released unmerged on 2026-10-23, and its history is carried here"
+  },
+  {
+   "date": "2026-10-24",
+   "step": "asked",
+   "note": "the owner sent Dr Xiaoman Zhang, the corresponding author, the note drafted 2026-10-22, at 03:24 UTC: it says the agreement is accepted under the owner's account, that section A.5 allows only the portion a project needs while the images come as one archive in ten parts that cannot be split by view before download, and asks leave to download all ten parts with the metadata, keeping only the studies the work uses and deleting the rest once identified from the view-position metadata; waiting for the answer"
   }
  ],
  "obstacles": [
-  "the agreement's section A.5, as the owner's draft note of 2026-10-22 reads it, allows only the portion a project needs: the whole archive is on the grid, so what is kept once the view-position metadata is read, and whether the corresponding author is told, are the owner's to decide"
+  "the agreement's section A.5 allows only the portion a project needs, and the whole archive is on the grid: the owner's note of 2026-10-24 asked the corresponding author's leave for all ten parts and promised to keep only the studies the work uses, so what is kept once the view-position metadata is read follows that promise, and the answer is awaited"
  ],
- "next": "the owner says whether the drafted note to the corresponding author is deleted or reworded and sent; then the view-position metadata is read and only the lateral studies are kept, the rest deleted, as the draft promised; the landing pass checks the files (ten image parts and the metadata) and a freeze follows on the owner's word"
+ "next": "wait for Dr Zhang's answer to the note of 2026-10-24 03:24 UTC and record it; read the view-position metadata and keep only the lateral studies, deleting the rest, as the note promised; the landing pass checks the files kept (the image parts and the metadata) and a freeze follows on the owner's word"
 }
