@@ -26,12 +26,12 @@
   },
   "on_grid": 104,
   "on_grid_size": {
-   "sum": 7626035136479,
-   "counted": 100,
+   "sum": 7640867003649,
+   "counted": 101,
    "of": 104,
-   "measured": 99
+   "measured": 100
   },
-  "on_grid_frozen": 99,
+  "on_grid_frozen": 100,
   "on_grid_subjects": {
    "sum": 174486,
    "counted": 88,
@@ -83,10 +83,10 @@
     "of": 89
    },
    "on_grid_size": {
-    "sum": 7141003207303,
-    "counted": 87,
+    "sum": 7155835074473,
+    "counted": 88,
     "of": 89,
-    "measured": 86
+    "measured": 87
    },
    "by_stage": {
     "downloadable": 2,
@@ -1902,7 +1902,7 @@
    }
   },
   "ctpelvic1k": {
-   "digest": "6fc873eaa15ee83082474fbca68eb61701ff18f9477e54910a5283ce6a6abd85",
+   "digest": "5f2d3180f84b95336cf989d5be647dc64e53bfdde0fb9e40560f843fdefd3d17",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-24",
    "row": {
@@ -1920,8 +1920,8 @@
     "level_truth": "pelvis, sacrum and lumbar masks",
     "grid_path": "/rs/rs_grp_oschome/go2432/data/ctpelvic1k_clinic",
     "on_grid": true,
-    "grid_bytes": null,
-    "tree_sha256": null,
+    "grid_bytes": 14831867170,
+    "tree_sha256": "16f98332771e8bf2cc17feaa2a11bac468f77dd2283ff608cbe2b0b8e1fdc8ac",
     "subjects": null,
     "xray_images": null,
     "videos": null,
@@ -11850,6 +11850,17 @@
     "grid_path": [
      "/rs/rs_grp_oschome/go2432/data/ctpelvic1k",
      "/rs/rs_grp_oschome/go2432/data/ctpelvic1k_clinic"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-24",
+   "id": "ctpelvic1k",
+   "kind": "changed",
+   "changes": {
+    "grid_bytes": [
+     null,
+     14831867170
     ]
    }
   }
