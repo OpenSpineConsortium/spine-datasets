@@ -1,0 +1,65 @@
+{
+ "bytes": 9129987506,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 167,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 683,
+   "files": 2
+  },
+  ".nii.gz": {
+   "bytes": 9129985917,
+   "files": 142
+  },
+  ".yaml": {
+   "bytes": 739,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 146,
+ "folders": [
+  {
+   "bytes": 400,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "e4bcbe82ded500ad4b0a30e19de9520e53f0c2e7d34b42a2d71dec0b62fd9ce7"
+  },
+  {
+   "bytes": 9129986367,
+   "files": 143,
+   "path": "raw",
+   "tree_sha256": "a4fe4c322807f3f68bbb8e3f5c4366e7cb0163cc30a78488bc0db3b20ddcde20"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:27:57Z",
+ "id": "zenodo_ts_task_hip_implant",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 1,
+   "folders": 2
+  },
+  {
+   "depth": 4,
+   "files": 142,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "dd52c72aa944eb798b43b43b6b31c5299c99f082302ede8534821790a70d91a1"
+}

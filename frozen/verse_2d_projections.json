@@ -1,0 +1,55 @@
+{
+ "bytes": 4417086105,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 1947,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 3417,
+   "files": 2
+  },
+  ".txt": {
+   "bytes": 16225,
+   "files": 1
+  },
+  ".zip": {
+   "bytes": 4417064516,
+   "files": 12
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 16,
+ "folders": [
+  {
+   "bytes": 2940,
+   "files": 2,
+   "path": "fetch-state",
+   "tree_sha256": "2ae6916f12b1f8b7f5c16313cc0857a2233e5514d3fc435e39dabe7ef6af44c2"
+  },
+  {
+   "bytes": 4417080741,
+   "files": 13,
+   "path": "raw",
+   "tree_sha256": "d359ac39ff1be3d00003628190142c063ae378bb74a3fc8367a2bf5d92488084"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:34:14Z",
+ "id": "verse_2d_projections",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 15,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "527744b71331bcf06ecc833b5dfa7534c3c1c3781dfa37392728281dbf73f664"
+}

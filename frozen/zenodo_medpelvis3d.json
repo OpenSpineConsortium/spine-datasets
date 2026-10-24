@@ -1,0 +1,41 @@
+{
+ "bytes": 31351310903,
+ "depth": 1,
+ "extensions": {
+  ".csv": {
+   "bytes": 6438,
+   "files": 2
+  },
+  ".zip": {
+   "bytes": 31351304465,
+   "files": 98
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 100,
+ "folders": [
+  {
+   "bytes": 31351310903,
+   "files": 100,
+   "path": "raw",
+   "tree_sha256": "6e691449ad17cd22dfb585a6238dcb2ac314abb477249ab33551a344b7b0f27b"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:04:12Z",
+ "id": "zenodo_medpelvis3d",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 1
+  },
+  {
+   "depth": 2,
+   "files": 100,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "461fdcecc1eaa5aabdc70761c240ac644dc809e133551af40e13c24a37a56414"
+}

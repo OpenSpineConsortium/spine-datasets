@@ -1,0 +1,55 @@
+{
+ "bytes": 264277371447,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 2612924497,
+   "files": 32
+  },
+  ".json": {
+   "bytes": 221,
+   "files": 1
+  },
+  ".mha": {
+   "bytes": 261664446096,
+   "files": 2000
+  },
+  ".yaml": {
+   "bytes": 633,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 2034,
+ "folders": [
+  {
+   "bytes": 137672,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "07384a8872d801055989f13d0a4ec4624025a6e2c881c071953c5bbffc176c1b"
+  },
+  {
+   "bytes": 264277233142,
+   "files": 2031,
+   "path": "raw",
+   "tree_sha256": "c95253c3bc6821d0d017e02c5f111c5b1f0a5c70bfde92568e011233849aa696"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T13:46:09Z",
+ "id": "aws_stoic2021",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2033,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "22649e1e235a824afe0d79499bf978142246baeb97900640b96664d759b050a3"
+}

@@ -1,0 +1,78 @@
+{
+ "bytes": 1046667648,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 1046667648,
+   "files": 1983
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 1983,
+ "folders": [
+  {
+   "bytes": 276920640,
+   "files": 525,
+   "path": "MSB-00464",
+   "tree_sha256": "8a261e58c6e04fe25d05b542d3cb4b40919ad49ef48e8edf2aef9d0150f60195"
+  },
+  {
+   "bytes": 169727874,
+   "files": 321,
+   "path": "MSB-06302",
+   "tree_sha256": "f1a54a699d0e48b43f037ad574cacd886cad6f8290aca7dcc2e7011151ff3a0f"
+  },
+  {
+   "bytes": 133512938,
+   "files": 253,
+   "path": "MSB-07585",
+   "tree_sha256": "71c36ba2ec4350a125b48b498f4f8865b6a0b5445d5844e5b8e4bee84872cce6"
+  },
+  {
+   "bytes": 175762484,
+   "files": 333,
+   "path": "MSB-09146",
+   "tree_sha256": "41459ba3ebd2ea623d193574721727020234b0d05be35a17985278c5fba228ae"
+  },
+  {
+   "bytes": 86607194,
+   "files": 164,
+   "path": "MSB-09351",
+   "tree_sha256": "a2d6250275c6a2633812064ae70966de76e6e2564febfb7090ea8eee19c72d60"
+  },
+  {
+   "bytes": 78153914,
+   "files": 148,
+   "path": "MSB-09513",
+   "tree_sha256": "c4a66423c028a4e28af24461c0e4c361ce9a295415daeab753640eb94ba40028"
+  },
+  {
+   "bytes": 125982604,
+   "files": 239,
+   "path": "MSB-09899",
+   "tree_sha256": "b4883e86592233f09a44c9c6814384af093271cbc47199f61d768d9d7b243008"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:55:39Z",
+ "id": "idc_cmb_ov",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 7
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 7
+  },
+  {
+   "depth": 3,
+   "files": 1983,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "91e0c31549dd5fc430a7e8561b8a63bb884aa9c75b2054d730cb231f6dfebdb6"
+}

@@ -1,0 +1,76 @@
+{
+ "bytes": 83498925109,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 696,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 220,
+   "files": 1
+  },
+  ".mha": {
+   "bytes": 64871609166,
+   "files": 680
+  },
+  ".nii.gz": {
+   "bytes": 18627315027,
+   "files": 340
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 1022,
+ "folders": [
+  {
+   "bytes": 916,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "80a53f0ddd548b663aaf83f4e3481a19aed5e9ba034f14fd3fdf3caeb009781f"
+  },
+  {
+   "bytes": 18627315027,
+   "files": 340,
+   "path": "nifti",
+   "tree_sha256": "6d5128ecbb975a38f9b91a4064fd04b625f8d7bf93f6151e4149582d3269ad63"
+  },
+  {
+   "bytes": 64871609166,
+   "files": 680,
+   "path": "raw",
+   "tree_sha256": "457663f4a7b86d2111d4c3a04dcbc3a7a33d6ff9b3f985bb4a3ab812e115604d"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:38:40Z",
+ "id": "pengwin2026",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 3
+  },
+  {
+   "depth": 2,
+   "files": 342,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 4
+  },
+  {
+   "depth": 4,
+   "files": 0,
+   "folders": 340
+  },
+  {
+   "depth": 5,
+   "files": 680,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "6bd5d038709ef39513907f4039b20528974d8263854815b54784905d744d10d5"
+}

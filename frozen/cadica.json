@@ -1,0 +1,37 @@
+{
+ "bytes": 3076112179,
+ "depth": 1,
+ "extensions": {
+  ".zip": {
+   "bytes": 3076112179,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 1,
+ "folders": [
+  {
+   "bytes": 3076112179,
+   "files": 1,
+   "path": "raw",
+   "tree_sha256": "3ab3f5c1a7ac4623b819738a114138b7fb0e4274e8e0f9268f6c410140544a22"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:43:25Z",
+ "id": "cadica",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 1
+  },
+  {
+   "depth": 2,
+   "files": 1,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "56dbf0dce15ebf0955dd832165e9f98fff31e88f2e86dc192bab9a0abab90b26"
+}

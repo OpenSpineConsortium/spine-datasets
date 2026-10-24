@@ -1,0 +1,51 @@
+{
+ "bytes": 45079872841,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 2832,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 7225,
+   "files": 1
+  },
+  ".tar.gz": {
+   "bytes": 45079862784,
+   "files": 12
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 14,
+ "folders": [
+  {
+   "bytes": 2832,
+   "files": 1,
+   "path": "fetch-state",
+   "tree_sha256": "ba6dc0bab14f387a96655f093a3b6965520fc0dd0f9d15b3680a978600a439eb"
+  },
+  {
+   "bytes": 45079862784,
+   "files": 12,
+   "path": "raw",
+   "tree_sha256": "e8b163b207908fdc4507d153015276bf36f591e8cef015f11690d86041dd3540"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:39:10Z",
+ "id": "nih_chestxray14",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 13,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "89336b8afb203f80b7b49a1dc969c94a18ab38dbc174c429273d390c65757612"
+}

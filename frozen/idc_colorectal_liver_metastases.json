@@ -1,0 +1,35 @@
+{
+ "bytes": 6306640878,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 6306640878,
+   "files": 11967
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 11967,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:24:54Z",
+ "id": "idc_colorectal_liver_metastases",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 80
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 80
+  },
+  {
+   "depth": 3,
+   "files": 11967,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "a1f90a677690ff60e4d7084d33caa7cfce1580115b48b2e67bcd2e059f92d3b8"
+}

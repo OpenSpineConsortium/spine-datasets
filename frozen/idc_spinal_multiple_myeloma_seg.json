@@ -1,0 +1,80 @@
+{
+ "bytes": 297769275017,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 173228,
+   "files": 1
+  },
+  ".csv": {
+   "bytes": 61152,
+   "files": 1
+  },
+  ".dcm": {
+   "bytes": 297769039810,
+   "files": 564464
+  },
+  ".json": {
+   "bytes": 240,
+   "files": 1
+  },
+  ".yaml": {
+   "bytes": 587,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 564468,
+ "folders": [
+  {
+   "bytes": 173468,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "6f04800f252b89816acce6196c7d78e5c726b34e9afc72a8ca1f2e586d383ac6"
+  },
+  {
+   "bytes": 61152,
+   "files": 1,
+   "path": "meta",
+   "tree_sha256": "64810798bd6ff6d5140d47c4b2f6776e5c3687e65589603862141f4070ef54f7"
+  },
+  {
+   "bytes": 297769039810,
+   "files": 564464,
+   "path": "raw",
+   "tree_sha256": "06e9e3dc3a0bda55881531d9a53b2957cd005597f5f0ad1275143bf686ddda7e"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:00:40Z",
+ "id": "idc_spinal_multiple_myeloma_seg",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 3
+  },
+  {
+   "depth": 2,
+   "files": 3,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 67
+  },
+  {
+   "depth": 4,
+   "files": 0,
+   "folders": 576
+  },
+  {
+   "depth": 5,
+   "files": 564464,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "5751cc1dd10b327f7a0d8a61c897e69ced156dc7dd1b17e7228b47a2cd39e787"
+}

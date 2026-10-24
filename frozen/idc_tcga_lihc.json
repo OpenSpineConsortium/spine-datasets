@@ -1,0 +1,35 @@
+{
+ "bytes": 4976751636,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 4976751636,
+   "files": 9429
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 9429,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:53:26Z",
+ "id": "idc_tcga_lihc",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 42
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 42
+  },
+  {
+   "depth": 3,
+   "files": 9429,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "30e9c31bbb29dbd56fb07530e48c6e6fe222d4063efd322b2be8149f216b8340"
+}

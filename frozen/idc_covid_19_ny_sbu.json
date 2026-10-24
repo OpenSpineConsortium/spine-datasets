@@ -1,0 +1,35 @@
+{
+ "bytes": 64665429890,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 64665429890,
+   "files": 122272
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 122272,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:53:00Z",
+ "id": "idc_covid_19_ny_sbu",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 443
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 443
+  },
+  {
+   "depth": 3,
+   "files": 122272,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "230a557edd44f74570626193b676db86685aceee61a1eecae8eef2f8ead10748"
+}

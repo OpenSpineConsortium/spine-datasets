@@ -1,0 +1,80 @@
+{
+ "bytes": 862724923831,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 193944,
+   "files": 1
+  },
+  ".csv": {
+   "bytes": 66299,
+   "files": 1
+  },
+  ".dcm": {
+   "bytes": 862724662770,
+   "files": 8044937
+  },
+  ".json": {
+   "bytes": 237,
+   "files": 1
+  },
+  ".yaml": {
+   "bytes": 581,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 8044941,
+ "folders": [
+  {
+   "bytes": 194181,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "291c56b0379fa34ea7d3a86cce647ed4ff6b063ea208644c39b67e1fac740a10"
+  },
+  {
+   "bytes": 66299,
+   "files": 1,
+   "path": "meta",
+   "tree_sha256": "f42ecbd5aaa019a1ed3cb04a09649d1b09896260dc53b17866bd6767c7240a42"
+  },
+  {
+   "bytes": 862724662770,
+   "files": 8044937,
+   "path": "raw",
+   "tree_sha256": "6a0f0d8ded845b5ec48f858ba3bb833b6808e7ac433045c25151984b6927dec3"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-24T06:03:17Z",
+ "id": "idc_ldct_and_projection_data",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 3
+  },
+  {
+   "depth": 2,
+   "files": 3,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 200
+  },
+  {
+   "depth": 4,
+   "files": 0,
+   "folders": 698
+  },
+  {
+   "depth": 5,
+   "files": 8044937,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "eb43cd930058b2d276df201ac066513c2a1d8be8c8c72ff9acc3a61a904b24fe"
+}

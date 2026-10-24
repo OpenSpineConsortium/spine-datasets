@@ -1,0 +1,35 @@
+{
+ "bytes": 6437945576,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 6437945576,
+   "files": 12189
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 12189,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:18:46Z",
+ "id": "idc_tcga_stad",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 45
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 45
+  },
+  {
+   "depth": 3,
+   "files": 12189,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "d4e0833a73c7653733af5779b4dc5b6c62a0c41c0921879a08369752029c2ceb"
+}

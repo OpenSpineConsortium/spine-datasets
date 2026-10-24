@@ -1,0 +1,35 @@
+{
+ "bytes": 2957497980,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 2957497980,
+   "files": 5614
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 5614,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:21:15Z",
+ "id": "idc_pancreatic_ct_cbct_seg",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 40
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 40
+  },
+  {
+   "depth": 3,
+   "files": 5614,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "27eb8dd78f350ad2188c0606603e450bc125f116b8016eaa3ba64d85c552a1a7"
+}

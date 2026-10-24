@@ -1,0 +1,70 @@
+{
+ "bytes": 24253086312,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 160737,
+   "files": 206
+  },
+  ".jpg": {
+   "bytes": 18702956,
+   "files": 300
+  },
+  ".json": {
+   "bytes": 6200,
+   "files": 201
+  },
+  ".nii.gz": {
+   "bytes": 24234216419,
+   "files": 800
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 1507,
+ "folders": [
+  {
+   "bytes": 989,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "3a22381b79b7524ea63b4ba2d83d3d87dd90cd52e9b8d901a9dd9725ddc0b8a3"
+  },
+  {
+   "bytes": 24253085323,
+   "files": 1505,
+   "path": "raw",
+   "tree_sha256": "5c4edc3bafce3722c99d30f9d128f51cd823d99c4691c46d11394daceb74b5b4"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:09:34Z",
+ "id": "deep_psma",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 100
+  },
+  {
+   "depth": 4,
+   "files": 305,
+   "folders": 200
+  },
+  {
+   "depth": 5,
+   "files": 1200,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "3961322c9d39c3260df9c1c96c6d0421ac1175a9f586390ab983bdd6a0a073b1"
+}

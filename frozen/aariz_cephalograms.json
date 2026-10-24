@@ -1,0 +1,100 @@
+{
+ "bytes": 6338426763,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 237,
+   "files": 1
+  },
+  ".bmp": {
+   "bytes": 1983816014,
+   "files": 159
+  },
+  ".csv": {
+   "bytes": 54130,
+   "files": 1
+  },
+  ".jpeg": {
+   "bytes": 24661495,
+   "files": 236
+  },
+  ".jpg": {
+   "bytes": 293054346,
+   "files": 235
+  },
+  ".json": {
+   "bytes": 8866202,
+   "files": 3001
+  },
+  ".png": {
+   "bytes": 1929763142,
+   "files": 370
+  },
+  ".txt": {
+   "bytes": 1405,
+   "files": 1
+  },
+  ".zip": {
+   "bytes": 2098209792,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 4005,
+ "folders": [
+  {
+   "bytes": 237,
+   "files": 1,
+   "path": "fetch-state",
+   "tree_sha256": "1578baa84ac7fd0f5fb94168c7acb33ecac345b11582f2205431d553414ae2b0"
+  },
+  {
+   "bytes": 6337278414,
+   "files": 4003,
+   "path": "raw",
+   "tree_sha256": "5caccc11c86361a120494984deb51976c6082a718d59721404bb952d8ef6b983"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:21:59Z",
+ "id": "aariz_cephalograms",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 1,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 2,
+   "folders": 3
+  },
+  {
+   "depth": 4,
+   "files": 0,
+   "folders": 6
+  },
+  {
+   "depth": 5,
+   "files": 1000,
+   "folders": 6
+  },
+  {
+   "depth": 6,
+   "files": 1000,
+   "folders": 6
+  },
+  {
+   "depth": 7,
+   "files": 2000,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "7f11694052cb5e20928b645b6f1ac25f396af4d229c041fb578edcef31100a45"
+}

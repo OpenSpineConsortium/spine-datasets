@@ -1,0 +1,35 @@
+{
+ "bytes": 5483126018,
+ "depth": 1,
+ "extensions": {
+  ".dcm": {
+   "bytes": 5483126018,
+   "files": 10376
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 10376,
+ "folders": [],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T16:30:47Z",
+ "id": "idc_varepop_apollo",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 35
+  },
+  {
+   "depth": 2,
+   "files": 0,
+   "folders": 35
+  },
+  {
+   "depth": 3,
+   "files": 10376,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "e7ab43afcf675171676b1e97570555150b3045d7fdeeffe1c05dfbfbe3f270d2"
+}

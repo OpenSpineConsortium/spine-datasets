@@ -1,0 +1,76 @@
+{
+ "bytes": 73543991208,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 123338,
+   "files": 1
+  },
+  ".dcm": {
+   "bytes": 46921500480,
+   "files": 89363
+  },
+  ".json": {
+   "bytes": 218,
+   "files": 1
+  },
+  ".nii.gz": {
+   "bytes": 26622367172,
+   "files": 500
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 89865,
+ "folders": [
+  {
+   "bytes": 123556,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "526ed02bec3b7552dda61447857236394c2e4aa638e581ecd3ac5e80360122a3"
+  },
+  {
+   "bytes": 26622367172,
+   "files": 500,
+   "path": "nifti",
+   "tree_sha256": "3708ede365cd19f8d2e1e9fbbda9039ccfcc3b282d8b9158a4acbcd12adc79da"
+  },
+  {
+   "bytes": 46921500480,
+   "files": 89363,
+   "path": "raw",
+   "tree_sha256": "caaf3e49afe72e1a7956252868c1c260350f7b2f2b234b38cdba41bc7c760257"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T15:06:23Z",
+ "id": "nlst_pilot",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 3
+  },
+  {
+   "depth": 2,
+   "files": 502,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 500
+  },
+  {
+   "depth": 4,
+   "files": 0,
+   "folders": 500
+  },
+  {
+   "depth": 5,
+   "files": 89363,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "1707373e9b59527d30d686ee99c60836dd4ad1ea21219bdcf9e2bac0982b4301"
+}

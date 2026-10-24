@@ -1,0 +1,79 @@
+{
+ "bytes": 138377968433,
+ "depth": 1,
+ "extensions": {
+  "(none)": {
+   "bytes": 442,
+   "files": 2
+  },
+  ".json": {
+   "bytes": 13050417,
+   "files": 16237
+  },
+  ".npy": {
+   "bytes": 60359774696,
+   "files": 16234
+  },
+  ".npz": {
+   "bytes": 3987654664,
+   "files": 1
+  },
+  ".tiff": {
+   "bytes": 74017283314,
+   "files": 17073
+  },
+  ".txt": {
+   "bytes": 204900,
+   "files": 1
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 49548,
+ "folders": [
+  {
+   "bytes": 64360479602,
+   "files": 32471,
+   "path": "derived",
+   "tree_sha256": "9ff548074cb851acce48c275abd3bfaa6a68e0e3b7d15a48f27b4a4fca5ad3f4"
+  },
+  {
+   "bytes": 175,
+   "files": 1,
+   "path": "meta",
+   "tree_sha256": "0f38a6deab19d8e230f9b159fd431fadc7e4497c928c79445b5f4c0d78033e34"
+  },
+  {
+   "bytes": 74017488656,
+   "files": 17076,
+   "path": "raw",
+   "tree_sha256": "62b884e2b73d5efdb11ed0e50ee8981837997e5374859e0a89f8ec3312f7299a"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-23T14:34:20Z",
+ "id": "nhanes2_unannotated",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 3
+  },
+  {
+   "depth": 2,
+   "files": 1,
+   "folders": 3
+  },
+  {
+   "depth": 3,
+   "files": 17079,
+   "folders": 2
+  },
+  {
+   "depth": 4,
+   "files": 32468,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "8baa19635164cf14d012c4e19b4400e0315846c7a5a3cf1a0d9efd29e538c46b"
+}
