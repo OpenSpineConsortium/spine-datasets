@@ -15,14 +15,15 @@
 # session never merges one, since a retirement deletes the set's images. The
 # grid's size rule still reads every fetch's exact size before a byte lands.
 # Only someone who may write here may start it. A push made with GITHUB_TOKEN
-# starts no workflow, so the request starts the checks on its branch itself.
+# starts no workflow, so the request starts the checks on its branch and the
+# feed, which lists the open requests, itself.
 
 name: Storage
 
 on:
   push:
     branches: [main]
-    paths: ["datasets/**", "lineage/**", "storage/VOLUME.json", "tools/storage.py", "tools/census.py", ".github/workflows/storage.yml"]
+    paths: ["datasets/**", "lineage/**", "storage/VOLUME.json", "storage/requests/**", "tools/storage.py", "tools/census.py", ".github/workflows/storage.yml"]
   schedule:
     - cron: "53 5 * * *"
   workflow_dispatch:
@@ -51,6 +52,11 @@ jobs:
         with:
           ref: ${{ github.event.repository.default_branch }}
 
+      - name: Read the open requests
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" > "$RUNNER_TEMP/pulls.json"
+
       - name: Write the feed to the branch storage-feed
         env:
           GIT_AUTHOR_NAME: github-actions[bot]
@@ -71,12 +77,12 @@ jobs:
               echo "It is the project's own branch and stays as it is; nothing was pushed."
               return 2
             fi
-            python3 tools/storage.py plan --out "$out" || return 1
+            python3 tools/storage.py --pulls "$RUNNER_TEMP/pulls.json" plan --out "$out" || return 1
             parent=""
             if [ -n "$previous" ]; then
               parent="-p $previous"
               git show "$previous:PLAN.json" > "$RUNNER_TEMP/last.json" 2>/dev/null || true
-              if python3 tools/storage.py plan --out "$RUNNER_TEMP/last.json" --check 2>/dev/null; then
+              if python3 tools/storage.py --pulls "$RUNNER_TEMP/pulls.json" plan --out "$RUNNER_TEMP/last.json" --check 2>/dev/null; then
                 echo "feed unchanged"
                 return 0
               fi
@@ -136,6 +142,8 @@ jobs:
           {
             echo "A storage request made by $ACTOR from the planner. Merging it is the owner's word for every set named below; nothing on the grid changes before then."
             echo
+            printf 'Selection: `%s`\n' "$SELECTION"
+            echo
             cat "$RUNNER_TEMP/summary.md"
             echo
             echo "Each fetch still passes the grid's size rule, which reads the exact size from the source before a byte lands."
@@ -147,4 +155,7 @@ jobs:
           url=$(gh pr create --repo "$REPO" --head "$branch" --base "$DEFAULT_BRANCH" \
                   --title "Storage request $stamp" --body-file "$RUNNER_TEMP/body.md")
           gh workflow run ci.yml --repo "$REPO" --ref "$branch" || echo "the checks start with the pull request's next event"
+          # The feed lists the pending requests; a pull request opened with GITHUB_TOKEN starts no
+          # workflow, so the feed is asked to run again here.
+          gh workflow run storage.yml --repo "$REPO" --ref "$DEFAULT_BRANCH" || echo "the feed lists this request at its next run"
           { echo "Offered: $url"; echo; cat "$RUNNER_TEMP/summary.md"; } | tee -a "$GITHUB_STEP_SUMMARY"

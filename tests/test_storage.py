@@ -82,6 +82,15 @@ class PlannerTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             storage.parse_selection("-big; rm -rf /")
 
+    def test_pending_requests(self):
+        pulls = [{"number": 7, "html_url": "u7", "head": {"ref": "storage/request-20261024T000000Z"},
+                  "body": "Made.\n\nSelection: `-big +wanted`\n\n- big"},
+                 {"number": 8, "html_url": "u8", "head": {"ref": "claude/8"}, "body": "Selection: `-big`"},
+                 {"number": 9, "html_url": "u9", "head": {"ref": "storage/request-x"}, "body": "Selection: `rm -rf`"}]
+        plan = storage.build_plan(self.records, self.volume, None, pulls)
+        self.assertEqual(plan["requests"], [{"number": 7, "url": "u7", "selection": "-big +wanted"},
+                                            {"number": 9, "url": "u9", "selection": ""}])
+
     def test_home_unread(self):
         volume = dict(self.volume, home_used_bytes=None)
         problems = self.run_check("big@home", volume)["problems"]

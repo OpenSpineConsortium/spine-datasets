@@ -131,7 +131,35 @@ def read_json(path):
         return json.load(handle)
 
 
-def build_plan(records, volume, table):
+def request_entries(pulls):
+    """The open request pull requests, as GitHub lists them, reduced to what the panel shows: a
+    request's selection is read from the Selection line storage.yml writes into its body, and
+    only when it parses as one, so no other text of the body reaches the feed."""
+    found = []
+    for pull in pulls or []:
+        branch = (pull.get("head") or {}).get("ref", "")
+        if not branch.startswith("storage/request-"):
+            continue
+        found.append({"number": pull.get("number"), "url": pull.get("html_url"),
+                      "selection": selection_in(pull.get("body") or "")})
+    return sorted(found, key=lambda entry: entry["number"] or 0)
+
+
+SELECTION_LINE = re.compile(r"^Selection: `([^`]*)`$", re.MULTILINE)
+
+
+def selection_in(body):
+    found = SELECTION_LINE.search(body)
+    if not found:
+        return ""
+    try:
+        parse_selection(found.group(1))
+    except ValueError:
+        return ""
+    return found.group(1)
+
+
+def build_plan(records, volume, table, pulls=None):
     sets = [set_entry(record, table) for _, record in sorted(records.items())]
     held_lab = sum(entry["bytes"] or 0 for entry in sets if entry["location"] == "lab")
     used = volume.get("used_bytes")
@@ -139,7 +167,9 @@ def build_plan(records, volume, table):
     return {
         "format": FORMAT,
         "built_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "read_at": volume.get("read_at"),
         "target_bytes": volume.get("target_bytes", TARGET_BYTES),
+        "requests": request_entries(pulls),
         "volume": {
             "quota_bytes": volume.get("quota_bytes"),
             "used_bytes": used,
@@ -297,6 +327,7 @@ def main(argv=None):
     parser.add_argument("--records", default="datasets")
     parser.add_argument("--volume", default="storage/VOLUME.json")
     parser.add_argument("--overlap", default="lineage/OVERLAP.json")
+    parser.add_argument("--pulls", help="GitHub's list of open pull requests, as JSON, for the pending requests")
     sub = parser.add_subparsers(dest="command", required=True)
     plan_cmd = sub.add_parser("plan", help="write the feed")
     plan_cmd.add_argument("--out", default="storage/PLAN.json")
@@ -309,7 +340,8 @@ def main(argv=None):
     request_cmd.add_argument("--text", required=True)
     args = parser.parse_args(argv)
 
-    plan = build_plan(load_records(args.records), read_json(args.volume) or {}, read_json(args.overlap))
+    plan = build_plan(load_records(args.records), read_json(args.volume) or {}, read_json(args.overlap),
+                      read_json(args.pulls))
     if args.command == "plan":
         return write_plan(plan, args.out, args.check)
     try:
