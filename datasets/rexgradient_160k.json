@@ -11,7 +11,7 @@
   "The owner accepts the data access and use agreement on https://huggingface.co/datasets/rajpurkarlab/ReXGradient-160K under the owner's Hugging Face account.",
   "Fetch as a Slurm job on the owner's word, never on the login node: python3 data/reproduce/reacquire/reacquire.py hf-get --repo rajpurkarlab/ReXGradient-160K --repo-type dataset --dest DIR; HF_TOKEN from the submitter's environment, never from this repository."
  ],
- "grid_path": null,
+ "grid_path": "/rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k",
  "counts": {
   "studies": 160000,
   "patients": 109487,
@@ -19,19 +19,29 @@
  },
  "measured": {},
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
- "source_status": "found by the sweep of 2026-10-21; not fetched; Hugging Face gated behind a non-commercial data access and use agreement signed on the page; 79 sites means 79 exposure recipes",
+ "source_status": "held: fetched by the owner's own chain on 2026-10-23 (schwingnet fetch hf_rexgradient_160k, job 40743347, the owner's Hugging Face token), 156 GB under the data root in the status listing of 2026-10-24 02:17 UTC, the set's stated size; the gate on the Hugging Face page was passed under the owner's account; 79 sites means 79 exposure recipes",
  "route": "form",
- "status": "todo",
- "result": "",
+ "status": "held",
+ "result": "2026-10-24: held on the grid at /rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k, 156 GB in the status listing of 2026-10-24 02:17 UTC (symphony-template grid branch, 281cfcb), the set's stated size; fetched by the owner's chain on 2026-10-23 11:27 UTC (schwingnet fetch hf_rexgradient_160k, job 40743347, done in 59 minutes with the owner's Hugging Face token), not the promoter, so no manifest covers it. A gated download needs the gate passed, so the owner passed it under the owner's own account before the fetch. The agreement's section A.5, as the owner's unsent note of 2026-10-22 to the corresponding author reads it, allows only the portion a project needs and forbids downloading the entire repository; the chain took all ten image parts, since the archive is split blind; what is kept once the view-position metadata is read, and whether that note goes, are the owner's to decide.",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; Hugging Face gated behind a non-commercial data access and use agreement signed on the page; 79 sites means 79 exposure recipes"
+  },
+  {
+   "date": "2026-10-24",
+   "step": "held",
+   "note": "on the grid at /rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k, 156 GB in the status listing of 2026-10-24 02:17 UTC (symphony-template grid branch, 281cfcb), the stated size; fetched by the owner's chain on 2026-10-23 11:27 UTC (job 40743347, done in 59 minutes with the owner's Hugging Face token), not the promoter, so no manifest covers it; the record said todo until the owner recalled the fetch on 2026-10-24"
+  },
+  {
+   "date": "2026-10-24",
+   "step": "note",
+   "note": "the note to the corresponding author drafted 2026-10-22 in the owner's mailbox, asking leave to download all ten image parts under the agreement's section A.5, is moot as written, since the parts are on the grid; whether it goes reworded as an after-the-fact note, or is deleted and only the lateral studies kept, is the owner's call"
   }
  ],
  "obstacles": [
-  "gated: a non-commercial data access and use agreement on the Hugging Face page"
+  "the agreement's section A.5, as the owner's draft note of 2026-10-22 reads it, allows only the portion a project needs: the whole archive is on the grid, so what is kept once the view-position metadata is read, and whether the corresponding author is told, are the owner's to decide"
  ],
- "next": "fill the form named in letters/rexgradient_160k.md with its paragraphs as the purpose, then record the date here"
+ "next": "the owner says whether the drafted note to the corresponding author is deleted or reworded and sent; then the view-position metadata is read and only the lateral studies are kept, the rest deleted, as the draft promised; the landing pass checks the files (ten image parts and the metadata) and a freeze follows on the owner's word"
 }

@@ -1,6 +1,6 @@
 # rexgradient_160k: the request text
 
-Not sent.
+Not sent, and no longer needed: the owner passed the gate on the Hugging Face page under the owner's own account, and the owner's chain fetched the whole set on 2026-10-23 (datasets/rexgradient_160k.json, held). A separate note to the corresponding author, drafted 2026-10-22 in the owner's mailbox and asking leave to download all ten image parts under the agreement's section A.5, waits for the owner's word: deleted, or reworded as an after-the-fact note.
 
 To: the gate form on the dataset's Hugging Face page.
 Route: form (a gate with an agreement checkbox), the owner's hand only, on the owner's Hugging Face account.
