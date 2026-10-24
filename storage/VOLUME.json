@@ -1,0 +1,10 @@
+{
+ "home_quota_bytes": 4000000000000,
+ "home_read_at": null,
+ "home_used_bytes": null,
+ "quota_bytes": 21990230000000,
+ "read_at": "2026-10-24T17:15:28Z",
+ "source": "SchwingNet's status word (grid/oschome-quota.sh): Used 17553.25gb, Room 4436.98gb, gb meaning 10^9 bytes; the quota is the two summed",
+ "target_bytes": 20000000000000,
+ "used_bytes": 17553250000000
+}
