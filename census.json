@@ -8036,9 +8036,9 @@
    }
   },
   "rsna_rspect": {
-   "digest": "445ae11c3157b5c4c038bab9faca3049f41ce715768abf036db634d6af92c425",
+   "digest": "d32e93db7f78c3e9eb794bfcdf094cb011700a866bf36131624146c6c1e512f0",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-24",
    "row": {
     "id": "rsna_rspect",
     "name": "RSNA pulmonary embolism CT (RSPECT)",
@@ -8063,10 +8063,10 @@
     "ct_volumes": null,
     "bytes": null,
     "unread_counts": [],
-    "next": "the owner decides whether to unpack the zip (about 980 GB, one job); the census counts the CT volumes once they are on disk",
+    "next": "the census counts the CT volumes",
     "since": "2026-10-21",
     "last_step": {
-     "date": "2026-10-23",
+     "date": "2026-10-24",
      "step": "note"
     },
     "paired": false,
