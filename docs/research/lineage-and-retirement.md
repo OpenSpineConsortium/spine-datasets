@@ -183,7 +183,9 @@ patient counts for the 52 DICOM sets (6.5 TB across all 98), which feed the remo
    request is planned on the grid by grid/storage.sh apply, whose job lists, through
    tools/retire.py, what each retirement would delete once the folder, its freeze and its files
    are shown to be the ones the request names, and keeps the freeze, labels, masks and metadata.
-   The step that deletes waits for the owner's answer on whether a merged request may delete
-   through the grid gate.
+   The owner allowed the deleting step on 2026-10-24, narrowly: storage.sh retire, a word of its
+   own sent after the plans are reported, deletes only what a plan listed, once tools/retire.py
+   has run the same checks again on the folder as it is and found the same list, and writes
+   RETIRED.json beside the freeze.
 5. `repair` and the derived-dataset builder, proved by retiring one small set, repairing it and
    matching its tree_sha256.

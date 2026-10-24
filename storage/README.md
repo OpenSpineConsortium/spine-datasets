@@ -27,7 +27,11 @@ the textbook's artifact, and keep some data in his own home on the grid, which h
   nothing is listed), and names the fetch word of each fetch for the owner to press; `home` reads
   the home's use; `report` carries the plans' counts and the home's reading to the branch
   storage-report. A plan keeps the freeze, labels, masks and metadata and deletes nothing.
-- Not built yet: the step that deletes what a plan lists, which waits for the owner's answer on
-  whether a merged request may delete through the grid gate; moves to the home, which wait for its
-  path; and the gate words that run grid/storage.sh. Until then each action is sent by its own gate
-  word on the owner's word.
+- `retire STAMP`, a word of its own sent by the owner once the plans are reported, queues one job
+  that deletes what each plan listed (tools/retire.py delete), after the same checks pass again on
+  the folder as it is and give the same list (the owner's choice of 2026-10-24: allowed, narrowly).
+  It writes RETIRED.json beside the freeze, and report carries a copy back as
+  storage/retired/<id>.json. A retirement cut short is carried on by sending the word again.
+- The gate words are storage-apply-<stamp>, storage-retire-<stamp>, storage-status and
+  storage-report in symphony-template's grid-accounts.yml (hpcworker's storage words).
+- Not built yet: moves to the home, which wait for its path.

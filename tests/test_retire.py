@@ -78,6 +78,48 @@ class RetireTest(unittest.TestCase):
         os.symlink(self.top, self.root + "alias")
         self.assert_refused(self.root + "alias", self.tree, "link on its path")
 
+    def retired(self):
+        return retire.retire(self.top, "demo_set", self.tree, self.out, "20261024T210000Z")
+
+    def test_delete_removes_what_the_plan_listed_and_keeps_the_rest(self):
+        retire.write_plan(self.top, "demo_set", self.tree, self.out)
+        record = self.retired()
+        self.assertEqual(record["problems"], [])
+        self.assertTrue(record["complete"])
+        self.assertEqual((record["files_deleted_now"], record["bytes_deleted_now"]), (2, 19))
+        self.assertFalse(os.path.exists(os.path.join(self.top, "imagesTr")))
+        for kept in ("labelsTr/case_001.nii.gz", "dataset.json", "FROZEN.json", "FROZEN.files.tsv.gz", "RETIRED.json"):
+            self.assertTrue(os.path.exists(os.path.join(self.top, kept)), kept)
+        self.assertEqual([e["path"] for e in retire.bundle(self.out)["tree"]],
+                         ["storage/retire/demo_set.json", "storage/retired/demo_set.json"])
+
+    def test_a_retirement_cut_short_carries_on(self):
+        retire.write_plan(self.top, "demo_set", self.tree, self.out)
+        os.unlink(os.path.join(self.top, "imagesTr/case_001.nii.gz"))
+        record = self.retired()
+        self.assertEqual(record["problems"], [])
+        self.assertEqual(record["files_deleted_now"], 1)
+        self.assertTrue(record["complete"])
+        self.assertEqual(self.retired()["files_deleted_now"], 0)
+
+    def test_delete_refuses_without_a_plan_or_with_a_kept_file_gone(self):
+        self.assertEqual(self.retired()["problems"], ["the set has no plan to carry out"])
+        retire.write_plan(self.top, "demo_set", self.tree, self.out)
+        os.unlink(os.path.join(self.top, "labelsTr/case_001.nii.gz"))
+        self.assertIn("1 files missing since the freeze", self.retired()["problems"])
+        self.assertTrue(os.path.exists(os.path.join(self.top, "imagesTr/case_001.nii.gz")))
+
+    def test_delete_refuses_a_list_the_checks_do_not_give(self):
+        retire.write_plan(self.top, "demo_set", self.tree, self.out)
+        with open(os.path.join(self.out, "demo_set.delete"), "ab") as handle:
+            handle.write(b"labelsTr/case_001.nii.gz\0")
+        self.assertEqual(self.retired()["problems"], ["the checks give another list than the plan's"])
+        self.assertTrue(os.path.exists(os.path.join(self.top, "labelsTr/case_001.nii.gz")))
+
+    def test_delete_refuses_a_plan_with_problems(self):
+        retire.write_plan(self.top, "demo_set", "0" * 64, self.out)
+        self.assertEqual(self.retired()["problems"], ["the plan is not this set's at this tree hash"])
+
     def test_the_bundle_carries_counts_alone(self):
         retire.write_plan(self.top, "demo_set", self.tree, self.out)
         body = retire.bundle(self.out)
@@ -152,6 +194,26 @@ class GridScript(unittest.TestCase):
         self.assertIn("reported to storage-report", self.script("report").stdout)
         tree = json.loads(Path(self.calls + ".tree").read_text())["tree"]
         self.assertEqual([entry["path"] for entry in tree], ["storage/retire/old_set.json"])
+
+    def test_retire_queues_nothing_while_no_plan_lists_files(self):
+        self.script("plan", self.stamp, job="9", check=False)
+        out = self.script("retire", self.stamp, check=False)
+        self.assertEqual(out.returncode, 1)
+        self.assertNotIn("HPCW ", out.stdout)
+        self.assertIn("old_set: no plan that lists files", out.stdout)
+
+    def test_retire_queues_one_delete_job_once_a_plan_lists_files(self):
+        plans = Path(self.home, "plans")
+        plans.mkdir()
+        (plans / "old_set.json").write_text('{"problems": []}')
+        (plans / "old_set.delete").write_bytes(b"imagesTr/a.nii.gz\0")
+        out = self.script("retire", self.stamp).stdout
+        queued = [line for line in out.splitlines() if line.startswith("HPCW ")]
+        self.assertEqual(len(queued), 1)
+        self.assertTrue(queued[0].endswith("storage.sh delete " + self.stamp))
+        job = self.script("delete", self.stamp, job="10", check=False)
+        self.assertEqual(job.returncode, 1)
+        self.assertIn("old_set: not retired", job.stdout)
 
 
 if __name__ == "__main__":
