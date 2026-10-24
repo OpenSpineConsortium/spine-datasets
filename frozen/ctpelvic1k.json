@@ -1,0 +1,61 @@
+{
+ "bytes": 14831867170,
+ "depth": 1,
+ "extensions": {
+  "(other)": {
+   "bytes": 341,
+   "files": 1
+  },
+  ".json": {
+   "bytes": 227,
+   "files": 1
+  },
+  ".nii.gz": {
+   "bytes": 14831866602,
+   "files": 178
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 180,
+ "folders": [
+  {
+   "bytes": 568,
+   "files": 2,
+   "path": "fetch",
+   "tree_sha256": "4180ab0e727a0523a3c6c0e2d46aff1b5e315642739354eb67b87207d9ba86fc"
+  },
+  {
+   "bytes": 14831866602,
+   "files": 178,
+   "path": "raw",
+   "tree_sha256": "180a731be2eb9ea20d320e139e87b9d9f9100c13bacab84c717c273179058783"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-24T22:36:08Z",
+ "id": "ctpelvic1k",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 2,
+   "files": 2,
+   "folders": 1
+  },
+  {
+   "depth": 3,
+   "files": 0,
+   "folders": 2
+  },
+  {
+   "depth": 4,
+   "files": 178,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "16f98332771e8bf2cc17feaa2a11bac468f77dd2283ff608cbe2b0b8e1fdc8ac"
+}

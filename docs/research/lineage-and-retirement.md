@@ -177,6 +177,23 @@ so it is still not seen; the mapping files remain the way to those.
 What the first pass does give now: the per-set sizes, file counts and DICOM series, study and
 patient counts for the 52 DICOM sets (6.5 TB across all 98), which feed the removal list's sizes.
 
+## The second measurement (2026-10-24, grid job 40777731)
+
+The voxel pass read 99 frozen sets in one job (lineage/OVERLAP.json, format 2; ctpelvic1k froze
+after it ran, from data/ctpelvic1k_clinic, where the copy actually is). 2,696 NIfTI volumes shared
+a geometry with another set's, and all were read, in about 20 minutes, well inside the budget.
+
+- CTSpine1K and CTSpinoPelvic1K: 526 of CTSpine1K's 1,005 volumes carry exactly the values of a
+  CTSpinoPelvic1K volume (747 share a geometry), and none shares voxel bytes, so CTSpinoPelvic1K
+  holds those scans re-encoded, as the owner said. They are one patient set twice.
+- CTSpine1K with kidney_thoraxabdomen (3), kidney_thoraxabdomen with PANORAMA (1) and CURVAS-PDACVI
+  with PANORAMA (1) share a few scans' values; worth a look, not a removal.
+- The other 24 pairs share only geometries, a lead that matched no values.
+
+The 479 CTSpine1K volumes with no match in CTSpinoPelvic1K are the next question for the removal
+list: they are what CTSpine1K alone holds, unless a release changed them (cropped or resampled),
+which this pass cannot see.
+
 ## The plan
 
 1. This note and the record schema for `lineage` and `retired`, with the census check that
