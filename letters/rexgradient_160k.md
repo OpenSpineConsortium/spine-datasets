@@ -1,6 +1,6 @@
 # rexgradient_160k: the request text
 
-Not sent.
+Not sent, and no longer needed: the owner accepted the gate's agreement on 2026-10-22 under the owner's own account, and the owner's chain fetched the whole set on 2026-10-23 (datasets/rexgradient_160k.json, held). A separate note to the corresponding author, drafted 2026-10-22 in the owner's mailbox, went from it on 2026-10-24 at 03:24 UTC: it asks leave to download all ten image parts with the metadata under the agreement's section A.5, keeping only the studies the work uses and deleting the rest once identified from the view-position metadata; waiting for the answer. Its text is the last section below.
 
 To: the gate form on the dataset's Hugging Face page.
 Route: form (a gate with an agreement checkbox), the owner's hand only, on the owner's Hugging Face account.
@@ -28,3 +28,27 @@ Fee: none. What to expect back: an instant or a reviewed approval (the Rajpurkar
 been reviewed by hand, days); then `huggingface-cli download` with the owner's token in a file on
 the grid, as a job on the owner's word. Whether the studies include lateral views is read from the
 metadata once approved.
+
+## The note to the corresponding author (sent 2026-10-24 03:24 UTC)
+
+To: Dr Xiaoman Zhang (xiaoman_zhang@hms.harvard.edu), the corresponding author. Subject: [XR/CT Imaging Research]
+ReXGradient-160K: permission to download all image parts. Sent from the owner's mailbox on 2026-10-24 at 03:24 UTC, as
+drafted on 2026-10-22; the text, verbatim:
+
+```text
+Dear Dr Zhang,
+
+I study the application of computer science to improving spinal health, and my current work needs lateral chest radiographs from many sites, since a lateral chest film shows the thoracic spine from T1 to about L1. I have accepted the ReXGradient-160K data access and use agreement on Hugging Face under my account.
+
+Section A.5 of the agreement allows only the portion of the data the project needs, and prohibits downloading the entire repository. The images are distributed as one archive split into ten parts (deid_png.part00 to part09), so the lateral views cannot be selected before download. I am writing to ask whether you would allow me to download all ten image parts together with the metadata, on the understanding that I would keep only the studies my work uses and delete the rest once they are identified from the view-position metadata.
+
+The work is non-commercial academic research on de-identified images under Wayne State IRB determination HPR 2026-269. The images would stay on Wayne State's research computing storage, read only by the study team, and never be redistributed. Gradient Health and the repository will be credited in any publication.
+
+With thanks,
+
+Gregory J. Schwing, MD, PhD
+Department of General Surgery
+Wayne State University School of Medicine and the Detroit Medical Center
+Detroit, Michigan, USA
+go2432@wayne.edu
+```
