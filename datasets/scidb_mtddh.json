@@ -13,7 +13,7 @@
   "On the owner's word: write manifests/scidb_mtddh.json from that list (md5 in place of sha256, as the source publishes), set the record to fetching, and in the same pull request add download.scidb.cn to the hosts Science Data Bank serves files from (DOWNLOAD_HOSTS in tools/promote.py, as ndownloader.figshare.com is for figshare), which the promoter on the grid takes only through the owner's gate word promoter restart; then the promoter installs the set at /rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw (grid/README.md).",
   "Fallback copy: the same authors' figshare item doi:10.6084/m9.figshare.27999131.v1 (MTDDH.rar, 1,871,869,324 bytes, md5 697c3c29b6a1faf69a2032e22486400e, CC BY 4.0, posted 2024-12-11, https://ndownloader.figshare.com/files/51075122), five months older and not the same archive as MTDDH.zip; the Science Data Bank version is the one the paper cites. Questions go to the corresponding authors, Guoqiang Zhao (hello868@zju.edu.cn) and Gang Yu (yugbme@zju.edu.cn)."
  ],
- "grid_path": null,
+ "grid_path": "/rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw",
  "counts": {
   "xray_images": 2156,
   "patients": 2156,
@@ -21,12 +21,18 @@
   "bytes": 4053482052,
   "size_gb": 4.05
  },
- "measured": {},
+ "measured": {
+  "bytes": 4053482052,
+  "files": 3,
+  "tree_sha256": "54bc12b443d54adcc4f73fed418529a38ce6f25cfdb31c8c5033a00c372238df",
+  "frozen": "2026-10-24",
+  "by": "tools/freeze.py"
+ },
  "record": "symphony-template docs/research/spine-datasets-on-chinese-hosts.md (2026-10-23)",
  "source_status": "found on 2026-10-23 by the search of the Chinese dataset hosts for the request-route sets (Science Data Bank); not fetched; the record read through DataCite and the page's meta tags, since the page is a JavaScript shell; the same day the owner opened the page (no login) and the file list with its download links was read from the owner's computer; the only other paediatric pelvic film source beside the Mendeley DDH hip sets",
  "route": "download",
- "status": "fetching",
- "result": "",
+ "status": "fetched",
+ "result": "2026-10-24: on the grid at /rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw, 3 files, 4053482052 bytes, sha256-checked, promoter job 40754479",
  "history": [
   {
    "date": "2026-10-23",
@@ -42,10 +48,13 @@
    "date": "2026-10-23",
    "step": "fetching",
    "note": "manifest ready; the promoter fetches after merge (the owner gave the word for one set of 4.05 GB at 19:54 UTC)"
+  },
+  {
+   "date": "2026-10-24",
+   "step": "fetched",
+   "note": "on the grid at /rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw, 3 files, 4053482052 bytes, sha256-checked, promoter job 40754479"
   }
  ],
- "obstacles": [
-  "the promoter on the grid takes the host entry for download.scidb.cn only once the owner sends the gate word promoter-restart after this merge (grid/README.md), since a session's commits are tied to its own account"
- ],
- "next": "the promoter installs it after merge"
+ "obstacles": [],
+ "next": ""
 }

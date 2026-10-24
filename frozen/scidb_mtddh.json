@@ -1,0 +1,41 @@
+{
+ "bytes": 4053482052,
+ "depth": 1,
+ "extensions": {
+  ".rar": {
+   "bytes": 1165024411,
+   "files": 1
+  },
+  ".zip": {
+   "bytes": 2888457641,
+   "files": 2
+  }
+ },
+ "file_list": "FROZEN.files.tsv.gz",
+ "files": 3,
+ "folders": [
+  {
+   "bytes": 4053482052,
+   "files": 3,
+   "path": "raw",
+   "tree_sha256": "b41813e5022ede117be2a5d139e6c18aa92a5d814b114c9b08448625f62e8f0b"
+  }
+ ],
+ "format": "spine-datasets/frozen 1",
+ "frozen_at": "2026-10-24T02:07:47Z",
+ "id": "scidb_mtddh",
+ "links": 0,
+ "shape": [
+  {
+   "depth": 1,
+   "files": 0,
+   "folders": 1
+  },
+  {
+   "depth": 2,
+   "files": 3,
+   "folders": 0
+  }
+ ],
+ "tree_sha256": "54bc12b443d54adcc4f73fed418529a38ce6f25cfdb31c8c5033a00c372238df"
+}
