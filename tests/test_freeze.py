@@ -244,7 +244,8 @@ class GridScript(unittest.TestCase):
         self.tmp.cleanup()
 
     def script(self, *args, job=None):
-        env = dict(os.environ, FREEZE_HOME=self.home, HPCWORKER=self.hpcw, USER="someone")
+        env = dict(os.environ, FREEZE_HOME=self.home, HPCWORKER=self.hpcw, USER="someone",
+                   FREEZE_JOB_LOGS=os.path.join(self.home, "joblogs"))
         if job:
             env["SLURM_JOB_ID"] = job
         return subprocess.run(["bash", os.path.join(self.home, "code", "freeze.sh")] + list(args),
@@ -316,6 +317,18 @@ class GridScript(unittest.TestCase):
                        env=env, capture_output=True, text=True, check=True)
         paths = [entry["path"] for entry in json.loads(Path(calls + ".tree").read_text())["tree"]]
         self.assertEqual(paths[-1], "lineage/OVERLAP.json")
+
+
+    def test_status_shows_the_newest_freeze_log(self):
+        logs = Path(self.home, "joblogs")
+        logs.mkdir()
+        (logs / "freeze_1.out").write_text("old\n")
+        os.utime(logs / "freeze_1.out", (1, 1))
+        (logs / "freeze_2.out").write_text("ctpelvic1k: not frozen (exit 1)\n")
+        out = self.script("status")
+        self.assertIn("last lines of freeze_2.out:", out)
+        self.assertIn("ctpelvic1k: not frozen", out)
+        self.assertNotIn("old", out.split("last lines of")[1])
 
 
 if __name__ == "__main__":
