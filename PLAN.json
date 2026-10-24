@@ -1,5 +1,5 @@
 {
- "built_at": "2026-10-24T20:52:07Z",
+ "built_at": "2026-10-24T23:47:06Z",
  "format": "spine-datasets/storage 1",
  "home": {
   "quota_bytes": 4000000000000,
@@ -49,7 +49,26 @@
    "licence": "restricted",
    "location": "lab",
    "name": "AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images)",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspine1k"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspinopelvic1k"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "zenodo_ts_task_pleural_effusion"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -64,7 +83,56 @@
    "licence": "open",
    "location": "lab",
    "name": "AMOS22 CT, unlabelled (ids 5000-6899) and labelled",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "barts_crl"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspine1k"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspinopelvic1k"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "curvas_pdacvi"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "nlst_pilot"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "panorama"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ribfrac"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "waw_tace"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -124,7 +192,26 @@
    "licence": "open",
    "location": "lab",
    "name": "Barts CRL (colorectal-cancer staging CT)",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "amos22"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "cobra2026"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "panorama"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -349,7 +436,20 @@
    "licence": "restricted",
    "location": "lab",
    "name": "COBRA2026 public cases (Elekta and Varian)",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "barts_crl"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspine1k"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -430,10 +530,10 @@
    "status": "granted"
   },
   {
-   "bytes": null,
-   "bytes_known": false,
+   "bytes": 14831867170,
+   "bytes_known": true,
    "fetchable": false,
-   "frozen": false,
+   "frozen": true,
    "group": "ct",
    "id": "ctpelvic1k",
    "licence": "restricted",
@@ -454,7 +554,62 @@
    "licence": "restricted",
    "location": "lab",
    "name": "CTSpine1K",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "abdomenatlas3_mini"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "amos22"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "cobra2026"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspinopelvic1k"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "kidney_thoraxabdomen"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "panorama"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ribfrac"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "verse"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "waw_tace"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -469,7 +624,44 @@
    "licence": "restricted",
    "location": "lab",
    "name": "CTSpinoPelvic1K v11 (the consortium's own release)",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "abdomenatlas3_mini"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "amos22"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspine1k"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "panorama"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ribfrac"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "verse"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -484,7 +676,14 @@
    "licence": "open",
    "location": "lab",
    "name": "CURVAS 2024",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "deep_psma"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -499,7 +698,20 @@
    "licence": "open",
    "location": "lab",
    "name": "CURVAS-PDACVI (MICCAI 2025)",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "amos22"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "panorama"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -529,7 +741,20 @@
    "licence": "restricted",
    "location": "lab",
    "name": "DEEP-PSMA (PSMA + FDG PET/CT, mCRPC)",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "curvas"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "tcia_fdg_pet_ct_lesions"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -1534,7 +1759,20 @@
    "licence": "open",
    "location": "lab",
    "name": "Kidney abnormality segmentation in thorax-abdomen CT",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspine1k"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "panorama"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -1804,7 +2042,26 @@
    "licence": "open",
    "location": "lab",
    "name": "NLST, the seeded 500-person pilot",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "amos22"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ribfrac"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "waw_tace"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -1849,7 +2106,50 @@
    "licence": "restricted",
    "location": "lab",
    "name": "PANORAMA public set (pancreas CE-CT)",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "amos22"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "barts_crl"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspine1k"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspinopelvic1k"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "curvas_pdacvi"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "kidney_thoraxabdomen"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "waw_tace"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -1999,7 +2299,38 @@
    "licence": "restricted",
    "location": "lab",
    "name": "RibFrac (MICCAI 2020) chest CT",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "amos22"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspine1k"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspinopelvic1k"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "nlst_pilot"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "waw_tace"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -2164,7 +2495,14 @@
    "licence": "open",
    "location": "lab",
    "name": "FDG-PET-CT-Lesions (autoPET), TCIA through NBIA",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "deep_psma"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -2254,7 +2592,20 @@
    "licence": "open",
    "location": "lab",
    "name": "VerSe 2019 and 2020",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspine1k"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspinopelvic1k"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -2374,7 +2725,38 @@
    "licence": "open",
    "location": "lab",
    "name": "WAW-TACE (HCC multiphase CT, Warsaw)",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "amos22"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ctspine1k"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "nlst_pilot"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "panorama"
+    },
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "ribfrac"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -2464,7 +2846,14 @@
    "licence": "open",
    "location": "lab",
    "name": "TotalSegmentator task data 'pleural_pericard_effusion' (600 CT)",
-   "overlap": [],
+   "overlap": [
+    {
+     "patients": 0,
+     "same_bytes": 0,
+     "series": 0,
+     "with": "abdomenatlas3_mini"
+    }
+   ],
    "reach": "held",
    "rebuild": true,
    "status": "held"
@@ -2502,8 +2891,8 @@
  ],
  "target_bytes": 20000000000000,
  "volume": {
-  "datasets_bytes": 7626035136479,
-  "other_bytes": 9927214863521,
+  "datasets_bytes": 7640867003649,
+  "other_bytes": 9912382996351,
   "quota_bytes": 21990230000000,
   "read_at": "2026-10-24T17:15:28Z",
   "used_bytes": 17553250000000
