@@ -10,25 +10,25 @@ since the last run. The page with filters is census.html beside this file, serve
 | | |
 |---|---|
 | Datasets with a record | 166 |
-| On the grid (shared tree and the owner's root) | 103 |
-| Size on the grid | 5.8 TB (99 of 103 sets counted) |
-| Frozen on the grid, every file hashed (tools/freeze.py) | 97 of 103 |
-| Subjects on the grid | 64,999 (87 of 103 sets counted) |
-| X-ray images on the grid | 163,035 (17 of 103 sets counted) |
-| X-ray videos and sweeps on the grid | 694 (2 of 103 sets counted) |
-| Frames inside those videos and sweeps | 376,220 (2 of 103 sets counted) |
-| CT volumes on the grid | 24,959 (70 of 103 sets counted) |
+| On the grid (shared tree and the owner's root) | 104 |
+| Size on the grid | 5.8 TB (99 of 104 sets counted) |
+| Frozen on the grid, every file hashed (tools/freeze.py) | 97 of 104 |
+| Subjects on the grid | 174,486 (88 of 104 sets counted) |
+| X-ray images on the grid | 163,035 (17 of 104 sets counted) |
+| X-ray videos and sweeps on the grid | 694 (2 of 104 sets counted) |
+| Frames inside those videos and sweeps | 376,220 (2 of 104 sets counted) |
+| CT volumes on the grid | 24,959 (70 of 104 sets counted) |
 | Real spine X-ray and CT pairs on the grid | 5 sets, 1,651 subjects |
 
 | Stage | Datasets |
 |---|---|
 | Downloadable now | 9 |
-| To ask | 8 |
+| To ask | 7 |
 | Asked, waiting | 27 |
 | Granted, fetch pending | 5 |
 | Fetching | 0 |
 | On the grid | 7 |
-| Held by the owner | 96 |
+| Held by the owner | 97 |
 | Needs the owner | 11 |
 | Refused | 2 |
 | Later | 1 |
@@ -176,7 +176,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | NIH ChestX-ray14 and the RSNA pneumonia subset | Radiographs | Held by the owner | unknown | 30,805 | 112,120 |  |  |  | 45.1 GB | [#37](https://github.com/OpenSpineConsortium/spine-datasets/issues/37) |
 | Open-i Indiana chest collection | Radiographs | Needs the owner | restricted |  | 7,470 |  |  |  |  | [#35](https://github.com/OpenSpineConsortium/spine-datasets/issues/35) |
 | PadChest (BIMCV, Alicante) | Radiographs | To ask | restricted | 67,625 | 160,868 |  |  |  |  | [#12](https://github.com/OpenSpineConsortium/spine-datasets/issues/12) |
-| ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025) | Radiographs | To ask | restricted | 109,487 |  |  |  |  |  | [#11](https://github.com/OpenSpineConsortium/spine-datasets/issues/11) |
+| ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025) | Radiographs | Held by the owner | restricted | 109,487 |  |  |  |  |  | [#11](https://github.com/OpenSpineConsortium/spine-datasets/issues/11) |
 | MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025) | Radiographs | On the grid | open | 2,156 | 2,156 |  |  |  | 4.1 GB |  |
 | SOF lateral spine radiographs (Study of Osteoporotic Fractures) | Radiographs | To ask | restricted |  |  |  |  |  |  | [#10](https://github.com/OpenSpineConsortium/spine-datasets/issues/10) |
 | TVGH ankylosing spondylitis cervical and lumbar spine films | Radiographs | Asked, waiting | unknown |  |  |  |  |  |  | [#108](https://github.com/OpenSpineConsortium/spine-datasets/issues/108) |
@@ -476,6 +476,8 @@ What the CT records still lack:
 - MIMIC-CXR and MIMIC-CXR-JPG (PhysioNet): the licence is still to confirm on the source's page
 - MrOS lateral spine radiographs (Osteoporotic Fractures in Men): the licence is still to confirm on the source's page
 - Open-i Indiana chest collection: the licence is still to confirm on the source's page
+- ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025): on the grid with no size: write the landing pass's bytes into measured
+- ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025): on the grid and not frozen: run tools/freeze.py on its folder and write frozen/<id>.json and measured from it
 - SOF lateral spine radiographs (Study of Osteoporotic Fractures): no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
 - SOF lateral spine radiographs (Study of Osteoporotic Fractures): the licence is still to confirm on the source's page
 - TVGH ankylosing spondylitis cervical and lumbar spine films: no count the census can read: add subjects, xray_images, videos, run_frames or ct_volumes to counts
@@ -503,6 +505,7 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-24 ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025): grid_path none to /rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k; stage to-ask to held; status todo to held
 - 2026-10-24 MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025): grid_bytes none to 4.1 GB; grid_path none to /rs/rs_grp_oschome/shared/datasets/scidb_mtddh/raw; stage fetching to on-grid; status fetching to fetched
 - 2026-10-23 Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity): stage to-ask to asked; status todo to requested
 - 2026-10-23 MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025): stage downloadable to fetching; status todo to fetching

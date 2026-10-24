@@ -6,12 +6,12 @@
   "datasets": 166,
   "by_stage": {
    "downloadable": 9,
-   "to-ask": 8,
+   "to-ask": 7,
    "asked": 27,
    "granted": 5,
    "fetching": 0,
    "on-grid": 7,
-   "held": 96,
+   "held": 97,
    "needs-owner": 11,
    "refused": 2,
    "later": 1
@@ -24,38 +24,38 @@
    "ct": 92,
    "future": 2
   },
-  "on_grid": 103,
+  "on_grid": 104,
   "on_grid_size": {
    "sum": 5799573002592,
    "counted": 99,
-   "of": 103,
+   "of": 104,
    "measured": 97
   },
   "on_grid_frozen": 97,
   "on_grid_subjects": {
-   "sum": 64999,
-   "counted": 87,
-   "of": 103
+   "sum": 174486,
+   "counted": 88,
+   "of": 104
   },
   "on_grid_xray_images": {
    "sum": 163035,
    "counted": 17,
-   "of": 103
+   "of": 104
   },
   "on_grid_videos": {
    "sum": 694,
    "counted": 2,
-   "of": 103
+   "of": 104
   },
   "on_grid_run_frames": {
    "sum": 376220,
    "counted": 2,
-   "of": 103
+   "of": 104
   },
   "on_grid_ct_volumes": {
    "sum": 24959,
    "counted": 70,
-   "of": 103
+   "of": 104
   },
   "paired": {
    "A": 5,
@@ -7805,24 +7805,24 @@
    }
   },
   "rexgradient_160k": {
-   "digest": "bc0552b87546fabc9be6474c2b03c6bf2df780b99389eed08a7b4e5569091eea",
+   "digest": "646106727eb87b04746ad854ada2117f8fe078aaac14a2f3fc8c38f559deb786",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-24",
    "row": {
     "id": "rexgradient_160k",
     "name": "ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025)",
     "group": "films",
     "kind": "Radiographs",
     "route": "form",
-    "status": "todo",
-    "stage": "to-ask",
+    "status": "held",
+    "stage": "held",
     "licence": "a non-commercial data access and use agreement on the Hugging Face page",
     "licence_kind": "restricted",
     "link": "https://huggingface.co/datasets/rajpurkarlab/ReXGradient-160K",
     "what": "160,000 chest radiograph studies with reports from 109,487 patients at 79 US sites; several images per study, so laterals are likely included (to confirm on the page)",
     "level_truth": "none; the thoracic spine behind the heart, and laterals if present",
-    "grid_path": null,
-    "on_grid": false,
+    "grid_path": "/rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k",
+    "on_grid": true,
     "grid_bytes": null,
     "tree_sha256": null,
     "subjects": 109487,
@@ -7835,11 +7835,11 @@
      "sites",
      "studies"
     ],
-    "next": "fill the form named in letters/rexgradient_160k.md with its paragraphs as the purpose, then record the date here",
+    "next": "wait for Dr Zhang's answer to the note of 2026-10-24 03:24 UTC and record it; read the view-position metadata and keep only the lateral studies, deleting the rest, as the note promised; the landing pass checks the files kept (the image parts and the metadata) and a freeze follows on the owner's word",
     "since": "2026-10-21",
     "last_step": {
-     "date": "2026-10-21",
-     "step": "researched"
+     "date": "2026-10-24",
+     "step": "asked"
     },
     "paired": false,
     "tier": null,
@@ -11760,6 +11760,25 @@
     "grid_bytes": [
      null,
      4053482052
+    ]
+   }
+  },
+  {
+   "date": "2026-10-24",
+   "id": "rexgradient_160k",
+   "kind": "changed",
+   "changes": {
+    "status": [
+     "todo",
+     "held"
+    ],
+    "stage": [
+     "to-ask",
+     "held"
+    ],
+    "grid_path": [
+     null,
+     "/rs/rs_grp_oschome/go2432/data/hf_rexgradient_160k"
     ]
    }
   }
