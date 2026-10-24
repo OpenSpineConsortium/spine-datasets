@@ -58,6 +58,9 @@ LINEAGE=${FREEZE_LINEAGE:-$HOME_DIR/code/lineage.py}
 SHARED=${PROMOTER_SHARED:-/rs/rs_grp_oschome/shared/datasets}
 REPO=OpenSpineConsortium/spine-datasets
 REPORT_BRANCH=freeze-report
+# hpcworker's log folder for this project's jobs, whose newest freeze and lineage logs status shows,
+# since the gate's answer is the only way a session reads why a job froze nothing
+JOB_LOGS=${FREEZE_JOB_LOGS:-/rs/rs_grp_oschome/$USER/hpcworker/jobs/$PROJECT/logs}
 
 python_bin() {
   for candidate in python3.12 python3.11 python3.10 python3.9 python3.8 python3 ; do
@@ -134,6 +137,12 @@ case "${1:-}" in
       echo "overlap: $(grep -o '"built_at": "[^"]*"' "$HOME_DIR/lineage/OVERLAP.json"), $(grep -c '"a":' "$HOME_DIR/lineage/OVERLAP.json") pairs share something"
     fi
     hpcw job status --project "$PROJECT" --last 8 || true
+    for kind in freeze lineage; do
+      newest=$(ls -t "$JOB_LOGS/${kind}"_*.out 2>/dev/null | head -1 || true)
+      [ -n "$newest" ] || continue
+      echo "last lines of $(basename "$newest"):"
+      tail -n 25 "$newest" | cut -c1-300
+    done
     ;;
   report)
     command -v gh >/dev/null 2>&1 || { echo "no gh on this account's path"; exit 2; }
