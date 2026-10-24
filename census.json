@@ -969,9 +969,9 @@
    }
   },
   "bournemouth_cervical_qf": {
-   "digest": "5eafe030fa416ded5f38d224690835797c71029e21a333eca800783bcffa2bfb",
+   "digest": "7414c82cdb105cec0421147c955c6d8982f5f7030df1e8d33a663b9d829fb9b3",
    "first_seen": "2026-09-26",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-24",
    "row": {
     "id": "bournemouth_cervical_qf",
     "name": "Bournemouth cervical quantitative fluoroscopy (BORDaR 385)",
@@ -1001,7 +1001,7 @@
     "next": "wait for Branney's second answer with the arrangement; a Bournemouth data-sharing agreement would be the owner's to sign; then record granted here and go on to the fetch",
     "since": "2026-09-26",
     "last_step": {
-     "date": "2026-10-22",
+     "date": "2026-10-24",
      "step": "note"
     },
     "paired": false,
@@ -1013,9 +1013,9 @@
    }
   },
   "bournemouth_lumbar_qf": {
-   "digest": "13415388765504275bb9ef2515fcbd21fc33e06b320a9824144ce4ecc4016000",
+   "digest": "df7009972a4b9444aa466b4d4c40e0f7bfa2dff653d7cf81843375dd75e6ddf5",
    "first_seen": "2026-10-20",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-24",
    "row": {
     "id": "bournemouth_lumbar_qf",
     "name": "Bournemouth lumbar quantitative fluoroscopy (Breen 2021)",
@@ -1040,11 +1040,11 @@
     "ct_volumes": null,
     "bytes": null,
     "unread_counts": [],
-    "next": "wait for Branney's second answer with the arrangement, and ask then whether the OSF deposit may be used and whether it is the whole L2-S1 cine; a yes is recorded as a granted step; then the manifest from OSF's API and fetching; a Bournemouth data-sharing agreement would be the owner's to sign",
+    "next": "wait for Branney's answer on the data-sharing arrangement and on the OSF deposit (asked 2026-10-24 03:08 UTC); a yes on the deposit is recorded as a granted step, then the manifest from OSF's API and fetching; a Bournemouth data-sharing agreement would be the owner's to sign",
     "since": "2026-10-20",
     "last_step": {
-     "date": "2026-10-23",
-     "step": "researched"
+     "date": "2026-10-24",
+     "step": "asked"
     },
     "paired": false,
     "tier": null,
@@ -9381,9 +9381,9 @@
    }
   },
   "zenodo_ts_task_hip_implant": {
-   "digest": "1b1dda63b3501234938e9bbde25bf0370bed91fbb68a9a8b49f6d9bfe4550b7c",
+   "digest": "70b76fd5590816b111fdc2781f62e2dcc08ce7131e4fd802e93ffae531ea8b25",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-24",
    "row": {
     "id": "zenodo_ts_task_hip_implant",
     "name": "TotalSegmentator task data 'hip_implant' (71 CT)",
@@ -9408,11 +9408,11 @@
     "ct_volumes": null,
     "bytes": 9030000000,
     "unread_counts": [],
-    "next": "the owner sends the drafted follow-up; record the answer on the task sets here; the landing pass (#204) checks the files",
+    "next": "wait for Wasserthal's answer to the follow-up of 2026-10-24 03:05 UTC; record it on the task sets here; the landing pass (#204) checks the files",
     "since": "2026-10-21",
     "last_step": {
-     "date": "2026-10-23",
-     "step": "held"
+     "date": "2026-10-24",
+     "step": "asked"
     },
     "paired": false,
     "tier": null,
@@ -9434,9 +9434,9 @@
    }
   },
   "zenodo_ts_task_liver_lesions": {
-   "digest": "cd2d8f407c9555d9474efc0f8da910726baa02bd0e87c7b424c43256e555f271",
+   "digest": "38c0a3b58cb20b0dc9b8830160136e0df54e462ca35fe28ce8ee83ca8e961ef6",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-24",
    "row": {
     "id": "zenodo_ts_task_liver_lesions",
     "name": "TotalSegmentator task data 'liver_lesions' (842 CT)",
@@ -9461,11 +9461,11 @@
     "ct_volumes": null,
     "bytes": 38870000000,
     "unread_counts": [],
-    "next": "the owner sends the drafted follow-up; record the answer on the task sets here; the landing pass (#204) checks the files",
+    "next": "wait for Wasserthal's answer to the follow-up of 2026-10-24 03:05 UTC; record it on the task sets here; the landing pass (#204) checks the files",
     "since": "2026-10-21",
     "last_step": {
-     "date": "2026-10-23",
-     "step": "held"
+     "date": "2026-10-24",
+     "step": "asked"
     },
     "paired": false,
     "tier": null,
@@ -9487,9 +9487,9 @@
    }
   },
   "zenodo_ts_task_pleural_effusion": {
-   "digest": "482db83078796b1c9e9fff1dd26df97d3599d6d61c3263a102b084421a84cced",
+   "digest": "15ff6e50066312b497acf5aa9fbd0d2043d2a5de714debdcae93ecb2114ba8b7",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-24",
    "row": {
     "id": "zenodo_ts_task_pleural_effusion",
     "name": "TotalSegmentator task data 'pleural_pericard_effusion' (600 CT)",
@@ -9514,11 +9514,11 @@
     "ct_volumes": null,
     "bytes": 8990000000,
     "unread_counts": [],
-    "next": "the owner sends the drafted follow-up; record the answer on the task sets here; the landing pass (#204) checks the files",
+    "next": "wait for Wasserthal's answer to the follow-up of 2026-10-24 03:05 UTC; record it on the task sets here; the landing pass (#204) checks the files",
     "since": "2026-10-21",
     "last_step": {
-     "date": "2026-10-23",
-     "step": "held"
+     "date": "2026-10-24",
+     "step": "asked"
     },
     "paired": false,
     "tier": null,
