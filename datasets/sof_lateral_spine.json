@@ -5,12 +5,12 @@
  "what": "the women's counterpart of MrOS: lateral thoracolumbar films at several visits, about 9,700 women, Genant grading per vertebra; counts to confirm on the page",
  "level_truth": "Genant grades on named levels, so level truth exists",
  "reach": "get",
- "licence": "a SOF data request agreement; terms to confirm on the page",
- "link": "https://sofonline.ucsf.edu/",
+ "licence": "an NIA Outgoing Human Data Transfer Agreement signed by the PI and Wayne State's Signing Official: non-profit research on the approved project only, no redistribution, no re-identification, acknowledgement, 12 months renewable, destruction certified at the end",
+ "link": "https://agingresearchbiobank.nia.nih.gov/",
  "how_to_get": [
-  "Open https://sofonline.ucsf.edu/ and read the data request route, to confirm on the page.",
-  "The owner files the request in the owner's name and signs whatever agreement follows; a session drafts the proposal text once the owner asks.",
-  "Once granted, fetch by the route the centre gives, as a Slurm job on the owner's word, never on the login node."
+  "Sign in at https://agingresearchbiobank.nia.nih.gov/ (NIH RAS through Login.gov or ID.me, institutional email) and enter the institution on the profile page.",
+  "Requests, Request for Materials: tick Data and Images and the studies MrOS and SOF in one request, and paste the fields of the drafted request (the project's shared folder, dataset-requests/nia-biobank-mros-sof-request.md); upload the protocol, the IRB letter, the Collaborator Attestation signed by the PI and the Signing Official, and a CV.",
+  "After the scientific review (several weeks) and the signed agreement, the images are download links on the request's Data tab; the package is free, and is fetched as a Slurm job only on the owner's word once its exact size is known."
  ],
  "grid_path": null,
  "counts": {
@@ -20,15 +20,30 @@
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
  "source_status": "found by the sweep of 2026-10-21; not fetched; the same kind of request as MrOS (to confirm on the page), not sent; with MrOS the largest level-labelled lateral spine film resource that exists",
  "route": "form",
- "status": "todo",
+ "status": "needs-owner",
  "result": "",
  "history": [
   {
    "date": "2026-10-21",
    "step": "researched",
    "note": "found by the sweep of 2026-10-21; not fetched; the same kind of request as MrOS (to confirm on the page), not sent; with MrOS the largest level-labelled lateral spine film resource that exists"
+  },
+  {
+   "date": "2026-10-22",
+   "step": "asked",
+   "note": "the owner emailed SOFData@ucsf.edu for authorization to register at SOF Online; the coordinating centre answered the same day that SOF Online is closed to registrations for new NIH requirements and that the study images are being added to the NIA Aging Research Biobank, where the request goes"
+  },
+  {
+   "date": "2026-10-24",
+   "step": "note",
+   "note": "the Biobank's request process read from its pages (symphony-template docs/research/nia-aging-research-biobank-requests.md); one Request for Materials for MrOS and SOF drafted for the owner, not submitted"
   }
  ],
- "obstacles": [],
- "next": "fill the form named in letters/sof_lateral_spine.md with its paragraphs as the purpose, then record the date here"
+ "obstacles": [
+  "the owner's hand: who files as Requester/PI (the Biobank takes only a permanent tenure-track professor or senior researcher; a trainee goes under Authorized Users)",
+  "the owner's and Wayne State tech transfer's answer to the form's required commercial-purpose question, since the agreement bars commercial use",
+  "an IRB determination covering data under an NIA transfer agreement (HPR 2026-269 covers only data without an agreement), a supplement as HPR 2026-330 was",
+  "the Biobank's form lists the study for data only, not images, on 2026-10-24; the package size is not published and is asked in the request's Comments before any download"
+ ],
+ "next": "the owner settles who files, the commercial-purpose answer and the IRB supplement, then submits the drafted Biobank request"
 }
