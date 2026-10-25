@@ -194,10 +194,10 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | CSI 2014 spine CT | CT | Held by the owner | open | 20 |  |  |  | 20 | 6.6 GB | [#263](https://github.com/OpenSpineConsortium/spine-datasets/issues/263) |
 | CT-RATE chest CT | CT | Granted, fetch pending | restricted |  |  |  |  |  |  | [#85](https://github.com/OpenSpineConsortium/spine-datasets/issues/85) |
 | CTPelvic1K | CT | Held by the owner | restricted |  |  |  |  | 172 | 14.8 GB | [#265](https://github.com/OpenSpineConsortium/spine-datasets/issues/265) |
-| CTSpine1K | CT | Held by the owner | restricted | 1,005 |  |  |  | 1,005 | 162.4 GB |  |
-| CTSpinoPelvic1K v11 (the consortium's own release) | CT | Held by the owner | restricted |  |  |  |  | 802 | 202.7 GB |  |
-| CURVAS 2024 | CT | Held by the owner | open | 90 |  |  |  | 70 | 30.0 GB |  |
-| CURVAS-PDACVI (MICCAI 2025) | CT | Held by the owner | open | 109 |  |  |  | 101 | 16.9 GB |  |
+| CTSpine1K | CT | Held by the owner | restricted | 1,005 |  |  |  | 1,005 | 162.4 GB | [#266](https://github.com/OpenSpineConsortium/spine-datasets/issues/266) |
+| CTSpinoPelvic1K v11 (the consortium's own release) | CT | Held by the owner | restricted |  |  |  |  | 802 | 202.7 GB | [#267](https://github.com/OpenSpineConsortium/spine-datasets/issues/267) |
+| CURVAS 2024 | CT | Held by the owner | open | 90 |  |  |  | 70 | 30.0 GB | [#268](https://github.com/OpenSpineConsortium/spine-datasets/issues/268) |
+| CURVAS-PDACVI (MICCAI 2025) | CT | Held by the owner | open | 109 |  |  |  | 101 | 16.9 GB | [#269](https://github.com/OpenSpineConsortium/spine-datasets/issues/269) |
 | DEEP-PSMA (PSMA + FDG PET/CT, mCRPC) | CT | Held by the owner | restricted | 100 |  |  |  | 53 | 24.3 GB |  |
 | AbdomenAtlas 2.0 Mini (10,135 CT) | CT | Asked, waiting | restricted |  |  |  |  | 10,135 | 620.4 GB | [#89](https://github.com/OpenSpineConsortium/spine-datasets/issues/89) |
 | IDC `acrin_flt_breast` | CT | Held by the owner | open | 15 |  |  |  | 15 | 2.8 GB |  |
@@ -319,9 +319,9 @@ with filters, and each set's masks in full, is census-ct.html beside this file.
 | PANORAMA public set (pancreas CE-CT) | Held by the owner | 2,024 | chest, abdomen, pelvis | from the source: not recorded; made on the grid: vertebrae by level, on the grid |  |
 | RSNA 2022 cervical spine fracture CT (Kaggle) | Held by the owner | 2,019 | spine | from the source: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid |  |
 | TotalSegmentator datasets v2.0.1 and v3.0.0 | Held by the owner | 1,935 | head and neck, chest, abdomen, pelvis, spine, whole body | from the source: vertebrae by level, on the grid; from the source: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid |  |
-| CTSpine1K | Held by the owner | 1,005 | head and neck, chest, abdomen, spine | from the source: vertebrae by level, on the grid |  |
+| CTSpine1K | Held by the owner | 1,005 | head and neck, chest, abdomen, spine | from the source: vertebrae by level, on the grid | [#266](https://github.com/OpenSpineConsortium/spine-datasets/issues/266) |
 | FDG-PET-CT-Lesions (autoPET), TCIA through NBIA | Held by the owner | 900 | whole body | from the source: not recorded; made on the grid: vertebrae by level, on the grid |  |
-| CTSpinoPelvic1K v11 (the consortium's own release) | Held by the owner | 802 | chest, abdomen, pelvis, spine | from the source: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| CTSpinoPelvic1K v11 (the consortium's own release) | Held by the owner | 802 | chest, abdomen, pelvis, spine | from the source: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid | [#267](https://github.com/OpenSpineConsortium/spine-datasets/issues/267) |
 | AMOS22 CT, unlabelled (ids 5000-6899) and labelled | Held by the owner | 723 | abdomen | from the source: vertebrae not recorded, on the grid; made on the grid: vertebrae by level, on the grid | [#256](https://github.com/OpenSpineConsortium/spine-datasets/issues/256) |
 | COBRA2026 public cases (Elekta and Varian) | Held by the owner | 692 | pelvis, spine | from the source: none; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid | [#262](https://github.com/OpenSpineConsortium/spine-datasets/issues/262) |
 | RibFrac (MICCAI 2020) chest CT | Held by the owner | 660 | chest, spine | from the source: no vertebrae, on the grid; from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
@@ -343,14 +343,14 @@ with filters, and each set's masks in full, is census-ct.html beside this file.
 | IDC `acrin_nsclc_fdg_pet` | Held by the owner | 131 | head and neck, chest, abdomen, pelvis, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
 | IDC `tcga_kirc` | Held by the owner | 129 | chest, abdomen, pelvis | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
 | IDC `rider_lung_pet_ct` | Held by the owner | 117 | chest, abdomen, pelvis, whole body | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
-| CURVAS-PDACVI (MICCAI 2025) | Held by the owner | 101 | chest, abdomen, pelvis | from the source: not recorded, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| CURVAS-PDACVI (MICCAI 2025) | Held by the owner | 101 | chest, abdomen, pelvis | from the source: not recorded, on the grid; made on the grid: vertebrae by level, on the grid | [#269](https://github.com/OpenSpineConsortium/spine-datasets/issues/269) |
 | IDC `hcc_tace_seg` (HCC-TACE-Seg) | Held by the owner | 101 | chest, abdomen, pelvis | from the source: no vertebrae; from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
 | PENGWIN 2024 Task 2 synthetic X-rays | Held by the owner | 100 | pelvis, spine | from the source: vertebrae not recorded, on the grid | [#30](https://github.com/OpenSpineConsortium/spine-datasets/issues/30) |
 | IDC `midrc_ricord_1a` | Held by the owner | 98 | chest, abdomen, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
 | IDC `colorectal_liver_metastases` (Colorectal-Liver-Metastases) | Held by the owner | 80 | abdomen | from the source: no vertebrae; from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
 | IDC `tcga_blca` | Held by the owner | 79 | chest, abdomen, pelvis, whole body | from the source: none; made on the grid: vertebrae by level, on the grid |  |
 | IDC `cmb_lca` | Held by the owner | 75 | chest, abdomen, pelvis, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
-| CURVAS 2024 | Held by the owner | 70 | chest, abdomen, pelvis, whole body | from the source: not recorded, on the grid; made on the grid: vertebrae by level, on the grid |  |
+| CURVAS 2024 | Held by the owner | 70 | chest, abdomen, pelvis, whole body | from the source: not recorded, on the grid; made on the grid: vertebrae by level, on the grid | [#268](https://github.com/OpenSpineConsortium/spine-datasets/issues/268) |
 | IDC `cptac_ucec` | Held by the owner | 66 | chest, abdomen, pelvis, whole body | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
 | IDC `cptac_pda` | Held by the owner | 62 | chest, abdomen, pelvis, other | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
 | IDC `pelvic_reference_data` | Held by the owner | 58 | abdomen, pelvis, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
