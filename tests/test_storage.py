@@ -141,5 +141,45 @@ class OverlapTest(unittest.TestCase):
         self.assertEqual(found[1]["same_scans"], 0, "a format-1 pair has no voxel count")
 
 
+class ValueTest(unittest.TestCase):
+    """What a set is worth, read from its record alone: masks people read count as level truth,
+    a tool's masks do not, and a count the record does not give stays null."""
+
+    def test_read_masks_give_level_truth_and_a_prior_source(self):
+        rec = dict(record("spine_ct"), regions=["spine", "pelvis"], counts={"subjects": 400, "ct_volumes": 410},
+                   level_truth="vertebra masks by level",
+                   segmentations=[{"origin": "release", "vertebrae": "by level", "by": "the authors", "where": "masks/"}])
+        value = storage.value_of(rec)
+        self.assertEqual((value["level_truth"], value["level_truth_people"], value["level_truth_scans"]),
+                         ("read", 400, 410))
+        self.assertTrue(value["prior_source"] and value["masks_held"] and value["spine"])
+        self.assertEqual(value["masks_by_level"], "read")
+
+    def test_a_tools_masks_are_automatic_and_count_no_people(self):
+        rec = dict(record("screening"), regions=["chest"], counts={"subjects": 24713},
+                   level_truth="counted by the census pipeline once fetched",
+                   segmentations=[{"origin": "release", "vertebrae": "by level",
+                                   "by": "IDC, automatic (TotalSegmentator)", "where": None}])
+        value = storage.value_of(rec)
+        self.assertEqual((value["level_truth"], value["level_truth_people"]), ("automatic", None))
+        self.assertTrue(value["prior_source"])
+        self.assertFalse(value["masks_held"])
+
+    def test_none_and_unread(self):
+        none = storage.value_of(dict(record("films"), group="films", level_truth="none; no spine"))
+        self.assertEqual((none["level_truth"], none["level_truth_people"], none["spine"]), ("no", 0, None))
+        unread = storage.value_of(dict(record("films2"), group="films", level_truth="not recorded"))
+        self.assertEqual((unread["level_truth"], unread["people"]), ("unknown", None))
+
+    def test_power_block(self):
+        self.assertEqual(storage.people_needed(), 385)
+        records = {"a": dict(record("a", size=TB), counts={"subjects": 300}, level_truth="L1 to L5 by the authors"),
+                   "b": dict(record("b", status="todo", grid_path=None), counts={"subjects": 900},
+                             level_truth="L1 to L5")}
+        power = storage.build_plan(records, {"used_bytes": TB}, None)["power"]
+        self.assertEqual(power["level_truth_people_kept"], 300, "a set not on the drives is not kept")
+        self.assertEqual((power["half_width"], power["confidence"], power["assumed_accuracy"]), (0.05, 0.95, 0.5))
+
+
 if __name__ == "__main__":
     unittest.main()

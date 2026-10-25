@@ -125,7 +125,108 @@ def set_entry(record, table):
         "rebuild": can_rebuild(record),
         "frozen": census.tree_of(record) is not None,
         "overlap": overlap_of(table, record["id"]),
+        "value": value_of(record),
     }
+
+
+# What a set is worth to the work, for choosing what to keep (the owner's ask of 2026-10-25:
+# power, anatomical coverage, the data's quality, its annotations and its use for the synthetic
+# X-rays and 3D priors). Every field is read from the record alone and is null where the record
+# does not say, never guessed.
+
+PEOPLE_KEYS = ("subjects", "patients", "people", "cases")
+SCAN_KEYS = ("ct_volumes", "volumes", "cts", "xray_images", "radiographs", "films", "images", "videos",
+             "clips", "sequences")
+NO_LEVELS = re.compile(r"^(none|not recorded|counted by the census|the data platform records no level|"
+                       r"to confirm|same$)", re.IGNORECASE)
+LEVEL_WORDS = re.compile(r"\b(C[0-7]|T1[0-2]|T[1-9]|L[1-6]|S1|by level|levels?|lumbar|thoracic|cervical)\b")
+
+
+def first_count(counts, keys):
+    for key in keys:
+        value = counts.get(key)
+        if isinstance(value, (int, float)) and not isinstance(value, bool) and value >= 0:
+            return int(value)
+    return None
+
+
+AUTOMATIC = re.compile(r"automatic|no radiologist|pseudo", re.IGNORECASE)
+
+
+def masks_by_level(record):
+    """The record's vertebra masks named by level, each as read (by people) or automatic (a
+    tool's, which no radiologist read, whoever released it), and whether it is on the grid."""
+    found = []
+    for entry in record.get("segmentations") or []:
+        if not isinstance(entry, dict) or entry.get("vertebrae") != "by level":
+            continue
+        by = str(entry.get("by") or "")
+        found.append({"read": not AUTOMATIC.search(by) and entry.get("origin") == "release",
+                      "held": bool(entry.get("where"))})
+    return found
+
+
+def level_truth_of(record, masks):
+    """read where people named the levels (masks by level they read, or the release's words),
+    automatic where only a tool did, no where the record says none, unknown where unread."""
+    if any(mask["read"] for mask in masks):
+        return "read"
+    text = (record.get("level_truth") or "").strip()
+    if text.lower().startswith("none"):
+        return "no"
+    if text and not NO_LEVELS.match(text) and LEVEL_WORDS.search(text):
+        return "read"
+    return "automatic" if masks else "unknown"
+
+
+def value_of(record):
+    counts = record.get("counts") if isinstance(record.get("counts"), dict) else {}
+    masks = masks_by_level(record)
+    regions = sorted(region for region in record.get("regions") or [] if isinstance(region, str))
+    level_truth = level_truth_of(record, masks)
+    people, scans = first_count(counts, PEOPLE_KEYS), first_count(counts, SCAN_KEYS)
+    pairing = record.get("pairing") if isinstance(record.get("pairing"), dict) else None
+    return {
+        "people": people,
+        "scans": scans,
+        "level_truth": level_truth,
+        "level_truth_people": people if level_truth == "read" else (0 if level_truth == "no" else None),
+        "level_truth_scans": scans if level_truth == "read" else (0 if level_truth == "no" else None),
+        "transitional_people": first_count(counts, ("transitional", "l6", "lstv")),
+        "regions": regions,
+        "spine": True if ("spine" in regions or "whole body" in regions or masks) else (False if regions else None),
+        "masks_by_level": "read" if any(m["read"] for m in masks) else ("automatic" if masks else None),
+        "masks_held": any(mask["held"] for mask in masks),
+        "segmented": bool(record.get("segmentations")),
+        "prior_source": record.get("group") == "ct" and bool(masks),
+        "paired": pairing is not None,
+        "tier": census.tier_of(census.pipeline.stage_of(record), pairing) if pairing else None,
+        "modality": record.get("group", ""),
+    }
+
+
+# Power: how many people with level truth measure level accuracy to a half-width at a confidence,
+# by the normal approximation to the binomial at an assumed accuracy (0.5 is the most demanding).
+
+POWER = {"half_width": 0.05, "confidence": 0.95, "z": 1.959964, "assumed_accuracy": 0.5}
+
+
+def people_needed(power=POWER):
+    p = power["assumed_accuracy"]
+    return int(-(-(power["z"] ** 2) * p * (1 - p) // (power["half_width"] ** 2)))
+
+
+def power_of(sets, power=POWER):
+    """The formula's inputs, the people it asks for, and the people with level truth the sets on
+    the drives hold; overlapping sets share people, which only their overlap lists say, so the
+    kept total is an upper bound."""
+    kept = [entry["value"] for entry in sets if entry["location"] != "none"]
+    return dict(power, people_needed=people_needed(power),
+                level_truth_people_kept=sum(value["level_truth_people"] or 0 for value in kept),
+                level_truth_people_unread=sum(1 for value in kept if value["level_truth_people"] is None),
+                level_truth_scans_kept=sum(value["level_truth_scans"] or 0 for value in kept),
+                transitional_people_kept=sum(value["transitional_people"] or 0 for value in kept),
+                kept_is_upper_bound=True)
 
 
 # The feed.
@@ -189,6 +290,7 @@ def build_plan(records, volume, table, pulls=None):
             "read_at": volume.get("home_read_at"),
         },
         "sets": sets,
+        "power": power_of(sets),
     }
 
 

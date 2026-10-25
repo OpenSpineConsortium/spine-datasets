@@ -32,6 +32,16 @@ the textbook's artifact, and keep some data in his own home on the grid, which h
   the folder as it is and give the same list (the owner's choice of 2026-10-24: allowed, narrowly).
   It writes RETIRED.json beside the freeze, and report carries a copy back as
   storage/retired/<id>.json. A retirement cut short is carried on by sending the word again.
+- Each set in PLAN.json carries `value`, read from its record alone for choosing what to keep
+  (the owner's ask of 2026-10-25): people and scans, level truth (read where people named the
+  levels, automatic where only a tool's masks do, no, or unknown) and the people and scans it
+  covers, the regions and whether the spine is in view, whether its vertebra masks by level are
+  read or automatic and on the grid, whether it can feed the synthetic X-rays and 3D priors (a CT
+  with masks by level), its pairing tier and its modality; a count the record does not give is
+  null. The top-level `power` gives the formula's inputs (half-width 0.05, confidence 0.95,
+  assumed accuracy 0.5, so 385 people) and the people and scans with level truth on the drives,
+  an upper bound since overlapping sets share people, which the sets' overlap lists say. Every
+  new field is optional to a reader.
 - `survey` queues one read-only job that sizes the whole volume by folder (tools/survey.py, the
   owner's yes of 2026-10-25, asking where the 9.9 TB that is not datasets is): each folder's
   recursive size from CephFS's ceph.dir.rbytes, the owner's and the shared tree opened down four
