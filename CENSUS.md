@@ -1,6 +1,6 @@
 # Census: every dataset, counted from its record
 
-Written by tools/census.py on 2026-10-24 from the 166 records under datasets/ of
+Written by tools/census.py on 2026-10-25 from the 166 records under datasets/ of
 https://github.com/OpenSpineConsortium/spine-datasets; nobody edits it by hand. Each dataset is one record; the census reads
 the records alone, never a dataset's files, and folds in only the records that are new or changed
 since the last run. The page with filters is census.html beside this file, served by the docs site.
@@ -13,7 +13,7 @@ since the last run. The page with filters is census.html beside this file, serve
 | On the grid (shared tree and the owner's root) | 104 |
 | Size on the grid | 7.6 TB (101 of 104 sets counted) |
 | Frozen on the grid, every file hashed (tools/freeze.py) | 100 of 104 |
-| Subjects on the grid | 174,486 (88 of 104 sets counted) |
+| Subjects on the grid | 175,491 (89 of 104 sets counted) |
 | X-ray images on the grid | 163,035 (17 of 104 sets counted) |
 | X-ray videos and sweeps on the grid | 694 (2 of 104 sets counted) |
 | Frames inside those videos and sweeps | 376,220 (2 of 104 sets counted) |
@@ -194,7 +194,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | CSI 2014 spine CT | CT | Held by the owner | open | 20 |  |  |  | 20 | 6.6 GB |  |
 | CT-RATE chest CT | CT | Granted, fetch pending | restricted |  |  |  |  |  |  | [#85](https://github.com/OpenSpineConsortium/spine-datasets/issues/85) |
 | CTPelvic1K | CT | Held by the owner | restricted |  |  |  |  | 172 | 14.8 GB |  |
-| CTSpine1K | CT | Held by the owner | restricted |  |  |  |  | 1,005 | 162.4 GB |  |
+| CTSpine1K | CT | Held by the owner | restricted | 1,005 |  |  |  | 1,005 | 162.4 GB |  |
 | CTSpinoPelvic1K v11 (the consortium's own release) | CT | Held by the owner | restricted |  |  |  |  | 802 | 202.7 GB |  |
 | CURVAS 2024 | CT | Held by the owner | open | 90 |  |  |  | 70 | 30.0 GB |  |
 | CURVAS-PDACVI (MICCAI 2025) | CT | Held by the owner | open | 109 |  |  |  | 101 | 16.9 GB |  |
@@ -297,7 +297,7 @@ with filters, and each set's masks in full, is census-ct.html beside this file.
 | Sets that hold CT | 105 |
 | On the grid | 89 |
 | CT volumes on the grid | 24,959 (70 of 89 sets counted) |
-| Subjects on the grid | 25,991 (80 of 89 sets counted) |
+| Subjects on the grid | 26,996 (81 of 89 sets counted) |
 | Size on the grid | 7.2 TB (88 of 89 sets counted) |
 | On the grid with the source's vertebra masks by level | 4,208 CT volumes in 6 sets |
 | On the grid with masks made on the grid | 15,753 CT volumes in 62 sets, 20 of them counted |
@@ -498,6 +498,7 @@ What the CT records still lack:
 
 ## Changes, newest first
 
+- 2026-10-25 CTSpine1K: subjects none to 1005
 - 2026-10-24 CTPelvic1K: grid_bytes none to 14.8 GB
 - 2026-10-24 CTPelvic1K: grid_path /rs/rs_grp_oschome/go2432/data/ctpelvic1k to /rs/rs_grp_oschome/go2432/data/ctpelvic1k_clinic
 - 2026-10-24 RSNA pulmonary embolism CT (RSPECT): grid_bytes none to 980.2 GB
