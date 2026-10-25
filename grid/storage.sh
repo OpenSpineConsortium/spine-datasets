@@ -14,9 +14,13 @@
 #                                     list files (tools/retire.py delete); sent by the owner's press
 #   bash storage.sh delete STAMP      inside that job: each retirement, RETIRED.json written beside
 #                                     the freeze and a copy kept under plans/ for report
+#   bash storage.sh survey            one read-only job that sizes the whole volume by folder
+#                                     (tools/survey.py): the datasets with their masks apart, and
+#                                     the masks, untracked data, runs, jobs and the rest outside them
+#   bash storage.sh measure           inside that job: the survey, written to survey.json
 #   bash storage.sh status            the jobs, the plans so far and the home's reading
 #   bash storage.sh home              the home's size and use, read with df, into home.json
-#   bash storage.sh report            the plans' counts and the home's reading, sent to the branch
+#   bash storage.sh report            the plans' counts, the home's reading and the survey, sent to the branch
 #                                     storage-report of spine-datasets as one commit with no parent,
 #                                     through the account's own gh, as freeze report does
 #
@@ -132,6 +136,23 @@ case "${1:-}" in
     done < <("$py" "$RETIRE" actions "$file")
     exit "$status"
     ;;
+  survey)
+    [ -f "$HOME_DIR/code/survey.py" ] && [ -f "$HOME_DIR/code/freeze-plan.tsv" ] && [ -f "$HOME_DIR/code/storage.sh" ] \
+      || { echo "copy tools/survey.py, grid/freeze-plan.tsv and grid/storage.sh into $HOME_DIR/code first"; exit 2; }
+    if squeue -h -u "$USER" -n "$PROJECT-$JOB" -o %i 2>/dev/null | grep -q .; then
+      echo "a storage job is already queued or running; not queueing another"; exit 0
+    fi
+    echo "queueing one read-only job to size the volume by folder; it changes nothing"
+    hpcw job submit --project "$PROJECT" --name "$JOB" --class batch --dir "$HOME_DIR" \
+      -- "$HOME_DIR/code/storage.sh" measure
+    ;;
+  measure)
+    [ -n "${SLURM_JOB_ID:-}" ] || { echo "measure is for inside a job; use survey"; exit 2; }
+    py=$(python_bin)
+    echo "$(date -u +%FT%TZ) storage job $SLURM_JOB_ID on $(hostname -s), survey of the volume"
+    "$py" "$HOME_DIR/code/survey.py" run --plan "$HOME_DIR/code/freeze-plan.tsv" --out "$HOME_DIR/survey.json" \
+      ${SURVEY_ROOT:+--root "$SURVEY_ROOT"} ${SURVEY_FLOOR_GB:+--floor-gb "$SURVEY_FLOOR_GB"}
+    ;;
   home)
     [ -n "${STORAGE_HOME:-}" ] || { echo "the home's path is not set: STORAGE_HOME names the folder that holds 4 TB"; exit 2; }
     [ -d "$STORAGE_HOME" ] || { echo "the home's path is not a folder"; exit 2; }
@@ -147,6 +168,7 @@ case "${1:-}" in
       echo "plan $(basename "$plan" .json): $(tr -d ' \n' < "$plan")"
     done
     [ -f "$HOME_DIR/home.json" ] && echo "home: $(cat "$HOME_DIR/home.json")"
+    [ -f "$HOME_DIR/survey.json" ] && echo "survey: $(grep -o '"read_at": "[^"]*"' "$HOME_DIR/survey.json")"
     hpcw job status --project "$PROJECT" --last 4 || true
     ;;
   report)
@@ -154,25 +176,26 @@ case "${1:-}" in
     py=$(python_bin)
     tree_body=$HOME_DIR/report-tree.json
     "$py" "$RETIRE" bundle "$HOME_DIR/plans" > "$tree_body.tmp" || echo '{"tree": []}' > "$tree_body.tmp"
-    if [ -f "$HOME_DIR/home.json" ]; then
-      "$py" - "$tree_body.tmp" "$HOME_DIR/home.json" <<'EOF'
+    for reading in home survey; do
+      [ -f "$HOME_DIR/$reading.json" ] || continue
+      "$py" - "$tree_body.tmp" "$HOME_DIR/$reading.json" "storage/$reading.json" <<'EOF'
 import json, sys
-body, home = sys.argv[1], sys.argv[2]
+body, source, path = sys.argv[1], sys.argv[2], sys.argv[3]
 with open(body) as handle:
     tree = json.load(handle)
-with open(home) as handle:
+with open(source) as handle:
     reading = json.load(handle)
-tree["tree"].append({"path": "storage/home.json", "mode": "100644", "type": "blob",
+tree["tree"].append({"path": path, "mode": "100644", "type": "blob",
                      "content": json.dumps(reading, indent=1, sort_keys=True) + "\n"})
 with open(body, "w") as handle:
     json.dump(tree, handle)
 EOF
-    fi
+    done
     mv -f "$tree_body.tmp" "$tree_body"
     grep -q '"path"' "$tree_body" || { echo "nothing to report"; exit 1; }
     tree=$(gh api -X POST "repos/$REPO/git/trees" --input "$tree_body" --jq .sha < /dev/null)
     [[ "$tree" =~ ^[0-9a-f]{40}$ ]] || { echo "GitHub took no tree"; exit 1; }
-    commit=$(gh api -X POST "repos/$REPO/git/commits" -f message="The storage plans and the home's reading, as grid/storage.sh report found them" \
+    commit=$(gh api -X POST "repos/$REPO/git/commits" -f message="The storage plans, the home's reading and the survey, as grid/storage.sh report found them" \
       -f tree="$tree" --jq .sha < /dev/null)
     [[ "$commit" =~ ^[0-9a-f]{40}$ ]] || { echo "GitHub took no commit"; exit 1; }
     if gh api "repos/$REPO/git/ref/heads/$REPORT_BRANCH" --jq .object.sha < /dev/null > /dev/null 2>&1; then
@@ -183,6 +206,6 @@ EOF
     echo "reported to $REPORT_BRANCH at ${commit:0:12}"
     ;;
   *)
-    echo "usage: storage.sh apply STAMP | plan STAMP | retire STAMP | delete STAMP | status | home | report"; exit 2
+    echo "usage: storage.sh apply STAMP | plan STAMP | retire STAMP | delete STAMP | survey | measure | status | home | report"; exit 2
     ;;
 esac

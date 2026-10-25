@@ -32,6 +32,12 @@ the textbook's artifact, and keep some data in his own home on the grid, which h
   the folder as it is and give the same list (the owner's choice of 2026-10-24: allowed, narrowly).
   It writes RETIRED.json beside the freeze, and report carries a copy back as
   storage/retired/<id>.json. A retirement cut short is carried on by sending the word again.
-- The gate words are storage-apply-<stamp>, storage-retire-<stamp>, storage-status and
-  storage-report in symphony-template's grid-accounts.yml (hpcworker's storage words).
+- `survey` queues one read-only job that sizes the whole volume by folder (tools/survey.py, the
+  owner's yes of 2026-10-25, asking where the 9.9 TB that is not datasets is): each folder's
+  recursive size from CephFS's ceph.dir.rbytes, the owner's and the shared tree opened down four
+  levels above 50 GB, each folder put in one kind (a dataset with its masks and images apart by
+  its frozen list, masks, untracked data, runs and outputs, jobs and logs, other), other accounts
+  counted in one row and never named. `report` carries it back as storage/survey.json.
+- The gate words are storage-apply-<stamp>, storage-retire-<stamp>, storage-survey,
+  storage-status and storage-report in symphony-template's grid-accounts.yml (hpcworker's storage words).
 - Not built yet: moves to the home, which wait for its path.

@@ -31,6 +31,7 @@
   "test_review_record": 0.1,
   "test_sealbox": 0.1,
   "test_setup_repo": 53.2,
+  "test_survey": 1.0,
   "test_sync_adopted": 1.2,
   "test_template_init": 0.3,
   "test_token_run": 17.7,
