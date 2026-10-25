@@ -55,6 +55,7 @@
  },
  "measured": {},
  "record": "SchwingNet data/sources/deepfluoro.json, 2026-10-23",
+ "task": 271,
  "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
  "route": "download",
  "status": "held",

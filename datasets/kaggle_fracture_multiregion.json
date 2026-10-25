@@ -18,6 +18,7 @@
  },
  "measured": {},
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
+ "task": 24,
  "source_status": "found by the sweep of 2026-10-21; not fetched; warning: the licence and the images' origin are unstated in what was read (many Kaggle fracture sets are scraped from teaching sites), to confirm on the page; an exposure-diversity pool only, and not to be fetched until its origin is shown to be redistributable",
  "route": "account",
  "status": "todo",

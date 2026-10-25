@@ -53,6 +53,7 @@
   "by": "tools/freeze.py"
  },
  "record": "SchwingNet data/sources/ctspine1k_ctpelvic1k_ribfrac.json, split into its three sets, 2026-10-23",
+ "task": 322,
  "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
  "route": "download",
  "status": "held",

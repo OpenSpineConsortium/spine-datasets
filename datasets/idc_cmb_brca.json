@@ -49,6 +49,7 @@
   "by": "tools/freeze.py"
  },
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "task": 278,
  "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-23 through IDC in the first tier-1 launch of 2026-09-23, 21 series verified; the ranking's refusals: reformat/MIP series 65, localizer image type 55, non-axial reformat 49, slice over 3.0 mm 45",
  "route": "download",
  "status": "held",

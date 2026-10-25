@@ -50,6 +50,7 @@
   "by": "tools/freeze.py"
  },
  "record": "spine-program 99_archive/MANIFEST_CODE.md; 99_archive/LITERATURE_BY_PATH.md",
+ "task": 22,
  "source_status": "the owner's future direction of 2026-10-20: expand the workflow into veterinary medicine; the zips sit in spine-program's archive, excluded from the record, and the set is open on IEEE DataPort; the Mendeley canine thoracic set (canine_thoracic_vhs) stands beside it since the sweep of 2026-10-21",
  "route": "account",
  "status": "held",

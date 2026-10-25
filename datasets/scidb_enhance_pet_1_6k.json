@@ -32,6 +32,7 @@
  },
  "measured": {},
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "task": 90,
  "source_status": "the owner's hand: confirm whether Science Data Bank needs a login and read CT-details.xlsx for slice thickness; no fetch route exists in tools/acquisition_fetch.py for Science Data Bank (planned in the data platform at bf1432f)",
  "route": "owner-only",
  "status": "todo",

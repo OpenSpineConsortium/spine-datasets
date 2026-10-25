@@ -29,6 +29,7 @@
  },
  "measured": {},
  "record": "the owner's list of fluoroscopy sets of 2026-10-23, checked against the Veriserum paper (arXiv:2509.05483), which names CAMS-Knee and Stan, and the CAMS-Knee pages read the same day",
+ "task": 260,
  "source_status": "found by checking the owner's list of fluoroscopy sets of 2026-10-23; not requested; behind a form and the CAMS-Knee licence agreement, which the requesting institution signs, for scientific use without commercial benefit",
  "route": "agreement",
  "status": "needs-owner",

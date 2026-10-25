@@ -17,6 +17,7 @@
  "counts": {},
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md 8; the thread SchwingNet video demo plan, 2026-10-21 (the signed form uploaded at 03:37 UTC)",
+ "task": 84,
  "source_status": "applied for on 2026-10-21: the non-commercial machine-learning licence agreement (v1.3) signed and submitted through Radiopaedia's SignNow form at 03:36 UTC, fee USD 250 paid (receipt 1967-5247), checklist NO/NO/NO, pending Radiopaedia's countersignature; the form cut the Project Aims and Radiopaedia Content answers off, so the full text goes to license@radiopaedia.org in a follow-up; any model that reads these cases is a Model under the agreement (release only under CC BY-NC-SA, no commercial use), which is the lawyer's question before training on them",
  "route": "agreement",
  "status": "granted",

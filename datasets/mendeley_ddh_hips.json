@@ -18,6 +18,7 @@
  },
  "measured": {},
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
+ "task": 33,
  "source_status": "found by the sweep of 2026-10-21; not fetched; the only sizeable pediatric pelvic film source found",
  "route": "download",
  "status": "todo",

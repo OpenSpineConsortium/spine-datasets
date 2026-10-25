@@ -17,6 +17,7 @@
  },
  "measured": {},
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
+ "task": 32,
  "source_status": "the owner's veterinary direction of 2026-10-20; found by the sweep of 2026-10-21; not fetched; the only other public veterinary spine radiograph set found beside the pig CBCT (veterinary_pig_levelcheck)",
  "route": "download",
  "status": "todo",

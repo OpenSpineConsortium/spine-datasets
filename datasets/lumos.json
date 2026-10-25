@@ -51,6 +51,7 @@
   "by": "tools/freeze.py"
  },
  "record": "spine-program 01_carm_level_detection/docs/research/research_datasets_fourth_pass_verified_2026-09-22.json; https://keyueshi.github.io/LUMOS",
+ "task": 27,
  "source_status": "open on Zenodo; never fetched; still open on Zenodo at the sweep of 2026-10-21, never fetched; queued in the fetch chain of #38",
  "route": "download",
  "status": "held",

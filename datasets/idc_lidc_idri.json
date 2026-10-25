@@ -41,6 +41,7 @@
  },
  "measured": {},
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "task": 48,
  "source_status": "planned in the data platform at bf1432f; fetch job in the 2026-10-21 chain after idc_tier2.csv is regenerated; the ranking's refusals: not a regularly spaced 3-D volume 9, slice over 3.0 mm 4",
  "route": "download",
  "status": "todo",

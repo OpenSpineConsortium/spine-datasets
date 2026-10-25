@@ -33,6 +33,7 @@
  },
  "measured": {},
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "task": 89,
  "source_status": "asked Johns Hopkins for the case list against AbdomenAtlas 3.0 Mini on 2026-10-22, since the release has no card and no metadata",
  "route": "letter",
  "status": "requested",

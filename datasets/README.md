@@ -59,6 +59,12 @@ The fields this repository adds:
 - `obstacles`: a list of one-line strings, what stands in the way right now (a DUA to sign, a
   bounce, a licence line still to confirm, a token only the owner holds); empty when nothing.
 - `next`: one line, what whoever holds the task does next; empty when nothing is planned.
+- `task`: the number of this repository's issue that accounts for the set, open or closed: its
+  "Obtain ..." task where tasks/TASKS.md opened one, else an "Account for ..." task (label
+  accounting), opened and closed at once for a set that was on the grid before it had one, the
+  owner's ask of 2026-10-25 that every dataset on the grid map to a task for accounting. A new
+  record comes with its task. tools/accounting.py holds every record to it, and every folder of the
+  data root to a record or the task grid/folders.json gives it.
 - `regions`, on a CT record, placed after `group`: the body regions in its field of view, as words
   from head and neck, chest, abdomen, pelvis, spine, whole body and other, from the data
   platform's anatomy for the manifest records the registry's map ties it to (issue #181), else from

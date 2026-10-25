@@ -38,6 +38,7 @@
   "by": "tools/freeze.py"
  },
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "task": 68,
  "source_status": "the owner's hand: ask the TotalSegmentator authors whether these subjects overlap the public v2/v3 release (planned in the data platform at bf1432f)",
  "route": "letter",
  "status": "held",

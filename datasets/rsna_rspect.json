@@ -34,6 +34,7 @@
   "by": "tools/freeze.py"
  },
  "record": "spine-program 10_data_platform_grid/code/data_platform/DATA_MANIFEST.md group B7; spine-program 10_data_platform_grid acquisition/ACQUISITION_PLAN.md section 7",
+ "task": 88,
  "source_status": "the owner joined the competition on Kaggle on 2026-10-21; the fetch is the gate word fetch rsna_rspect_pe, which runs the kaggle command on a compute node with the Kaggle token read from ~/.fluorocap/credentials.env, never on a command line (the record said kagglehub until 2026-10-23; the job runs kaggle competitions download); the token the owner pasted into the chat is to be revoked and minted again; job id not yet recorded",
  "route": "agreement",
  "status": "held",

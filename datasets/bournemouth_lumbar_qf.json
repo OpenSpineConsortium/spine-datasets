@@ -18,6 +18,7 @@
  },
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/FLUORO_VIDEO_SOURCES_2026-09-26.md; spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md 1",
+ "task": 71,
  "source_status": "the only confirmed lumbar cine; asked for in request 1; the letter (request 1) was forwarded to ckaching.cheung@polyu.edu.hk on 2026-10-21 03:57 UTC; the group's public OSF deposit z2jby, 1.49 GB of weight-bearing flexion frames at 224 pixels with no licence stated, found 2026-10-23; the deposit's terms asked 2026-10-24 03:08 UTC in Branney's thread",
  "route": "letter",
  "status": "requested",

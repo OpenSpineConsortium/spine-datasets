@@ -48,6 +48,7 @@
   "by": "tools/freeze.py"
  },
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "task": 276,
  "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-23 through IDC in the first tier-1 launch of 2026-09-23, 29 series verified; the ranking's refusals: slice over 3.0 mm 57, not a regularly spaced 3-D volume 1, under 60 slices 1",
  "route": "download",
  "status": "held",

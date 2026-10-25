@@ -58,6 +58,7 @@
   "by": "tools/freeze.py"
  },
  "record": "SchwingNet data/sources/geneva_hip.json, 2026-10-23",
+ "task": 272,
  "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
  "route": "download",
  "status": "held",

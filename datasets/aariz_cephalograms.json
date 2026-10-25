@@ -29,6 +29,7 @@
   "by": "tools/freeze.py"
  },
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
+ "task": 25,
  "source_status": "found by the sweep of 2026-10-21; not fetched; the 1,000-film set is an open figshare download (27986417, one zip of 2,098,209,792 bytes), entered in grid/fetch-xray.json as aariz on 2026-10-21 (issue #40); the 400-film ISBI 2015 set's link is still to confirm; pediatric anchors for the top of the cervical counter from seven devices",
  "route": "download",
  "status": "held",

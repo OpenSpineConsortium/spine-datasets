@@ -18,6 +18,7 @@
  },
  "measured": {},
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
+ "task": 28,
  "source_status": "found by the sweep of 2026-10-21; not fetched; the manifest's nhanes2_zenodo_landmarks already names Zenodo 10223910 (concept 10145564) by the same authors, whose osteophyte annotation zip is the held 543-film landmark set, so whether the C2 and S1 labels are another file of that record or a sibling record under the concept is to confirm on the page; closes the registry's NHANES gap (C3-C7 and L1-L5 only) at no imaging cost",
  "route": "download",
  "status": "todo",

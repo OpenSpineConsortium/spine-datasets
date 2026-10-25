@@ -19,6 +19,7 @@
  },
  "measured": {},
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
+ "task": 11,
  "source_status": "held: fetched by the owner's own chain on 2026-10-23 (the gate word fetch hf_rexgradient_160k, job 40743347, the owner's Hugging Face token), 156 GB under the data root in the status listing of 2026-10-24 02:17 UTC, the set's stated size; the owner accepted the gate's data access and use agreement on 2026-10-22 and chose the whole repository knowing clause A.5; the owner's note asking the corresponding author's leave for all ten parts went 2026-10-24 03:24 UTC, the answer awaited; 79 sites means 79 exposure recipes",
  "route": "form",
  "status": "held",

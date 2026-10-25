@@ -16,6 +16,7 @@
  },
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md 5; spine-program 01_carm_level_detection/docs/FLUORO_VIDEO_YOUTUBE_SCAN_2026-09-26.md",
+ "task": 75,
  "source_status": "request 5 drafted, never sent; one request covers all 12",
  "route": "letter",
  "status": "requested",

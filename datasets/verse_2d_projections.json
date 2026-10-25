@@ -34,6 +34,7 @@
   "by": "tools/freeze.py"
  },
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
+ "task": 29,
  "source_status": "found by the sweep of 2026-10-21; not fetched; its people are already in the v9 base (verse), so train-side only: a cheap extra render arm or a sanity check of the project's own VerSe renders",
  "route": "download",
  "status": "held",
