@@ -52,7 +52,7 @@
   },
   {
    "date": "2026-10-25",
-   "step": "counted",
+   "step": "note",
    "note": "1,005 patients from the paper's Table 1, one volume each, so the feed counts its people with level truth (#252)"
   }
  ],
