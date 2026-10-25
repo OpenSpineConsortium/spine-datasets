@@ -155,7 +155,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | COBRA2026 embargoed cases | CBCT projections | Later | restricted | 175 |  |  |  |  |  | [#92](https://github.com/OpenSpineConsortium/spine-datasets/issues/92) |
 | IPCAI 2025 paired X-ray and CT set of the distal femur (Flepp 2025, Zenodo 15753063) | CBCT projections | Held by the owner | restricted | 5 | 50 |  |  | 5 | 6.7 GB | [#34](https://github.com/OpenSpineConsortium/spine-datasets/issues/34) |
 | Aariz cephalometric benchmark (Khalid, Fraz 2023) and the ISBI 2015 cephalograms | Radiographs | Held by the owner | open |  | 1,000 |  |  |  | 6.3 GB | [#25](https://github.com/OpenSpineConsortium/spine-datasets/issues/25) |
-| AASCE 2019 / BoostNet AP whole-spine films | Radiographs | Held by the owner | restricted |  | 707 |  |  |  |  |  |
+| AASCE 2019 / BoostNet AP whole-spine films | Radiographs | Held by the owner | restricted |  | 707 |  |  |  |  | [#254](https://github.com/OpenSpineConsortium/spine-datasets/issues/254) |
 | BIMCV COVID-19+ chest films (IEEE DataPort) | Radiographs | Needs the owner | unknown |  |  |  |  |  |  | [#111](https://github.com/OpenSpineConsortium/spine-datasets/issues/111) |
 | BRAX Brazilian chest films (PhysioNet) | Radiographs | Needs the owner | restricted |  | 40,967 |  |  |  |  | [#110](https://github.com/OpenSpineConsortium/spine-datasets/issues/110) |
 | BUU-LSPINE (Klinwichit et al., Applied Sciences 2023) | Radiographs | Held by the owner | restricted | 3,600 | 7,203 |  |  |  | 35.2 GB |  |
@@ -185,7 +185,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | VinDr-CXR (PhysioNet) | Radiographs | Asked, waiting | restricted |  | 18,000 |  |  |  |  | [#16](https://github.com/OpenSpineConsortium/spine-datasets/issues/16) |
 | VinDr-PCXR (PhysioNet) | Radiographs | Granted, fetch pending | restricted |  | 9,125 |  |  |  |  | [#17](https://github.com/OpenSpineConsortium/spine-datasets/issues/17) |
 | VinDr-SpineXR (Nguyen et al., MICCAI 2021) | Radiographs | Held by the owner | restricted |  | 10,466 |  |  |  | 114.7 GB |  |
-| AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images) | CT | Held by the owner | restricted | 7,835 |  |  |  | 7,649 | 570.6 GB |  |
+| AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images) | CT | Held by the owner | restricted | 7,835 |  |  |  | 7,649 | 570.6 GB | [#255](https://github.com/OpenSpineConsortium/spine-datasets/issues/255) |
 | AMOS22 CT, unlabelled (ids 5000-6899) and labelled | CT | Held by the owner | open | 2,200 |  |  |  | 723 | 102.6 GB |  |
 | AortaSeg-60 | CT | Held by the owner | open | 60 |  |  |  | 55 | 15.9 GB |  |
 | STOIC2021 training (AWS Open Data) | CT | Held by the owner | restricted | 2,000 |  |  |  |  | 264.3 GB | [#44](https://github.com/OpenSpineConsortium/spine-datasets/issues/44) |
@@ -315,7 +315,7 @@ with filters, and each set's masks in full, is census-ct.html beside this file.
 
 | Dataset | Stage | CT volumes | Regions | Masks | Task |
 |---|---|---|---|---|---|
-| AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images) | Held by the owner | 7,649 | abdomen | from the source: not recorded; made on the grid: vertebrae by level, on the grid |  |
+| AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images) | Held by the owner | 7,649 | abdomen | from the source: not recorded; made on the grid: vertebrae by level, on the grid | [#255](https://github.com/OpenSpineConsortium/spine-datasets/issues/255) |
 | PANORAMA public set (pancreas CE-CT) | Held by the owner | 2,024 | chest, abdomen, pelvis | from the source: not recorded; made on the grid: vertebrae by level, on the grid |  |
 | RSNA 2022 cervical spine fracture CT (Kaggle) | Held by the owner | 2,019 | spine | from the source: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid |  |
 | TotalSegmentator datasets v2.0.1 and v3.0.0 | Held by the owner | 1,935 | head and neck, chest, abdomen, pelvis, spine, whole body | from the source: vertebrae by level, on the grid; from the source: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid; made on the grid: vertebrae by level, on the grid |  |
