@@ -29,6 +29,7 @@
  ],
  "grid_path": "/rs/rs_grp_oschome/go2432/data/ctspine1k",
  "counts": {
+  "patients": 1005,
   "ct_volumes": 1005
  },
  "measured": {
@@ -48,8 +49,14 @@
    "date": "2026-10-23",
    "step": "held",
    "note": "on the grid at /rs/rs_grp_oschome/go2432/data/ctspine1k, downloaded from the Hugging Face copy with each file's sha256, 2026-09-23, before the shared tree and its promoter existed; the record written for the census (#178) from SchwingNet's registry"
+  },
+  {
+   "date": "2026-10-25",
+   "step": "note",
+   "note": "1,005 patients from the paper's Table 1, one volume each, so the feed counts its people with level truth (#252)"
   }
  ],
  "obstacles": [],
- "next": ""
+ "next": "",
+ "counts_source": "patients: Table 1 of the CTSpine1K paper (arXiv 2105.14711), 784 from COLONOG, 31 from HNSCC-3DCT-RT, 150 from MSD task 3 and 40 from the COVID-19 set, one volume each; read 2026-10-25 (#252)"
 }

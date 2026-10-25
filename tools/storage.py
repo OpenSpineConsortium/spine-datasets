@@ -179,6 +179,16 @@ def level_truth_of(record, masks):
     return "automatic" if masks else "unknown"
 
 
+def read_count(level_truth, count):
+    """How many a set holds whose levels people read: its count where they did, none where the
+    record says no level is named or only a tool named them (whose labels shift at a transitional
+    junction, so they are no truth to measure against), and unknown only where the record is
+    silent or gives no count."""
+    if level_truth == "read":
+        return count
+    return 0 if level_truth in ("no", "automatic") else None
+
+
 def value_of(record):
     counts = record.get("counts") if isinstance(record.get("counts"), dict) else {}
     masks = masks_by_level(record)
@@ -190,8 +200,8 @@ def value_of(record):
         "people": people,
         "scans": scans,
         "level_truth": level_truth,
-        "level_truth_people": people if level_truth == "read" else (0 if level_truth == "no" else None),
-        "level_truth_scans": scans if level_truth == "read" else (0 if level_truth == "no" else None),
+        "level_truth_people": read_count(level_truth, people),
+        "level_truth_scans": read_count(level_truth, scans),
         "transitional_people": first_count(counts, ("transitional", "l6", "lstv")),
         "regions": regions,
         "spine": True if ("spine" in regions or "whole body" in regions or masks) else (False if regions else None),
