@@ -183,6 +183,8 @@
   "aariz_cephalograms": 25,
   "aasce": 254,
   "abdomenatlas3_mini": 255,
+  "amos22": 256,
+  "aortaseg60": 257,
   "aws_stoic2021": 44,
   "balgrist_lumbar": 69,
   "bern_myelography": 73,
