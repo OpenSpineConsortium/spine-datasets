@@ -205,10 +205,10 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | IDC `adrenal_acc_ki67_seg` | CT | Held by the owner | open | 29 |  |  |  | 29 | 3.6 GB | [#276](https://github.com/OpenSpineConsortium/spine-datasets/issues/276) |
 | IDC `anti_pd_1_lung` | CT | Held by the owner | open | 34 |  |  |  | 34 | 4.3 GB | [#277](https://github.com/OpenSpineConsortium/spine-datasets/issues/277) |
 | IDC `cmb_brca` | CT | Held by the owner | open | 21 |  |  |  | 21 | 2.6 GB | [#278](https://github.com/OpenSpineConsortium/spine-datasets/issues/278) |
-| IDC `cmb_crc` | CT | Held by the owner | open | 30 |  |  |  | 30 | 5.4 GB |  |
-| IDC `cmb_lca` | CT | Held by the owner | open | 75 |  |  |  | 75 | 10.0 GB |  |
-| IDC `cmb_mel` | CT | Held by the owner | open | 23 |  |  |  | 23 | 2.2 GB |  |
-| IDC `cmb_mml` | CT | Held by the owner | open | 16 |  |  |  | 16 | 2.3 GB |  |
+| IDC `cmb_crc` | CT | Held by the owner | open | 30 |  |  |  | 30 | 5.4 GB | [#279](https://github.com/OpenSpineConsortium/spine-datasets/issues/279) |
+| IDC `cmb_lca` | CT | Held by the owner | open | 75 |  |  |  | 75 | 10.0 GB | [#280](https://github.com/OpenSpineConsortium/spine-datasets/issues/280) |
+| IDC `cmb_mel` | CT | Held by the owner | open | 23 |  |  |  | 23 | 2.2 GB | [#281](https://github.com/OpenSpineConsortium/spine-datasets/issues/281) |
+| IDC `cmb_mml` | CT | Held by the owner | open | 16 |  |  |  | 16 | 2.3 GB | [#282](https://github.com/OpenSpineConsortium/spine-datasets/issues/282) |
 | IDC `cmb_ov` | CT | Held by the owner | open | 7 |  |  |  | 7 | 1.0 GB |  |
 | IDC `colorectal_liver_metastases` (Colorectal-Liver-Metastases) | CT | Held by the owner | open | 80 |  |  |  | 80 | 6.3 GB |  |
 | IDC `covid_19_ar` | CT | Held by the owner | open | 23 |  |  |  | 23 | 5.7 GB |  |
@@ -349,7 +349,7 @@ with filters, and each set's masks in full, is census-ct.html beside this file.
 | IDC `midrc_ricord_1a` | Held by the owner | 98 | chest, abdomen, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
 | IDC `colorectal_liver_metastases` (Colorectal-Liver-Metastases) | Held by the owner | 80 | abdomen | from the source: no vertebrae; from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
 | IDC `tcga_blca` | Held by the owner | 79 | chest, abdomen, pelvis, whole body | from the source: none; made on the grid: vertebrae by level, on the grid |  |
-| IDC `cmb_lca` | Held by the owner | 75 | chest, abdomen, pelvis, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cmb_lca` | Held by the owner | 75 | chest, abdomen, pelvis, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid | [#280](https://github.com/OpenSpineConsortium/spine-datasets/issues/280) |
 | CURVAS 2024 | Held by the owner | 70 | chest, abdomen, pelvis, whole body | from the source: not recorded, on the grid; made on the grid: vertebrae by level, on the grid | [#268](https://github.com/OpenSpineConsortium/spine-datasets/issues/268) |
 | IDC `cptac_ucec` | Held by the owner | 66 | chest, abdomen, pelvis, whole body | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
 | IDC `cptac_pda` | Held by the owner | 62 | chest, abdomen, pelvis, other | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid |  |
@@ -365,17 +365,17 @@ with filters, and each set's masks in full, is census-ct.html beside this file.
 | IDC `varepop_apollo` | Held by the owner | 35 | chest, abdomen, pelvis, spine | from the source: none; made on the grid: vertebrae by level, on the grid |  |
 | IDC `anti_pd_1_lung` | Held by the owner | 34 | chest, abdomen, pelvis, whole body | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid | [#277](https://github.com/OpenSpineConsortium/spine-datasets/issues/277) |
 | IDC `ctpred_sunitinib_pannet` | Held by the owner | 34 | chest, abdomen, pelvis, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
-| IDC `cmb_crc` | Held by the owner | 30 | chest, abdomen, pelvis, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cmb_crc` | Held by the owner | 30 | chest, abdomen, pelvis, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid | [#279](https://github.com/OpenSpineConsortium/spine-datasets/issues/279) |
 | IDC `adrenal_acc_ki67_seg` | Held by the owner | 29 | chest, abdomen, pelvis | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid | [#276](https://github.com/OpenSpineConsortium/spine-datasets/issues/276) |
 | IDC `tcga_ov` | Held by the owner | 24 | chest, abdomen, pelvis | from the source: none; made on the grid: vertebrae by level, on the grid |  |
-| IDC `cmb_mel` | Held by the owner | 23 | chest, abdomen, pelvis, spine, whole body | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cmb_mel` | Held by the owner | 23 | chest, abdomen, pelvis, spine, whole body | from the source: none; made on the grid: vertebrae by level, on the grid | [#281](https://github.com/OpenSpineConsortium/spine-datasets/issues/281) |
 | IDC `covid_19_ar` | Held by the owner | 23 | chest, abdomen, pelvis | from the source: none; made on the grid: vertebrae by level, on the grid |  |
 | IDC `cmb_brca` | Held by the owner | 21 | chest, abdomen, pelvis, whole body | from the source: none; made on the grid: vertebrae by level, on the grid | [#278](https://github.com/OpenSpineConsortium/spine-datasets/issues/278) |
 | CSI 2014 spine CT | Held by the owner | 20 | spine | from the source: not recorded; made on the grid: vertebrae by level, on the grid | [#263](https://github.com/OpenSpineConsortium/spine-datasets/issues/263) |
 | IDC `ct_vs_pet_ventilation_imaging` | Held by the owner | 20 | chest, abdomen | from the source: none; made on the grid: vertebrae by level, on the grid |  |
 | DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs | Held by the owner | 19 | pelvis, spine | from the source: vertebrae as one, on the grid; made on the grid: vertebrae not recorded | [#271](https://github.com/OpenSpineConsortium/spine-datasets/issues/271) |
 | IDC `cptac_stad` | Held by the owner | 19 | chest, abdomen, pelvis | from the source: none; made on the grid: vertebrae by level, on the grid |  |
-| IDC `cmb_mml` | Held by the owner | 16 | chest, abdomen, pelvis, spine, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
+| IDC `cmb_mml` | Held by the owner | 16 | chest, abdomen, pelvis, spine, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid | [#282](https://github.com/OpenSpineConsortium/spine-datasets/issues/282) |
 | IDC `tcga_esca` | Held by the owner | 16 | chest, abdomen, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
 | IDC `acrin_flt_breast` | Held by the owner | 15 | whole body | from the source: none; made on the grid: vertebrae by level, on the grid | [#274](https://github.com/OpenSpineConsortium/spine-datasets/issues/274) |
 | IDC `cptac_sar` | Held by the owner | 14 | chest, abdomen, pelvis, whole body, other | from the source: none; made on the grid: vertebrae by level, on the grid |  |
