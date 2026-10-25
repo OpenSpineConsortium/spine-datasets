@@ -161,7 +161,8 @@ class ValueTest(unittest.TestCase):
                    segmentations=[{"origin": "release", "vertebrae": "by level",
                                    "by": "IDC, automatic (TotalSegmentator)", "where": None}])
         value = storage.value_of(rec)
-        self.assertEqual((value["level_truth"], value["level_truth_people"]), ("automatic", None))
+        self.assertEqual((value["level_truth"], value["level_truth_people"]), ("automatic", 0))
+        self.assertEqual(value["level_truth_scans"], 0)
         self.assertTrue(value["prior_source"])
         self.assertFalse(value["masks_held"])
 
@@ -170,6 +171,7 @@ class ValueTest(unittest.TestCase):
         self.assertEqual((none["level_truth"], none["level_truth_people"], none["spine"]), ("no", 0, None))
         unread = storage.value_of(dict(record("films2"), group="films", level_truth="not recorded"))
         self.assertEqual((unread["level_truth"], unread["people"]), ("unknown", None))
+        self.assertIsNone(unread["level_truth_people"], "a silent record is unread, not none")
 
     def test_power_block(self):
         self.assertEqual(storage.people_needed(), 385)
