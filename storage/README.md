@@ -36,7 +36,7 @@ the textbook's artifact, and keep some data in his own home on the grid, which h
   owner's yes of 2026-10-25, asking where the 9.9 TB that is not datasets is): each folder's
   recursive size from CephFS's ceph.dir.rbytes, the owner's and the shared tree opened down four
   levels above 50 GB, each folder put in one kind (a dataset with its masks and images apart by
-  its frozen list, masks, untracked data, runs and models, jobs and logs, other), other accounts
+  its frozen list, masks, untracked data, runs and outputs, jobs and logs, other), other accounts
   counted in one row and never named. `report` carries it back as storage/survey.json.
 - The gate words are storage-apply-<stamp>, storage-retire-<stamp>, storage-survey,
   storage-status and storage-report in symphony-template's grid-accounts.yml (hpcworker's storage words).

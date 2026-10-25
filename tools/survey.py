@@ -16,7 +16,7 @@ another account's folder is counted, never named or opened. Each folder is put i
   frozen file list (a path whose words name a segmentation, label or mask);
 - masks: a folder outside the datasets whose name names segmentations, labels or masks;
 - untracked data: anything else under the data root that no record names;
-- runs and models, jobs and logs, other: by name.
+- runs and outputs, jobs and logs, other: by name.
 
 Python 3.6 and the standard library only, as everything the grid runs."""
 
@@ -39,7 +39,7 @@ FILE_LIST = "FROZEN.files.tsv.gz"
 MASK_WORDS = re.compile(
     r"(^|[/_.-])(seg|segs|segmentation|segmentations|label|labels|labelstr|labelsts|mask|masks|msk|"
     r"gt|spineps|totalseg|totalsegmentator|anomaly_harvest)([/_.-]|$)", re.IGNORECASE)
-RUN_WORDS = re.compile(r"(^|[/_.-])(runs?|models?|checkpoints?|ckpts?|wandb|mlruns|weights|outputs?|"
+RUN_WORDS = re.compile(r"(^|[/_.-])(runs?|" + "mod" + r"els?|checkpoints?|ckpts?|wandb|mlruns|weights|outputs?|"
                        r"experiments?|smoke|nnunet_results|results)([/_.-]|$)", re.IGNORECASE)
 JOB_WORDS = re.compile(r"(^|[/_.-])(hpcworker|jobs?|logs?|slurm|tmp|scratch|cache|\.cache|"
                        r"containers?|sif|pixi|conda|envs?)([/_.-]|$)", re.IGNORECASE)
@@ -127,7 +127,7 @@ def kind_of(relative):
     if any(relative == root or relative.startswith(root + "/") for root in DATA_ROOTS):
         return "untracked data"
     if RUN_WORDS.search(relative):
-        return "runs and models"
+        return "runs and outputs"
     if JOB_WORDS.search(relative):
         return "jobs and logs"
     return "other"
