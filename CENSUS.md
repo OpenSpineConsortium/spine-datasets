@@ -184,7 +184,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | VertXNet extra labels for NHANES II (Mo, Papiez, Chen 2023) | Radiographs | Downloadable now | unknown |  |  |  |  |  |  | [#28](https://github.com/OpenSpineConsortium/spine-datasets/issues/28) |
 | VinDr-CXR (PhysioNet) | Radiographs | Asked, waiting | restricted |  | 18,000 |  |  |  |  | [#16](https://github.com/OpenSpineConsortium/spine-datasets/issues/16) |
 | VinDr-PCXR (PhysioNet) | Radiographs | Granted, fetch pending | restricted |  | 9,125 |  |  |  |  | [#17](https://github.com/OpenSpineConsortium/spine-datasets/issues/17) |
-| VinDr-SpineXR (Nguyen et al., MICCAI 2021) | Radiographs | Held by the owner | restricted |  | 10,466 |  |  |  | 114.7 GB |  |
+| VinDr-SpineXR (Nguyen et al., MICCAI 2021) | Radiographs | Held by the owner | restricted |  | 10,466 |  |  |  | 114.7 GB | [#328](https://github.com/OpenSpineConsortium/spine-datasets/issues/328) |
 | AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images) | CT | Held by the owner | restricted | 7,835 |  |  |  | 7,649 | 570.6 GB | [#255](https://github.com/OpenSpineConsortium/spine-datasets/issues/255) |
 | AMOS22 CT, unlabelled (ids 5000-6899) and labelled | CT | Held by the owner | open | 2,200 |  |  |  | 723 | 102.6 GB | [#256](https://github.com/OpenSpineConsortium/spine-datasets/issues/256) |
 | AortaSeg-60 | CT | Held by the owner | open | 60 |  |  |  | 55 | 15.9 GB | [#257](https://github.com/OpenSpineConsortium/spine-datasets/issues/257) |
@@ -268,7 +268,7 @@ Frames shipped with a CT or an exact pose: the registration code's truth, not sp
 | TotalSegmentator datasets v2.0.1 and v3.0.0 | CT | Held by the owner | open |  |  |  |  | 1,935 |  | [#326](https://github.com/OpenSpineConsortium/spine-datasets/issues/326) |
 | VerSe 2019 and 2020 | CT | Held by the owner | open | 355 |  |  |  | 374 | 52.2 GB | [#327](https://github.com/OpenSpineConsortium/spine-datasets/issues/327) |
 | VerSe 2D projections with soft labels (Zenodo 8115942) | CT | Held by the owner | unknown |  |  |  |  |  | 4.4 GB | [#29](https://github.com/OpenSpineConsortium/spine-datasets/issues/29) |
-| WAW-TACE (HCC multiphase CT, Warsaw) | CT | Held by the owner | open | 233 |  |  |  | 228 | 47.2 GB |  |
+| WAW-TACE (HCC multiphase CT, Warsaw) | CT | Held by the owner | open | 233 |  |  |  | 228 | 47.2 GB | [#329](https://github.com/OpenSpineConsortium/spine-datasets/issues/329) |
 | LumVBCanSeg lumbar CT (185, ShengJing Hospital) | CT | On the grid | open | 185 |  |  |  |  | 10.1 GB | [#55](https://github.com/OpenSpineConsortium/spine-datasets/issues/55) |
 | MedPelvis3D pelvic CT (99, PLA General Hospital) | CT | On the grid | open | 99 |  |  |  |  | 31.4 GB | [#56](https://github.com/OpenSpineConsortium/spine-datasets/issues/56) |
 | International TMTV Benchmark, lymphoma FDG PET/CT (60) | CT | On the grid | open | 60 |  |  |  |  | 6.8 GB | [#57](https://github.com/OpenSpineConsortium/spine-datasets/issues/57) |
@@ -334,7 +334,7 @@ with filters, and each set's masks in full, is census-ct.html beside this file.
 | PENGWIN 2026 peripelvic fracture CT (the public cases) | Held by the owner | 340 | pelvis | from the source: vertebrae not recorded, on the grid; made on the grid: vertebrae by level, on the grid | [#320](https://github.com/OpenSpineConsortium/spine-datasets/issues/320) |
 | IDC `mediastinal_lymph_node_seg` | Held by the owner | 316 | head and neck, chest, abdomen, pelvis, whole body | from the source: no vertebrae; made on the grid: vertebrae by level, on the grid | [#298](https://github.com/OpenSpineConsortium/spine-datasets/issues/298) |
 | LUMOS (Zhejiang University) | Held by the owner | 280 | spine | from the source: not recorded | [#27](https://github.com/OpenSpineConsortium/spine-datasets/issues/27) |
-| WAW-TACE (HCC multiphase CT, Warsaw) | Held by the owner | 228 | abdomen | from the source: not recorded; made on the grid: vertebrae by level, on the grid |  |
+| WAW-TACE (HCC multiphase CT, Warsaw) | Held by the owner | 228 | abdomen | from the source: not recorded; made on the grid: vertebrae by level, on the grid | [#329](https://github.com/OpenSpineConsortium/spine-datasets/issues/329) |
 | Kidney abnormality segmentation in thorax-abdomen CT | Held by the owner | 215 | chest, abdomen | from the source: vertebrae not recorded; made on the grid: vertebrae by level, on the grid | [#314](https://github.com/OpenSpineConsortium/spine-datasets/issues/314) |
 | Barts CRL (colorectal-cancer staging CT) | Held by the owner | 212 | chest, abdomen, pelvis | from the source: not recorded; made on the grid: vertebrae by level, on the grid | [#258](https://github.com/OpenSpineConsortium/spine-datasets/issues/258) |
 | CTPelvic1K | Held by the owner | 172 | pelvis, spine | from the source: vertebrae as one, on the grid; made on the grid: vertebrae by level, on the grid | [#265](https://github.com/OpenSpineConsortium/spine-datasets/issues/265) |

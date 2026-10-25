@@ -336,6 +336,8 @@
   "vfss2022": 42,
   "vindr_cxr": 16,
   "vindr_pcxr": 17,
+  "vindr_spinexr": 328,
+  "waw_tace": 329,
   "zenodo_lumvbcanseg": 55,
   "zenodo_medpelvis3d": 56,
   "zenodo_tmtv_benchmark": 57,
