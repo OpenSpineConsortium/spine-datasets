@@ -39,8 +39,13 @@ class Accounting(unittest.TestCase):
     def test_a_folder_names_records_that_exist_or_carries_its_own_task(self):
         self.write("a", task=12)
         self.folders(bank={"kind": "records", "records": ["a"], "what": "the set"},
-                     ready={"kind": "derived", "task": 300, "what": "frames built from a"})
+                     ready={"kind": "derived", "task": 300, "what": "frames built from a"},
+                     held={"kind": "unrecorded", "task": 301, "what": "a set whose record is still to write"})
         self.assertEqual(self.problems(), [])
+
+    def test_a_held_set_with_no_record_still_needs_its_task(self):
+        self.folders(held={"kind": "unrecorded", "what": "a set whose record is still to write"})
+        self.assertIn("held: a folder no record holds", " ".join(self.problems()))
 
     def test_a_folder_that_accounts_for_nothing_is_a_problem(self):
         self.write("a", task=12)

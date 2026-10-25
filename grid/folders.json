@@ -1,0 +1,866 @@
+{
+ "source": "SchwingNet's folder report (tools/folder_report.py, grid job 40780668) and status word, 2026-10-25; sizes and counts are the sample index's, and the status word's GB for the 23 folders the index holds none of",
+ "unnamed": [
+  {
+   "task": 368,
+   "what": "a folder of about 17 GB whose name the grid readout withholds as [hidden]"
+  }
+ ],
+ "folders": {
+  "_samples": {
+   "kind": "working",
+   "task": 333,
+   "what": "the sample index's runs: samples.sqlite and its manifest, 28 GB",
+   "size": "28 GB"
+  },
+  "aariz": {
+   "kind": "records",
+   "records": [
+    "aariz_cephalograms"
+   ],
+   "what": "Aariz cephalometric benchmark (Khalid, Fraz 2023) and the ISBI 2015 cephalograms",
+   "size": "5.9 GB, 4,005 files"
+  },
+  "aasce2019_boostnet": {
+   "kind": "records",
+   "records": [
+    "aasce"
+   ],
+   "what": "AASCE 2019 / BoostNet AP whole-spine films",
+   "size": "796.7 MB, 1,982 files"
+  },
+  "abdomenatlas3_mini": {
+   "kind": "records",
+   "records": [
+    "abdomenatlas3_mini"
+   ],
+   "what": "AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images)",
+   "size": "531.4 GB, 9,264 files"
+  },
+  "amos22": {
+   "kind": "records",
+   "records": [
+    "amos22"
+   ],
+   "what": "AMOS22 CT, unlabelled (ids 5000-6899) and labelled",
+   "size": "95.6 GB, 3,067 files"
+  },
+  "anomaly_harvest": {
+   "kind": "derived",
+   "task": 334,
+   "what": "the anomaly harvest: 1,063,032 files, 303 GB, banks cut from the held CT sets for the transitional-anatomy census",
+   "size": "303.4 GB, 1,063,032 files"
+  },
+  "aortaseg60": {
+   "kind": "records",
+   "records": [
+    "aortaseg60"
+   ],
+   "what": "AortaSeg-60",
+   "size": "14.8 GB, 310 files"
+  },
+  "aws_stoic2021": {
+   "kind": "records",
+   "records": [
+    "aws_stoic2021"
+   ],
+   "what": "STOIC2021 training (AWS Open Data)",
+   "size": "246.1 GB, 2,034 files"
+  },
+  "barts_crl": {
+   "kind": "records",
+   "records": [
+    "barts_crl"
+   ],
+   "what": "Barts CRL (colorectal-cancer staging CT)",
+   "size": "18.9 GB, 222 files"
+  },
+  "buu_lspine_2000": {
+   "kind": "records",
+   "records": [
+    "buu_lspine"
+   ],
+   "what": "BUU-LSPINE (Klinwichit et al., Applied Sciences 2023)",
+   "size": "7.5 GB, 8,002 files"
+  },
+  "buu_lspine_3600": {
+   "kind": "records",
+   "records": [
+    "buu_lspine"
+   ],
+   "what": "BUU-LSPINE (Klinwichit et al., Applied Sciences 2023)",
+   "size": "32.8 GB, 46,723 files"
+  },
+  "buu_lspine_v1_smoke": {
+   "kind": "working",
+   "task": 335,
+   "what": "a smoke-test subset of BUU-LSPINE: 77 links, 7 KB",
+   "size": "6.9 KB, 77 files"
+  },
+  "canine_thoracic_vhs": {
+   "kind": "records",
+   "records": [
+    "canine_thoracic_vhs"
+   ],
+   "what": "Veterinary: canine lateral thoracic radiographs for vertebral heart size (Mendeley ktx4cj55pn); only a fetch's record is here, the set itself has not landed",
+   "size": "243 B, 1 files"
+  },
+  "carmlspine": {
+   "kind": "records",
+   "records": [
+    "carmlspine"
+   ],
+   "what": "C-ArmLSpine (Zhang et al., Medical Image Analysis 2024)",
+   "size": "96.6 GB, 334,458 files"
+  },
+  "cathaction": {
+   "kind": "records",
+   "records": [
+    "cathaction"
+   ],
+   "what": "CathAction (Jianu et al. 2024, AIRVLab)",
+   "size": "52.3 GB, 24 files"
+  },
+  "cm_spine_drive_file": {
+   "kind": "empty",
+   "task": 336,
+   "what": "an empty folder",
+   "size": "0 B, 0 files"
+  },
+  "cobra2026": {
+   "kind": "records",
+   "records": [
+    "cobra2026"
+   ],
+   "what": "COBRA2026 public cases (Elekta and Varian)",
+   "size": "753.1 GB, 30,655 files"
+  },
+  "csi2014": {
+   "kind": "records",
+   "records": [
+    "csi2014"
+   ],
+   "what": "CSI 2014 spine CT",
+   "size": "6.2 GB, 42 files"
+  },
+  "csxa_cervical_xray_atlas": {
+   "kind": "records",
+   "records": [
+    "csxa"
+   ],
+   "what": "CSXA, the Cervical Spine X-ray Atlas V3.0 (Ran et al., Scientific Data 2024)",
+   "size": "3.4 GB, 9,945 files"
+  },
+  "ctpelvic1k_clinic": {
+   "kind": "records",
+   "records": [
+    "ctpelvic1k"
+   ],
+   "what": "CTPelvic1K",
+   "size": "13.8 GB, 180 files"
+  },
+  "ctsp0533_repair": {
+   "kind": "working",
+   "task": 337,
+   "what": "a repair of CTSpinoPelvic1K case 0533: 577 DICOM slices and its volume, 576 MB",
+   "size": "576.2 MB, 619 files"
+  },
+  "ctsp_april": {
+   "kind": "derived",
+   "task": 338,
+   "what": "the April CTSpinoPelvic1K build: 351 CT volumes, 1,153 label maps and its dry run, 81 GB",
+   "size": "80.9 GB, 1,623 files"
+  },
+  "ctspine1k": {
+   "kind": "records",
+   "records": [
+    "ctspine1k"
+   ],
+   "what": "CTSpine1K",
+   "size": "151.2 GB, 2,020 files"
+  },
+  "ctspinopelvic1k": {
+   "kind": "records",
+   "records": [
+    "ctspinopelvic1k"
+   ],
+   "what": "CTSpinoPelvic1K v11 (the consortium's own release)",
+   "size": "188.8 GB, 12,685 files"
+  },
+  "ctspinopelvic1k_build_tree": {
+   "kind": "derived",
+   "task": 339,
+   "what": "the CTSpinoPelvic1K build tree: 3,340 files, 9.9 GB, label maps and their records",
+   "size": "9.9 GB, 3,340 files"
+  },
+  "curvas": {
+   "kind": "records",
+   "records": [
+    "curvas"
+   ],
+   "what": "CURVAS 2024",
+   "size": "27.9 GB, 284 files"
+  },
+  "curvas_pdacvi": {
+   "kind": "records",
+   "records": [
+    "curvas_pdacvi"
+   ],
+   "what": "CURVAS-PDACVI (MICCAI 2025)",
+   "size": "15.7 GB, 875 files"
+  },
+  "d815_repair": {
+   "kind": "working",
+   "task": 340,
+   "what": "a repair of case 815: 11 files, 1 MB",
+   "size": "1003.5 KB, 11 files"
+  },
+  "deep_psma": {
+   "kind": "records",
+   "records": [
+    "deep_psma"
+   ],
+   "what": "DEEP-PSMA (PSMA + FDG PET/CT, mCRPC)",
+   "size": "22.6 GB, 1,507 files"
+  },
+  "deepfluoro_h5": {
+   "kind": "records",
+   "records": [
+    "deepfluoro"
+   ],
+   "what": "DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs",
+   "size": "4.9 GB, 76 files"
+  },
+  "deepfluoro_vendor": {
+   "kind": "records",
+   "records": [
+    "deepfluoro"
+   ],
+   "what": "DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs",
+   "size": "103.4 GB, 94,645 files"
+  },
+  "devcorpus": {
+   "kind": "derived",
+   "task": 341,
+   "what": "the development corpus: 99,553 files, 17 GB, styled and rendered DRRs with their poses and lists",
+   "size": "17.0 GB, 99,553 files"
+  },
+  "devcorpus_arc": {
+   "kind": "derived",
+   "task": 342,
+   "what": "the angle-sweep corpus: 13,075 files, 688 MB, renders at swept C-arm angles; its void evaluation is kept and never quoted",
+   "size": "687.9 MB, 13,075 files"
+  },
+  "external": {
+   "kind": "records",
+   "records": [
+    "bern_myelography",
+    "dysphagiabank"
+   ],
+   "task": 343,
+   "what": "Inselspital Bern dynamic myelography (Piechowiak 2021); DysphagiaBank (TalkBank), UNM corpus; besides: the public fluoroscopy clips under external/fluoro_video (731,573 files, 245 GB), held with no record here: Bern, PMC, Wikimedia Commons and YouTube re-encodes, 9 of the live-fluoroscopy entries cervical; screening only, never training",
+   "size": "244.8 GB, 731,842 files"
+  },
+  "fig6": {
+   "kind": "working",
+   "task": 344,
+   "what": "figure 6: 108,412 files, 13 GB, the evaluation sets, detectors and outputs of SchwingNet's figure 6",
+   "size": "13.0 GB, 108,412 files"
+  },
+  "figure1": {
+   "kind": "working",
+   "task": 345,
+   "what": "figure 1: 94 files, 26 MB, its panels",
+   "size": "26.1 MB, 94 files"
+  },
+  "fluorocap": {
+   "kind": "unrecorded",
+   "task": 346,
+   "what": "FluoroCap: 361,567 fluoroscopy images (PNG and JPEG, with PDFs) from published figures and their captions, 202 GB, with 1,500 derived frames; private, a test set at most and never training; held, with no record here yet",
+   "size": "203.9 GB, 379,127 files"
+  },
+  "fluorogen_synthetic": {
+   "kind": "derived",
+   "task": 347,
+   "what": "synthetic fluoroscopy: 30,035 files, 7.9 GB, 3,001 generated frames with labels",
+   "size": "7.9 GB, 30,035 files"
+  },
+  "fracatlas": {
+   "kind": "records",
+   "records": [
+    "fracatlas"
+   ],
+   "what": "FracAtlas (Abedeen 2023, Scientific Data); only a fetch's record is here, the set itself has not landed",
+   "size": "32.1 KB, 15 files"
+  },
+  "fraiwan_spine_xray": {
+   "kind": "records",
+   "records": [
+    "fraiwan_spine_xray"
+   ],
+   "what": "Fraiwan spine X-ray set (Mendeley xkt857dsxk); only a fetch's record is here, the set itself has not landed",
+   "size": "241 B, 1 files"
+  },
+  "gallery": {
+   "kind": "working",
+   "task": 348,
+   "what": "the gallery: 472 files, 101 MB, figure panels",
+   "size": "100.9 MB, 472 files"
+  },
+  "geneva_hip_src": {
+   "kind": "records",
+   "records": [
+    "geneva_hip"
+   ],
+   "what": "Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021)",
+   "size": "1.0 GB, 485 files"
+  },
+  "hf_abdomenatlas2_0_mini": {
+   "kind": "records",
+   "records": [
+    "hf_abdomenatlas2_0_mini"
+   ],
+   "what": "AbdomenAtlas 2.0 Mini (10,135 CT)",
+   "size": "331 GB"
+  },
+  "hf_cads_unique": {
+   "kind": "records",
+   "records": [
+    "cads"
+   ],
+   "what": "CADS CT (unique cases)",
+   "size": "90 GB"
+  },
+  "hf_rexgradient_160k": {
+   "kind": "records",
+   "records": [
+    "rexgradient_160k"
+   ],
+   "what": "ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025)",
+   "size": "156 GB"
+  },
+  "idc": {
+   "kind": "records",
+   "records": [
+    "idc_acrin_flt_breast",
+    "idc_acrin_nsclc_fdg_pet",
+    "idc_adrenal_acc_ki67_seg",
+    "idc_anti_pd_1_lung",
+    "idc_cmb_brca",
+    "idc_cmb_crc",
+    "idc_cmb_lca",
+    "idc_cmb_mel",
+    "idc_cmb_mml",
+    "idc_cmb_ov",
+    "idc_colorectal_liver_metastases",
+    "idc_covid_19_ar",
+    "idc_covid_19_ny_sbu",
+    "idc_cptac_ccrcc",
+    "idc_cptac_cm",
+    "idc_cptac_pda",
+    "idc_cptac_sar",
+    "idc_cptac_stad",
+    "idc_cptac_ucec",
+    "idc_ct_vs_pet_ventilation_imaging",
+    "idc_ctpred_sunitinib_pannet",
+    "idc_eay131",
+    "idc_hcc_tace_seg",
+    "idc_lung_pet_ct_dx",
+    "idc_mediastinal_lymph_node_seg",
+    "idc_midrc_ricord_1a",
+    "idc_pancreatic_ct_cbct_seg",
+    "idc_pediatric_ct_seg",
+    "idc_pelvic_reference_data",
+    "idc_psma_pet_ct_lesions",
+    "idc_rider_lung_pet_ct",
+    "idc_tcga_blca",
+    "idc_tcga_esca",
+    "idc_tcga_kirc",
+    "idc_tcga_lihc",
+    "idc_tcga_ov",
+    "idc_tcga_stad",
+    "idc_tcga_ucec",
+    "idc_varepop_apollo"
+   ],
+   "what": "IDC `acrin_flt_breast`; IDC `acrin_nsclc_fdg_pet`; IDC `adrenal_acc_ki67_seg` and 36 more",
+   "size": "657.6 GB, 896,326 files"
+  },
+  "idc_cptac_lscc": {
+   "kind": "records",
+   "records": [
+    "idc_cptac_lscc"
+   ],
+   "what": "IDC `cptac_lscc` (tier 2)",
+   "size": "30 GB"
+  },
+  "idc_cptac_luad": {
+   "kind": "records",
+   "records": [
+    "idc_cptac_luad"
+   ],
+   "what": "IDC `cptac_luad` (tier 2)",
+   "size": "39 GB"
+  },
+  "idc_ldct_and_projection_data": {
+   "kind": "records",
+   "records": [
+    "idc_ldct_and_projection_data"
+   ],
+   "what": "IDC `ldct_and_projection_data` (tier 2)",
+   "size": "864 GB"
+  },
+  "idc_midrc_ricord_1b": {
+   "kind": "records",
+   "records": [
+    "idc_midrc_ricord_1b"
+   ],
+   "what": "IDC `midrc_ricord_1b` (tier 2)",
+   "size": "9 GB"
+  },
+  "idc_nlst": {
+   "kind": "records",
+   "records": [
+    "idc_nlst"
+   ],
+   "what": "NLST, full (tier 2; 500-person pilot fetched)",
+   "size": "3169 GB"
+  },
+  "idc_nsclc_radiogenomics": {
+   "kind": "records",
+   "records": [
+    "idc_nsclc_radiogenomics"
+   ],
+   "what": "IDC `nsclc_radiogenomics` (tier 2)",
+   "size": "91 GB"
+  },
+  "idc_nsclc_radiomics": {
+   "kind": "records",
+   "records": [
+    "idc_nsclc_radiomics"
+   ],
+   "what": "IDC `nsclc_radiomics` (tier 2)",
+   "size": "27 GB"
+  },
+  "idc_spinal_multiple_myeloma_seg": {
+   "kind": "records",
+   "records": [
+    "idc_spinal_multiple_myeloma_seg"
+   ],
+   "what": "IDC `spinal_multiple_myeloma_seg` (tier 2)",
+   "size": "298 GB"
+  },
+  "idc_spine_mets_ct_seg": {
+   "kind": "records",
+   "records": [
+    "idc_spine_mets_ct_seg"
+   ],
+   "what": "IDC `spine_mets_ct_seg` (tier 2)",
+   "size": "17.4 GB, 35,531 files"
+  },
+  "ieee_dataport_lateral_fullspine_236": {
+   "kind": "unrecorded",
+   "task": 349,
+   "what": "IEEE DataPort lateral full-spine films: 236 JPEG films (1528-3056 x 2845-8826) and their derived arrays, 5.7 GB; held, with no record here yet",
+   "size": "5.7 GB, 711 files"
+  },
+  "inventory": {
+   "kind": "working",
+   "task": 350,
+   "what": "inventories: 34 files, 7 MB, the census of 2026-10-07 and film lists",
+   "size": "7.2 MB, 34 files"
+  },
+  "ipcai2025_xray_ct": {
+   "kind": "records",
+   "records": [
+    "ipcai2025_xray_ct"
+   ],
+   "what": "IPCAI 2025 paired X-ray and CT set of the distal femur (Flepp 2025, Zenodo 15753063)",
+   "size": "6.2 GB, 4 files"
+  },
+  "kaggle_scoliosis_yolov5": {
+   "kind": "records",
+   "records": [
+    "kaggle_scoliosis_yolov5"
+   ],
+   "what": "Kaggle scoliosis YOLOv5 annotated spine X-ray set (salmankey)",
+   "size": "225.2 MB, 2 files"
+  },
+  "kidney_thoraxabdomen": {
+   "kind": "records",
+   "records": [
+    "kidney_thoraxabdomen"
+   ],
+   "what": "Kidney abnormality segmentation in thorax-abdomen CT",
+   "size": "70.7 GB, 432 files"
+  },
+  "kub_stonex": {
+   "kind": "records",
+   "records": [
+    "kub_stonex"
+   ],
+   "what": "KUB-StoneX (Daffodil International University HIRL)",
+   "size": "51.5 GB, 9,648 files"
+  },
+  "ljubljana": {
+   "kind": "records",
+   "records": [
+    "ljubljana_2d3d_gs"
+   ],
+   "what": "Ljubljana 2D/3D registration gold standard (PIXIUM 4600)",
+   "size": "292.3 MB, 181 files"
+  },
+  "mendeley_5jdfdgp762": {
+   "kind": "unrecorded",
+   "task": 351,
+   "what": "Mendeley Data 5jdfdgp762: 714 JPEG radiographs (640-2464 x 640-3036) with labels, and their derived arrays; held, with no record here yet",
+   "size": "1.2 GB, 4,003 files"
+  },
+  "morphdef": {
+   "kind": "empty",
+   "task": 352,
+   "what": "an empty folder",
+   "size": "0 B, 0 files"
+  },
+  "multisource_banks": {
+   "kind": "derived",
+   "task": 353,
+   "what": "the multi-source banks: 208,029 files, 316 GB, film and DRR banks derived from the held sets (and the implant_ct_synthetic group)",
+   "size": "318.8 GB, 208,103 files"
+  },
+  "nhanes2_cdc_films": {
+   "kind": "records",
+   "records": [
+    "nhanes2_unannotated"
+   ],
+   "what": "NHANES II cervical and lumbar spine films (NCHS, 1976 to 1980)",
+   "size": "128.9 GB, 49,548 files"
+  },
+  "nhanes2_zenodo_landmarks": {
+   "kind": "records",
+   "records": [
+    "nhanes2_annotated"
+   ],
+   "what": "NHANES II spinal films with landmarks (Mo, Papiez, Chen et al., Zenodo)",
+   "size": "3.1 GB, 1,106 files"
+  },
+  "nih_chestxray14": {
+   "kind": "records",
+   "records": [
+    "nih_chestxray14"
+   ],
+   "what": "NIH ChestX-ray14 and the RSNA pneumonia subset",
+   "size": "42.0 GB, 14 files"
+  },
+  "nlst_pilot": {
+   "kind": "records",
+   "records": [
+    "nlst_pilot"
+   ],
+   "what": "NLST, the seeded 500-person pilot",
+   "size": "68.5 GB, 89,865 files"
+  },
+  "open_i_chest": {
+   "kind": "records",
+   "records": [
+    "open_i_chest"
+   ],
+   "what": "Open-i Indiana chest collection",
+   "size": "1.3 GB, 4 files"
+  },
+  "or_ready": {
+   "kind": "derived",
+   "task": 354,
+   "what": "the operating-room banks: 368,455 files, 808 GB, in 55 folders (indomain, wholespine, crossdev, auto_reference and others), frames and labels derived from held sets",
+   "size": "808.3 GB, 368,455 files"
+  },
+  "outline_conv": {
+   "kind": "working",
+   "task": 355,
+   "what": "outline conversions: 486 files, 73 KB, label conversions for the real X-ray banks",
+   "size": "73.4 KB, 486 files"
+  },
+  "panorama": {
+   "kind": "records",
+   "records": [
+    "panorama"
+   ],
+   "what": "PANORAMA public set (pancreas CE-CT)",
+   "size": "181.1 GB, 2,240 files"
+  },
+  "pengwin2026": {
+   "kind": "records",
+   "records": [
+    "pengwin2026"
+   ],
+   "what": "PENGWIN 2026 peripelvic fracture CT (the public cases)",
+   "size": "77.8 GB, 1,022 files"
+  },
+  "pengwin_task2_xrays": {
+   "kind": "records",
+   "records": [
+    "pengwin_task2_xrays"
+   ],
+   "what": "PENGWIN 2024 Task 2 synthetic X-rays",
+   "size": "32.6 GB, 6 files"
+  },
+  "polypose": {
+   "kind": "working",
+   "task": 356,
+   "what": "PolyPose: 118,395 files, 82 GB, the method's environment, weights and validation volumes",
+   "size": "81.8 GB, 118,395 files"
+  },
+  "quadra_hc": {
+   "kind": "records",
+   "records": [
+    "quadra_hc"
+   ],
+   "what": "QUADRA_HC total-body FDG-PET/CT, healthy controls",
+   "size": "19.0 GB, 966 files"
+  },
+  "rare_class": {
+   "kind": "derived",
+   "task": 357,
+   "what": "the rare-class DRR banks: 44,243 files, 5.4 GB, DRRs from VerSe, CTSpinoPelvic1K and TotalSegmentator",
+   "size": "5.4 GB, 44,243 files"
+  },
+  "realxray": {
+   "kind": "records",
+   "records": [
+    "bournemouth_cervical_qf"
+   ],
+   "task": 358,
+   "what": "Bournemouth cervical quantitative fluoroscopy (BORDaR 385); besides: besides the Bournemouth cervical QF file, 134,806 files of derived banks (pelvis landmarks, COBRA DRR banks, C-arm links)",
+   "size": "3.2 GB, 135,713 files"
+  },
+  "realxray_work": {
+   "kind": "working",
+   "task": 359,
+   "what": "real X-ray working copies: 248 files, 310 MB, DeepFluoro and Geneva hip volumes being converted",
+   "size": "309.8 MB, 248 files"
+  },
+  "ribfrac": {
+   "kind": "records",
+   "records": [
+    "ribfrac"
+   ],
+   "what": "RibFrac (MICCAI 2020) chest CT",
+   "size": "146.1 GB, 750 files"
+  },
+  "rsna_2022_cspine": {
+   "kind": "records",
+   "records": [
+    "rsna_2022_cervical"
+   ],
+   "what": "RSNA 2022 cervical spine fracture CT (Kaggle)",
+   "size": "189.4 GB, 4 files"
+  },
+  "rsna_rspect_pe": {
+   "kind": "records",
+   "records": [
+    "rsna_rspect"
+   ],
+   "what": "RSNA pulmonary embolism CT (RSPECT)",
+   "size": "981 GB"
+  },
+  "spinal_ai2024": {
+   "kind": "unrecorded",
+   "task": 360,
+   "what": "Spinal-AI2024: 20,000 JPEG spine radiographs (512-960 x 241-512) with 16,716 derived landmark files; held, with no record here yet",
+   "size": "3.1 GB, 36,761 files"
+  },
+  "spine_detector_corpus": {
+   "kind": "derived",
+   "task": 361,
+   "what": "the spine detector corpus: 530,722 files, 56 GB, images and YOLO labels gathered from the held film sets",
+   "size": "55.8 GB, 530,722 files"
+  },
+  "spineps": {
+   "kind": "derived",
+   "task": 362,
+   "what": "SPINEPS outputs: 41,571 files, 8.2 GB, vertebral bodies and centroids relabelled from held CTs",
+   "size": "8.2 GB, 41,571 files"
+  },
+  "spinesac": {
+   "kind": "unrecorded",
+   "task": 363,
+   "what": "SpineSAC: 5,566 files, 4.0 GB, named in SchwingNet's registry; held, with no record here yet",
+   "size": "4.0 GB, 5,566 files"
+  },
+  "tcia_ct_colonography": {
+   "kind": "working",
+   "task": 364,
+   "what": "TCIA CT colonography: a manifest only, 3 files, 12 MB; no images were fetched",
+   "size": "11.7 MB, 3 files"
+  },
+  "tcia_fdg_pet_ct_lesions": {
+   "kind": "records",
+   "records": [
+    "tcia_fdg_pet_ct_lesions"
+   ],
+   "what": "FDG-PET-CT-Lesions (autoPET), TCIA through NBIA",
+   "size": "366.8 GB, 511,084 files"
+  },
+  "thoracic_xr": {
+   "kind": "records",
+   "records": [
+    "aasce"
+   ],
+   "what": "AASCE 2019 / BoostNet AP whole-spine films",
+   "size": "818.9 MB, 3,399 files"
+  },
+  "totalsegmentator_v201": {
+   "kind": "records",
+   "records": [
+    "totalsegmentator"
+   ],
+   "what": "TotalSegmentator datasets v2.0.1 and v3.0.0",
+   "size": "39.6 GB, 153,322 files"
+  },
+  "totalsegmentator_v300": {
+   "kind": "records",
+   "records": [
+    "totalsegmentator"
+   ],
+   "what": "TotalSegmentator datasets v2.0.1 and v3.0.0",
+   "size": "48.8 GB, 232,276 files"
+  },
+  "validation_ts": {
+   "kind": "working",
+   "task": 365,
+   "what": "a validation list: 70 links, 4 KB, into TotalSegmentator",
+   "size": "4.2 KB, 70 files"
+  },
+  "verse_2d_projections": {
+   "kind": "records",
+   "records": [
+    "verse_2d_projections"
+   ],
+   "what": "VerSe 2D projections with soft labels (Zenodo 8115942)",
+   "size": "4.1 GB, 16 files"
+  },
+  "versefusion": {
+   "kind": "records",
+   "records": [
+    "verse"
+   ],
+   "what": "VerSe 2019 and 2020",
+   "size": "383.7 GB, 33,535 files"
+  },
+  "vindr": {
+   "kind": "working",
+   "task": 366,
+   "what": "VinDr identity and audit: 3 files, 1.5 MB, the identity table for the VinDr sets",
+   "size": "1.5 MB, 3 files"
+  },
+  "vindr_pcxr": {
+   "kind": "records",
+   "records": [
+    "vindr_pcxr"
+   ],
+   "what": "VinDr-PCXR (PhysioNet); only a fetch's record is here, the set itself has not landed",
+   "size": "412 B, 1 files"
+  },
+  "vindr_spinexr": {
+   "kind": "records",
+   "records": [
+    "vindr_spinexr"
+   ],
+   "what": "VinDr-SpineXR (Nguyen et al., MICCAI 2021)",
+   "size": "106.9 GB, 58,116 files"
+  },
+  "waw_tace": {
+   "kind": "records",
+   "records": [
+    "waw_tace"
+   ],
+   "what": "WAW-TACE (HCC multiphase CT, Warsaw)",
+   "size": "43.9 GB, 856 files"
+  },
+  "xrspinopelvic1k": {
+   "kind": "derived",
+   "task": 367,
+   "what": "XRSpinoPelvic1K: 32,097 files, 4.3 GB, the private film set's derived banks",
+   "size": "4.3 GB, 32,097 files"
+  },
+  "zenodo_lumos": {
+   "kind": "records",
+   "records": [
+    "lumos"
+   ],
+   "what": "LUMOS (Zhejiang University)",
+   "size": "77 GB"
+  },
+  "zenodo_lumvbcanseg": {
+   "kind": "records",
+   "records": [
+    "zenodo_lumvbcanseg"
+   ],
+   "what": "LumVBCanSeg lumbar CT (185, ShengJing Hospital)",
+   "size": "11 GB"
+  },
+  "zenodo_magic_ct": {
+   "kind": "records",
+   "records": [
+    "magic_ct"
+   ],
+   "what": "MAGIC-CT (Zenodo)",
+   "size": "40 GB"
+  },
+  "zenodo_medpelvis3d": {
+   "kind": "records",
+   "records": [
+    "zenodo_medpelvis3d"
+   ],
+   "what": "MedPelvis3D pelvic CT (99, PLA General Hospital)",
+   "size": "38 GB"
+  },
+  "zenodo_tmtv_benchmark": {
+   "kind": "records",
+   "records": [
+    "zenodo_tmtv_benchmark"
+   ],
+   "what": "International TMTV Benchmark, lymphoma FDG PET/CT (60)",
+   "size": "20 GB"
+  },
+  "zenodo_ts_task_hip_implant": {
+   "kind": "records",
+   "records": [
+    "zenodo_ts_task_hip_implant"
+   ],
+   "what": "TotalSegmentator task data 'hip_implant' (71 CT)",
+   "size": "10 GB"
+  },
+  "zenodo_ts_task_liver_lesions": {
+   "kind": "records",
+   "records": [
+    "zenodo_ts_task_liver_lesions"
+   ],
+   "what": "TotalSegmentator task data 'liver_lesions' (842 CT)",
+   "size": "40 GB"
+  },
+  "zenodo_ts_task_pleural_effusion": {
+   "kind": "records",
+   "records": [
+    "zenodo_ts_task_pleural_effusion"
+   ],
+   "what": "TotalSegmentator task data 'pleural_pericard_effusion' (600 CT)",
+   "size": "10 GB"
+  },
+  "zenodo_unitochest": {
+   "kind": "records",
+   "records": [
+    "zenodo_unitochest"
+   ],
+   "what": "UniToChest chest CT (623 patients; distributed as slices)",
+   "size": "162 GB"
+  },
+  "zenodo_vsd_fullbody": {
+   "kind": "records",
+   "records": [
+    "zenodo_vsd_fullbody"
+   ],
+   "what": "VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich",
+   "size": "253 GB"
+  }
+ }
+}
