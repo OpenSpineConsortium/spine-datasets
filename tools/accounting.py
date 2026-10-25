@@ -6,8 +6,9 @@ purposes". The tasks are this repository's issues. Each record under datasets/ c
 of its task in `task`: its "Obtain ..." task where tasks/TASKS.md opened one, else an
 "Account for ..." task, opened and closed at once for a set that was on the grid before it had a
 task (label accounting). A folder of the data root that holds no record's set (a bank derived from
-other sets, a working folder, a set aside) is listed in grid/folders.json with the task that
-accounts for it.
+other sets, a working folder, a set aside, or a held set whose record is still to write, kind
+unrecorded, whose task stays open until the record is written) is listed in grid/folders.json with
+the task that accounts for it.
 
     python3 tools/accounting.py check    every record has a task, every folder a record or a task
     python3 tools/accounting.py show     the folders and records, side by side
@@ -24,7 +25,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATASETS = ROOT / "datasets"
 FOLDERS = ROOT / "grid" / "folders.json"
-KINDS = ("records", "derived", "working", "set-aside", "empty")
+KINDS = ("records", "derived", "working", "set-aside", "empty", "unrecorded")
 
 
 class AccountingError(Exception):
