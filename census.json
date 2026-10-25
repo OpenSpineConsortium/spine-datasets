@@ -505,9 +505,9 @@
  ],
  "records": {
   "aariz_cephalograms": {
-   "digest": "89071c149c35d5dcd150b91be9d4ae2fea19ffd5c4314af890e7c2c746c02688",
+   "digest": "d18b2e8023b36e61e069fdcdacdfba248cf8c914c213a1753859f2f827cb2e67",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "aariz_cephalograms",
     "name": "Aariz cephalometric benchmark (Khalid, Fraz 2023) and the ISBI 2015 cephalograms",
@@ -552,9 +552,9 @@
    }
   },
   "aasce": {
-   "digest": "f533f6aa6e2b062e89676f574b4914196cc5f8ccc1ee2526d68afbc89de00e72",
+   "digest": "e7017549f725f1711dd96a32274a30a749195e10b763d2d90a42d8badb4e7ae4",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "aasce",
     "name": "AASCE 2019 / BoostNet AP whole-spine films",
@@ -597,9 +597,9 @@
    }
   },
   "abdomenatlas3_mini": {
-   "digest": "237bb3064b49a7c2c9e9d85a9f24904cbc034b43148209947c1d08905a410d31",
+   "digest": "3d0e1969aff6ca2e0c5d8af63b890ad06a03c145cdaaef84844d987fcbdaef31",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "abdomenatlas3_mini",
     "name": "AbdomenAtlas 3.0 Mini (= AbdomenAtlas 1.1 images)",
@@ -658,9 +658,9 @@
    }
   },
   "amos22": {
-   "digest": "0fc3f032f24c2f16435e00f34e3eb9f483f5e0f0076c9051c16787c415c976a2",
+   "digest": "970bbc91811fde622ebbc8727863fcf79498650f5153e9e11eca1edd96380f07",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "amos22",
     "name": "AMOS22 CT, unlabelled (ids 5000-6899) and labelled",
@@ -719,9 +719,9 @@
    }
   },
   "aortaseg60": {
-   "digest": "434296adc2b1137e0cab97f14c5ae9f577a5867110d0a215517dd164d4402fcc",
+   "digest": "46dbacc27bfd2fad14007904ce7f1bb776a9f79f6afd8d617c932acb3acfa886",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "aortaseg60",
     "name": "AortaSeg-60",
@@ -782,9 +782,9 @@
    }
   },
   "aws_stoic2021": {
-   "digest": "542f0da4a79fa50d7274bf6452b29b4063285183b535256fe0ae7a184384ec56",
+   "digest": "09a221f5c1d553b91e577f835534a16e29f45cf08b13010ff911ae90bd1defc8",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "aws_stoic2021",
     "name": "STOIC2021 training (AWS Open Data)",
@@ -835,9 +835,9 @@
    }
   },
   "balgrist_lumbar": {
-   "digest": "299d17fc2c49950262316ba4d87c95dc9b36833b3c572650558d9fe62b05fbf0",
+   "digest": "d2cdcda5b309383dbb2ad942d97f438e8327a9f147637c2fa554470d372efa84",
    "first_seen": "2026-09-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "balgrist_lumbar",
     "name": "Balgrist ex-vivo lumbar CT plus C-arm (Jecklin)",
@@ -898,9 +898,9 @@
    }
   },
   "barts_crl": {
-   "digest": "92f4e18ed210c80c5824dc6668db636ad31527593c146bb72e92b61b2e03d0e7",
+   "digest": "ce09be9309ea046494e48d4c3f4bff58831cbb54d100da81fe587c7355443abf",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "barts_crl",
     "name": "Barts CRL (colorectal-cancer staging CT)",
@@ -961,9 +961,9 @@
    }
   },
   "bern_myelography": {
-   "digest": "e7e3781bb43f7b3d988994c4ff27dd461a6615aea265350a31d6b96315d38b69",
+   "digest": "28e076a67630fb74273f3b42cdf1adc4b22071467367c40d185b811b23312b07",
    "first_seen": "2026-09-26",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "bern_myelography",
     "name": "Inselspital Bern dynamic myelography (Piechowiak 2021)",
@@ -1003,9 +1003,9 @@
    }
   },
   "bimcv_covid19": {
-   "digest": "592e31ff5878865a033527ce55584b55db7b5ceb4bdc749bdf9c0114d0309c3a",
+   "digest": "ff3996d36056361762c978b3baca5dbec06cf42f975d79ea74214099f590b622",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "bimcv_covid19",
     "name": "BIMCV COVID-19+ chest films (IEEE DataPort)",
@@ -1045,9 +1045,9 @@
    }
   },
   "bournemouth_cervical_qf": {
-   "digest": "7414c82cdb105cec0421147c955c6d8982f5f7030df1e8d33a663b9d829fb9b3",
+   "digest": "00624aaaa523712932b3e3efe32c1e0455c9c373f85b8c1e94ecaae359c4362b",
    "first_seen": "2026-09-26",
-   "last_changed": "2026-10-24",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "bournemouth_cervical_qf",
     "name": "Bournemouth cervical quantitative fluoroscopy (BORDaR 385)",
@@ -1089,9 +1089,9 @@
    }
   },
   "bournemouth_lumbar_qf": {
-   "digest": "df7009972a4b9444aa466b4d4c40e0f7bfa2dff653d7cf81843375dd75e6ddf5",
+   "digest": "ffacd3e8ea087c8b1658474d6f2acb1912f1c059cc49c4cc340e1ea494981119",
    "first_seen": "2026-10-20",
-   "last_changed": "2026-10-24",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "bournemouth_lumbar_qf",
     "name": "Bournemouth lumbar quantitative fluoroscopy (Breen 2021)",
@@ -1131,9 +1131,9 @@
    }
   },
   "brax": {
-   "digest": "05b2c11cd82e47a6d1afe66a57395756ab73fd56766d6b410b556a9e3b4ab345",
+   "digest": "3e3b984ea42dedff409027de1d9cc5d6a44ce0a690b14c5a069056e997faab3c",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "brax",
     "name": "BRAX Brazilian chest films (PhysioNet)",
@@ -1175,9 +1175,9 @@
    }
   },
   "buu_lspine": {
-   "digest": "9549cf50584c952eebeefe709da6cfa46a6706d7fc8d30ad4cc74a51818f156a",
+   "digest": "256954fa4aeeb7decd516830e4ecbbf1cb45770925f3e014005f67266c34b242",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "buu_lspine",
     "name": "BUU-LSPINE (Klinwichit et al., Applied Sciences 2023)",
@@ -1220,9 +1220,9 @@
    }
   },
   "cadica": {
-   "digest": "cbdab11845a7ef4669fdb11520c7cfa16b96aac0e002e1fa10afe1ee4b753cdd",
+   "digest": "ffb6a9cafbe0fefaae129ebec2cf61bcc0c8e865cba1099368e1c163f15f1d1e",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "cadica",
     "name": "CADICA invasive coronary angiography sequences (Mendeley p9bpx9ctcv)",
@@ -1262,9 +1262,9 @@
    }
   },
   "cads": {
-   "digest": "7dfd11e2feedd4d62c922b3cac89068bd25bcae484b4ca775d57585982df3440",
+   "digest": "2d24570b4cee46beb338853e859fd51a1339f3b6208e5acfe2f332ab0ae4bd56",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "cads",
     "name": "CADS CT (unique cases)",
@@ -1315,9 +1315,9 @@
    }
   },
   "cams_knee": {
-   "digest": "0233923ace53311fa611f6e007565810881dd874db3ccf816053006aa3b21d32",
+   "digest": "9d48ebfd8156760a5a1aecd3cb08a343150dda9d519864bba0d1bfa6b672cca3",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "cams_knee",
     "name": "CAMS-Knee (ETH Zurich and Charite Berlin, J Biomech 2017)",
@@ -1367,9 +1367,9 @@
    }
   },
   "canine_thoracic_vhs": {
-   "digest": "757d649bbd05bcf3dcaca819208b2ec82a6fcfbcd9a975396221fe9fd311dd00",
+   "digest": "10dbf2287127624e345997586722a82360b23c9080969d3c65c34169d1d4c9f7",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "canine_thoracic_vhs",
     "name": "Veterinary: canine lateral thoracic radiographs for vertebral heart size (Mendeley ktx4cj55pn)",
@@ -1409,9 +1409,9 @@
    }
   },
   "carmlspine": {
-   "digest": "7a2bdc334d28e3c6161da5451c3ddfbf27afd3d56c1e0e32c825755d59dcae86",
+   "digest": "cad715b36ac271996fa97036d174c73df885a759c1d4a8f3b1b973170c455497",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "carmlspine",
     "name": "C-ArmLSpine (Zhang et al., Medical Image Analysis 2024)",
@@ -1489,9 +1489,9 @@
    }
   },
   "cathaction": {
-   "digest": "354445f248fac77f73a6144e7a3962e048fee867164a4a27002019211a49d8a4",
+   "digest": "28fe0eff2c10f526ffac885cf06a32c87c15de8d049e9dc09b27043a33529346",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "cathaction",
     "name": "CathAction (Jianu et al. 2024, AIRVLab)",
@@ -1535,9 +1535,9 @@
    }
   },
   "chexpert_plus": {
-   "digest": "1e0c7c26b058143957c56a4b35c8d6b27cb03f44cd6e8651905931d81b05552a",
+   "digest": "92b27b5a918c351fa8eaf055237491efd7ddbf90f09415f233c1f49f9c9c0b3d",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "chexpert_plus",
     "name": "CheXpert and CheXpert Plus (Stanford AIMI)",
@@ -1577,9 +1577,9 @@
    }
   },
   "cm_spine_drive_file": {
-   "digest": "0ffa5c6e98a08610e6064990c6af5e76d8a5e4787fd39549cdb19d0d982a0906",
+   "digest": "4e00712ed81a928e53358cecd1b035f0c9f9c2b0bba0278fa84b16b59c8d0442",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "cm_spine_drive_file",
     "name": "CM Spine (Zeng et al., Electronics 2024): 208 intraoperative lumbar G-arm images",
@@ -1619,9 +1619,9 @@
    }
   },
   "cobra2026": {
-   "digest": "98b5d921072f31690a388c837fcc9e0a0898c38c17de7b1e48128694790e78b4",
+   "digest": "1a640b531836c59704cc4e07b876ab704deb8591fc819e7ee07d11f1129f38a5",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "cobra2026",
     "name": "COBRA2026 public cases (Elekta and Varian)",
@@ -1711,9 +1711,9 @@
    }
   },
   "cobra_embargoed": {
-   "digest": "ff66a69a15bac774bfc94649864d50ab5e2fdcb0a5b13ba0991a197e3859cf33",
+   "digest": "13ce1dcba11549189c78be4ee83d030e112fe39e2c13e8cb44ceda44d74a79b0",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "cobra_embargoed",
     "name": "COBRA2026 embargoed cases",
@@ -1775,9 +1775,9 @@
    }
   },
   "coronary_angiography": {
-   "digest": "96924379bc6ead9dce7d6e1ca237d13bd5e692136abad585aba533a56099c39e",
+   "digest": "de8f4a2c76ea0070df5e54cf58c68f85723350e60f49beb849433367ef6b67b4",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "coronary_angiography",
     "name": "Coronary angiography sets (CADICA, ARCADE, XCAD, AngioCAD)",
@@ -1822,9 +1822,9 @@
    }
   },
   "csi2014": {
-   "digest": "219a68cb2fc434eb6d58f2929fc9ade63c1e522f4d6e4fb05451339144335d72",
+   "digest": "fcb8230f6d1e736ae39cbdea8ea6d2721e9a5eb4bb4393f52ae3eb6d771ec24f",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "csi2014",
     "name": "CSI 2014 spine CT",
@@ -1883,9 +1883,9 @@
    }
   },
   "csxa": {
-   "digest": "e63c71c62c7854703449a5d1d43fe3fb42bd25f65135c70b1938a4fae7816186",
+   "digest": "af0019774c3cc636dacc86a0b5bf289c40e4b1648804b284aea9b509566e9c19",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "csxa",
     "name": "CSXA, the Cervical Spine X-ray Atlas V3.0 (Ran et al., Scientific Data 2024)",
@@ -1925,9 +1925,9 @@
    }
   },
   "ct_rate": {
-   "digest": "2f648771807606456a7b9123a0f96710d688304c152a8458656a1793cdcf317f",
+   "digest": "36cb24bc5d36070cbe08b6c6316edb7d852ff3ef5c596fb6bd01239f516d4ee1",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "ct_rate",
     "name": "CT-RATE chest CT",
@@ -1978,9 +1978,9 @@
    }
   },
   "ctpelvic1k": {
-   "digest": "5f2d3180f84b95336cf989d5be647dc64e53bfdde0fb9e40560f843fdefd3d17",
+   "digest": "db40e802afd52b5eebbd2e31b02255f8734af93f73488c34e59158ca9a40e80c",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-24",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "ctpelvic1k",
     "name": "CTPelvic1K",
@@ -2040,7 +2040,7 @@
    }
   },
   "ctspine1k": {
-   "digest": "1e4cf9f7a54951a6682fa22c130ca3dbe8de40d6dfe7b08cdc0ae6a7aaefd8da",
+   "digest": "9ea8b58b8984dc317e10cb7d9ed1bee5473bfd0c3dc1110f2fad9c6fdafbad5b",
    "first_seen": "2026-10-23",
    "last_changed": "2026-10-25",
    "row": {
@@ -2096,9 +2096,9 @@
    }
   },
   "ctspinopelvic1k": {
-   "digest": "3425909ff76a14263881f4bf9af164a1e88066179dc148edd08eb4e762bccfcd",
+   "digest": "28c2e867df09aafd471cb4e08dec80ece1952c36e149c1e979eb4e7bc7dbaf1f",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "ctspinopelvic1k",
     "name": "CTSpinoPelvic1K v11 (the consortium's own release)",
@@ -2168,9 +2168,9 @@
    }
   },
   "curvas": {
-   "digest": "5115e0430917f4851073c7f89b021c0d2ef8261bf65b4bab55514f39eb662acd",
+   "digest": "e1c60c2c43b393fe1863e6d88dfb4f34603e23347b55a8bdfe0b0a96ffc09cea",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "curvas",
     "name": "CURVAS 2024",
@@ -2232,9 +2232,9 @@
    }
   },
   "curvas_pdacvi": {
-   "digest": "88a326ad3bb640b3c43d0f66e4eb87c23a4355f608ffa7372b6d36269283438d",
+   "digest": "9660e76fe29c5076dd8ee6d677edded193253d5fa0f06de60532ea7351fe8307",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "curvas_pdacvi",
     "name": "CURVAS-PDACVI (MICCAI 2025)",
@@ -2295,9 +2295,9 @@
    }
   },
   "daradia_vertebroplasty": {
-   "digest": "b3a8e8104c91d0f209a29e54659721bc7f7dff572843d186066b0954e2fb4b0d",
+   "digest": "a7516988f5ed105d44c5e5b7ff20988a760470eea7ff490e9522af91853fa825",
    "first_seen": "2026-09-26",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "daradia_vertebroplasty",
     "name": "DARADIA vertebroplasty video (Kolkata)",
@@ -2337,9 +2337,9 @@
    }
   },
   "deep_psma": {
-   "digest": "23c2f1e0b52a5a4688c38662d2b1e2ac7307e69cfe03cdf490f76934c4ba5667",
+   "digest": "6e006dc888ee0fa4c492dddf36e58add6480045bed428bf1e09cb0176c604f30",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "deep_psma",
     "name": "DEEP-PSMA (PSMA + FDG PET/CT, mCRPC)",
@@ -2398,9 +2398,9 @@
    }
   },
   "deepfluoro": {
-   "digest": "3fc0a885019eaba626c9e18c09e377d773f036b9d986464212f5846ed583e503",
+   "digest": "a259b15d757c08101f0b49515fc15556b4db5bbf9bca8788018d07e9cbe89261",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "deepfluoro",
     "name": "DeepFluoro (Grupp et al., IPCAI 2020): the H5 release and the vendor DICOMs",
@@ -2473,9 +2473,9 @@
    }
   },
   "dmx_imaging": {
-   "digest": "b3e793fe8224f9ca92c9a7ea9ac0ae2597c9adc804087c368b2c97014f65040e",
+   "digest": "685a79215e28aa36d32d292452f08bbbf4bc18ce285f78d3ec84e2b6d4eeca48",
    "first_seen": "2026-09-26",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "dmx_imaging",
     "name": "DMX Imaging digital motion X-ray",
@@ -2515,9 +2515,9 @@
    }
   },
   "dysphagiabank": {
-   "digest": "a081f0124ca2bd96120efeafc67e7877610ebf18e03a1704e23e6c766a3e3f4a",
+   "digest": "e28284c1f17bfbd81137a84f65f2c41749ea5dace2602811ee3c4b0e849407b2",
    "first_seen": "2026-09-27",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "dysphagiabank",
     "name": "DysphagiaBank (TalkBank), UNM corpus",
@@ -2559,9 +2559,9 @@
    }
   },
   "faubel_painsource": {
-   "digest": "22dac6703e198f073d259524d97ec2dc4dd4cdb2d62d07d4e56fe5ba9034da48",
+   "digest": "5587977a7b2edbe26e6b0bae6a6506e6560607ef3d1b3261fa1803090ceacb61",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "faubel_painsource",
     "name": "ThePainSource (Faubel) fluoroscopy clips",
@@ -2601,9 +2601,9 @@
    }
   },
   "fracatlas": {
-   "digest": "fba7c5dff238cd3c4313723f14f6810eeab6d67b58a810c447ca0c188aedddfb",
+   "digest": "db055a8bccd09718b0393008a379789eec5cc65625d44af03210748abae56e08",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "fracatlas",
     "name": "FracAtlas (Abedeen 2023, Scientific Data)",
@@ -2647,9 +2647,9 @@
    }
   },
   "fraiwan_spine_xray": {
-   "digest": "e8a558eaec3e16b3b37e371d31ca143c610b5038fb607c6795d0c448851376d3",
+   "digest": "3ba91b40b6c053d2dfa00490e49a2dd857f04553957092b651c9c7ecd37c639c",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "fraiwan_spine_xray",
     "name": "Fraiwan spine X-ray set (Mendeley xkt857dsxk)",
@@ -2691,9 +2691,9 @@
    }
   },
   "geneva_hip": {
-   "digest": "83738a04f1e175d020cffdad5ce51483a2004b226b95cc0c4a050a20887df72d",
+   "digest": "fa959f3846116fe726d5ba724b5ca180d7aac8058881d7f840dd9545da9dfde5",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "geneva_hip",
     "name": "Geneva hip phantom (BV Pulsera; D'Isidoro et al., Medical Physics 2021)",
@@ -2763,9 +2763,9 @@
    }
   },
   "guide3d": {
-   "digest": "540bccc41cda4ad472e334e243e5cab06f60323652660e31be3952c4f80439b1",
+   "digest": "fbc2b1a1d54bee2b5810c1f798a22d72e55a7bbb0df0856e059e2fc2706b0c7e",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "guide3d",
     "name": "Guide3D (ACCV 2024, AIRVLab)",
@@ -2807,9 +2807,9 @@
    }
   },
   "hf_abdomenatlas2_0_mini": {
-   "digest": "099ac9e61a26342fcf4ac98ae3a2b8c41927f07bfde8ab1cd78506d2e7423258",
+   "digest": "3cad8e0f7444647eb3ab871bb161727ba17fedf8949e2fe3d3a2a25d3e9b8328",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "hf_abdomenatlas2_0_mini",
     "name": "AbdomenAtlas 2.0 Mini (10,135 CT)",
@@ -2862,9 +2862,9 @@
    }
   },
   "hsg_ais_registry": {
-   "digest": "37ad9d525f6c51fc657ff5a673e71d6629471bf49a5cfcff011ab186a9864506",
+   "digest": "9a040e05cf62295bc52a76e05fbcc6e531c087bb09294e8309581fe73ff32e31",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "hsg_ais_registry",
     "name": "Harms Study Group registries (adolescent idiopathic scoliosis and other pediatric spinal deformity)",
@@ -2904,9 +2904,9 @@
    }
   },
   "huashan_fudan": {
-   "digest": "df5a3f06ef1d970439ac3cdceb2a79489b5cb07b2b5ffc6374059f7bfcc1a391",
+   "digest": "fbafb541c59d69cc7ffb7c16cbdab194ef2dc9f0e917909d0b3a0327b4fa8846",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "huashan_fudan",
     "name": "Huashan Hospital, Fudan University, intraoperative lumbar films with preoperative CT (Shao et al. 2024)",
@@ -2967,9 +2967,9 @@
    }
   },
   "idc_acrin_flt_breast": {
-   "digest": "a60a09ea39280ae056c64e067c586ddb415795bdaa0d2079aa46bca571ae5ae7",
+   "digest": "3deb2a2679040e09becbca6671492818e24de8d2a4038ac23646dc5e04a72a7c",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_acrin_flt_breast",
     "name": "IDC `acrin_flt_breast`",
@@ -3028,9 +3028,9 @@
    }
   },
   "idc_acrin_nsclc_fdg_pet": {
-   "digest": "8d54898161db9219f042cf73facd50e57edae11da2e7aaf1b31dd93b78de9d79",
+   "digest": "3330b4d27d452638c46c1a793560c06e88f55762ccaf7c68a87763806dbf4eff",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_acrin_nsclc_fdg_pet",
     "name": "IDC `acrin_nsclc_fdg_pet`",
@@ -3094,9 +3094,9 @@
    }
   },
   "idc_adrenal_acc_ki67_seg": {
-   "digest": "205e9dbae083c6a785688c6d8b4ee6537d6feef24b935a430f99a932e674e490",
+   "digest": "18442fc9ba909d30ac8996572fe0ed8ea19736f8ddc82be3a53665d2d1db57a6",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_adrenal_acc_ki67_seg",
     "name": "IDC `adrenal_acc_ki67_seg`",
@@ -3157,9 +3157,9 @@
    }
   },
   "idc_anti_pd_1_lung": {
-   "digest": "7adfc344939f2af8b2c43c17bff197287c0de74bfbc7ad89146d0f1fbc2c2669",
+   "digest": "1fc52cba30865958b5b043851a52c97e883d78d017b9bdcc6be3eedc33ec3e87",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_anti_pd_1_lung",
     "name": "IDC `anti_pd_1_lung`",
@@ -3221,9 +3221,9 @@
    }
   },
   "idc_cmb_brca": {
-   "digest": "f34ba2ebf8fd90326f926d21368d69f8faef7adf78e76e685212162abf951083",
+   "digest": "a6185db0ff97fb3b95477e20402d63bae3d9c848c58fc4329019ff197638c1a3",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_cmb_brca",
     "name": "IDC `cmb_brca`",
@@ -3285,9 +3285,9 @@
    }
   },
   "idc_cmb_crc": {
-   "digest": "569b1a85b5de1e25e995231574e51d42518fedd135439d11e66f4cc35549670b",
+   "digest": "770d4ec1e69be2fb234c27fb185c3e15981083d2447f505da8c7f00e85792aff",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_cmb_crc",
     "name": "IDC `cmb_crc`",
@@ -3350,9 +3350,9 @@
    }
   },
   "idc_cmb_lca": {
-   "digest": "68dda8b927c4a7781c696c0d4106c64de3cf8386f34846e534a63b834fcf0d7a",
+   "digest": "3852713eca17210502ca0e0e65806091ad4b1dddfe7bbfaa9b86915e5aef812a",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_cmb_lca",
     "name": "IDC `cmb_lca`",
@@ -3415,9 +3415,9 @@
    }
   },
   "idc_cmb_mel": {
-   "digest": "313f7ebda9c1a7a6919c7ad9d526ad08c7d6cb7d559845f7f216736bab6b293f",
+   "digest": "63a2b2e8b47feb47f23d40a230e554d851333dad173a4d13f45d0c90fc350232",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_cmb_mel",
     "name": "IDC `cmb_mel`",
@@ -3480,9 +3480,9 @@
    }
   },
   "idc_cmb_mml": {
-   "digest": "a4be57d98942e5e0245486c747892b07a2b256a6079897faf6db77d058b2d587",
+   "digest": "b0de91835950fdb30118994a0e31a7a925603a429895ef5f8f5bb69fdd6ead37",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_cmb_mml",
     "name": "IDC `cmb_mml`",
@@ -3546,9 +3546,9 @@
    }
   },
   "idc_cmb_ov": {
-   "digest": "4ffec0288a15d744acb5ce241551e1f6704a973f6fa3103e6154decff1125cb4",
+   "digest": "ea9169770e8e6da53ed3511f6a6afc84295da4a71a9d3a25378e18b322dc9f16",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_cmb_ov",
     "name": "IDC `cmb_ov`",
@@ -3609,9 +3609,9 @@
    }
   },
   "idc_colorectal_liver_metastases": {
-   "digest": "6adc0f1a78ac29f7d924aa368841c72839e218c861edcd1ea5afcc185818a0d0",
+   "digest": "dd6542ffff67634f2b5bbb5fc4fbd39b7263a4ed6402d1b2ae2f8b20df49da45",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_colorectal_liver_metastases",
     "name": "IDC `colorectal_liver_metastases` (Colorectal-Liver-Metastases)",
@@ -3678,9 +3678,9 @@
    }
   },
   "idc_covid_19_ar": {
-   "digest": "aa6063d61a5b99e22b326a26ddcdd8f5000b38174a1d0db3da44732f787b9f98",
+   "digest": "792fa55b2259ff88b783830337b8ba7f0ebeb99be134a0b7ef951cb6fdcd7814",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_covid_19_ar",
     "name": "IDC `covid_19_ar`",
@@ -3741,9 +3741,9 @@
    }
   },
   "idc_covid_19_ny_sbu": {
-   "digest": "b8592f71355cf634e6d63d678cf6362ecbc665082e10aa42d257148f713ea25f",
+   "digest": "ea6249c97084aafc905ee3d64b09f3e48cef86caadf98a4e5c03bc4383c59eb5",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_covid_19_ny_sbu",
     "name": "IDC `covid_19_ny_sbu` (COVID-19-NY-SBU)",
@@ -3805,9 +3805,9 @@
    }
   },
   "idc_cptac_ccrcc": {
-   "digest": "17fc8ba18e68a5d45a55632acd7e9cbc80881d802f5130dfcf6bf9a499e251ff",
+   "digest": "57be11fde9ef40688738ed60702d9c018eded44a229ce762010948844ca687e1",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_cptac_ccrcc",
     "name": "IDC `cptac_ccrcc`",
@@ -3877,9 +3877,9 @@
    }
   },
   "idc_cptac_cm": {
-   "digest": "2c36d11bd5c15e7a9a8297defb506c417f570cbf8679705f37d553dc8b276f0a",
+   "digest": "eb2c00ff5eb1af69300024f13b30ef54c4d6f2371ad9f997e16298ebb006c58a",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_cptac_cm",
     "name": "IDC `cptac_cm`",
@@ -3942,9 +3942,9 @@
    }
   },
   "idc_cptac_lscc": {
-   "digest": "31f0c25458fe3b183e034f292a650550be731e0f43b0dd2d349f7432c7141567",
+   "digest": "b87db5c7475786a77f27c16268f2b9c0bbcea8be50934ea69240ebb8503ecdd7",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_cptac_lscc",
     "name": "IDC `cptac_lscc` (tier 2)",
@@ -3999,9 +3999,9 @@
    }
   },
   "idc_cptac_luad": {
-   "digest": "80517124e30d0dc70c4b08e3aef26de6b2c078dcc7637b181ebe95e5f5c70f3f",
+   "digest": "3ddde1daed8ea0db031d4d5abb9a2a37b03a1cc271d9b1d0f6dc310ef0901596",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_cptac_luad",
     "name": "IDC `cptac_luad` (tier 2)",
@@ -4055,9 +4055,9 @@
    }
   },
   "idc_cptac_pda": {
-   "digest": "8762cb11b1e4e85762f7f20383efe43f7c7cf811fe3ac7e99e2f9d612c7c74b6",
+   "digest": "f862ee0ab6941dff1ff682e05833c309a73b2ce616c5b61259bdfc860890cfc5",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_cptac_pda",
     "name": "IDC `cptac_pda`",
@@ -4119,9 +4119,9 @@
    }
   },
   "idc_cptac_sar": {
-   "digest": "1d82121dcc57ae0864dfc55889b70d43083d136f92581a56c078509ba9031cc2",
+   "digest": "402553d2f3a46e8e12d50200f9fef47d2f63332c1d2ade964ccafd9ae0ad2f20",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_cptac_sar",
     "name": "IDC `cptac_sar`",
@@ -4184,9 +4184,9 @@
    }
   },
   "idc_cptac_stad": {
-   "digest": "638d45f0eb897631899c2112e7dfebe03503d0821fb66399f9231b5f47a4e844",
+   "digest": "362f1b81fca96518665b60c18f33ea12d1742fc2d6cff0a092d35688bc22d106",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_cptac_stad",
     "name": "IDC `cptac_stad`",
@@ -4247,9 +4247,9 @@
    }
   },
   "idc_cptac_ucec": {
-   "digest": "dd1395360e470e92ed64c89639098b1a7d1c86fe9df2dd24c43e84dfb810e27a",
+   "digest": "ad60530cabe5c2224d6e5e233632a3a37c46c49d2258e648c77c7faa6957c187",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_cptac_ucec",
     "name": "IDC `cptac_ucec`",
@@ -4311,9 +4311,9 @@
    }
   },
   "idc_ct_vs_pet_ventilation_imaging": {
-   "digest": "4b576c89232ac7083f522cfb0071ca58610d98e0dc7a98f10519bf2a60f6e6d5",
+   "digest": "f92368d5b4c26643926894aefc88df5141ab8fe25cfa3bb32d07d22feb24fbf6",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_ct_vs_pet_ventilation_imaging",
     "name": "IDC `ct_vs_pet_ventilation_imaging`",
@@ -4373,9 +4373,9 @@
    }
   },
   "idc_ctpred_sunitinib_pannet": {
-   "digest": "1d105a2d5d767e067b31c3ef5ce227ae85cecf5b1f360afc36499b3d02adc370",
+   "digest": "d1531e34b51fc2371b87e9292bf7bb6314b026ab926d4d9a7f7d62d4cc61315e",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_ctpred_sunitinib_pannet",
     "name": "IDC `ctpred_sunitinib_pannet`",
@@ -4437,9 +4437,9 @@
    }
   },
   "idc_eay131": {
-   "digest": "0c7592e746aa9e9e472c6e13ef9c463401808261f5d1af315bc05e90e5c09cef",
+   "digest": "d16059b2d6f806131f71986895e51001e2a9f60958f148bf51afd02aacd67544",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_eay131",
     "name": "IDC `eay131` (EAY131 (NCI-MATCH))",
@@ -4511,9 +4511,9 @@
    }
   },
   "idc_hcc_tace_seg": {
-   "digest": "702f8ddb44d36c4ec26e5db073d7add04d9dfb3b6f010edf0a80f4b274975e85",
+   "digest": "24acfe5a04938d7a3bbcaff000712c5a24326c2f93e83f3eed7357f61c3d2e0e",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_hcc_tace_seg",
     "name": "IDC `hcc_tace_seg` (HCC-TACE-Seg)",
@@ -4582,9 +4582,9 @@
    }
   },
   "idc_ldct_and_projection_data": {
-   "digest": "18ea27ae5921c905dbc149a44d3e88b0d5c8242fe4c832da42eeddc3f102a73c",
+   "digest": "6c15fa487d625606c72f0bf6f2c1d3b33436f4473a5ed507006777a6f1f8a9ad",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-24",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_ldct_and_projection_data",
     "name": "IDC `ldct_and_projection_data` (tier 2)",
@@ -4635,9 +4635,9 @@
    }
   },
   "idc_lidc_idri": {
-   "digest": "5df1b71108e59e1569f911be8b1c714585d10d1363734b538adf309d3e27ff5a",
+   "digest": "5c96d3bbcf2afe0d60ace2b89278fcf708e988f5555137a6f5c958ca7e475771",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_lidc_idri",
     "name": "IDC `lidc_idri` (tier 2)",
@@ -4698,9 +4698,9 @@
    }
   },
   "idc_lung_pet_ct_dx": {
-   "digest": "6db9efe00de0b3d1fb1cdd8bf316116c954aa21a0723f10e65df0ff0635e7222",
+   "digest": "178b43d13d8f80b11db6933292ff0b4658d5c33a6abae1726c307982780a32e9",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_lung_pet_ct_dx",
     "name": "IDC `lung_pet_ct_dx` (Lung-PET-CT-Dx)",
@@ -4762,9 +4762,9 @@
    }
   },
   "idc_mediastinal_lymph_node_seg": {
-   "digest": "96cf0dc22313fe4127880b55b9e2e0aea11a33a597d19dc54067c3ee5511d2c3",
+   "digest": "7c11a7a337e9ee4cc71d5ebdad5388619307a2eb8f9939ede795f6622db439cf",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_mediastinal_lymph_node_seg",
     "name": "IDC `mediastinal_lymph_node_seg`",
@@ -4827,9 +4827,9 @@
    }
   },
   "idc_midrc_ricord_1a": {
-   "digest": "be065595ef9f73957c1b837d62f9cd0d92885d06ac5c13e70f476cf47a6e7d1b",
+   "digest": "81987a3ac29b9cc58a0f2827208fd1f881a5a6a842d2ae67d62d798c47f005c0",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_midrc_ricord_1a",
     "name": "IDC `midrc_ricord_1a`",
@@ -4890,9 +4890,9 @@
    }
   },
   "idc_midrc_ricord_1b": {
-   "digest": "e10971b1eeee9e0c50f33af2f701fb740289337c18a98f64e92a3ac60add81c1",
+   "digest": "dfbf80ca4cc83f8878378d941254f130f9b23501de8a37103daf9bc70469b39e",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_midrc_ricord_1b",
     "name": "IDC `midrc_ricord_1b` (tier 2)",
@@ -4946,9 +4946,9 @@
    }
   },
   "idc_nlst": {
-   "digest": "d9b2b100c2093a44634bfe6a1b2eb895c01fe328fff1b072377d32d077257eaf",
+   "digest": "9def0ab9da1c0f87e9828b09d3de883b9a4a73eb5a5582131e5e45f05323116b",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_nlst",
     "name": "NLST, full (tier 2; 500-person pilot fetched)",
@@ -5026,9 +5026,9 @@
    }
   },
   "idc_nsclc_radiogenomics": {
-   "digest": "8328f3c006d8ebb7f7360d5b550f4f1db77fb8ad6ef8c924f67be73b88993b2c",
+   "digest": "a261a8ee855d190ac273ff5a9532f9fdd2553ba5554427ab40f2d3acba6c6115",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_nsclc_radiogenomics",
     "name": "IDC `nsclc_radiogenomics` (tier 2)",
@@ -5090,9 +5090,9 @@
    }
   },
   "idc_nsclc_radiomics": {
-   "digest": "a53a1499aa6fb25031a10f82a04e3728e9098febc000e65f4527f2ba65f563af",
+   "digest": "b8e773e9331412a91ae4f395afa7e2b5174576a132a57a6df4602f328cbe4438",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_nsclc_radiomics",
     "name": "IDC `nsclc_radiomics` (tier 2)",
@@ -5159,9 +5159,9 @@
    }
   },
   "idc_pancreatic_ct_cbct_seg": {
-   "digest": "79806e6adb09c551247e9c28b69ccaff2d395e06b34eae22cf73e27346fcc557",
+   "digest": "c5c1ae8ea0cfa5b2e691255e304852f7344e22e4bd1f505029f0a6640b7207cc",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_pancreatic_ct_cbct_seg",
     "name": "IDC `pancreatic_ct_cbct_seg`",
@@ -5221,9 +5221,9 @@
    }
   },
   "idc_pediatric_ct_seg": {
-   "digest": "4909e281038615faee7509e81db591c71048fe2ca8e5fecac3fb1ecf5bd1760d",
+   "digest": "a703851e54cb1ba6ce071f33ba01e596b55cdc9e195aa825cbd2f83e25294d61",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_pediatric_ct_seg",
     "name": "IDC `pediatric_ct_seg` (Pediatric-CT-SEG)",
@@ -5284,9 +5284,9 @@
    }
   },
   "idc_pelvic_reference_data": {
-   "digest": "a9f329add767eb51ae8006747e19bde5d7785cf6272fce4cf2b659cb76bcf3a2",
+   "digest": "aded902ed6058b1063181aeb072345c6d7f30435427c0f49811df5eae064f8a4",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_pelvic_reference_data",
     "name": "IDC `pelvic_reference_data`",
@@ -5347,9 +5347,9 @@
    }
   },
   "idc_prostate_anatomical_edge_cases": {
-   "digest": "0e241c059deb388600320e9f9d3b8991a441833f4875cb8053671df769957641",
+   "digest": "6bae91a95daf690a5aaa599b9d6ca17607620f4d5ec6419f7d615eb1b88456e8",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_prostate_anatomical_edge_cases",
     "name": "IDC `prostate_anatomical_edge_cases` (tier 2)",
@@ -5400,9 +5400,9 @@
    }
   },
   "idc_psma_pet_ct_lesions": {
-   "digest": "7395a62ad24bad0c94bb5ba06c507923c2af68666b1568b5d171a62656634ed4",
+   "digest": "e275d8c0daea643535efcaa2c9d24f69e10505c34c6f18df7669f673fe300901",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_psma_pet_ct_lesions",
     "name": "IDC `psma_pet_ct_lesions` (PSMA-PET-CT-Lesions (autoPET III))",
@@ -5461,9 +5461,9 @@
    }
   },
   "idc_rider_lung_pet_ct": {
-   "digest": "4971c8a72996918c04423fad40bfc85810be04a180cd5a97aba6dcfa1aed3cce",
+   "digest": "6bd16ad833e203c195bbca126bc4eb2005287bb36516b836d1cde5e5e1db5a92",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_rider_lung_pet_ct",
     "name": "IDC `rider_lung_pet_ct`",
@@ -5525,9 +5525,9 @@
    }
   },
   "idc_spinal_multiple_myeloma_seg": {
-   "digest": "01e4cad3aba189142ee4837579d0b8a3d023d92fefdb38921fc7cabd2c2239db",
+   "digest": "cd098c0a5ebaf8abafea6b321f23195b9e7169d9fa513bc7472705b91667db77",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_spinal_multiple_myeloma_seg",
     "name": "IDC `spinal_multiple_myeloma_seg` (tier 2)",
@@ -5578,9 +5578,9 @@
    }
   },
   "idc_spine_mets_ct_seg": {
-   "digest": "6a9291a3bf6aad9394c03c8080b6e6153185df351b1a014e3d852eb3648ccbd6",
+   "digest": "d32d8079618006a2a65b61192f3eed4fd4fdee956e68292f81c1a8bc4d8e4f19",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_spine_mets_ct_seg",
     "name": "IDC `spine_mets_ct_seg` (tier 2)",
@@ -5633,9 +5633,9 @@
    }
   },
   "idc_tcga_blca": {
-   "digest": "1dce0c29abc2a78d3b15b5490b68369bfe185a3312a84017c7dca3f488e28998",
+   "digest": "7808ba409863b1d598ca239e79f4fb67a637e405f9f4e6acc8bfc4705c4e32c4",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_tcga_blca",
     "name": "IDC `tcga_blca`",
@@ -5697,9 +5697,9 @@
    }
   },
   "idc_tcga_esca": {
-   "digest": "a315ef56ced6dcc31cf94640bb77826218e2a39027a22ddf003cc25b9e62009d",
+   "digest": "ee5907cc48fc26348f335c5df0fcdd908c58f2a6ecb51c953f7b3aedbfc05b67",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_tcga_esca",
     "name": "IDC `tcga_esca`",
@@ -5760,9 +5760,9 @@
    }
   },
   "idc_tcga_kirc": {
-   "digest": "db06a16123c4bc5f36b5576ad1e8fd8c5f1b2739691cd19e1b935f2de09123ea",
+   "digest": "864db945ee8206e767acd0a7226f43ee99a6d8aad9c3d526825e57291c14bfbd",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_tcga_kirc",
     "name": "IDC `tcga_kirc`",
@@ -5823,9 +5823,9 @@
    }
   },
   "idc_tcga_lihc": {
-   "digest": "04ced9943fa08fa902e4b0b1dbbbe5f27a2dca11cf94c7d319bf5db1dcca3f81",
+   "digest": "b75daab761556c6e329f2938d97c564b00342adaf2599c6f3812f14370fe820a",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_tcga_lihc",
     "name": "IDC `tcga_lihc`",
@@ -5886,9 +5886,9 @@
    }
   },
   "idc_tcga_ov": {
-   "digest": "97b3d6e0f71452f54727b34d1d716ac26d2f94df2ae36490f93d81895f5a359e",
+   "digest": "3236f701ec4eda64994f803385d6a351c5a1063fc9659b5106fb245c2d39f99f",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_tcga_ov",
     "name": "IDC `tcga_ov`",
@@ -5949,9 +5949,9 @@
    }
   },
   "idc_tcga_stad": {
-   "digest": "8b5fcd0801d4d0bcde6675ee5ae52b335195c5a6e1515c28aadea603555d7449",
+   "digest": "1a563664691aafb45612cf716ecae70c9d4cc0a2f596943b0c9c5974b49a252c",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_tcga_stad",
     "name": "IDC `tcga_stad`",
@@ -6010,9 +6010,9 @@
    }
   },
   "idc_tcga_ucec": {
-   "digest": "212c1cd7f8ed8515ef7a946ac2d155dc93bd633608fde7c01c23faf372b898db",
+   "digest": "d84ea68d6514ecb5ea02ce7c6ff742e87c159870eeabaf0ec65bf0b52eab0498",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_tcga_ucec",
     "name": "IDC `tcga_ucec`",
@@ -6074,9 +6074,9 @@
    }
   },
   "idc_varepop_apollo": {
-   "digest": "418d36653a11186c0d76cd4ad887e7dc2598596d6b04c85d4bd61ab9cce8fb39",
+   "digest": "04be265aca531f158ae378d6be674c93d7fa46fe2989ebafca5d4de12913d29b",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "idc_varepop_apollo",
     "name": "IDC `varepop_apollo`",
@@ -6138,9 +6138,9 @@
    }
   },
   "ieee_dataport_lateral_236": {
-   "digest": "7635d52397ba4673ee0471c16562bb7ecc316ccacc4f0013a6ddddbf0af8395a",
+   "digest": "929c6009c40a55bd994aca4355e285cebe8276c00191e4fec51b720d80600321",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "ieee_dataport_lateral_236",
     "name": "IEEE DataPort lateral full-spine X-ray dataset (236 films)",
@@ -6180,9 +6180,9 @@
    }
   },
   "ipcai2025_xray_ct": {
-   "digest": "7bc9e3b1484b2cb807e3fffb3e1fc83ad29c557177e93cc8123e6b0d4855bf4e",
+   "digest": "3eda74efe3ff6c9ba513448d60052b4e2e91af9274f39099a89efcf43f241220",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "ipcai2025_xray_ct",
     "name": "IPCAI 2025 paired X-ray and CT set of the distal femur (Flepp 2025, Zenodo 15753063)",
@@ -6243,9 +6243,9 @@
    }
   },
   "jefferson_drg": {
-   "digest": "f59a0719c572eb9babf07fbb79789252d164cc913dd9f1cbcd15d25be2c96475",
+   "digest": "30b274c13609496bdf8d942e798fe62bdfe17c698919c30f5748f01bb9207e99",
    "first_seen": "2026-09-26",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "jefferson_drg",
     "name": "Jefferson Neurosurgery DRG stimulation video (Hines 2020)",
@@ -6285,9 +6285,9 @@
    }
   },
   "kaggle_fracture_multiregion": {
-   "digest": "0f05fc28d7eb4df16a5c2d77924ae143bef1b728aa176514caeb02035ec9374f",
+   "digest": "e32513ccd399683a73f222f7543b6afc809004a1dcc03bd8f9a0737f664578e5",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "kaggle_fracture_multiregion",
     "name": "Kaggle bone fracture multi-region X-ray data (bmadushanirodrigo)",
@@ -6327,9 +6327,9 @@
    }
   },
   "kaggle_scoliosis_yolov5": {
-   "digest": "8c42e7aa795a661cba519c9dff26998efe9b9d8ecfb4e1f04b9283e3d4c02f9c",
+   "digest": "67934915168a9f980d983fda9b5e0b04584fae5b423770f68fdc59faba208716",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "kaggle_scoliosis_yolov5",
     "name": "Kaggle scoliosis YOLOv5 annotated spine X-ray set (salmankey)",
@@ -6369,9 +6369,9 @@
    }
   },
   "kidney_thoraxabdomen": {
-   "digest": "8311ac9cc0b66ee4e8cfc18179bee2ea207c62a7a756b880cca8947cd6f700e1",
+   "digest": "a3ae88396228eb3aad64d9016147e7e8490e1de62fd7b90e2d2db18a88a46c8b",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "kidney_thoraxabdomen",
     "name": "Kidney abnormality segmentation in thorax-abdomen CT",
@@ -6431,9 +6431,9 @@
    }
   },
   "konica_ddr": {
-   "digest": "a637cbe01d44b73016f0dcfebdf388cf3323b80f8eeaf03af4a2dbef9708e74e",
+   "digest": "b223e2f44d8757224d22bd1ebfebf67ebbc7fdaf04c5a419bc4367a4c583f7ce",
    "first_seen": "2026-09-26",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "konica_ddr",
     "name": "Konica Minolta dynamic digital radiography sequences",
@@ -6473,9 +6473,9 @@
    }
   },
   "kub_stonex": {
-   "digest": "2614a60d29671b5d8ceebdeca0cb720c23169822c14c5dab41ee5fc28938e309",
+   "digest": "c1ad9d4ebb874b5a1675dc2aebb90b1414cb6398886e56e8ad3e4538a8179dea",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "kub_stonex",
     "name": "KUB-StoneX (Daffodil International University HIRL)",
@@ -6517,9 +6517,9 @@
    }
   },
   "levelcheck_jhu": {
-   "digest": "e27761372e3bb1322c6049fbdd45116a7d14513771eda77498a32a6d4aec50d9",
+   "digest": "303f4168e860e7401b34f28c359c0bef656dac30a6d9c9cbafd1bae10d793cc2",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "levelcheck_jhu",
     "name": "LevelCheck clinical cohort (Johns Hopkins, Siewerdsen group)",
@@ -6580,9 +6580,9 @@
    }
   },
   "ljubljana_2d3d_gs": {
-   "digest": "aeb6edbd61c543e492f9255a80d36e5b27bddf43c62e1d4201b8bb6d4672cdbd",
+   "digest": "a64cf089af9b5be6cba619cffa5117335a5fb469e736a14816ee5287d1af4ef8",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "ljubljana_2d3d_gs",
     "name": "Ljubljana 2D/3D registration gold standard (PIXIUM 4600)",
@@ -6644,9 +6644,9 @@
    }
   },
   "lumos": {
-   "digest": "fee684fb648029b4d9c70b0385a488c23941e9488ff598657a3f59b78f7558a0",
+   "digest": "c38ac081c1e341e955870eda79e450630df55930637f8eee6c21beb39b077f17",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "lumos",
     "name": "LUMOS (Zhejiang University)",
@@ -6708,9 +6708,9 @@
    }
   },
   "maastricht_cervical": {
-   "digest": "d8d72e7f3663acdef22a700704270ff7aaeebf72ec291c3a2fbf122e6259e4b1",
+   "digest": "95cf04fa4a44c98d816e5509b834a46de6bb08f51a7ef4864dfc92e66b133beb",
    "first_seen": "2026-09-26",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "maastricht_cervical",
     "name": "Maastricht UMC+ cervical flexion-extension cine (van Santbrink 2026)",
@@ -6750,9 +6750,9 @@
    }
   },
   "magic_ct": {
-   "digest": "bff221ec77bc94031d9ed0fd6b6ef5b369ba55fcc66e98ba005d79cd8b214ff8",
+   "digest": "13a362c2ef257d2dc469c60ada421898205715598bb31b06e34ffab8199e21c0",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "magic_ct",
     "name": "MAGIC-CT (Zenodo)",
@@ -6804,9 +6804,9 @@
    }
   },
   "mayfield_kyphoplasty": {
-   "digest": "a1c8e35bcc4c586886a623fbccc9b445ac060f88a08633bb4318820aa408cde4",
+   "digest": "ffe56fb6136b8635a8562651aa2841bb08ed58edc23894e8f769f4fd744028e9",
    "first_seen": "2026-09-26",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "mayfield_kyphoplasty",
     "name": "Mayfield Brain and Spine kyphoplasty alignment series",
@@ -6846,9 +6846,9 @@
    }
   },
   "mendeley_ddh_hips": {
-   "digest": "e9e274defb5d25395a92bebcae3faae2f9071cb6914b30403ce8605da9032fc8",
+   "digest": "e705cc5fe609a0f180923ecf002ad028397946b4d716ff789794f0a6ec4d9905",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "mendeley_ddh_hips",
     "name": "Mendeley DDH hip sets (jf3pv98m9g and 4gvcb6gmh2)",
@@ -6891,9 +6891,9 @@
    }
   },
   "mimic_cxr": {
-   "digest": "d30629853fe43336d09b6a315555f9acde5b3f7cc2e3f10d9b354e6e09b90969",
+   "digest": "73b1e7785e495a599d3bf0d4934528d2766459f7faf90b98d7af9781ceba6974",
    "first_seen": "2026-10-09",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "mimic_cxr",
     "name": "MIMIC-CXR and MIMIC-CXR-JPG (PhysioNet)",
@@ -6935,9 +6935,9 @@
    }
   },
   "mros_lateral_spine": {
-   "digest": "39bb4f52db7f00690bcc882db46c1f44b4657a035b490ad15d79ed21b96ac8c3",
+   "digest": "a2a9a8f9eb70292edbf0ffe7e4e0925c644a0c23a371547fa3698bda95d2b27a",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-24",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "mros_lateral_spine",
     "name": "MrOS lateral spine radiographs (Osteoporotic Fractures in Men)",
@@ -6980,9 +6980,9 @@
    }
   },
   "mtfi_lumbar_coupling": {
-   "digest": "c8d7bfb34b18f5a84fa09a99ccf58d7d74da79111854c3be93c4356d5244cc34",
+   "digest": "86f8c97b934758325001a58c471383a414dc04b8eb7590f1059dc812df02e4c2",
    "first_seen": "2026-09-26",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "mtfi_lumbar_coupling",
     "name": "Manual Therapy Foundation of India lumbar coupling video",
@@ -7022,9 +7022,9 @@
    }
   },
   "neurosurgical_focus_video": {
-   "digest": "95bd33f1a862769048ce44244c3da45824e3ce70f06d79615bc8afb130fe305b",
+   "digest": "2203ab1e9efc64d05e6bdc28fefa84764c471812d4e5009cd94e32f8e35c4eec",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "neurosurgical_focus_video",
     "name": "Neurosurgical Focus: Video (every article CC BY 4.0)",
@@ -7064,9 +7064,9 @@
    }
   },
   "nhanes2_annotated": {
-   "digest": "123d4c0168681d9cf774d056eface5ce82db6cc0a9c8fa0a0c2f77f92c62d641",
+   "digest": "fd4b1e99a9b4426ef3138c816627adb911c11ef32e18135c2d1bf2527eb06f0c",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "nhanes2_annotated",
     "name": "NHANES II spinal films with landmarks (Mo, Papiez, Chen et al., Zenodo)",
@@ -7106,9 +7106,9 @@
    }
   },
   "nhanes2_unannotated": {
-   "digest": "4af71c2af622cb065b86df140963266d85131c0d3ae9749174f24c5e0507fe59",
+   "digest": "bddff0ff63a43505ad1be945ebad024ca690b5195499ef89c3906bcad14bba0d",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "nhanes2_unannotated",
     "name": "NHANES II cervical and lumbar spine films (NCHS, 1976 to 1980)",
@@ -7148,9 +7148,9 @@
    }
   },
   "nih_chestxray14": {
-   "digest": "b3e962612c6be2b5732254e08954a8d643a2df31ab0e3571681f78c94fff0f21",
+   "digest": "21447aa27f8fb75fd2ce74a391c31f12b502d475b4245ef43a354892ffe7097f",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "nih_chestxray14",
     "name": "NIH ChestX-ray14 and the RSNA pneumonia subset",
@@ -7192,9 +7192,9 @@
    }
   },
   "nit_warangal_nims": {
-   "digest": "034021363fcac696dc3e71ead2f5a7ad07f03ad325f0073ca1b61cdbfb5ef097",
+   "digest": "b5798ef794c3f0a0c6b329783127b45e7e274a52625db51d59240eb94c4f5390",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "nit_warangal_nims",
     "name": "NIT Warangal and NIMS Hyderabad intraoperative C-arm sets (2D-3D-sci-registration)",
@@ -7255,9 +7255,9 @@
    }
   },
   "nlst_pilot": {
-   "digest": "415308f108180fd5b4f284ed54f060fa77ce533dccf30591f267f4eaf7ffce6f",
+   "digest": "99af7e947430e74e79e5ab057d48a2aa2c4f3ef9b09c9114f0e9dc62deab61ed",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "nlst_pilot",
     "name": "NLST, the seeded 500-person pilot",
@@ -7341,9 +7341,9 @@
    }
   },
   "open_i_chest": {
-   "digest": "4b01ac75a1a53aed53a1a2d1579b4f853389289031e4e2a2febe4b61ee00118f",
+   "digest": "8b7bf23a79f8db79081860e57dec4f1d51f59fe6748fca738a892d2dfff7ac02",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "open_i_chest",
     "name": "Open-i Indiana chest collection",
@@ -7385,9 +7385,9 @@
    }
   },
   "padchest": {
-   "digest": "0598905f01cb4706d88c95dc3e9d611670203bcfa8bcb363f1b259b233f86fc3",
+   "digest": "2987ab9a489bc7d5d469ca59771fe2772ad09cd2abcead05e3f107356eb80467",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "padchest",
     "name": "PadChest (BIMCV, Alicante)",
@@ -7429,9 +7429,9 @@
    }
   },
   "panorama": {
-   "digest": "e73dad663712244aecb9be5c07e1603112410a4334f32bda0bbce450bb105537",
+   "digest": "1ef0a9f8e78af15ed1ac57bc0c07fe34f6aca070f1c593c1facbfd306bd527bb",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "panorama",
     "name": "PANORAMA public set (pancreas CE-CT)",
@@ -7492,9 +7492,9 @@
    }
   },
   "pediatric_iri": {
-   "digest": "922b826066d067a7fa985144351700803740964c6b57597873e674be0dad03f3",
+   "digest": "56664a8b0211d26b47803222ae9e2aaba3bdc0f7bfd4908fcf01d147fbedc03d",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "pediatric_iri",
     "name": "IRI-VFI: pediatric interventional radiology image sequences (Chongqing)",
@@ -7534,9 +7534,9 @@
    }
   },
   "pengwin2026": {
-   "digest": "0e82f8b8f03113ec067a55b0ffc43a95f518518e11c996fe322355c5d83844d3",
+   "digest": "e9ac87db8c9c20a9b574509c5d150688bef887beffaf7c414804a7d475baae15",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "pengwin2026",
     "name": "PENGWIN 2026 peripelvic fracture CT (the public cases)",
@@ -7595,9 +7595,9 @@
    }
   },
   "pengwin_task2_xrays": {
-   "digest": "f49eb3578c13c125bc1e9423ccc9a1ee2f9fdd56e8e9422556e7be147a5986de",
+   "digest": "a985055de46247901f7db8bbef43e7e11c41c505ae2b67a5bfd61a2bad90ba98",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "pengwin_task2_xrays",
     "name": "PENGWIN 2024 Task 2 synthetic X-rays",
@@ -7652,9 +7652,9 @@
    }
   },
   "pittsburgh_swallow": {
-   "digest": "8d4800b2b7f7ec23e52b3d1dc6e6326600f5704928eb1d961dbe53cb6ebf309e",
+   "digest": "e072a29a0fa229bf42a405ac2ae95c2671511c23cf4c6f3ee7aabc78513f67a2",
    "first_seen": "2026-09-26",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "pittsburgh_swallow",
     "name": "Pittsburgh videofluoroscopic swallow corpus (Sejdic, Coyle)",
@@ -7694,9 +7694,9 @@
    }
   },
   "procedure_guide": {
-   "digest": "394c07944b1d55603790b7901c607118e3dc9404bf179ec3b041aa4914446f19",
+   "digest": "ed4d85ed40161bfda26d0f6e02f54bd8fe27f3c9cec493a674f0b69809e13408",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "procedure_guide",
     "name": "The Procedure Guide (Puranik) live fluoroscopy clips",
@@ -7736,9 +7736,9 @@
    }
   },
   "pumch_stitching": {
-   "digest": "72d6677ec9ed8a1bee079c7bb2772e2fbaeae0b0b29cc7826b406c3d767a0a1e",
+   "digest": "03edda39e04228efe060e14b8e51d811713f68349f25e655e7a4197962d06400",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "pumch_stitching",
     "name": "PUMCH stitching series (Liu et al., Eur Spine J 2026)",
@@ -7778,9 +7778,9 @@
    }
   },
   "quadra_hc": {
-   "digest": "06a09f20afb3983989b9d6e4b7c2999e66eddd10c66efe3bfc7ef173bed16fec",
+   "digest": "4eed857cbff3f5fb91d694cc42f13973155ef0121a618ed9006e854b6e6d3f34",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "quadra_hc",
     "name": "QUADRA_HC total-body FDG-PET/CT, healthy controls",
@@ -7839,9 +7839,9 @@
    }
   },
   "radiopaedia": {
-   "digest": "02202c73a0b8dd2026086118d980c00635fa304479caeeacdbf14e2e5b5fb8a4",
+   "digest": "2bae8d30ea967f8ac9b1f2d690ed464e6c4a274e335b8e14d3de2a6757958d1b",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "radiopaedia",
     "name": "Radiopaedia spine cases",
@@ -7881,9 +7881,9 @@
    }
   },
   "rexgradient_160k": {
-   "digest": "646106727eb87b04746ad854ada2117f8fe078aaac14a2f3fc8c38f559deb786",
+   "digest": "6b33d3fadbc8a8062331ea37853aa649ffe9102da98b2579ab60e6584f474a11",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-24",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "rexgradient_160k",
     "name": "ReXGradient-160K (Rajpurkar lab and Gradient Health, 2025)",
@@ -7926,9 +7926,9 @@
    }
   },
   "ribfrac": {
-   "digest": "3b38f6af01311fead092838ea2757d273ca3f810fb9a7eefe358a51421d06725",
+   "digest": "8856a32e2ab7e0ac3d71eab89ac5aeb6fa1337faa61b3a105538e0782b8ca3c3",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "ribfrac",
     "name": "RibFrac (MICCAI 2020) chest CT",
@@ -7996,9 +7996,9 @@
    }
   },
   "rsna_2022_cervical": {
-   "digest": "a71c40da331abe7ccc8c7774dbdea72bde7b61a9bd766af4257cc6fb6e040274",
+   "digest": "7033f8455f0a0e90a86b7ee5ce2427c70053ca22fecf2bc558cde815b27c984a",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "rsna_2022_cervical",
     "name": "RSNA 2022 cervical spine fracture CT (Kaggle)",
@@ -8057,9 +8057,9 @@
    }
   },
   "rsna_ratic": {
-   "digest": "f06e559e97d60b9ae9690597a361393c60d6f28fbecc81bca04534cfab290202",
+   "digest": "f244f9890526a9b749da4e2a9a88fba27de9de1bcc626ce034e489b09bbb7dd4",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "rsna_ratic",
     "name": "RSNA abdominal trauma CT (RATIC)",
@@ -8112,9 +8112,9 @@
    }
   },
   "rsna_rspect": {
-   "digest": "e7552a49ec54b6a425f9def6e7f070ba937b92eebb6f0ea79721bd91d0705fce",
+   "digest": "b7877183c2024b492ef66ea90e7cdc13f055c8e53ace8e47fc10621c014df312",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-24",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "rsna_rspect",
     "name": "RSNA pulmonary embolism CT (RSPECT)",
@@ -8165,9 +8165,9 @@
    }
   },
   "scidb_enhance_pet_1_6k": {
-   "digest": "9ef25fc6ae102ff5a8fa2ae6efdd82620d0de99ae0a6af4746fae24329823040",
+   "digest": "ebe1fb0626033c6f32f9c2ce68fee8e5f6d0b0bc59ce3259810badefe5e8d79e",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "scidb_enhance_pet_1_6k",
     "name": "ENHANCE.PET 1.6k: whole-/total-body FDG-PET/CT, 1,683 studies (NIfTI)",
@@ -8220,9 +8220,9 @@
    }
   },
   "scidb_mtddh": {
-   "digest": "711f11047eca0ea5717adc25a3741ea1412ad5142373bfa08a6d7eca6f06d165",
+   "digest": "3603f2e61e0e4beba9596ead3d0273507f224735cfe9c4dfe5cbf9208697b42b",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-24",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "scidb_mtddh",
     "name": "MTDDH paediatric pelvic X-rays with hip dysplasia key points (Qi et al., Science Data Bank 2025)",
@@ -8265,9 +8265,9 @@
    }
   },
   "seattle_science_foundation": {
-   "digest": "391bf5be563971404ac6928cfbd01febc42647220fdec4fe7fd7643c9f086de5",
+   "digest": "5d9d3637c41dd9ed6e9de6000eb2193c9550a814423cf7b46e90ac38c9bad359",
    "first_seen": "2026-09-26",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "seattle_science_foundation",
     "name": "Seattle Science Foundation spine videos",
@@ -8307,9 +8307,9 @@
    }
   },
   "sof_lateral_spine": {
-   "digest": "c85ab6863153e7375c5c362d7f9f70ce6c91d34070e1af45826bd30276efe063",
+   "digest": "9331638ca4505f302f131e6c2e3b64bf723f0137ab2c86be6e850c6d747ccc48",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-24",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "sof_lateral_spine",
     "name": "SOF lateral spine radiographs (Study of Osteoporotic Fractures)",
@@ -8351,9 +8351,9 @@
    }
   },
   "stanford_aimi_inspect": {
-   "digest": "62753386b62cf1e77b273a4525334f9f1ac1ce792d8321b689d9d03800544057",
+   "digest": "cf47640a08cf3e7b5aaf25ecc4929e7a0c9696716e9a404b4c774152ee8c0953",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "stanford_aimi_inspect",
     "name": "Stanford AIMI INSPECT chest CT",
@@ -8404,9 +8404,9 @@
    }
   },
   "stanford_aimi_merlin": {
-   "digest": "49f12f80ab4fa66c68339aaad90fdd9f69f09c298f06394ae64d251087102326",
+   "digest": "ec712ee9ce388c3a43ee9b570859422c5af833a6bdb43d349dc1bd0817c302ff",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "stanford_aimi_merlin",
     "name": "Stanford AIMI Merlin abdominal CT",
@@ -8458,9 +8458,9 @@
    }
   },
   "sx_stitch": {
-   "digest": "a6107e4d5afe1e468218130947ec72527070c168cd8dd28682c22d5f53a72bf9",
+   "digest": "5e08f25e7296c17d621dddcf6271be4883a03bfd831bc46ce5f70802353ee008",
    "first_seen": "2026-10-20",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "sx_stitch",
     "name": "SX-Stitch intraoperative C-arm series (Li 2024, PUMCH)",
@@ -8500,9 +8500,9 @@
    }
   },
   "tcia_fdg_pet_ct_lesions": {
-   "digest": "2cf41b1cb992078aeaa8b97e2018c5e41c18a70139956f2a2760990aee7136e4",
+   "digest": "89fada1e91f82dd6f669658a89c4fb1350e4e5a796c5e398b4805e5fc939e6a2",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "tcia_fdg_pet_ct_lesions",
     "name": "FDG-PET-CT-Lesions (autoPET), TCIA through NBIA",
@@ -8561,9 +8561,9 @@
    }
   },
   "totalsegmentator": {
-   "digest": "b011d0e4890edff0935aef5ff44b61d2d700a0da9d23fdfdac511aba162196ac",
+   "digest": "e2da052309f50d39b366948b1c32ed9fa081c7adcc9f1ae1169d649fa9c51aa0",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "totalsegmentator",
     "name": "TotalSegmentator datasets v2.0.1 and v3.0.0",
@@ -8653,9 +8653,9 @@
    }
   },
   "tvgh_as_spine_xray": {
-   "digest": "5a6b0f3f7e865e3e251f2a4c238628b83f5fe673c4919a46b3bc3bd1a7551a37",
+   "digest": "735a454fa464376a7a7f5f6683ed10647603468e727e805ed864d09bbd94aaff",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "tvgh_as_spine_xray",
     "name": "TVGH ankylosing spondylitis cervical and lumbar spine films",
@@ -8695,9 +8695,9 @@
    }
   },
   "tvgh_spinexr": {
-   "digest": "328a63d69624d1974253a1ba1726a5db1bc06e747cbf0b0bb8705a4e81a04d8f",
+   "digest": "72f3f3221e01987ecce46e665e74dc701d02410b5a7785a719355b71343092df",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "tvgh_spinexr",
     "name": "TVGH-SpineXR",
@@ -8737,9 +8737,9 @@
    }
   },
   "vanderbilt_tha_fluoro": {
-   "digest": "e1b4714c193466141488cd2e8153e88cefbd1a402b35b633a258d164fc916222",
+   "digest": "8f4d219264752e0e00c895ffa5dac1f10b65d7b63288435811856bd2ab3863a3",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "vanderbilt_tha_fluoro",
     "name": "Vanderbilt intraoperative THA fluoroscopy (Chan et al., J Arthroplasty 2025)",
@@ -8779,9 +8779,9 @@
    }
   },
   "veriserum": {
-   "digest": "83a395701571a819a31e905c63bd9da0125556ad26dd8b4c7888877609722f8c",
+   "digest": "106333c78e358bd35591fe72cc7f92fa36784e068c1acc8268f476739af516ab",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "veriserum",
     "name": "Veriserum (ETH Zurich, MICCAI 2025)",
@@ -8834,9 +8834,9 @@
    }
   },
   "verse": {
-   "digest": "049c23f0e337b18b05be667e53ffa15187a5bfc018c877e5815c606116143868",
+   "digest": "1bb3d3ab17df24255336aed291d4c906a59343df46a7fd4577073798f96f83a3",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "verse",
     "name": "VerSe 2019 and 2020",
@@ -8903,9 +8903,9 @@
    }
   },
   "verse_2d_projections": {
-   "digest": "f57d3900113396019abb3ec9670eede9ab500fce7819ce04e43752a450f9cb9b",
+   "digest": "727b380fb38700e31408c1fb32811286ea4887065ae03acbe038d3ee551efdc7",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "verse_2d_projections",
     "name": "VerSe 2D projections with soft labels (Zenodo 8115942)",
@@ -8956,9 +8956,9 @@
    }
   },
   "vertxnet_nhanes2_labels": {
-   "digest": "0bf1aacf4c020bfee9f5444c536eb0f4ee9a469c54ba48acad48db0775c54339",
+   "digest": "12782d68df6c23b124b1f0b0e6e863bafbc486a3404317ed0314174259191bfe",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "vertxnet_nhanes2_labels",
     "name": "VertXNet extra labels for NHANES II (Mo, Papiez, Chen 2023)",
@@ -9000,9 +9000,9 @@
    }
   },
   "veterinary_pig_levelcheck": {
-   "digest": "5f4cf603f566d759e79e1d230a51bae8dcf3ce5f587ca14db25eb399d839f99b",
+   "digest": "b48863a0ba13b61e747b7a026b152dd99b93d2f557f98cf181c5c4998b865345",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "veterinary_pig_levelcheck",
     "name": "Veterinary: pig lower limb CT, CBCT and planar images (Goswami 2020, IEEE DataPort)",
@@ -9065,9 +9065,9 @@
    }
   },
   "vfss2022": {
-   "digest": "a3ba8cf1a6dcefb3193d9af15636cd34aeb5aff6c295ba5e73f2da6125f0247a",
+   "digest": "56cdbdeb5e6aea3d3c5da0dc58da63a17b8a04ad382ff886026bf9b1d15c0665",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "vfss2022",
     "name": "VFSS2022 videofluoroscopic swallow frames (TIB)",
@@ -9107,9 +9107,9 @@
    }
   },
   "vindr_cxr": {
-   "digest": "98cf6ed6e92ed0c260c03496c7e3b75d799152834f077d21bdf51d2217f86599",
+   "digest": "ad4d6bb964e28704db7b2d0dd327c38858e1e06b21ce81d79807e39b77132128",
    "first_seen": "2026-10-09",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "vindr_cxr",
     "name": "VinDr-CXR (PhysioNet)",
@@ -9151,9 +9151,9 @@
    }
   },
   "vindr_pcxr": {
-   "digest": "83468ee5a1ddfde3e85beb365c89c0c991f6ab0ee3d9e956568ce67abfbe6f29",
+   "digest": "eafbfb98d4e6b83827adfdbdf578d5a54cb6b7e75f04475bdc296598e955b568",
    "first_seen": "2026-10-09",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "vindr_pcxr",
     "name": "VinDr-PCXR (PhysioNet)",
@@ -9193,9 +9193,9 @@
    }
   },
   "vindr_spinexr": {
-   "digest": "1f617729508aa5328466079fb851fb56ae1bb51c29c239919580c777e72bf03c",
+   "digest": "85eef23131974c078a15a207a00e83996fcd013f33833ed3b62387a5a460bff5",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "vindr_spinexr",
     "name": "VinDr-SpineXR (Nguyen et al., MICCAI 2021)",
@@ -9237,9 +9237,9 @@
    }
   },
   "waw_tace": {
-   "digest": "0d1ae85930472d4a656597a40b3616b3412f02f3c3724853d92f7180f074c4ea",
+   "digest": "6dd4433ac212aae79280069ae2a9abc15a482a5fd9138508f9ff319a2948b844",
    "first_seen": "2026-10-23",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "waw_tace",
     "name": "WAW-TACE (HCC multiphase CT, Warsaw)",
@@ -9298,9 +9298,9 @@
    }
   },
   "zenodo_lumvbcanseg": {
-   "digest": "391c4c507afcd9e140d3b15d74b1941be5944b83464b893e7f6e7fd1f1896515",
+   "digest": "9bf4d35247531d89d82904d84a9b764ad410ffc575182f0e3a36ad873098142c",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "zenodo_lumvbcanseg",
     "name": "LumVBCanSeg lumbar CT (185, ShengJing Hospital)",
@@ -9351,9 +9351,9 @@
    }
   },
   "zenodo_medpelvis3d": {
-   "digest": "11e4d7573b7e05d9d521ce70ab17d2ec835d77b9f709b707cfc622fa428b8281",
+   "digest": "eb28dab3ef82ec323a414a0e4f9ec329818a1308d4a07a7cd517663739b794d7",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "zenodo_medpelvis3d",
     "name": "MedPelvis3D pelvic CT (99, PLA General Hospital)",
@@ -9404,9 +9404,9 @@
    }
   },
   "zenodo_tmtv_benchmark": {
-   "digest": "59db7150b26f993f71d84289566b100a408ae9c8118aec9eaa2cf3d525ddf59b",
+   "digest": "7da1c1949d7a47f6e1f60e11775db46896a028909689bed28c0744dfb1f5d1a0",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "zenodo_tmtv_benchmark",
     "name": "International TMTV Benchmark, lymphoma FDG PET/CT (60)",
@@ -9457,9 +9457,9 @@
    }
   },
   "zenodo_ts_task_hip_implant": {
-   "digest": "70b76fd5590816b111fdc2781f62e2dcc08ce7131e4fd802e93ffae531ea8b25",
+   "digest": "78bf3211fe3bbc8658fc3ae21e17ceb8015f92de89b35fef84192e63b2823a37",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-24",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "zenodo_ts_task_hip_implant",
     "name": "TotalSegmentator task data 'hip_implant' (71 CT)",
@@ -9510,9 +9510,9 @@
    }
   },
   "zenodo_ts_task_liver_lesions": {
-   "digest": "38c0a3b58cb20b0dc9b8830160136e0df54e462ca35fe28ce8ee83ca8e961ef6",
+   "digest": "18d0dd276ecc12e2be316a9a600b10700c893ffa61f3ffdb29ce02db985f6803",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-24",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "zenodo_ts_task_liver_lesions",
     "name": "TotalSegmentator task data 'liver_lesions' (842 CT)",
@@ -9563,9 +9563,9 @@
    }
   },
   "zenodo_ts_task_pleural_effusion": {
-   "digest": "15ff6e50066312b497acf5aa9fbd0d2043d2a5de714debdcae93ecb2114ba8b7",
+   "digest": "bc529db7fe7b78f51002b97bae55c4c24fe37fff0227a7e6dd68c2e2084fcb22",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-24",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "zenodo_ts_task_pleural_effusion",
     "name": "TotalSegmentator task data 'pleural_pericard_effusion' (600 CT)",
@@ -9616,9 +9616,9 @@
    }
   },
   "zenodo_unitochest": {
-   "digest": "5483e986099ecb54c7794f1b441fa1a96e8d7a960a21735f142100b42c7c2091",
+   "digest": "c9bf3e363f368d3386191a9147f3887f8510f838973c6614e7ddf64f0ebe9dbf",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "zenodo_unitochest",
     "name": "UniToChest chest CT (623 patients; distributed as slices)",
@@ -9669,9 +9669,9 @@
    }
   },
   "zenodo_vsd_fullbody": {
-   "digest": "c6d63e30a135645fd4d8365dcfdaee9df96f31982cec0906430b488f24522b2c",
+   "digest": "ca70be1801e0593378c01cf00b6fcc1e4d776f377df524856d964e296b5552ef",
    "first_seen": "2026-10-21",
-   "last_changed": "2026-10-23",
+   "last_changed": "2026-10-25",
    "row": {
     "id": "zenodo_vsd_fullbody",
     "name": "VSDFullBody: post-mortem whole-body CT, forensic institutes Bern and Zurich",
