@@ -18,6 +18,7 @@
  },
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/FLUORO_VIDEO_SOURCES_2026-09-26.md; spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md 4",
+ "task": 74,
  "source_status": "request 4 drafted, never sent; a Pitt data use agreement expected (stale by 2026-10-20, when the owner sent it; the history has the dates)",
  "route": "letter",
  "status": "requested",

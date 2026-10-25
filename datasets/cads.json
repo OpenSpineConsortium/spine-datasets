@@ -29,6 +29,7 @@
  "counts": {},
  "measured": {},
  "record": "spine-program 10_data_platform_grid/code/data_platform/DATA_MANIFEST.md group B7; spine-program 10_data_platform_grid acquisition/ACQUISITION_PLAN.md section 7",
+ "task": 86,
  "source_status": "access granted on the owner's Hugging Face account on 2026-10-21; not yet fetched",
  "route": "agreement",
  "status": "granted",

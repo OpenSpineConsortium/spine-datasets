@@ -15,6 +15,7 @@
  "counts": {},
  "measured": {},
  "record": "the sweep of 2026-10-21 (this repository's issue #107)",
+ "task": 108,
  "source_status": "found by the sweep of 2026-10-21 on the Taiwan medical data portal (data.dmc.nycu.edu.tw, data set d08); the portal lists the set and shows no files to a visitor",
  "route": "letter",
  "status": "requested",

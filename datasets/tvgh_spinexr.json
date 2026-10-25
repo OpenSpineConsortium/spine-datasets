@@ -16,6 +16,7 @@
  "counts": {},
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/handoff/DATASET_USAGE.md 2.2",
+ "task": 14,
  "source_status": "403 at a login; access never requested; the record is on IEEE DataPort (doi:10.21227/x6bb-7r75) with T1-L5 per-vertebra level labels, masks and end-plates per its description, never seen",
  "route": "letter",
  "status": "requested",

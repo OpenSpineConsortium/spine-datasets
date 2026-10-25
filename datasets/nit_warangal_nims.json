@@ -43,6 +43,7 @@
  },
  "measured": {},
  "record": "SchwingNet docs/research/xray-dataset-requests.md section 15 (2026-10-21); no record under SchwingNet's data/sources/ existed for this set, so this one was written from that section",
+ "task": 64,
  "source_status": "a letter sent 2026-10-21; no record in SchwingNet's registry yet",
  "route": "letter",
  "status": "requested",

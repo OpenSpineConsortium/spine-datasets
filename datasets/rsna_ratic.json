@@ -30,6 +30,7 @@
  "counts": {},
  "measured": {},
  "record": "spine-program 10_data_platform_grid/code/data_platform/DATA_MANIFEST.md group B7; spine-program 10_data_platform_grid acquisition/ACQUISITION_PLAN.md section 7",
+ "task": 87,
  "source_status": "an RSNA download link (a presigned zip, valid until 2026-10-28 02:38 UTC) received by the owner on 2026-10-21 after accepting RSNA's terms; the fetch command was given to the owner (curl -C - into DEST on reqp --qos=requeue); job id not yet recorded",
  "route": "agreement",
  "status": "granted",

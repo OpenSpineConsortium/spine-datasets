@@ -19,6 +19,7 @@
  },
  "measured": {},
  "record": "SchwingNet data/sources/ieee_dataport_lateral_236.json, 2026-10-23, which gives no grid path; the path from spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "task": 313,
  "source_status": "a copy in a project folder of the owner's grid home, as the data platform's record gives it; SchwingNet's registry says held with no grid path",
  "route": "account",
  "status": "needs-owner",

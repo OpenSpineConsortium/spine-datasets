@@ -39,6 +39,7 @@
  "counts": {},
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/data_requests/balgrist_data_request_2026-09-21.md",
+ "task": 69,
  "source_status": "request drafted 2026-09-21, never sent; the authors' group is ROCS (Research in Orthopedic Computer Science, Balgrist, head Philipp Fuernstahl), whose group address is rocs@balgrist.ch; the paper is arXiv:2401.16027 (Medical Image Analysis 2024); the set is restricted for pending patents",
  "route": "letter",
  "status": "refused",

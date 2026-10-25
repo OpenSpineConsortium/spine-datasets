@@ -18,6 +18,7 @@
  },
  "measured": {},
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
+ "task": 13,
  "source_status": "found by the sweep of 2026-10-21; not fetched; the Stanford AIMI research use agreement, the same portal as INSPECT and Merlin (stanford_aimi_inspect, stanford_aimi_merlin), so the owner's AIMI account would cover it",
  "route": "form",
  "status": "todo",

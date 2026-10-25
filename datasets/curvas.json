@@ -49,6 +49,7 @@
   "by": "tools/freeze.py"
  },
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "task": 268,
  "source_status": "on_disk in the data platform at bf1432f: fetched 2026-09-24 from Zenodo in the late tier-1 launch of 2026-09-24; 70 CTs",
  "route": "download",
  "status": "held",

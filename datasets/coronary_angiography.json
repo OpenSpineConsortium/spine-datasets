@@ -20,6 +20,7 @@
  },
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/FLUORO_DATASET_STRATEGY.md tier 2",
+ "task": 38,
  "source_status": "the only large real thoracic fluoroscopy without a DUA; the thoracic test would be annotated by hand; CADICA (Universidad de Malaga, 42 patients, over 6,000 images), ARCADE (Scientific Data 2024, 3,000 images), XCAD (ICCV 2021, 1,747 images, the link), AngioCAD (413 patients); each set's own licence is read before fetching; CathAction (cathaction, about 500,000 frames, no DUA) is the larger real-fluoroscopy exposure pool found by the sweep of 2026-10-21, with Guide3D (guide3d) beside it",
  "route": "download",
  "status": "todo",

@@ -45,6 +45,10 @@ python3 tools/dataset_review.py check
 # folders and agree with its record's measured block (tools/freeze.py), since
 # the census and anyone reading the repository take a set's size from it.
 python3 tools/freeze.py check
+# Every record names its task, and every folder of the grid's data root a record or
+# the task that accounts for it (tools/accounting.py, grid/folders.json; the owner's
+# ask of 2026-10-25 that every dataset on the grid map to a task, for accounting).
+python3 tools/accounting.py check
 # The tests, every module of them here and by hand; CI runs them as parts
 # side by side, each in a job of its own, and sets CHECK_TESTS=none for the
 # part that runs this script, so the tests run once (tools/test_shard.py,

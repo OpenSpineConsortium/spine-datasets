@@ -17,6 +17,7 @@
  },
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/FLUORO_VIDEO_SOURCES_2026-09-26.md; spine-program 01_carm_level_detection/docs/data_requests/FLUORO_VIDEO_REQUESTS_READY_2026-09-26.md 3",
+ "task": 73,
  "source_status": "the published videos held under CC BY; request 3 for the native DICOM drafted, never sent",
  "route": "letter",
  "status": "requested",

@@ -27,6 +27,7 @@
   "by": "tools/freeze.py"
  },
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
+ "task": 26,
  "source_status": "found by the sweep of 2026-10-21; not fetched; an open figshare download (32049369, one zip of 20,765,554,562 bytes), entered in grid/fetch-xray.json as kub_stonex on 2026-10-21 (issue #40); the frontal counterpart of what the registry lacks in volume",
  "route": "download",
  "status": "held",

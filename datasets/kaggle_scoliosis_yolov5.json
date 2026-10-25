@@ -16,6 +16,7 @@
  "counts": {},
  "measured": {},
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
+ "task": 23,
  "source_status": "found by the sweep of 2026-10-21; not fetched; its origin is unstated, so it may be a relabel of AASCE (aasce): every image is hash-checked (filename or pixel hash) against the AASCE copy on the grid before any use, and a match excludes it as new people",
  "route": "account",
  "status": "needs-owner",

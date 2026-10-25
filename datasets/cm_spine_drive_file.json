@@ -19,6 +19,7 @@
  },
  "measured": {},
  "record": "spinesurg-ct-nnunet data_platform/sources.json bf1432f",
+ "task": 8,
  "source_status": "unreachable: the Drive file answers not found to the owner's Google account (2026-10-23) and gave gdown an empty directory (2026-09-01); the repository github.com/zengyuyuyu/Neighbor is no longer public (its files answer 404 and the profile lists no public repository, 2026-10-23); the code survives in Software Heritage, src only, with no image or label; no public copy found by search on 2026-10-23 (the set's name, the paper, the device, the Drive id, grep.app, Zenodo, Roboflow Universe, Kaggle, six dataset lists, the three papers citing the paper); the letter to the corresponding authors and a note to the journal's editorial office went on 2026-10-23",
  "route": "letter",
  "status": "requested",

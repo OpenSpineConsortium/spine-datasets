@@ -29,6 +29,7 @@
   "by": "tools/freeze.py"
  },
  "record": "symphony-template docs/research/spine-datasets-on-chinese-hosts.md (2026-10-23)",
+ "task": 324,
  "source_status": "found on 2026-10-23 by the search of the Chinese dataset hosts for the request-route sets (Science Data Bank); not fetched; the record read through DataCite and the page's meta tags, since the page is a JavaScript shell; the same day the owner opened the page (no login) and the file list with its download links was read from the owner's computer; the only other paediatric pelvic film source beside the Mendeley DDH hip sets",
  "route": "download",
  "status": "fetched",

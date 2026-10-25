@@ -19,6 +19,7 @@
  },
  "measured": {},
  "record": "SchwingNet data/sources/aasce.json, 2026-10-23",
+ "task": 254,
  "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
  "route": "form",
  "status": "held",

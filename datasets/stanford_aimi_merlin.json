@@ -29,6 +29,7 @@
  "counts": {},
  "measured": {},
  "record": "spine-program 10_data_platform_grid/code/data_platform/DATA_MANIFEST.md group B7; spine-program 10_data_platform_grid acquisition/ACQUISITION_PLAN.md section 7",
+ "task": 18,
  "source_status": "an agreement stands in front of the data; none signed",
  "route": "agreement",
  "status": "needs-owner",

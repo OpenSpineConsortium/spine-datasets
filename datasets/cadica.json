@@ -23,6 +23,7 @@
   "by": "tools/freeze.py"
  },
  "record": "the sweep of 2026-10-21 (this repository's issue #107)",
+ "task": 109,
  "source_status": "found by the sweep of 2026-10-21; open on Mendeley Data under CC BY 4.0; real C-arm sequences from a Siemens Artis Zee with the dose stated (5 to 50 mGy a projection); version 5 holds one zip of 3,076,112,179 bytes with the sha256 Mendeley's public API gives",
  "route": "download",
  "status": "fetched",

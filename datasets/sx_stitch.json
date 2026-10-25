@@ -14,6 +14,7 @@
  "counts": {},
  "measured": {},
  "record": "spine-program 01_carm_level_detection/docs/FLUORO_VIDEO_SOURCES_2026-09-26.md; spine-program 01_carm_level_detection/docs/data_requests/SX-Stitch_request.md",
+ "task": 62,
  "source_status": "request drafted 2026-09-19, never sent; the paper's data statement says no datasets, so success is unlikely",
  "route": "letter",
  "status": "requested",

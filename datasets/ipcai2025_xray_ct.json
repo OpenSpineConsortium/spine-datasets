@@ -51,6 +51,7 @@
   "by": "tools/freeze.py"
  },
  "record": "docs/research/xray-datasets-missing.md (2026-10-21)",
+ "task": 34,
  "source_status": "fetched by the owner's X-ray chain on 2026-10-21 and still zipped; the distal femur of five cadaveric specimens, so no level and no shard; a 2D/3D registration benchmark only",
  "route": "download",
  "status": "held",

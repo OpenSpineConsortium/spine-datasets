@@ -69,6 +69,7 @@
   "by": "tools/freeze.py"
  },
  "record": "SchwingNet data/sources/carmlspine.json and carmlspine_sweeps.json (one release), 2026-10-23",
+ "task": 261,
  "source_status": "held on the grid under the owner's data root, as SchwingNet's registry records it on 2026-10-23",
  "route": "download",
  "status": "held",
