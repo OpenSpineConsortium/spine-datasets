@@ -1,5 +1,5 @@
 {
- "built_at": "2026-10-31T02:19:41Z",
+ "built_at": "2026-10-31T02:56:38Z",
  "format": "spine-datasets/storage 1",
  "home": {
   "quota_bytes": 4000000000000,
@@ -19,13 +19,7 @@
   "z": 1.959964
  },
  "read_at": "2026-10-24T17:15:28Z",
- "requests": [
-  {
-   "number": 379,
-   "selection": "-rsna_2022_cervical -ctspinopelvic1k -ctspine1k -nlst_pilot -pengwin_task2_xrays -barts_crl -ctpelvic1k -csi2014 -verse_2d_projections",
-   "url": "https://github.com/OpenSpineConsortium/spine-datasets/pull/379"
-  }
- ],
+ "requests": [],
  "sets": [
   {
    "bytes": 6338426763,
