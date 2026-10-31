@@ -1,0 +1,11 @@
+{
+ "bytes_kept": 12034708,
+ "bytes_to_delete": 4405051397,
+ "files_kept": 4,
+ "files_to_delete": 12,
+ "format": "spine-datasets/retire-plan 1",
+ "id": "verse_2d_projections",
+ "planned_at": "2026-10-31T04:08:32Z",
+ "problems": [],
+ "tree_sha256": "527744b71331bcf06ecc833b5dfa7534c3c1c3781dfa37392728281dbf73f664"
+}

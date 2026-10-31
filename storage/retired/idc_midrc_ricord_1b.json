@@ -1,0 +1,15 @@
+{
+ "bytes_deleted_now": 8668708098,
+ "complete": true,
+ "failures": 0,
+ "files_deleted_now": 21221,
+ "files_kept": 3,
+ "files_left_of_listed": 0,
+ "files_listed": 21221,
+ "format": "spine-datasets/retired 1",
+ "id": "idc_midrc_ricord_1b",
+ "problems": [],
+ "request": "20261031T010232Z",
+ "retired_at": "2026-10-31T04:03:34Z",
+ "tree_sha256": "b244c86422e55e7d98f8ca42fc507c2641ada1e4319a2249a5e08ca831c2afa6"
+}

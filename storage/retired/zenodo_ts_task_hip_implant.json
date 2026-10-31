@@ -1,0 +1,15 @@
+{
+ "bytes_deleted_now": 9120758621,
+ "complete": true,
+ "failures": 0,
+ "files_deleted_now": 72,
+ "files_kept": 74,
+ "files_left_of_listed": 0,
+ "files_listed": 72,
+ "format": "spine-datasets/retired 1",
+ "id": "zenodo_ts_task_hip_implant",
+ "problems": [],
+ "request": "20261031T010232Z",
+ "retired_at": "2026-10-31T04:03:18Z",
+ "tree_sha256": "dd52c72aa944eb798b43b43b6b31c5299c99f082302ede8534821790a70d91a1"
+}

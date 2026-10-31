@@ -1,0 +1,15 @@
+{
+ "bytes_deleted_now": 38922413985,
+ "complete": true,
+ "failures": 0,
+ "files_deleted_now": 842,
+ "files_kept": 846,
+ "files_left_of_listed": 0,
+ "files_listed": 842,
+ "format": "spine-datasets/retired 1",
+ "id": "zenodo_ts_task_liver_lesions",
+ "problems": [],
+ "request": "20261031T010232Z",
+ "retired_at": "2026-10-31T04:02:37Z",
+ "tree_sha256": "505ec223026d674b65b85ed5507d3b6762377232f998317abeaa39ed6182d623"
+}

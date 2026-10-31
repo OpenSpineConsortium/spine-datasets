@@ -1,0 +1,11 @@
+{
+ "bytes_kept": 380141480,
+ "bytes_to_delete": 161970332092,
+ "files_kept": 1014,
+ "files_to_delete": 1006,
+ "format": "spine-datasets/retire-plan 1",
+ "id": "ctspine1k",
+ "planned_at": "2026-10-31T04:08:23Z",
+ "problems": [],
+ "tree_sha256": "6094610409f953184bb95ba085f205c37437989540292964d59eafab088b913c"
+}

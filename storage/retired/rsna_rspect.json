@@ -1,0 +1,15 @@
+{
+ "bytes_deleted_now": 980108825708,
+ "complete": true,
+ "failures": 0,
+ "files_deleted_now": 1937447,
+ "files_kept": 3,
+ "files_left_of_listed": 0,
+ "files_listed": 1937447,
+ "format": "spine-datasets/retired 1",
+ "id": "rsna_rspect",
+ "problems": [],
+ "request": "20261031T010232Z",
+ "retired_at": "2026-10-31T04:02:34Z",
+ "tree_sha256": "048f53237ebd3a538690cf12f900a20af4f9745ed52bf8768c371ba57a857b83"
+}

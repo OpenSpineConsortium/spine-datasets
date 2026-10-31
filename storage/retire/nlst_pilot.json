@@ -1,0 +1,11 @@
+{
+ "bytes_kept": 218,
+ "bytes_to_delete": 73543990990,
+ "files_kept": 1,
+ "files_to_delete": 89864,
+ "format": "spine-datasets/retire-plan 1",
+ "id": "nlst_pilot",
+ "planned_at": "2026-10-31T04:08:23Z",
+ "problems": [],
+ "tree_sha256": "1707373e9b59527d30d686ee99c60836dd4ad1ea21219bdcf9e2bac0982b4301"
+}

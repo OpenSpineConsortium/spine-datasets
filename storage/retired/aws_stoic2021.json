@@ -1,0 +1,15 @@
+{
+ "bytes_deleted_now": 264277370593,
+ "complete": true,
+ "failures": 0,
+ "files_deleted_now": 2032,
+ "files_kept": 2,
+ "files_left_of_listed": 0,
+ "files_listed": 2032,
+ "format": "spine-datasets/retired 1",
+ "id": "aws_stoic2021",
+ "problems": [],
+ "request": "20261031T010232Z",
+ "retired_at": "2026-10-31T04:02:36Z",
+ "tree_sha256": "22649e1e235a824afe0d79499bf978142246baeb97900640b96664d759b050a3"
+}

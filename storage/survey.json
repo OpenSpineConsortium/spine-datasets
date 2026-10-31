@@ -1,0 +1,1041 @@
+{
+ "floor_bytes": 50000000000,
+ "format": "spine-datasets/survey 1",
+ "kinds": {
+  "dataset": 6975050184659,
+  "jobs and logs": 50560511912,
+  "masks": 445688256774,
+  "other": 2106238275368,
+  "other accounts": 51201470,
+  "runs and outputs": 779755630920,
+  "untracked data": 7523325860748
+ },
+ "masks_in_datasets_bytes": 339875314664,
+ "read_at": "2026-10-31T02:15:30Z",
+ "root": "/rs/rs_grp_oschome",
+ "rows": [
+  {
+   "bytes": 3168650538478,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/idc_nlst/raw"
+  },
+  {
+   "bytes": 980331867707,
+   "how": "rbytes",
+   "id": "rsna_rspect",
+   "image_bytes": 980237210056,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/rsna_rspect_pe/raw"
+  },
+  {
+   "bytes": 863230778160,
+   "how": "rbytes",
+   "id": "idc_ldct_and_projection_data",
+   "image_bytes": 862724923831,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/idc_ldct_and_projection_data"
+  },
+  {
+   "bytes": 808619169273,
+   "how": "rbytes",
+   "id": "cobra2026",
+   "image_bytes": 800022962723,
+   "kind": "dataset",
+   "mask_bytes": 8594765633,
+   "path": "go2432/data/cobra2026"
+  },
+  {
+   "bytes": 570557602556,
+   "how": "rbytes",
+   "id": "abdomenatlas3_mini",
+   "image_bytes": 570557160234,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/abdomenatlas3_mini"
+  },
+  {
+   "bytes": 516624878756,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/or_ready/indomain"
+  },
+  {
+   "bytes": 474546044767,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/idc/raw"
+  },
+  {
+   "bytes": 393894778951,
+   "how": "rbytes",
+   "id": "tcia_fdg_pet_ct_lesions",
+   "image_bytes": 393872197196,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/tcia_fdg_pet_ct_lesions"
+  },
+  {
+   "bytes": 346112190817,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_multiomics/rnaseq_graft/work"
+  },
+  {
+   "bytes": 342290203101,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/multisource_banks/derived"
+  },
+  {
+   "bytes": 330884853983,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/hf_abdomenatlas2_0_mini/raw"
+  },
+  {
+   "bytes": 325817412728,
+   "how": "rbytes",
+   "kind": "masks",
+   "path": "go2432/data/anomaly_harvest"
+  },
+  {
+   "bytes": 304102249068,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_host/work"
+  },
+  {
+   "bytes": 297805352449,
+   "how": "rbytes",
+   "id": "idc_spinal_multiple_myeloma_seg",
+   "image_bytes": 174055,
+   "kind": "dataset",
+   "mask_bytes": 297769100962,
+   "path": "go2432/data/idc_spinal_multiple_myeloma_seg"
+  },
+  {
+   "bytes": 286815040503,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data"
+  },
+  {
+   "bytes": 278842490436,
+   "how": "rbytes",
+   "kind": "runs and outputs",
+   "path": "go2432/results/nnunet_results/Dataset813_SpineSurgLSTVFullRibs"
+  },
+  {
+   "bytes": 264277471588,
+   "how": "rbytes",
+   "id": "aws_stoic2021",
+   "image_bytes": 264277371447,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/aws_stoic2021"
+  },
+  {
+   "bytes": 262801486656,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/external/fluoro_video"
+  },
+  {
+   "bytes": 254010396694,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_science/spread/floor"
+  },
+  {
+   "bytes": 252169814437,
+   "how": "rbytes",
+   "id": "zenodo_vsd_fullbody",
+   "image_bytes": 252158307717,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/zenodo_vsd_fullbody"
+  },
+  {
+   "bytes": 252039312974,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/or_ready/film_ncurve"
+  },
+  {
+   "bytes": 231594152290,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/idc/nifti"
+  },
+  {
+   "bytes": 226254301079,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/versefusion/derived"
+  },
+  {
+   "bytes": 216743786463,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/fluorocap/raw"
+  },
+  {
+   "bytes": 203321993590,
+   "how": "rbytes",
+   "id": "rsna_2022_cervical",
+   "image_bytes": 203321991870,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/rsna_2022_cspine"
+  },
+  {
+   "bytes": 202680969963,
+   "how": "rbytes",
+   "id": "ctspinopelvic1k",
+   "image_bytes": 199507977139,
+   "kind": "dataset",
+   "mask_bytes": 3172406649,
+   "path": "go2432/data/ctspinopelvic1k"
+  },
+  {
+   "bytes": 201563401976,
+   "how": "rbytes",
+   "kind": "runs and outputs",
+   "path": "go2432/results/ablate"
+  },
+  {
+   "bytes": 197321490975,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/aws_enhance_pet_ct/raw"
+  },
+  {
+   "bytes": 196269718736,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_multiomics/rnavar/work"
+  },
+  {
+   "bytes": 195745669857,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432"
+  },
+  {
+   "bytes": 194439473706,
+   "how": "rbytes",
+   "id": "panorama",
+   "image_bytes": 194439363448,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/panorama"
+  },
+  {
+   "bytes": 162350573787,
+   "how": "rbytes",
+   "id": "ctspine1k",
+   "image_bytes": 161971197819,
+   "kind": "dataset",
+   "mask_bytes": 379275753,
+   "path": "go2432/data/ctspine1k"
+  },
+  {
+   "bytes": 161384184267,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/zenodo_unitochest/raw"
+  },
+  {
+   "bytes": 160069405343,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_multiomics/rnasplice/work"
+  },
+  {
+   "bytes": 156899053989,
+   "how": "rbytes",
+   "id": "ribfrac",
+   "image_bytes": 156846181891,
+   "kind": "dataset",
+   "mask_bytes": 52833365,
+   "path": "go2432/data/ribfrac"
+  },
+  {
+   "bytes": 155629088432,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/hf_rexgradient_160k/raw"
+  },
+  {
+   "bytes": 138380176783,
+   "how": "rbytes",
+   "id": "nhanes2_unannotated",
+   "image_bytes": 138377968433,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/nhanes2_cdc_films"
+  },
+  {
+   "bytes": 125223961594,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_science"
+  },
+  {
+   "bytes": 122138996672,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_multiomics/refs/rnafusion"
+  },
+  {
+   "bytes": 114752697819,
+   "how": "rbytes",
+   "id": "vindr_spinexr",
+   "image_bytes": 114749095458,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/vindr_spinexr"
+  },
+  {
+   "bytes": 109505203640,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/versefusion/raw"
+  },
+  {
+   "bytes": 103702042789,
+   "how": "rbytes",
+   "id": "carmlspine",
+   "image_bytes": 103212930116,
+   "kind": "dataset",
+   "mask_bytes": 473789525,
+   "path": "go2432/data/carmlspine"
+  },
+  {
+   "bytes": 102615636641,
+   "how": "rbytes",
+   "id": "amos22",
+   "image_bytes": 102576239105,
+   "kind": "dataset",
+   "mask_bytes": 39257372,
+   "path": "go2432/data/amos22"
+  },
+  {
+   "bytes": 96374034602,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_science/pub/bam"
+  },
+  {
+   "bytes": 90931026813,
+   "how": "rbytes",
+   "id": "idc_nsclc_radiogenomics",
+   "image_bytes": 90920028002,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/idc_nsclc_radiogenomics"
+  },
+  {
+   "bytes": 89641549488,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/hf_cads_unique/raw"
+  },
+  {
+   "bytes": 89342889351,
+   "how": "rbytes",
+   "kind": "runs and outputs",
+   "path": "go2432/u251_host/results_rnaseq"
+  },
+  {
+   "bytes": 87794305796,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/polypose"
+  },
+  {
+   "bytes": 84976312702,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/ctsp_april/ct"
+  },
+  {
+   "bytes": 84067547000,
+   "how": "rbytes",
+   "id": "zenodo_unitochest",
+   "image_bytes": 84067545368,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "shared/datasets/zenodo_unitochest"
+  },
+  {
+   "bytes": 83498976789,
+   "how": "rbytes",
+   "id": "pengwin2026",
+   "image_bytes": 83409781222,
+   "kind": "dataset",
+   "mask_bytes": 89143887,
+   "path": "go2432/data/pengwin2026"
+  },
+  {
+   "bytes": 82964024816,
+   "how": "rbytes",
+   "kind": "runs and outputs",
+   "path": "go2432/u251_multiomics/rnaseq_graft/results"
+  },
+  {
+   "bytes": 78445546949,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/or_ready/auto_reference"
+  },
+  {
+   "bytes": 76388649503,
+   "how": "rbytes",
+   "id": "lumos",
+   "image_bytes": 76386234420,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/zenodo_lumos"
+  },
+  {
+   "bytes": 75937754202,
+   "how": "rbytes",
+   "id": "kidney_thoraxabdomen",
+   "image_bytes": 75937730899,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/kidney_thoraxabdomen"
+  },
+  {
+   "bytes": 73549762736,
+   "how": "rbytes",
+   "id": "nlst_pilot",
+   "image_bytes": 73543991208,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/nlst_pilot"
+  },
+  {
+   "bytes": 73320435828,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_science/pub/split"
+  },
+  {
+   "bytes": 72708547975,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/deepfluoro_vendor/unpacked"
+  },
+  {
+   "bytes": 70736495431,
+   "how": "rbytes",
+   "kind": "runs and outputs",
+   "path": "go2432/u251_multiomics/rnavar/results"
+  },
+  {
+   "bytes": 59959829685,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/spine_detector_corpus/derived"
+  },
+  {
+   "bytes": 59007177620,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_meth"
+  },
+  {
+   "bytes": 57873488472,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_multiomics"
+  },
+  {
+   "bytes": 56183484700,
+   "how": "rbytes",
+   "id": "cathaction",
+   "image_bytes": 46157734115,
+   "kind": "dataset",
+   "mask_bytes": 10025747149,
+   "path": "go2432/data/cathaction"
+  },
+  {
+   "bytes": 55329130085,
+   "how": "rbytes",
+   "id": "kub_stonex",
+   "image_bytes": 55312901204,
+   "kind": "dataset",
+   "mask_bytes": 15765038,
+   "path": "go2432/data/kub_stonex"
+  },
+  {
+   "bytes": 52888746013,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/hf_flux2_klein_9b/raw"
+  },
+  {
+   "bytes": 52393967765,
+   "how": "rbytes",
+   "kind": "masks",
+   "path": "go2432/data/totalsegmentator_v300"
+  },
+  {
+   "bytes": 50560511912,
+   "how": "rbytes",
+   "kind": "jobs and logs",
+   "path": "go2432/u251_multiomics/refs/vep_cache"
+  },
+  {
+   "bytes": 47150872191,
+   "how": "rbytes",
+   "id": "waw_tace",
+   "image_bytes": 47150828519,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/waw_tace"
+  },
+  {
+   "bytes": 45079875252,
+   "how": "rbytes",
+   "id": "nih_chestxray14",
+   "image_bytes": 45079872841,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/nih_chestxray14"
+  },
+  {
+   "bytes": 42560146351,
+   "how": "rbytes",
+   "kind": "masks",
+   "path": "go2432/data/totalsegmentator_v201"
+  },
+  {
+   "bytes": 40731774375,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_host"
+  },
+  {
+   "bytes": 39677856528,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_science/pub"
+  },
+  {
+   "bytes": 39039677152,
+   "how": "rbytes",
+   "id": "zenodo_ts_task_liver_lesions",
+   "image_bytes": 38963446123,
+   "kind": "dataset",
+   "mask_bytes": 76124905,
+   "path": "go2432/data/zenodo_ts_task_liver_lesions"
+  },
+  {
+   "bytes": 38949970718,
+   "how": "rbytes",
+   "id": "idc_cptac_luad",
+   "image_bytes": 38946321618,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/idc_cptac_luad"
+  },
+  {
+   "bytes": 38278462322,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/deepfluoro_vendor"
+  },
+  {
+   "bytes": 35844709792,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "runs and outputs",
+   "path": "go2432/results"
+  },
+  {
+   "bytes": 35227657007,
+   "how": "rbytes",
+   "id": "buu_lspine",
+   "image_bytes": 35219250771,
+   "kind": "dataset",
+   "mask_bytes": 6071031,
+   "path": "go2432/data/buu_lspine_3600"
+  },
+  {
+   "bytes": 34950753235,
+   "how": "rbytes",
+   "id": "pengwin_task2_xrays",
+   "image_bytes": 34950751395,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/pengwin_task2_xrays"
+  },
+  {
+   "bytes": 31351331895,
+   "how": "rbytes",
+   "id": "zenodo_medpelvis3d",
+   "image_bytes": 31311714398,
+   "kind": "dataset",
+   "mask_bytes": 39596505,
+   "path": "shared/datasets/zenodo_medpelvis3d"
+  },
+  {
+   "bytes": 29993996903,
+   "how": "rbytes",
+   "id": "curvas",
+   "image_bytes": 29993980558,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/curvas"
+  },
+  {
+   "bytes": 29524825743,
+   "how": "rbytes",
+   "id": "idc_cptac_lscc",
+   "image_bytes": 29521912984,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/idc_cptac_lscc"
+  },
+  {
+   "bytes": 26956023217,
+   "how": "rbytes",
+   "id": "idc_nsclc_radiomics",
+   "image_bytes": 26952714219,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/idc_nsclc_radiomics"
+  },
+  {
+   "bytes": 24253159301,
+   "how": "rbytes",
+   "id": "deep_psma",
+   "image_bytes": 24253086312,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/deep_psma"
+  },
+  {
+   "bytes": 21246816111,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_multiomics/rnasplice"
+  },
+  {
+   "bytes": 20461619118,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "runs and outputs",
+   "path": "go2432/results/nnunet_results"
+  },
+  {
+   "bytes": 20413549444,
+   "how": "rbytes",
+   "id": "quadra_hc",
+   "image_bytes": 20250148769,
+   "kind": "dataset",
+   "mask_bytes": 163349809,
+   "path": "go2432/data/quadra_hc"
+  },
+  {
+   "bytes": 20313387668,
+   "how": "rbytes",
+   "id": "barts_crl",
+   "image_bytes": 20313374662,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/barts_crl"
+  },
+  {
+   "bytes": 19213903317,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/or_ready"
+  },
+  {
+   "bytes": 18727196064,
+   "how": "rbytes",
+   "id": "idc_spine_mets_ct_seg",
+   "image_bytes": 15883,
+   "kind": "dataset",
+   "mask_bytes": 18724903381,
+   "path": "go2432/data/idc_spine_mets_ct_seg"
+  },
+  {
+   "bytes": 16878662985,
+   "how": "rbytes",
+   "id": "curvas_pdacvi",
+   "image_bytes": 16878618437,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/curvas_pdacvi"
+  },
+  {
+   "bytes": 15929016609,
+   "how": "rbytes",
+   "id": "aortaseg60",
+   "image_bytes": 15839698096,
+   "kind": "dataset",
+   "mask_bytes": 89306461,
+   "path": "go2432/data/aortaseg60"
+  },
+  {
+   "bytes": 14831878256,
+   "how": "rbytes",
+   "id": "ctpelvic1k",
+   "image_bytes": 14831867170,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/ctpelvic1k_clinic"
+  },
+  {
+   "bytes": 11259505135,
+   "how": "rbytes",
+   "kind": "masks",
+   "path": "go2432/data/aws_enhance_pet_labels"
+  },
+  {
+   "bytes": 10075440007,
+   "how": "rbytes",
+   "id": "zenodo_lumvbcanseg",
+   "image_bytes": 10075438693,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "shared/datasets/zenodo_lumvbcanseg"
+  },
+  {
+   "bytes": 9129998118,
+   "how": "rbytes",
+   "id": "zenodo_ts_task_hip_implant",
+   "image_bytes": 9120760043,
+   "kind": "dataset",
+   "mask_bytes": 9227463,
+   "path": "go2432/data/zenodo_ts_task_hip_implant"
+  },
+  {
+   "bytes": 9012849050,
+   "how": "rbytes",
+   "id": "zenodo_ts_task_pleural_effusion",
+   "image_bytes": 8922150490,
+   "kind": "dataset",
+   "mask_bytes": 90622125,
+   "path": "go2432/data/zenodo_ts_task_pleural_effusion"
+  },
+  {
+   "bytes": 8834580124,
+   "how": "rbytes",
+   "kind": "masks",
+   "path": "go2432/data/spineps"
+  },
+  {
+   "bytes": 8670114732,
+   "how": "rbytes",
+   "id": "idc_midrc_ricord_1b",
+   "image_bytes": 8668721317,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/idc_midrc_ricord_1b"
+  },
+  {
+   "bytes": 7797633424,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_multiomics/refs"
+  },
+  {
+   "bytes": 6846087202,
+   "how": "rbytes",
+   "id": "zenodo_tmtv_benchmark",
+   "image_bytes": 6846084599,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "shared/datasets/zenodo_tmtv_benchmark"
+  },
+  {
+   "bytes": 6670979468,
+   "how": "rbytes",
+   "id": "ipcai2025_xray_ct",
+   "image_bytes": 6670978774,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/ipcai2025_xray_ct/raw"
+  },
+  {
+   "bytes": 6640706391,
+   "how": "rbytes",
+   "id": "csi2014",
+   "image_bytes": 6640702200,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/csi2014"
+  },
+  {
+   "bytes": 6338638508,
+   "how": "rbytes",
+   "id": "aariz_cephalograms",
+   "image_bytes": 6338426763,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/aariz"
+  },
+  {
+   "bytes": 4417088684,
+   "how": "rbytes",
+   "id": "verse_2d_projections",
+   "image_bytes": 4417086105,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/verse_2d_projections"
+  },
+  {
+   "bytes": 4053483892,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "shared/datasets"
+  },
+  {
+   "bytes": 3858130571,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_science/spread"
+  },
+  {
+   "bytes": 3692008029,
+   "how": "rbytes",
+   "id": "csxa",
+   "image_bytes": 3691537837,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/csxa_cervical_xray_atlas"
+  },
+  {
+   "bytes": 3284699384,
+   "how": "rbytes",
+   "id": "nhanes2_annotated",
+   "image_bytes": 3284647651,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/nhanes2_zenodo_landmarks"
+  },
+  {
+   "bytes": 3076113435,
+   "how": "rbytes",
+   "id": "cadica",
+   "image_bytes": 3076112179,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "shared/datasets/cadica"
+  },
+  {
+   "bytes": 2575633454,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "shared"
+  },
+  {
+   "bytes": 2210930391,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/fluorocap"
+  },
+  {
+   "bytes": 1895727697,
+   "how": "rbytes",
+   "kind": "masks",
+   "path": "go2432/data/ctsp_april/labels"
+  },
+  {
+   "bytes": 1629874933,
+   "how": "rbytes",
+   "kind": "masks",
+   "path": "go2432/data/or_ready/spineps_ids"
+  },
+  {
+   "bytes": 1110712065,
+   "how": "rbytes",
+   "id": "geneva_hip",
+   "image_bytes": 1046658474,
+   "kind": "dataset",
+   "mask_bytes": 64027651,
+   "path": "go2432/data/geneva_hip_src"
+  },
+  {
+   "bytes": 538562631,
+   "how": "rbytes",
+   "kind": "masks",
+   "path": "go2432/gold3-totalseg"
+  },
+  {
+   "bytes": 387949382,
+   "how": "rbytes",
+   "kind": "masks",
+   "path": "go2432/data/verse_masks_2026_10_29"
+  },
+  {
+   "bytes": 368879845,
+   "how": "rbytes",
+   "kind": "masks",
+   "path": "go2432/data/totalseg_weights"
+  },
+  {
+   "bytes": 306515992,
+   "how": "rbytes",
+   "id": "ljubljana_2d3d_gs",
+   "image_bytes": 306504065,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "go2432/data/ljubljana"
+  },
+  {
+   "bytes": 205014813,
+   "how": "rbytes",
+   "id": "veterinary_pig_levelcheck",
+   "image_bytes": 205012607,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "shared/datasets/veterinary_pig_levelcheck"
+  },
+  {
+   "bytes": 99357920,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_multiomics/rnavar"
+  },
+  {
+   "bytes": 85599125,
+   "how": "rbytes",
+   "id": "fraiwan_spine_xray",
+   "image_bytes": 85596630,
+   "kind": "dataset",
+   "mask_bytes": 0,
+   "path": "shared/datasets/fraiwan_spine_xray"
+  },
+  {
+   "bytes": 51201470,
+   "folders": 1,
+   "how": "rbytes",
+   "kind": "other accounts",
+   "path": "(other accounts' folders)"
+  },
+  {
+   "bytes": 32256316,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/idc_nlst"
+  },
+  {
+   "bytes": 23866788,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/multisource_banks"
+  },
+  {
+   "bytes": 10608137,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/ctsp_april"
+  },
+  {
+   "bytes": 3347682,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "other",
+   "path": "go2432/u251_multiomics/rnaseq_graft"
+  },
+  {
+   "bytes": 1764437,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/hf_cads_unique"
+  },
+  {
+   "bytes": 1650183,
+   "how": "rbytes",
+   "kind": "masks",
+   "path": "go2432/neurips_spineps"
+  },
+  {
+   "bytes": 1042609,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/idc"
+  },
+  {
+   "bytes": 115485,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/aws_enhance_pet_ct"
+  },
+  {
+   "bytes": 8407,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/hf_rexgradient_160k"
+  },
+  {
+   "bytes": 7721,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/hf_flux2_klein_9b"
+  },
+  {
+   "bytes": 3069,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/hf_abdomenatlas2_0_mini"
+  },
+  {
+   "bytes": 1149,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/zenodo_unitochest"
+  },
+  {
+   "bytes": 1049,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/ipcai2025_xray_ct"
+  },
+  {
+   "bytes": 687,
+   "folded": true,
+   "how": "rbytes",
+   "kind": "untracked data",
+   "path": "go2432/data/rsna_rspect_pe"
+  }
+ ],
+ "volume_bytes": 17880669789458,
+ "volume_how": "rbytes"
+}

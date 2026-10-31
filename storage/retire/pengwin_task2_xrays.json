@@ -1,0 +1,11 @@
+{
+ "bytes_kept": 20770,
+ "bytes_to_delete": 34950730625,
+ "files_kept": 4,
+ "files_to_delete": 2,
+ "format": "spine-datasets/retire-plan 1",
+ "id": "pengwin_task2_xrays",
+ "planned_at": "2026-10-31T04:08:31Z",
+ "problems": [],
+ "tree_sha256": "526ce347196e987a4d3218911c6ca7be70ec3b41bc0c74d62cb4a065208ccdd9"
+}

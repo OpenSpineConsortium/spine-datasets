@@ -1,0 +1,11 @@
+{
+ "bytes_kept": 40712,
+ "bytes_to_delete": 26952673507,
+ "files_kept": 3,
+ "files_to_delete": 51231,
+ "format": "spine-datasets/retire-plan 1",
+ "id": "idc_nsclc_radiomics",
+ "planned_at": "2026-10-31T03:08:36Z",
+ "problems": [],
+ "tree_sha256": "28244684dd42106589f2f84baacfee2b795528da017acfcfd71624f1a2087966"
+}

@@ -1,0 +1,11 @@
+{
+ "bytes_kept": 218,
+ "bytes_to_delete": 20313374444,
+ "files_kept": 1,
+ "files_to_delete": 221,
+ "format": "spine-datasets/retire-plan 1",
+ "id": "barts_crl",
+ "planned_at": "2026-10-31T04:08:31Z",
+ "problems": [],
+ "tree_sha256": "418e1e5d7955aae9952aa1dc120edb83f08b5fe99d71ae0d6e4fec43df411597"
+}

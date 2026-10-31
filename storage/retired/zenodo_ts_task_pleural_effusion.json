@@ -1,0 +1,15 @@
+{
+ "bytes_deleted_now": 8900944278,
+ "complete": true,
+ "failures": 0,
+ "files_deleted_now": 600,
+ "files_kept": 604,
+ "files_left_of_listed": 0,
+ "files_listed": 600,
+ "format": "spine-datasets/retired 1",
+ "id": "zenodo_ts_task_pleural_effusion",
+ "problems": [],
+ "request": "20261031T010232Z",
+ "retired_at": "2026-10-31T04:03:18Z",
+ "tree_sha256": "bf9f94fdc789abc4dbf327349af17827f83934cbc3d5331280881f56dd7c9a88"
+}

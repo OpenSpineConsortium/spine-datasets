@@ -1,0 +1,15 @@
+{
+ "bytes_deleted_now": 26952673507,
+ "complete": true,
+ "failures": 0,
+ "files_deleted_now": 51231,
+ "files_kept": 3,
+ "files_left_of_listed": 0,
+ "files_listed": 51231,
+ "format": "spine-datasets/retired 1",
+ "id": "idc_nsclc_radiomics",
+ "problems": [],
+ "request": "20261031T010232Z",
+ "retired_at": "2026-10-31T04:03:17Z",
+ "tree_sha256": "28244684dd42106589f2f84baacfee2b795528da017acfcfd71624f1a2087966"
+}

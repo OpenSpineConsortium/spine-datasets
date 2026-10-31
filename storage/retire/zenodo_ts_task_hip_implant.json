@@ -1,0 +1,11 @@
+{
+ "bytes_kept": 9228885,
+ "bytes_to_delete": 9120758621,
+ "files_kept": 74,
+ "files_to_delete": 72,
+ "format": "spine-datasets/retire-plan 1",
+ "id": "zenodo_ts_task_hip_implant",
+ "planned_at": "2026-10-31T03:08:41Z",
+ "problems": [],
+ "tree_sha256": "dd52c72aa944eb798b43b43b6b31c5299c99f082302ede8534821790a70d91a1"
+}

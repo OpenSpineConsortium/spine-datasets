@@ -1,0 +1,11 @@
+{
+ "bytes_kept": 13219,
+ "bytes_to_delete": 8668708098,
+ "files_kept": 3,
+ "files_to_delete": 21221,
+ "format": "spine-datasets/retire-plan 1",
+ "id": "idc_midrc_ricord_1b",
+ "planned_at": "2026-10-31T03:08:41Z",
+ "problems": [],
+ "tree_sha256": "b244c86422e55e7d98f8ca42fc507c2641ada1e4319a2249a5e08ca831c2afa6"
+}

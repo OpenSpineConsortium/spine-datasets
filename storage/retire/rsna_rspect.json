@@ -1,0 +1,13 @@
+{
+ "bytes_kept": 0,
+ "bytes_to_delete": 0,
+ "files_kept": 0,
+ "files_to_delete": 0,
+ "format": "spine-datasets/retire-plan 1",
+ "id": "rsna_rspect",
+ "planned_at": "2026-10-31T04:12:21Z",
+ "problems": [
+  "1937447 files missing since the freeze"
+ ],
+ "tree_sha256": "048f53237ebd3a538690cf12f900a20af4f9745ed52bf8768c371ba57a857b83"
+}

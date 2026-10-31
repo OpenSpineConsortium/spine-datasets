@@ -1,0 +1,15 @@
+{
+ "bytes_deleted_now": 0,
+ "complete": false,
+ "failures": 2,
+ "files_deleted_now": 0,
+ "files_kept": 2,
+ "files_left_of_listed": 2,
+ "files_listed": 2,
+ "format": "spine-datasets/retired 1",
+ "id": "zenodo_unitochest",
+ "problems": [],
+ "request": "20261031T010232Z",
+ "retired_at": "2026-10-31T04:02:36Z",
+ "tree_sha256": "baa668122a84a749fc76ac521761169d44b309727c70502664ee83b12c58e2de"
+}

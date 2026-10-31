@@ -1,0 +1,11 @@
+{
+ "bytes_kept": 111828337,
+ "bytes_to_delete": 8900944278,
+ "files_kept": 604,
+ "files_to_delete": 600,
+ "format": "spine-datasets/retire-plan 1",
+ "id": "zenodo_ts_task_pleural_effusion",
+ "planned_at": "2026-10-31T03:08:41Z",
+ "problems": [],
+ "tree_sha256": "bf9f94fdc789abc4dbf327349af17827f83934cbc3d5331280881f56dd7c9a88"
+}

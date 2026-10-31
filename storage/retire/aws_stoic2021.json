@@ -1,0 +1,11 @@
+{
+ "bytes_kept": 854,
+ "bytes_to_delete": 264277370593,
+ "files_kept": 2,
+ "files_to_delete": 2032,
+ "format": "spine-datasets/retire-plan 1",
+ "id": "aws_stoic2021",
+ "planned_at": "2026-10-31T03:08:35Z",
+ "problems": [],
+ "tree_sha256": "22649e1e235a824afe0d79499bf978142246baeb97900640b96664d759b050a3"
+}

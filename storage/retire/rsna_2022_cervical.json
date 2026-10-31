@@ -1,0 +1,11 @@
+{
+ "bytes_kept": 116,
+ "bytes_to_delete": 203321991754,
+ "files_kept": 1,
+ "files_to_delete": 3,
+ "format": "spine-datasets/retire-plan 1",
+ "id": "rsna_2022_cervical",
+ "planned_at": "2026-10-31T04:08:22Z",
+ "problems": [],
+ "tree_sha256": "62b7448a469f4ef392bcf060869359414c14de5e41077b6aa9e78fd0eadde2a8"
+}
