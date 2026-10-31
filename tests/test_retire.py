@@ -200,6 +200,20 @@ class GridScript(unittest.TestCase):
         self.assertNotIn("HPCW ", again)
         self.assertNotEqual(self.script("apply", "../x", check=False).returncode, 0)
 
+    def test_apply_plans_again_once_a_written_plan_was_refused(self):
+        self.script("apply", self.stamp)
+        self.script("plan", self.stamp, job="9", check=False)
+        again = self.script("apply", self.stamp).stdout
+        self.assertIn("planning it again", again)
+        self.assertEqual(len([line for line in again.splitlines() if line.startswith("HPCW ")]), 1)
+
+    def test_apply_does_not_plan_again_once_every_plan_lists_files(self):
+        self.script("apply", self.stamp)
+        plans = Path(self.home, "plans")
+        (plans / "old_set.json").write_text('{"problems": []}')
+        (plans / "old_set.delete").write_bytes(b"imagesTr/a.nii.gz\0")
+        self.assertNotIn("HPCW ", self.script("apply", self.stamp).stdout)
+
     def test_the_job_writes_a_plan_and_report_carries_its_counts(self):
         job = self.script("plan", self.stamp, job="9", check=False)
         self.assertEqual(job.returncode, 1)

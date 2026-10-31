@@ -81,8 +81,21 @@ case "${1:-}" in
     printf '%s\n' "$actions" | awk -F'\t' '$1 == "move" { print "move " $2 " to " $3 ": waits until the home'"'"'s path is set (STORAGE_HOME)" }'
     if [ "$retirements" -eq 0 ]; then echo "no retirement to plan"; exit 0; fi
     mkdir -p "$HOME_DIR/applied" "$HOME_DIR/plans"
+    # A request is planned once, unless its job has written every plan and one of them was refused:
+    # planning deletes nothing, so after a fix to the checks the same request is planned again.
     if [ -f "$HOME_DIR/applied/$2" ]; then
-      echo "request $2 was planned already ($(cat "$HOME_DIR/applied/$2")); not queueing again"; exit 0
+      written=0; ready=0
+      while IFS=$'\t' read -r kind ident _rest; do
+        [ "$kind" = retire ] || continue
+        [ -f "$HOME_DIR/plans/$ident.json" ] && written=$((written + 1))
+        if [ -s "$HOME_DIR/plans/$ident.delete" ] && grep -q '"problems": \[\]' "$HOME_DIR/plans/$ident.json" 2>/dev/null; then
+          ready=$((ready + 1))
+        fi
+      done <<< "$actions"
+      if [ "$written" -lt "$retirements" ] || [ "$ready" -eq "$retirements" ]; then
+        echo "request $2 was planned already ($(cat "$HOME_DIR/applied/$2")); not queueing again"; exit 0
+      fi
+      echo "request $2 was planned already, and $((retirements - ready)) of its plans list no files; planning it again"
     fi
     if squeue -h -u "$USER" -n "$PROJECT-$JOB" -o %i 2>/dev/null | grep -q .; then
       echo "a storage job is already queued or running; not queueing another"; exit 0
