@@ -34,9 +34,11 @@
 # this file and the request at the head of the default branch into code/, so only a merged request
 # is ever read, and nobody types these.
 #
+# A plan holds the freeze's whole file list and the walk of the folder at once; 8G ran out on
+# idc_ldct_and_projection_data (job 40902526, #384).
 #SBATCH --time=4:00:00
 #SBATCH --cpus-per-task=2
-#SBATCH --mem=8G
+#SBATCH --mem=64G
 set -euo pipefail
 
 PROJECT=spine-datasets
