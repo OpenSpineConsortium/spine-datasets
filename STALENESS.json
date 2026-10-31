@@ -1,7 +1,7 @@
 {
  "default_branch": "main",
  "format": 1,
- "generated_at": "2026-10-31T02:53:08Z",
+ "generated_at": "2026-10-31T02:56:45Z",
  "pulls": [
   {
    "auto_merge_enabled": null,
@@ -3780,6 +3780,45 @@
    "started": "2026-10-31T02:13:31Z"
   },
   {
+   "auto_merge_enabled": "2026-10-31T02:55:05Z",
+   "base": "main",
+   "board_conflicts": 0,
+   "board_main_moved": 3,
+   "branch": "storage/request-20261031T021925Z",
+   "catch_ups": 1,
+   "catch_ups_after_green": 1,
+   "catch_ups_by_button": 1,
+   "caused_by": [
+    [
+     "b828ffa637003372446cac6917ca60f5db5f08c0",
+     [
+      377,
+      381,
+      383
+     ]
+    ]
+   ],
+   "check_runs": 2,
+   "check_runs_redone": 1,
+   "check_seconds": 131,
+   "check_seconds_redone": 57,
+   "claim": false,
+   "closed": "2026-10-31T02:56:28Z",
+   "commits": 2,
+   "first_green": "2026-10-31T02:43:06Z",
+   "force_pushes": 0,
+   "landings_after_green": 1,
+   "landings_during_life": 3,
+   "merged": "2026-10-31T02:56:28Z",
+   "number": 379,
+   "opened": "2026-10-31T02:19:28Z",
+   "ready": "2026-10-31T02:19:28Z",
+   "reruns": 1,
+   "runs_cancelled": 1,
+   "stale_seconds": 802,
+   "started": "2026-10-31T02:19:25Z"
+  },
+  {
    "auto_merge_enabled": null,
    "base": "main",
    "board_conflicts": 0,
@@ -3842,9 +3881,9 @@
  ],
  "repository": "OpenSpineConsortium/spine-datasets",
  "summary": {
-  "auto_merge_used": 5,
+  "auto_merge_used": 6,
   "board_conflicts": 0,
-  "board_main_moved": 526,
+  "board_main_moved": 529,
   "by_day": {
    "2026-10-21": {
     "catch_ups": 3,
@@ -3897,22 +3936,22 @@
     "with_catch_up": 0
    },
    "2026-10-31": {
-    "catch_ups": 0,
-    "check_runs": 3,
-    "check_runs_redone": 0,
-    "merged": 3,
-    "share_with_catch_up": 0.0,
-    "stale_after_green": 0,
-    "stale_hours": 0.0,
-    "with_catch_up": 0
+    "catch_ups": 1,
+    "check_runs": 5,
+    "check_runs_redone": 1,
+    "merged": 4,
+    "share_with_catch_up": 0.25,
+    "stale_after_green": 1,
+    "stale_hours": 0.22,
+    "with_catch_up": 1
    }
   },
   "by_parallel_work": {
    "0": {
     "catch_ups": 0,
-    "check_runs": 4,
+    "check_runs": 2,
     "check_runs_redone": 0,
-    "merged": 4,
+    "merged": 2,
     "share_with_catch_up": 0.0,
     "stale_after_green": 0,
     "stale_hours": 0.0,
@@ -3920,9 +3959,9 @@
    },
    "1-2": {
     "catch_ups": 0,
-    "check_runs": 12,
+    "check_runs": 14,
     "check_runs_redone": 0,
-    "merged": 8,
+    "merged": 10,
     "share_with_catch_up": 0.0,
     "stale_after_green": 0,
     "stale_hours": 0.0,
@@ -3939,14 +3978,14 @@
     "with_catch_up": 8
    },
    "3-5": {
-    "catch_ups": 3,
-    "check_runs": 20,
-    "check_runs_redone": 1,
-    "merged": 10,
-    "share_with_catch_up": 0.3,
-    "stale_after_green": 0,
-    "stale_hours": 0.0,
-    "with_catch_up": 3
+    "catch_ups": 4,
+    "check_runs": 22,
+    "check_runs_redone": 2,
+    "merged": 11,
+    "share_with_catch_up": 0.364,
+    "stale_after_green": 1,
+    "stale_hours": 0.22,
+    "with_catch_up": 4
    },
    "6-10": {
     "catch_ups": 0,
@@ -3971,23 +4010,23 @@
     "with_catch_up": 7
    },
    "no_claim": {
-    "catch_ups": 4,
-    "check_runs": 70,
-    "check_runs_redone": 2,
-    "merged": 60,
-    "share_with_catch_up": 0.067,
-    "stale_after_green": 2,
-    "stale_hours": 23.94,
-    "with_catch_up": 4
+    "catch_ups": 5,
+    "check_runs": 72,
+    "check_runs_redone": 3,
+    "merged": 61,
+    "share_with_catch_up": 0.082,
+    "stale_after_green": 3,
+    "stale_hours": 24.16,
+    "with_catch_up": 5
    }
   },
-  "catch_ups": 15,
-  "catch_ups_by_button": 1,
+  "catch_ups": 16,
+  "catch_ups_by_button": 2,
   "catch_ups_max": 3,
-  "check_hours": 3.42,
-  "check_hours_redone": 0.12,
-  "check_runs": 139,
-  "check_runs_redone": 5,
+  "check_hours": 3.45,
+  "check_hours_redone": 0.13,
+  "check_runs": 141,
+  "check_runs_redone": 6,
   "closed_unmerged": 17,
   "closed_unmerged_branch_landed_later": 0,
   "default_branch_checks": {
@@ -4007,28 +4046,28 @@
     "success": 7
    },
    "2026-10-31": {
-    "success": 2
+    "success": 3
    }
   },
   "force_pushes": 3,
-  "landings_after_green_total": 283,
-  "landings_during_life_mean": 3.87,
-  "landings_during_life_median": 0,
+  "landings_after_green_total": 284,
+  "landings_during_life_mean": 3.86,
+  "landings_during_life_median": 0.0,
   "live": {
    "pulls_seen": 47,
    "pulls_seen_behind": 0,
    "pulls_seen_dirty": 0,
    "since": "2026-10-21T12:40:18Z",
-   "snapshots": 82
+   "snapshots": 83
   },
-  "merged": 101,
-  "reruns": 3,
-  "share_runs_redone": 0.036,
-  "share_stale_after_green": 0.02,
-  "share_with_catch_up": 0.109,
-  "stale_after_green": 2,
-  "stale_hours_total": 23.94,
-  "stale_minutes_median": 718.2,
+  "merged": 102,
+  "reruns": 4,
+  "share_runs_redone": 0.043,
+  "share_stale_after_green": 0.029,
+  "share_with_catch_up": 0.118,
+  "stale_after_green": 3,
+  "stale_hours_total": 24.16,
+  "stale_minutes_median": 13.4,
   "top_causes": [
    {
     "branch": "claude/23",
@@ -4134,7 +4173,7 @@
    }
   ],
   "with_board_conflict": 0,
-  "with_catch_up": 11
+  "with_catch_up": 12
  },
  "unread": 0,
  "workflow": "ci.yml"
