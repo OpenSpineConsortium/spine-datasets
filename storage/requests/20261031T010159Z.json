@@ -1,0 +1,119 @@
+{
+ "actions": [
+  {
+   "bytes": 980237210056,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/rsna_rspect_pe/raw",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/rsna_rspect_pe/raw",
+   "id": "rsna_rspect",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "048f53237ebd3a538690cf12f900a20af4f9745ed52bf8768c371ba57a857b83"
+  },
+  {
+   "bytes": 862724923831,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/idc_ldct_and_projection_data",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/idc_ldct_and_projection_data",
+   "id": "idc_ldct_and_projection_data",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "eb43cd930058b2d276df201ac066513c2a1d8be8c8c72ff9acc3a61a904b24fe"
+  },
+  {
+   "bytes": 264277371447,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/aws_stoic2021",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/aws_stoic2021",
+   "id": "aws_stoic2021",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "22649e1e235a824afe0d79499bf978142246baeb97900640b96664d759b050a3"
+  },
+  {
+   "bytes": 84067545368,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/shared/datasets/zenodo_unitochest",
+   "grid_path": "/rs/rs_grp_oschome/shared/datasets/zenodo_unitochest/raw",
+   "id": "zenodo_unitochest",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "baa668122a84a749fc76ac521761169d44b309727c70502664ee83b12c58e2de"
+  },
+  {
+   "bytes": 39039571028,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/zenodo_ts_task_liver_lesions",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/zenodo_ts_task_liver_lesions",
+   "id": "zenodo_ts_task_liver_lesions",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "505ec223026d674b65b85ed5507d3b6762377232f998317abeaa39ed6182d623"
+  },
+  {
+   "bytes": 31351310903,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/shared/datasets/zenodo_medpelvis3d",
+   "grid_path": "/rs/rs_grp_oschome/shared/datasets/zenodo_medpelvis3d/raw",
+   "id": "zenodo_medpelvis3d",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "461fdcecc1eaa5aabdc70761c240ac644dc809e133551af40e13c24a37a56414"
+  },
+  {
+   "bytes": 26952714219,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/idc_nsclc_radiomics",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/idc_nsclc_radiomics",
+   "id": "idc_nsclc_radiomics",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "28244684dd42106589f2f84baacfee2b795528da017acfcfd71624f1a2087966"
+  },
+  {
+   "bytes": 9129987506,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/zenodo_ts_task_hip_implant",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/zenodo_ts_task_hip_implant",
+   "id": "zenodo_ts_task_hip_implant",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "dd52c72aa944eb798b43b43b6b31c5299c99f082302ede8534821790a70d91a1"
+  },
+  {
+   "bytes": 9012772615,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/zenodo_ts_task_pleural_effusion",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/zenodo_ts_task_pleural_effusion",
+   "id": "zenodo_ts_task_pleural_effusion",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "bf9f94fdc789abc4dbf327349af17827f83934cbc3d5331280881f56dd7c9a88"
+  },
+  {
+   "bytes": 8668721317,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/idc_midrc_ricord_1b",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/idc_midrc_ricord_1b",
+   "id": "idc_midrc_ricord_1b",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "b244c86422e55e7d98f8ca42fc507c2641ada1e4319a2249a5e08ca831c2afa6"
+  },
+  {
+   "bytes": 3076112179,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/shared/datasets/cadica",
+   "grid_path": "/rs/rs_grp_oschome/shared/datasets/cadica/raw",
+   "id": "cadica",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "56dbf0dce15ebf0955dd832165e9f98fff31e88f2e86dc192bab9a0abab90b26"
+  }
+ ],
+ "format": "spine-datasets/storage-request 1",
+ "home_after": null,
+ "lab_after": 15234711759531,
+ "made_at": "2026-10-31T01:01:59Z",
+ "selection": "-rsna_rspect -idc_ldct_and_projection_data -aws_stoic2021 -zenodo_unitochest -zenodo_ts_task_liver_lesions -zenodo_medpelvis3d -idc_nsclc_radiomics -zenodo_ts_task_hip_implant -zenodo_ts_task_pleural_effusion -idc_midrc_ricord_1b -cadica"
+}
