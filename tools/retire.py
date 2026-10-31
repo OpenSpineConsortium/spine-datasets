@@ -21,7 +21,8 @@ retirement in that request (docs/research/lineage-and-retirement.md, "Retiring a
 
 A plan stands only when all of these hold, and otherwise it says why and lists nothing:
 
-- the folder is a set's own folder under one of the data roots, with no link anywhere on its path,
+- the folder is a set's own folder under one of the data roots, with no link on its path below the
+  root (the volume's own mount above it may be one),
   so a path in a request can never reach the home, the lab's code or another set;
 - its FROZEN.json names the tree hash the owner merged, and the file list is that hash's list;
 - the folder holds exactly the files the freeze listed, at their sizes, so what goes is what the
@@ -82,7 +83,9 @@ def folder_problems(folder):
         return ["the folder is under none of the data roots"]
     if not folder[len(root):] or folder[len(root):].startswith("."):
         return ["the folder is a data root itself, not a set's folder"]
-    if os.path.realpath(folder) != folder:
+    # The lab volume is mounted behind a link above the data roots, which moves every set alike
+    # and reaches nothing new; only a link below the root could carry a request somewhere else.
+    if os.path.realpath(folder) != os.path.join(os.path.realpath(root), folder[len(root):]):
         return ["the folder has a link on its path"]
     if not os.path.isdir(folder):
         return ["the folder is not there"]

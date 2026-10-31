@@ -78,6 +78,21 @@ class RetireTest(unittest.TestCase):
         os.symlink(self.top, self.root + "alias")
         self.assert_refused(self.root + "alias", self.tree, "link on its path")
 
+    def test_a_root_reached_through_a_link_still_plans(self):
+        mount = os.path.realpath(self.tmp.name) + "/mount"
+        os.symlink(os.path.realpath(self.tmp.name), mount)
+        retire.ROOTS = (mount + "/data/",)
+        counts = retire.write_plan(mount + "/data/demo_set", "demo_set", self.tree, self.out)
+        self.assertEqual(counts["problems"], [])
+        self.assertEqual(counts["files_to_delete"], 2)
+
+    def test_a_link_below_a_linked_root_is_refused(self):
+        mount = os.path.realpath(self.tmp.name) + "/mount"
+        os.symlink(os.path.realpath(self.tmp.name), mount)
+        os.symlink(self.top, self.root + "alias")
+        retire.ROOTS = (mount + "/data/",)
+        self.assert_refused(mount + "/data/alias", self.tree, "link on its path")
+
     def retired(self):
         return retire.retire(self.top, "demo_set", self.tree, self.out, "20261024T210000Z")
 
