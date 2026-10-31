@@ -1,5 +1,5 @@
 {
- "built_at": "2026-10-31T02:13:47Z",
+ "built_at": "2026-10-31T02:19:41Z",
  "format": "spine-datasets/storage 1",
  "home": {
   "quota_bytes": 4000000000000,
@@ -21,14 +21,9 @@
  "read_at": "2026-10-24T17:15:28Z",
  "requests": [
   {
-   "number": 377,
-   "selection": "-rsna_rspect -idc_ldct_and_projection_data -aws_stoic2021 -zenodo_unitochest -zenodo_ts_task_liver_lesions -zenodo_medpelvis3d -idc_nsclc_radiomics -zenodo_ts_task_hip_implant -zenodo_ts_task_pleural_effusion -idc_midrc_ricord_1b",
-   "url": "https://github.com/OpenSpineConsortium/spine-datasets/pull/377"
-  },
-  {
-   "number": 378,
-   "selection": "-zenodo_vsd_fullbody -rsna_2022_cervical -ctspinopelvic1k -ctspine1k -nlst_pilot -pengwin_task2_xrays -barts_crl -ctpelvic1k -csi2014 -verse_2d_projections",
-   "url": "https://github.com/OpenSpineConsortium/spine-datasets/pull/378"
+   "number": 379,
+   "selection": "-rsna_2022_cervical -ctspinopelvic1k -ctspine1k -nlst_pilot -pengwin_task2_xrays -barts_crl -ctpelvic1k -csi2014 -verse_2d_projections",
+   "url": "https://github.com/OpenSpineConsortium/spine-datasets/pull/379"
   }
  ],
  "sets": [
