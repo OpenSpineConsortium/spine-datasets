@@ -1,0 +1,99 @@
+{
+ "actions": [
+  {
+   "bytes": 203321991870,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/rsna_2022_cspine",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/rsna_2022_cspine",
+   "id": "rsna_2022_cervical",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "62b7448a469f4ef392bcf060869359414c14de5e41077b6aa9e78fd0eadde2a8"
+  },
+  {
+   "bytes": 202680383788,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/ctspinopelvic1k",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/ctspinopelvic1k",
+   "id": "ctspinopelvic1k",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "ac2828b37738f05f1ca2fc8b8cfc89b9037b82898e4f351b766da3e407c05272"
+  },
+  {
+   "bytes": 162350473572,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/ctspine1k",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/ctspine1k",
+   "id": "ctspine1k",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "6094610409f953184bb95ba085f205c37437989540292964d59eafab088b913c"
+  },
+  {
+   "bytes": 73543991208,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/nlst_pilot",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/nlst_pilot",
+   "id": "nlst_pilot",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "1707373e9b59527d30d686ee99c60836dd4ad1ea21219bdcf9e2bac0982b4301"
+  },
+  {
+   "bytes": 34950751395,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/pengwin_task2_xrays",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/pengwin_task2_xrays",
+   "id": "pengwin_task2_xrays",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "526ce347196e987a4d3218911c6ca7be70ec3b41bc0c74d62cb4a065208ccdd9"
+  },
+  {
+   "bytes": 20313374662,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/barts_crl",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/barts_crl",
+   "id": "barts_crl",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "418e1e5d7955aae9952aa1dc120edb83f08b5fe99d71ae0d6e4fec43df411597"
+  },
+  {
+   "bytes": 14831867170,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/ctpelvic1k_clinic",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/ctpelvic1k_clinic",
+   "id": "ctpelvic1k",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "16f98332771e8bf2cc17feaa2a11bac468f77dd2283ff608cbe2b0b8e1fdc8ac"
+  },
+  {
+   "bytes": 6640702200,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/csi2014",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/csi2014",
+   "id": "csi2014",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "b457abead1221a8f345aac07cfb410a83c6e679f8115238e9c659429fd4c26df"
+  },
+  {
+   "bytes": 4417086105,
+   "bytes_known": true,
+   "folder": "/rs/rs_grp_oschome/go2432/data/verse_2d_projections",
+   "grid_path": "/rs/rs_grp_oschome/go2432/data/verse_2d_projections",
+   "id": "verse_2d_projections",
+   "kind": "retire",
+   "place": null,
+   "tree_sha256": "527744b71331bcf06ecc833b5dfa7534c3c1c3781dfa37392728281dbf73f664"
+  }
+ ],
+ "format": "spine-datasets/storage-request 1",
+ "home_after": null,
+ "lab_after": 16830199378030,
+ "made_at": "2026-10-31T02:19:25Z",
+ "selection": "-rsna_2022_cervical -ctspinopelvic1k -ctspine1k -nlst_pilot -pengwin_task2_xrays -barts_crl -ctpelvic1k -csi2014 -verse_2d_projections"
+}
