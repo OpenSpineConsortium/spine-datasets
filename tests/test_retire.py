@@ -108,6 +108,24 @@ class RetireTest(unittest.TestCase):
         self.assertEqual([e["path"] for e in retire.bundle(self.out)["tree"]],
                          ["storage/retire/demo_set.json", "storage/retired/demo_set.json"])
 
+    def test_delete_opens_a_read_only_folder_of_the_set(self):
+        retire.write_plan(self.top, "demo_set", self.tree, self.out)
+        images = os.path.join(self.top, "imagesTr")
+        os.chmod(images, 0o555)
+        record = self.retired()
+        self.assertEqual(record["failure_reasons"], {})
+        self.assertTrue(record["complete"])
+        self.assertFalse(os.path.exists(images))
+
+    def test_only_a_folder_lacking_the_write_bit_is_opened(self):
+        labels = os.path.join(self.top, "labelsTr")
+        os.chmod(labels, 0o555)
+        self.assertTrue(retire.open_for_writing(self.top, "labelsTr"))
+        self.assertEqual(os.stat(labels).st_mode & 0o777, 0o755)
+        self.assertFalse(retire.open_for_writing(self.top, "labelsTr"))
+        self.assertFalse(retire.open_for_writing(self.top, "dataset.json"))
+        self.assertFalse(retire.open_for_writing(self.top, "no_such_folder"))
+
     def test_a_retirement_cut_short_carries_on(self):
         retire.write_plan(self.top, "demo_set", self.tree, self.out)
         os.unlink(os.path.join(self.top, "imagesTr/case_001.nii.gz"))

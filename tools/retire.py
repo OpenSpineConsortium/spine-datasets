@@ -39,6 +39,7 @@ so it uses nothing newer.
 """
 
 import argparse
+import errno
 import gzip
 import hashlib
 import json
@@ -187,32 +188,68 @@ def delete_problems(folder, ident, tree, plans):
     return problems, listed
 
 
+def open_for_writing(folder, parent):
+    """Give a folder of the set the owner's write bit, as archives often unpack read-only.
+
+    Only a real folder below the set's own, owned by this account, is touched."""
+    target = os.path.join(folder, parent)
+    try:
+        info = os.lstat(target)
+    except OSError:
+        return False
+    if not stat.S_ISDIR(info.st_mode) or info.st_uid != os.getuid():
+        return False
+    if info.st_mode & stat.S_IWUSR and info.st_mode & stat.S_IXUSR:
+        return False
+    try:
+        os.chmod(target, stat.S_IMODE(info.st_mode) | stat.S_IWUSR | stat.S_IXUSR)
+    except OSError:
+        return False
+    return True
+
+
+def unlink_reason(folder, path):
+    """None once the path is gone, else the errno's name that kept it."""
+    absolute = os.path.join(folder, path)
+    try:
+        os.unlink(absolute)
+        return None
+    except PermissionError:
+        if not open_for_writing(folder, os.path.dirname(path)):
+            return "EACCES"
+    except OSError as error:
+        return errno.errorcode.get(error.errno, "OSError")
+    try:
+        os.unlink(absolute)
+        return None
+    except OSError as error:
+        return errno.errorcode.get(error.errno, "OSError")
+
+
 def remove_listed(folder, listed):
-    """(files deleted, bytes deleted, failures); each path is a file or a link inside the folder."""
-    deleted, freed, failures = 0, 0, 0
+    """(files deleted, bytes deleted, failures by reason); each path is a file or a link inside the folder."""
+    deleted, freed, reasons = 0, 0, {}
     parents = set()
     for path in listed:
         if path.startswith("/") or ".." in path.split("/"):
-            failures += 1
+            reasons["outside the set"] = reasons.get("outside the set", 0) + 1
             continue
-        absolute = os.path.join(folder, path)
         try:
-            info = os.lstat(absolute)
+            info = os.lstat(os.path.join(folder, path))
         except FileNotFoundError:
             continue
         if not (stat.S_ISREG(info.st_mode) or stat.S_ISLNK(info.st_mode)):
-            failures += 1
+            reasons["not a file"] = reasons.get("not a file", 0) + 1
             continue
-        try:
-            os.unlink(absolute)
-        except OSError:
-            failures += 1
+        reason = unlink_reason(folder, path)
+        if reason:
+            reasons[reason] = reasons.get(reason, 0) + 1
             continue
         deleted += 1
         freed += 0 if stat.S_ISLNK(info.st_mode) else info.st_size
         parents.add(os.path.dirname(path))
     remove_empty_folders(folder, parents)
-    return deleted, freed, failures
+    return deleted, freed, reasons
 
 
 def remove_empty_folders(folder, parents):
@@ -235,18 +272,21 @@ def retire(folder, ident, tree, plans, request):
     problems, listed = delete_problems(folder, ident, tree, plans)
     if problems:
         return {"format": RETIRED_FORMAT, "id": ident, "problems": problems}
-    deleted, freed, failures = remove_listed(folder, listed)
+    deleted, freed, reasons = remove_listed(folder, listed)
+    failures = sum(reasons.values())
     remaining = present(folder)
     record = {
         "format": RETIRED_FORMAT, "id": ident, "tree_sha256": tree, "request": request,
         "retired_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "files_deleted_now": deleted, "bytes_deleted_now": freed, "failures": failures,
+        "failure_reasons": reasons,
         "files_listed": len(listed), "files_left_of_listed": sum(1 for p in listed if p in remaining),
         "files_kept": len(remaining), "problems": [],
     }
     record["complete"] = record["files_left_of_listed"] == 0 and failures == 0
     text = json.dumps(record, indent=1, sort_keys=True) + "\n"
     target = os.path.join(folder, RETIRED)
+    open_for_writing(folder, "")
     if os.path.exists(target):
         os.chmod(target, 0o644)
     with open(target, "w", encoding="ascii") as handle:
